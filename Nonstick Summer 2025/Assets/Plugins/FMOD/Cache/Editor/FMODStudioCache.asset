@@ -1,5 +1,45 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7676539690225878646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: NSSummer25FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638838943856100525
+  FileSizes:
+  - Name: Desktop
+    Value: 1340
+  Exists: 1
+--- !u!114 &-5259588466323316940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: NSSummer25FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638838943856120685
+  FileSizes:
+  - Name: Desktop
+    Value: 860
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,10 +52,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks: []
+  EditorBanks:
+  - {fileID: -5259588466323316940}
+  - {fileID: 34564258425666311}
+  - {fileID: -7676539690225878646}
+  - {fileID: 1634051811715559137}
   EditorEvents: []
   EditorParameters: []
-  MasterBanks: []
-  StringsBanks: []
-  cacheTime: 0
+  MasterBanks:
+  - {fileID: -7676539690225878646}
+  StringsBanks:
+  - {fileID: -5259588466323316940}
+  cacheTime: 638838943856339250
   cacheVersion: 131624
+--- !u!114 &34564258425666311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/BGM.bank
+  m_EditorClassIdentifier: 
+  Path: NSSummer25FMOD/Build/Desktop/BGM.bank
+  Name: BGM
+  StudioPath: bank:/BGM
+  lastModified: 638838943856339250
+  FileSizes:
+  - Name: Desktop
+    Value: 494
+  Exists: 1
+--- !u!114 &1634051811715559137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: NSSummer25FMOD/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638838943856251960
+  FileSizes:
+  - Name: Desktop
+    Value: 494
+  Exists: 1

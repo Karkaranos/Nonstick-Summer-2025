@@ -34,5 +34,17 @@ public static class StaticUtilities
         canvasgroup.interactable = false;
         canvasgroup.blocksRaycasts = false;
     }
+
+    public static void EnableCursor()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    public static void DisableCursor()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     #endregion
 }

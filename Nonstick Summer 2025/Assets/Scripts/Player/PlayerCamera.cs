@@ -14,7 +14,7 @@ public class PlayerCamera : MonoBehaviour
     public float Sensitivity = 10f;
     public float Slippiness = 10;
     [SerializeField][ReadOnly] 
-    private Camera playerCamera;
+    public Camera playerCamera;
 
     [HideInInspector] public Transform camTransform => playerCamera.transform;
     float xLook, yLook;

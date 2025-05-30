@@ -1,11 +1,13 @@
 /*
   * VERY generalized script, feel free to add or remove things as you see fit.
   */
-    
+
+using System.ComponentModel;
 using System.Net.Http.Headers;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using NaughtyAttributes;
 
 
 public class InputEvents : Singleton<InputEvents>
@@ -36,9 +38,9 @@ public class InputEvents : Singleton<InputEvents>
     // Input values and flags
     public static bool MovePressed, /*JumpPressed,*/ PausePressed, ClickPressed, RightClickPressed, DashPressed, InteractPressed;
 
-    public Vector2 InputDirection => Move.ReadValue<Vector2>();
+    public Vector2 InputDirection => UITransitionManager.PlayerInMenu ? Vector2.zero : Move.ReadValue<Vector2>();
     public static Vector2 MousePosition => Mouse.current.position.value;
-    public static Vector2 MouseDelta => Time.time > 0.1f ? mouseDelta.ReadValue<Vector2>() : mouseDelta.ReadValue<Vector2>().normalized;     // uses canvas space *sigh
+    public static Vector2 MouseDelta => UITransitionManager.PlayerInMenu ? Vector2.zero : mouseDelta.ReadValue<Vector2>();     // uses canvas space *sigh
 
     private PlayerInput playerInput;
     private static InputAction Move, /*Jump,*/ Pause, LeftClick, RightClick, mouseDelta, Interact;
@@ -48,9 +50,7 @@ public class InputEvents : Singleton<InputEvents>
         playerInput = GetComponent<PlayerInput>();
         InitializeActions();
     }
-
-
-
+    
     void InitializeActions()
     {
         var map = playerInput.currentActionMap;
@@ -78,23 +78,22 @@ public class InputEvents : Singleton<InputEvents>
 
     void ActionStarted(ref bool pressedFlag, UnityEvent actionEvent)
     {
-        //if (GameManager.Instance.isPaused) return;
-        //if (GameManager.Instance.pausedForUI) return;
+        if (UITransitionManager.PlayerInMenu) return;
+
         pressedFlag = true;
         actionEvent?.Invoke();
     }
     void ActionCanceled(ref bool pressedFlag, UnityEvent actionEvent)
     {
-        //if (GameManager.Instance.isPaused) return;
-        //if (GameManager.Instance.pausedForUI) return;
-
         pressedFlag = false;
+
+        if (UITransitionManager.PlayerInMenu) return;
+
         actionEvent?.Invoke();
     }
     private void FixedUpdate()
     {
-        //if (GameManager.Instance.isPaused) return;
-        //if (GameManager.Instance.pausedForUI) return;
+        if (UITransitionManager.PlayerInMenu) return;
 
         if (MovePressed) MoveHeld?.Invoke();
         //if (JumpPressed) JumpHeld?.Invoke();

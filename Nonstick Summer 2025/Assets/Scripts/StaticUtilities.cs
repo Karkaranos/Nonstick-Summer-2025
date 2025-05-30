@@ -14,7 +14,7 @@ public static class StaticUtilities
     {
         return 
             ( referencePoint.forward * inputDirection.y 
-            + referencePoint.up * inputDirection.x)
+            + referencePoint.right * inputDirection.x)
             .normalized;
     }
 

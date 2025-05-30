@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
         //rb.AddForce(direction * speed, ForceMode.Force); we arent that kinda game, kiddo.
         direction.y = 0;
         var newvel = direction.normalized * speed;
-        newvel.y = rb.linearVelocity.y;
+        newvel.y = rb.linearVelocity.y; // maintain gravity
         rb.linearVelocity = newvel;
     }
 }

@@ -11,7 +11,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private float acceleration=100;
+    [SerializeField] private float acceleration=10;
 
     private Rigidbody rb;
     private Transform playerOrientationTracker;
@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void DoMovement()
     {
+        Debug.Log(InputEvents.Instance.InputDirection);
         var direction = StaticUtilities.TransformInputDirection(InputEvents.Instance.InputDirection, playerCamera.camTransform);
 
         //rb.AddForce(direction * speed, ForceMode.Force); we arent that kinda game, kiddo.

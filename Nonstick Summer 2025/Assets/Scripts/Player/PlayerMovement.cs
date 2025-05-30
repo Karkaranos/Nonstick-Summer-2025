@@ -1,0 +1,45 @@
+/*
+ * Handles regular player movement (WASD)
+ * 
+ * - Clare Grady, Toby S, Tyler B, Sky B, Alec P
+ */
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour
+{
+    [SerializeField] private float speed;
+
+    private Rigidbody rb;
+    private Transform playerOrientationTracker;
+
+    private PlayerCamera playerCamera;
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        playerCamera = FindFirstObjectByType<PlayerCamera>();
+        playerOrientationTracker = Camera.main.transform;
+        rb = GetComponent<Rigidbody>();
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        DoMovement();
+    }
+
+    private void DoMovement()
+    {
+        var direction = StaticUtilities.TransformInputDirection(InputEvents.Instance.InputDirection, playerCamera.camTransform);
+
+        //rb.AddForce(direction * speed, ForceMode.Force); we arent that kinda game, kiddo.
+        direction.y = 0;
+        rb.linearVelocity = direction.normalized * speed;
+
+        rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, speed);
+    }
+}

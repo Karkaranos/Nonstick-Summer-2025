@@ -2,6 +2,25 @@ using UnityEngine;
 
 public static class StaticUtilities
 {
+    #region Gameplay
+
+    /// <summary>
+    /// Most commonly used to transform player input (WASD) to 3D input, relative to the camera
+    /// </summary>
+    /// <param name="inputDirection">2D player input (WASD)</param>
+    /// <param name="referencePoint">Usually the camera</param>
+    /// <returns>Transformed Input Direction</returns>
+    public static Vector3 TransformInputDirection(Vector2 inputDirection, Transform referencePoint)
+    {
+        return 
+            ( referencePoint.forward * inputDirection.y 
+            + referencePoint.up * inputDirection.x)
+            .normalized;
+    }
+
+    #endregion
+
+    #region UI
     public static void EnableCanvasGroup(CanvasGroup canvasgroup)
     {
         canvasgroup.alpha = 1;
@@ -15,4 +34,5 @@ public static class StaticUtilities
         canvasgroup.interactable = false;
         canvasgroup.blocksRaycasts = false;
     }
+    #endregion
 }

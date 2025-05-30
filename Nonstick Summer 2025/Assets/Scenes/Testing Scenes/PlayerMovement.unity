@@ -294,6 +294,7 @@ MonoBehaviour:
   _layerToIgnore:
     serializedVersion: 2
     m_Bits: 0
+  marble: {fileID: 0}
 --- !u!1 &997839138
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +637,10 @@ PrefabInstance:
     - target: {fileID: 7457240203218918728, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8862621975096623832, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
+      propertyPath: acceleration
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

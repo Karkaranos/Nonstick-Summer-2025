@@ -11,6 +11,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private float acceleration=100;
 
     private Rigidbody rb;
     private Transform playerOrientationTracker;
@@ -39,7 +40,11 @@ public class PlayerMovement : MonoBehaviour
         //rb.AddForce(direction * speed, ForceMode.Force); we arent that kinda game, kiddo.
         direction.y = 0;
         var newvel = direction.normalized * speed;
-        newvel.y = rb.linearVelocity.y;
+        newvel = Vector3.Lerp(rb.linearVelocity, newvel, Time.deltaTime * acceleration);
+        newvel.y = rb.linearVelocity.y; // maintain gravity
+
+
+
         rb.linearVelocity = newvel;
     }
 }

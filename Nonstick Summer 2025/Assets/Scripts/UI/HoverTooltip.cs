@@ -6,11 +6,13 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
+using NaughtyAttributes;
 
 public class HoverTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private string text;
 
+    [Required]
     [SerializeField] private CanvasGroup tooltipGroup;
     private TMP_Text tooltipText;
 

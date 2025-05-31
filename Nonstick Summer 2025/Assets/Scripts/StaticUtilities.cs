@@ -38,7 +38,8 @@ public static class StaticUtilities
     public static void EnableCursor()
     {
         Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
+        // Free mouse if editor, locked to window if in a build. For the sake of debugging because oh my god
+        Cursor.lockState = Application.isEditor ? CursorLockMode.None : CursorLockMode.Confined;
     }
 
     public static void DisableCursor()

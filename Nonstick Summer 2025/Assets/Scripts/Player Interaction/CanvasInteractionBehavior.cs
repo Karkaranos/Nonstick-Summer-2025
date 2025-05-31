@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using NaughtyAttributes;
 
 public class CanvasInteractionBehavior : MonoBehaviour
 {
-    [SerializeField] private GameObject interactPrompt;
+    [SerializeField] [Required] private GameObject interactPrompt;
     public static Action ShowInteractUI;
     public static Action HideInteractUI;
 
@@ -14,6 +15,8 @@ public class CanvasInteractionBehavior : MonoBehaviour
     {
         ShowInteractUI += EnableInteractUI;
         HideInteractUI += DisableInteractUI;
+
+        DisableInteractUI();
     }
 
     /// <summary>
@@ -21,7 +24,7 @@ public class CanvasInteractionBehavior : MonoBehaviour
     /// </summary>
     private void EnableInteractUI()
     {
-        interactPrompt.SetActive(true);
+        interactPrompt?.SetActive(true);
     }
 
     /// <summary>
@@ -30,7 +33,7 @@ public class CanvasInteractionBehavior : MonoBehaviour
     /// </summary>
     private void DisableInteractUI()
     {
-        interactPrompt.SetActive(false);
+        interactPrompt?.SetActive(false);
     }
 
     private void OnDisable()

@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float acceleration=10;
 
     private Rigidbody rb;
-    private Transform playerOrientationTracker;
 
     private PlayerCamera playerCamera;
 
@@ -23,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         playerCamera = FindFirstObjectByType<PlayerCamera>();
-        playerOrientationTracker = Camera.main.transform;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -35,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void DoMovement()
     {
-        Debug.Log(InputEvents.Instance.InputDirection);
         var direction = StaticUtilities.TransformInputDirection(InputEvents.Instance.InputDirection, playerCamera.camTransform);
 
         //rb.AddForce(direction * speed, ForceMode.Force); we arent that kinda game, kiddo.
@@ -43,8 +40,6 @@ public class PlayerMovement : MonoBehaviour
         var newvel = direction.normalized * speed;
         newvel = Vector3.Lerp(rb.linearVelocity, newvel, Time.deltaTime * acceleration);
         newvel.y = rb.linearVelocity.y; // maintain gravity
-
-
 
         rb.linearVelocity = newvel;
     }

@@ -13,7 +13,7 @@ public class PlayerCamera : MonoBehaviour
 {
     public float Sensitivity = 10f;
     public float Slippiness = 10;
-    [SerializeField][ReadOnly] 
+    [SerializeField][Required]
     public Camera playerCamera;
 
     [HideInInspector] public Transform camTransform => playerCamera.transform;
@@ -23,7 +23,8 @@ public class PlayerCamera : MonoBehaviour
     {
         if(playerCamera == null) 
             playerCamera = Camera.main; // taking a shot in the dark with this one
-        
+
+        StaticUtilities.DisableCursor();
 
         Vector3 startRotation = camTransform.localRotation.eulerAngles;
         xLook = startRotation.x;
@@ -34,8 +35,6 @@ public class PlayerCamera : MonoBehaviour
     {
         // Read mouse input
         var mouse = InputEvents.MouseDelta;
-        //float mouseX = mouse.x * Time.fixedDeltaTime * Sensitivity;
-        //float mouseY = mouse.y * Time.fixedDeltaTime * Sensitivity;
         yLook += mouse.x * Sensitivity;
         xLook -= mouse.y * Sensitivity;
         xLook = Mathf.Clamp(xLook, -85f, 85f);

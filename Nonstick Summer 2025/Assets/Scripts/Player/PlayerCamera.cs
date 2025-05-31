@@ -13,8 +13,8 @@ public class PlayerCamera : MonoBehaviour
 {
     public float Sensitivity = 10f;
     public float Slippiness = 10;
-    [SerializeField][ReadOnly] 
-    private Camera playerCamera;
+    [SerializeField][Required]
+    public Camera playerCamera;
 
     [HideInInspector] public Transform camTransform => playerCamera.transform;
     float xLook, yLook;
@@ -23,7 +23,8 @@ public class PlayerCamera : MonoBehaviour
     {
         if(playerCamera == null) 
             playerCamera = Camera.main; // taking a shot in the dark with this one
-        
+
+        StaticUtilities.DisableCursor();
 
         Vector3 startRotation = camTransform.localRotation.eulerAngles;
         xLook = startRotation.x;

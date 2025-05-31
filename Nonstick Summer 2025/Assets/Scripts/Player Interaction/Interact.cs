@@ -13,13 +13,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class Interact : MonoBehaviour
 {
     private Camera _camera;
 
-    [SerializeField] private GameObject _targetGameObj;
+    [SerializeField] [ReadOnly]
+    private GameObject _targetGameObj;
     private IInteractable _interactable;
     private bool _canInteract;
 
@@ -31,8 +33,6 @@ public class Interact : MonoBehaviour
     private RaycastHit _colliderHit;
     [SerializeField] private float _maxInteractDistance;
     [SerializeField] LayerMask _layerToIgnore;
-
-    [SerializeField] GameObject marble;
 
     private void Awake()
     {

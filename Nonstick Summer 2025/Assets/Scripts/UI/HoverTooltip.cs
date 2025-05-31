@@ -6,11 +6,13 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
+using NaughtyAttributes;
 
 public class HoverTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private string text;
 
+    [Required]
     [SerializeField] private CanvasGroup tooltipGroup;
     private TMP_Text tooltipText;
 
@@ -69,8 +71,7 @@ public class HoverTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             return;
 
         // If user is selecting this gameobject
-        var selected = UnityEditor.Selection.activeTransform;
-        if (UnityEditor.Selection.activeTransform != null && (selected == this.transform || selected.IsChildOf(this.transform)))
+        if (StaticUtilities.Editor_SelectingSelfOrChild(this.transform))
             Open();
         else
             StaticUtilities.DisableCanvasGroup(tooltipGroup);

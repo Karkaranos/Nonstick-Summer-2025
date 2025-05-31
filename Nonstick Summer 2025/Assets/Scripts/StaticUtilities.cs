@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public static class StaticUtilities
 {
@@ -37,15 +38,32 @@ public static class StaticUtilities
 
     public static void EnableCursor()
     {
-        Cursor.visible = true;
+        UnityEngine.Cursor.visible = true;
         // Free mouse if editor, locked to window if in a build. For the sake of debugging because oh my god
-        Cursor.lockState = Application.isEditor ? CursorLockMode.None : CursorLockMode.Confined;
+        UnityEngine.Cursor.lockState = Application.isEditor ? CursorLockMode.None : CursorLockMode.Confined;
     }
 
     public static void DisableCursor()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        UnityEngine.Cursor.visible = false;
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
     }
     #endregion
+
+#if UNITY_EDITOR
+    #region Debug
+
+    /// <summary>
+    /// (Editor only) Returns true if the user is selecting parent, or any of its children
+    /// </summary>
+    /// <param name="parent"></param>
+    /// <returns></returns>
+    public static bool Editor_SelectingSelfOrChild(Transform parent)
+    {
+        var selected = UnityEditor.Selection.activeTransform;
+        return UnityEditor.Selection.activeTransform != null &&
+            (selected == parent || selected.IsChildOf(parent));
+    }
+    #endregion
+#endif
 }

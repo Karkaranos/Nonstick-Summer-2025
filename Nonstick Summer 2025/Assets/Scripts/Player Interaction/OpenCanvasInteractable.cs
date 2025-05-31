@@ -9,7 +9,6 @@ public class OpenCanvasInteractable : MonoBehaviour, IInteractable
 
     [Tooltip("Can be left null if you don't want the camera to move.")]
     [SerializeField]
-    [Required("Leaving this null means player camera wont lock onto an object (which is okay)")]
     private Transform cameraAnchor;
 
     public void Interact(GameObject player)
@@ -17,15 +16,16 @@ public class OpenCanvasInteractable : MonoBehaviour, IInteractable
         UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor);
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OnDrawGizmos()
     {
-        
-    }
+        if (cameraAnchor == null)
+            return;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (!StaticUtilities.Editor_SelectingSelfOrChild(this.transform))
+            return;
+
+        Gizmos.color = Color.blue; // blue becuase the unity camera icon color is blue
+        Gizmos.DrawRay(cameraAnchor.position, cameraAnchor.forward);
+        Gizmos.DrawWireSphere(cameraAnchor.position, 0.25f);
     }
 }

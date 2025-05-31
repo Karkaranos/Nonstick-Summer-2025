@@ -6,10 +6,15 @@ public class UITransitionManager
 
     private static GameObject currentCanvasReference;
     private static Transform oldCameraAnchorPoint;
+    private static Vector3 oldCameraLocalPosition;
+    private static Quaternion oldCameraLocalRotation;
+
+    private static MeshRenderer playerMesh;
+    private static Transform playerCamTransform => GameManager.playerCameraRef.transform;
 
     public UITransitionManager()
     {
-
+        playerMesh = GameObject.FindFirstObjectByType<PlayerMovement>().GetComponentInChildren<MeshRenderer>();
     }
 
     public static void OpenMenu(GameObject canvasPrefab, Transform cameraAnchor = null)
@@ -21,10 +26,21 @@ public class UITransitionManager
         }
 
         PlayerInMenu = true;
-        oldCameraAnchorPoint = GameManager.playerCameraRef.transform.parent;
 
-        if(cameraAnchor != null)
+        // hide player model
+        if(playerMesh != null) playerMesh.enabled = false;
+
+        // move camera
+        oldCameraAnchorPoint = playerCamTransform.parent; // these still need to be set, even if there is no camera anchor
+        oldCameraLocalPosition = playerCamTransform.localPosition;
+        oldCameraLocalRotation = playerCamTransform.localRotation;
+        if (cameraAnchor != null)
+        {
             GameManager.playerCameraRef.transform.SetParent(cameraAnchor);
+            playerCamTransform.localPosition = Vector3.zero;
+            playerCamTransform.localRotation = Quaternion.identity;
+        }
+
 
         StaticUtilities.EnableCursor();
 
@@ -35,7 +51,13 @@ public class UITransitionManager
     {
         PlayerInMenu = false;
 
+        // unhide player model
+        if (playerMesh != null) playerMesh.enabled = true;
+
+        // move camera back
         GameManager.playerCameraRef.transform.SetParent(oldCameraAnchorPoint);
+        playerCamTransform.localPosition = oldCameraLocalPosition;
+        playerCamTransform.localRotation = oldCameraLocalRotation;
         oldCameraAnchorPoint = null;
         
         if(currentCanvasReference != null)

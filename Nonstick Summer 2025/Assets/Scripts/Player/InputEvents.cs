@@ -49,6 +49,8 @@ public class InputEvents : Singleton<InputEvents>
         InitializeActions();
     }
 
+
+
     void InitializeActions()
     {
         var map = playerInput.currentActionMap;
@@ -100,6 +102,7 @@ public class InputEvents : Singleton<InputEvents>
         if(RightClickPressed) RightClickHeld?.Invoke();
         if(InteractPressed) InteractHeld?.Invoke();
     }
+
     private void OnDisable()
     {
         Move.started -= ctx => ActionStarted(ref MovePressed, MoveStarted);

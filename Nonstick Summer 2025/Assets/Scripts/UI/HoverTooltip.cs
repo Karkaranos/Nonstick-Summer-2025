@@ -10,14 +10,14 @@ using NaughtyAttributes;
 
 public class HoverTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] private string text;
+    [ResizableTextArea]
+    [SerializeField] protected string text;
 
     [Required]
     [SerializeField] private CanvasGroup tooltipGroup;
     private TMP_Text tooltipText;
 
     private static HoverTooltip currentTooltip;
-    private bool mouseOver = false;
 
     void Start()
     {
@@ -45,8 +45,6 @@ public class HoverTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             tooltipText.text = GetText() ;
 
         StaticUtilities.EnableCanvasGroup(tooltipGroup);
-
-        mouseOver = true;
     }
 
     public void Close()
@@ -55,11 +53,9 @@ public class HoverTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             currentTooltip = null;
 
         StaticUtilities.DisableCanvasGroup(tooltipGroup);
-
-        mouseOver = false;
     }
 
-    public string GetText()
+    public virtual string GetText()
     {
         // better text getting system coming soon
         return text;

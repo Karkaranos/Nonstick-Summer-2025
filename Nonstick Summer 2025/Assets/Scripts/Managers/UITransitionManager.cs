@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class UITransitionManager
 {
+    public static UITransitionManager Instance => GameManager.UITransitionManagerReference;
+
     public static bool PlayerInMenu = false;
 
     private static GameObject currentCanvasReference;
@@ -14,7 +16,7 @@ public class UITransitionManager
 
     public UITransitionManager()
     {
-        playerMesh = GameObject.FindFirstObjectByType<PlayerMovement>().GetComponentInChildren<MeshRenderer>();
+        playerMesh = GameObject.FindFirstObjectByType<PlayerMovement>()?.GetComponentInChildren<MeshRenderer>();
     }
 
     public static void OpenMenu(GameObject canvasPrefab, Transform cameraAnchor = null)

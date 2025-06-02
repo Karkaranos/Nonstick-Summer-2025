@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
@@ -6,15 +7,31 @@ public class GameManager : Singleton<GameManager>
     public static Camera playerCameraRef;
 
     public static UITransitionManager UITransitionManagerReference;
+    public static CardStyleManager CardStyleManagerReference;
+
+    [Foldout("Card Styles")] [SerializeField] private CardValueStyle 
+        Card_YellowStyle, Card_RedStyle, Card_BlueStyle,
+        Card_Intention1Style, Card_Intention2Style, Card_Intention3Style; 
+    //[Foldout("Card Styles")] [SerializeField] private CardValueStyle Card_RedColor;
+    //[Foldout("Card Styles")] [SerializeField] private CardValueStyle Card_BlueColor;
+
+    [Header("Intention Sprites")]
+    [Foldout("Card Styles")] [SerializeField] private Sprite Card_Intention1Sprite;
+    [Foldout("Card Styles")] [SerializeField] private Sprite Card_Intention2Sprite;
+    [Foldout("Card Styles")] [SerializeField] private Sprite Card_Intention3Sprite;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
 
-        playerTransformRef = FindFirstObjectByType<PlayerMovement>().transform;
-        playerCameraRef = FindFirstObjectByType<PlayerCamera>().playerCamera;
+        playerTransformRef = FindFirstObjectByType<PlayerMovement>()?.transform;
+        playerCameraRef = FindFirstObjectByType<PlayerCamera>()?.playerCamera;
 
         UITransitionManagerReference = new UITransitionManager();
+        CardStyleManagerReference = new CardStyleManager(Card_YellowStyle, Card_RedStyle, Card_BlueStyle,
+            Card_Intention1Style, Card_Intention2Style, Card_Intention3Style,
+            Card_Intention1Sprite, Card_Intention2Sprite, Card_Intention3Sprite);
     }
 }

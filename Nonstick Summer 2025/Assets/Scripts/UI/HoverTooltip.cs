@@ -7,17 +7,22 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 using NaughtyAttributes;
+using System.Collections;
 
 public class HoverTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] private string text;
+    [ResizableTextArea]
+    [SerializeField] protected string text;
 
     [Required]
     [SerializeField] private CanvasGroup tooltipGroup;
     private TMP_Text tooltipText;
 
     private static HoverTooltip currentTooltip;
-    private bool mouseOver = false;
+    private bool mouseOver;
+
+    private const float clooseTooltipCooldown = 0.05f;
+    private Coroutine closingTooltipCoroutine;
 
     void Start()
     {
@@ -27,12 +32,17 @@ public class HoverTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        mouseOver = true;
+        if (closingTooltipCoroutine != null)
+            StopCoroutine(closingTooltipCoroutine);
+
         Open();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Close();
+        mouseOver=false;
+        StartCoroutine(TryCloseTooltipDelay());
     }
 
     public void Open()
@@ -45,8 +55,6 @@ public class HoverTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             tooltipText.text = GetText() ;
 
         StaticUtilities.EnableCanvasGroup(tooltipGroup);
-
-        mouseOver = true;
     }
 
     public void Close()
@@ -55,15 +63,30 @@ public class HoverTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             currentTooltip = null;
 
         StaticUtilities.DisableCanvasGroup(tooltipGroup);
-
-        mouseOver = false;
     }
 
-    public string GetText()
+    /// <summary>
+    /// Close the tooltip after a cooldown to give the player time to move their mouse over to the tooltip if they want.
+    /// Cuz like, GOD FORBID their mouse leave the ui element for even a single second right
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator TryCloseTooltipDelay()
+    {
+        yield return new WaitForSeconds(clooseTooltipCooldown);
+
+        if (mouseOver)
+            yield break; // exit early
+
+        Close();
+        closingTooltipCoroutine = null;
+    }
+
+    public virtual string GetText()
     {
         // better text getting system coming soon
         return text;
     }
+
 
     void OnDrawGizmos()
     {
@@ -77,4 +100,6 @@ public class HoverTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             StaticUtilities.DisableCanvasGroup(tooltipGroup);
 
     }
+
+    
 }

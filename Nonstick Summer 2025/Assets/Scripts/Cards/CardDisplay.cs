@@ -2,11 +2,14 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using NaughtyAttributes;
+using TMPro;
 
 public class CardDisplay : MonoBehaviour
 {
+    [BoxGroup("UI Components")][SerializeField] TMP_Text EmotionText;
+    [BoxGroup("UI Components")][SerializeField] TMP_Text IntentionText;
+    [BoxGroup("UI Components")][SerializeField] Image CardBackground;
     [BoxGroup("UI Components")] [SerializeField] Image IntentionImage;
-    [BoxGroup("UI Components")] [SerializeField] Image CardBackground;
 
     [SerializeField] [Tooltip("Set this for debug only")]
     private CardData card;
@@ -35,12 +38,15 @@ public class CardDisplay : MonoBehaviour
             return;
         }
 
+        if (GameManager.CardStyleManagerReference == null)
+            return;
+
+        EmotionText.text = CardStyleManager.GetEmotionStyle(card).DisplayName;
+        IntentionText.text = CardStyleManager.GetIntentionStyle(card).DisplayName;
         IntentionImage.sprite = CardStyleManager.GetIntentionSprite(card);
         CardBackground.color = CardStyleManager.GetEmotionColor(card);
 
         // maybe play a lil animation? (add a parameter?)
-
-
     }
 
 }

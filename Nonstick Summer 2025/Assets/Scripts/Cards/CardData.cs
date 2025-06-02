@@ -10,9 +10,9 @@ public class CardData : ScriptableObject
     [SerializeField][Label("Energy Cost")] private int _energyCost;
 
     [OnValueChanged("Debug_InvokeOnCardValueChanged")]
-    [SerializeField] [Label("Intention")] private CardIntention _intention;
+    [SerializeField][Label("Emotion")] private CardEmotion _emotion;
     [OnValueChanged("Debug_InvokeOnCardValueChanged")]
-    [SerializeField] [Label("Emotion")] private CardEmotion _emotion;
+    [SerializeField] [Label("Intention")] private CardIntention _intention;
 
     // modifiers later?
 

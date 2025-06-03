@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Branch0
+  m_EditorClassIdentifier: 
+  Option1:
+    BranchingDialogue: {fileID: 11400000}
+    PlayerDialogue: I love you, Mom!
+  Option2:
+    BranchingDialogue: {fileID: 11400000}
+    PlayerDialogue: Ugh. I love you, or whatever.
+  Option3:
+    BranchingDialogue: {fileID: 11400000}
+    PlayerDialogue: I love you...
+  Option4:
+    BranchingDialogue: {fileID: 11400000}
+    PlayerDialogue: Haha. I hate you. You know that?
+  Option5:
+    BranchingDialogue: {fileID: 11400000}
+    PlayerDialogue: I HATE YOU.
+  Option6:
+    BranchingDialogue: {fileID: 11400000}
+    PlayerDialogue: I hate you...
+  Option7:
+    BranchingDialogue: {fileID: 11400000}
+    PlayerDialogue: I miss you!
+  Option8:
+    BranchingDialogue: {fileID: 11400000}
+    PlayerDialogue: I can't believe that I actually MISS you.
+  Option9:
+    BranchingDialogue: {fileID: 11400000}
+    PlayerDialogue: I miss you. I miss you so, so much.
+  dialogue:
+  - BranchingDialogue: {fileID: 11400000}
+    Dialogue: Welcome home, honey!
+    Portrait: {fileID: 0}
+    End: 0
+  - BranchingDialogue: {fileID: 11400000}
+    Dialogue: Light of my life.
+    Portrait: {fileID: 0}
+    End: 0
+  - BranchingDialogue: {fileID: 11400000}
+    Dialogue: Apple of my eye.
+    Portrait: {fileID: 0}
+    End: 0
+  - BranchingDialogue: {fileID: 11400000}
+    Dialogue: Etceterea.
+    Portrait: {fileID: 0}
+    End: 0
+  - BranchingDialogue: {fileID: 11400000}
+    Dialogue: Aw! And I love you, too!
+    Portrait: {fileID: 0}
+    End: 0
+  - BranchingDialogue: {fileID: 11400000}
+    Dialogue: Well! That wasn't very nice.
+    Portrait: {fileID: 0}
+    End: 0
+  - BranchingDialogue: {fileID: 11400000}
+    Dialogue: ...Are you alright, sweetheart?
+    Portrait: {fileID: 0}
+    End: 0
+  - BranchingDialogue: {fileID: 11400000}
+    Dialogue: Aw. You have no idea how much I miss you when you're not here.
+    Portrait: {fileID: 0}
+    End: 0

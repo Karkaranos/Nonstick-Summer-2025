@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class Deck
 {
     #region Variables
-    private List<CardData> playerDeck;
+    [SerializeField] private List<CardData> playerDeck = new List<CardData>();
 
     public List<CardData> PlayerDeck { get => playerDeck;}
     #endregion
@@ -19,7 +19,9 @@ public class Deck
     /// <param name="newCard">The card to add to the deck</param>
     public void Add(CardData newCard)
     {
+        //Debug.Log("Formerly " + playerDeck.Count + " cards");
         playerDeck.Add(newCard);
+        //Debug.Log("Now " + playerDeck.Count + " cards");
     }
 
     /// <summary>
@@ -28,7 +30,13 @@ public class Deck
     /// <param name="toRemove">The card to remove from the deck</param>
     public void Remove(CardData toRemove)
     {
-        playerDeck.Remove(toRemove);
+        Debug.Log(playerDeck.Count);
+        if (playerDeck.Count > 0)
+        {
+            playerDeck.Remove(toRemove);
+            return;
+        }
+        throw new System.Exception("No cards in Deck");
     }
 
     /// <summary>
@@ -49,29 +57,38 @@ public class Deck
     /// <returns></returns>
     public CardData GetTop()
     {
-        CardData toReturn = playerDeck[0];
-        playerDeck.RemoveAt(0);
-        return toReturn;
+        if(playerDeck.Count >= 0)
+        {
+            CardData toReturn = playerDeck[0];
+            playerDeck.RemoveAt(0);
+            //Debug.Log(playerDeck.Count + " cards left");
+            return toReturn;
+        }
+        throw new System.Exception("No cards in Deck");
     }
 
+
     /// <summary>
-    /// 
+    /// Shuffles the deck
     /// </summary>
-    public void Shuffle()
+    /// <returns>Returns the shuffled Deck as type Deck</returns>
+    public Deck Shuffle()
     {
         Deck preShuffle = GetCopy();
         int numOfElements = playerDeck.Count;
         int newIndex = 0;
-        WipeDeckElements(this);
+        bool[] usedSpace = new bool[numOfElements];
         for(int i=0; i<numOfElements; i++)
         {
             do
             {
                 newIndex = Random.Range(0, numOfElements);
 
-            } while (playerDeck[newIndex].Emotion != CardEmotion.NotSelected);
-            playerDeck[newIndex] = preShuffle.playerDeck[newIndex];
+            } while (usedSpace[newIndex] == true);
+            playerDeck[newIndex] = preShuffle.playerDeck[i];
+            usedSpace[newIndex] = true;
         }
+        return this;
     }
 
     private void WipeDeckElements(Deck deck)

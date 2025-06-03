@@ -1,3 +1,16 @@
+/*****************************************************************************
+// File Name :          Deck.cs
+// Author :             Cade R. Naylor
+// Creation Date :      June 2, 2025
+//
+// Brief Description :  Basic functionality for the game deck
+                            - Card Addition
+                            - Card Removal
+                            - Card Updating
+                            - Shuffling
+                            - Deck Copying
+                            - Top Retrieval
+*****************************************************************************/
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;

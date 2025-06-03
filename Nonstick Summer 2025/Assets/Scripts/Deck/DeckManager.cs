@@ -1,3 +1,10 @@
+/*****************************************************************************
+// File Name :         DeckManager.cs
+// Author :            Cade R. Naylor
+// Creation Date :     June 3, 2025
+//
+// Brief Description :  Instance to handle all deck events for any deck
+*****************************************************************************/
 using UnityEngine;
 using System.Collections;
 

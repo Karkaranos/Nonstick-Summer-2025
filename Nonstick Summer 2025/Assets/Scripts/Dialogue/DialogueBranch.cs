@@ -13,8 +13,10 @@ public class DialogueBranch : ScriptableObject
     //assign per npc/"moment"?? swap between branches or continue old ones???
 
     [SerializeField]
-    DialogueOption Option1, Option2, Option3, Option4, Option5,
+    [HideIf("End")] DialogueOption Option1, Option2, Option3, Option4, Option5,
         Option6, Option7, Option8, Option9;
+
+    public bool End;
 
     private static DialogueOption blank;
 

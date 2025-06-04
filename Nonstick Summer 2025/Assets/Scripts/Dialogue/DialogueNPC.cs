@@ -11,7 +11,7 @@ public class DialogueNPC
     public Sprite Portrait;
 
     //for progressing dialogue. depends on the list 
-    public int NextDialogueBox;
+    //public int NextDialogueBox;
 
     public bool End;
 

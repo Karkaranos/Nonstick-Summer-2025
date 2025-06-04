@@ -34,13 +34,13 @@ public class DeckTest : MonoBehaviour
 
         // Testing for shuffling deck
 
-        /*
+        
         DeckManager.ShuffleDeck(ref Instance.PlayerDeck);
         print("Shuffled");
 
         //print(Instance.PlayerDeck.PlayerDeck.Count);
 
-        for (int i = 0; i <= Instance.DeckManager.PlayerDeck.Count+1; i++)
+        for (int i = 0; i <= Instance.PlayerDeck.PlayerDeck.Count+1; i++)
         {
             CardData top = DeckManager.GetTopCard();
             print("Element " + i + ": Emotion-" + top.Emotion + " Intent-" + top.Intention);
@@ -49,7 +49,7 @@ public class DeckTest : MonoBehaviour
         foreach (CardData c in testVals)
         {
             DeckManager.AddCard(c);
-        }*/
+        }
 
         //TODO: Fix Duplication
 
@@ -69,6 +69,7 @@ public class DeckTest : MonoBehaviour
 
         // Testing removal from deck
 
+        /*
         print("Removing an element");
         DeckManager.RemoveCard(testVals[0]);
 
@@ -79,7 +80,7 @@ public class DeckTest : MonoBehaviour
             CardData top = DeckManager.GetTopCard(Instance.PlayerDeck);
             print("Element " + i + ": Emotion-" + top.Emotion + " Intent-" + top.Intention);
         }
-        
+        */
 
 
     }

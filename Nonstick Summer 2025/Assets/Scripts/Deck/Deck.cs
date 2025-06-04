@@ -33,7 +33,7 @@ public class Deck
     public void Add(CardData newCard)
     {
         //Debug.Log("Formerly " + playerDeck.Count + " cards");
-        playerDeck.Add(newCard);
+        playerDeck.Add(newCard.CopyCard(newCard));
         //Debug.Log("Now " + playerDeck.Count + " cards");
     }
 
@@ -97,7 +97,7 @@ public class Deck
                 newIndex = Random.Range(0, numOfElements);
 
             } while (usedSpace[newIndex] == true);
-            playerDeck[newIndex] = preShuffle.playerDeck[i];
+            playerDeck[newIndex] = playerDeck[0].CopyCard(preShuffle.playerDeck[i]);
             usedSpace[newIndex] = true;
         }
         return this;

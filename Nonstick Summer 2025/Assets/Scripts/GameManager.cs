@@ -8,6 +8,7 @@ public class GameManager : Singleton<GameManager>
 
     public static UITransitionManager UITransitionManagerReference;
     public static CardStyleManager CardStyleManagerReference;
+    public static DeckManager DeckManagerReference;
 
     [Foldout("Card Styles")] [SerializeField] private CardValueStyle 
         Card_YellowStyle, Card_RedStyle, Card_BlueStyle,
@@ -33,5 +34,6 @@ public class GameManager : Singleton<GameManager>
         CardStyleManagerReference = new CardStyleManager(Card_YellowStyle, Card_RedStyle, Card_BlueStyle,
             Card_Intention1Style, Card_Intention2Style, Card_Intention3Style,
             Card_Intention1Sprite, Card_Intention2Sprite, Card_Intention3Sprite);
+        DeckManagerReference = new DeckManager();
     }
 }

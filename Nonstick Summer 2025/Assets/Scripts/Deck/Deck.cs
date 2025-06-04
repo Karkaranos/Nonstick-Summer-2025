@@ -43,7 +43,6 @@ public class Deck
     /// <param name="toRemove">The card to remove from the deck</param>
     public void Remove(CardData toRemove)
     {
-        Debug.Log(playerDeck.Count);
         if (playerDeck.Count > 0)
         {
             playerDeck.Remove(toRemove);

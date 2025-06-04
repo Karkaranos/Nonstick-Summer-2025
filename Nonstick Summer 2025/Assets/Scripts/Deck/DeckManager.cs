@@ -20,7 +20,7 @@ public class DeckManager
     /// </summary>
     /// <param name="c">The card to be added</param>
     /// <param name="d">The deck to add to. Leave blank for Player's Deck</param>
-    public  void AddCard(CardData c, Deck d = null)
+    public static void AddCard(CardData c, Deck d = null)
     {
         CheckDeck(ref d);
         d.Add(c);
@@ -31,7 +31,7 @@ public class DeckManager
     /// </summary>
     /// <param name="c">The card to be removed</param>
     /// <param name="d">The deck to be removed from. Leave blank for Player's Deck</param>
-    public  void RemoveCard(CardData c, Deck d = null)
+    public static void RemoveCard(CardData c, Deck d = null)
     {
         CheckDeck(ref d);
         d.Remove(c);
@@ -43,7 +43,7 @@ public class DeckManager
     /// <param name="oldCard">The old values of the card</param>
     /// <param name="newCard">The new values of the card</param>
     /// <param name="d">The deck to update the card in. Leave blank for Player's Deck</param>
-    public  void UpdateCard(CardData oldCard, CardData newCard, Deck d = null)
+    public static void UpdateCard(CardData oldCard, CardData newCard, Deck d = null)
     {
         CheckDeck(ref d);
         d.UpdateCard(oldCard, newCard);
@@ -54,7 +54,7 @@ public class DeckManager
     /// </summary>
     /// <param name="d">The deck to create a copy of. Leave blank for Player's Deck</param>
     /// <returns>The copied deck</returns>
-    public  Deck CopyDeck(Deck d = null)
+    public static Deck CopyDeck(Deck d = null)
     {
         CheckDeck(ref d);
         return d.GetCopy();
@@ -65,7 +65,7 @@ public class DeckManager
     /// </summary>
     /// <param name="d">The deck to get the top card of. Leave blank for Player's Deck</param>
     /// <returns>The top card of the specified deck</returns>
-    public  CardData GetTopCard(Deck d = null)
+    public static CardData GetTopCard(Deck d = null)
     {
         CheckDeck(ref d);
         return d.GetTop();
@@ -75,7 +75,7 @@ public class DeckManager
     /// Shuffles any deck
     /// </summary>
     /// <param name="d">The deck to be shuffled. If using Player's Deck, must specify it</param>
-    public void ShuffleDeck(ref Deck d)
+    public static void ShuffleDeck(ref Deck d)
     {
         CheckDeck(ref d);
         d = d.Shuffle();
@@ -88,13 +88,13 @@ public class DeckManager
     /// If no deck was provided, set the affected deck to the Player's Deck
     /// </summary>
     /// <param name="d">The optional deck</param>
-    private  void CheckDeck(ref Deck d)
+    private static void CheckDeck(ref Deck d)
     {
         if (d!=null)
         {
             return;
         }
-        d = PlayerDeck;
+        d = Instance.PlayerDeck;
     }
     #endregion
 

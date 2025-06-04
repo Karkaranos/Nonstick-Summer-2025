@@ -16,53 +16,53 @@ public class DeckTest : MonoBehaviour
     {
         foreach(CardData c in testVals)
         {
-            Instance.AddCard(c);
+            DeckManager.AddCard(c);
         }
 
         //print(Instance.PlayerDeck.PlayerDeck.Count);
 
         for (int i=0; i<= Instance.PlayerDeck.PlayerDeck.Count+1; i++)
         {
-            CardData top = Instance.GetTopCard();
+            CardData top = DeckManager.GetTopCard();
             print("Element " + i + ": Emotion-" + top.Emotion + " Intent-" + top.Intention);
         }
 
         foreach (CardData c in testVals)
         {
-            Instance.AddCard(c);
+            DeckManager.AddCard(c);
         }
 
         // Testing for shuffling deck
 
         /*
-        Instance.ShuffleDeck(ref Instance.PlayerDeck);
+        DeckManager.ShuffleDeck(ref Instance.PlayerDeck);
         print("Shuffled");
 
         //print(Instance.PlayerDeck.PlayerDeck.Count);
 
-        for (int i = 0; i <= Instance.PlayerDeck.PlayerDeck.Count+1; i++)
+        for (int i = 0; i <= Instance.DeckManager.PlayerDeck.Count+1; i++)
         {
-            CardData top = Instance.GetTopCard();
+            CardData top = DeckManager.GetTopCard();
             print("Element " + i + ": Emotion-" + top.Emotion + " Intent-" + top.Intention);
         }
 
         foreach (CardData c in testVals)
         {
-            Instance.AddCard(c);
+            DeckManager.AddCard(c);
         }*/
 
         //TODO: Fix Duplication
 
         /* 
         print("Adding a duplicate element");
-        Instance.AddCard(testVals[0]);
-        //Instance.RemoveCard(testVals[0]);
+        DeckManager.AddCard(testVals[0]);
+        //DeckManager.RemoveCard(testVals[0]);
 
-        print(Instance.PlayerDeck.PlayerDeck.Count);
+        print(DeckManager.PlayerDeck.PlayerDeck.Count);
 
         for (int i = 0; i <= Instance.PlayerDeck.PlayerDeck.Count+1; i++)
         {
-            CardData top = Instance.GetTopCard(Instance.PlayerDeck);
+            CardData top = DeckManager.GetTopCard(Instance.PlayerDeck);
             print("Element " + i + ": Emotion-" + top.Emotion + " Intent-" + top.Intention);
         }*/
 
@@ -70,13 +70,13 @@ public class DeckTest : MonoBehaviour
         // Testing removal from deck
 
         print("Removing an element");
-        Instance.RemoveCard(testVals[0]);
+        DeckManager.RemoveCard(testVals[0]);
 
         //print(Instance.PlayerDeck.PlayerDeck.Count);
 
         for (int i = 0; i <= Instance.PlayerDeck.PlayerDeck.Count + 1; i++)
         {
-            CardData top = Instance.GetTopCard(Instance.PlayerDeck);
+            CardData top = DeckManager.GetTopCard(Instance.PlayerDeck);
             print("Element " + i + ": Emotion-" + top.Emotion + " Intent-" + top.Intention);
         }
         

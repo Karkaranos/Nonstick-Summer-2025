@@ -3,8 +3,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using NaughtyAttributes;
 using TMPro;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
-public class CardDisplay : MonoBehaviour
+public class CardDisplay : MonoBehaviour, IPointerClickHandler
 {
     [BoxGroup("UI Components")][SerializeField] TMP_Text EmotionText;
     [BoxGroup("UI Components")][SerializeField] TMP_Text IntentionText;
@@ -13,6 +15,8 @@ public class CardDisplay : MonoBehaviour
 
     [SerializeField] [Tooltip("Set this for debug only")]
     private CardData card;
+
+    public UnityEvent OnCardClicked;
 
     private void Start()
     {
@@ -27,6 +31,11 @@ public class CardDisplay : MonoBehaviour
         card.OnCardValueChanged += RefreshDisplay;
 
         RefreshDisplay();
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        OnCardClicked.Invoke();
     }
 
     [Button]
@@ -48,5 +57,4 @@ public class CardDisplay : MonoBehaviour
 
         // maybe play a lil animation? (add a parameter?)
     }
-
 }

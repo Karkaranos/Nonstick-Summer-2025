@@ -33,6 +33,16 @@ public class CardData : ScriptableObject
     [HideInInspector]
     public Action OnCardValueChanged;
 
+    public CardData CopyCard(CardData card)
+    {
+        CardData copy = ScriptableObject.CreateInstance<CardData>();
+        copy._emotion = card._emotion;
+        copy._intention = card._intention;
+        copy._energyCost = card._energyCost;
+
+        return copy;
+    }
+
     #region debug
     private void Debug_InvokeOnCardValueChanged()
     {

@@ -51,6 +51,13 @@ public static class StaticUtilities
     #endregion
 
     #region Math
+    /// <summary>
+    /// Combines two arrays of any type
+    /// </summary>
+    /// <typeparam name="T">Variable type for arrays</typeparam>
+    /// <param name="arr1">The first array</param>
+    /// <param name="arr2">The second array</param>
+    /// <returns>The combined array, with elements from array 1 first</returns>
     public static T[] AddArrays<T>(T[] arr1, T[] arr2)
     {
         int index = 0;

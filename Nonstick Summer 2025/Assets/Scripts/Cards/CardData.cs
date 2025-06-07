@@ -3,7 +3,7 @@
 * Author :            Toby
 * Creation Date :     June 6, 2025
 *
-* Brief Description : Data container for _cards.
+* Brief Description : Data container for cards.
 *
 * TODO:
 * modifier implementation (modify getter functions)

@@ -42,6 +42,22 @@ public class DialogueManager
     public static int MaxEnergy;
     public static int DefaultCardsInHand { get; private set; }
 
+    #region Getters and setters
+
+    public static IEnumerator SetCurrentEnergy(int energy)
+    {
+        energy = Mathf.Min(energy, MaxEnergy);
+        if (_currentEnergy == energy) yield break;
+
+        _currentEnergy = energy;
+        if (DialougeUIController.Instance != null)
+            yield return DialougeUIController.Instance.UpdateEnergy(energy); // wait for animation to finish
+
+        yield return TryEnergyLossDeath();
+    }
+
+    #endregion
+
     public DialogueManager(int defaultEnergy, int energyGainedPerRound, int energyGainedIfSilent, int maxEnergy, int defaultCardsInHand)
     {
         _defaultEnergy = defaultEnergy;
@@ -96,20 +112,5 @@ public class DialogueManager
         yield return null;
     }
 
-    #region Getters and setters
-
-    public static IEnumerator SetCurrentEnergy(int energy)
-    {
-        energy = Mathf.Min(energy, MaxEnergy);
-        if (_currentEnergy == energy) yield break;
-
-        _currentEnergy = energy;
-        if(DialougeUIController.Instance != null)
-            yield return DialougeUIController.Instance.UpdateEnergy(energy); // wait for animation to finish
-
-        yield return TryEnergyLossDeath();
-    }
-
-
-    #endregion
+    
 }

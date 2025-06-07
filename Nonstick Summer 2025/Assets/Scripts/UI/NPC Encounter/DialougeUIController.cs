@@ -5,6 +5,8 @@
 *
 * Brief Description : "FrontEnd" script for dialogue controller. See DialogueManager
 * for backend.
+* This script should be listening to player input, handing it off to DialogueManager.
+* DialogueManager then tells this script when to update ui stuff.
 * Should ideally be bridging the gap between a lot of modular UI scripts, instead
 * of handling any actual UI logic.
 * This script is a singleton for easy access, although this script will not always be

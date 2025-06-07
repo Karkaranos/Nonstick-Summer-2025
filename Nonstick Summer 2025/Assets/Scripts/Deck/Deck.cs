@@ -22,6 +22,9 @@ public class Deck
     [SerializeField] private List<CardData> playerDeck = new List<CardData>();
 
     public List<CardData> PlayerDeck { get => playerDeck;}
+
+
+
     #endregion
 
     #region Functions
@@ -61,24 +64,6 @@ public class Deck
         int cardRef = playerDeck.FindIndex(x=> x == oldCard);
         playerDeck[cardRef] = newCard;
     }
-
-
-    /// <summary>
-    /// Pops the top card in the deck
-    /// </summary>
-    /// <returns></returns>
-    public CardData GetTop()
-    {
-        if(playerDeck.Count >= 0)
-        {
-            CardData toReturn = playerDeck[0];
-            playerDeck.RemoveAt(0);
-            //Debug.Log(playerDeck.Count + " cards left");
-            return toReturn;
-        }
-        throw new System.Exception("No cards in Deck");
-    }
-
 
     /// <summary>
     /// Shuffles the deck
@@ -126,5 +111,122 @@ public class Deck
         }
         return deckCopy;
     }
+
+    // Peeks and Pops
+    #region Viewing Cards
+
+    /// <summary>
+    /// Pops the top card in the deck
+    /// </summary>
+    /// <returns></returns>
+    public CardData Pop()
+    {
+        if (playerDeck.Count >= 0)
+        {
+            CardData toReturn = playerDeck[0];
+            playerDeck.RemoveAt(0);
+            //Debug.Log(playerDeck.Count + " cards left");
+            return toReturn;
+        }
+        throw new System.Exception("No cards in Deck");
+    }
+
+    public CardData Peek()
+    {
+        if (playerDeck.Count >= 0)
+        {
+            return playerDeck[0];
+        }
+        throw new System.Exception("No cards in Deck");
+    }
+
+    /// <summary>
+    /// Peeks and returns the top n cards
+    /// Will always return at least one card
+    /// </summary>
+    /// <param name="n">Number of cards to be returned</param>
+    /// <returns>An array with the top n cards, in order</returns>
+    public CardData[] PeekNCards(int n)
+    {
+        // Return at least the top card if n<0
+        if (n < 0)
+        {
+            return new CardData[] { Peek() };
+        }
+
+        // Returning n cards
+        if (playerDeck.Count >= n)
+        {
+            CardData[] result = new CardData[n];
+            for (int i = 0; i < n; i++)
+            {
+                result[i] = playerDeck[i];
+            }
+            Debug.Log("Peeking the top " + n + " cards.");
+            return result;
+        }
+
+        // Returning <n cards
+        else if (playerDeck.Count >= 0)
+        {
+            CardData[] result = new CardData[playerDeck.Count - 1];
+            for (int i = 0; i < playerDeck.Count; i++)
+            {
+                result[i] = playerDeck[i];
+            }
+            Debug.Log("Peeking the top " + playerDeck.Count + " values as there were fewer than " + n +
+                " cards available");
+            return result;
+        }
+
+        throw new System.Exception("No cards in Deck");
+    }
+
+    /// <summary>
+    /// Pops and returns the top n cards
+    /// Cards are removed from the deck
+    /// Will always return at least one card
+    /// </summary>
+    /// <param name="n">Number of cards to be returned</param>
+    /// <returns>An array with the top n cards, in order</returns>
+    public CardData[] PopNCards(int n)
+    {
+        // Return at least the top card if n<0
+        if (n < 0)
+        {
+            return new CardData[] { Pop() };
+        }
+
+        // Returning n cards
+        if (playerDeck.Count >= n)
+        {
+            CardData[] result = new CardData[n];
+            for (int i = 0; i < n; i++)
+            {
+                result[i] = Pop();
+            }
+            Debug.Log("Popping the top " + n + " cards.");
+            return result;
+        }
+
+        // Returning <n cards
+        else if (playerDeck.Count >= 0)
+        {
+            CardData[] result = new CardData[playerDeck.Count - 1];
+            for (int i = 0; i < playerDeck.Count; i++)
+            {
+                result[i] = Pop();
+            }
+            Debug.Log("Popping the top " + playerDeck.Count + " values as there were fewer than " + n +
+                " cards available");
+            return result;
+        }
+
+        throw new System.Exception("No cards in Deck");
+    }
+
+    #endregion
+
+
     #endregion
 }

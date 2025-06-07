@@ -50,6 +50,25 @@ public static class StaticUtilities
     }
     #endregion
 
+    #region Math
+    public static T[] AddArrays<T>(T[] arr1, T[] arr2)
+    {
+        int index = 0;
+        T[] result = new T[arr1.Length + arr2.Length];
+        for(int i=0; i<arr1.Length-1; i++)
+        {
+            result[index] = arr1[i];
+            index++;
+        }
+        for (int i = 0; i < arr2.Length-1; i++)
+        {
+            result[index] = arr2[i];
+            index++;
+        }
+        return result;
+    }
+    #endregion
+
 #if UNITY_EDITOR
     #region Debug
 

@@ -10,6 +10,8 @@ public class GameManager : Singleton<GameManager>
     public static CardStyleManager CardStyleManagerReference;
     public static DeckManager DeckManagerReference;
 
+    public static int MaxCardsVisibleInDeck = 7;
+
     [Foldout("Card Styles")] [SerializeField] private CardValueStyle 
         Card_YellowStyle, Card_RedStyle, Card_BlueStyle,
         Card_Intention1Style, Card_Intention2Style, Card_Intention3Style; 

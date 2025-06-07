@@ -23,7 +23,7 @@ public class DeckTest : MonoBehaviour
 
         for (int i=0; i<= Instance.PlayerDeck.PlayerDeck.Count+1; i++)
         {
-            CardData top = DeckManager.GetTopCard();
+            CardData top = DeckManager.PopTopCard();
             print("Element " + i + ": Emotion-" + top.Emotion + " Intent-" + top.Intention);
         }
 
@@ -42,7 +42,7 @@ public class DeckTest : MonoBehaviour
 
         for (int i = 0; i <= Instance.PlayerDeck.PlayerDeck.Count+1; i++)
         {
-            CardData top = DeckManager.GetTopCard();
+            CardData top = DeckManager.PopTopCard();
             print("Element " + i + ": Emotion-" + top.Emotion + " Intent-" + top.Intention);
         }
 
@@ -82,6 +82,7 @@ public class DeckTest : MonoBehaviour
         }
         */
 
+        FindObjectOfType<DeckDisplayer>().DisplayAllCards();
 
     }
 }

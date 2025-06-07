@@ -10,7 +10,6 @@
 * Processing _cards and dialogue progression (see task)
 * Visual feedback
 * Exiting combat
-* Losing combat if CurrentEnergy is <= 0
 * literally everything else
 * Call OnMomentStarted function at start of 'OnMomentStarted'
 * 
@@ -64,6 +63,9 @@ public class DialogueManager
     /// </summary>
     public static IEnumerator ProgressDialogue(CardData playedCard)
     {
+        if (_currentEnergy <= 0 && playedCard != null)
+            Debug.LogWarning("Card played with 0 energy");
+
         // reference for other programmers: 'yield return' stops this coroutine until the next coroutine is finished
         yield return SetCurrentEnergy(_currentEnergy + 
             (playedCard == null ? _energyGainedIfSilent: playedCard.EnergyCost)); // this could have been an if statement but noooooo i just had to be special

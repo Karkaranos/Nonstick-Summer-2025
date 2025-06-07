@@ -14,13 +14,13 @@ public class DeckTest : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        foreach(CardData c in testVals)
+        /*foreach(CardData c in testVals)
         {
             DeckManager.AddCard(c);
         }
 
         //print(Instance.PlayerDeck.PlayerDeck.Count);
-
+        
         for (int i=0; i<= Instance.PlayerDeck.PlayerDeck.Count+1; i++)
         {
             CardData top = DeckManager.PopTopCard();
@@ -30,11 +30,11 @@ public class DeckTest : MonoBehaviour
         foreach (CardData c in testVals)
         {
             DeckManager.AddCard(c);
-        }
+        }*/
 
         // Testing for shuffling deck
-
         
+        /*
         DeckManager.ShuffleDeck(ref Instance.PlayerDeck);
         print("Shuffled");
 
@@ -44,7 +44,7 @@ public class DeckTest : MonoBehaviour
         {
             CardData top = DeckManager.PopTopCard();
             print("Element " + i + ": Emotion-" + top.Emotion + " Intent-" + top.Intention);
-        }
+        }*/
 
         foreach (CardData c in testVals)
         {

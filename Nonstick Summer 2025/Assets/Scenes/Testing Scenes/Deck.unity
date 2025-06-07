@@ -683,10 +683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c69c5680f3c7dbc44856d1805a040c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentlyDisplayed: []
-  _visualDisplay: []
-  _dimensions: {x: 0, y: 0}
-  _bufferFromEdgeOfRegion: 10
+  _bufferFromEdgeOfRegion: 50
   _cardPrefab: {fileID: 1637363475462070288, guid: e2cdc7b280a72e042a5184d474c4e2dc, type: 3}
 --- !u!1 &1692684990
 GameObject:
@@ -721,6 +718,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6ac2c164d8055c04db47a6031bf810bf, type: 2}
   - {fileID: 11400000, guid: 7c1a773e2b183134e80ac0d4665e4cd4, type: 2}
   - {fileID: 11400000, guid: 11ff6cbb98905de49b8c296c03e41b2d, type: 2}
+  - {fileID: 11400000, guid: 90bba9c0711cd2543b798b56e379b0dd, type: 2}
+  - {fileID: 11400000, guid: 66f0f99302618cb43a2a8dbc6db4425c, type: 2}
 --- !u!4 &1692684992
 Transform:
   m_ObjectHideFlags: 0

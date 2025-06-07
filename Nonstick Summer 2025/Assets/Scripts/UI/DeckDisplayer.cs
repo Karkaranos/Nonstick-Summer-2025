@@ -7,16 +7,16 @@ public class DeckDisplayer : MonoBehaviour
     private static Deck PlayerDeckRef => GameManager.DeckManagerReference.PlayerDeck;
     private static int MaxDeckDisplaySize => GameManager.MaxCardsVisibleInDeck;
 
-    [SerializeField]private CardData[] _currentlyDisplayed;
-    [SerializeField]private List<GameObject> _visualDisplay = new List<GameObject>();
+    private CardData[] _currentlyDisplayed;
+    private List<GameObject> _visualDisplay = new List<GameObject>();
+    [SerializeField] private Vector2[] spawnPositions;
 
-    [SerializeField] private Vector2 _dimensions;
+    private Vector2 _dimensions;
     private Vector3 rectTransformCenter;
     //[SerializeField] private Vector2 _midpoint;
 
     [SerializeField] private float _bufferFromEdgeOfRegion = 10;
     [SerializeField] private GameObject _cardPrefab;
-    [SerializeField] private Vector2[] spawnPositions;
 
     private float scalar;
 
@@ -26,6 +26,7 @@ public class DeckDisplayer : MonoBehaviour
     private void Awake()
     {
         _dimensions = GetComponent<RectTransform>().sizeDelta;
+        _dimensions.x -= 300;   // okay i know magic numbers are bad. this number made things work
         rectTransformCenter = Camera.main.WorldToScreenPoint(transform.position);
     }
 
@@ -71,22 +72,23 @@ public class DeckDisplayer : MonoBehaviour
     private void GeneratePositions(ref Vector2[] positions, int start, int end)
     {
         Debug.Log(positions.Length + " v " + end);
-        positions[start] = new Vector2(rectTransformCenter.x-.5f*_dimensions.x + _bufferFromEdgeOfRegion, (.5f * _dimensions.y));
-        positions[end] = new Vector2(rectTransformCenter.x + .5f * _dimensions.x - _bufferFromEdgeOfRegion, (.5f * _dimensions.y));
+        positions[start] =  new Vector2(rectTransformCenter.x - .5f * _dimensions.x + _bufferFromEdgeOfRegion, (.5f * _dimensions.y));
+        positions[end] =    new Vector2(rectTransformCenter.x + .5f * _dimensions.x - _bufferFromEdgeOfRegion, (.5f * _dimensions.y));
         RecursivelyGeneratePositions(ref positions, start, end);
     }
 
     private Vector2[] RecursivelyGeneratePositions(ref Vector2[] positions, int start, int end)
     {
-        if(start >= end)
+
+
+        int midpoint = start + (end - start) / 2;
+        if (start >= end || midpoint == 0 || midpoint == positions.Length-1)
         {
             return positions;
         }
+        positions[midpoint] = new Vector2((positions[start].x + positions[end].x) / 2, (.5f * _dimensions.y));
 
-        int midpoint = start + (end - start) / 2;
-        positions[midpoint] = new Vector2((positions[start].x + positions[end].x) / 2, positions[start].y);
-
-        Vector2[] leftHalf = RecursivelyGeneratePositions(ref positions, start, midpoint-1);
+        Vector2[] leftHalf = RecursivelyGeneratePositions(ref positions, start, midpoint);
         Vector2[] rightHalf = RecursivelyGeneratePositions(ref positions, midpoint+1, end);
 
         return StaticUtilities.AddArrays(leftHalf, rightHalf);

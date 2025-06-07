@@ -11,17 +11,22 @@ public class DeckDisplayer : MonoBehaviour
     [SerializeField]private List<GameObject> _visualDisplay = new List<GameObject>();
 
     [SerializeField] private Vector2 _dimensions;
+    private Vector3 rectTransformCenter;
     //[SerializeField] private Vector2 _midpoint;
 
-    [SerializeField] private float _bufferFromEdgeOfRegion = 10f;
+    [SerializeField] private float _bufferFromEdgeOfRegion = 10;
     [SerializeField] private GameObject _cardPrefab;
+    [SerializeField] private Vector2[] spawnPositions;
+
+    private float scalar;
 
     /// <summary>
     /// This script had to be a monobehavior to get this
     /// </summary>
     private void Awake()
     {
-        _dimensions = .5f*GetComponent<RectTransform>().sizeDelta;
+        _dimensions = GetComponent<RectTransform>().sizeDelta;
+        rectTransformCenter = Camera.main.WorldToScreenPoint(transform.position);
     }
 
     public void DisplayAllCards()
@@ -30,7 +35,7 @@ public class DeckDisplayer : MonoBehaviour
 
         Deck copy = PlayerDeckRef.GetCopy();
         Debug.Log(copy.PlayerDeck.Count);
-        Vector2[] spawnPositions = new Vector2[copy.PlayerDeck.Count];
+        spawnPositions = new Vector2[copy.PlayerDeck.Count];
 
         GeneratePositions(ref spawnPositions, 0, copy.PlayerDeck.Count-1);
 
@@ -47,7 +52,7 @@ public class DeckDisplayer : MonoBehaviour
         }
 
         Deck copy = PlayerDeckRef.GetCopy();
-        Vector2[] spawnPositions = new Vector2[n];
+        spawnPositions = new Vector2[n];
 
         GeneratePositions(ref spawnPositions, 0, n-1);
 
@@ -66,8 +71,8 @@ public class DeckDisplayer : MonoBehaviour
     private void GeneratePositions(ref Vector2[] positions, int start, int end)
     {
         Debug.Log(positions.Length + " v " + end);
-        positions[start] = new Vector2(GetComponent<RectTransform>().offsetMin.x, (.5f * _dimensions.y));
-        positions[end] = new Vector2(transform.position.x+ _dimensions.x-_bufferFromEdgeOfRegion, (.5f * _dimensions.y));
+        positions[start] = new Vector2(rectTransformCenter.x-.5f*_dimensions.x + _bufferFromEdgeOfRegion, (.5f * _dimensions.y));
+        positions[end] = new Vector2(rectTransformCenter.x + .5f * _dimensions.x - _bufferFromEdgeOfRegion, (.5f * _dimensions.y));
         RecursivelyGeneratePositions(ref positions, start, end);
     }
 
@@ -92,7 +97,9 @@ public class DeckDisplayer : MonoBehaviour
         _currentlyDisplayed = cards;
         for(int i=0; i<cards.Length; i++)
         {
-            _visualDisplay.Add(Instantiate(_cardPrefab, position[i], Quaternion.identity, transform));
+            _visualDisplay.Add(Instantiate(_cardPrefab, Vector2.zero, Quaternion.identity, transform));
+            _visualDisplay[i].GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            _visualDisplay[i].transform.localPosition = position[i];
             _visualDisplay[i].GetComponent<CardDisplay>().SetCard(cards[i]);
         }
     }

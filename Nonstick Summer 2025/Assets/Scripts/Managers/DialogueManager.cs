@@ -7,7 +7,7 @@
 * (See documentation for better description)
 *
 * TODO:
-* Processing cards and dialogue progression (see task)
+* Processing _cards and dialogue progression (see task)
 * Visual feedback
 * Exiting combat
 * Losing combat if CurrentEnergy is <= 0
@@ -66,7 +66,7 @@ public class DialogueManager
     {
         // reference for other programmers: 'yield return' stops this coroutine until the next coroutine is finished
         yield return SetCurrentEnergy(_currentEnergy + 
-            (playedCard == null ?  : playedCard.EnergyCost)); // this could have been an if statement but noooooo i just had to be special
+            (playedCard == null ? _energyGainedIfSilent: playedCard.EnergyCost)); // this could have been an if statement but noooooo i just had to be special
 
         // TODO: see 'Progress Dialogue and Process Cards' task
         // hi jay
@@ -80,8 +80,7 @@ public class DialogueManager
     public static void OnMomentStarted()
     {
         CurrentEnergy = _defaultEnergy;
-        RemainingDeck = DeckManager.CopyDeck();
-        RemainingDeck.Shuffle();
+        RemainingDeck = DeckManager.CopyDeck().Shuffled();
         PlayerHand.Clear();
     }
 
@@ -97,14 +96,15 @@ public class DialogueManager
 
     #region Getters and setters
 
-
     public static IEnumerator SetCurrentEnergy(int energy)
     {
         energy = Mathf.Min(energy, MaxEnergy);
         if (_currentEnergy == energy) yield break;
+
         _currentEnergy = energy;
         if(DialougeUIController.Instance != null)
             yield return DialougeUIController.Instance.UpdateEnergy(energy); // wait for animation to finish
+
         yield return TryEnergyLossDeath();
     }
 

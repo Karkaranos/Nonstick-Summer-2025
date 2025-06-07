@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /*
- * Values associated with a cards intention/emotion.
+ * Values associated with a _cards intention/emotion.
  * Used for card display and tooltips
  */
 

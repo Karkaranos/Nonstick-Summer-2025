@@ -19,9 +19,9 @@ using System.Collections.Generic;
 public class Deck
 {
     #region Variables
-    [SerializeField] private List<CardData> cards = new List<CardData>();
+    [SerializeField] private List<CardData> _cards = new List<CardData>();
 
-    public List<CardData> Cards { get => cards;}
+    public List<CardData> Cards { get => _cards;}
     #endregion
 
     #region Functions
@@ -32,8 +32,8 @@ public class Deck
     /// <param name="newCard">The card to add to the deck</param>
     public void Add(CardData newCard)
     {
-        cards.Add(newCard/*.CopyCard(newCard)*/);  // commenting out CopyCard to bridge disconnect between copies of deck (in case player modifies a card)
-        Debug.Log(cards.Count + " cards in player deck");
+        _cards.Add(newCard/*.CopyCard(newCard)*/);  // commenting out CopyCard to bridge disconnect between copies of deck (in case player modifies a card)
+        Debug.Log(_cards.Count + " cards in player deck");
     }
 
     /// <summary>
@@ -42,9 +42,9 @@ public class Deck
     /// <param name="toRemove">The card to remove from the deck</param>
     public void Remove(CardData toRemove)
     {
-        if (cards.Count > 0)
+        if (_cards.Count > 0)
         {
-            cards.Remove(toRemove);
+            _cards.Remove(toRemove);
             return;
         }
         throw new System.Exception("No cards in Deck");
@@ -57,8 +57,8 @@ public class Deck
     /// <param name="newCard">The new card values</param>
     public void UpdateCard(CardData oldCard, CardData newCard)
     {
-        int cardRef = cards.FindIndex(x=> x == oldCard);
-        cards[cardRef] = newCard;
+        int cardRef = _cards.FindIndex(x=> x == oldCard);
+        _cards[cardRef] = newCard;
     }
 
 
@@ -68,11 +68,11 @@ public class Deck
     /// <returns></returns>
     public CardData GetTop()
     {
-        if(cards.Count >= 0)
+        if(_cards.Count >= 0)
         {
-            CardData toReturn = cards[0];
-            cards.RemoveAt(0);
-            //Debug.Log(cards.Count + " cards left");
+            CardData toReturn = _cards[0];
+            _cards.RemoveAt(0);
+            //Debug.Log(_cards.Count + " _cards left");
             return toReturn;
         }
         throw new System.Exception("No cards in Deck");
@@ -85,7 +85,7 @@ public class Deck
     public void Shuffle()
     {
         // refactored with O(n) shuffle. old implementation (still exists in Shuffled) could have (in theory) run forever i think?
-        cards.Shuffle();
+        _cards.Shuffle();
     }
 
     /// <summary>
@@ -95,7 +95,7 @@ public class Deck
     public Deck Shuffled()
     {
         Deck preShuffle = GetCopy();
-        int numOfElements = cards.Count;
+        int numOfElements = _cards.Count;
         int newIndex = 0;
         bool[] usedSpace = new bool[numOfElements];
         for (int i = 0; i < numOfElements; i++)
@@ -105,7 +105,7 @@ public class Deck
                 newIndex = Random.Range(0, numOfElements);
 
             } while (usedSpace[newIndex] == true);
-            cards[newIndex] = preShuffle.cards[i];
+            _cards[newIndex] = preShuffle._cards[i];
             usedSpace[newIndex] = true;
         }
         return this;
@@ -113,7 +113,7 @@ public class Deck
 
     private void WipeDeckElements(Deck deck)
     {
-        foreach(CardData c in deck.cards)
+        foreach(CardData c in deck._cards)
         {
             c.Emotion = CardEmotion.NotSelected;
             c.Intention = CardIntention.NotSelected;
@@ -128,7 +128,7 @@ public class Deck
     public Deck GetCopy()
     {
         Deck deckCopy = new Deck();
-        foreach(CardData c in cards)
+        foreach(CardData c in _cards)
         {
             deckCopy.Add(c);
         }
@@ -137,7 +137,7 @@ public class Deck
 
     public void Clear()
     {
-        cards.Clear();
+        _cards.Clear();
     }
     #endregion
 }

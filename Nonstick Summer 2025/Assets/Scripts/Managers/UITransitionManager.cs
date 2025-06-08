@@ -19,7 +19,7 @@ public class UITransitionManager
         playerMesh = GameObject.FindFirstObjectByType<PlayerMovement>()?.GetComponentInChildren<MeshRenderer>();
     }
 
-    public static void OpenMenu(GameObject canvasPrefab, Transform cameraAnchor = null)
+    public static GameObject OpenMenu(GameObject canvasPrefab, Transform cameraAnchor = null)
     {
         if(PlayerInMenu)
         {
@@ -47,6 +47,7 @@ public class UITransitionManager
         StaticUtilities.EnableCursor();
 
         currentCanvasReference = GameObject.Instantiate(canvasPrefab);
+        return currentCanvasReference;
     }
 
     public static void CloseMenu()

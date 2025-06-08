@@ -78,7 +78,7 @@ public class DeckManager
     public static void ShuffleDeck(ref Deck d)
     {
         CheckDeck(ref d);
-        d = d.Shuffle();
+        d.Shuffle();
     }
     #endregion
 

@@ -65,7 +65,7 @@ public class DialogueManager
     {
         _defaultEnergy = defaultEnergy;
         _energyGainedPerRound = energyGainedPerRound;
-        _energyGainedIfSilent = energyGainedPerRound;
+        _energyGainedIfSilent = energyGainedIfSilent;
         MaxEnergy = maxEnergy;
 
         CurrentEnergy = defaultEnergy;
@@ -80,6 +80,7 @@ public class DialogueManager
 
     /// <summary>
     /// Coroutine because i just know theres going to be animations later
+    /// TODO: call this coroutine
     /// </summary>
     public static IEnumerator ProgressDialogue(CardData playedCard)
     {

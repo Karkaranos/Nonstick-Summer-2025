@@ -28,6 +28,7 @@ using System.Collections;
 public class DialogueUIController : Singleton<DialogueUIController>
 {
     [Required][SerializeField] private EnergyBar energyBar;
+    [Required][SerializeField] private DisplayPlayerCardDialogue playerDialogueBubble;
 
     public void Initialize(DialogueBranch startBranch)
     {
@@ -46,5 +47,9 @@ public class DialogueUIController : Singleton<DialogueUIController>
         yield return energyBar?.SetValue((float)(value ?? DialogueManager.CurrentEnergy));
     }
 
-
+    public IEnumerator UpdateHoveringCard(CardData card)
+    {
+        // card is null, it hides the text bubble
+        playerDialogueBubble.WriteText(card);
+    }
 }

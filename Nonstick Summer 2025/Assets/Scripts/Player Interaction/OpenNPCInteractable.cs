@@ -18,7 +18,7 @@ public class OpenNPCInteractable : MonoBehaviour, IInteractable
     public void Interact(GameObject player)
     {
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor);
-        var dialogueController = menu.GetComponentInChildren<DialougeUIController>();
+        var dialogueController = menu.GetComponentInChildren<DialogueUIController>();
         dialogueController.Initialize(StartingDialogeBranch);
     }
 

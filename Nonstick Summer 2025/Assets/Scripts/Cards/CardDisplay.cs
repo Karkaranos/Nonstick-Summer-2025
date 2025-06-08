@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
-public class CardDisplay : MonoBehaviour, IPointerClickHandler
+public class CardDisplay : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [BoxGroup("UI Components")][SerializeField] TMP_Text EmotionText;
     [BoxGroup("UI Components")][SerializeField] TMP_Text IntentionText;

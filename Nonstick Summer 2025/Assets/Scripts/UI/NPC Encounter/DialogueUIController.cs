@@ -25,7 +25,7 @@ using UnityEngine.UI;
 using NaughtyAttributes;
 using System.Collections;
 
-public class DialougeUIController : Singleton<DialougeUIController>
+public class DialogueUIController : Singleton<DialogueUIController>
 {
     [Required][SerializeField] private EnergyBar energyBar;
 

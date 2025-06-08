@@ -7,7 +7,7 @@
 * (See documentation for better description)
 *
 * TODO:
-* Processing _cards and dialogue progression (see task)
+* Processing Cards and dialogue progression (see task)
 * Visual feedback
 * Exiting combat
 * literally everything else
@@ -25,7 +25,10 @@ public class DialogueManager
 {
     public static UITransitionManager Instance => GameManager.UITransitionManagerReference;
 
+    public static bool ReadUserInput;
+    public static UnityEvent OnCardPlayed = new UnityEvent();
     public static DialogueBranch CurrentDialogueBranch { get; private set; }
+    public static bool PlayerInCombat => DialogueUIController.Instance != null;
 
     // these variables might get moved to a different script. 
     // idk if a 'discarded' variable is necessary so im just gonna not do that.
@@ -50,8 +53,8 @@ public class DialogueManager
         if (_currentEnergy == energy) yield break;
 
         _currentEnergy = energy;
-        if (DialougeUIController.Instance != null)
-            yield return DialougeUIController.Instance.UpdateEnergy(energy); // wait for animation to finish
+        if (DialogueUIController.Instance != null)
+            yield return DialogueUIController.Instance.UpdateEnergy(energy); // wait for animation to finish
 
         yield return TryEnergyLossDeath();
     }
@@ -71,6 +74,7 @@ public class DialogueManager
 
     public static void OnOpenCombatUI(DialogueBranch startDialogueBranch)
     {
+        ReadUserInput = true;
         CurrentDialogueBranch = startDialogueBranch;
     }
 
@@ -79,17 +83,22 @@ public class DialogueManager
     /// </summary>
     public static IEnumerator ProgressDialogue(CardData playedCard)
     {
+        ReadUserInput = false;
+
         if (_currentEnergy <= 0 && playedCard != null)
             Debug.LogWarning("Card played with 0 energy");
 
         // reference for other programmers: 'yield return' stops this coroutine until the next coroutine is finished
         yield return SetCurrentEnergy(_currentEnergy + 
-            (playedCard == null ? _energyGainedIfSilent: playedCard.EnergyCost)); // this could have been an if statement but noooooo i just had to be special
+            (playedCard == null ? _energyGainedIfSilent: playedCard.GetEnergyCost())); // this could have been an if statement but noooooo i just had to be special
 
         // TODO: see 'Progress Dialogue and Process Cards' task
         // hi jay
 
         yield return SetCurrentEnergy(_currentEnergy + _energyGainedPerRound);
+
+        Debug.Log("Completed processing card");
+        ReadUserInput = true;
     }
 
     /// <summary>
@@ -97,6 +106,7 @@ public class DialogueManager
     /// </summary>
     public static void OnMomentStarted()
     {
+        ReadUserInput = false;
         CurrentEnergy = _defaultEnergy;
         RemainingDeck = DeckManager.CopyDeck().Shuffled();
         PlayerHand.Clear();

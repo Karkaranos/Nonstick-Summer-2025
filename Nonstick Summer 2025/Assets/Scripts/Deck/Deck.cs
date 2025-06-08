@@ -126,11 +126,11 @@ public class Deck
     /// <returns></returns>
     public CardData Pop()
     {
-        if (playerDeck.Count >= 0)
+        if (Cards.Count >= 0)
         {
-            CardData toReturn = playerDeck[0];
-            playerDeck.RemoveAt(0);
-            //Debug.Log(playerDeck.Count + " cards left");
+            CardData toReturn = Cards[0];
+            Cards.RemoveAt(0);
+            //Debug.Log(Cards.Count + " cards left");
             return toReturn;
         }
         throw new System.Exception("No cards in Deck");
@@ -138,9 +138,9 @@ public class Deck
 
     public CardData Peek()
     {
-        if (playerDeck.Count >= 0)
+        if (Cards.Count >= 0)
         {
-            return playerDeck[0];
+            return Cards[0];
         }
         throw new System.Exception("No cards in Deck");
     }
@@ -160,26 +160,26 @@ public class Deck
         }
 
         // Returning n cards
-        if (playerDeck.Count >= n)
+        if (Cards.Count >= n)
         {
             CardData[] result = new CardData[n];
             for (int i = 0; i < n; i++)
             {
-                result[i] = playerDeck[i];
+                result[i] = Cards[i];
             }
             Debug.Log("Peeking the top " + n + " cards.");
             return result;
         }
 
         // Returning <n cards
-        else if (playerDeck.Count >= 0)
+        else if (Cards.Count >= 0)
         {
-            CardData[] result = new CardData[playerDeck.Count - 1];
-            for (int i = 0; i < playerDeck.Count; i++)
+            CardData[] result = new CardData[Cards.Count - 1];
+            for (int i = 0; i < Cards.Count; i++)
             {
-                result[i] = playerDeck[i];
+                result[i] = Cards[i];
             }
-            Debug.Log("Peeking the top " + playerDeck.Count + " values as there were fewer than " + n +
+            Debug.Log("Peeking the top " + Cards.Count + " values as there were fewer than " + n +
                 " cards available");
             return result;
         }
@@ -203,7 +203,7 @@ public class Deck
         }
 
         // Returning n cards
-        if (playerDeck.Count >= n)
+        if (Cards.Count >= n)
         {
             CardData[] result = new CardData[n];
             for (int i = 0; i < n; i++)
@@ -215,14 +215,14 @@ public class Deck
         }
 
         // Returning <n cards
-        else if (playerDeck.Count >= 0)
+        else if (Cards.Count >= 0)
         {
-            CardData[] result = new CardData[playerDeck.Count - 1];
-            for (int i = 0; i < playerDeck.Count; i++)
+            CardData[] result = new CardData[Cards.Count - 1];
+            for (int i = 0; i < Cards.Count; i++)
             {
                 result[i] = Pop();
             }
-            Debug.Log("Popping the top " + playerDeck.Count + " values as there were fewer than " + n +
+            Debug.Log("Popping the top " + Cards.Count + " values as there were fewer than " + n +
                 " cards available");
             return result;
         }

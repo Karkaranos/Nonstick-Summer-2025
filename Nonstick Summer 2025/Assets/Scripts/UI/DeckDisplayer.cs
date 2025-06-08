@@ -52,13 +52,13 @@ public class DeckDisplayer : MonoBehaviour
         Deck copy = PlayerDeckRef.GetCopy();
 
         // Creates referenced array
-        Vector2[] spawnPositions = new Vector2[copy.PlayerDeck.Count];
+        Vector2[] spawnPositions = new Vector2[copy.Cards.Count];
 
         // Generates spawn positions
-        GeneratePositions(ref spawnPositions, 0, copy.PlayerDeck.Count-1);
+        GeneratePositions(ref spawnPositions, 0, copy.Cards.Count-1);
 
         // Spawns all cards
-        SpawnCards(copy.PeekNCards(copy.PlayerDeck.Count), spawnPositions);
+        SpawnCards(copy.PeekNCards(copy.Cards.Count), spawnPositions);
 
     }
 

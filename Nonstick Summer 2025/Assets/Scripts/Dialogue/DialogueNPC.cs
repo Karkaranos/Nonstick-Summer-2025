@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class DialogueNPC
 {
-
-    public DialogueBranch BranchingDialogue;
     public string Dialogue;
     public Sprite Portrait;
 

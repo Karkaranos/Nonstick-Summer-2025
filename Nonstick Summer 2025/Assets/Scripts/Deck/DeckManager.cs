@@ -7,12 +7,28 @@
 *****************************************************************************/
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UIElements;
 
 public class DeckManager
 {
     public static DeckManager Instance => GameManager.DeckManagerReference;
 
     public Deck PlayerDeck = new Deck();
+
+    private static GameObject _deckDisplayObj;
+
+    #region Initialization
+    /// <summary>
+    /// Runs after the first scene has finished loading
+    /// Snags a reference to the deck display location
+    /// </summary>
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    static void AfterSceneLoad()
+    {
+        _deckDisplayObj = GameObject.Find("DeckDisplay");
+    }
+
+    #endregion
 
     #region Function References
     /// <summary>
@@ -65,10 +81,10 @@ public class DeckManager
     /// </summary>
     /// <param name="d">The deck to get the top card of. Leave blank for Player's Deck</param>
     /// <returns>The top card of the specified deck</returns>
-    public static CardData GetTopCard(Deck d = null)
+    public static CardData PopTopCard(Deck d = null)
     {
         CheckDeck(ref d);
-        return d.GetTop();
+        return d.Pop();
     }
 
     /// <summary>
@@ -80,6 +96,15 @@ public class DeckManager
         CheckDeck(ref d);
         d.Shuffle();
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public static void DisplayDeck()
+    {
+
+    }
+
     #endregion
 
     #region Helper Functions

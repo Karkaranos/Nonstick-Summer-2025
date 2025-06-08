@@ -9,6 +9,7 @@ public class GameManager : Singleton<GameManager>
     public static UITransitionManager UITransitionManagerReference;
     public static CardStyleManager CardStyleManagerReference;
     public static DeckManager DeckManagerReference;
+    public static DialogueManager DialogueManagerReference;
 
     public static int MaxCardsVisibleInDeck = 7;
 
@@ -23,6 +24,15 @@ public class GameManager : Singleton<GameManager>
     [Foldout("Card Styles")] [SerializeField] private Sprite Card_Intention2Sprite;
     [Foldout("Card Styles")] [SerializeField] private Sprite Card_Intention3Sprite;
 
+    [Header("Dialogue Manager")]
+    [Foldout("Social Battery")] [SerializeField] private int _defaultEnergy=5;
+    [Foldout("Social Battery")] [SerializeField] private int _energyGainedPerRound=1;
+    [Foldout("Social Battery")][SerializeField] private int _energyGainedIfSilent = 2;
+    [Foldout("Social Battery")] [SerializeField] private int _maxEnergy=10;
+    [Foldout("Dialogue Manager")] [SerializeField] private int _defaultCardsInHand=3;
+
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,10 +42,11 @@ public class GameManager : Singleton<GameManager>
         playerTransformRef = FindFirstObjectByType<PlayerMovement>()?.transform;
         playerCameraRef = FindFirstObjectByType<PlayerCamera>()?.playerCamera;
 
-        UITransitionManagerReference = new UITransitionManager();
-        CardStyleManagerReference = new CardStyleManager(Card_YellowStyle, Card_RedStyle, Card_BlueStyle,
+        UITransitionManagerReference = UITransitionManagerReference ?? new UITransitionManager();
+        CardStyleManagerReference = CardStyleManagerReference ?? new CardStyleManager(Card_YellowStyle, Card_RedStyle, Card_BlueStyle,
             Card_Intention1Style, Card_Intention2Style, Card_Intention3Style,
             Card_Intention1Sprite, Card_Intention2Sprite, Card_Intention3Sprite);
-        DeckManagerReference = new DeckManager();
+        DeckManagerReference = DeckManagerReference ?? new DeckManager();
+        DialogueManagerReference = DialogueManagerReference ?? new DialogueManager(_defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent, _maxEnergy, _defaultCardsInHand);
     }
 }

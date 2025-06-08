@@ -22,6 +22,9 @@ public class DeckTest : MonoBehaviour
         //print(Instance.PlayerDeck.PlayerDeck.Count);
         
         for (int i=0; i<= Instance.PlayerDeck.PlayerDeck.Count+1; i++)
+        //print(Instance.Cards.Cards.Count);
+
+        for (int i=0; i<= Instance.PlayerDeck.Cards.Count+1; i++)
         {
             CardData top = DeckManager.PopTopCard();
             print("Element " + i + ": Emotion-" + top.Emotion + " Intent-" + top.Intention);
@@ -38,9 +41,9 @@ public class DeckTest : MonoBehaviour
         DeckManager.ShuffleDeck(ref Instance.PlayerDeck);
         print("Shuffled");
 
-        //print(Instance.PlayerDeck.PlayerDeck.Count);
+        //print(Instance.Cards.Cards.Count);
 
-        for (int i = 0; i <= Instance.PlayerDeck.PlayerDeck.Count+1; i++)
+        for (int i = 0; i <= Instance.PlayerDeck.Cards.Count+1; i++)
         {
             CardData top = DeckManager.PopTopCard();
             print("Element " + i + ": Emotion-" + top.Emotion + " Intent-" + top.Intention);
@@ -58,11 +61,11 @@ public class DeckTest : MonoBehaviour
         DeckManager.AddCard(testVals[0]);
         //DeckManager.RemoveCard(testVals[0]);
 
-        print(DeckManager.PlayerDeck.PlayerDeck.Count);
+        print(DeckManager.Cards.Cards.Count);
 
-        for (int i = 0; i <= Instance.PlayerDeck.PlayerDeck.Count+1; i++)
+        for (int i = 0; i <= Instance.Cards.Cards.Count+1; i++)
         {
-            CardData top = DeckManager.GetTopCard(Instance.PlayerDeck);
+            CardData top = DeckManager.GetTopCard(Instance.Cards);
             print("Element " + i + ": Emotion-" + top.Emotion + " Intent-" + top.Intention);
         }*/
 
@@ -73,11 +76,11 @@ public class DeckTest : MonoBehaviour
         print("Removing an element");
         DeckManager.RemoveCard(testVals[0]);
 
-        //print(Instance.PlayerDeck.PlayerDeck.Count);
+        //print(Instance.Cards.Cards.Count);
 
-        for (int i = 0; i <= Instance.PlayerDeck.PlayerDeck.Count + 1; i++)
+        for (int i = 0; i <= Instance.Cards.Cards.Count + 1; i++)
         {
-            CardData top = DeckManager.GetTopCard(Instance.PlayerDeck);
+            CardData top = DeckManager.GetTopCard(Instance.Cards);
             print("Element " + i + ": Emotion-" + top.Emotion + " Intent-" + top.Intention);
         }
         */

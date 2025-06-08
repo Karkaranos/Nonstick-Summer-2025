@@ -36,7 +36,7 @@ public class DeckDisplayer : MonoBehaviour
     private void Awake()
     {
         _dimensions = GetComponent<RectTransform>().sizeDelta;
-        _dimensions.x -= 300;   // okay i know magic numbers are bad. this number made things work
+        _dimensions.x -= 100;   // okay i know magic numbers are bad. this number made things work
         rectTransformCenter = Camera.main.WorldToScreenPoint(transform.position);
     }
 
@@ -147,6 +147,7 @@ public class DeckDisplayer : MonoBehaviour
             _visualDisplay[i].GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
             _visualDisplay[i].transform.localPosition = position[i];
             _visualDisplay[i].GetComponent<CardDisplay>().SetCard(cards[i]);
+            _visualDisplay[i].transform.localScale *= .6f;
         }
     }
 

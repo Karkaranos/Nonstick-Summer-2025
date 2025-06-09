@@ -1,6 +1,6 @@
 /*****************************************************************************
 * File Name :         DialogueUIController.cs
-* Author :            Toby
+* Author :            Toby, Sky
 * Creation Date :     June 6, 2025
 *
 * Brief Description : "FrontEnd" script for dialogue controller. See DialogueManager
@@ -25,19 +25,23 @@ using UnityEngine.UI;
 using NaughtyAttributes;
 using System.Collections;
 
-public class DialougeUIController : Singleton<DialougeUIController>
+public class DialogueUIController : Singleton<DialogueUIController>
 {
     [Required][SerializeField] private EnergyBar energyBar;
+    [Tooltip("Relationship slider UI element")]
+    [Required][SerializeField] private RelationshipSlider relationshipSlider;
 
-    public void Initialize(DialogueBranch startBranch)
+    public void Initialize(DialogueBranch startBranch, characters character)
     {
-        DialogueManager.OnOpenCombatUI(startBranch);
+        DialogueManager.OnOpenCombatUI(startBranch, character);
 
         // all the rest of this ui initialization stuff is gonna run every time an npc combat encounter happens.
         // i think our game is not complicated enough that its gonna be a problem performance wise, 
         // but its gonna bug me that its happening extra times
 
         energyBar.Initalize(DialogueManager.MaxEnergy);
+        relationshipSlider.Initialize(RelationshipManager.characterRelationships[character].maxValue, RelationshipManager.characterRelationships[character].currentValue);
+
     }
 
     // Coroutine to handle animation (in the future)
@@ -46,5 +50,9 @@ public class DialougeUIController : Singleton<DialougeUIController>
         yield return energyBar?.SetValue((float)(value ?? DialogueManager.CurrentEnergy));
     }
 
-
+    // Coroutine to handle animation (in the future)
+    public IEnumerator UpdateRelationship(float? value, characters character)
+    {
+        yield return relationshipSlider?.SetValue((value ?? RelationshipManager.characterRelationships[character].currentValue));
+    }
 }

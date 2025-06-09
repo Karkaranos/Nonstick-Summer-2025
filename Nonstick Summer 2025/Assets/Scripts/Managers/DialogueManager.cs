@@ -1,6 +1,6 @@
 /*****************************************************************************
 * File Name :         DialogueManager.cs
-* Author :            Toby
+* Author :            Toby, Sky
 * Creation Date :     June 6, 2025
 *
 * Brief Description :  The big script that bridges all the modular components the combat system.
@@ -31,6 +31,8 @@ public class DialogueManager
     // idk if a 'discarded' variable is necessary so im just gonna not do that.
     // i see a big problem where if the player modifies a card in their deck, which deck gets updated? how do we bridge the gaps between these multiple decks? 
     public static Deck PlayerHand, RemainingDeck;
+    private static characters currentCharacter;
+    public static float CurrentRelationshipScore => RelationshipManager.characterRelationships[currentCharacter].currentValue;
     public static int CurrentEnergy { 
         get { return _currentEnergy; }
         set { SetCurrentEnergy(value); }
@@ -50,10 +52,26 @@ public class DialogueManager
         if (_currentEnergy == energy) yield break;
 
         _currentEnergy = energy;
-        if (DialougeUIController.Instance != null)
-            yield return DialougeUIController.Instance.UpdateEnergy(energy); // wait for animation to finish
+        if (DialogueUIController.Instance != null)
+            yield return DialogueUIController.Instance.UpdateEnergy(energy); // wait for animation to finish
 
         yield return TryEnergyLossDeath();
+    }
+
+    public static IEnumerator SetCurrentRelationshipStatus(float relationshipScore)
+    {
+        if (CurrentRelationshipScore == relationshipScore)
+        {
+            yield break;
+        }
+
+        RelationshipManager.characterRelationships[currentCharacter].currentValue = relationshipScore;
+
+        if(DialogueUIController.Instance != null)
+        {
+            yield return DialogueUIController.Instance.UpdateRelationship(relationshipScore, currentCharacter);
+        }
+
     }
 
     #endregion
@@ -69,9 +87,10 @@ public class DialogueManager
         DefaultCardsInHand = defaultCardsInHand;
     }
 
-    public static void OnOpenCombatUI(DialogueBranch startDialogueBranch)
+    public static void OnOpenCombatUI(DialogueBranch startDialogueBranch, characters character)
     {
         CurrentDialogueBranch = startDialogueBranch;
+        currentCharacter = character;
     }
 
     /// <summary>
@@ -85,6 +104,11 @@ public class DialogueManager
         // reference for other programmers: 'yield return' stops this coroutine until the next coroutine is finished
         yield return SetCurrentEnergy(_currentEnergy + 
             (playedCard == null ? _energyGainedIfSilent: playedCard.EnergyCost)); // this could have been an if statement but noooooo i just had to be special
+
+
+        var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
+        yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + dialogueOption.ChangeInRelationshipStatus);
+
 
         // TODO: see 'Progress Dialogue and Process Cards' task
         // hi jay

@@ -27,6 +27,12 @@ public class EnergyBar : MonoBehaviour
         // sorry for making this comment so long
     }
 
+
+    /// <summary>
+    /// Updates the UI to match the players energy value 
+    /// Coroutine so that it can be animated in the future
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator Refresh()
     {
         yield return SetValue(DialogueManager.CurrentEnergy);

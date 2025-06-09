@@ -23,11 +23,11 @@ public static class StaticUtilities
     #endregion
 
     #region UI
-    public static void EnableCanvasGroup(CanvasGroup canvasgroup)
+    public static void EnableCanvasGroup(CanvasGroup canvasgroup, float alpha = 1, bool interactable = true, bool blocksRaycasts=true)
     {
-        canvasgroup.alpha = 1;
-        canvasgroup.interactable = true;
-        canvasgroup.blocksRaycasts = true;
+        canvasgroup.alpha = alpha;
+        canvasgroup.interactable = interactable;
+        canvasgroup.blocksRaycasts = blocksRaycasts;
     }
 
     public static void DisableCanvasGroup(CanvasGroup canvasgroup)

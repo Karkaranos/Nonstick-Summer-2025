@@ -28,9 +28,10 @@ using System.Collections;
 public class DialogueUIController : Singleton<DialogueUIController>
 {
     [Required][SerializeField] private EnergyBar energyBar;
+    [Required][SerializeField] private DisplayPlayerCardDialogue playerDialogueBubble;
+    [Required][SerializeField] private DeckDisplayer deckDisplay;
     [Tooltip("Relationship slider UI element")]
     [Required][SerializeField] private RelationshipSlider relationshipSlider;
-    [SerializeField] private DialogueBox dialogueBox;
 
     public void Initialize(DialogueBranch startBranch, characters character)
     {
@@ -42,8 +43,13 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         energyBar.Initalize(DialogueManager.MaxEnergy);
         relationshipSlider.Initialize(RelationshipManager.characterRelationships[character].maxValue, RelationshipManager.characterRelationships[character].currentValue);
-        dialogueBox.Initialize(startBranch);
-
+        deckDisplay.SetDeck(ref DialogueManager.PlayerHand);
+    }
+    
+    public void UpdateHoveringCard(CardData card)
+    {
+        // card is null, it hides the text bubble
+        playerDialogueBubble.WriteText(card);
     }
 
     // Coroutine to handle animation (in the future)
@@ -57,4 +63,5 @@ public class DialogueUIController : Singleton<DialogueUIController>
     {
         yield return relationshipSlider?.SetValue((value ?? RelationshipManager.characterRelationships[character].currentValue));
     }
+
 }

@@ -1,7 +1,7 @@
 /*************************************************
-Author Names :          Cade Naylor
+Author Names :          Cade, Naylor, Toby
 Date Created :          June 6, 2025
-Date Modified :         June 7, 2025
+Date Modified :         June 8, 2025
 Brief Description :     Handles visual display for the deck
 
 TODO :                  Create functions for easier updating
@@ -14,7 +14,8 @@ using System.Collections.Generic;
 public class DeckDisplayer : MonoBehaviour
 {
     #region Variables
-    private static Deck PlayerDeckRef => GameManager.DeckManagerReference.PlayerDeck;
+    //private static Deck PlayerDeckRef => GameManager.DeckManagerReference.PlayerDeck;
+    [SerializeField] private Deck DeckRef; // changed to be generalized, because deck will not always be the players.
     private static int MaxDeckDisplaySize => GameManager.MaxCardsVisibleInDeck;
 
     [SerializeField, Tooltip("Adjusts horizontal space between cards and edge of display")]
@@ -40,6 +41,13 @@ public class DeckDisplayer : MonoBehaviour
         rectTransformCenter = Camera.main.WorldToScreenPoint(transform.position);
     }
 
+    public void SetDeck(ref Deck deckRef)
+    {
+        Debug.Log("deck set");
+        DeckRef = deckRef;
+        DisplayAllCards();
+    }
+
     /// <summary>
     /// Displays all cards in the player's deck
     /// </summary>
@@ -49,7 +57,7 @@ public class DeckDisplayer : MonoBehaviour
 
         // Create a copy of the deck to pull cards from
         // May revisit later and make it the actual deck
-        Deck copy = PlayerDeckRef.GetCopy();
+        Deck copy = DeckRef.GetCopy();
 
         // Creates referenced array
         Vector2[] spawnPositions = new Vector2[copy.Cards.Count];
@@ -79,7 +87,7 @@ public class DeckDisplayer : MonoBehaviour
 
         // Create a copy of the deck to pull cards from
         // May revisit later and make it the actual deck
-        Deck copy = PlayerDeckRef.GetCopy();
+        Deck copy = DeckRef.GetCopy();
 
         // Creates referenced array
         Vector2[] spawnPositions = new Vector2[n];
@@ -139,6 +147,7 @@ public class DeckDisplayer : MonoBehaviour
     {
         for(int i=0; i<cards.Length; i++)
         {
+            Debug.Log("spawning card");
             /* There is probably a better way to do this
              * However, I needed to spawn the card, set its anchor, then adjust the position after setting the anchor
              * so it works for now*/

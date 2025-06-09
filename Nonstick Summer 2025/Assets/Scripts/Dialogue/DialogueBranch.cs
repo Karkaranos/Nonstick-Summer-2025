@@ -23,8 +23,6 @@ public class DialogueBranch : ScriptableObject
 
     private static DialogueOption blank;
 
-    private int currentText;
-
     public DialogueOption ReturnDialogueOption(CardData card)
     {
 

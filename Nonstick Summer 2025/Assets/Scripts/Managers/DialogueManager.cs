@@ -7,7 +7,7 @@
 * (See documentation for better description)
 *
 * TODO:
-* Processing _cards and dialogue progression (see task)
+* Processing Cards and dialogue progression (see task)
 * Visual feedback
 * Exiting combat
 * literally everything else
@@ -25,7 +25,10 @@ public class DialogueManager
 {
     public static UITransitionManager Instance => GameManager.UITransitionManagerReference;
 
+    public static bool ReadUserInput;
+    public static UnityEvent OnCardPlayed = new UnityEvent();
     public static DialogueBranch CurrentDialogueBranch { get; private set; }
+    public static bool PlayerInCombat => DialogueUIController.Instance != null;
 
     // these variables might get moved to a different script. 
     // idk if a 'discarded' variable is necessary so im just gonna not do that.
@@ -80,30 +83,41 @@ public class DialogueManager
     {
         _defaultEnergy = defaultEnergy;
         _energyGainedPerRound = energyGainedPerRound;
-        _energyGainedIfSilent = energyGainedPerRound;
+        _energyGainedIfSilent = energyGainedIfSilent;
         MaxEnergy = maxEnergy;
+        DefaultCardsInHand = defaultCardsInHand;
 
         CurrentEnergy = defaultEnergy;
-        DefaultCardsInHand = defaultCardsInHand;
+        PlayerHand = new Deck();
     }
 
     public static void OnOpenCombatUI(DialogueBranch startDialogueBranch, characters character)
     {
+        ReadUserInput = true;
         CurrentDialogueBranch = startDialogueBranch;
         currentCharacter = character;
+
+        // testing only: please delete later
+        PlayerHand.Add(CardData.NewCard(1, CardEmotion.Blue, CardIntention.Intention1));
+        PlayerHand.Add(CardData.NewCard(0, CardEmotion.Yellow, CardIntention.Intention2));
+        PlayerHand.Add(CardData.NewCard(-3, CardEmotion.Red, CardIntention.Intention3));
+        Debug.LogWarning("Added hard-coded test cards to hand.");
     }
 
     /// <summary>
     /// Coroutine because i just know theres going to be animations later
+    /// TODO: call this coroutine
     /// </summary>
     public static IEnumerator ProgressDialogue(CardData playedCard)
     {
+        ReadUserInput = false;
+
         if (_currentEnergy <= 0 && playedCard != null)
             Debug.LogWarning("Card played with 0 energy");
 
         // reference for other programmers: 'yield return' stops this coroutine until the next coroutine is finished
         yield return SetCurrentEnergy(_currentEnergy + 
-            (playedCard == null ? _energyGainedIfSilent: playedCard.EnergyCost)); // this could have been an if statement but noooooo i just had to be special
+            (playedCard == null ? _energyGainedIfSilent: playedCard.GetEnergyCost())); // this could have been an if statement but noooooo i just had to be special
 
 
         var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
@@ -114,6 +128,9 @@ public class DialogueManager
         // hi jay
 
         yield return SetCurrentEnergy(_currentEnergy + _energyGainedPerRound);
+
+        Debug.Log("Completed processing card");
+        ReadUserInput = true;
     }
 
     /// <summary>
@@ -121,6 +138,7 @@ public class DialogueManager
     /// </summary>
     public static void OnMomentStarted()
     {
+        ReadUserInput = false;
         CurrentEnergy = _defaultEnergy;
         RemainingDeck = DeckManager.CopyDeck().Shuffled();
         PlayerHand.Clear();

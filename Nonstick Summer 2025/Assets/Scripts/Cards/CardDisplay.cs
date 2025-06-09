@@ -6,21 +6,39 @@ using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
-public class CardDisplay : MonoBehaviour, IPointerClickHandler
+[RequireComponent(typeof(MouseInteractionEvents))]
+public class CardDisplay : MonoBehaviour
 {
     [BoxGroup("UI Components")][SerializeField] TMP_Text EmotionText;
     [BoxGroup("UI Components")][SerializeField] TMP_Text IntentionText;
     [BoxGroup("UI Components")][SerializeField] Image CardBackground;
-    [BoxGroup("UI Components")] [SerializeField] Image IntentionImage;
+    [BoxGroup("UI Components")][SerializeField] Image IntentionImage;
 
     [SerializeField] [Tooltip("Set this for debug only")]
     private CardData card;
 
-    public UnityEvent OnCardClicked;
+    private MouseInteractionEvents mouseInteraction;
 
     private void Start()
     {
         if(card != null) SetCard(card); // mostfly for debugging
+
+        mouseInteraction = GetComponent<MouseInteractionEvents>();
+
+        mouseInteraction.OnMouseHoverStart.AddListener(OnMouseHoverStart);
+        mouseInteraction.OnMouseHoverEnd.AddListener(OnMouseHoverEnd);
+    }
+
+    private void OnMouseHoverStart() // this should be moved to another script
+    {
+        if (DialogueManager.PlayerInCombat /*&& TODO: if player does not have card selected*/ )
+           DialogueUIController.Instance.UpdateHoveringCard(card);
+    }
+
+    private void OnMouseHoverEnd() // this should be moved to another script
+    {
+        if (DialogueManager.PlayerInCombat /*&& TODO: if player does not have card selected*/)
+            DialogueUIController.Instance.UpdateHoveringCard(null);
     }
 
     public void SetCard(CardData newCard)
@@ -31,11 +49,6 @@ public class CardDisplay : MonoBehaviour, IPointerClickHandler
         card.OnCardValueChanged += RefreshDisplay;
 
         RefreshDisplay();
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        OnCardClicked.Invoke();
     }
 
     [Button]

@@ -1,6 +1,16 @@
 using NaughtyAttributes;
 using UnityEngine;
-
+/*****************************************************************************
+* File Name :         OpenNPCInteractable.cs
+* Author :            Toby
+* Creation Date :     June 6, 2025
+*
+* Brief Description : Listens for player interaction, opens combat on interact
+*
+* TODO:
+* 
+* 
+*****************************************************************************/
 public class OpenNPCInteractable : MonoBehaviour, IInteractable
 {
     [SerializeField]
@@ -9,17 +19,21 @@ public class OpenNPCInteractable : MonoBehaviour, IInteractable
 
     [SerializeField]
     [Required]
-    private DialogueBranch StartingDialogeBranch;
+    private DialogueBranch StartingDialogueBranch;
 
     [Tooltip("Can be left null if you don't want the camera to move.")]
     [SerializeField]
     private Transform cameraAnchor;
 
+    [Tooltip("Current character you're interacting with.")]
+    [SerializeField]
+    private characters character;
+
     public void Interact(GameObject player)
     {
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor);
         var dialogueController = menu.GetComponentInChildren<DialogueUIController>();
-        dialogueController.Initialize(StartingDialogeBranch);
+        dialogueController.Initialize(StartingDialogueBranch, character);
     }
 
     private void OnDrawGizmos()

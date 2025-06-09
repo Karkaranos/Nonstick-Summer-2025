@@ -26,13 +26,19 @@ public class CardDisplay : MonoBehaviour
         mouseInteraction = GetComponent<MouseInteractionEvents>();
 
         mouseInteraction.OnMouseHoverStart.AddListener(OnMouseHoverStart);
-
+        mouseInteraction.OnMouseHoverEnd.AddListener(OnMouseHoverEnd);
     }
 
     private void OnMouseHoverStart() // this should be moved to another script
     {
-        if (DialogueManager.PlayerInCombat)
-           DialogueUIController.Instance.
+        if (DialogueManager.PlayerInCombat /*&& TODO: if player does not have card selected*/ )
+           DialogueUIController.Instance.UpdateHoveringCard(card);
+    }
+
+    private void OnMouseHoverEnd() // this should be moved to another script
+    {
+        if (DialogueManager.PlayerInCombat /*&& TODO: if player does not have card selected*/)
+            DialogueUIController.Instance.UpdateHoveringCard(null);
     }
 
     public void SetCard(CardData newCard)

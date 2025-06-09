@@ -43,4 +43,19 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
         StaticUtilities.EnableCanvasGroup(group, interactable:false);
         text.text = DialogueManager.CurrentDialogueBranch.ReturnDialogueOption(card).PlayerDialogue;
     }
+
+    public IEnumerator WriteTextTypewriter(CardData card)
+    {
+        if (card == null)
+        {
+            text.text = "silent text (make this better later)";
+            //Hide();
+            yield break;
+        }
+
+        StaticUtilities.EnableCanvasGroup(group, interactable: false);
+        text.text = DialogueManager.CurrentDialogueBranch.ReturnDialogueOption(card).PlayerDialogue;
+        Debug.LogWarning("Implement typewriter later");
+        yield return null;
+    }
 }

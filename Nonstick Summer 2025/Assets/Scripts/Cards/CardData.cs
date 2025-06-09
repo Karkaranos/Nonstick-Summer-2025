@@ -30,6 +30,13 @@ public class CardData : ScriptableObject
 
     // modifiers later?
 
+    public CardData(int EnergyCost, CardEmotion Emotion, CardIntention Intention)
+    {
+        _energyCost = EnergyCost;
+        _emotion = Emotion;
+        _intention = Intention;
+    }
+
     #region static utilities
 
     public static CardData CopyCard(CardData card)

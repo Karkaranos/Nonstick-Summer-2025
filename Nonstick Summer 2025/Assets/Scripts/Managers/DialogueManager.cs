@@ -76,6 +76,12 @@ public class DialogueManager
     {
         ReadUserInput = true;
         CurrentDialogueBranch = startDialogueBranch;
+
+        // testing only: please delete later
+        for(int i=0; i<3; i++)
+        {
+            DeckManager.AddCard(new CardData(1, CardEmotion.Blue, CardIntention.Intention1));
+        }
     }
 
     /// <summary>

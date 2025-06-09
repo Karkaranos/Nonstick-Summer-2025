@@ -47,7 +47,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         yield return energyBar?.SetValue((float)(value ?? DialogueManager.CurrentEnergy));
     }
 
-    public IEnumerator UpdateHoveringCard(CardData card)
+    public void UpdateHoveringCard(CardData card)
     {
         // card is null, it hides the text bubble
         playerDialogueBubble.WriteText(card);

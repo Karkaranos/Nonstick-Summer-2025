@@ -29,6 +29,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 {
     [Required][SerializeField] private EnergyBar energyBar;
     [Required][SerializeField] private DisplayPlayerCardDialogue playerDialogueBubble;
+    [Required][SerializeField] private DeckDisplayer deckDisplay;
 
     public void Initialize(DialogueBranch startBranch)
     {
@@ -39,6 +40,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         // but its gonna bug me that its happening extra times
 
         energyBar.Initalize(DialogueManager.MaxEnergy);
+        deckDisplay.SetDeck(ref DialogueManager.PlayerHand);
     }
 
     // Coroutine to handle animation (in the future)

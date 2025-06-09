@@ -1325,6 +1325,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c69c5680f3c7dbc44856d1805a040c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeckRef:
+    _cards: []
   _bufferFromEdgeOfRegion: 50
   _cardPrefab: {fileID: 1637363475462070288, guid: e2cdc7b280a72e042a5184d474c4e2dc, type: 3}
 --- !u!1 &5259432037687091171
@@ -2088,6 +2090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energyBar: {fileID: 4218700297569430895}
   playerDialogueBubble: {fileID: 4729912371306781161}
+  deckDisplay: {fileID: 2676495977610086600}
 --- !u!114 &3520667051158493986
 MonoBehaviour:
   m_ObjectHideFlags: 0

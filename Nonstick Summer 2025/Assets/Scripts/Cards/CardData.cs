@@ -30,13 +30,6 @@ public class CardData : ScriptableObject
 
     // modifiers later?
 
-    public CardData(int EnergyCost, CardEmotion Emotion, CardIntention Intention)
-    {
-        _energyCost = EnergyCost;
-        _emotion = Emotion;
-        _intention = Intention;
-    }
-
     #region static utilities
 
     public static CardData CopyCard(CardData card)
@@ -110,6 +103,15 @@ public class CardData : ScriptableObject
     private void Debug_InvokeOnCardValueChanged()
     {
         OnCardValueChanged.Invoke();
+    }
+
+    public static CardData NewCard (int EnergyCost, CardEmotion Emotion, CardIntention Intention)
+    {
+        CardData newcard = ScriptableObject.CreateInstance<CardData>();
+        newcard._energyCost = EnergyCost;
+        newcard._emotion = Emotion;
+        newcard._intention = Intention;
+        return newcard;
     }
 
     #endregion

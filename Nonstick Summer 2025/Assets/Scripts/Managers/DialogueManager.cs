@@ -67,9 +67,10 @@ public class DialogueManager
         _energyGainedPerRound = energyGainedPerRound;
         _energyGainedIfSilent = energyGainedIfSilent;
         MaxEnergy = maxEnergy;
+        DefaultCardsInHand = defaultCardsInHand;
 
         CurrentEnergy = defaultEnergy;
-        DefaultCardsInHand = defaultCardsInHand;
+        PlayerHand = new Deck();
     }
 
     public static void OnOpenCombatUI(DialogueBranch startDialogueBranch)
@@ -78,10 +79,9 @@ public class DialogueManager
         CurrentDialogueBranch = startDialogueBranch;
 
         // testing only: please delete later
-        for(int i=0; i<3; i++)
-        {
-            DeckManager.AddCard(new CardData(1, CardEmotion.Blue, CardIntention.Intention1));
-        }
+        PlayerHand.Add(CardData.NewCard(1, CardEmotion.Blue, CardIntention.Intention1));
+        PlayerHand.Add(CardData.NewCard(0, CardEmotion.Yellow, CardIntention.Intention2));
+        PlayerHand.Add(CardData.NewCard(-3, CardEmotion.Red, CardIntention.Intention3));
     }
 
     /// <summary>

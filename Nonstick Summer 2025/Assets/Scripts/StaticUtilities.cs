@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -48,6 +49,53 @@ public static class StaticUtilities
         UnityEngine.Cursor.visible = false;
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
     }
+    #endregion
+
+    #region Math
+    /// <summary>
+    /// Combines two arrays of any type
+    /// </summary>
+    /// <typeparam name="T">Variable type for arrays</typeparam>
+    /// <param name="arr1">The first array</param>
+    /// <param name="arr2">The second array</param>
+    /// <returns>The combined array, with elements from array 1 first</returns>
+    public static T[] AddArrays<T>(T[] arr1, T[] arr2)
+    {
+        int index = 0;
+        T[] result = new T[arr1.Length + arr2.Length];
+        for(int i=0; i<arr1.Length-1; i++)
+        {
+            result[index] = arr1[i];
+            index++;
+        }
+        for (int i = 0; i < arr2.Length-1; i++)
+        {
+            result[index] = arr2[i];
+            index++;
+        }
+        return result;
+    }
+    #endregion
+
+    #region Lists
+
+    /// <summary>
+    /// Shuffles selected list
+    /// </summary>
+    public static void Shuffle<T>(this IList<T> ts)
+    { //ty stack exchange <3
+        var count = ts.Count;
+        var last = count - 1;
+        for (var i = 0; i < last; ++i)
+        {
+            var r = UnityEngine.Random.Range(i, count);
+            var tmp = ts[i];
+            ts[i] = ts[r];
+            ts[r] = tmp;
+        }
+    }
+
+
     #endregion
 
 #if UNITY_EDITOR

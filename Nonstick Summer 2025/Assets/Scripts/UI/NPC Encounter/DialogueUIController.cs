@@ -30,6 +30,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Required][SerializeField] private EnergyBar energyBar;
     [Tooltip("Relationship slider UI element")]
     [Required][SerializeField] private RelationshipSlider relationshipSlider;
+    [SerializeField] private DialogueBox dialogueBox;
 
     public void Initialize(DialogueBranch startBranch, characters character)
     {
@@ -41,6 +42,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         energyBar.Initalize(DialogueManager.MaxEnergy);
         relationshipSlider.Initialize(RelationshipManager.characterRelationships[character].maxValue, RelationshipManager.characterRelationships[character].currentValue);
+        dialogueBox.Initialize(startBranch);
 
     }
 

@@ -3,11 +3,13 @@ using UnityEngine;
 
 public class DialogueBox : MonoBehaviour
 {
- 
-    public void UpdateDialogueNPC(string npcText)
+
+    private TMP_Text npcText;
+
+    public void Initialize(DialogueBranch branch)
     {
 
-        GetComponent<TMP_Text>().text = npcText;
+        npcText.text = branch.dialogue[0].Dialogue;
 
     }
 

@@ -105,6 +105,15 @@ public class CardData : ScriptableObject
         OnCardValueChanged.Invoke();
     }
 
+    public static CardData NewCard (int EnergyCost, CardEmotion Emotion, CardIntention Intention)
+    {
+        CardData newcard = ScriptableObject.CreateInstance<CardData>();
+        newcard._energyCost = EnergyCost;
+        newcard._emotion = Emotion;
+        newcard._intention = Intention;
+        return newcard;
+    }
+
     #endregion
 }
 

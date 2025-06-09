@@ -85,7 +85,7 @@ public class DeckTest : MonoBehaviour
         }
         */
 
-        var sorrycade = FindObjectOfType<DeckDisplayer>();
+        var sorrycade = FindFirstObjectByType<DeckDisplayer>();
         if(sorrycade!=null)sorrycade.DisplayAllCards();
 
     }

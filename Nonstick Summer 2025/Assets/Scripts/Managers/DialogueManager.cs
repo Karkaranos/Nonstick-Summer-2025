@@ -101,7 +101,7 @@ public class DialogueManager
         PlayerHand.Add(CardData.NewCard(1, CardEmotion.Blue, CardIntention.Intention1));
         PlayerHand.Add(CardData.NewCard(0, CardEmotion.Yellow, CardIntention.Intention2));
         PlayerHand.Add(CardData.NewCard(-3, CardEmotion.Red, CardIntention.Intention3));
-        Debug.LogWarning("Added hard-coded test cards to hand.")
+        Debug.LogWarning("Added hard-coded test cards to hand.");
     }
 
     /// <summary>

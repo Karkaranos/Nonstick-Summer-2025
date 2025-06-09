@@ -579,6 +579,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1862214789560333804}
+  - component: {fileID: 8231382353244433165}
   - component: {fileID: 5051558287108319952}
   m_Layer: 5
   m_Name: Relationship Bar
@@ -609,6 +610,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 26}
   m_SizeDelta: {x: 320, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8231382353244433165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2222937400220364571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbcb05edc1401044d8cae7209f2704c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5051558287108319952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2091,6 +2104,7 @@ MonoBehaviour:
   energyBar: {fileID: 4218700297569430895}
   playerDialogueBubble: {fileID: 4729912371306781161}
   deckDisplay: {fileID: 2676495977610086600}
+  relationshipSlider: {fileID: 8231382353244433165}
 --- !u!114 &3520667051158493986
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -51,16 +51,6 @@ public class AudioManager : MonoBehaviour
         return eventInstance;
     }
 
-    private void Update()
-    {
-        //masterVolume = (SettingManager.instance.GetNumberSetting(SettingManager.NumberSettings.masterVol) / 100);
-        masterBus.setVolume(masterVolume);
-        //sfxVolume = (SettingManager.instance.GetNumberSetting(SettingManager.NumberSettings.sfxVol) / 100);
-        sfxBus.setVolume(sfxVolume);
-        //musicVolume = (SettingManager.instance.GetNumberSetting(SettingManager.NumberSettings.musicVol) / 100);
-        bgmBus.setVolume(musicVolume);
-    }
-
     public void UpdateVolume()
     {
         //masterVolume = (SettingManager.instance.GetNumberSetting(SettingManager.NumberSettings.masterVol) / 100);

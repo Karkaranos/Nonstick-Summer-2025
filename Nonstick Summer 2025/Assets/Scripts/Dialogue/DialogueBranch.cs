@@ -13,13 +13,15 @@ public class DialogueBranch : ScriptableObject
     //assign per npc/"moment"?? swap between branches or continue old ones???
 
     [SerializeField]
-    DialogueOption Option1, Option2, Option3, Option4, Option5,
-        Option6, Option7, Option8, Option9;
-
-    private static DialogueOption blank;
+    [Label("NPC Dialogue")] public DialogueNPC[] dialogue;
 
     [SerializeField]
-    [Label("NPC Dialogue")] DialogueNPC[] dialogue;
+    [BoxGroup("Dialogue Options")][HideIf("End")] DialogueOption Option1, Option2, Option3, Option4, Option5,
+        Option6, Option7, Option8, Option9;
+
+    public bool End;
+
+    private static DialogueOption blank;
 
     public DialogueOption ReturnDialogueOption(CardData card)
     {

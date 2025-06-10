@@ -1,3 +1,15 @@
+/*****************************************************************************
+* File Name :         CardData.cs
+* Author :            Toby
+* Creation Date :     June 6, 2025
+*
+* Brief Description : Data container for cards.
+*
+* TODO:
+* modifier implementation (modify getter functions)
+* 
+*****************************************************************************/
+
 using NaughtyAttributes;
 using System;
 using UnityEngine;
@@ -5,9 +17,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CardData", menuName = "Scriptable Objects/CardData")]
 public class CardData : ScriptableObject
 {
-    [Min(0)]
+    [HideInInspector] public Action OnCardValueChanged;
+
     [OnValueChanged("Debug_InvokeOnCardValueChanged")]
-    [SerializeField][Label("Energy Cost")] private int _energyCost;
+    [Tooltip("ADDS this value to the players energy on played. (Leave negative to subtract energy)")] // i am such a freak
+    [SerializeField][Label("Energy Cost")] private int _energyCost = -1;
 
     [OnValueChanged("Debug_InvokeOnCardValueChanged")]
     [SerializeField][Label("Emotion")] private CardEmotion _emotion;
@@ -16,24 +30,9 @@ public class CardData : ScriptableObject
 
     // modifiers later?
 
-    #region Getters and Setters
-    public int EnergyCost{
-        get { return _energyCost; }
-        set { _energyCost = value; OnCardValueChanged.Invoke(); } }
+    #region static utilities
 
-    public CardIntention Intention { 
-        get { return _intention; } 
-        set { _intention = value; OnCardValueChanged.Invoke(); } }
-
-    public CardEmotion Emotion{
-        get { return _emotion; }
-        set { _emotion = value; OnCardValueChanged.Invoke(); }}
-    #endregion
-
-    [HideInInspector]
-    public Action OnCardValueChanged;
-
-    public CardData CopyCard(CardData card)
+    public static CardData CopyCard(CardData card)
     {
         CardData copy = ScriptableObject.CreateInstance<CardData>();
         copy._emotion = card._emotion;
@@ -43,10 +42,76 @@ public class CardData : ScriptableObject
         return copy;
     }
 
+    #endregion
+
+    #region Getters and Setters
+    [ShowNativeProperty]
+    public int EnergyCost {
+        get { return GetEnergyCost(); }
+        set { SetEnergyCost(value); }
+    }
+    [ShowNativeProperty]
+    public CardIntention Intention {
+        get { return GetIntention(); }
+        set { SetIntention(value); }
+    }
+    [ShowNativeProperty]
+    public CardEmotion Emotion{
+        get { return GetEmotion(); }
+        set { _emotion = value; OnCardValueChanged.Invoke(); }
+    }
+
+    public int GetEnergyCost() { return _energyCost; }
+    public CardIntention GetIntention() { return _intention; }
+    public CardEmotion GetEmotion() { return _emotion; }
+
+    public void SetEnergyCost(int energyCost)
+    {
+        if (energyCost == _energyCost) return;
+        _energyCost = energyCost;
+        OnCardValueChanged.Invoke();
+    }
+
+    public void SetIntention(CardIntention intention)
+    {
+        if (intention == _intention) return;
+        _intention = intention;
+        OnCardValueChanged.Invoke();
+    }
+
+    public void SetEmotion(CardEmotion emotion)
+    {
+        if (emotion == _emotion) return;
+        _emotion = emotion;
+        OnCardValueChanged.Invoke();
+    }
+
+    #endregion
+
+
+    public CardData CopyCard()
+    {
+        CardData copy = ScriptableObject.CreateInstance<CardData>();
+        copy._emotion = _emotion;
+        copy._intention = _intention;
+        copy._energyCost = _energyCost;
+
+        return copy;
+    }
+
     #region debug
     private void Debug_InvokeOnCardValueChanged()
     {
         OnCardValueChanged.Invoke();
+    }
+
+    public static CardData NewCard (int EnergyCost, CardEmotion Emotion, CardIntention Intention)
+    {
+        CardData newcard = ScriptableObject.CreateInstance<CardData>();
+        newcard._energyCost = EnergyCost;
+        newcard._emotion = Emotion;
+        newcard._intention = Intention;
+        return newcard;
     }
 
     #endregion

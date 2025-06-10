@@ -1,0 +1,191 @@
+/*************************************************
+Author Names :          Cade, Naylor, Toby
+Date Created :          June 6, 2025
+Date Modified :         June 8, 2025
+Brief Description :     Handles visual display for the deck
+
+TODO :                  Create functions for easier updating
+                        Card Scaling
+***************************************************/
+using UnityEngine;
+using System.Collections.Generic;
+
+// This script needed to be a Monobehavior to get some of the references needed
+public class DeckDisplayer : MonoBehaviour
+{
+    #region Variables
+    //private static Deck PlayerDeckRef => GameManager.DeckManagerReference.PlayerDeck;
+    [SerializeField] private Deck DeckRef; // changed to be generalized, because deck will not always be the players.
+    private static int MaxDeckDisplaySize => GameManager.MaxCardsVisibleInDeck;
+
+    [SerializeField, Tooltip("Adjusts horizontal space between cards and edge of display")]
+    private float _bufferFromEdgeOfRegion = 10;
+    [SerializeField, Tooltip("A reference to the visual Card Prefab")] private GameObject _cardPrefab;
+
+    private Vector2 _dimensions;    // Dimensions of the rectTransform cards will spawn in
+    private Vector3 rectTransformCenter;    // Position of the rectTransform, in screen space
+
+    private List<GameObject> _visualDisplay = new List<GameObject>();
+
+    #endregion Variables
+
+    #region Functions
+    /// <summary>
+    /// Called upon the first frame
+    /// Gets a reference to the size and position of the transform in appropriate units
+    /// </summary>
+    private void Awake()
+    {
+        _dimensions = GetComponent<RectTransform>().sizeDelta;
+        _dimensions.x -= 100;   // okay i know magic numbers are bad. this number made things work
+        rectTransformCenter = Camera.main.WorldToScreenPoint(transform.position);
+    }
+
+    public void SetDeck(ref Deck deckRef)
+    {
+        Debug.Log("deck set");
+        DeckRef = deckRef;
+        DisplayAllCards();
+    }
+
+    /// <summary>
+    /// Displays all cards in the player's deck
+    /// </summary>
+    public void DisplayAllCards()
+    {
+        ClearDisplay();
+
+        // Create a copy of the deck to pull cards from
+        // May revisit later and make it the actual deck
+        Deck copy = DeckRef.GetCopy();
+
+        // Creates referenced array
+        Vector2[] spawnPositions = new Vector2[copy.Cards.Count];
+
+        // Generates spawn positions
+        GeneratePositions(ref spawnPositions, 0, copy.Cards.Count-1);
+
+        // Spawns all cards
+        SpawnCards(copy.PeekNCards(copy.Cards.Count), spawnPositions);
+
+    }
+
+    /// <summary>
+    /// Displays a specified number of cards from the player's hand
+    /// If no number is specified, displays max number of cards visible as stated on GameManager
+    /// </summary>
+    /// <param name="n">The number of cards to display</param>
+    public void DisplayNCards(int n=0)
+    {
+        ClearDisplay();
+
+        // If no value was passed in, set the display count to the number from GameManager
+        if(n==0)
+        {
+            n = MaxDeckDisplaySize;
+        }
+
+        // Create a copy of the deck to pull cards from
+        // May revisit later and make it the actual deck
+        Deck copy = DeckRef.GetCopy();
+
+        // Creates referenced array
+        Vector2[] spawnPositions = new Vector2[n];
+
+
+        // Generates spawn positions
+        GeneratePositions(ref spawnPositions, 0, n-1);
+
+        // Spawns the specified number of cards
+        SpawnCards(copy.PeekNCards(n), spawnPositions);
+    }
+
+    /// <summary>
+    /// Clears all currently displayed cards
+    /// </summary>
+    public void ClearDisplay()
+    {
+        for(int i=0; i<_visualDisplay.Count; i++)
+        {
+            Destroy(_visualDisplay[i]);
+        }
+        _visualDisplay.Clear();
+    }
+
+    /// <summary>
+    /// Generates the positions cards will spawn at
+    /// </summary>
+    /// <param name="positions">Vector2 array of spawn positions, passed by reference</param>
+    /// <param name="start">The starting index</param>
+    /// <param name="end">The ending index</param>
+    private void GeneratePositions(ref Vector2[] positions, int start, int end)
+    {
+        // Assign the first position to the left side of the display area
+        positions[start] =  new Vector2(rectTransformCenter.x - .5f * _dimensions.x + _bufferFromEdgeOfRegion, (.5f * _dimensions.y));
+
+        // Calculate the space needed
+        float additiveValue = (_dimensions.x - 2*_bufferFromEdgeOfRegion) / (end - start);
+
+        // Position generation
+        for(int i=start+1; i<end; i++)
+        {
+            positions[i] = positions[i - 1];
+            positions[i].x += additiveValue;
+        }
+
+        // Assigns the last position to the right side of the display area, as a percaution
+        positions[end] =    new Vector2(rectTransformCenter.x + .5f * _dimensions.x - _bufferFromEdgeOfRegion, (.5f * _dimensions.y));
+    }
+
+    /// <summary>
+    /// Contains the actual logic for spawning the cards
+    /// Adds them to a list for storage
+    /// </summary>
+    /// <param name="cards">An array of CardData for the cards to create</param>
+    /// <param name="position">Where the spawned cards should be located</param>
+    private void SpawnCards(CardData[] cards, Vector2[] position)
+    {
+        for(int i=0; i<cards.Length; i++)
+        {
+            Debug.Log("spawning card");
+            /* There is probably a better way to do this
+             * However, I needed to spawn the card, set its anchor, then adjust the position after setting the anchor
+             * so it works for now*/
+            
+            _visualDisplay.Add(Instantiate(_cardPrefab, Vector2.zero, Quaternion.identity, transform));
+            _visualDisplay[i].GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            _visualDisplay[i].transform.localPosition = position[i];
+            _visualDisplay[i].GetComponent<CardDisplay>().SetCard(cards[i]);
+            _visualDisplay[i].transform.localScale *= .6f;
+        }
+    }
+
+    #region Obselete
+    // ok so I was being a little bit of a dumbass trying to get this to work
+    // will probably revisit it later for efficiency 
+    // actually nevermind the entire thing is more complex
+    /// <summary>
+    /// Recursive function to generate card positions
+    /// </summary>
+    /// <param name="positions">Vector2 array containing all spawn positions</param>
+    /// <param name="start">starting index</param>
+    /// <param name="end">ending index</param>
+    /// <returns>Returns an array of partial positions</returns>
+    private Vector2[] RecursivelyGeneratePositions(ref Vector2[] positions, int start, int end)
+    {
+        int midpoint = start + (end - start) / 2;
+        if (start >= end || midpoint == 0 || midpoint == positions.Length - 1)
+        {
+            return positions;
+        }
+        positions[midpoint] = new Vector2((positions[start].x + positions[end].x) / 2, (.5f * _dimensions.y));
+
+        Vector2[] leftHalf = RecursivelyGeneratePositions(ref positions, start, midpoint);
+        Vector2[] rightHalf = RecursivelyGeneratePositions(ref positions, midpoint + 1, end);
+
+        return StaticUtilities.AddArrays(leftHalf, rightHalf);
+    }
+    #endregion
+
+    #endregion
+}

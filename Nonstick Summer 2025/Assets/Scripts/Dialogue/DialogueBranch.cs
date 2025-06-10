@@ -21,8 +21,6 @@ public class DialogueBranch : ScriptableObject
     [SerializeField]
     [Label("NPC Dialogue")] DialogueNPC[] dialogue;
 
-    private int currentText;
-
     public DialogueOption ReturnDialogueOption(CardData card)
     {
 

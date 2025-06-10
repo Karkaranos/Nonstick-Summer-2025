@@ -24,6 +24,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using NaughtyAttributes;
 using System.Collections;
+using TMPro;
 
 public class DialogueUIController : Singleton<DialogueUIController>
 {
@@ -32,6 +33,13 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Required][SerializeField] private DeckDisplayer deckDisplay;
     [Tooltip("Relationship slider UI element")]
     [Required][SerializeField] private RelationshipSlider relationshipSlider;
+    [Required][SerializeField] private DialogueBox dialogueBox;
+
+    //i can make this a whole 'nother script if necessary but idk
+    [SerializeField] private TMP_Text playCardButtonText;
+
+    private CardData selectedCard;
+    private bool closeCombat;
 
     public void Initialize(DialogueBranch startBranch, characters character)
     {
@@ -44,12 +52,89 @@ public class DialogueUIController : Singleton<DialogueUIController>
         energyBar.Initalize(DialogueManager.MaxEnergy);
         relationshipSlider.Initialize(RelationshipManager.characterRelationships[character].maxValue, RelationshipManager.characterRelationships[character].currentValue);
         deckDisplay.SetDeck(ref DialogueManager.PlayerHand);
+        dialogueBox.Initialize(startBranch);
+
     }
     
     public void UpdateHoveringCard(CardData card)
     {
         // card is null, it hides the text bubble
         playerDialogueBubble.WriteText(card);
+
+    }
+
+    public void UpdateSelection(CardData card, bool cardSelected)
+    {
+
+        if(cardSelected)
+        {
+
+            playCardButtonText.text = "Play Card";
+            if (selectedCard != null)
+            {
+
+                selectedCard.Selected = false;
+                selectedCard = card;
+
+            }
+            else { selectedCard = card; }
+
+        }
+        else if (!cardSelected)
+        {
+
+            playCardButtonText.text = "(. . .)";
+
+        }
+
+    }
+
+    //i can move this to a different script later if necessary but for now the play card button is tied to this
+    public void ProgressDialogue()
+    {
+
+        if(closeCombat)
+        {
+
+            UITransitionManager.CloseMenu();
+            return;
+
+            //this definitely duplicates cards atm but i'm assuming this won't be an issue once the ui isn't automatically generating cards. otherwise i can fix this
+
+        }
+
+        if(selectedCard != null)
+        {
+
+            StartCoroutine(DialogueManager.ProgressDialogue(selectedCard));
+
+            playCardButtonText.text = "(. . .)";
+
+        }
+        else { StartCoroutine(DialogueManager.ProgressDialogue(null)); }
+
+    }
+
+    public void UpdateDialogueDisplay(DialogueBranch branch, int numberInList)
+    {
+
+        dialogueBox.ProgressDialogue(branch, numberInList);
+
+    }
+
+    public void ClosingOutCombat()
+    {
+
+        playCardButtonText.text = "End";
+        closeCombat = true;
+
+    }
+
+    public void HideDeck()
+    {
+
+        deckDisplay.gameObject.SetActive(false);
+
     }
 
     // Coroutine to handle animation (in the future)

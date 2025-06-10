@@ -5,6 +5,9 @@ using NaughtyAttributes;
 using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
+using Unity.VisualScripting;
+using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(MouseInteractionEvents))]
 public class CardDisplay : MonoBehaviour
@@ -17,6 +20,8 @@ public class CardDisplay : MonoBehaviour
     [SerializeField] [Tooltip("Set this for debug only")]
     private CardData card;
 
+    private bool selected = false;
+
     private MouseInteractionEvents mouseInteraction;
 
     private void Start()
@@ -27,6 +32,7 @@ public class CardDisplay : MonoBehaviour
 
         mouseInteraction.OnMouseHoverStart.AddListener(OnMouseHoverStart);
         mouseInteraction.OnMouseHoverEnd.AddListener(OnMouseHoverEnd);
+        mouseInteraction.OnMouseDown.AddListener(OnMouseDown);
     }
 
     private void OnMouseHoverStart() // this should be moved to another script
@@ -39,6 +45,32 @@ public class CardDisplay : MonoBehaviour
     {
         if (DialogueManager.PlayerInCombat /*&& TODO: if player does not have card selected*/)
             DialogueUIController.Instance.UpdateHoveringCard(null);
+    }
+
+    private void OnMouseDown()
+    {
+
+        if (DialogueManager.PlayerInCombat)
+        {
+
+            if (!card.Selected)
+            {
+
+                card.Selected = true;
+                DialogueUIController.Instance.UpdateSelection(card, card.Selected);
+
+            }
+            else if(card.Selected)
+            {
+
+                card.Selected = false;
+                DialogueUIController.Instance.UpdateSelection(card, card.Selected);
+
+            }
+
+        }
+        
+
     }
 
     public void SetCard(CardData newCard)

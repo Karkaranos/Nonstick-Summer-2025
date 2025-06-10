@@ -129,6 +129,7 @@ public class DialogueManager
             yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + dialogueOption.ChangeInRelationshipStatus);
             CurrentDialogueBranch = dialogueOption.BranchingDialogue;
             DialogueUIController.Instance.UpdateDialogueDisplay(CurrentDialogueBranch, 0);
+            DialogueUIController.Instance.NumberInList = 0;
 
             if (CurrentDialogueBranch.End)
             {
@@ -138,7 +139,7 @@ public class DialogueManager
             }
 
         }
-        else { DialogueUIController.Instance.UpdateDialogueDisplay(CurrentDialogueBranch); }
+        else { DialogueUIController.Instance.UpdateDialogueDisplay(CurrentDialogueBranch, DialogueUIController.Instance.NumberInList += 1); }
 
 
         // TODO: see 'Progress Dialogue and Process Cards' task
@@ -148,6 +149,7 @@ public class DialogueManager
 
         Debug.Log("Completed processing card");
         ReadUserInput = true;
+
     }
 
     /// <summary>

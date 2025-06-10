@@ -23,6 +23,7 @@ public class DialogueBox : MonoBehaviour
         npcText = GetComponent<TMP_Text>();
 
         npcText.text = branch.dialogue[numberInList].Dialogue;
+
         if (branch.dialogue[numberInList].End)
         {
 

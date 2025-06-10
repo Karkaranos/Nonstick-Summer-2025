@@ -41,6 +41,9 @@ public class DialogueUIController : Singleton<DialogueUIController>
     private CardData selectedCard;
     private bool closeCombat;
 
+
+    [HideInInspector] public int NumberInList = 0;
+
     public void Initialize(DialogueBranch startBranch, characters character)
     {
         DialogueManager.OnOpenCombatUI(startBranch, character);
@@ -119,6 +122,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     {
 
         dialogueBox.ProgressDialogue(branch, numberInList);
+        selectedCard = null;
 
     }
 
@@ -132,8 +136,12 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     public void HideDeck()
     {
+        if(deckDisplay.gameObject)
+        {
 
-        deckDisplay.gameObject.SetActive(false);
+            deckDisplay.gameObject.SetActive(false);
+
+        }
 
     }
 

@@ -18,7 +18,6 @@ using UnityEngine;
 public class CardData : ScriptableObject
 {
     [HideInInspector] public Action OnCardValueChanged;
-    [HideInInspector] public bool Selected = false;
 
     [OnValueChanged("Debug_InvokeOnCardValueChanged")]
     [Tooltip("ADDS this value to the players energy on played. (Leave negative to subtract energy)")] // i am such a freak

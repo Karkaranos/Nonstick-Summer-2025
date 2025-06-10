@@ -139,7 +139,12 @@ public class DialogueManager
             }
 
         }
-        else { DialogueUIController.Instance.UpdateDialogueDisplay(CurrentDialogueBranch, DialogueUIController.Instance.NumberInList += 1); }
+        else
+        {
+
+            DialogueUIController.Instance.UpdateDialogueDisplay(CurrentDialogueBranch, DialogueUIController.Instance.NumberInList += 1);
+
+        }
 
 
         // TODO: see 'Progress Dialogue and Process Cards' task

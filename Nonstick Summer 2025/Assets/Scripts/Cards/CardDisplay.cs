@@ -20,7 +20,9 @@ public class CardDisplay : MonoBehaviour
     [SerializeField] [Tooltip("Set this for debug only")]
     private CardData card;
 
-    private bool selected = false;
+
+    //this is for display purposes
+    public bool selected = false;
 
     private MouseInteractionEvents mouseInteraction;
 
@@ -53,18 +55,18 @@ public class CardDisplay : MonoBehaviour
         if (DialogueManager.PlayerInCombat)
         {
 
-            if (!card.Selected)
+            if (!selected)
             {
 
-                card.Selected = true;
-                DialogueUIController.Instance.UpdateSelection(card, card.Selected);
+                selected = true;
+                DialogueUIController.Instance.UpdateSelection(card, selected, this);
 
             }
-            else if(card.Selected)
+            else if(selected)
             {
 
-                card.Selected = false;
-                DialogueUIController.Instance.UpdateSelection(card, card.Selected);
+                selected = false;
+                DialogueUIController.Instance.UpdateSelection(card, selected, this);
 
             }
 

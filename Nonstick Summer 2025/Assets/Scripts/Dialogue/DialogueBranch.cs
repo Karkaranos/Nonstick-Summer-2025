@@ -16,7 +16,7 @@ public class DialogueBranch : ScriptableObject
     [Label("NPC Dialogue")] public DialogueNPC[] dialogue;
 
     [SerializeField]
-    [BoxGroup("Floats")][HideIf("End")] DialogueOption Option1, Option2, Option3, Option4, Option5,
+    [BoxGroup("Dialogue Options")][HideIf("End")] DialogueOption Option1, Option2, Option3, Option4, Option5,
         Option6, Option7, Option8, Option9;
 
     public bool End;

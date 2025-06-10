@@ -38,7 +38,14 @@ public class DialogueUIController : Singleton<DialogueUIController>
     //i can make this a whole 'nother script if necessary but idk
     [SerializeField] private TMP_Text playCardButtonText;
 
+    [Header("Progress Button Text")]
+    public string CardSelectedText;
+    public string CardNotSelectedText;
+    public string EndDialogueText;
+
+
     private CardData selectedCard;
+    private CardDisplay selectedDisplay;
     private bool closeCombat;
 
 
@@ -66,27 +73,31 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     }
 
-    public void UpdateSelection(CardData card, bool cardSelected)
+    public void UpdateSelection(CardData card, bool cardSelected, CardDisplay display)
     {
 
         if(cardSelected)
         {
 
-            playCardButtonText.text = "Play Card";
+            playCardButtonText.text = CardSelectedText;
+
             if (selectedCard != null)
             {
 
-                selectedCard.Selected = false;
-                selectedCard = card;
+                selectedDisplay.selected = false;
 
             }
-            else { selectedCard = card; }
+
+            selectedCard = card;
+            selectedDisplay = display;
 
         }
         else if (!cardSelected)
         {
 
-            playCardButtonText.text = "(. . .)";
+            playCardButtonText.text = CardNotSelectedText;
+            selectedCard = null;
+            selectedDisplay = null;
 
         }
 
@@ -111,7 +122,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
             StartCoroutine(DialogueManager.ProgressDialogue(selectedCard));
 
-            playCardButtonText.text = "(. . .)";
+            playCardButtonText.text = CardNotSelectedText;
 
         }
         else { StartCoroutine(DialogueManager.ProgressDialogue(null)); }
@@ -129,7 +140,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     public void ClosingOutCombat()
     {
 
-        playCardButtonText.text = "End";
+        playCardButtonText.text = EndDialogueText;
         closeCombat = true;
 
     }

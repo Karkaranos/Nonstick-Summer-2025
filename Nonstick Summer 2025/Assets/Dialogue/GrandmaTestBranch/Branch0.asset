@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Branch0
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: Welcome home, honey!
+    Portrait: {fileID: 0}
+    End: 0
+  - Dialogue: Light of my life.
+    Portrait: {fileID: 0}
+    End: 0
+  - Dialogue: Apple of my eye.
+    Portrait: {fileID: 0}
+    End: 0
+  - Dialogue: Etceterea.
+    Portrait: {fileID: 0}
+    End: 1
+  Option1:
+    BranchingDialogue: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
+    PlayerDialogue: I love you, Grandma!
+    ChangeInRelationshipStatus: 0
+  Option2:
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
+    PlayerDialogue: Ugh. I love you, or whatever.
+    ChangeInRelationshipStatus: 0
+  Option3:
+    BranchingDialogue: {fileID: 11400000, guid: 6c05a1b900e54cc4db026e9e3ac109bc, type: 2}
+    PlayerDialogue: I love you...
+    ChangeInRelationshipStatus: 0
+  Option4:
+    BranchingDialogue: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
+    PlayerDialogue: Haha. I hate you. You know that?
+    ChangeInRelationshipStatus: 0
+  Option5:
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
+    PlayerDialogue: I HATE YOU.
+    ChangeInRelationshipStatus: 0
+  Option6:
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
+    PlayerDialogue: I hate you...
+    ChangeInRelationshipStatus: 0
+  Option7:
+    BranchingDialogue: {fileID: 11400000, guid: 6c05a1b900e54cc4db026e9e3ac109bc, type: 2}
+    PlayerDialogue: I miss you!
+    ChangeInRelationshipStatus: 0
+  Option8:
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
+    PlayerDialogue: I can't believe that I actually MISS you.
+    ChangeInRelationshipStatus: 0
+  Option9:
+    BranchingDialogue: {fileID: 11400000, guid: 6c05a1b900e54cc4db026e9e3ac109bc, type: 2}
+    PlayerDialogue: I miss you. I miss you so, so much.
+    ChangeInRelationshipStatus: 0
+  End: 0

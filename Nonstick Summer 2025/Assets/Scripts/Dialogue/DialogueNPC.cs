@@ -1,17 +1,16 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 
 public class DialogueNPC
 {
-
-    public DialogueBranch BranchingDialogue;
     public string Dialogue;
-    public Sprite Portrait;
+    public Image Portrait;
 
     //for progressing dialogue. depends on the list 
-    public int NextDialogueBox;
+    //public int NextDialogueBox;
 
     public bool End;
 

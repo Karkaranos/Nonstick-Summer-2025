@@ -104,6 +104,7 @@ public class DialogueManager
         Debug.LogWarning("Added hard-coded test cards to hand.");
     }
 
+
     /// <summary>
     /// Coroutine because i just know theres going to be animations later
     /// TODO: call this coroutine
@@ -120,8 +121,30 @@ public class DialogueManager
             (playedCard == null ? _energyGainedIfSilent: playedCard.GetEnergyCost())); // this could have been an if statement but noooooo i just had to be special
 
 
-        var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
-        yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + dialogueOption.ChangeInRelationshipStatus);
+        //sorry to fw this
+        if(playedCard != null)
+        {
+
+            var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
+            yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + dialogueOption.ChangeInRelationshipStatus);
+            CurrentDialogueBranch = dialogueOption.BranchingDialogue;
+            DialogueUIController.Instance.UpdateDialogueDisplay(CurrentDialogueBranch, 0);
+            DialogueUIController.Instance.NumberInList = 0;
+
+            if (CurrentDialogueBranch.End)
+            {
+
+                DialogueUIController.Instance.HideDeck();
+
+            }
+
+        }
+        else
+        {
+
+            DialogueUIController.Instance.UpdateDialogueDisplay(CurrentDialogueBranch, DialogueUIController.Instance.NumberInList += 1);
+
+        }
 
 
         // TODO: see 'Progress Dialogue and Process Cards' task
@@ -131,6 +154,7 @@ public class DialogueManager
 
         Debug.Log("Completed processing card");
         ReadUserInput = true;
+
     }
 
     /// <summary>

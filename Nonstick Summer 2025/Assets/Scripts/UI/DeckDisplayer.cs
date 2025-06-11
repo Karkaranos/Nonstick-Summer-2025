@@ -1,11 +1,10 @@
 /*************************************************
 Author Names :          Cade, Naylor, Toby
 Date Created :          June 6, 2025
-Date Modified :         June 8, 2025
+Date Modified :         June 10, 2025
 Brief Description :     Handles visual display for the deck
 
 TODO :                  Create functions for easier updating
-                        Card Scaling
 ***************************************************/
 using UnityEngine;
 using System.Collections.Generic;
@@ -50,6 +49,7 @@ public class DeckDisplayer : MonoBehaviour
     public void SetDeck(ref Deck deckRef)
     {
         DeckRef = deckRef;
+        //This will eventually be moved elsewhere
         DisplayNCards(GameManager.MaxCardsVisibleInDeck);
     }
 

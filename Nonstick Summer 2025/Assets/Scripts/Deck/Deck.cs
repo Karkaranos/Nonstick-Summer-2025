@@ -35,6 +35,7 @@ public class Deck
         _cards.Add(newCard/*.CopyCard(newCard)*/);  // commenting out CopyCard to bridge disconnect between copies of deck (in case player modifies a card)
     }
 
+
     public void Add(CardData[] newCards)
     {
         foreach(CardData c in newCards)

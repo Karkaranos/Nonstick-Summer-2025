@@ -84,6 +84,8 @@ public class DeckDisplayer : MonoBehaviour
     {
         ClearDisplay();
 
+        Debug.Log("Displaying " + n + " of " + DeckRef.Cards.Count + " cards.");
+
         // If no value was passed in, set the display count to the number from GameManager
         if(n==0)
         {

@@ -99,7 +99,7 @@ public class DialogueManager
 
 
         // testing only: please delete later
-        PlayerHand.Clear();
+        //PlayerHand.Clear();
         PlayerHand.Add(CardData.NewCard(1, CardEmotion.Blue, CardIntention.Intention1));
         PlayerHand.Add(CardData.NewCard(0, CardEmotion.Yellow, CardIntention.Intention2));
         PlayerHand.Add(CardData.NewCard(-3, CardEmotion.Red, CardIntention.Intention3));

@@ -49,11 +49,11 @@ public class DeckTest : MonoBehaviour
             print("Element " + i + ": Emotion-" + top.Emotion + " Intent-" + top.Intention);
         }*/
 
-        foreach (CardData c in testVals)
+        /*foreach (CardData c in testVals)
         {
             DeckManager.AddCard(c);
         }
-
+        */
         //TODO: Fix Duplication
 
         /* 
@@ -85,8 +85,8 @@ public class DeckTest : MonoBehaviour
         }
         */
 
-        var sorrycade = FindFirstObjectByType<DeckDisplayer>();
-        if(sorrycade!=null)sorrycade.DisplayAllCards();
+        //var sorrycade = FindFirstObjectByType<DeckDisplayer>();
+        //if(sorrycade!=null)sorrycade.DisplayAllCards();
 
     }
 }

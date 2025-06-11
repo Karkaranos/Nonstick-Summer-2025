@@ -57,8 +57,6 @@ public class DialogueManager
         _currentEnergy = energy;
         if (DialogueUIController.Instance != null)
             yield return DialogueUIController.Instance.UpdateEnergy(energy); // wait for animation to finish
-
-        yield return TryEnergyLossDeath();
     }
 
     public static IEnumerator SetCurrentRelationshipStatus(float relationshipScore)
@@ -141,14 +139,8 @@ public class DialogueManager
         }
         else
         {
-
             DialogueUIController.Instance.UpdateDialogueDisplay(CurrentDialogueBranch, DialogueUIController.Instance.NumberInList += 1);
-
         }
-
-
-        // TODO: see 'Progress Dialogue and Process Cards' task
-        // hi jay
 
         yield return SetCurrentEnergy(_currentEnergy + _energyGainedPerRound);
 
@@ -167,16 +159,5 @@ public class DialogueManager
         RemainingDeck = DeckManager.CopyDeck().Shuffled();
         PlayerHand.Clear();
     }
-
-    private static IEnumerator TryEnergyLossDeath() // bad function name, but brain kinda blank on a better one rn
-    {
-        if(_currentEnergy > 0)
-            yield break; // not dead :)
-
-        throw new NotImplementedException();
-
-        yield return null;
-    }
-
     
 }

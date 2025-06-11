@@ -16,19 +16,19 @@ public class CardDisplay : MonoBehaviour
     [BoxGroup("UI Components")][SerializeField] TMP_Text IntentionText;
     [BoxGroup("UI Components")][SerializeField] Image CardBackground;
     [BoxGroup("UI Components")][SerializeField] Image IntentionImage;
+    [BoxGroup("UI Components")][SerializeField] TMP_Text EnergyText;
 
     [SerializeField] [Tooltip("Set this for debug only")]
     private CardData card;
 
-
     //this is for display purposes
-    public bool selected = false;
+    [HideInInspector] public bool selected = false;
 
     private MouseInteractionEvents mouseInteraction;
 
     private void Start()
     {
-        if(card != null) SetCard(card); // mostfly for debugging
+        if(card != null) SetCard(card); // mostly for debugging
 
         mouseInteraction = GetComponent<MouseInteractionEvents>();
 
@@ -39,13 +39,13 @@ public class CardDisplay : MonoBehaviour
 
     private void OnMouseHoverStart() // this should be moved to another script
     {
-        if (DialogueManager.PlayerInCombat /*&& TODO: if player does not have card selected*/ )
+        if (DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput /*&& TODO: if player does not have card selected*/ )
            DialogueUIController.Instance.UpdateHoveringCard(card);
     }
 
     private void OnMouseHoverEnd() // this should be moved to another script
     {
-        if (DialogueManager.PlayerInCombat /*&& TODO: if player does not have card selected*/)
+        if (DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput /*&& TODO: if player does not have card selected*/)
             DialogueUIController.Instance.UpdateHoveringCard(null);
     }
 
@@ -57,22 +57,15 @@ public class CardDisplay : MonoBehaviour
 
             if (!selected)
             {
-
                 selected = true;
                 DialogueUIController.Instance.UpdateSelection(card, selected, this);
-
             }
-            else if(selected)
+            else
             {
-
                 selected = false;
                 DialogueUIController.Instance.UpdateSelection(card, selected, this);
-
             }
-
         }
-        
-
     }
 
     public void SetCard(CardData newCard)
@@ -99,6 +92,7 @@ public class CardDisplay : MonoBehaviour
 
         EmotionText.text = CardStyleManager.GetEmotionStyle(card).DisplayName;
         IntentionText.text = CardStyleManager.GetIntentionStyle(card).DisplayName;
+        EnergyText.text = card.EnergyCost.ToString();
         IntentionImage.sprite = CardStyleManager.GetIntentionSprite(card);
         CardBackground.color = CardStyleManager.GetEmotionColor(card);
 

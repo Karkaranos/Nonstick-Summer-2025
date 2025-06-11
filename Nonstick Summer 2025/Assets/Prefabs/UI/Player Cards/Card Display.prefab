@@ -174,11 +174,11 @@ RectTransform:
   - {fileID: 5241118381910855034}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 818.12, y: 0}
   m_SizeDelta: {x: 0, y: 425.64}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &7815541521199218980
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -219,7 +219,6 @@ MonoBehaviour:
   IntentionImage: {fileID: 6412666798837967272}
   EnergyText: {fileID: 4437868579002710919}
   card: {fileID: 11400000, guid: 6ac2c164d8055c04db47a6031bf810bf, type: 2}
-  selected: 0
 --- !u!114 &1141840434913231624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,7 +377,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 12}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4639505685409020748
 CanvasRenderer:

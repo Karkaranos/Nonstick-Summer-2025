@@ -13,7 +13,7 @@ public class UIUtilityFunctions : MonoBehaviour
     /// </summary>
     public static void GetCard(CardData card)
     {
-        Debug.LogWarning("Implement giving player cards later");
+        DialogueManager.PlayerHand.Add(card);
     }
 
     public static void CloseCurrentPopup()

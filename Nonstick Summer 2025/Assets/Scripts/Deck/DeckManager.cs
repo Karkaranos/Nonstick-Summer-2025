@@ -16,7 +16,7 @@ public class DeckManager
     public Deck PlayerDeck = new Deck();
 
     private static GameObject _deckDisplayObj;
-
+    
     #region Initialization
     /// <summary>
     /// Runs after the first scene has finished loading

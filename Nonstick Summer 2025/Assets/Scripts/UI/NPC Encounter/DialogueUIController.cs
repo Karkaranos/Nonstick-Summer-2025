@@ -35,6 +35,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Required][SerializeField] private RelationshipSlider relationshipSlider;
     [Required][SerializeField] private DialogueBox dialogueBox;
 
+
     //i can make this a whole 'nother script if necessary but idk
     [SerializeField] private TMP_Text playCardButtonText;
 
@@ -123,6 +124,10 @@ public class DialogueUIController : Singleton<DialogueUIController>
             StartCoroutine(DialogueManager.ProgressDialogue(selectedCard));
 
             playCardButtonText.text = CardNotSelectedText;
+
+            DialogueManager.PlayerHand.Remove(selectedCard);
+
+            selectedCard = null;
 
         }
         else { StartCoroutine(DialogueManager.ProgressDialogue(null)); }

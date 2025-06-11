@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7408760534927881801}
   - component: {fileID: 6443241130234411971}
   - component: {fileID: 1141840434913231624}
-  - component: {fileID: 5967317029181718190}
   m_Layer: 5
   m_Name: Card Display
   m_TagString: Untagged
@@ -37,11 +36,11 @@ RectTransform:
   - {fileID: 5241118381910855034}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 250}
-  m_Pivot: {x: 0, y: 0.5}
+  m_SizeDelta: {x: 0, y: 425.64}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7815541521199218980
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -81,7 +80,6 @@ MonoBehaviour:
   CardBackground: {fileID: 3494915202767538561}
   IntentionImage: {fileID: 6412666798837967272}
   card: {fileID: 11400000, guid: 6ac2c164d8055c04db47a6031bf810bf, type: 2}
-  selected: 0
 --- !u!114 &1141840434913231624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,27 +94,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 0.6666667
---- !u!114 &5967317029181718190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637363475462070288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 379932104462e0442ab96002867f67cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnMouseDown:
-    m_PersistentCalls:
-      m_Calls: []
-  OnMouseHoverStart:
-    m_PersistentCalls:
-      m_Calls: []
-  OnMouseHoverEnd:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1816931893758475871
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +131,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -5}
+  m_AnchoredPosition: {x: 0, y: -15}
   m_SizeDelta: {x: 200.23999, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &7327841155178765723
@@ -240,7 +217,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 12}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4639505685409020748
 CanvasRenderer:
@@ -656,18 +633,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tooltip
       objectReference: {fileID: 0}
-    - target: {fileID: 3343996588503030216, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
-      propertyPath: m_Alpha
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3343996588503030216, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
-      propertyPath: m_Interactable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3343996588503030216, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
-      propertyPath: m_BlocksRaycasts
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5917198537950354199, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -734,7 +699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5917198537950354199, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 96
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 5917198537950354199, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

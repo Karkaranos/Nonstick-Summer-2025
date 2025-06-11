@@ -33,7 +33,14 @@ public class Deck
     public void Add(CardData newCard)
     {
         _cards.Add(newCard/*.CopyCard(newCard)*/);  // commenting out CopyCard to bridge disconnect between copies of deck (in case player modifies a card)
-        Debug.Log(_cards.Count + " cards in player deck");
+    }
+
+    public void Add(CardData[] newCards)
+    {
+        foreach(CardData c in newCards)
+        {
+            _cards.Add(c);
+        }
     }
 
     /// <summary>
@@ -167,7 +174,6 @@ public class Deck
             {
                 result[i] = Cards[i];
             }
-            Debug.Log("Peeking the top " + n + " cards.");
             return result;
         }
 
@@ -179,8 +185,6 @@ public class Deck
             {
                 result[i] = Cards[i];
             }
-            Debug.Log("Peeking the top " + Cards.Count + " values as there were fewer than " + n +
-                " cards available");
             return result;
         }
 
@@ -210,7 +214,6 @@ public class Deck
             {
                 result[i] = Pop();
             }
-            Debug.Log("Popping the top " + n + " cards.");
             return result;
         }
 
@@ -222,8 +225,6 @@ public class Deck
             {
                 result[i] = Pop();
             }
-            Debug.Log("Popping the top " + Cards.Count + " values as there were fewer than " + n +
-                " cards available");
             return result;
         }
 

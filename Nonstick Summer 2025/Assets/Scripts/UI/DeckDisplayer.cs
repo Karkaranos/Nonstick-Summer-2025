@@ -24,8 +24,11 @@ public class DeckDisplayer : MonoBehaviour
 
     private Vector2 _dimensions;    // Dimensions of the rectTransform cards will spawn in
     private Vector3 rectTransformCenter;    // Position of the rectTransform, in screen space
+    private float _cardWidth;
 
     private List<GameObject> _visualDisplay = new List<GameObject>();
+
+  private Vector2[] spawnPositions;
 
     #endregion Variables
 
@@ -37,15 +40,17 @@ public class DeckDisplayer : MonoBehaviour
     private void Awake()
     {
         _dimensions = GetComponent<RectTransform>().sizeDelta;
-        _dimensions.x -= 100;   // okay i know magic numbers are bad. this number made things work
-        rectTransformCenter = Camera.main.WorldToScreenPoint(transform.position);
+        GameObject temp = Instantiate(_cardPrefab);
+        _cardWidth = temp.transform.GetComponent<RectTransform>().sizeDelta.x;
+        _dimensions.x -= _cardWidth;
+        Destroy(temp);
+        rectTransformCenter = transform.localPosition;
     }
 
     public void SetDeck(ref Deck deckRef)
     {
-        Debug.Log("deck set");
         DeckRef = deckRef;
-        DisplayAllCards();
+        DisplayNCards(GameManager.MaxCardsVisibleInDeck);
     }
 
     /// <summary>
@@ -60,7 +65,7 @@ public class DeckDisplayer : MonoBehaviour
         Deck copy = DeckRef.GetCopy();
 
         // Creates referenced array
-        Vector2[] spawnPositions = new Vector2[copy.Cards.Count];
+        spawnPositions = new Vector2[copy.Cards.Count];
 
         // Generates spawn positions
         GeneratePositions(ref spawnPositions, 0, copy.Cards.Count-1);
@@ -120,11 +125,12 @@ public class DeckDisplayer : MonoBehaviour
     /// <param name="end">The ending index</param>
     private void GeneratePositions(ref Vector2[] positions, int start, int end)
     {
+        print("Ran");
         // Assign the first position to the left side of the display area
-        positions[start] =  new Vector2(rectTransformCenter.x - .5f * _dimensions.x + _bufferFromEdgeOfRegion, (.5f * _dimensions.y));
+        positions[start] =  new Vector2(_bufferFromEdgeOfRegion - .5f *_dimensions.x + rectTransformCenter.x,150);
 
         // Calculate the space needed
-        float additiveValue = (_dimensions.x - 2*_bufferFromEdgeOfRegion) / (end - start);
+        float additiveValue = (_dimensions.x - _bufferFromEdgeOfRegion) / (end-start);
 
         // Position generation
         for(int i=start+1; i<end; i++)
@@ -134,7 +140,8 @@ public class DeckDisplayer : MonoBehaviour
         }
 
         // Assigns the last position to the right side of the display area, as a percaution
-        positions[end] =    new Vector2(rectTransformCenter.x + .5f * _dimensions.x - _bufferFromEdgeOfRegion, (.5f * _dimensions.y));
+        // also yeah the numbers are weird. I will fix it later. i'm a lil tired tbh
+        positions[end] =    new Vector2(rectTransformCenter.x + .5f *_dimensions.x + .3f * _cardWidth -_bufferFromEdgeOfRegion, 150);
     }
 
     /// <summary>
@@ -147,16 +154,15 @@ public class DeckDisplayer : MonoBehaviour
     {
         for(int i=0; i<cards.Length; i++)
         {
-            Debug.Log("spawning card");
+            Debug.Log("spawning card at " + position[i]);
             /* There is probably a better way to do this
              * However, I needed to spawn the card, set its anchor, then adjust the position after setting the anchor
              * so it works for now*/
             
             _visualDisplay.Add(Instantiate(_cardPrefab, Vector2.zero, Quaternion.identity, transform));
-            _visualDisplay[i].GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-            _visualDisplay[i].transform.localPosition = position[i];
+            //_visualDisplay[i].GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
             _visualDisplay[i].GetComponent<CardDisplay>().SetCard(cards[i]);
-            _visualDisplay[i].transform.localScale *= .6f;
+            _visualDisplay[i].transform.localPosition = position[i];
         }
     }
 

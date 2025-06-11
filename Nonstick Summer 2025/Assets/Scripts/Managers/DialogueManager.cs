@@ -26,6 +26,7 @@ public class DialogueManager
     public static UITransitionManager Instance => GameManager.UITransitionManagerReference;
 
     public static bool ReadUserInput;
+    public static bool UserCanPlayCard=>ReadUserInput && DialogueUIController.Instance.PlayerReadAllNPCText;
     public static UnityEvent OnCardPlayed = new UnityEvent();
     public static DialogueBranch CurrentDialogueBranch { get; private set; }
     public static bool PlayerInCombat => DialogueUIController.Instance != null;
@@ -72,7 +73,6 @@ public class DialogueManager
         {
             yield return DialogueUIController.Instance.UpdateRelationship(relationshipScore, currentCharacter);
         }
-
     }
 
     #endregion
@@ -91,7 +91,7 @@ public class DialogueManager
 
     public static void OnOpenCombatUI(DialogueBranch startDialogueBranch, characters character)
     {
-        ReadUserInput = true;
+        ReadUserInput = false;
         CurrentDialogueBranch = startDialogueBranch;
         currentCharacter = character;
 
@@ -100,53 +100,45 @@ public class DialogueManager
         PlayerHand.Add(CardData.NewCard(0, CardEmotion.Yellow, CardIntention.Intention2));
         PlayerHand.Add(CardData.NewCard(-3, CardEmotion.Red, CardIntention.Intention3));
         Debug.LogWarning("Added hard-coded test cards to hand.");
+
+        GameManager.Instance.StartCoroutine(OpenCombatUI_Coroutine()); // it needs A monobehavior to start a coroutine, and i didnt know which else
     }
 
+    private static IEnumerator OpenCombatUI_Coroutine()
+    {
+        yield return DialogueUIController.Instance.UpdateNPCDialogueDisplay();
+    }
 
     /// <summary>
-    /// Coroutine because i just know theres going to be animations later
-    /// TODO: call this coroutine
+    /// The big function that ties together everything. updates ui and processes a card
     /// </summary>
-    public static IEnumerator ProgressDialogue(CardData playedCard)
+    public static IEnumerator ProcessPlayCard(CardData playedCard)
     {
+        Debug.Log("Player playing card");
         ReadUserInput = false;
+
+        yield return DialogueUIController.Instance.ToggleUIForDialogueProgression(false);
 
         if (_currentEnergy <= 0 && playedCard != null)
             Debug.LogWarning("Card played with 0 energy");
 
-        // reference for other programmers: 'yield return' stops this coroutine until the next coroutine is finished
         yield return SetCurrentEnergy(_currentEnergy + 
             (playedCard == null ? _energyGainedIfSilent: playedCard.GetEnergyCost())); // this could have been an if statement but noooooo i just had to be special
 
+        var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
 
-        //sorry to fw this
-        if(playedCard != null)
-        {
+        // progress dialogue
+        CurrentDialogueBranch = dialogueOption.BranchingDialogue;
+        yield return DialogueUIController.Instance.UpdateNPCDialogueDisplay();
 
-            var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
-            yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + dialogueOption.ChangeInRelationshipStatus);
-            CurrentDialogueBranch = dialogueOption.BranchingDialogue;
-            DialogueUIController.Instance.UpdateDialogueDisplay(CurrentDialogueBranch, 0);
-            DialogueUIController.Instance.NumberInList = 0;
+        yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + dialogueOption.ChangeInRelationshipStatus);
 
-            if (CurrentDialogueBranch.End)
-            {
-
-                DialogueUIController.Instance.HideDeck();
-
-            }
-
-        }
-        else
-        {
-            DialogueUIController.Instance.UpdateDialogueDisplay(CurrentDialogueBranch, DialogueUIController.Instance.NumberInList += 1);
-        }
+        yield return DialogueUIController.Instance.ToggleUIForDialogueProgression(DialogueUIController.Instance.PlayerReadAllNPCText);
 
         yield return SetCurrentEnergy(_currentEnergy + _energyGainedPerRound);
 
         Debug.Log("Completed processing card");
         ReadUserInput = true;
-
     }
 
     /// <summary>

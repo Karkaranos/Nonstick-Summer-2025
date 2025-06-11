@@ -19,12 +19,17 @@ public class DialogueBranch : ScriptableObject
     [BoxGroup("Dialogue Options")][HideIf("End")] DialogueOption Option1, Option2, Option3, Option4, Option5,
         Option6, Option7, Option8, Option9;
 
+    [BoxGroup("Dialogue Options")] [HideIf("End")] private DialogueOption SilentOption;
+
+
     public bool End;
 
     private static DialogueOption blank;
 
     public DialogueOption ReturnDialogueOption(CardData card)
     {
+        if (card == null)
+            return SilentOption ?? blank;
 
         switch ((card.Intention, card.Emotion))
         {

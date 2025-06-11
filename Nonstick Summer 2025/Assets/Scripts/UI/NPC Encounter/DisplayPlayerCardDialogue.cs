@@ -49,7 +49,6 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
         if (card == null)
         {
             text.text = "silent text (make this better later)";
-            //Hide();
             yield break;
         }
 

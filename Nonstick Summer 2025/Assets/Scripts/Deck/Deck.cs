@@ -33,7 +33,7 @@ public class Deck
     public void Add(CardData newCard)
     {
         _cards.Add(newCard/*.CopyCard(newCard)*/);  // commenting out CopyCard to bridge disconnect between copies of deck (in case player modifies a card)
-        Debug.Log(_cards.Count + " cards in player deck");
+        //Debug.Log(_cards.Count + " cards in player deck");
     }
 
     /// <summary>

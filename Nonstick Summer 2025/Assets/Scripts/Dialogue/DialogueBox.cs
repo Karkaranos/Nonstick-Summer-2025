@@ -1,57 +1,89 @@
 /*****************************************************************************
 * File Name :         DialogueBox.cs
-* Author :            Jay
+* Author :            Jay, Toby
 * Creation Date :     June 9, 2025
 *
 * Brief Description :  Displays the NPC's dialogue
 * 
 *****************************************************************************/
 
+using System.Collections;
 using TMPro;
-using Unity.VisualScripting;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class DialogueBox : MonoBehaviour
 {
+    [SerializeField] private TMP_Text npcText;
 
-    private TMP_Text npcText;
+    [HideInInspector] private int NumberInList = 0; //TODO move this to npc dialogue bubble?
 
+    [ReadOnly] public bool PlayerReadAllDialogue;
 
     /// <summary>
     /// displays dialogue according to where the player is in a dialogue branch
     /// </summary>
     /// <param name="branch">the current dialogue branch that the player is on</param>
-    public void Initialize(DialogueBranch branch)
+    public IEnumerator Initialize(DialogueBranch branch)
     {
+        npcText = npcText != null ? npcText : GetComponentInChildren<TMP_Text>();
 
-        npcText = GetComponent<TMP_Text>();
+        NumberInList = 0;
 
-
-        npcText.text = branch.dialogue[0].Dialogue;
-
+        yield return SetDialogueIndex(NumberInList, branch); 
+        //npcText.text = branch.dialogue[0].Dialogue; text initialized 
     }
 
+    #region Dialogue Iteration
+
+    public IEnumerator LoadNewDialogue(DialogueBranch branch = null)
+    {
+        branch = branch ?? DialogueManager.CurrentDialogueBranch;
+
+        PlayerReadAllDialogue = false;
+
+        yield return SetDialogueIndex(0,branch);
+    }
 
     /// <summary>
     /// displays dialogue according to where the player is in a dialogue branch
     /// </summary>
     /// <param name="branch">the current dialogue branch that the player is on</param>
     /// <param name="numberInList">the current line of dialogue that the player is on</param>
-    public void ProgressDialogue(DialogueBranch branch, int numberInList)
+    public IEnumerator ProgressNPCDialogue(DialogueBranch branch=null)
     {
-
-        npcText = GetComponent<TMP_Text>();
-
-        npcText.text = branch.dialogue[numberInList].Dialogue;
-
-        if (branch.dialogue[numberInList].End)
-        {
-
-            DialogueUIController.Instance.ClosingOutCombat();
-            DialogueUIController.Instance.HideDeck();
-
-        }
-
+        yield return SetDialogueIndex(NumberInList+1); // mods it in this function dw
     }
 
+    public IEnumerator SetDialogueIndex(int numberInList, DialogueBranch branch = null)
+    {
+        branch = branch ?? DialogueManager.CurrentDialogueBranch;
+
+        if (branch == null)
+        {
+            Debug.LogError("No branch has been set");
+            yield break;
+        }
+
+        // go to next 
+        NumberInList = numberInList % branch.dialogue.Length;
+
+        if (NumberInList >= branch.dialogue.Length - 1)
+        {
+            PlayerReadAllDialogue = true;
+            Debug.Log("player read all text");
+        }
+
+        //TODO typewriter text goes here
+        npcText.text = branch.dialogue[NumberInList].Dialogue;
+
+        if (PlayerReadAllDialogue)
+        {
+            DialogueUIController.Instance.ClosingOutCombat();
+        }
+
+        yield return null;
+    }
+
+    #endregion
 }

@@ -33,7 +33,7 @@ public class OpenNPCInteractable : MonoBehaviour, IInteractable
     {
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor);
         var dialogueController = menu.GetComponentInChildren<DialogueUIController>();
-        dialogueController.Initialize(StartingDialogueBranch, character);
+        StartCoroutine(dialogueController.Initialize(StartingDialogueBranch, character));
     }
 
     private void OnDrawGizmos()

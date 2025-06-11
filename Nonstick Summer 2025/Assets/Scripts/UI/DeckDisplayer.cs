@@ -43,7 +43,7 @@ public class DeckDisplayer : MonoBehaviour
 
     public void SetDeck(ref Deck deckRef)
     {
-        Debug.Log("deck set");
+        //Debug.Log("deck set");
         DeckRef = deckRef;
         DisplayAllCards();
     }
@@ -147,7 +147,7 @@ public class DeckDisplayer : MonoBehaviour
     {
         for(int i=0; i<cards.Length; i++)
         {
-            Debug.Log("spawning card");
+            //Debug.Log("spawning card");
             /* There is probably a better way to do this
              * However, I needed to spawn the card, set its anchor, then adjust the position after setting the anchor
              * so it works for now*/

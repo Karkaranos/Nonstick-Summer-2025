@@ -19,7 +19,7 @@ public class DialogueBranch : ScriptableObject
     [BoxGroup("Dialogue Options")][HideIf("End")] DialogueOption Option1, Option2, Option3, Option4, Option5,
         Option6, Option7, Option8, Option9;
 
-    [BoxGroup("Dialogue Options")] [HideIf("End")] private DialogueOption SilentOption;
+    [BoxGroup("Dialogue Options")] [HideIf("End")] public DialogueOption SilentOption;
 
 
     public bool End;
@@ -29,7 +29,10 @@ public class DialogueBranch : ScriptableObject
     public DialogueOption ReturnDialogueOption(CardData card)
     {
         if (card == null)
+        {
+            Debug.Log("Playing silent");
             return SilentOption ?? blank;
+        }
 
         switch ((card.Intention, card.Emotion))
         {
@@ -89,7 +92,7 @@ public class DialogueBranch : ScriptableObject
                 }
                 else return blank;
             default:
-                Debug.Log("Nothing here!");
+                Debug.LogError($"Can't match played card {card.Emotion.ToString()},{card.Intention.ToString()} to result");
                 return blank;
         }
 

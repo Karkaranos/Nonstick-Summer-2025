@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public static class StaticUtilities
@@ -49,32 +50,28 @@ public static class StaticUtilities
         UnityEngine.Cursor.visible = false;
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
     }
+
+    /// <summary>
+    /// Sets the colors of a selectable ui component.
+    /// All color parameters are optional, so only set the ones you need to update.
+    /// </summary>
+    /// <param name="uiComponent"></param>
+    public static void SetColors(this Selectable uiComponent,
+        Color? normalColor = null, Color? highlightedColor=null, Color? pressedColor = null, Color? selectedColor=null, Color? disabledColor=null )
+    {
+        var colors = uiComponent.colors;
+        colors.normalColor = normalColor ?? colors.normalColor;
+        colors.highlightedColor = highlightedColor ?? colors.highlightedColor;
+        colors.selectedColor = selectedColor ?? colors.selectedColor;
+        colors.pressedColor = pressedColor ?? colors.pressedColor;
+        colors.disabledColor = disabledColor ?? colors.disabledColor;
+        uiComponent.colors = colors;
+    }
+
     #endregion
 
     #region Math
-    /// <summary>
-    /// Combines two arrays of any type
-    /// </summary>
-    /// <typeparam name="T">Variable type for arrays</typeparam>
-    /// <param name="arr1">The first array</param>
-    /// <param name="arr2">The second array</param>
-    /// <returns>The combined array, with elements from array 1 first</returns>
-    public static T[] AddArrays<T>(T[] arr1, T[] arr2)
-    {
-        int index = 0;
-        T[] result = new T[arr1.Length + arr2.Length];
-        for(int i=0; i<arr1.Length-1; i++)
-        {
-            result[index] = arr1[i];
-            index++;
-        }
-        for (int i = 0; i < arr2.Length-1; i++)
-        {
-            result[index] = arr2[i];
-            index++;
-        }
-        return result;
-    }
+    
     #endregion
 
     #region Lists
@@ -95,6 +92,29 @@ public static class StaticUtilities
         }
     }
 
+    /// <summary>
+    /// Combines two arrays of any type
+    /// </summary>
+    /// <typeparam name="T">Variable type for arrays</typeparam>
+    /// <param name="arr1">The first array</param>
+    /// <param name="arr2">The second array</param>
+    /// <returns>The combined array, with elements from array 1 first</returns>
+    public static T[] AddArrays<T>(T[] arr1, T[] arr2)
+    {
+        int index = 0;
+        T[] result = new T[arr1.Length + arr2.Length];
+        for (int i = 0; i < arr1.Length - 1; i++)
+        {
+            result[index] = arr1[i];
+            index++;
+        }
+        for (int i = 0; i < arr2.Length - 1; i++)
+        {
+            result[index] = arr2[i];
+            index++;
+        }
+        return result;
+    }
 
     #endregion
 

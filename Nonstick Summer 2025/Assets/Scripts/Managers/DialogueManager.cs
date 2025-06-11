@@ -109,13 +109,6 @@ public class DialogueManager
         PlayerHand.Add(CardData.NewCard(-3, CardEmotion.Blue, CardIntention.Intention3));
         Debug.LogWarning("Added 1 of each hard-coded test cards to hand.");
         PlayerHand.Shuffle();
-
-        GameManager.Instance.StartCoroutine(OpenCombatUI_Coroutine()); // it needs A monobehavior to start a coroutine, and i didnt know which else
-    }
-
-    private static IEnumerator OpenCombatUI_Coroutine()
-    {
-        yield return DialogueUIController.Instance.UpdateNPCDialogueDisplay();
     }
 
     /// <summary>
@@ -134,20 +127,19 @@ public class DialogueManager
         yield return SetCurrentEnergy(_currentEnergy + 
             (playedCard == null ? _energyGainedIfSilent: playedCard.GetEnergyCost())); // this could have been an if statement but noooooo i just had to be special
 
-        var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
-
         // progress dialogue
+        var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
         CurrentDialogueBranch = dialogueOption.BranchingDialogue;
-        yield return DialogueUIController.Instance.UpdateNPCDialogueDisplay();
 
         yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + dialogueOption.ChangeInRelationshipStatus);
 
-        yield return DialogueUIController.Instance.ToggleUIForDialogueProgression(DialogueUIController.Instance.PlayerReadAllNPCText);
+        yield return DialogueUIController.Instance.ResetNPCDialogue();
 
         yield return SetCurrentEnergy(_currentEnergy + _energyGainedPerRound);
 
         Debug.Log("Completed processing card");
-        ReadUserInput = true;
+        // only keep reading user input if theres more
+        ReadUserInput = !CurrentDialogueBranch.End; 
     }
 
     /// <summary>

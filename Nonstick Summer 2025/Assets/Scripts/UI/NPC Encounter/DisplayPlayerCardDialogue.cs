@@ -40,6 +40,12 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
             return;
         }
 
+        if(DialogueManager.CurrentDialogueBranch == null)
+        {
+            Debug.LogError("Current dialogue branch is null");
+            return;
+        }
+
         StaticUtilities.EnableCanvasGroup(group, interactable:false);
         text.text = DialogueManager.CurrentDialogueBranch.ReturnDialogueOption(card).PlayerDialogue;
     }

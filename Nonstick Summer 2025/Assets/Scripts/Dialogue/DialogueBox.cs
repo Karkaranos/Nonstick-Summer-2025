@@ -41,6 +41,7 @@ public class DialogueBox : MonoBehaviour
         branch = branch ?? DialogueManager.CurrentDialogueBranch;
 
         PlayerReadAllDialogue = false;
+        NumberInList = 0;
 
         yield return SetDialogueIndex(0,branch);
     }
@@ -65,14 +66,16 @@ public class DialogueBox : MonoBehaviour
             yield break;
         }
 
-        // go to next 
-        NumberInList = numberInList % branch.dialogue.Length;
-
-        if (NumberInList >= branch.dialogue.Length - 1)
+        if (numberInList >= branch.dialogue.Length - 1)
         {
             PlayerReadAllDialogue = true;
             Debug.Log("player read all text");
         }
+
+        // go to next 
+        NumberInList = numberInList % branch.dialogue.Length;
+
+        Debug.Log($"({NumberInList + 1}/{branch.dialogue.Length}): {branch.dialogue[NumberInList].Dialogue}");
 
         //TODO typewriter text goes here
         npcText.text = branch.dialogue[NumberInList].Dialogue;

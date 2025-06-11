@@ -18,11 +18,10 @@ public class CardDisplay : MonoBehaviour
     [BoxGroup("UI Components")][SerializeField] Image IntentionImage;
     [BoxGroup("UI Components")][SerializeField] TMP_Text EnergyText;
 
+    public CardData cardData { get{ return card; } }
+
     [SerializeField] [Tooltip("Set this for debug only")]
     private CardData card;
-
-    //this is for display purposes
-    [HideInInspector] public bool selected = false;
 
     private MouseInteractionEvents mouseInteraction;
 
@@ -34,43 +33,36 @@ public class CardDisplay : MonoBehaviour
 
         mouseInteraction.OnMouseHoverStart.AddListener(OnMouseHoverStart);
         mouseInteraction.OnMouseHoverEnd.AddListener(OnMouseHoverEnd);
-        mouseInteraction.OnMouseDown.AddListener(OnMouseDown);
+        mouseInteraction.OnMouseDown.AddListener(OnMouseDownStart);
     }
 
     private void OnMouseHoverStart() // this should be moved to another script
     {
-        if (DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput /*&& TODO: if player does not have card selected*/ )
+        if (DialogueUIController.Instance != null && DialogueUIController.Instance.selectedCard == null 
+            && DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput)
            DialogueUIController.Instance.UpdateHoveringCard(card);
     }
 
     private void OnMouseHoverEnd() // this should be moved to another script
     {
-        if (DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput /*&& TODO: if player does not have card selected*/)
+        if (DialogueUIController.Instance != null && DialogueUIController.Instance.selectedCard == null
+            && DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput)
             DialogueUIController.Instance.UpdateHoveringCard(null);
     }
 
-    private void OnMouseDown()
+    private void OnMouseDownStart()
     {
-
-        if (DialogueManager.PlayerInCombat)
+        if (DialogueUIController.Instance != null && DialogueManager.ReadUserInput)
         {
-
-            if (!selected)
-            {
-                selected = true;
-                DialogueUIController.Instance.UpdateSelection(card, selected, this);
-            }
-            else
-            {
-                selected = false;
-                DialogueUIController.Instance.UpdateSelection(card, selected, this);
-            }
+            Debug.Log("selected card");
+            StartCoroutine(DialogueUIController.Instance.UpdateSelection(this));
         }
     }
 
     public void SetCard(CardData newCard)
     {
-        card.OnCardValueChanged -= RefreshDisplay;
+        if(card != null)
+            card.OnCardValueChanged -= RefreshDisplay;
 
         card = newCard;
         card.OnCardValueChanged += RefreshDisplay;

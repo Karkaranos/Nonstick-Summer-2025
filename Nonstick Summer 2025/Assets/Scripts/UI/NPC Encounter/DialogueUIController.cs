@@ -209,6 +209,12 @@ public class DialogueUIController : Singleton<DialogueUIController>
         playCardButtonText.text = interactable ? CardNotSelectedText : "->";
         playCardButton.SetColors(normalColor: Color.white, highlightedColor: Color.gray, selectedColor: Color.white, pressedColor:Color.gray);
 
+        //okay this isn't as clean here but whatever
+        if(interactable)
+        {
+            deckDisplay.DrawToMaxHandSize();
+        }
+
         deckDisplay?.gameObject.SetActive(interactable);
 
         yield return null;

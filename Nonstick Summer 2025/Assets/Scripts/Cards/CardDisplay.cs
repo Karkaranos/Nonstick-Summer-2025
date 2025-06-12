@@ -16,68 +16,53 @@ public class CardDisplay : MonoBehaviour
     [BoxGroup("UI Components")][SerializeField] TMP_Text IntentionText;
     [BoxGroup("UI Components")][SerializeField] Image CardBackground;
     [BoxGroup("UI Components")][SerializeField] Image IntentionImage;
+    [BoxGroup("UI Components")][SerializeField] TMP_Text EnergyText;
+
+    public CardData cardData { get{ return card; } }
 
     [SerializeField] [Tooltip("Set this for debug only")]
     private CardData card;
-
-
-    //this is for display purposes
-    public bool selected = false;
 
     private MouseInteractionEvents mouseInteraction;
 
     private void Start()
     {
-        if(card != null) SetCard(card); // mostfly for debugging
+        if(card != null) SetCard(card); // mostly for debugging
 
         mouseInteraction = GetComponent<MouseInteractionEvents>();
 
         mouseInteraction.OnMouseHoverStart.AddListener(OnMouseHoverStart);
         mouseInteraction.OnMouseHoverEnd.AddListener(OnMouseHoverEnd);
-        mouseInteraction.OnMouseDown.AddListener(OnMouseDown);
+        mouseInteraction.OnMouseDown.AddListener(OnMouseDownStart);
     }
 
     private void OnMouseHoverStart() // this should be moved to another script
     {
-        if (DialogueManager.PlayerInCombat /*&& TODO: if player does not have card selected*/ )
+        if (DialogueUIController.Instance != null && DialogueUIController.Instance.selectedCard == null 
+            && DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput)
            DialogueUIController.Instance.UpdateHoveringCard(card);
     }
 
     private void OnMouseHoverEnd() // this should be moved to another script
     {
-        if (DialogueManager.PlayerInCombat /*&& TODO: if player does not have card selected*/)
+        if (DialogueUIController.Instance != null && DialogueUIController.Instance.selectedCard == null
+            && DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput)
             DialogueUIController.Instance.UpdateHoveringCard(null);
     }
 
-    private void OnMouseDown()
+    private void OnMouseDownStart()
     {
-
-        if (DialogueManager.PlayerInCombat)
+        if (DialogueUIController.Instance != null && DialogueManager.ReadUserInput)
         {
-
-            if (!selected)
-            {
-
-                selected = true;
-                DialogueUIController.Instance.UpdateSelection(card, selected, this);
-
-            }
-            else if(selected)
-            {
-
-                selected = false;
-                DialogueUIController.Instance.UpdateSelection(card, selected, this);
-
-            }
-
+            Debug.Log("selected card");
+            StartCoroutine(DialogueUIController.Instance.UpdateSelection(this));
         }
-        
-
     }
 
     public void SetCard(CardData newCard)
     {
-        card.OnCardValueChanged -= RefreshDisplay;
+        if(card != null)
+            card.OnCardValueChanged -= RefreshDisplay;
 
         card = newCard;
         card.OnCardValueChanged += RefreshDisplay;
@@ -99,6 +84,7 @@ public class CardDisplay : MonoBehaviour
 
         EmotionText.text = CardStyleManager.GetEmotionStyle(card).DisplayName;
         IntentionText.text = CardStyleManager.GetIntentionStyle(card).DisplayName;
+        EnergyText.text = card.EnergyCost.ToString();
         IntentionImage.sprite = CardStyleManager.GetIntentionSprite(card);
         CardBackground.color = CardStyleManager.GetEmotionColor(card);
 

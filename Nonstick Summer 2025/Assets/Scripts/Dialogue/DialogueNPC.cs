@@ -12,7 +12,7 @@ public class DialogueNPC
     //for progressing dialogue. depends on the list 
     //public int NextDialogueBox;
 
-    public bool End;
+    //public bool End;
 
     //private TMP_Text printedDialogue;
 

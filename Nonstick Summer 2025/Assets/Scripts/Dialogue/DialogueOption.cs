@@ -18,6 +18,7 @@ using NaughtyAttributes;
 public class DialogueOption
 {
     //buttons?
+    [Required]
     public DialogueBranch BranchingDialogue;
 
     [ResizableTextArea]

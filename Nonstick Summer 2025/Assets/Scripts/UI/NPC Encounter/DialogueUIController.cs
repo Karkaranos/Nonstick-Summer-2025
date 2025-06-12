@@ -25,9 +25,12 @@ using UnityEngine.UI;
 using NaughtyAttributes;
 using System.Collections;
 using TMPro;
+using UnityEngine.TextCore.Text;
 
 public class DialogueUIController : Singleton<DialogueUIController>
 {
+    public bool PlayerReadAllNPCText => dialogueBox.PlayerReadAllDialogue;
+
     [Required][SerializeField] private EnergyBar energyBar;
     [Required][SerializeField] private DisplayPlayerCardDialogue playerDialogueBubble;
     [Required][SerializeField] private DeckDisplayer deckDisplay;
@@ -35,24 +38,22 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Required][SerializeField] private RelationshipSlider relationshipSlider;
     [Required][SerializeField] private DialogueBox dialogueBox;
 
-
     //i can make this a whole 'nother script if necessary but idk
+    // TODO: ^
+    [SerializeField] private Button playCardButton;
     [SerializeField] private TMP_Text playCardButtonText;
 
-    [Header("Progress Button Text")]
+    [Header("Progress Button Text")] 
     public string CardSelectedText;
     public string CardNotSelectedText;
     public string EndDialogueText;
 
+    private CardData selectedCardData=> selectedCard == null ? null : selectedCard.cardData;
+    [HideInInspector] public CardDisplay selectedCard;
+    private bool IfCloseCombat { get { return DialogueManager.CurrentDialogueBranch.End && PlayerReadAllNPCText; } }
+    private bool _ui_interactable = true;
 
-    private CardData selectedCard;
-    private CardDisplay selectedDisplay;
-    private bool closeCombat;
-
-
-    [HideInInspector] public int NumberInList = 0;
-
-    public void Initialize(DialogueBranch startBranch, characters character)
+    public IEnumerator Initialize(DialogueBranch startBranch, characters character)
     {
         DialogueManager.OnOpenCombatUI(startBranch, character);
 
@@ -60,104 +61,157 @@ public class DialogueUIController : Singleton<DialogueUIController>
         // i think our game is not complicated enough that its gonna be a problem performance wise, 
         // but its gonna bug me that its happening extra times
 
-        energyBar.Initalize(DialogueManager.MaxEnergy);
+        energyBar.Initalize(DialogueManager.CurrentEnergy);
         relationshipSlider.Initialize(RelationshipManager.characterRelationships[character].maxValue, RelationshipManager.characterRelationships[character].currentValue);
         deckDisplay.SetDeck(ref DialogueManager.PlayerHand);
-        dialogueBox.Initialize(startBranch);
 
+        yield return ToggleUIForDialogueProgression(false);
+
+        yield return OpenCombatUI_Coroutine();
+
+        yield return dialogueBox.Initialize(startBranch);
     }
-    
+
+    public IEnumerator OpenCombatUI_Coroutine()
+    {
+        yield return UpdateNextNPCDialogueDisplay();
+    }
+
+    #region Player Input 
+
     public void UpdateHoveringCard(CardData card)
     {
         // card is null, it hides the text bubble
         playerDialogueBubble.WriteText(card);
-
     }
 
-    public void UpdateSelection(CardData card, bool cardSelected, CardDisplay display)
+    // TODO move a lot of this to play button script
+    public IEnumerator UpdateSelection(CardDisplay display)
     {
+        if(display == selectedCard)
+            yield break; // if already selected
 
-        if(cardSelected)
+        // TODO put animation behaviour for deselecting cards here 
+        yield return null;
+
+        selectedCard = display;
+
+        if (selectedCard)
         {
-
             playCardButtonText.text = CardSelectedText;
 
-            if (selectedCard != null)
-            {
+            var buttonColor = CardStyleManager.GetEmotionColor(selectedCardData);
+            playCardButton.SetColors(normalColor: buttonColor, highlightedColor: buttonColor, selectedColor: buttonColor, pressedColor:buttonColor);
 
-                selectedDisplay.selected = false;
-
-            }
-
-            selectedCard = card;
-            selectedDisplay = display;
-
+            selectedCard = display;
         }
-        else if (!cardSelected)
+        else
         {
+            //move to play card button script
+            playCardButtonText.text =  CardNotSelectedText;
 
-            playCardButtonText.text = CardNotSelectedText;
+            playCardButton.SetColors(normalColor: Color.white, highlightedColor:Color.gray, selectedColor: Color.white, pressedColor: Color.gray);
+
             selectedCard = null;
-            selectedDisplay = null;
-
         }
 
+        if (!DialogueManager.UserCanPlayCard)
+        {
+            // TODO dont hardcode this
+            // TODO move to playcard button script
+            playCardButtonText.text = "->";
+            playCardButton.SetColors(normalColor: Color.white, highlightedColor: Color.gray, selectedColor: Color.white, pressedColor: Color.gray);
+
+            yield break;
+        }
     }
 
     //i can move this to a different script later if necessary but for now the play card button is tied to this
-    public void ProgressDialogue()
+    //TODO move to play button script
+    public void PlayCardPressed()
     {
-
-        if(closeCombat)
+        if(IfCloseCombat)
         {
-
+            // TODO open a new menu?
+            Debug.Log("Close combat!");
             UITransitionManager.CloseMenu();
             return;
-
-            //this definitely duplicates cards atm but i'm assuming this won't be an issue once the ui isn't automatically generating cards. otherwise i can fix this
-
         }
 
-        if(selectedCard != null)
-        {
+        Debug.Log("Play button pressed");
 
-            StartCoroutine(DialogueManager.ProgressDialogue(selectedCard));
+        StartCoroutine(ToggleUIForDialogueProgression(false));
 
-            playCardButtonText.text = CardNotSelectedText;
+        DialogueManager.PlayerHand.Remove(selectedCardData);
 
-            DialogueManager.PlayerHand.Remove(selectedCard);
-
-            selectedCard = null;
-
-        }
-        else { StartCoroutine(DialogueManager.ProgressDialogue(null)); }
-
+        if (DialogueManager.UserCanPlayCard)
+            // Play a card
+            StartCoroutine(DialogueManager.ProcessPlayCard(selectedCardData));
+        else
+            // Next Dialogue pls
+            StartCoroutine(UpdateNextNPCDialogueDisplay());
     }
 
-    public void UpdateDialogueDisplay(DialogueBranch branch, int numberInList)
+    #endregion
+
+    public IEnumerator UpdateNextNPCDialogueDisplay()
     {
+        Debug.Log("progress dialogue");
 
-        dialogueBox.ProgressDialogue(branch, numberInList);
-        selectedCard = null;
+        yield return dialogueBox.ProgressNPCDialogue(DialogueManager.CurrentDialogueBranch);
 
+        // in case the npc text was only 1 blurb long. (updated in dialogueBox.ProgressNPCDialogue)
+        if (PlayerReadAllNPCText && !DialogueManager.CurrentDialogueBranch.End)
+        {
+            yield return ToggleUIForDialogueProgression(true);
+            DialogueManager.ReadUserInput = true;
+        }
     }
 
+    public IEnumerator ResetNPCDialogue()
+    {
+        Debug.Log("reset dialogue");
+
+        yield return dialogueBox.LoadNewDialogue(DialogueManager.CurrentDialogueBranch);
+
+        // in case the npc text was only 1 blurb long. (updated in dialogueBox.LoadNewDialogue)
+        if (PlayerReadAllNPCText)
+        {
+            if (DialogueManager.CurrentDialogueBranch.End)
+            {
+                playCardButtonText.text = EndDialogueText;
+                yield return ToggleUIForDialogueProgression(false);
+            }
+            else
+            {
+                yield return ToggleUIForDialogueProgression(true);
+                DialogueManager.ReadUserInput = true;
+            }
+        }
+    }
+
+    //TODO move to play button script
     public void ClosingOutCombat()
     {
-
-        playCardButtonText.text = EndDialogueText;
-        closeCombat = true;
-
+        if(DialogueManager.CurrentDialogueBranch.End)
+            playCardButtonText.text = EndDialogueText;
     }
 
-    public void HideDeck()
+    public IEnumerator ToggleUIForDialogueProgression(bool interactable)
     {
-        if(deckDisplay.gameObject)
-        {
+        if (_ui_interactable == interactable)
+            yield break;
 
-            deckDisplay.gameObject.SetActive(false);
+        _ui_interactable = interactable;
 
-        }
+        // TODO dont hardcode that text
+        // TODO move to dedicated card play button script
+        playCardButtonText.text = interactable ? CardNotSelectedText : "->";
+        playCardButton.SetColors(normalColor: Color.white, highlightedColor: Color.gray, selectedColor: Color.white, pressedColor:Color.gray);
+
+        deckDisplay?.gameObject.SetActive(interactable);
+
+        yield return null;
 
     }
 

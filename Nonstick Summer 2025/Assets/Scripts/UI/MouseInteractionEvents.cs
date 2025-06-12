@@ -14,6 +14,7 @@ using TMPro;
 using NaughtyAttributes;
 using System.Collections;
 using UnityEngine.Events;
+using UnityEditor.Rendering.LookDev;
 
 public class MouseInteractionEvents : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -35,14 +36,13 @@ public class MouseInteractionEvents : MonoBehaviour, IPointerClickHandler, IPoin
         if(CurrentHoverObject != null && CurrentHoverObject != this)
             CurrentHoverObject.DeselectHover();
 
-        CurrentHoverObject = this;
-        mouseOver = true;
-
         if (_deselctCurrentlyHoveringCoroutine != null)
             StopCoroutine(_deselctCurrentlyHoveringCoroutine);
 
+        CurrentHoverObject = this;
+        mouseOver = true;
+
         OnMouseHoverStart.Invoke();
-        Debug.Log(CurrentHoverObject.name);
     }
 
     public void OnPointerExit(PointerEventData eventData)

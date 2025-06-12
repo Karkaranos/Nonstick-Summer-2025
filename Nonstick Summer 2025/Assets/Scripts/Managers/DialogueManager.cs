@@ -26,6 +26,7 @@ public class DialogueManager
     public static UITransitionManager Instance => GameManager.UITransitionManagerReference;
 
     public static bool ReadUserInput;
+    public static bool UserCanPlayCard=>ReadUserInput && DialogueUIController.Instance.PlayerReadAllNPCText;
     public static UnityEvent OnCardPlayed = new UnityEvent();
     public static DialogueBranch CurrentDialogueBranch { get; private set; }
     public static bool PlayerInCombat => DialogueUIController.Instance != null;
@@ -57,8 +58,6 @@ public class DialogueManager
         _currentEnergy = energy;
         if (DialogueUIController.Instance != null)
             yield return DialogueUIController.Instance.UpdateEnergy(energy); // wait for animation to finish
-
-        yield return TryEnergyLossDeath();
     }
 
     public static IEnumerator SetCurrentRelationshipStatus(float relationshipScore)
@@ -74,7 +73,6 @@ public class DialogueManager
         {
             yield return DialogueUIController.Instance.UpdateRelationship(relationshipScore, currentCharacter);
         }
-
     }
 
     #endregion
@@ -93,7 +91,7 @@ public class DialogueManager
 
     public static void OnOpenCombatUI(DialogueBranch startDialogueBranch, characters character)
     {
-        ReadUserInput = true;
+        ReadUserInput = false;
         CurrentDialogueBranch = startDialogueBranch;
         currentCharacter = character;
 
@@ -113,57 +111,35 @@ public class DialogueManager
         PlayerHand.Shuffle();
     }
 
-
     /// <summary>
-    /// Coroutine because i just know theres going to be animations later
-    /// TODO: call this coroutine
+    /// The big function that ties together everything. updates ui and processes a card
     /// </summary>
-    public static IEnumerator ProgressDialogue(CardData playedCard)
+    public static IEnumerator ProcessPlayCard(CardData playedCard)
     {
+        Debug.Log("Player playing card");
         ReadUserInput = false;
+
+        yield return DialogueUIController.Instance.ToggleUIForDialogueProgression(false);
 
         if (_currentEnergy <= 0 && playedCard != null)
             Debug.LogWarning("Card played with 0 energy");
 
-        // reference for other programmers: 'yield return' stops this coroutine until the next coroutine is finished
         yield return SetCurrentEnergy(_currentEnergy + 
             (playedCard == null ? _energyGainedIfSilent: playedCard.GetEnergyCost())); // this could have been an if statement but noooooo i just had to be special
 
+        // progress dialogue
+        var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
+        CurrentDialogueBranch = dialogueOption.BranchingDialogue;
 
-        //sorry to fw this
-        if(playedCard != null)
-        {
+        yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + dialogueOption.ChangeInRelationshipStatus);
 
-            var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
-            yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + dialogueOption.ChangeInRelationshipStatus);
-            CurrentDialogueBranch = dialogueOption.BranchingDialogue;
-            DialogueUIController.Instance.UpdateDialogueDisplay(CurrentDialogueBranch, 0);
-            DialogueUIController.Instance.NumberInList = 0;
-
-            if (CurrentDialogueBranch.End)
-            {
-
-                DialogueUIController.Instance.HideDeck();
-
-            }
-
-        }
-        else
-        {
-
-            DialogueUIController.Instance.UpdateDialogueDisplay(CurrentDialogueBranch, DialogueUIController.Instance.NumberInList += 1);
-
-        }
-
-
-        // TODO: see 'Progress Dialogue and Process Cards' task
-        // hi jay
+        yield return DialogueUIController.Instance.ResetNPCDialogue();
 
         yield return SetCurrentEnergy(_currentEnergy + _energyGainedPerRound);
 
         Debug.Log("Completed processing card");
-        ReadUserInput = true;
-
+        // only keep reading user input if theres more
+        ReadUserInput = !CurrentDialogueBranch.End; 
     }
 
     /// <summary>
@@ -176,16 +152,5 @@ public class DialogueManager
         RemainingDeck = DeckManager.CopyDeck().Shuffled();
         PlayerHand.Clear();
     }
-
-    private static IEnumerator TryEnergyLossDeath() // bad function name, but brain kinda blank on a better one rn
-    {
-        if(_currentEnergy > 0)
-            yield break; // not dead :)
-
-        throw new NotImplementedException();
-
-        yield return null;
-    }
-
     
 }

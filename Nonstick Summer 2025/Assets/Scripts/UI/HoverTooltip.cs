@@ -38,13 +38,11 @@ public class HoverTooltip : MonoBehaviour
             tooltipText.text = GetText() ;
 
         StaticUtilities.EnableCanvasGroup(tooltipGroup);
-        Debug.Log("open");
     }
 
     public void Close()
     { 
         StaticUtilities.DisableCanvasGroup(tooltipGroup);
-        Debug.Log("close");
 
     }
 

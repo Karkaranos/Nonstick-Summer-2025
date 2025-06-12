@@ -34,7 +34,7 @@ public class PlayerCamera : MonoBehaviour
     private void Update()
     {
         // Read mouse input
-        var mouse = InputEvents.MouseDelta.normalized;
+        var mouse = InputEvents.MouseDelta;//.normalized;
         //float mouseX = mouse.x * Time.fixedDeltaTime * Sensitivity;
         //float mouseY = mouse.y * Time.fixedDeltaTime * Sensitivity;
         yLook += mouse.x * Sensitivity;

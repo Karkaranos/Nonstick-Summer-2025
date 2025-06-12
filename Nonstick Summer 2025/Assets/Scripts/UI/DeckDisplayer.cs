@@ -17,6 +17,8 @@ public class DeckDisplayer : MonoBehaviour
     [SerializeField] private Deck DeckRef; // changed to be generalized, because deck will not always be the players.
     private static int MaxDeckDisplaySize => GameManager.MaxCardsVisibleInDeck;
 
+    public List<GameObject> VisualDisplay { get => _visualDisplay; private set => _visualDisplay = value; }
+
     [SerializeField, Tooltip("Adjusts horizontal space between cards and edge of display")]
     private float _bufferFromEdgeOfRegion = 10;
     [SerializeField, Tooltip("A reference to the visual Card Prefab")] private GameObject _cardPrefab;
@@ -27,7 +29,7 @@ public class DeckDisplayer : MonoBehaviour
 
     private List<GameObject> _visualDisplay = new List<GameObject>();
 
-  private Vector2[] spawnPositions;
+    private Vector2[] spawnPositions;
 
     #endregion Variables
 
@@ -76,6 +78,30 @@ public class DeckDisplayer : MonoBehaviour
     }
 
     /// <summary>
+    /// Yeahh basically just copied DisplayNCards
+    /// Draws the hand back to the max size
+    /// </summary>
+    public void DrawToMaxHandSize()
+    {
+        ClearDisplay();
+
+        int n = MaxDeckDisplaySize;
+
+        // Create a copy of the deck to pull cards from
+        // May revisit later and make it the actual deck
+        Deck copy = DeckRef.GetCopy();
+
+        // Creates referenced array
+        Vector2[] spawnPositions = new Vector2[n];
+
+        // Generates spawn positions
+        GeneratePositions(ref spawnPositions, 0, n - 1);
+
+        // Spawns the specified number of cards
+        SpawnCards(copy.PeekNCards(n), spawnPositions);
+    }
+
+    /// <summary>
     /// Displays a specified number of cards from the player's hand
     /// If no number is specified, displays max number of cards visible as stated on GameManager
     /// </summary>
@@ -112,11 +138,11 @@ public class DeckDisplayer : MonoBehaviour
     /// </summary>
     public void ClearDisplay()
     {
-        for(int i=0; i<_visualDisplay.Count; i++)
+        for(int i=0; i<VisualDisplay.Count; i++)
         {
-            Destroy(_visualDisplay[i]);
+            Destroy(VisualDisplay[i]);
         }
-        _visualDisplay.Clear();
+        VisualDisplay.Clear();
     }
 
     /// <summary>
@@ -161,10 +187,10 @@ public class DeckDisplayer : MonoBehaviour
              * However, I needed to spawn the card, set its anchor, then adjust the position after setting the anchor
              * so it works for now*/
             
-            _visualDisplay.Add(Instantiate(_cardPrefab, Vector2.zero, Quaternion.identity, transform));
+            VisualDisplay.Add(Instantiate(_cardPrefab, Vector2.zero, Quaternion.identity, transform));
             //_visualDisplay[i].GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-            _visualDisplay[i].GetComponent<CardDisplay>().SetCard(cards[i]);
-            _visualDisplay[i].transform.localPosition = position[i];
+            VisualDisplay[i].GetComponent<CardDisplay>().SetCard(cards[i]);
+            VisualDisplay[i].transform.localPosition = position[i];
         }
     }
 

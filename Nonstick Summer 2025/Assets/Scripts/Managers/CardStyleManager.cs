@@ -18,18 +18,18 @@ public class CardStyleManager
     
     public CardStyleManager(
         CardValueStyle yellowStyle, CardValueStyle redStyle, CardValueStyle blueStyle, 
-        CardValueStyle ExpressionStyle, CardValueStyle ObservationStyle, CardValueStyle QuestionStyle,
-        Sprite ExpressionSprite, Sprite ObservationSprite, Sprite QuestionSprite) 
+        CardValueStyle expressionStyle, CardValueStyle observationStyle, CardValueStyle questionStyle,
+        Sprite expressionSprite, Sprite observationSprite, Sprite questionSprite) 
     { 
         YellowStyle = yellowStyle;
         RedStyle = redStyle;
         BlueStyle = blueStyle;
-        ExpressionStyle = ExpressionStyle;
-        ObservationStyle = ObservationStyle;
-        QuestionStyle = QuestionStyle;
-        ExpressionSprite = ExpressionSprite;
-        ObservationSprite = ObservationSprite;
-        QuestionSprite = QuestionSprite;
+        ExpressionStyle = expressionStyle;
+        ObservationStyle = observationStyle;
+        QuestionStyle = questionStyle;
+        ExpressionSprite = expressionSprite;
+        ObservationSprite = observationSprite;
+        QuestionSprite = questionSprite;
 
         _errorStyle = new CardValueStyle(Color.red, "ERROR");
     }

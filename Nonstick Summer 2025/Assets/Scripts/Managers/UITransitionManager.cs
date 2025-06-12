@@ -14,12 +14,16 @@ public class UITransitionManager
     private static MeshRenderer playerMesh;
     private static Transform playerCamTransform => GameManager.playerCameraRef.transform;
 
+
+    public static GameObject CurrentCanvasReference { get; private set; }
+    public static GameObject WorldObjectReference { get; private set; }
+
     public UITransitionManager()
     {
         playerMesh = GameObject.FindFirstObjectByType<PlayerMovement>()?.GetComponentInChildren<MeshRenderer>();
     }
 
-    public static GameObject OpenMenu(GameObject canvasPrefab, Transform cameraAnchor = null)
+    public static GameObject OpenMenu(GameObject canvasPrefab, Transform cameraAnchor = null, GameObject objectRef = null)
     {
         if(PlayerInMenu)
         {
@@ -46,13 +50,20 @@ public class UITransitionManager
 
         StaticUtilities.EnableCursor();
 
-        currentCanvasReference = GameObject.Instantiate(canvasPrefab);
-        return currentCanvasReference;
+        if(objectRef != null)
+        {
+            WorldObjectReference = objectRef;
+        }
+
+        CurrentCanvasReference = GameObject.Instantiate(canvasPrefab);
+        return CurrentCanvasReference;
     }
 
     public static void CloseMenu()
     {
         PlayerInMenu = false;
+
+        WorldObjectReference = null;
 
         // unhide player model
         if (playerMesh != null) playerMesh.enabled = true;
@@ -63,10 +74,10 @@ public class UITransitionManager
         playerCamTransform.localRotation = oldCameraLocalRotation;
         oldCameraAnchorPoint = null;
         
-        if(currentCanvasReference != null)
+        if(CurrentCanvasReference != null)
         {
-            GameObject.Destroy(currentCanvasReference);
-            currentCanvasReference = null;
+            GameObject.Destroy(CurrentCanvasReference);
+            CurrentCanvasReference = null;
         }
 
         StaticUtilities.DisableCursor();

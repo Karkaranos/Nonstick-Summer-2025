@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +8,9 @@ using UnityEngine.UI;
 public class DialogueNPC
 {
     public string Dialogue;
-    public Image Portrait;
+
+    [ShowAssetPreview(32,32)]
+    public Sprite Portrait;
 
     //for progressing dialogue. depends on the list 
     //public int NextDialogueBox;

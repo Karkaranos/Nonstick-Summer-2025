@@ -16,10 +16,11 @@ public class DialogueBranch : ScriptableObject
     [Label("NPC Dialogue")] public DialogueNPC[] dialogue;
 
     [SerializeField]
-    [BoxGroup("Dialogue Options")][HideIf("End")] DialogueOption Option1, Option2, Option3, Option4, Option5,
-        Option6, Option7, Option8, Option9;
+    [BoxGroup("Dialogue Options")][HideIf("End")] DialogueOption Charming_Expression, Assertive_Expression, Sappy_Expression, Charming_Observation, Assertive_Observation,
+        Sappy_Observation, Charming_Question, Assertive_Question, Sappy_Question;
 
-    [BoxGroup("Dialogue Options")] [HideIf("End")] public DialogueOption SilentOption;
+    [SerializeField]
+    [BoxGroup("Dialogue Options")] [HideIf("End")] private DialogueOption Silent;
 
 
     public bool End;
@@ -31,64 +32,64 @@ public class DialogueBranch : ScriptableObject
         if (card == null)
         {
             Debug.Log("Playing silent");
-            return SilentOption ?? blank;
+            return Silent ?? blank;
         }
 
         switch ((card.Intention, card.Emotion))
         {
 
-            case (CardIntention.Intention1, CardEmotion.Yellow):
-                if (Option1 != null)
+            case (CardIntention.Expression, CardEmotion.Charming):
+                if (Charming_Expression != null)
                 {
-                    return Option1;
+                    return Charming_Expression;
                 }
                 else return blank;
-            case (CardIntention.Intention1, CardEmotion.Red):
-                if (Option2 != null)
+            case (CardIntention.Expression, CardEmotion.Assertive):
+                if (Assertive_Expression != null)
                 {
-                    return Option2;
+                    return Assertive_Expression;
                 }
                 else return blank;
-            case (CardIntention.Intention1, CardEmotion.Blue):
-                if (Option3 != null)
+            case (CardIntention.Expression, CardEmotion.Sappy):
+                if (Sappy_Expression != null)
                 {
-                    return Option3;
+                    return Sappy_Expression;
                 }
                 else return blank;
-            case (CardIntention.Intention2, CardEmotion.Yellow):
-                if (Option4 != null)
+            case (CardIntention.Observation, CardEmotion.Charming):
+                if (Charming_Observation != null)
                 {
-                    return Option4;
+                    return Charming_Observation;
                 }
                 else return blank;
-            case (CardIntention.Intention2, CardEmotion.Red):
-                if (Option5 != null)
+            case (CardIntention.Observation, CardEmotion.Assertive):
+                if (Assertive_Observation != null)
                 {
-                    return Option5;
+                    return Assertive_Observation;
                 }
                 else return blank;
-            case (CardIntention.Intention2, CardEmotion.Blue):
-                if (Option6 != null)
+            case (CardIntention.Observation, CardEmotion.Sappy):
+                if (Sappy_Observation != null)
                 {
-                    return Option6;
+                    return Sappy_Observation;
                 }
                 else return blank;
-            case (CardIntention.Intention3, CardEmotion.Yellow):
-                if (Option7 != null)
+            case (CardIntention.Question, CardEmotion.Charming):
+                if (Charming_Question != null)
                 {
-                    return Option7;
+                    return Charming_Question;
                 }
                 else return blank;
-            case (CardIntention.Intention3, CardEmotion.Red):
-                if (Option8 != null)
+            case (CardIntention.Question, CardEmotion.Assertive):
+                if (Assertive_Question != null)
                 {
-                    return Option8;
+                    return Assertive_Question;
                 }
                 else return blank;
-            case (CardIntention.Intention3, CardEmotion.Blue):
-                if (Option9 != null)
+            case (CardIntention.Question, CardEmotion.Sappy):
+                if (Sappy_Question != null)
                 {
-                    return Option9;
+                    return Sappy_Question;
                 }
                 else return blank;
             default:

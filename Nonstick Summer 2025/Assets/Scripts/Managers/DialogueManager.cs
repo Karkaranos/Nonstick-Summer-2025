@@ -98,15 +98,15 @@ public class DialogueManager
 
         // testing only: please delete later
         //PlayerHand.Clear();
-        PlayerHand.Add(CardData.NewCard(1, CardEmotion.Blue, CardIntention.Intention1));
-        PlayerHand.Add(CardData.NewCard(0, CardEmotion.Yellow, CardIntention.Intention2));
-        PlayerHand.Add(CardData.NewCard(-3, CardEmotion.Red, CardIntention.Intention3));
-        PlayerHand.Add(CardData.NewCard(2, CardEmotion.Red, CardIntention.Intention1));
-        PlayerHand.Add(CardData.NewCard(0, CardEmotion.Blue, CardIntention.Intention2));
-        PlayerHand.Add(CardData.NewCard(-3, CardEmotion.Yellow, CardIntention.Intention3));
-        PlayerHand.Add(CardData.NewCard(1, CardEmotion.Yellow, CardIntention.Intention1));
-        PlayerHand.Add(CardData.NewCard(0, CardEmotion.Red, CardIntention.Intention2));
-        PlayerHand.Add(CardData.NewCard(-3, CardEmotion.Blue, CardIntention.Intention3));
+        PlayerHand.Add(CardData.NewCard(1, CardEmotion.Sappy, CardIntention.Expression));
+        PlayerHand.Add(CardData.NewCard(0, CardEmotion.Charming, CardIntention.Observation));
+        PlayerHand.Add(CardData.NewCard(-3, CardEmotion.Assertive, CardIntention.Question));
+        PlayerHand.Add(CardData.NewCard(2, CardEmotion.Assertive, CardIntention.Expression));
+        PlayerHand.Add(CardData.NewCard(0, CardEmotion.Sappy, CardIntention.Observation));
+        PlayerHand.Add(CardData.NewCard(-3, CardEmotion.Charming, CardIntention.Question));
+        PlayerHand.Add(CardData.NewCard(1, CardEmotion.Charming, CardIntention.Expression));
+        PlayerHand.Add(CardData.NewCard(0, CardEmotion.Assertive, CardIntention.Observation));
+        PlayerHand.Add(CardData.NewCard(-3, CardEmotion.Sappy, CardIntention.Question));
         Debug.LogWarning("Added 1 of each hard-coded test cards to hand.");
         PlayerHand.Shuffle();
     }

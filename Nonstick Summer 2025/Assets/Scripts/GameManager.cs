@@ -28,15 +28,15 @@ public class GameManager : Singleton<GameManager>
     public static int MaxCardsVisibleInDeck = 5;
 
     [Foldout("Card Styles")] [SerializeField] private CardValueStyle 
-        Card_YellowStyle, Card_RedStyle, Card_BlueStyle,
-        Card_Intention1Style, Card_Intention2Style, Card_Intention3Style; 
+        Card_CharmingStyle, Card_AssertiveStyle, Card_SappyStyle,
+        Card_ExpressionStyle, Card_ObservationStyle, Card_QuestionStyle = new CardValueStyle(Color.white,""); 
     //[Foldout("Card Styles")] [SerializeField] private CardValueStyle Card_RedColor;
     //[Foldout("Card Styles")] [SerializeField] private CardValueStyle Card_BlueColor;
 
     [Header("Intention Sprites")]
-    [Foldout("Card Styles")] [SerializeField] private Sprite Card_Intention1Sprite;
-    [Foldout("Card Styles")] [SerializeField] private Sprite Card_Intention2Sprite;
-    [Foldout("Card Styles")] [SerializeField] private Sprite Card_Intention3Sprite;
+    [Foldout("Card Styles")] [SerializeField] private Sprite Card_ExpressionSprite;
+    [Foldout("Card Styles")] [SerializeField] private Sprite Card_ObservationSprite;
+    [Foldout("Card Styles")] [SerializeField] private Sprite Card_QuestionSprite;
 
     [Header("Dialogue Manager")]
     [Foldout("Social Battery")] [SerializeField] private int _defaultEnergy=5;
@@ -63,9 +63,9 @@ public class GameManager : Singleton<GameManager>
         playerCameraRef = FindFirstObjectByType<PlayerCamera>()?.playerCamera;
 
         UITransitionManagerReference = UITransitionManagerReference ?? new UITransitionManager();
-        CardStyleManagerReference = CardStyleManagerReference ?? new CardStyleManager(Card_YellowStyle, Card_RedStyle, Card_BlueStyle,
-            Card_Intention1Style, Card_Intention2Style, Card_Intention3Style,
-            Card_Intention1Sprite, Card_Intention2Sprite, Card_Intention3Sprite);
+        CardStyleManagerReference = CardStyleManagerReference ?? new CardStyleManager(Card_CharmingStyle, Card_AssertiveStyle, Card_SappyStyle,
+            Card_ExpressionStyle, Card_ObservationStyle, Card_QuestionStyle,
+            Card_ExpressionSprite, Card_ObservationSprite, Card_QuestionSprite);
         DeckManagerReference = DeckManagerReference ?? new DeckManager();
         DialogueManagerReference = DialogueManagerReference ?? new DialogueManager(_defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent, _maxEnergy, _defaultCardsInHand);
         RelationshipManagerReference = RelationshipManagerReference ?? new RelationshipManager(grandmaStartingValue, uncleStartingValue, cousinStartingValue, momStartingValue);

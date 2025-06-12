@@ -11,25 +11,25 @@ public class CardStyleManager
     public static CardStyleManager Instance => GameManager.CardStyleManagerReference;
 
     private static CardValueStyle YellowStyle, RedStyle, BlueStyle, 
-        Intention1Style, Intention2Style, Intention3Style; // names subject to change
-    private static Sprite Intention1Sprite, Intention2Sprite, Intention3Sprite;
+        ExpressionStyle, ObservationStyle, QuestionStyle; // names subject to change
+    private static Sprite ExpressionSprite, ObservationSprite, QuestionSprite;
 
     private static CardValueStyle _errorStyle;
     
     public CardStyleManager(
         CardValueStyle yellowStyle, CardValueStyle redStyle, CardValueStyle blueStyle, 
-        CardValueStyle intention1Style, CardValueStyle intention2Style, CardValueStyle intention3Style,
-        Sprite intention1Sprite, Sprite intention2Sprite, Sprite intention3Sprite) 
+        CardValueStyle ExpressionStyle, CardValueStyle ObservationStyle, CardValueStyle QuestionStyle,
+        Sprite ExpressionSprite, Sprite ObservationSprite, Sprite QuestionSprite) 
     { 
         YellowStyle = yellowStyle;
         RedStyle = redStyle;
         BlueStyle = blueStyle;
-        Intention1Style = intention1Style;
-        Intention2Style = intention2Style;
-        Intention3Style = intention3Style;
-        Intention1Sprite = intention1Sprite;
-        Intention2Sprite = intention2Sprite;
-        Intention3Sprite = intention3Sprite;
+        ExpressionStyle = ExpressionStyle;
+        ObservationStyle = ObservationStyle;
+        QuestionStyle = QuestionStyle;
+        ExpressionSprite = ExpressionSprite;
+        ObservationSprite = ObservationSprite;
+        QuestionSprite = QuestionSprite;
 
         _errorStyle = new CardValueStyle(Color.red, "ERROR");
     }
@@ -41,12 +41,12 @@ public class CardStyleManager
 
         switch (card.Intention)
         {
-            case CardIntention.Intention1:
-                return Intention1Sprite;
-            case CardIntention.Intention2:
-                return Intention2Sprite;
-            case CardIntention.Intention3:
-                return Intention3Sprite;
+            case CardIntention.Expression:
+                return ExpressionSprite;
+            case CardIntention.Observation:
+                return ObservationSprite;
+            case CardIntention.Question:
+                return QuestionSprite;
             default:
                 Debug.LogWarning("Card has no intention set!");
                 return null;
@@ -62,11 +62,11 @@ public class CardStyleManager
     {
         switch (card.Emotion)
         {
-            case CardEmotion.Yellow:
+            case CardEmotion.Charming:
                 return YellowStyle;
-            case CardEmotion.Red:
+            case CardEmotion.Assertive:
                 return RedStyle;
-            case CardEmotion.Blue:
+            case CardEmotion.Sappy:
                 return BlueStyle;
             default:
                 Debug.LogWarning("Card has no emotion set!");
@@ -83,12 +83,12 @@ public class CardStyleManager
     {
         switch (card.Intention)
         {
-            case CardIntention.Intention1:
-                return Intention1Style;
-            case CardIntention.Intention2:
-                return Intention2Style;
-            case CardIntention.Intention3:
-                return Intention3Style;
+            case CardIntention.Expression:
+                return ExpressionStyle;
+            case CardIntention.Observation:
+                return ObservationStyle;
+            case CardIntention.Question:
+                return QuestionStyle;
             default:
                 Debug.LogWarning("Card has no intention set!");
                 return _errorStyle;

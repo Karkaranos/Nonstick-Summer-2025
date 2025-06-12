@@ -120,15 +120,15 @@ public class CardData : ScriptableObject
 public enum CardIntention
 { 
     NotSelected, // Error case
-    Intention1,
-    Intention2,
-    Intention3, // Will update these later when Intentions are finalized
+    Expression,
+    Observation,
+    Question, // Will update these later when Intentions are finalized
 }
 
 public enum CardEmotion
 {
     NotSelected, // Error case
-    Yellow,
-    Red,
-    Blue, // Will update these later when Emotions are finalized
+    Charming,
+    Assertive,
+    Sappy, // Will update these later when Emotions are finalized
 }

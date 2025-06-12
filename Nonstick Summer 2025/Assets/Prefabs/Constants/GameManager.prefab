@@ -44,24 +44,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5666a8773b9e1bb489598c259e9f9386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Card_YellowStyle:
-    color: {r: 1, g: 0.9425935, b: 0.5641509, a: 1}
-    DisplayName: Yellow
-  Card_RedStyle:
-    color: {r: 1, g: 0.3830188, b: 0.3830188, a: 1}
-    DisplayName: Red
-  Card_BlueStyle:
-    color: {r: 0.50377357, g: 0.83427143, b: 1, a: 1}
-    DisplayName: Blue
-  Card_Intention1Style:
-    color: {r: 1, g: 1, b: 1, a: 1}
-    DisplayName: Intention 1
-  Card_Intention2Style:
-    color: {r: 1, g: 1, b: 1, a: 1}
-    DisplayName: Intention 2
-  Card_Intention3Style:
-    color: {r: 1, g: 1, b: 1, a: 1}
-    DisplayName: Intention 3
-  Card_Intention1Sprite: {fileID: 21300000, guid: ffdf80dc342e69344b2dccafe04c30ee, type: 3}
-  Card_Intention2Sprite: {fileID: -2210434942944035985, guid: cd47f6d5edd2c7541a0baf3774a54fdd, type: 3}
-  Card_Intention3Sprite: {fileID: 21300000, guid: ba2d3d7d05fd3e046b6d413365e9b11e, type: 3}
+  Card_CharmingStyle:
+    color: {r: 1, g: 0.9861843, b: 0.60188675, a: 1}
+    DisplayName: Charming
+  Card_AssertiveStyle:
+    color: {r: 1, g: 0.58679235, b: 0.58679235, a: 1}
+    DisplayName: Assertive
+  Card_SappyStyle:
+    color: {r: 0.42830187, g: 0.55752057, b: 1, a: 1}
+    DisplayName: Sappy
+  Card_ExpressionStyle:
+    color: {r: 0, g: 0, b: 0, a: 1}
+    DisplayName: Expression
+  Card_ObservationStyle:
+    color: {r: 0, g: 0, b: 0, a: 1}
+    DisplayName: Observation
+  Card_QuestionStyle:
+    color: {r: 0, g: 0, b: 0, a: 1}
+    DisplayName: Question
+  Card_ExpressionSprite: {fileID: -2210434942944035985, guid: cd47f6d5edd2c7541a0baf3774a54fdd, type: 3}
+  Card_ObservationSprite: {fileID: 21300000, guid: ffdf80dc342e69344b2dccafe04c30ee, type: 3}
+  Card_QuestionSprite: {fileID: 21300000, guid: 90335e5423c010749a50f906b965fa54, type: 3}
+  _defaultEnergy: 5
+  _energyGainedPerRound: 1
+  _energyGainedIfSilent: 2
+  _maxEnergy: 10
+  _defaultCardsInHand: 5
+  grandmaStartingValue:
+    maxValue: 100
+    currentValue: 25
+    relationshipQuota: 75
+  uncleStartingValue:
+    maxValue: 100
+    currentValue: 25
+    relationshipQuota: 75
+  cousinStartingValue:
+    maxValue: 100
+    currentValue: 25
+    relationshipQuota: 75
+  momStartingValue:
+    maxValue: 100
+    currentValue: 25
+    relationshipQuota: 75

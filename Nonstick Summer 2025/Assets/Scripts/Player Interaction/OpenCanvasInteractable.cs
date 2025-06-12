@@ -11,9 +11,29 @@ public class OpenCanvasInteractable : MonoBehaviour, IInteractable
     [SerializeField]
     private Transform cameraAnchor;
 
+    private GameObject openedCanvas;
+    private bool hasGivenCard = false;
+
     public void Interact(GameObject player)
     {
-        UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor);
+        openedCanvas = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor, gameObject);
+
+        print(openedCanvas.transform.childCount);
+        // If this object has given a card, set the card button to false
+        if (hasGivenCard)
+        {
+            openedCanvas.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(false);
+        }
+        else
+        {
+            openedCanvas.transform.GetChild(0).transform.GetChild(2).gameObject.SetActive(false);
+
+        }
+    }
+
+    public void GiveCard()
+    {
+        hasGivenCard = true;
     }
 
     private void OnDrawGizmos()

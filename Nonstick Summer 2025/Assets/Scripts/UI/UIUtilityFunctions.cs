@@ -14,6 +14,10 @@ public class UIUtilityFunctions : MonoBehaviour
     public static void GetCard(CardData card)
     {
         DialogueManager.PlayerHand.Add(card);
+        if (UITransitionManager.WorldObjectReference != null)
+        {
+            UITransitionManager.WorldObjectReference.GetComponent<OpenCanvasInteractable>().GiveCard();
+        }
     }
 
     public static void CloseCurrentPopup()

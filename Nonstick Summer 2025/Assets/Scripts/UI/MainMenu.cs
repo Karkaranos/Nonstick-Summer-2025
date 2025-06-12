@@ -5,9 +5,9 @@ public class MainMenu : MonoBehaviour
 {
     [Scene] private int MainGameplayScene;
 
-    public void StartGame()
+    public void StartGame(int scene)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(MainGameplayScene);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
     }
 
 

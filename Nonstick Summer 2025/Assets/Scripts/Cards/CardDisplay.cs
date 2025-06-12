@@ -84,7 +84,7 @@ public class CardDisplay : MonoBehaviour
 
         EmotionText.text = CardStyleManager.GetEmotionStyle(card).DisplayName;
         IntentionText.text = CardStyleManager.GetIntentionStyle(card).DisplayName;
-        EnergyText.text = card.EnergyCost.ToString();
+        EnergyText.text = (-1 * card.EnergyCost).ToString();
         IntentionImage.sprite = CardStyleManager.GetIntentionSprite(card);
         CardBackground.color = CardStyleManager.GetEmotionColor(card);
 

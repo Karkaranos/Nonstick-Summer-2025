@@ -83,6 +83,8 @@ public class DeckDisplayer : MonoBehaviour
     /// </summary>
     public void DrawToMaxHandSize()
     {
+        ClearDisplay();
+
         int n = MaxDeckDisplaySize;
 
         // Create a copy of the deck to pull cards from

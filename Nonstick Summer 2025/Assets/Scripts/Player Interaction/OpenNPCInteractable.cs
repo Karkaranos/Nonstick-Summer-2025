@@ -33,6 +33,7 @@ public class OpenNPCInteractable : MonoBehaviour, IInteractable
     {
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor);
         var dialogueController = menu.GetComponentInChildren<DialogueUIController>();
+        MusicManager.instance.TransitionMusic(true);
         StartCoroutine(dialogueController.Initialize(StartingDialogueBranch, character));
     }
 

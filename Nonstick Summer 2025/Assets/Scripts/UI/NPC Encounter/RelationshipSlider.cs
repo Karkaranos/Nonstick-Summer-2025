@@ -49,7 +49,7 @@ public class RelationshipSlider : MonoBehaviour
         {
             slider.value = Mathf.MoveTowards(slider.value, value, Time.deltaTime * animationSpeed);
 
-            yield return null;
+            yield return new WaitForEndOfFrame();
         }
 
         slider.value = value;

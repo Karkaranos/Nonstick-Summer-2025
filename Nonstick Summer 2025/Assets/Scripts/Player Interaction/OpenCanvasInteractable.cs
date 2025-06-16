@@ -36,6 +36,7 @@ public class OpenCanvasInteractable : MonoBehaviour, IInteractable
         hasGivenCard = true;
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         if (cameraAnchor == null)
@@ -48,4 +49,5 @@ public class OpenCanvasInteractable : MonoBehaviour, IInteractable
         Gizmos.DrawRay(cameraAnchor.position, cameraAnchor.forward);
         Gizmos.DrawWireSphere(cameraAnchor.position, 0.25f);
     }
+#endif
 }

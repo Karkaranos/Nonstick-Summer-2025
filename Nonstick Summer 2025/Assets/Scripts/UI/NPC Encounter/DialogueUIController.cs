@@ -61,7 +61,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         // i think our game is not complicated enough that its gonna be a problem performance wise, 
         // but its gonna bug me that its happening extra times
 
-        energyBar.Initalize(DialogueManager.CurrentEnergy);
+        energyBar.Initalize();
         relationshipSlider.Initialize(RelationshipManager.characterRelationships[character].maxValue, RelationshipManager.characterRelationships[character].currentValue);
         deckDisplay.SetDeck(ref DialogueManager.PlayerHand);
 
@@ -170,6 +170,12 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     public IEnumerator ResetNPCDialogue()
     {
+        if (!DialogueManager.ReadUserInput)
+        {
+            Debug.Log("not while animations are playing!");
+            yield break;
+        }
+
         Debug.Log("reset dialogue");
 
         yield return dialogueBox.LoadNewDialogue(DialogueManager.CurrentDialogueBranch);
@@ -222,9 +228,9 @@ public class DialogueUIController : Singleton<DialogueUIController>
     }
 
     // Coroutine to handle animation (in the future)
-    public IEnumerator UpdateEnergy(int? value)
+    public IEnumerator UpdateEnergy(int? value=null)
     {
-        yield return energyBar?.SetValue((float)(value ?? DialogueManager.CurrentEnergy));
+        yield return energyBar.SetValue((float)(value ?? DialogueManager.CurrentEnergy));
     }
 
     // Coroutine to handle animation (in the future)

@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
 
     public void Quit()
     {
+        //this quits the game
         Application.Quit();
     }
 }

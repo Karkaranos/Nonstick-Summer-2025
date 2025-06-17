@@ -52,12 +52,13 @@ public class DialogueManager
 
     public static IEnumerator SetCurrentEnergy(int energy)
     {
-        energy = Mathf.Min(energy, MaxEnergy);
+        energy = Mathf.Clamp(energy, 0, MaxEnergy);
         if (_currentEnergy == energy) yield break;
 
+        Debug.Log($"set energy to {_currentEnergy}");
         _currentEnergy = energy;
         if (DialogueUIController.Instance != null)
-            yield return DialogueUIController.Instance.UpdateEnergy(energy); // wait for animation to finish
+            yield return DialogueUIController.Instance.UpdateEnergy(_currentEnergy); // wait for animation to finish
     }
 
     public static IEnumerator SetCurrentRelationshipStatus(float relationshipScore)
@@ -85,7 +86,7 @@ public class DialogueManager
         MaxEnergy = maxEnergy;
         DefaultCardsInHand = defaultCardsInHand;
 
-        CurrentEnergy = defaultEnergy;
+        _currentEnergy = defaultEnergy;
         PlayerHand = new Deck();
     }
 
@@ -124,11 +125,13 @@ public class DialogueManager
 
         yield return DialogueUIController.Instance.ToggleUIForDialogueProgression(false);
 
-        if (_currentEnergy <= 0 && playedCard != null)
+        if (CurrentEnergy <= 0 && playedCard != null)
             Debug.LogWarning("Card played with 0 energy");
 
+        Debug.Log("before set");
         yield return SetCurrentEnergy(_currentEnergy + 
             (playedCard == null ? _energyGainedIfSilent: playedCard.GetEnergyCost())); // this could have been an if statement but noooooo i just had to be special
+        Debug.Log("after set");
 
         // progress dialogue
         var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
@@ -138,6 +141,7 @@ public class DialogueManager
 
         yield return DialogueUIController.Instance.ResetNPCDialogue();
 
+        // TODO: move this to AFTER player reads all text, and can play cards again
         yield return SetCurrentEnergy(_currentEnergy + _energyGainedPerRound);
 
         playedCard.TryTriggerStampEffect(StampTriggerConditions.AfterCardPlayed);
@@ -145,7 +149,7 @@ public class DialogueManager
 
         Debug.Log("Completed processing card");
         // only keep reading user input if theres more
-        ReadUserInput = !CurrentDialogueBranch.End; 
+        ReadUserInput = true;//!CurrentDialogueBranch.End; 
     }
 
     /// <summary>

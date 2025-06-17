@@ -182,7 +182,7 @@ public class DeckDisplayer : MonoBehaviour
     {
         for(int i=0; i<cards.Length; i++)
         {
-            Debug.Log("spawning card at " + position[i]);
+            //Debug.Log("spawning card at " + position[i]);
             /* There is probably a better way to do this
              * However, I needed to spawn the card, set its anchor, then adjust the position after setting the anchor
              * so it works for now*/

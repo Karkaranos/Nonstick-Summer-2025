@@ -5,26 +5,43 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Slider))]
 public class EnergyBar : MonoBehaviour
 {
+    [SerializeField] float animationSpeed = 3;
     private Slider slider;
 
-    public void Initalize(int maxValue)
+    public void Initalize()
     {
         slider = slider ?? GetComponent<Slider>();
         slider.minValue = 0;
-        slider.maxValue = maxValue;
+        slider.maxValue = DialogueManager.MaxEnergy;
+        SetValueNoAnimation(DialogueManager.CurrentEnergy);
     }
 
     public IEnumerator SetValue(float value)
     {
         slider = slider ?? GetComponent<Slider>();
-        if (slider.value == value)
+        //if (slider.value == value)
+        if (Mathf.Approximately(slider.value, value))
             yield break;
 
+        float oldValue = slider.value;
+        while (!Mathf.Approximately(slider.value, value))
+        {
+            slider.value = Mathf.MoveTowards(slider.value, value, Time.deltaTime * animationSpeed);
+            
+            yield return new WaitForEndOfFrame();
+        }
+
         slider.value = value;
-        yield return null; // yield return null instead of yield break because fuck it we ball
-        // questionable code is okay if you say "fuck it we ball" btw.
-        // ok no but my actual reason for doing this is to make sure the future animation stuff wont break if not everything is happening at the same frame.
-        // sorry for making this comment so long
+    }
+
+    public void SetValueNoAnimation(float value)
+    {
+        slider = slider ?? GetComponent<Slider>();
+        //if (slider.value == value)
+        if (Mathf.Approximately(slider.value, value))
+            return;
+
+        slider.value = value;
     }
 
 

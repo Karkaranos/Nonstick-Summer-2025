@@ -184,6 +184,22 @@ public class DeckDisplayer : MonoBehaviour
 
     }
 
+    public void DiscardCard(CardData card)
+    {
+        displayedData.Remove(card);
+
+        ClearDisplay();
+
+        // Creates referenced array
+        Vector2[] spawnPositions = new Vector2[displayedData.Count];
+
+        // Generates spawn positions
+        GeneratePositions(ref spawnPositions, 0, displayedData.Count - 1);
+
+        // Spawns the specified number of cards
+        SpawnCards(StaticUtilities.ListToArray(displayedData), spawnPositions);
+    }
+
     /// <summary>
     /// Generates the positions cards will spawn at
     /// </summary>

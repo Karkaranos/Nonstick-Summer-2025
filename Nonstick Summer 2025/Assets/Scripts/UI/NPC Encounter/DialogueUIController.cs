@@ -247,5 +247,13 @@ public class DialogueUIController : Singleton<DialogueUIController>
         deckDisplay.DrawOneCard();
     }
 
+    public void DiscardCard()
+    {
+        DialogueManager.SetCurrentEnergy(DialogueManager.CurrentEnergy +=1);
+
+        deckDisplay.DiscardCard(selectedCardData);
+    }
+
+
 }
 

@@ -37,20 +37,20 @@ public class DialogueManager
     public static Deck PlayerHand, RemainingDeck;
     private static characters currentCharacter;
     public static float CurrentRelationshipScore => RelationshipManager.characterRelationships[currentCharacter].currentValue;
-    public static int CurrentEnergy { 
+    public static float CurrentEnergy { 
         get { return _currentEnergy; }
         set { SetCurrentEnergy(value); }
     }
-    private static int _currentEnergy;
+    private static float _currentEnergy;
 
     // parameters
-    private static int _defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent;
-    public static int MaxEnergy;
+    private static float _defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent;
+    public static float MaxEnergy;
     public static int DefaultCardsInHand { get; private set; }
 
     #region Getters and setters
 
-    public static IEnumerator SetCurrentEnergy(int energy)
+    public static IEnumerator SetCurrentEnergy(float energy)
     {
         energy = Mathf.Clamp(energy, 0, MaxEnergy);
         if (_currentEnergy == energy) yield break;
@@ -78,7 +78,7 @@ public class DialogueManager
 
     #endregion
 
-    public DialogueManager(int defaultEnergy, int energyGainedPerRound, int energyGainedIfSilent, int maxEnergy, int defaultCardsInHand)
+    public DialogueManager(float defaultEnergy, float energyGainedPerRound, float energyGainedIfSilent, float maxEnergy, int defaultCardsInHand)
     {
         _defaultEnergy = defaultEnergy;
         _energyGainedPerRound = energyGainedPerRound;
@@ -95,7 +95,6 @@ public class DialogueManager
         ReadUserInput = false;
         CurrentDialogueBranch = startDialogueBranch;
         currentCharacter = character;
-
 
         // testing only: please delete later
         //PlayerHand.Clear();
@@ -120,6 +119,9 @@ public class DialogueManager
         Debug.Log("Player playing card");
         ReadUserInput = false;
 
+        playedCard.TryTriggerStampEffect(StampTriggerConditions.BeforeCardPlayed);
+        //TODO wait for potential stamp animations to finish
+
         yield return DialogueUIController.Instance.ToggleUIForDialogueProgression(false);
 
         if (CurrentEnergy <= 0 && playedCard != null)
@@ -134,12 +136,16 @@ public class DialogueManager
         var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
         CurrentDialogueBranch = dialogueOption.BranchingDialogue;
 
-        yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + dialogueOption.ChangeInRelationshipStatus);
+        float relationshipChange = playedCard.GetRelationshopChange(dialogueOption);
+        yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange);
 
         yield return DialogueUIController.Instance.ResetNPCDialogue();
 
         // TODO: move this to AFTER player reads all text, and can play cards again
         yield return SetCurrentEnergy(_currentEnergy + _energyGainedPerRound);
+
+        playedCard.TryTriggerStampEffect(StampTriggerConditions.AfterCardPlayed);
+        //TODO wait for potential stamp animations to finish
 
         Debug.Log("Completed processing card");
         // only keep reading user input if theres more

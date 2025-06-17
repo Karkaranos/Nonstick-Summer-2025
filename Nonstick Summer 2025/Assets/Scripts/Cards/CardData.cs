@@ -4,6 +4,7 @@
 * Creation Date :     June 6, 2025
 *
 * Brief Description : Data container for cards.
+* Card Data is a partial class, see CardStampCollection for stamp logic
 *
 * TODO:
 * modifier implementation (modify getter functions)
@@ -11,17 +12,19 @@
 *****************************************************************************/
 
 using NaughtyAttributes;
+using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CardData", menuName = "Scriptable Objects/CardData")]
-public class CardData : ScriptableObject
+public partial class CardData : ScriptableObject
 {
     [HideInInspector] public Action OnCardValueChanged;
 
     [OnValueChanged("Debug_InvokeOnCardValueChanged")]
     [Tooltip("ADDS this value to the players energy on played. (Leave negative to subtract energy)")] // i am such a freak
-    [SerializeField][Label("Energy Cost")] private int _energyCost = -1;
+    [SerializeField][Label("Energy Cost")] private float _energyCost = -2;
 
     [OnValueChanged("Debug_InvokeOnCardValueChanged")]
     [SerializeField][Label("Emotion")] private CardEmotion _emotion;
@@ -45,8 +48,10 @@ public class CardData : ScriptableObject
     #endregion
 
     #region Getters and Setters
+
+    [Header("Debug")]
     [ShowNativeProperty]
-    public int EnergyCost {
+    public float EnergyCost {
         get { return GetEnergyCost(); }
         set { SetEnergyCost(value); }
     }
@@ -61,11 +66,34 @@ public class CardData : ScriptableObject
         set { _emotion = value; OnCardValueChanged.Invoke(); }
     }
 
-    public int GetEnergyCost() { return _energyCost; }
+    public float GetEnergyCost() 
+    {
+        float newCost = _energyCost;
+
+        foreach(ModifierStamp stamp in _stamps)
+        {
+            if(stamp.type == typeof(CardStatAffectorStamp))
+                ((CardStatAffectorStamp)stamp).ModifyEnergyCost(ref newCost);
+        }
+        return newCost; 
+    }
     public CardIntention GetIntention() { return _intention; }
     public CardEmotion GetEmotion() { return _emotion; }
 
-    public void SetEnergyCost(int energyCost)
+
+    public float GetRelationshopChange(DialogueOption dialogueOption)
+    {
+        float newRelationshipChange = dialogueOption.ChangeInRelationshipStatus;
+
+        foreach (ModifierStamp stamp in _stamps)
+        {
+            if (stamp.type == typeof(CardStatAffectorStamp))
+                ((CardStatAffectorStamp)stamp).ModifyEnergyCost(ref newRelationshipChange);
+        }
+        return newRelationshipChange;
+    }
+
+    public void SetEnergyCost(float energyCost)
     {
         if (energyCost == _energyCost) return;
         _energyCost = energyCost;
@@ -95,6 +123,8 @@ public class CardData : ScriptableObject
         copy._emotion = _emotion;
         copy._intention = _intention;
         copy._energyCost = _energyCost;
+
+        copy._stamps = new List<ModifierStamp>(_stamps);
 
         return copy;
     }

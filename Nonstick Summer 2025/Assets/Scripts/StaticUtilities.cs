@@ -118,7 +118,6 @@ public static class StaticUtilities
 
     #endregion
 
-#if UNITY_EDITOR
     #region Debug
 
     /// <summary>
@@ -128,10 +127,14 @@ public static class StaticUtilities
     /// <returns></returns>
     public static bool Editor_SelectingSelfOrChild(Transform parent)
     {
+#if UNITY_EDITOR
+
         var selected = UnityEditor.Selection.activeTransform;
         return UnityEditor.Selection.activeTransform != null &&
             (selected == parent || selected.IsChildOf(parent));
+#else
+        return false;
+#endif
     }
     #endregion
-#endif
 }

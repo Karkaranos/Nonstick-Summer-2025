@@ -2,7 +2,7 @@ using UnityEngine;
 
 public enum StampTriggerConditions
 {
-    NOT_SELECTED, // this maaay be renamed if theres any passive effects in the future (ie. seeing how npc will react to card before it is played)
+    None, // basic stat changes
     BeforeCardPlayed, // DialogueManager
     AfterCardPlayed, // DialogueManager
     OnCardDiscarded, //TODO implement

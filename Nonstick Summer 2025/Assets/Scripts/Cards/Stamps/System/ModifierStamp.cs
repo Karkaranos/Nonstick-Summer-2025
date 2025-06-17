@@ -9,11 +9,19 @@
 
 using System;
 using UnityEngine;
+using NaughtyAttributes;
 
 //[CreateAssetMenu(fileName = "DialogueBranch", menuName = "Scriptable Objects/DialogueBranch")]
 public abstract class ModifierStamp : ScriptableObject
 {
     public StampTriggerConditions TriggerCondition;
+
+    [Header("Display")]
+    [ShowAssetPreview]
+    public Sprite Icon;
+    public string ShortDescription;
+
+    public Type type => this.GetType();
 
     /// <summary>
     /// Invoked in CardStampCollection. this function should ideally have 1 reference besides overrides.

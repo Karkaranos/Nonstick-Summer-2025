@@ -49,7 +49,7 @@ public class CardStatAffectorStamp : ModifierStamp
                 Debug.LogError("Invalid operator");
                 break;
         }
-        Debug.LogError($"Energy cost changed to {currentEnergyCost}");
+        //Debug.LogError($"Energy cost changed to {currentEnergyCost}");
     }
 
     // this could in theory be moved to 

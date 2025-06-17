@@ -31,6 +31,8 @@ public class DeckDisplayer : MonoBehaviour
 
     private Vector2[] spawnPositions;
 
+    private List<CardData> displayedData = new List<CardData>();
+
     #endregion Variables
 
     #region Functions
@@ -62,18 +64,15 @@ public class DeckDisplayer : MonoBehaviour
     {
         ClearDisplay();
 
-        // Create a copy of the deck to pull cards from
-        // May revisit later and make it the actual deck
-        Deck copy = DeckRef.GetCopy();
 
         // Creates referenced array
-        spawnPositions = new Vector2[copy.Cards.Count];
+        spawnPositions = new Vector2[DeckRef.Cards.Count];
 
         // Generates spawn positions
-        GeneratePositions(ref spawnPositions, 0, copy.Cards.Count-1);
+        GeneratePositions(ref spawnPositions, 0, DeckRef.Cards.Count-1);
 
         // Spawns all cards
-        SpawnCards(copy.PeekNCards(copy.Cards.Count), spawnPositions);
+        SpawnCards(DeckRef.PopAndReplaceNCards(DeckRef.Cards.Count), spawnPositions);
 
     }
 
@@ -87,10 +86,6 @@ public class DeckDisplayer : MonoBehaviour
 
         int n = MaxDeckDisplaySize;
 
-        // Create a copy of the deck to pull cards from
-        // May revisit later and make it the actual deck
-        Deck copy = DeckRef.GetCopy();
-
         // Creates referenced array
         Vector2[] spawnPositions = new Vector2[n];
 
@@ -98,8 +93,9 @@ public class DeckDisplayer : MonoBehaviour
         GeneratePositions(ref spawnPositions, 0, n - 1);
 
         // Spawns the specified number of cards
-        SpawnCards(copy.PeekNCards(n), spawnPositions);
+        SpawnCards(DeckRef.PopAndReplaceNCards(n), spawnPositions);
     }
+
 
     /// <summary>
     /// Displays a specified number of cards from the player's hand
@@ -118,9 +114,6 @@ public class DeckDisplayer : MonoBehaviour
             n = MaxDeckDisplaySize;
         }
 
-        // Create a copy of the deck to pull cards from
-        // May revisit later and make it the actual deck
-        Deck copy = DeckRef.GetCopy();
 
         // Creates referenced array
         Vector2[] spawnPositions = new Vector2[n];
@@ -130,7 +123,7 @@ public class DeckDisplayer : MonoBehaviour
         GeneratePositions(ref spawnPositions, 0, n-1);
 
         // Spawns the specified number of cards
-        SpawnCards(copy.PeekNCards(n), spawnPositions);
+        SpawnCards(DeckRef.PopAndReplaceNCards(n), spawnPositions);
     }
 
     /// <summary>
@@ -143,6 +136,27 @@ public class DeckDisplayer : MonoBehaviour
             Destroy(VisualDisplay[i]);
         }
         VisualDisplay.Clear();
+    }
+
+
+    public void DrawOneCard()
+    {
+        displayedData.Add(DeckRef.GetNextCardCopy());
+
+        ClearDisplay();
+
+        int n = MaxDeckDisplaySize;
+
+        // Creates referenced array
+        Vector2[] spawnPositions = new Vector2[displayedData.Count];
+
+        // Generates spawn positions
+        GeneratePositions(ref spawnPositions, 0, displayedData.Count - 1);
+
+        // Spawns the specified number of cards
+        SpawnCards(StaticUtilities.ListToArray(displayedData), spawnPositions);
+
+
     }
 
     /// <summary>
@@ -180,6 +194,7 @@ public class DeckDisplayer : MonoBehaviour
     /// <param name="position">Where the spawned cards should be located</param>
     private void SpawnCards(CardData[] cards, Vector2[] position)
     {
+        displayedData.Clear();
         for(int i=0; i<cards.Length; i++)
         {
             //Debug.Log("spawning card at " + position[i]);
@@ -191,6 +206,7 @@ public class DeckDisplayer : MonoBehaviour
             //_visualDisplay[i].GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
             VisualDisplay[i].GetComponent<CardDisplay>().SetCard(cards[i]);
             VisualDisplay[i].transform.localPosition = position[i];
+            displayedData.Add(cards[i]);
         }
     }
 

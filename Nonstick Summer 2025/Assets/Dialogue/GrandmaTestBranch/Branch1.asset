@@ -15,44 +15,46 @@ MonoBehaviour:
   dialogue:
   - Dialogue: Aww!
     Portrait: {fileID: 0}
-    End: 0
   - Dialogue: And I love you, sweetie!
     Portrait: {fileID: 0}
-    End: 1
-  Option1:
-    BranchingDialogue: {fileID: 0}
+  Charming_Expression:
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
     PlayerDialogue: 
     ChangeInRelationshipStatus: 0
-  Option2:
-    BranchingDialogue: {fileID: 0}
+  Assertive_Expression:
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
     PlayerDialogue: 
     ChangeInRelationshipStatus: 0
-  Option3:
-    BranchingDialogue: {fileID: 0}
+  Sappy_Expression:
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
     PlayerDialogue: 
     ChangeInRelationshipStatus: 0
-  Option4:
-    BranchingDialogue: {fileID: 0}
+  Charming_Observation:
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
     PlayerDialogue: 
     ChangeInRelationshipStatus: 0
-  Option5:
-    BranchingDialogue: {fileID: 0}
+  Assertive_Observation:
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
     PlayerDialogue: 
     ChangeInRelationshipStatus: 0
-  Option6:
-    BranchingDialogue: {fileID: 0}
+  Sappy_Observation:
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
     PlayerDialogue: 
     ChangeInRelationshipStatus: 0
-  Option7:
-    BranchingDialogue: {fileID: 0}
+  Charming_Question:
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
     PlayerDialogue: 
     ChangeInRelationshipStatus: 0
-  Option8:
-    BranchingDialogue: {fileID: 0}
+  Assertive_Question:
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
     PlayerDialogue: 
     ChangeInRelationshipStatus: 0
-  Option9:
-    BranchingDialogue: {fileID: 0}
+  Sappy_Question:
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
     PlayerDialogue: 
     ChangeInRelationshipStatus: 0
-  End: 1
+  Silent:
+    BranchingDialogue: {fileID: 11400000, guid: a30f23876f7fcfe4180258c3133ef9fa, type: 2}
+    PlayerDialogue: 
+    ChangeInRelationshipStatus: 0
+  End: 0

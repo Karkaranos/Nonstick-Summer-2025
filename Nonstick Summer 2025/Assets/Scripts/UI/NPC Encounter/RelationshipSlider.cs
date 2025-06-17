@@ -17,6 +17,7 @@ public class RelationshipSlider : MonoBehaviour
 {
     [Tooltip("Slider that displays the character's current relationship value.")]
     private Slider slider;
+    [SerializeField] float animationSpeed = 3;
 
     /// <summary>
     /// Initializes slider values and visuals
@@ -28,7 +29,7 @@ public class RelationshipSlider : MonoBehaviour
         slider = slider ?? GetComponent<Slider>();
         slider.minValue = 0;
         slider.maxValue = maxValue;
-        slider.value = currentValue;
+        SetValueNoAnimation(currentValue);
     }
 
     /// <summary>
@@ -39,18 +40,29 @@ public class RelationshipSlider : MonoBehaviour
     public IEnumerator SetValue(float value)
     {
         slider = slider ?? GetComponent<Slider>();
-
-        if (slider.value == value)
+        //if (slider.value == value)
+        if (Mathf.Approximately(slider.value, value))
             yield break;
 
-        slider.value = value;
-        yield return null; 
-        // yield return null instead of yield break because fuck it we ball
-        // questionable code is okay if you say "fuck it we ball" btw.
-        // ok no but my actual reason for doing this is to make sure the future animation stuff wont break if not everything is happening at the same frame.
-        // sorry for making this comment so long
+        float oldValue = slider.value;
+        while (!Mathf.Approximately(slider.value, value))
+        {
+            slider.value = Mathf.MoveTowards(slider.value, value, Time.deltaTime * animationSpeed);
 
-        //thanks toby
+            yield return new WaitForEndOfFrame();
+        }
+
+        slider.value = value;
+    }
+
+    public void SetValueNoAnimation(float value)
+    {
+        slider = slider ?? GetComponent<Slider>();
+        //if (slider.value == value)
+        if (Mathf.Approximately(slider.value, value))
+            return;
+
+        slider.value = value;
     }
 
     /// <summary>

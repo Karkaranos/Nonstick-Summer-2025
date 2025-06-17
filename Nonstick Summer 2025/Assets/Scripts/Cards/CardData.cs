@@ -4,6 +4,7 @@
 * Creation Date :     June 6, 2025
 *
 * Brief Description : Data container for cards.
+* Card Data is a partial class, see CardStampCollection for stamp logic
 *
 * TODO:
 * modifier implementation (modify getter functions)
@@ -15,7 +16,7 @@ using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CardData", menuName = "Scriptable Objects/CardData")]
-public class CardData : ScriptableObject
+public partial class CardData : ScriptableObject
 {
     [HideInInspector] public Action OnCardValueChanged;
 
@@ -45,6 +46,8 @@ public class CardData : ScriptableObject
     #endregion
 
     #region Getters and Setters
+
+    [Header("Debug")]
     [ShowNativeProperty]
     public int EnergyCost {
         get { return GetEnergyCost(); }

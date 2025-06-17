@@ -119,6 +119,9 @@ public class DialogueManager
         Debug.Log("Player playing card");
         ReadUserInput = false;
 
+        playedCard.TryTriggerStampEffect(StampTriggerConditions.BeforeCardPlayed);
+        //TODO wait for potential stamp animations to finish
+
         yield return DialogueUIController.Instance.ToggleUIForDialogueProgression(false);
 
         if (_currentEnergy <= 0 && playedCard != null)
@@ -136,6 +139,9 @@ public class DialogueManager
         yield return DialogueUIController.Instance.ResetNPCDialogue();
 
         yield return SetCurrentEnergy(_currentEnergy + _energyGainedPerRound);
+
+        playedCard.TryTriggerStampEffect(StampTriggerConditions.AfterCardPlayed);
+        //TODO wait for potential stamp animations to finish
 
         Debug.Log("Completed processing card");
         // only keep reading user input if theres more

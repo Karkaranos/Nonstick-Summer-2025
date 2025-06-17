@@ -15,7 +15,8 @@ public class DeckDisplayer : MonoBehaviour
     #region Variables
     //private static Deck PlayerDeckRef => GameManager.DeckManagerReference.PlayerDeck;
     [SerializeField] private Deck DeckRef; // changed to be generalized, because deck will not always be the players.
-    private static int MaxDeckDisplaySize => GameManager.MaxCardsVisibleInDeck;
+    private static int DefaultHandSize => GameManager.DefaultCardsInHand;
+    private static int MaxHandSize => GameManager.MaxCardsVisibleInDeck;
 
     public List<GameObject> VisualDisplay { get => _visualDisplay; private set => _visualDisplay = value; }
 
@@ -54,7 +55,7 @@ public class DeckDisplayer : MonoBehaviour
     {
         DeckRef = deckRef;
         //This will eventually be moved elsewhere
-        DisplayNCards(GameManager.MaxCardsVisibleInDeck);
+        DrawToDefaultHand();
     }
 
     /// <summary>
@@ -78,13 +79,33 @@ public class DeckDisplayer : MonoBehaviour
 
     /// <summary>
     /// Yeahh basically just copied DisplayNCards
-    /// Draws the hand back to the max size
+    /// Draws the hand back to the default size
     /// </summary>
-    public void DrawToMaxHandSize()
+    public void DrawToDefaultHand()
     {
         ClearDisplay();
 
-        int n = MaxDeckDisplaySize;
+        int n = DefaultHandSize;
+
+        // Creates referenced array
+        Vector2[] spawnPositions = new Vector2[n];
+
+        // Generates spawn positions
+        GeneratePositions(ref spawnPositions, 0, n - 1);
+
+        // Spawns the specified number of cards
+        SpawnCards(DeckRef.PopAndReplaceNCards(n), spawnPositions);
+    }
+
+    /// <summary>
+    /// Yeahh basically just copied DisplayNCards
+    /// Draws the hand back to the max size
+    /// </summary>
+    public void DrawToMaxHand()
+    {
+        ClearDisplay();
+
+        int n = MaxHandSize;
 
         // Creates referenced array
         Vector2[] spawnPositions = new Vector2[n];
@@ -111,7 +132,7 @@ public class DeckDisplayer : MonoBehaviour
         // If no value was passed in, set the display count to the number from GameManager
         if(n==0)
         {
-            n = MaxDeckDisplaySize;
+            n = DefaultHandSize;
         }
 
 
@@ -141,21 +162,25 @@ public class DeckDisplayer : MonoBehaviour
 
     public void DrawOneCard()
     {
-        displayedData.Add(DeckRef.GetNextCardCopy());
+        if (displayedData.Count < MaxHandSize)
+        {
+            displayedData.Add(DeckRef.GetNextCardCopy());
 
-        ClearDisplay();
+            ClearDisplay();
 
-        int n = MaxDeckDisplaySize;
+            // Creates referenced array
+            Vector2[] spawnPositions = new Vector2[displayedData.Count];
 
-        // Creates referenced array
-        Vector2[] spawnPositions = new Vector2[displayedData.Count];
+            // Generates spawn positions
+            GeneratePositions(ref spawnPositions, 0, displayedData.Count - 1);
 
-        // Generates spawn positions
-        GeneratePositions(ref spawnPositions, 0, displayedData.Count - 1);
-
-        // Spawns the specified number of cards
-        SpawnCards(StaticUtilities.ListToArray(displayedData), spawnPositions);
-
+            // Spawns the specified number of cards
+            SpawnCards(StaticUtilities.ListToArray(displayedData), spawnPositions);
+        }
+        else
+        {
+            throw new System.Exception("Maximum hand size reached");
+        }
 
     }
 

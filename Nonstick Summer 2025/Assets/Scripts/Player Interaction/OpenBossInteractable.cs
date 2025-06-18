@@ -29,6 +29,9 @@ public class OpenBossInteractable : MonoBehaviour
     [SerializeField]
     private characters character;
 
+    /// <summary>
+    /// opens combat on trigger enter
+    /// </summary>
     public void OpenCanvas()
     {
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor);

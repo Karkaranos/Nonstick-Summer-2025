@@ -25,7 +25,7 @@ public class GameManager : Singleton<GameManager>
     public static DialogueManager DialogueManagerReference;
     public static RelationshipManager RelationshipManagerReference;
 
-    public static int MaxCardsVisibleInDeck = 5;
+    public static int MaxCardsVisibleInDeck = 7;
 
     [Foldout("Card Styles")] [SerializeField] private CardValueStyle 
         Card_CharmingStyle, Card_AssertiveStyle, Card_SappyStyle,
@@ -43,7 +43,7 @@ public class GameManager : Singleton<GameManager>
     [Foldout("Social Battery")] [SerializeField] private int _energyGainedPerRound=1;
     [Foldout("Social Battery")][SerializeField] private int _energyGainedIfSilent = 2;
     [Foldout("Social Battery")] [SerializeField] private int _maxEnergy=10;
-    [Foldout("Dialogue Manager")] [SerializeField] private int _defaultCardsInHand=5;
+    [Foldout("Dialogue Manager")] public static int DefaultCardsInHand=5;
 
     [Header("Relationship Manager")]
     [Foldout("Relationship Manager")] [SerializeField] private RelationshipStats grandmaStartingValue;
@@ -67,7 +67,7 @@ public class GameManager : Singleton<GameManager>
             Card_ExpressionStyle, Card_ObservationStyle, Card_QuestionStyle,
             Card_ExpressionSprite, Card_ObservationSprite, Card_QuestionSprite);
         DeckManagerReference = DeckManagerReference ?? new DeckManager();
-        DialogueManagerReference = DialogueManagerReference ?? new DialogueManager(_defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent, _maxEnergy, _defaultCardsInHand);
+        DialogueManagerReference = DialogueManagerReference ?? new DialogueManager(_defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent, _maxEnergy, DefaultCardsInHand);
         RelationshipManagerReference = RelationshipManagerReference ?? new RelationshipManager(grandmaStartingValue, uncleStartingValue, cousinStartingValue, momStartingValue);
 
     }

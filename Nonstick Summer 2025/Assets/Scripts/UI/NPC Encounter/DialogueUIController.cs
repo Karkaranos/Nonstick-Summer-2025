@@ -218,7 +218,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
         //okay this isn't as clean here but whatever
         if(interactable)
         {
-            deckDisplay.DrawToMaxHandSize();
+            Debug.LogWarning("This statement runs too often");
+            deckDisplay.DrawToDefaultHand();
         }
 
         deckDisplay?.gameObject.SetActive(interactable);
@@ -239,4 +240,20 @@ public class DialogueUIController : Singleton<DialogueUIController>
         yield return relationshipSlider?.SetValue(value ?? RelationshipManager.characterRelationships[character].currentValue);
     }
 
+    public void DrawOneCard()
+    {
+        DialogueManager.SetCurrentEnergy(DialogueManager.CurrentEnergy -= 2);
+        
+        deckDisplay.DrawOneCard();
+    }
+
+    public void DiscardCard()
+    {
+        DialogueManager.SetCurrentEnergy(DialogueManager.CurrentEnergy +=1);
+
+        deckDisplay.DiscardCard(selectedCardData);
+    }
+
+
 }
+

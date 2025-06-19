@@ -22,7 +22,7 @@ public partial class CardData
     public IReadOnlyCollection<ModifierStamp> Stamps => _stamps.AsReadOnly();
 
     [Tooltip("Set default stamps here")]
-    [SerializeField] private List<ModifierStamp> _stamps;
+    [SerializeField] private List<ModifierStamp> _stamps = new List<ModifierStamp>();
 
     /// <summary>
     /// Tries to invoke the stamps effect.

@@ -20,6 +20,8 @@ public class DialogueBox : MonoBehaviour
 
     [ReadOnly] public bool PlayerReadAllDialogue;
 
+    [HideInInspector] public float RelationshipScore;
+
     /// <summary>
     /// displays dialogue according to where the player is in a dialogue branch
     /// </summary>
@@ -79,6 +81,15 @@ public class DialogueBox : MonoBehaviour
 
         //TODO typewriter text goes here
         npcText.text = branch.dialogue[NumberInList].Dialogue;
+
+        if (RelationshipScore < branch.dialogue[NumberInList].RelationshipRequirement)
+        {
+
+            //illegal move maybe but it gets the job done
+            DialogueManager.CurrentDialogueBranch.End = true;
+            PlayerReadAllDialogue = true;
+
+        }
 
         if (PlayerReadAllDialogue)
         {

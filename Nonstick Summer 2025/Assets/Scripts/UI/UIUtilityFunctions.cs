@@ -20,6 +20,20 @@ public class UIUtilityFunctions : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gives all intents of the specified emotion
+    /// </summary>
+    /// <param name="emotion">The emotion to give intents of</param>
+    public static void GetEmotion(CardEmotion emotion, GameObject objRef)
+    {
+        print("Calll");
+        DialogueManager.PlayerHand.Add(CardData.NewCard(-2, emotion, CardIntention.Expression));
+        DialogueManager.PlayerHand.Add(CardData.NewCard(-2, emotion, CardIntention.Observation));
+        DialogueManager.PlayerHand.Add(CardData.NewCard(-2, emotion, CardIntention.Question));
+
+        objRef.GetComponent<OpenCanvasInteractable>().GiveCard(emotion);
+    }
+
     public static void CloseCurrentPopup()
     {
         UITransitionManager.CloseMenu();

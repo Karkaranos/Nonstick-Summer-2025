@@ -7,6 +7,9 @@
 * If there was a less complicated way to go about this. Whoops.
 * This should go on the node prefab itself?
 * 
+* NOTE: A node should be in scene that the orthographic camera is pointing at. This is where the tree will generate from.
+*
+* 
 *****************************************************************************/
 
 using System.Collections;
@@ -20,6 +23,12 @@ public class DialogueTree : MonoBehaviour
 {
     [SerializeField] [Tooltip("Node prefab goes here!")] private GameObject node;
 
+    //TO DO: call this upcoming function from DialogueUIController
+
+    /// <summary>
+    /// continuously spawns nodes until the end of a tree is reached
+    /// </summary>
+    /// <param name="branch">the current dialogue branch that the player is on</param>
     public void GenerateNodes (DialogueBranch branch)
     {
 

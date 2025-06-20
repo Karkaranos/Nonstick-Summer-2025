@@ -10,9 +10,8 @@ using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System;
 
-public class OpenCanvasInteractable : MonoBehaviour, IInteractable
+public class InteractableObjectBehavior : MonoBehaviour, IInteractable
 {
     [SerializeField]
     [Required]
@@ -23,6 +22,8 @@ public class OpenCanvasInteractable : MonoBehaviour, IInteractable
     private Transform cameraAnchor;
 
     private GameObject openedCanvas;
+
+    [SerializeField, Tooltip("Text that always appears when this object is selected")] private string _statement = "You are looking at an object";
 
     [Header("Personality Question")]
     [SerializeField] private string _question;
@@ -37,6 +38,8 @@ public class OpenCanvasInteractable : MonoBehaviour, IInteractable
     public void Interact(GameObject player)
     {
         openedCanvas = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor, gameObject);
+
+        openedCanvas.transform.GetChild(1).GetComponent<TMP_Text>().text = _statement;
 
         // If this object has given cards, set the card button to false
         if (hasGivenCard)
@@ -80,15 +83,6 @@ public class OpenCanvasInteractable : MonoBehaviour, IInteractable
     }
 
     /// <summary>
-    /// If giving one card
-    /// </summary>
-    [Obsolete("This function is no longer needed")]
-    public void GiveCard()
-    {
-        hasGivenCard = true;
-    }
-
-    /// <summary>
     /// Ensures the player gets cards only once
     /// Saves the emotion
     /// </summary>
@@ -129,8 +123,6 @@ Author Names :          Cade Naylor
 Date Created :          June 19, 2025
 Date Modified :         June 19, 2025
 Brief Description :     Stores information for interactable object questions
-                        Toby, if you would rather I switch this to a scriptable object later, I can
-                        The reason I'm doing it this way is to slightly optimize project size
 ***************************************************/
 public class PersonalityOption
 {

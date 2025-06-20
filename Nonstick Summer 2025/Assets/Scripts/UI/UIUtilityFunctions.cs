@@ -7,18 +7,6 @@ using UnityEngine;
  */
 public class UIUtilityFunctions : MonoBehaviour
 {
-    /// <summary>
-    /// Give player n x card.
-    /// Call this function multiple times on a button call for multiple different cards.
-    /// </summary>
-    public static void GetCard(CardData card)
-    {
-        DialogueManager.PlayerHand.Add(card);
-        if (UITransitionManager.WorldObjectReference != null)
-        {
-            UITransitionManager.WorldObjectReference.GetComponent<OpenCanvasInteractable>().GiveCard();
-        }
-    }
 
     /// <summary>
     /// Gives all intents of the specified emotion
@@ -31,7 +19,7 @@ public class UIUtilityFunctions : MonoBehaviour
         DialogueManager.PlayerHand.Add(CardData.NewCard(-2, emotion, CardIntention.Observation));
         DialogueManager.PlayerHand.Add(CardData.NewCard(-2, emotion, CardIntention.Question));
 
-        objRef.GetComponent<OpenCanvasInteractable>().GiveCard(emotion);
+        objRef.GetComponent<InteractableObjectBehavior>().GiveCard(emotion);
     }
 
     public static void CloseCurrentPopup()

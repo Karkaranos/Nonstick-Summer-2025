@@ -117,6 +117,7 @@ public partial class CardData : ScriptableObject
         OnCardValueChanged.Invoke();
     }
 
+
     #endregion
 
 

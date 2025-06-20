@@ -34,11 +34,15 @@ public class Interact : MonoBehaviour
     [SerializeField] private float _maxInteractDistance;
     [SerializeField] LayerMask _layerToIgnore;
 
+    [Header("Other PlayerInteractions")]
+    [SerializeField, Required] public GameObject PauseMenu;
+
     private void Awake()
     {
         //listen for inputs
         InputEvents.InteractStarted.AddListener(InteractPressed);
         InputEvents.InteractCanceled.AddListener(InteractReleased);
+        InputEvents.PauseStarted.AddListener(PausePressed);
 
         _camera = Camera.main;
 
@@ -148,6 +152,29 @@ public class Interact : MonoBehaviour
         {
             OpenBossInteractable OPI = other.GetComponent<OpenBossInteractable>();
             OPI.OpenCanvas();
+        }
+    }
+
+    /// <summary>
+    /// Handles opening or closing the pause menu 
+    /// </summary>
+    public void PausePressed()
+    {
+        Debug.Log("Called");
+        if(UITransitionManager.PlayerInMenu && 
+            UITransitionManager.CurrentCanvasReference.GetComponent<PauseAndSettings>()!=null)
+        {
+            UITransitionManager.CloseMenu();
+        }
+        // Prevents the player from pausing while in combay. can be revisited later
+        else if (UITransitionManager.CurrentCanvasReference!=null && 
+            UITransitionManager.CurrentCanvasReference.GetComponent<DialogueUIController>())
+        {
+            Debug.LogWarning("Pausing is prohibited during combat");
+        }
+        else
+        {
+            UITransitionManager.OpenMenu(PauseMenu);
         }
     }
 }

@@ -20,6 +20,7 @@ public class DialogueBox : MonoBehaviour
 
     [ReadOnly] public bool PlayerReadAllDialogue;
 
+
     /// <summary>
     /// displays dialogue according to where the player is in a dialogue branch
     /// </summary>
@@ -79,6 +80,7 @@ public class DialogueBox : MonoBehaviour
 
         //TODO typewriter text goes here
         npcText.text = branch.dialogue[NumberInList].Dialogue;
+
 
         if (PlayerReadAllDialogue)
         {

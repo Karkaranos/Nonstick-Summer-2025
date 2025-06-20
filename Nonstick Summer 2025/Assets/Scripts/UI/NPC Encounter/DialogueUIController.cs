@@ -57,6 +57,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
     {
         DialogueManager.OnOpenCombatUI(startBranch, character);
 
+        MusicManager.instance.TransitionMusic(true);
+
         // all the rest of this ui initialization stuff is gonna run every time an npc combat encounter happens.
         // i think our game is not complicated enough that its gonna be a problem performance wise, 
         // but its gonna bug me that its happening extra times

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9122950793716823719
+--- !u!1 &3976658305286726145
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3244708319087062035}
-  - component: {fileID: 4726338520261917580}
+  - component: {fileID: 3040348319658073375}
+  - component: {fileID: 8801780039718169056}
   m_Layer: 0
-  m_Name: FMODEvents
+  m_Name: MusicManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3244708319087062035
+--- !u!4 &3040348319658073375
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9122950793716823719}
+  m_GameObject: {fileID: 3976658305286726145}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,22 +32,15 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4726338520261917580
+--- !u!114 &8801780039718169056
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9122950793716823719}
+  m_GameObject: {fileID: 3976658305286726145}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5761db3d5006361478021659f40b6318, type: 3}
+  m_Script: {fileID: 11500000, guid: dd6c09c3738387143bf7d809becb0968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <HomeBGM>k__BackingField:
-    Guid:
-      Data1: -518810725
-      Data2: 1152100314
-      Data3: 1522186921
-      Data4: 214982608
-    Path: event:/First Playable Music

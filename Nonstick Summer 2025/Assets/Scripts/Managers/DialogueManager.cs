@@ -134,7 +134,14 @@ public class DialogueManager
 
         // progress dialogue
         var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
-        CurrentDialogueBranch = dialogueOption.BranchingDialogue;
+
+        if(dialogueOption.RelationshipRequirement >= RelationshipManager.characterRelationships[currentCharacter].currentValue)
+        {
+
+            CurrentDialogueBranch = dialogueOption.BranchingDialogue;
+
+        }
+        else { CurrentDialogueBranch = dialogueOption.AlternateBranch; }
 
         float relationshipChange = playedCard.GetRelationshopChange(dialogueOption);
         yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange);

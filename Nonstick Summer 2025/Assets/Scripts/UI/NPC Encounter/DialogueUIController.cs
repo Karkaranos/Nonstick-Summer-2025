@@ -66,7 +66,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
         energyBar.Initalize();
         relationshipSlider.Initialize(RelationshipManager.characterRelationships[character].maxValue, RelationshipManager.characterRelationships[character].currentValue);
         deckDisplay.SetDeck(ref DialogueManager.PlayerHand);
-        dialogueBox.RelationshipScore = DialogueManager.CurrentRelationshipScore;
 
         yield return ToggleUIForDialogueProgression(false);
 

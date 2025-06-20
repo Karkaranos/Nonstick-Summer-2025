@@ -17,11 +17,12 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using NaughtyAttributes;
 
 public class DialogueTree : MonoBehaviour
     
 {
-    [SerializeField] [Tooltip("Node prefab goes here!")] private GameObject node;
+    [SerializeField] [Required] [Tooltip("Node prefab goes here!")] private GameObject node;
 
     //TO DO: call this upcoming function from DialogueUIController
 

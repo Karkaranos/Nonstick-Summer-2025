@@ -128,7 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 621988117311664097}
   - component: {fileID: 454548493651250203}
-  - component: {fileID: 6671598240073966612}
+  - component: {fileID: 3216093029526474184}
   m_Layer: 0
   m_Name: NPC Example
   m_TagString: Untagged
@@ -168,15 +168,15 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.12
+  m_Radius: 1.1349397
   m_Height: 3.37
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6671598240073966612
+  m_Center: {x: 0, y: 0, z: -0.014939785}
+--- !u!114 &3216093029526474184
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7010602745331249561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f3259d28b546ad479ca4bd4da09319a, type: 3}
+  m_Script: {fileID: 11500000, guid: a8e7a984732793e47a9de0995e255ffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: f8dd72b5a21b9b341ae4f2b2aa00a8c3, type: 3}

@@ -57,6 +57,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
     {
         DialogueManager.OnOpenCombatUI(startBranch, character);
 
+        MusicManager.instance.TransitionMusic(true);
+
         // all the rest of this ui initialization stuff is gonna run every time an npc combat encounter happens.
         // i think our game is not complicated enough that its gonna be a problem performance wise, 
         // but its gonna bug me that its happening extra times
@@ -219,7 +221,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
         //okay this isn't as clean here but whatever
         if(interactable)
         {
-            deckDisplay.DrawToMaxHandSize();
+            Debug.LogWarning("This statement runs too often");
+            deckDisplay.DrawToDefaultHand();
         }
 
         deckDisplay?.gameObject.SetActive(interactable);
@@ -242,4 +245,20 @@ public class DialogueUIController : Singleton<DialogueUIController>
         yield return relationshipSlider?.SetValue(value ?? RelationshipManager.characterRelationships[character].currentValue);
     }
 
+    public void DrawOneCard()
+    {
+        DialogueManager.SetCurrentEnergy(DialogueManager.CurrentEnergy -= 2);
+        
+        deckDisplay.DrawOneCard();
+    }
+
+    public void DiscardCard()
+    {
+        DialogueManager.SetCurrentEnergy(DialogueManager.CurrentEnergy +=1);
+
+        deckDisplay.DiscardCard(selectedCardData);
+    }
+
+
 }
+

@@ -70,10 +70,13 @@ public partial class CardData : ScriptableObject
     {
         float newCost = _energyCost;
 
-        foreach(ModifierStamp stamp in _stamps)
+        if(_stamps.Count > 0)
         {
-            if(stamp.type == typeof(CardStatAffectorStamp))
-                ((CardStatAffectorStamp)stamp).ModifyEnergyCost(ref newCost);
+            foreach (ModifierStamp stamp in _stamps)
+            {
+                if (stamp.type == typeof(CardStatAffectorStamp))
+                    ((CardStatAffectorStamp)stamp).ModifyEnergyCost(ref newCost);
+            }
         }
         return newCost; 
     }
@@ -113,6 +116,7 @@ public partial class CardData : ScriptableObject
         _emotion = emotion;
         OnCardValueChanged.Invoke();
     }
+
 
     #endregion
 

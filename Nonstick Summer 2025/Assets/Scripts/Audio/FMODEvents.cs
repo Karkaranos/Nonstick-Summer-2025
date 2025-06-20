@@ -6,8 +6,8 @@ using FMODUnity;
 public class FMODEvents : MonoBehaviour
 {
     [field: Header("Music")]
-    //[field: SerializeField] public EventReference BGM { get; private set; }
-
+    [field: SerializeField] public EventReference HomeBGM { get; private set; }
+    [field: Header("Other")]
 
 
     public static FMODEvents instance { get; private set; }

@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638856761952543198
+  lastModified: 638859645880496665
   FileSizes:
   - Name: Desktop
     Value: 1340
@@ -35,10 +35,62 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638856761952553163
+  lastModified: 638859645880521817
   FileSizes:
   - Name: Desktop
-    Value: 860
+    Value: 1014
+  Exists: 1
+--- !u!114 &-2827055608130062884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/First Playable Music Again
+  m_EditorClassIdentifier: 
+  Path: event:/First Playable Music Again
+  Guid:
+    Data1: 596823475
+    Data2: 1152326705
+    Data3: 661125529
+    Data4: -1491117293
+  Banks:
+  - {fileID: 34564258425666311}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -768893720052205789}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 37224
+--- !u!114 &-768893720052205789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/First Playable Music Again/Battle
+  m_EditorClassIdentifier: 
+  Name: Battle
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4264749431
+    data2: 1099713849
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -57,13 +109,15 @@ MonoBehaviour:
   - {fileID: 34564258425666311}
   - {fileID: -7676539690225878646}
   - {fileID: 1634051811715559137}
-  EditorEvents: []
+  EditorEvents:
+  - {fileID: 3107688635983529914}
+  - {fileID: -2827055608130062884}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7676539690225878646}
   StringsBanks:
   - {fileID: -5259588466323316940}
-  cacheTime: 638856761952553163
+  cacheTime: 638859645880668794
   cacheVersion: 131624
 --- !u!114 &34564258425666311
 MonoBehaviour:
@@ -80,10 +134,10 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/BGM.bank
   Name: BGM
   StudioPath: bank:/BGM
-  lastModified: 638856761952543198
+  lastModified: 638859645880367680
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 936064
   Exists: 1
 --- !u!114 &1634051811715559137
 MonoBehaviour:
@@ -100,8 +154,60 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638840219218156380
+  lastModified: 638859645880668794
   FileSizes:
   - Name: Desktop
     Value: 494
+  Exists: 1
+--- !u!114 &3107688635983529914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/First Playable Music
+  m_EditorClassIdentifier: 
+  Path: event:/First Playable Music
+  Guid:
+    Data1: -518810725
+    Data2: 1152100314
+    Data3: 1522186921
+    Data4: 214982608
+  Banks:
+  - {fileID: 34564258425666311}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7657037875535644571}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7657037875535644571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/First Playable Music/Battle
+  m_EditorClassIdentifier: 
+  Name: Battle
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4264749431
+    data2: 1099713849
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1

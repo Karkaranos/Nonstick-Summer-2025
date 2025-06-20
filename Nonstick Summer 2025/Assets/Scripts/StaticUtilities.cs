@@ -118,6 +118,22 @@ public static class StaticUtilities
         return result;
     }
 
+    /// <summary>
+    /// Converts a list of any type into an array
+    /// </summary>
+    /// <typeparam name="T">The data type</typeparam>
+    /// <param name="list">The list to be converted</param>
+    /// <returns>The list in array form</returns>
+    public static T[] ListToArray<T>(List<T> list)
+    {
+        T[] result = new T[list.Count];
+        for(int i=0; i<list.Count; i++)
+        {
+            result[i] = list.ElementAt(i);
+        }
+        return result;
+    }
+
     #endregion
 
     #region Debug

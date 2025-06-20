@@ -22,6 +22,8 @@ public class Deck
     [SerializeField] private List<CardData> _cards = new List<CardData>();
 
     public List<CardData> Cards { get => _cards;}
+
+    private int numberOfCardsDrawn = 0;
     #endregion
 
     #region Functions
@@ -36,12 +38,71 @@ public class Deck
     }
 
 
+    /// <summary>
+    /// Add multiple cards into the deck
+    /// </summary>
+    /// <param name="newCards">The card to add to the deck</param>
     public void Add(CardData[] newCards)
     {
         foreach(CardData c in newCards)
         {
             _cards.Add(c);
         }
+    }
+
+    /// <summary>
+    /// Get access to a specific card
+    /// </summary>
+    /// <param name="card">The card data to find</param>
+    /// <returns>The card instance</returns>
+    public CardData GetCard(CardData card)
+    {
+        for(int i=0; i<Cards.Count; i++)
+        {
+            if(Cards[i] == card)
+            {
+                return Cards[i];
+            }
+        }
+        return null;
+    }
+
+    /// <summary>
+    /// Retrieves a card at the provided index
+    /// </summary>
+    /// <param name="index">The index to retrieve from</param>
+    /// <returns>The card instance </returns>
+    public CardData GetCard(int index)
+    {
+        if(index > Cards.Count)
+        {
+            throw new System.Exception("Index out of bounds");
+        }
+        return Cards[index];
+    }
+
+    /// <summary>
+    /// Retrieves a copy of the card at the provided index
+    /// </summary>
+    /// <param name="index">The index to retrieve from</param>
+    /// <returns>The card copy </returns>
+    public CardData GetCardCopy(int index)
+    {
+        if (index > Cards.Count)
+        {
+            throw new System.Exception("Index out of bounds");
+        }
+        return Cards[index].CopyCard();
+    }
+
+    /// <summary>
+    /// Retrieves a copy of the card at the provided index
+    /// </summary>
+    /// <param name="index">The index to retrieve from</param>
+    /// <returns>The card copy </returns>
+    public CardData GetNextCardCopy()
+    {
+        return Cards[numberOfCardsDrawn++].CopyCard();
     }
 
     /// <summary>
@@ -232,6 +293,47 @@ public class Deck
         throw new System.Exception("No cards in Deck");
     }
 
+
+    /// <summary>
+    /// Pops and returns the top n cards
+    /// Cards are removed from the deck
+    /// Will always return at least one card
+    /// </summary>
+    /// <param name="n">Number of cards to be returned</param>
+    /// <returns>An array with the top n cards, in order</returns>
+    public CardData[] PopAndReplaceNCards(int n)
+    {
+        // Return at least the top card if n<0
+        if (n < 0)
+        {
+            return new CardData[] { Pop() };
+        }
+
+        // Returning n cards
+        if (Cards.Count >= n)
+        {
+            CardData[] result = new CardData[n];
+            for (int i = 0; i < n; i++)
+            {
+                result[i] = Pop();
+                Cards.Add(result[i]);
+            }
+            return result;
+        }
+
+        // Returning <n cards
+        else if (Cards.Count >= 0)
+        {
+            CardData[] result = new CardData[Cards.Count - 1];
+            for (int i = 0; i < Cards.Count; i++)
+            {
+                result[i] = Pop();
+            }
+            return result;
+        }
+
+        throw new System.Exception("No cards in Deck");
+    }
     #endregion
 
 

@@ -1,6 +1,6 @@
 /******************************************************************
 *    Author: Marissa Moser
-*    Contributors: 
+*    Contributors: Sky Beal
 *    Date Created: May 24, 2024
 *    Description: 
 *       Contains a function called when the player presses E. This function will:
@@ -135,6 +135,19 @@ public class Interact : MonoBehaviour
         if (_interactable != null)
         {
             _interactable.CancelInteract();
+        }
+    }
+    
+    /// <summary>
+    /// checking for trigger activation for auto boss interactions
+    /// </summary>
+    /// <param name="other"></param>
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<OpenBossInteractable>())
+        {
+            OpenBossInteractable OPI = other.GetComponent<OpenBossInteractable>();
+            OPI.OpenCanvas();
         }
     }
 }

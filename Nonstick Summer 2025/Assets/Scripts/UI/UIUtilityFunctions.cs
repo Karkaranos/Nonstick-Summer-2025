@@ -7,17 +7,19 @@ using UnityEngine;
  */
 public class UIUtilityFunctions : MonoBehaviour
 {
+
     /// <summary>
-    /// Give player n x card.
-    /// Call this function multiple times on a button call for multiple different cards.
+    /// Gives all intents of the specified emotion
     /// </summary>
-    public static void GetCard(CardData card)
+    /// <param name="emotion">The emotion to give intents of</param>
+    public static void GetEmotion(CardEmotion emotion, GameObject objRef)
     {
-        DialogueManager.PlayerHand.Add(card);
-        if (UITransitionManager.WorldObjectReference != null)
-        {
-            UITransitionManager.WorldObjectReference.GetComponent<OpenCanvasInteractable>().GiveCard();
-        }
+        print("Calll");
+        DialogueManager.PlayerHand.Add(CardData.NewCard(-2, emotion, CardIntention.Expression));
+        DialogueManager.PlayerHand.Add(CardData.NewCard(-2, emotion, CardIntention.Observation));
+        DialogueManager.PlayerHand.Add(CardData.NewCard(-2, emotion, CardIntention.Question));
+
+        objRef.GetComponent<InteractableObjectBehavior>().GiveCard(emotion);
     }
 
     public static void CloseCurrentPopup()

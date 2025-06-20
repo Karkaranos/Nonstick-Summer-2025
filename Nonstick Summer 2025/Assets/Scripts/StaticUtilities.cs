@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -116,9 +118,24 @@ public static class StaticUtilities
         return result;
     }
 
+    /// <summary>
+    /// Converts a list of any type into an array
+    /// </summary>
+    /// <typeparam name="T">The data type</typeparam>
+    /// <param name="list">The list to be converted</param>
+    /// <returns>The list in array form</returns>
+    public static T[] ListToArray<T>(List<T> list)
+    {
+        T[] result = new T[list.Count];
+        for(int i=0; i<list.Count; i++)
+        {
+            result[i] = list.ElementAt(i);
+        }
+        return result;
+    }
+
     #endregion
 
-#if UNITY_EDITOR
     #region Debug
 
     /// <summary>
@@ -128,10 +145,14 @@ public static class StaticUtilities
     /// <returns></returns>
     public static bool Editor_SelectingSelfOrChild(Transform parent)
     {
+#if UNITY_EDITOR
+
         var selected = UnityEditor.Selection.activeTransform;
         return UnityEditor.Selection.activeTransform != null &&
             (selected == parent || selected.IsChildOf(parent));
+#else
+        return false;
+#endif
     }
     #endregion
-#endif
 }

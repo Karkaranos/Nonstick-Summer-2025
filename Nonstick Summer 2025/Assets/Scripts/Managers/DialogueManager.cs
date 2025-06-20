@@ -37,27 +37,28 @@ public class DialogueManager
     public static Deck PlayerHand, RemainingDeck;
     private static characters currentCharacter;
     public static float CurrentRelationshipScore => RelationshipManager.characterRelationships[currentCharacter].currentValue;
-    public static int CurrentEnergy { 
+    public static float CurrentEnergy { 
         get { return _currentEnergy; }
         set { SetCurrentEnergy(value); }
     }
-    private static int _currentEnergy;
+    private static float _currentEnergy;
 
     // parameters
-    private static int _defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent;
-    public static int MaxEnergy;
+    private static float _defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent;
+    public static float MaxEnergy;
     public static int DefaultCardsInHand { get; private set; }
 
     #region Getters and setters
 
-    public static IEnumerator SetCurrentEnergy(int energy)
+    public static IEnumerator SetCurrentEnergy(float energy)
     {
-        energy = Mathf.Min(energy, MaxEnergy);
+        energy = Mathf.Clamp(energy, 0, MaxEnergy);
         if (_currentEnergy == energy) yield break;
 
+        Debug.Log($"set energy to {_currentEnergy}");
         _currentEnergy = energy;
         if (DialogueUIController.Instance != null)
-            yield return DialogueUIController.Instance.UpdateEnergy(energy); // wait for animation to finish
+            yield return DialogueUIController.Instance.UpdateEnergy(_currentEnergy); // wait for animation to finish
     }
 
     public static IEnumerator SetCurrentRelationshipStatus(float relationshipScore)
@@ -77,7 +78,7 @@ public class DialogueManager
 
     #endregion
 
-    public DialogueManager(int defaultEnergy, int energyGainedPerRound, int energyGainedIfSilent, int maxEnergy, int defaultCardsInHand)
+    public DialogueManager(float defaultEnergy, float energyGainedPerRound, float energyGainedIfSilent, float maxEnergy, int defaultCardsInHand)
     {
         _defaultEnergy = defaultEnergy;
         _energyGainedPerRound = energyGainedPerRound;
@@ -85,7 +86,7 @@ public class DialogueManager
         MaxEnergy = maxEnergy;
         DefaultCardsInHand = defaultCardsInHand;
 
-        CurrentEnergy = defaultEnergy;
+        _currentEnergy = defaultEnergy;
         PlayerHand = new Deck();
     }
 
@@ -94,7 +95,6 @@ public class DialogueManager
         ReadUserInput = false;
         CurrentDialogueBranch = startDialogueBranch;
         currentCharacter = character;
-
 
         // testing only: please delete later
         //PlayerHand.Clear();
@@ -119,27 +119,37 @@ public class DialogueManager
         Debug.Log("Player playing card");
         ReadUserInput = false;
 
+        playedCard.TryTriggerStampEffect(StampTriggerConditions.BeforeCardPlayed);
+        //TODO wait for potential stamp animations to finish
+
         yield return DialogueUIController.Instance.ToggleUIForDialogueProgression(false);
 
-        if (_currentEnergy <= 0 && playedCard != null)
+        if (CurrentEnergy <= 0 && playedCard != null)
             Debug.LogWarning("Card played with 0 energy");
 
+        Debug.Log("before set");
         yield return SetCurrentEnergy(_currentEnergy + 
             (playedCard == null ? _energyGainedIfSilent: playedCard.GetEnergyCost())); // this could have been an if statement but noooooo i just had to be special
+        Debug.Log("after set");
 
         // progress dialogue
         var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
         CurrentDialogueBranch = dialogueOption.BranchingDialogue;
 
-        yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + dialogueOption.ChangeInRelationshipStatus);
+        float relationshipChange = playedCard.GetRelationshopChange(dialogueOption);
+        yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange);
 
         yield return DialogueUIController.Instance.ResetNPCDialogue();
 
+        // TODO: move this to AFTER player reads all text, and can play cards again
         yield return SetCurrentEnergy(_currentEnergy + _energyGainedPerRound);
+
+        playedCard.TryTriggerStampEffect(StampTriggerConditions.AfterCardPlayed);
+        //TODO wait for potential stamp animations to finish
 
         Debug.Log("Completed processing card");
         // only keep reading user input if theres more
-        ReadUserInput = !CurrentDialogueBranch.End; 
+        ReadUserInput = true;//!CurrentDialogueBranch.End; 
     }
 
     /// <summary>

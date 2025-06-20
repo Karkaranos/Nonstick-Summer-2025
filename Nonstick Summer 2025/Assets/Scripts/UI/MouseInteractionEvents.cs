@@ -14,7 +14,6 @@ using TMPro;
 using NaughtyAttributes;
 using System.Collections;
 using UnityEngine.Events;
-using UnityEditor.Rendering.LookDev;
 
 public class MouseInteractionEvents : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {

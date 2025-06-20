@@ -3,16 +3,17 @@ using NaughtyAttributes;
 
 public class MainMenu : MonoBehaviour
 {
-    [Scene] private int MainGameplayScene;
+    [Scene] [SerializeField] private int MainGameplayScene=1;
 
-    public void StartGame(int scene)
+    public void StartGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(MainGameplayScene);
     }
 
 
     public void Quit()
     {
+        //this quits the game
         Application.Quit();
     }
 }

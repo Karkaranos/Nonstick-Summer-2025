@@ -27,4 +27,5 @@ public class DialogueOption
     [Tooltip("How much this dialogue option changes the character's relationship value.")]
     public float ChangeInRelationshipStatus;
 
+
 }

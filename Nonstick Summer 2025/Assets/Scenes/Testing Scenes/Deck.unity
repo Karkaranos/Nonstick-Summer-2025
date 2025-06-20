@@ -355,6 +355,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: 8a396213697e3d24f944fe34be909bbe, type: 3}
   cameraAnchor: {fileID: 0}
+  _statement: You are looking at an objectt.
+  _question: Which color are you today?
+  _options:
+  - ButtonText: Red
+    ButtonColor: {r: 1, g: 0, b: 0, a: 1}
+    Emotion: 2
+  - ButtonText: Yellow
+    ButtonColor: {r: 1, g: 0.93849874, b: 0, a: 1}
+    Emotion: 1
+  - ButtonText: Blue
+    ButtonColor: {r: 0, g: 0.8594308, b: 1, a: 1}
+    Emotion: 3
 --- !u!1 &1001876248
 GameObject:
   m_ObjectHideFlags: 0

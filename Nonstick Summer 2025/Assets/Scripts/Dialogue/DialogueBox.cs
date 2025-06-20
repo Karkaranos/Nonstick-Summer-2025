@@ -16,7 +16,7 @@ public class DialogueBox : MonoBehaviour
 {
     [SerializeField] private TMP_Text npcText;
 
-    [HideInInspector] private int NumberInList = 0; //TODO move this to npc dialogue bubble?
+    [HideInInspector] private int NumberInList = 0; // TODO move this to npc dialogue bubble?
 
     [ReadOnly] public bool PlayerReadAllDialogue;
 

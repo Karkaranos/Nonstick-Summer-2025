@@ -54,6 +54,10 @@ public class UITransitionManager
         {
             WorldObjectReference = objectRef;
         }
+        else
+        {
+            Debug.Log("Removed");
+        }
 
         CurrentCanvasReference = GameObject.Instantiate(canvasPrefab);
         return CurrentCanvasReference;

@@ -15,7 +15,8 @@ public class DeckDisplayer : MonoBehaviour
     #region Variables
     //private static Deck PlayerDeckRef => GameManager.DeckManagerReference.PlayerDeck;
     [SerializeField] private Deck DeckRef; // changed to be generalized, because deck will not always be the players.
-    private static int MaxDeckDisplaySize => GameManager.MaxCardsVisibleInDeck;
+    private static int DefaultHandSize => GameManager.DefaultCardsInHand;
+    private static int MaxHandSize => GameManager.MaxCardsVisibleInDeck;
 
     public List<GameObject> VisualDisplay { get => _visualDisplay; private set => _visualDisplay = value; }
 
@@ -30,6 +31,8 @@ public class DeckDisplayer : MonoBehaviour
     private List<GameObject> _visualDisplay = new List<GameObject>();
 
     private Vector2[] spawnPositions;
+
+    private List<CardData> displayedData = new List<CardData>();
 
     #endregion Variables
 
@@ -52,7 +55,7 @@ public class DeckDisplayer : MonoBehaviour
     {
         DeckRef = deckRef;
         //This will eventually be moved elsewhere
-        DisplayNCards(GameManager.MaxCardsVisibleInDeck);
+        DrawToDefaultHand();
     }
 
     /// <summary>
@@ -62,34 +65,27 @@ public class DeckDisplayer : MonoBehaviour
     {
         ClearDisplay();
 
-        // Create a copy of the deck to pull cards from
-        // May revisit later and make it the actual deck
-        Deck copy = DeckRef.GetCopy();
 
         // Creates referenced array
-        spawnPositions = new Vector2[copy.Cards.Count];
+        spawnPositions = new Vector2[DeckRef.Cards.Count];
 
         // Generates spawn positions
-        GeneratePositions(ref spawnPositions, 0, copy.Cards.Count-1);
+        GeneratePositions(ref spawnPositions, 0, DeckRef.Cards.Count-1);
 
         // Spawns all cards
-        SpawnCards(copy.PeekNCards(copy.Cards.Count), spawnPositions);
+        SpawnCards(DeckRef.PopAndReplaceNCards(DeckRef.Cards.Count), spawnPositions);
 
     }
 
     /// <summary>
     /// Yeahh basically just copied DisplayNCards
-    /// Draws the hand back to the max size
+    /// Draws the hand back to the default size
     /// </summary>
-    public void DrawToMaxHandSize()
+    public void DrawToDefaultHand()
     {
         ClearDisplay();
 
-        int n = MaxDeckDisplaySize;
-
-        // Create a copy of the deck to pull cards from
-        // May revisit later and make it the actual deck
-        Deck copy = DeckRef.GetCopy();
+        int n = DefaultHandSize;
 
         // Creates referenced array
         Vector2[] spawnPositions = new Vector2[n];
@@ -98,8 +94,29 @@ public class DeckDisplayer : MonoBehaviour
         GeneratePositions(ref spawnPositions, 0, n - 1);
 
         // Spawns the specified number of cards
-        SpawnCards(copy.PeekNCards(n), spawnPositions);
+        SpawnCards(DeckRef.PopAndReplaceNCards(n), spawnPositions);
     }
+
+    /// <summary>
+    /// Yeahh basically just copied DisplayNCards
+    /// Draws the hand back to the max size
+    /// </summary>
+    public void DrawToMaxHand()
+    {
+        ClearDisplay();
+
+        int n = MaxHandSize;
+
+        // Creates referenced array
+        Vector2[] spawnPositions = new Vector2[n];
+
+        // Generates spawn positions
+        GeneratePositions(ref spawnPositions, 0, n - 1);
+
+        // Spawns the specified number of cards
+        SpawnCards(DeckRef.PopAndReplaceNCards(n), spawnPositions);
+    }
+
 
     /// <summary>
     /// Displays a specified number of cards from the player's hand
@@ -115,12 +132,9 @@ public class DeckDisplayer : MonoBehaviour
         // If no value was passed in, set the display count to the number from GameManager
         if(n==0)
         {
-            n = MaxDeckDisplaySize;
+            n = DefaultHandSize;
         }
 
-        // Create a copy of the deck to pull cards from
-        // May revisit later and make it the actual deck
-        Deck copy = DeckRef.GetCopy();
 
         // Creates referenced array
         Vector2[] spawnPositions = new Vector2[n];
@@ -130,7 +144,7 @@ public class DeckDisplayer : MonoBehaviour
         GeneratePositions(ref spawnPositions, 0, n-1);
 
         // Spawns the specified number of cards
-        SpawnCards(copy.PeekNCards(n), spawnPositions);
+        SpawnCards(DeckRef.PopAndReplaceNCards(n), spawnPositions);
     }
 
     /// <summary>
@@ -143,6 +157,47 @@ public class DeckDisplayer : MonoBehaviour
             Destroy(VisualDisplay[i]);
         }
         VisualDisplay.Clear();
+    }
+
+
+    public void DrawOneCard()
+    {
+        if (displayedData.Count < MaxHandSize)
+        {
+            displayedData.Add(DeckRef.GetNextCardCopy());
+
+            ClearDisplay();
+
+            // Creates referenced array
+            Vector2[] spawnPositions = new Vector2[displayedData.Count];
+
+            // Generates spawn positions
+            GeneratePositions(ref spawnPositions, 0, displayedData.Count - 1);
+
+            // Spawns the specified number of cards
+            SpawnCards(StaticUtilities.ListToArray(displayedData), spawnPositions);
+        }
+        else
+        {
+            throw new System.Exception("Maximum hand size reached");
+        }
+
+    }
+
+    public void DiscardCard(CardData card)
+    {
+        displayedData.Remove(card);
+
+        ClearDisplay();
+
+        // Creates referenced array
+        Vector2[] spawnPositions = new Vector2[displayedData.Count];
+
+        // Generates spawn positions
+        GeneratePositions(ref spawnPositions, 0, displayedData.Count - 1);
+
+        // Spawns the specified number of cards
+        SpawnCards(StaticUtilities.ListToArray(displayedData), spawnPositions);
     }
 
     /// <summary>
@@ -180,9 +235,10 @@ public class DeckDisplayer : MonoBehaviour
     /// <param name="position">Where the spawned cards should be located</param>
     private void SpawnCards(CardData[] cards, Vector2[] position)
     {
+        displayedData.Clear();
         for(int i=0; i<cards.Length; i++)
         {
-            Debug.Log("spawning card at " + position[i]);
+            //Debug.Log("spawning card at " + position[i]);
             /* There is probably a better way to do this
              * However, I needed to spawn the card, set its anchor, then adjust the position after setting the anchor
              * so it works for now*/
@@ -191,6 +247,7 @@ public class DeckDisplayer : MonoBehaviour
             //_visualDisplay[i].GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
             VisualDisplay[i].GetComponent<CardDisplay>().SetCard(cards[i]);
             VisualDisplay[i].transform.localPosition = position[i];
+            displayedData.Add(cards[i]);
         }
     }
 

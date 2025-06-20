@@ -83,7 +83,7 @@ public class DialogueBox : MonoBehaviour
         if (PlayerReadAllDialogue)
         {
             DialogueUIController.Instance.ClosingOutCombat();
-            MusicManager.instance.TransitionMusic(false);
+            //MusicManager.instance.TransitionMusic(false);
         }
 
         yield return null;

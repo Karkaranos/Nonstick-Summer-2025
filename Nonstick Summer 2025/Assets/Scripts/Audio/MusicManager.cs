@@ -38,7 +38,7 @@ public class MusicManager : MonoBehaviour
     {
         val += 0.05f;
         HomeBGM.setParameterByName("Battle", val);
-        yield return new WaitForSecondsRealtime(0.2f);
+        yield return new WaitForSecondsRealtime(0.1f);
         if (val < 1)
         {
             StartCoroutine(MusicToBattle(val));
@@ -49,7 +49,7 @@ public class MusicManager : MonoBehaviour
     {
         val -= 0.05f;
         HomeBGM.setParameterByName("Battle", val);
-        yield return new WaitForSecondsRealtime(0.2f);
+        yield return new WaitForSecondsRealtime(0.1f);
         if (val > 0)
         {
             StartCoroutine(MusicToNormal(val));

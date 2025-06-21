@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1104343782233411106}
   - component: {fileID: 2703925593714027524}
   - component: {fileID: 8428635386569234841}
+  - component: {fileID: 6539284967620253333}
   m_Layer: 0
   m_Name: BedroomTrigger
   m_TagString: Untagged
@@ -62,3 +63,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 5, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6539284967620253333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2766407740116898976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd087649bb24bf4d9eca4a98ffe6100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BossDefeated: 0
+  _nextSceneIndex: 0

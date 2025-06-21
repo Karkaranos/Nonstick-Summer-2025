@@ -37,6 +37,9 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractable
     /// <param name="player"></param>
     public void Interact(GameObject player)
     {
+        GameManager.ObjectiveReference.SetObjectiveVisibility(false);
+        GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.INTERACT_WITH_OBJECT, gameObject);
+
         openedCanvas = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor, gameObject);
 
         openedCanvas.transform.GetChild(1).GetComponent<TMP_Text>().text = _statement;

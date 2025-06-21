@@ -28,7 +28,7 @@ public class UITransitionManager
         if(PlayerInMenu)
         {
             Debug.LogWarning("Player is already in a menu. Force closing current menu.");
-            CloseMenu();
+            CloseMenu(false);
         }
 
         PlayerInMenu = true;
@@ -63,8 +63,13 @@ public class UITransitionManager
         return CurrentCanvasReference;
     }
 
-    public static void CloseMenu()
+    public static void CloseMenu(bool disableMouse = true)
     {
+        if (disableMouse)
+        {
+            StaticUtilities.DisableCursor();
+        }
+
         PlayerInMenu = false;
 
         WorldObjectReference = null;
@@ -84,6 +89,5 @@ public class UITransitionManager
             CurrentCanvasReference = null;
         }
 
-        StaticUtilities.DisableCursor();
     }
 }

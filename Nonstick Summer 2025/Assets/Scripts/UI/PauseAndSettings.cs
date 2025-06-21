@@ -10,6 +10,7 @@ public class PauseAndSettings : MonoBehaviour
 {
     [SerializeField] private GameObject _settings;
     [HideInInspector] public bool OpenedFromPause;  // Reopens the pause menu if the setting menu is closed and it had been opened from pause
+    private static OpenPause _openPauseReference;
 
     /// <summary>
     /// Resume normal gameplay and close the pause menu
@@ -20,10 +21,10 @@ public class PauseAndSettings : MonoBehaviour
     }
 
     /// <summary>
-    /// Returns to the main menu
+    /// Loads the named scene
     /// </summary>
     /// <param name="scene">the scene index to go to</param>
-    public void MainMenu(int scene)
+    public void LoadScene(int scene)
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
     }
@@ -50,7 +51,12 @@ public class PauseAndSettings : MonoBehaviour
             //and you couldn't assign pauseMenu in the inspector when i tried. if people have thoughts of a better way
             //please let me know!
 
-            FindFirstObjectByType<Interact>().PausePressed();
+            if(_openPauseReference == null)
+            {
+                _openPauseReference = FindFirstObjectByType<OpenPause>();
+            }
+
+            _openPauseReference.PausePressed();
         }
         else
         {

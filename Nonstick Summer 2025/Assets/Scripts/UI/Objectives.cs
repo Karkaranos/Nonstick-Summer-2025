@@ -4,6 +4,8 @@ Date Created :          June 20, 2025
 Date Modified :         June 20, 2025
 Brief Description :     Stores all objectives for the level
                         Updates the display when the condition is met
+
+TODO :                  Link up Side Characters when they exist
 ***************************************************/
 using UnityEngine;
 using NaughtyAttributes;
@@ -28,7 +30,7 @@ public class Objectives : MonoBehaviour
     {
         foreach(ObjectiveData od in _conditions)
         {
-            if(od.TriggerCondition == condition)
+            if(od.TriggerCondition == condition && !od.ConditionBeenMet)
             {
                 // If the condition is interacting with a specific object and that object was not just interacted with, return
                 // Otherwise the condition has been met; update the display
@@ -39,6 +41,7 @@ public class Objectives : MonoBehaviour
                     return;
                 }
                 _displayText.text = od.DisplayText;
+                od.ConditionBeenMet = true;
             }
         }
     }
@@ -69,6 +72,7 @@ public class ObjectiveData
     [ShowIf(nameof(showOrHide))]
     [AllowNesting]
     public GameObject RequiredObject;
+    [HideInInspector] public bool ConditionBeenMet = false;
 
     bool showOrHide => TriggerCondition == ObjectiveConditions.INTERACT_WITH_OBJECT 
         || TriggerCondition == ObjectiveConditions.TALK_TO_SIDE_CHARACTER;

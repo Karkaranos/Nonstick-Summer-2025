@@ -137,6 +137,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
             // TODO open a new menu?
             Debug.Log("Close combat!");
             UITransitionManager.CloseMenu();
+            GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.FINISH_COMBAT);
+            GameManager.ObjectiveReference.SetObjectiveVisibility(true);
             return;
         }
 

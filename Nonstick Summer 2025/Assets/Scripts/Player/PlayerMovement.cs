@@ -43,4 +43,12 @@ public class PlayerMovement : MonoBehaviour
 
         rb.linearVelocity = newvel;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.name.Contains("Bedroom"))
+        {
+            GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.LEAVE_BEDROOM);
+        }
+    }
 }

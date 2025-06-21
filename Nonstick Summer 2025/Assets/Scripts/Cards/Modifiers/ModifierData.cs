@@ -11,6 +11,7 @@
 *****************************************************************************/
 
 using UnityEngine;
+using UnityEngine.UI;
 using NaughtyAttributes;
 
 //[CreateAssetMenu(fileName = "ModifierData", menuName = "Scriptable Objects/ModifierData")]
@@ -18,6 +19,11 @@ public abstract class ModifierData : ScriptableObject
 {
     [Tooltip("How many cards this modifier can apply to")] [Min(1)]
     public int MaxCardsApplied = 1;
+
+    [ShowIf("_showMinCardsApplied")] [Min(1)]
+    public int MinCardsApplied = 1;
+
+    private bool _showMinCardsApplied => MaxCardsApplied > 1;
 
     /// <summary>
     /// Returns if modifier was successfully used

@@ -14,7 +14,7 @@ public class StampModifierData : ModifierData
 {
     [Header("Stamps")]
 
-    [Required]
+    [Required, Expandable]
     public ModifierStamp StampToApply;
 
     public override bool CanApplyModifier(CardData[] cards)

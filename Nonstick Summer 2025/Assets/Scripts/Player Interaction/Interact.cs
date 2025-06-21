@@ -34,6 +34,8 @@ public class Interact : MonoBehaviour
     [SerializeField] private float _maxInteractDistance;
     [SerializeField] LayerMask _layerToIgnore;
 
+
+
     private void Awake()
     {
         //listen for inputs

@@ -45,4 +45,6 @@ public abstract class ModifierData : ScriptableObject
     }
 
     protected abstract void ApplyModifier(CardData[] cards);
+
+    public abstract Sprite GetIcon();
 }

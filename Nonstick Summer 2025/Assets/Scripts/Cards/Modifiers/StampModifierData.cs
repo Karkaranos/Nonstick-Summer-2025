@@ -38,4 +38,9 @@ public class StampModifierData : ModifierData
         foreach (CardData card in cards)
             card.AddStamp(StampToApply);
     }
+
+    public override Sprite GetIcon()
+    {
+        return StampToApply.Icon;
+    }
 }

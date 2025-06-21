@@ -4,7 +4,7 @@
 * Creation Date :     June 6, 2025
 *
 * Brief Description : Data container for cards.
-* Card Data is a partial class, see CardStampCollection for stamp logic
+* Card Data is a partial class, see CardStampCollection for _modifier logic
 *
 * TODO:
 * modifier implementation (modify getter functions)

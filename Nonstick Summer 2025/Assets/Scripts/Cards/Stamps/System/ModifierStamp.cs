@@ -3,7 +3,7 @@
 * Author :            Toby
 * Creation Date :     June 16, 2025
 *
-* Brief Description : Virtual class to be used inherited modifier stamp scriptable
+* Brief Description : Virtual class to be used inherited modifier _modifier scriptable
 * objects.
 *****************************************************************************/
 

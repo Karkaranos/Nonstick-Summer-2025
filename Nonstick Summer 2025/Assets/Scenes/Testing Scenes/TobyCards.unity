@@ -1709,13 +1709,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953600920217479267}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.033852894, w: 0.9994268}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 143443245964967695}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3.88}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -30}
@@ -1952,6 +1952,7 @@ GameObject:
   - component: {fileID: 5359219832202805755}
   - component: {fileID: 6131464340012947544}
   - component: {fileID: 6895015127831555893}
+  - component: {fileID: 7760015480044447699}
   - component: {fileID: 7760015480044447698}
   m_Layer: 5
   m_Name: Modifier Card
@@ -2555,6 +2556,20 @@ MonoBehaviour:
   OnMouseHoverEnd:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7760015480044447699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3447543627520850284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21ae364e52c2f4d40b53e0b67471b0da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IconImage: {fileID: 7034457366917198036}
+  _modifier: {fileID: 11400000, guid: 7ea86a966298e524e81d7076ef263b99, type: 2}
 --- !u!224 &8204721416416138246
 RectTransform:
   m_ObjectHideFlags: 0

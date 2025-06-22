@@ -139,7 +139,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
             UITransitionManager.CloseMenu();
             GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.FINISH_COMBAT);
             GameManager.ObjectiveReference.SetObjectiveVisibility(true);
-            FindFirstObjectByType<BedroomDoorBehavior>().BossDefeated = true;
+            FindFirstObjectByType<BedBehavior>().BossDefeated = true;
             return;
         }
 

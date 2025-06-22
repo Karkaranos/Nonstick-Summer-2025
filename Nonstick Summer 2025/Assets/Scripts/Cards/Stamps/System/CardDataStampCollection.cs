@@ -4,8 +4,8 @@
 * Creation Date :     June 16, 2025
 *
 * Brief Description : Partial class for CardData
- * Collection for stamps and stamp logic.
- * This script isnt super necessary, but it handles a lot of stamp logic,
+ * Collection for stamps and _modifier logic.
+ * This script isnt super necessary, but it handles a lot of _modifier logic,
  * instead of putting it in CardData.
  *
  * TODO: apply stamps to cards with user input somehow
@@ -27,7 +27,7 @@ public partial class CardData
     /// <summary>
     /// Tries to invoke the stamps effect.
     /// </summary>
-    /// <param name="reason">Why a stamp would be triggered. This should line up to what the card is currently doing.</param>
+    /// <param name="reason">Why a _modifier would be triggered. This should line up to what the card is currently doing.</param>
     public void TryTriggerStampEffect(StampTriggerConditions reason)
     {
         /* affectedCard needs to be a parameter (and not be a stored variable) because
@@ -87,7 +87,7 @@ public partial class CardData
     }
 
     /// <summary>
-    /// TODO use this function with the stamp that puts a copy of a card into the players hand (but not into permanent deck)
+    /// TODO use this function with the _modifier that puts a copy of a card into the players hand (but not into permanent deck)
     /// </summary>
     public CardData CopyCardWithoutStampType(Type stampType)
     {

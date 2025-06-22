@@ -3,7 +3,7 @@
 * Author :            Toby
 * Creation Date :     June 16, 2025
 *
-* Brief Description : Virtual class to be used inherited modifier stamp scriptable
+* Brief Description : Virtual class to be used inherited modifier _modifier scriptable
 * objects.
 *****************************************************************************/
 
@@ -17,8 +17,9 @@ public abstract class ModifierStamp : ScriptableObject
     public StampTriggerConditions TriggerCondition;
 
     [Header("Display")]
-    [ShowAssetPreview]
+    [ShowAssetPreview(32,32)]
     public Sprite Icon;
+    public string StampName;
     public string ShortDescription;
 
     public Type type => this.GetType();

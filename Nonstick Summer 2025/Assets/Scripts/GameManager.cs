@@ -24,6 +24,7 @@ public class GameManager : Singleton<GameManager>
     public static DeckManager DeckManagerReference;
     public static DialogueManager DialogueManagerReference;
     public static RelationshipManager RelationshipManagerReference;
+    public static Objectives ObjectiveReference;
 
     public static int MaxCardsVisibleInDeck = 7;
 
@@ -69,6 +70,7 @@ public class GameManager : Singleton<GameManager>
         DeckManagerReference = DeckManagerReference ?? new DeckManager();
         DialogueManagerReference = DialogueManagerReference ?? new DialogueManager(_defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent, _maxEnergy, DefaultCardsInHand);
         RelationshipManagerReference = RelationshipManagerReference ?? new RelationshipManager(grandmaStartingValue, uncleStartingValue, cousinStartingValue, momStartingValue);
+        ObjectiveReference = FindFirstObjectByType<Objectives>();
 
     }
 }

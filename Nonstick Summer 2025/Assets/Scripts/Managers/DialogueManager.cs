@@ -120,7 +120,7 @@ public class DialogueManager
         ReadUserInput = false;
 
         playedCard.TryTriggerStampEffect(StampTriggerConditions.BeforeCardPlayed);
-        //TODO wait for potential stamp animations to finish
+        //TODO wait for potential _modifier animations to finish
 
         yield return DialogueUIController.Instance.ToggleUIForDialogueProgression(false);
 
@@ -134,7 +134,14 @@ public class DialogueManager
 
         // progress dialogue
         var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
-        CurrentDialogueBranch = dialogueOption.BranchingDialogue;
+
+        if(dialogueOption.RelationshipRequirement >= RelationshipManager.characterRelationships[currentCharacter].currentValue)
+        {
+
+            CurrentDialogueBranch = dialogueOption.BranchingDialogue;
+
+        }
+        else { CurrentDialogueBranch = dialogueOption.AlternateBranch; }
 
         float relationshipChange = playedCard.GetRelationshopChange(dialogueOption);
         yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange);
@@ -145,7 +152,7 @@ public class DialogueManager
         yield return SetCurrentEnergy(_currentEnergy + _energyGainedPerRound);
 
         playedCard.TryTriggerStampEffect(StampTriggerConditions.AfterCardPlayed);
-        //TODO wait for potential stamp animations to finish
+        //TODO wait for potential _modifier animations to finish
 
         Debug.Log("Completed processing card");
         // only keep reading user input if theres more

@@ -14,7 +14,6 @@ public class UIUtilityFunctions : MonoBehaviour
     /// <param name="emotion">The emotion to give intents of</param>
     public static void GetEmotion(CardEmotion emotion, GameObject objRef)
     {
-        print("Calll");
         DialogueManager.PlayerHand.Add(CardData.NewCard(-2, emotion, CardIntention.Expression));
         DialogueManager.PlayerHand.Add(CardData.NewCard(-2, emotion, CardIntention.Observation));
         DialogueManager.PlayerHand.Add(CardData.NewCard(-2, emotion, CardIntention.Question));
@@ -25,5 +24,11 @@ public class UIUtilityFunctions : MonoBehaviour
     public static void CloseCurrentPopup()
     {
         UITransitionManager.CloseMenu();
+    }
+
+    public static void SetObjectiveVis(bool visibility)
+    {
+
+        GameManager.ObjectiveReference.SetObjectiveVisibility(visibility);
     }
 }

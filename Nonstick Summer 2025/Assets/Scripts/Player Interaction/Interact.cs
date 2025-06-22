@@ -35,7 +35,6 @@ public class Interact : MonoBehaviour
     [SerializeField] LayerMask _layerToIgnore;
 
 
-
     private void Awake()
     {
         //listen for inputs
@@ -56,6 +55,8 @@ public class Interact : MonoBehaviour
         if(_interactable != null)
         {
             _interactable.Interact(gameObject);
+
+
         }
     }
 

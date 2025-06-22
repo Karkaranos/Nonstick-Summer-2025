@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 7481288835549427366}
   - component: {fileID: 8862621975096623832}
   - component: {fileID: 6354438986524944788}
+  - component: {fileID: 7558885188636216369}
   - component: {fileID: 5751118405234227332}
   - component: {fileID: 2022918054940618146}
   - component: {fileID: 4818320387025957916}
@@ -264,6 +265,25 @@ MonoBehaviour:
   _layerToIgnore:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &7558885188636216369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457240203218918728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f58b127c7f448a342a4b0cdc99503e43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _conditions:
+  - DisplayText: Leave Bedroom
+    TriggerCondition: 0
+    RequiredObject: {fileID: 0}
+    ConditionBeenMet: 0
+  _objectiveCanvas: {fileID: 0}
+  _displayText: {fileID: 0}
 --- !u!114 &5751118405234227332
 MonoBehaviour:
   m_ObjectHideFlags: 0

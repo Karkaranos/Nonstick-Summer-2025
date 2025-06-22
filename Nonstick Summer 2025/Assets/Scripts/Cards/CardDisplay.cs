@@ -25,6 +25,8 @@ public class CardDisplay : MonoBehaviour
 
     private MouseInteractionEvents mouseInteraction;
 
+    public UnityEvent<CardDisplay> OnMouseDown = new UnityEvent<CardDisplay> ();
+
     private void Start()
     {
         if(card != null) SetCard(card); // mostly for debugging
@@ -36,27 +38,28 @@ public class CardDisplay : MonoBehaviour
         mouseInteraction.OnMouseDown.AddListener(OnMouseDownStart);
     }
 
-    private void OnMouseHoverStart() // this should be moved to another script
+    private void OnMouseHoverStart() // TODO this should be moved to another script
     {
-        if (DialogueUIController.Instance != null && DialogueUIController.Instance.selectedCard == null 
+        if (DialogueUIController.Instance != null && DialogueUIController.Instance.DeckDisplay.FirstSelectedCard == null 
             && DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput)
            DialogueUIController.Instance.UpdateHoveringCard(card);
     }
 
-    private void OnMouseHoverEnd() // this should be moved to another script
+    private void OnMouseHoverEnd() // TODO this should be moved to another script
     {
-        if (DialogueUIController.Instance != null && DialogueUIController.Instance.selectedCard == null
+        if (DialogueUIController.Instance != null && DialogueUIController.Instance.DeckDisplay.FirstSelectedCard == null
             && DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput)
             DialogueUIController.Instance.UpdateHoveringCard(null);
     }
 
     private void OnMouseDownStart()
     {
-        if (DialogueUIController.Instance != null && DialogueManager.ReadUserInput)
+        OnMouseDown.Invoke(this);
+        /*if (DialogueUIController.Instance != null && DialogueManager.ReadUserInput)
         {
             Debug.Log("selected card");
             StartCoroutine(DialogueUIController.Instance.UpdateSelection(this));
-        }
+        }*/
     }
 
     public void SetCard(CardData newCard)

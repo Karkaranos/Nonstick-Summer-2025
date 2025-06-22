@@ -21,7 +21,7 @@ public class ModifierManager
 {
     public static ModifierManager Instance => GameManager.ModifierManagerReference;
 
-    public static IReadOnlyCollection<ModifierData> ModifierCollection => _modifierCollection.AsReadOnly();
+    public static IReadOnlyCollection<ModifierData> ModifierCollection => _modifierCollection.AsReadOnly(); //asreadonly doesnt make a copy of the data, so this is pretty inexpensive >:)
 
     private static List<ModifierData> _modifierCollection = new List<ModifierData>();
 

@@ -7,11 +7,18 @@ Brief Description :     Handles visual display for the deck
 TODO :                  Create functions for easier updating
 ***************************************************/
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+using System;
+using NaughtyAttributes;
 
 // This script needed to be a Monobehavior to get some of the references needed
 public class DeckDisplayer : MonoBehaviour
 {
+    #region DISPLAY
+
     #region Variables
     //private static Deck PlayerDeckRef => GameManager.DeckManagerReference.PlayerDeck;
     [SerializeField] private Deck DeckRef; // changed to be generalized, because deck will not always be the players.
@@ -245,9 +252,13 @@ public class DeckDisplayer : MonoBehaviour
             
             VisualDisplay.Add(Instantiate(_cardPrefab, Vector2.zero, Quaternion.identity, transform));
             //_visualDisplay[i].GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-            VisualDisplay[i].GetComponent<CardDisplay>().SetCard(cards[i]);
+
+            var cardDisplay = VisualDisplay[i].GetComponent<CardDisplay>();
+            cardDisplay.SetCard(cards[i]);
             VisualDisplay[i].transform.localPosition = position[i];
             displayedData.Add(cards[i]);
+
+            cardDisplay.OnMouseDown.AddListener(OnCardClicked);
         }
     }
 
@@ -276,6 +287,121 @@ public class DeckDisplayer : MonoBehaviour
 
         return StaticUtilities.AddArrays(leftHalf, rightHalf);
     }
+    #endregion
+
+    #endregion
+
+    #endregion
+
+    #region Selection
+    // could be moved to partial class?
+
+    #region Variables
+
+    [Header("Card Selection")]
+
+    [Tooltip("Add this number to the cards position when a card is selected")]
+    [SerializeField] private Vector2 selectedCardOffset = new Vector2(0, 50);
+
+    [SerializeField, Min(1)]
+    private int MaxSelectedCards = 1;
+
+    [Tooltip("If true, swaps the selected card when a different card is selected")]
+    [SerializeField, ShowIf(nameof(showSwapSelected))]private bool SwapCardsOnSelection = true;
+
+
+    [HideInInspector] // use this in other scripts to detect when the user selects cards
+    public UnityEvent OnCardsSelectedChanged { get; set; }
+    public CardData FirstSelectedCard => selectedCards.Count > 0 ? selectedCards.First().cardData : null;
+
+    // tobys first HashSet in Unity! 6/21/2025
+    [HideInInspector]
+    public HashSet<CardDisplay> selectedCards = new HashSet<CardDisplay>();
+
+    #region Computational Variables
+
+    private int finishedDeselects;
+
+    private bool showSwapSelected => MaxSelectedCards == 1;
+
+    #endregion
+
+    #endregion
+
+    #region Functions
+
+    // See SpawnCards
+    private void OnCardClicked(CardDisplay cardDisplay)
+    {
+        if(selectedCards.Contains(cardDisplay))
+            StartCoroutine(DeselectCard(cardDisplay));
+        else
+            StartCoroutine(SelectCard(cardDisplay));
+    }
+
+    private IEnumerator SelectCard(CardDisplay cardDisplay)
+    {
+        //if (DialogueUIController.Instance != null && !DialogueManager.ReadUserInput)
+        //    yield break;
+
+        if (selectedCards.Contains(cardDisplay))
+            yield break;
+
+        Debug.Log("selecting card");
+
+        // swap cards if player can only have one 
+        if(MaxSelectedCards == 1 && SwapCardsOnSelection)
+        {
+            yield return DeselectAllCards();
+        }
+
+        Debug.Log(selectedCards.Count);
+
+        if(selectedCards.Count >= MaxHandSize)
+        {
+            Debug.Log("too many cards selected!");
+            yield break;
+        }
+
+        selectedCards.Add(cardDisplay);
+
+        cardDisplay.transform.position += (Vector3) selectedCardOffset;
+        cardDisplay.transform.SetAsFirstSibling(); // bring to front so player can see it
+    }
+    private IEnumerator DeselectCard(CardDisplay cardDisplay)
+    {
+        if (!selectedCards.Contains(cardDisplay))
+            yield break;
+
+        yield return null;
+
+        Debug.Log("deselect");
+
+        selectedCards.Remove(cardDisplay);
+
+        // TODO: animate this
+        cardDisplay.transform.position -= (Vector3)selectedCardOffset;
+    }
+
+    public IEnumerator DeselectAllCards()
+    {
+        Debug.Log("deselect all cards");
+
+        finishedDeselects = 0;
+        foreach (CardDisplay cardDisplay in selectedCards)
+            // Starts all deselect coroutines at the same time, so we cant do an await here
+            StartCoroutine(DeselectSingleCardBulk(cardDisplay));
+
+        // Tobys first WaitUntil! 6/22/2025
+        yield return new WaitUntil(() => finishedDeselects == selectedCards.Count);
+    }
+
+    private IEnumerator DeselectSingleCardBulk(CardDisplay cardDisplay)
+    {
+        yield return DeselectCard(cardDisplay);
+        finishedDeselects++;
+    }
+
     #endregion
 
     #endregion

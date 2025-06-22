@@ -96,13 +96,10 @@ public class DialogueUIController : Singleton<DialogueUIController>
     // TODO move a lot of this to play button script
     private void OnSelectionUpdated()
     {
-        Debug.Log("select changed");
-
         // Card movement animation is handled in DeckDisplayer / CardDisplay_PositionAnimator
 
         if (selectedCardData == null)
         {
-            Debug.Log("selection is null");
             // TODO move to play card button script
             playCardButtonText.text = CardNotSelectedText;
 
@@ -140,7 +137,9 @@ public class DialogueUIController : Singleton<DialogueUIController>
             UITransitionManager.CloseMenu();
             GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.FINISH_COMBAT);
             GameManager.ObjectiveReference.SetObjectiveVisibility(true);
-            FindFirstObjectByType<BedBehavior>().BossDefeated = true;
+            var bed = FindFirstObjectByType<BedBehavior>();
+            if(bed!=null) bed.BossDefeated = true;
+
             return;
         }
 

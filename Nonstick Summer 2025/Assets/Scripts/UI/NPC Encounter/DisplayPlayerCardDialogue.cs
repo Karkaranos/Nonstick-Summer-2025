@@ -54,7 +54,6 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
         StaticUtilities.EnableCanvasGroup(group, interactable:false);
         var cardtext = DialogueManager.CurrentDialogueBranch.ReturnDialogueOption(card).PlayerDialogue;
         text.text = cardtext;
-        Debug.Log(cardtext);
     }
 
     public IEnumerator WriteTextTypewriter(CardData card)

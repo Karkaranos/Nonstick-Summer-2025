@@ -311,7 +311,7 @@ public class DeckDisplayer : MonoBehaviour
 
 
     [HideInInspector] // use this in other scripts to detect when the user selects cards
-    public UnityEvent OnCardsSelectedChanged { get; set; } = new UnityEvent();
+    public UnityEvent OnCardsSelectedChanged = new UnityEvent();
     public CardData FirstSelectedCard => selectedCards.Count > 0 ? selectedCards.First().cardData : null;
 
     // tobys first HashSet in Unity! 6/21/2025
@@ -355,8 +355,6 @@ public class DeckDisplayer : MonoBehaviour
             DeselectAllCards();
         }
 
-        Debug.Log(selectedCards.Count);
-
         if(selectedCards.Count >= MaxHandSize)
         {
             Debug.Log("too many cards selected!");
@@ -367,8 +365,10 @@ public class DeckDisplayer : MonoBehaviour
 
         cardDisplay.SetPositionOffset( (Vector3)selectedCardOffset );
         cardDisplay.transform.SetAsFirstSibling(); // bring to front so player can see it
+
+        OnCardsSelectedChanged.Invoke();
     }
-    public void DeselectCard(CardDisplay cardDisplay)
+    public void DeselectCard(CardDisplay cardDisplay, bool invokeOnCardsSelectChanged=true)
     {
         if (!selectedCards.Contains(cardDisplay))
             return;
@@ -378,13 +378,18 @@ public class DeckDisplayer : MonoBehaviour
         selectedCards.Remove(cardDisplay);
 
         cardDisplay.ResetOffset();
+
+        if(invokeOnCardsSelectChanged)
+           OnCardsSelectedChanged.Invoke();
     }
 
     public void DeselectAllCards()
     {
         var cards = selectedCards.ToList();
         foreach (CardDisplay cardDisplay in cards)
-            DeselectCard(cardDisplay);
+            DeselectCard(cardDisplay, false);
+
+        OnCardsSelectedChanged.Invoke();
     }
 
     #endregion

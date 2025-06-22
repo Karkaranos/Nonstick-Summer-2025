@@ -36,6 +36,9 @@ public partial class CardDisplay : MonoBehaviour
 
     public void SetPosition(Vector2 position, Vector2? offset=null)
     {
+        // real problem that happens sometimes
+        if (this == null) return;
+
         basePosition = position;
         positionOffset = offset ?? position;
 
@@ -50,6 +53,8 @@ public partial class CardDisplay : MonoBehaviour
     /// </summary>
     public void SetPositionOffset(Vector2 offset)
     {
+        if (this == null) return;
+
         positionOffset = offset;
         if (translatePositionCoroutine != null)
             return; // targetposition is updated, and the coroutine is moving towards that, sooo who cares?
@@ -62,6 +67,8 @@ public partial class CardDisplay : MonoBehaviour
     /// </summary>
     public void ResetOffset()
     {
+        if (this == null) return;
+
         positionOffset = Vector2.zero;
         if (translatePositionCoroutine != null)
             return; // targetposition is updated, and the coroutine is moving towards that, so no need to start new coroutine.
@@ -73,7 +80,6 @@ public partial class CardDisplay : MonoBehaviour
     {
         // idek why i use var so much. i just see people smarter than me use it so that makes me wanna use it.
         var current = cardBackground.anchoredPosition;
-        Debug.Log("start: " + current);
 
         while (current != targetPosition)         // just learned using == on vectors actually does an approximate equals. so thats good thats what we want.
         {
@@ -82,5 +88,14 @@ public partial class CardDisplay : MonoBehaviour
             yield return null;
         }
         translatePositionCoroutine = null;
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
     }
 }

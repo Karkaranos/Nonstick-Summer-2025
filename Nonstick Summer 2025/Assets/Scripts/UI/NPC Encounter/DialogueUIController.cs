@@ -96,6 +96,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
     // TODO move a lot of this to play button script
     private void OnSelectionUpdated()
     {
+        Debug.Log("select changed");
+
         // Card movement animation is handled in DeckDisplayer / CardDisplay_PositionAnimator
 
         if (selectedCardData == null)
@@ -144,7 +146,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         StartCoroutine(ToggleUIForDialogueProgression(false));
 
         CardData selectedCard = selectedCardData;
-        DialogueManager.PlayerHand.Remove(selectedCard);
+        //DialogueManager.PlayerHand.Remove(selectedCard);
 
         if (DialogueManager.UserCanPlayCard)
             // Play a card

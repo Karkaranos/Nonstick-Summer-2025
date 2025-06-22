@@ -165,6 +165,8 @@ public class DialogueManager
         Debug.Log("Completed processing card");
         // only keep reading user input if theres more
         ReadUserInput = true;//!CurrentDialogueBranch.End; 
+
+        DialogueManager.PlayerHand.Remove(playedCard);
     }
 
     /// <summary>

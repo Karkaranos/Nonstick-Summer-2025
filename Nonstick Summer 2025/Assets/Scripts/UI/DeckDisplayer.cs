@@ -142,10 +142,8 @@ public class DeckDisplayer : MonoBehaviour
             n = DefaultHandSize;
         }
 
-
         // Creates referenced array
         Vector2[] spawnPositions = new Vector2[n];
-
 
         // Generates spawn positions
         GeneratePositions(ref spawnPositions, 0, n-1);
@@ -254,10 +252,12 @@ public class DeckDisplayer : MonoBehaviour
             //_visualDisplay[i].GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
 
             var cardDisplay = VisualDisplay[i].GetComponent<CardDisplay>();
-            cardDisplay.SetCard(cards[i]);
-            VisualDisplay[i].transform.localPosition = position[i];
             displayedData.Add(cards[i]);
 
+            VisualDisplay[i].transform.localPosition = position[i];
+            cardDisplay.UpdatePosition();
+
+            cardDisplay.SetCard(cards[i]);
             cardDisplay.OnMouseDown.AddListener(OnCardClicked);
         }
     }
@@ -311,7 +311,7 @@ public class DeckDisplayer : MonoBehaviour
 
 
     [HideInInspector] // use this in other scripts to detect when the user selects cards
-    public UnityEvent OnCardsSelectedChanged { get; set; }
+    public UnityEvent OnCardsSelectedChanged { get; set; } = new UnityEvent();
     public CardData FirstSelectedCard => selectedCards.Count > 0 ? selectedCards.First().cardData : null;
 
     // tobys first HashSet in Unity! 6/21/2025
@@ -334,25 +334,25 @@ public class DeckDisplayer : MonoBehaviour
     private void OnCardClicked(CardDisplay cardDisplay)
     {
         if(selectedCards.Contains(cardDisplay))
-            StartCoroutine(DeselectCard(cardDisplay));
+            DeselectCard(cardDisplay);
         else
-            StartCoroutine(SelectCard(cardDisplay));
+            SelectCard(cardDisplay);
     }
 
-    private IEnumerator SelectCard(CardDisplay cardDisplay)
+    public void SelectCard(CardDisplay cardDisplay)
     {
-        //if (DialogueUIController.Instance != null && !DialogueManager.ReadUserInput)
-        //    yield break;
+        if (DialogueUIController.Instance != null && !DialogueManager.ReadUserInput)
+            return;
 
         if (selectedCards.Contains(cardDisplay))
-            yield break;
+            return;
 
         Debug.Log("selecting card");
 
         // swap cards if player can only have one 
         if(MaxSelectedCards == 1 && SwapCardsOnSelection)
         {
-            yield return DeselectAllCards();
+            DeselectAllCards();
         }
 
         Debug.Log(selectedCards.Count);
@@ -360,46 +360,31 @@ public class DeckDisplayer : MonoBehaviour
         if(selectedCards.Count >= MaxHandSize)
         {
             Debug.Log("too many cards selected!");
-            yield break;
+            return;
         }
 
         selectedCards.Add(cardDisplay);
 
-        cardDisplay.transform.position += (Vector3) selectedCardOffset;
+        cardDisplay.SetPositionOffset( (Vector3)selectedCardOffset );
         cardDisplay.transform.SetAsFirstSibling(); // bring to front so player can see it
     }
-    private IEnumerator DeselectCard(CardDisplay cardDisplay)
+    public void DeselectCard(CardDisplay cardDisplay)
     {
         if (!selectedCards.Contains(cardDisplay))
-            yield break;
-
-        yield return null;
+            return;
 
         Debug.Log("deselect");
 
         selectedCards.Remove(cardDisplay);
 
-        // TODO: animate this
-        cardDisplay.transform.position -= (Vector3)selectedCardOffset;
+        cardDisplay.ResetOffset();
     }
 
-    public IEnumerator DeselectAllCards()
+    public void DeselectAllCards()
     {
-        Debug.Log("deselect all cards");
-
-        finishedDeselects = 0;
-        foreach (CardDisplay cardDisplay in selectedCards)
-            // Starts all deselect coroutines at the same time, so we cant do an await here
-            StartCoroutine(DeselectSingleCardBulk(cardDisplay));
-
-        // Tobys first WaitUntil! 6/22/2025
-        yield return new WaitUntil(() => finishedDeselects == selectedCards.Count);
-    }
-
-    private IEnumerator DeselectSingleCardBulk(CardDisplay cardDisplay)
-    {
-        yield return DeselectCard(cardDisplay);
-        finishedDeselects++;
+        var cards = selectedCards.ToList();
+        foreach (CardDisplay cardDisplay in cards)
+            DeselectCard(cardDisplay);
     }
 
     #endregion

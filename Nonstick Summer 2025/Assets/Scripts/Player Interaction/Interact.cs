@@ -140,16 +140,4 @@ public class Interact : MonoBehaviour
         }
     }
     
-    /// <summary>
-    /// checking for trigger activation for auto boss interactions
-    /// </summary>
-    /// <param name="other"></param>
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<OpenBossInteractable>())
-        {
-            OpenBossInteractable OPI = other.GetComponent<OpenBossInteractable>();
-            OPI.OpenCanvas();
-        }
-    }
 }

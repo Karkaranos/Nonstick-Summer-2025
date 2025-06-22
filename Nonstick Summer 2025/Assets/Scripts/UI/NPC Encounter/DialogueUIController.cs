@@ -51,9 +51,10 @@ public class DialogueUIController : Singleton<DialogueUIController>
     public string CardNotSelectedText;
     public string EndDialogueText;
 
-    private CardData selectedCardData=> (deckDisplay == null || deckDisplay.FirstSelectedCard == null) 
-        ? null : deckDisplay.FirstSelectedCard;
-    private bool IfCloseCombat { get { return DialogueManager.CurrentDialogueBranch.End && PlayerReadAllNPCText; } }
+    public CardData selectedCardData=> deckDisplay.FirstSelectedCard;
+    private bool IfCloseCombat { get { return 
+                DialogueManager.CurrentDialogueBranch == null
+                || ( DialogueManager.CurrentDialogueBranch.End && PlayerReadAllNPCText); } }
     private bool _ui_interactable = true;
 
     public IEnumerator Initialize(DialogueBranch startBranch, characters character)
@@ -70,7 +71,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         relationshipSlider.Initialize(RelationshipManager.characterRelationships[character].maxValue, RelationshipManager.characterRelationships[character].currentValue);
         deckDisplay.SetDeck(ref DialogueManager.PlayerHand);
 
-        deckDisplay.OnCardsSelectedChanged.AddListener(InvokeUpdateSelection);
+        deckDisplay.OnCardsSelectedChanged.AddListener(OnSelectionUpdated);
 
         yield return ToggleUIForDialogueProgression(false);
 
@@ -92,30 +93,27 @@ public class DialogueUIController : Singleton<DialogueUIController>
         playerDialogueBubble.WriteText(card);
     }
 
-    private void InvokeUpdateSelection() => StartCoroutine(UpdateSelection());
-
     // TODO move a lot of this to play button script
-    private IEnumerator UpdateSelection()
+    private void OnSelectionUpdated()
     {
-        var selectedCard = deckDisplay.FirstSelectedCard;
+        // Card movement animation is handled in DeckDisplayer / CardDisplay_PositionAnimator
 
-        if (selectedCard == null)
+        if (selectedCardData == null)
         {
+            Debug.Log("selection is null");
             // TODO move to play card button script
             playCardButtonText.text = CardNotSelectedText;
 
             playCardButton.SetColors(normalColor: Color.white, highlightedColor: Color.gray, selectedColor: Color.white, pressedColor: Color.gray);
-
-            selectedCard = null;
         }
         else
         {
-            // Animation for selecting cards may be handled in DeckDisplayer or CardDisplay
-
             playCardButtonText.text = CardSelectedText;
 
             var buttonColor = CardStyleManager.GetEmotionColor(selectedCardData);
             playCardButton.SetColors(normalColor: buttonColor, highlightedColor: buttonColor, selectedColor: buttonColor, pressedColor: buttonColor);
+
+            playerDialogueBubble.WriteText(selectedCardData);
         }
 
         if (!DialogueManager.UserCanPlayCard)
@@ -125,7 +123,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
             playCardButtonText.text = "->";
             playCardButton.SetColors(normalColor: Color.white, highlightedColor: Color.gray, selectedColor: Color.white, pressedColor: Color.gray);
 
-            yield break;
+            return;
         }
     }
 
@@ -145,11 +143,12 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         StartCoroutine(ToggleUIForDialogueProgression(false));
 
-        DialogueManager.PlayerHand.Remove(selectedCardData);
+        CardData selectedCard = selectedCardData;
+        DialogueManager.PlayerHand.Remove(selectedCard);
 
         if (DialogueManager.UserCanPlayCard)
             // Play a card
-            StartCoroutine(DialogueManager.ProcessPlayCard(selectedCardData));
+            StartCoroutine(DialogueManager.ProcessPlayCard(selectedCard));
         else
             // Next Dialogue pls
             StartCoroutine(UpdateNextNPCDialogueDisplay());

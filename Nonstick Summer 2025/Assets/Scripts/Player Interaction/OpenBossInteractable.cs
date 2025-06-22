@@ -2,7 +2,7 @@ using NaughtyAttributes;
 using UnityEngine;
 /*****************************************************************************
 * File Name :         OpenBossInteractable.cs
-* Author :            Sky
+* Author :            Sky, Cade
 * Creation Date :     June 18, 2025
 *
 * Brief Description : Opens combat automatically for bosses on trigger enter.
@@ -37,7 +37,7 @@ public class OpenBossInteractable : MonoBehaviour
     {
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor);
         var dialogueController = menu.GetComponentInChildren<DialogueUIController>();
-
+        GameManager.ObjectiveReference.SetObjectiveVisibility(false);
         StartCoroutine(dialogueController.Initialize(StartingDialogueBranch, character));
     }
 

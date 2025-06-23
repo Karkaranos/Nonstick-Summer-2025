@@ -11,6 +11,7 @@
 * 
 *****************************************************************************/
 
+using NaughtyAttributes;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -18,8 +19,8 @@ using UnityEngine;
 // didnt know what to name this script so i just put 3 keywords together
 public class DisplayPlayerCardDialogue : MonoBehaviour
 {
-    [SerializeField] private TMP_Text text;
-    [SerializeField] private CanvasGroup group;
+    [SerializeField, Required] private TMP_Text text;
+    [SerializeField, Required] private CanvasGroup group;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,6 +30,10 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
 
     public void Hide()
     {
+        // dont hide if a card is selected
+        if (DialogueUIController.Instance != null && DialogueUIController.Instance.selectedCardData != null)
+            return;
+
         StaticUtilities.DisableCanvasGroup(group);
     }
 
@@ -47,7 +52,8 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
         }
 
         StaticUtilities.EnableCanvasGroup(group, interactable:false);
-        text.text = DialogueManager.CurrentDialogueBranch.ReturnDialogueOption(card).PlayerDialogue;
+        var cardtext = DialogueManager.CurrentDialogueBranch.ReturnDialogueOption(card).PlayerDialogue;
+        text.text = cardtext;
     }
 
     public IEnumerator WriteTextTypewriter(CardData card)

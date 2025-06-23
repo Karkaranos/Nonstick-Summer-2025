@@ -7,11 +7,18 @@ Brief Description :     Handles visual display for the deck
 TODO :                  Create functions for easier updating
 ***************************************************/
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+using System;
+using NaughtyAttributes;
 
 // This script needed to be a Monobehavior to get some of the references needed
 public class DeckDisplayer : MonoBehaviour
 {
+    #region DISPLAY
+
     #region Variables
     //private static Deck PlayerDeckRef => GameManager.DeckManagerReference.PlayerDeck;
     [SerializeField] private Deck DeckRef; // changed to be generalized, because deck will not always be the players.
@@ -135,10 +142,8 @@ public class DeckDisplayer : MonoBehaviour
             n = DefaultHandSize;
         }
 
-
         // Creates referenced array
         Vector2[] spawnPositions = new Vector2[n];
-
 
         // Generates spawn positions
         GeneratePositions(ref spawnPositions, 0, n-1);
@@ -245,9 +250,15 @@ public class DeckDisplayer : MonoBehaviour
             
             VisualDisplay.Add(Instantiate(_cardPrefab, Vector2.zero, Quaternion.identity, transform));
             //_visualDisplay[i].GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-            VisualDisplay[i].GetComponent<CardDisplay>().SetCard(cards[i]);
-            VisualDisplay[i].transform.localPosition = position[i];
+
+            var cardDisplay = VisualDisplay[i].GetComponent<CardDisplay>();
             displayedData.Add(cards[i]);
+
+            VisualDisplay[i].transform.localPosition = position[i];
+            cardDisplay.UpdatePosition();
+
+            cardDisplay.SetCard(cards[i]);
+            cardDisplay.OnMouseDown.AddListener(OnCardClicked);
         }
     }
 
@@ -276,6 +287,111 @@ public class DeckDisplayer : MonoBehaviour
 
         return StaticUtilities.AddArrays(leftHalf, rightHalf);
     }
+    #endregion
+
+    #endregion
+
+    #endregion
+
+    #region Selection
+    // could be moved to partial class?
+
+    #region Variables
+
+    [Header("Card Selection")]
+
+    [Tooltip("Add this number to the cards position when a card is selected")]
+    [SerializeField] private Vector2 selectedCardOffset = new Vector2(0, 50);
+
+    [SerializeField, Min(1)]
+    private int MaxSelectedCards = 1;
+
+    [Tooltip("If true, swaps the selected card when a different card is selected")]
+    [SerializeField, ShowIf(nameof(showSwapSelected))]private bool SwapCardsOnSelection = true;
+
+
+    [HideInInspector] // use this in other scripts to detect when the user selects cards
+    public UnityEvent OnCardsSelectedChanged = new UnityEvent();
+    public CardData FirstSelectedCard => selectedCards.Count > 0 ? selectedCards.First().cardData : null;
+
+    // tobys first HashSet in Unity! 6/21/2025
+    [HideInInspector]
+    public HashSet<CardDisplay> selectedCards = new HashSet<CardDisplay>();
+
+    #region Computational Variables
+
+    private int finishedDeselects;
+
+    private bool showSwapSelected => MaxSelectedCards == 1;
+
+    #endregion
+
+    #endregion
+
+    #region Functions
+
+    // See SpawnCards
+    private void OnCardClicked(CardDisplay cardDisplay)
+    {
+        if(selectedCards.Contains(cardDisplay))
+            DeselectCard(cardDisplay);
+        else
+            SelectCard(cardDisplay);
+    }
+
+    public void SelectCard(CardDisplay cardDisplay)
+    {
+        if (DialogueUIController.Instance != null && !DialogueManager.ReadUserInput)
+            return;
+
+        if (selectedCards.Contains(cardDisplay))
+            return;
+
+        Debug.Log("selecting card");
+
+        // swap cards if player can only have one 
+        if(MaxSelectedCards == 1 && SwapCardsOnSelection)
+        {
+            DeselectAllCards();
+        }
+
+        if(selectedCards.Count >= MaxHandSize)
+        {
+            Debug.Log("too many cards selected!");
+            return;
+        }
+
+        selectedCards.Add(cardDisplay);
+
+        cardDisplay.SetPositionOffset( (Vector3)selectedCardOffset );
+        cardDisplay.transform.SetAsFirstSibling(); // bring to front so player can see it
+
+        OnCardsSelectedChanged.Invoke();
+    }
+    public void DeselectCard(CardDisplay cardDisplay, bool invokeOnCardsSelectChanged=true)
+    {
+        if (!selectedCards.Contains(cardDisplay))
+            return;
+
+        Debug.Log("deselect");
+
+        selectedCards.Remove(cardDisplay);
+
+        cardDisplay.ResetOffset();
+
+        if(invokeOnCardsSelectChanged)
+           OnCardsSelectedChanged.Invoke();
+    }
+
+    public void DeselectAllCards()
+    {
+        var cards = selectedCards.ToList();
+        foreach (CardDisplay cardDisplay in cards)
+            DeselectCard(cardDisplay, false);
+
+        OnCardsSelectedChanged.Invoke();
+    }
+
     #endregion
 
     #endregion

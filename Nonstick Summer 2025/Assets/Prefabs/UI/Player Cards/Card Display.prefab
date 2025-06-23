@@ -30,7 +30,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8304340592179697799}
+  m_Father: {fileID: 4079323454010861171}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -170,7 +170,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4079323454010861171}
-  - {fileID: 8015155863712343967}
   - {fileID: 5241118381910855034}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -215,10 +214,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EmotionText: {fileID: 7646058114201255382}
   IntentionText: {fileID: 7044094302959180984}
-  CardBackground: {fileID: 3494915202767538561}
+  CardBackgroundImage: {fileID: 3494915202767538561}
+  cardBackground: {fileID: 4079323454010861171}
   IntentionImage: {fileID: 6412666798837967272}
   EnergyText: {fileID: 4437868579002710919}
   card: {fileID: 11400000, guid: 6ac2c164d8055c04db47a6031bf810bf, type: 2}
+  OnMouseDown:
+    m_PersistentCalls:
+      m_Calls: []
+  MovementSpeed: 1000
 --- !u!114 &1141840434913231624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -585,6 +589,7 @@ RectTransform:
   m_Children:
   - {fileID: 3468362294965240037}
   - {fileID: 7397923500258275758}
+  - {fileID: 8015155863712343967}
   m_Father: {fileID: 8304340592179697799}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

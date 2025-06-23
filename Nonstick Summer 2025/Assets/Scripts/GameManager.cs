@@ -12,18 +12,19 @@ using UnityEngine;
 *
 * TODO:
 * 
-* 
 *****************************************************************************/
 public class GameManager : Singleton<GameManager>
 {
     public static Transform playerTransformRef;
     public static Camera playerCameraRef;
 
+    // these variables mostly just exist to keep each sub-manager in memory
     public static UITransitionManager UITransitionManagerReference;
     public static CardStyleManager CardStyleManagerReference;
     public static DeckManager DeckManagerReference;
     public static DialogueManager DialogueManagerReference;
     public static RelationshipManager RelationshipManagerReference;
+    public static ModifierManager ModifierManagerReference;
     public static Objectives ObjectiveReference;
 
     public static int MaxCardsVisibleInDeck = 7;
@@ -70,6 +71,7 @@ public class GameManager : Singleton<GameManager>
         DeckManagerReference = DeckManagerReference ?? new DeckManager();
         DialogueManagerReference = DialogueManagerReference ?? new DialogueManager(_defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent, _maxEnergy, DefaultCardsInHand);
         RelationshipManagerReference = RelationshipManagerReference ?? new RelationshipManager(grandmaStartingValue, uncleStartingValue, cousinStartingValue, momStartingValue);
+        ModifierManagerReference = ModifierManagerReference ?? new ModifierManager();
         ObjectiveReference = FindFirstObjectByType<Objectives>();
 
     }

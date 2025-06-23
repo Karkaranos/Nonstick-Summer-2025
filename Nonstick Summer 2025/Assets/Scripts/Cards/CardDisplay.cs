@@ -8,15 +8,19 @@ using UnityEngine.Events;
 using Unity.VisualScripting;
 using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 
 [RequireComponent(typeof(MouseInteractionEvents))]
-public class CardDisplay : MonoBehaviour
+public partial class CardDisplay : MonoBehaviour
 {
-    [BoxGroup("UI Components")][SerializeField] TMP_Text EmotionText;
-    [BoxGroup("UI Components")][SerializeField] TMP_Text IntentionText;
-    [BoxGroup("UI Components")][SerializeField] Image CardBackground;
-    [BoxGroup("UI Components")][SerializeField] Image IntentionImage;
-    [BoxGroup("UI Components")][SerializeField] TMP_Text EnergyText;
+    [Header("Display")]
+
+    [Foldout("UI Components"), SerializeField, Required] TMP_Text EmotionText;
+    [Foldout("UI Components"), SerializeField, Required] TMP_Text IntentionText;
+    [Foldout("UI Components"), SerializeField, Required] Image CardBackgroundImage;
+    [Foldout("UI Components"), SerializeField, Required] RectTransform cardBackground;
+    [Foldout("UI Components"), SerializeField, Required] Image IntentionImage;
+    [Foldout("UI Components"), SerializeField, Required] TMP_Text EnergyText;
 
     public CardData cardData { get{ return card; } }
 
@@ -24,6 +28,8 @@ public class CardDisplay : MonoBehaviour
     private CardData card;
 
     private MouseInteractionEvents mouseInteraction;
+
+    public UnityEvent<CardDisplay> OnMouseDown = new UnityEvent<CardDisplay> ();
 
     private void Start()
     {
@@ -34,29 +40,32 @@ public class CardDisplay : MonoBehaviour
         mouseInteraction.OnMouseHoverStart.AddListener(OnMouseHoverStart);
         mouseInteraction.OnMouseHoverEnd.AddListener(OnMouseHoverEnd);
         mouseInteraction.OnMouseDown.AddListener(OnMouseDownStart);
+
+        basePosition = cardBackground.anchoredPosition;
     }
 
-    private void OnMouseHoverStart() // this should be moved to another script
+    private void OnMouseHoverStart() // TODO this should be moved to another script
     {
-        if (DialogueUIController.Instance != null && DialogueUIController.Instance.selectedCard == null 
+        if (DialogueUIController.Instance != null && DialogueUIController.Instance.DeckDisplay.FirstSelectedCard == null 
             && DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput)
            DialogueUIController.Instance.UpdateHoveringCard(card);
     }
 
-    private void OnMouseHoverEnd() // this should be moved to another script
+    private void OnMouseHoverEnd() // TODO this should be moved to another script
     {
-        if (DialogueUIController.Instance != null && DialogueUIController.Instance.selectedCard == null
+        if (DialogueUIController.Instance != null && DialogueUIController.Instance.DeckDisplay.FirstSelectedCard == null
             && DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput)
             DialogueUIController.Instance.UpdateHoveringCard(null);
     }
 
     private void OnMouseDownStart()
     {
-        if (DialogueUIController.Instance != null && DialogueManager.ReadUserInput)
+        OnMouseDown.Invoke(this);
+        /*if (DialogueUIController.Instance != null && DialogueManager.ReadUserInput)
         {
             Debug.Log("selected card");
-            StartCoroutine(DialogueUIController.Instance.UpdateSelection(this));
-        }
+            StartCoroutine(DialogueUIController.Instance.OnSelectionUpdated(this));
+        }*/
     }
 
     public void SetCard(CardData newCard)
@@ -87,7 +96,7 @@ public class CardDisplay : MonoBehaviour
         EnergyText.text = (card.EnergyCost == 0) ? "" : card.EnergyCost.ToString();
         EnergyText.color = (card.EnergyCost < 0) ? Color.red : Color.green;
         IntentionImage.sprite = CardStyleManager.GetIntentionSprite(card);
-        CardBackground.color = CardStyleManager.GetEmotionColor(card);
+        CardBackgroundImage.color = CardStyleManager.GetEmotionColor(card);
 
         // maybe play a lil animation? (add a parameter?)
     }

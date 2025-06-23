@@ -104,7 +104,13 @@ public class InputEvents : Singleton<InputEvents>
 
     private void OnDisable()
     {
-        Move.started -= ctx => ActionStarted(ref MovePressed, MoveStarted);
+        Move.RemoveAllBindingOverrides();
+        LeftClick.RemoveAllBindingOverrides();
+        RightClick.RemoveAllBindingOverrides();
+        Pause.RemoveAllBindingOverrides();
+        Interact.RemoveAllBindingOverrides();
+
+        /*Move.started -= ctx => ActionStarted(ref MovePressed, MoveStarted);
         //Jump.started -= ctx => ActionStarted(ref JumpPressed, JumpStarted);
         LeftClick.started -= ctx => ActionStarted(ref ClickPressed, ClickStarted);
         RightClick.started -= ctx => ActionStarted(ref RightClickPressed, RightClickStarted);
@@ -115,5 +121,6 @@ public class InputEvents : Singleton<InputEvents>
         //Jump.canceled -= ctx => ActionCanceled(ref JumpPressed, JumpCanceled);
         LeftClick.canceled -= ctx => ActionStarted(ref ClickPressed, ClickStarted);
         RightClick.canceled -= ctx => ActionCanceled(ref RightClickPressed, RightClickCanceled);
+        Interact.canceled -= ctx => ActionCanceled(ref InteractPressed, InteractCanceled);*/
     }
 }

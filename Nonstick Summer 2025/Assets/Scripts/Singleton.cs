@@ -31,7 +31,11 @@ public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
         }
         else
         {
-            Destroy(this);
+            // this feels like a bandage solution to a bigger problem...
+            if (this != null)
+                Destroy(this);
+            else
+                Debug.LogWarning("There is a null singleton");
         }
     }
 }

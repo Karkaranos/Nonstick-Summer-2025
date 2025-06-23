@@ -116,7 +116,11 @@ public class DialogueManager
     /// </summary>
     public static IEnumerator ProcessPlayCard(CardData playedCard)
     {
-        Debug.Log("Player playing card");
+        if (playedCard == null)
+            Debug.Log("Played silent card");
+        else
+            Debug.Log($"playing card: {playedCard.Emotion.ToString()}, {playedCard.Intention.ToString()}");
+
         ReadUserInput = false;
 
         playedCard.TryTriggerStampEffect(StampTriggerConditions.BeforeCardPlayed);
@@ -128,28 +132,32 @@ public class DialogueManager
             Debug.LogWarning("Card played with 0 energy");
 
         Debug.Log("before set");
-        yield return SetCurrentEnergy(_currentEnergy + 
-            (playedCard == null ? _energyGainedIfSilent: playedCard.GetEnergyCost())); // this could have been an if statement but noooooo i just had to be special
+        GameManager.Instance.StartCoroutine(SetCurrentEnergy(_currentEnergy + 
+            (playedCard == null ? _energyGainedIfSilent: playedCard.GetEnergyCost()))); // this could have been an if statement but noooooo i just had to be special
         Debug.Log("after set");
 
-        // progress dialogue
+        // progress dialogue:
         var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
-
-        if(dialogueOption.RelationshipRequirement >= RelationshipManager.characterRelationships[currentCharacter].currentValue)
-        {
-
-            CurrentDialogueBranch = dialogueOption.BranchingDialogue;
-
-        }
-        else { CurrentDialogueBranch = dialogueOption.AlternateBranch; }
 
         float relationshipChange = playedCard.GetRelationshopChange(dialogueOption);
         yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange);
 
+        // progress dialogue:
+        if (RelationshipManager.characterRelationships[currentCharacter].currentValue >= dialogueOption.RelationshipRequirement)
+        {
+            Debug.Log("Player has enough RP for good branch");
+            CurrentDialogueBranch = dialogueOption.BranchingDialogue; 
+        }
+        else 
+        {
+            Debug.Log("Player has not met RP requirement");
+            CurrentDialogueBranch = dialogueOption.AlternateBranch; 
+        }
+
         yield return DialogueUIController.Instance.ResetNPCDialogue();
 
         // TODO: move this to AFTER player reads all text, and can play cards again
-        yield return SetCurrentEnergy(_currentEnergy + _energyGainedPerRound);
+        GameManager.Instance.StartCoroutine(SetCurrentEnergy(_currentEnergy + _energyGainedPerRound));
 
         playedCard.TryTriggerStampEffect(StampTriggerConditions.AfterCardPlayed);
         //TODO wait for potential _modifier animations to finish
@@ -157,6 +165,8 @@ public class DialogueManager
         Debug.Log("Completed processing card");
         // only keep reading user input if theres more
         ReadUserInput = true;//!CurrentDialogueBranch.End; 
+
+        DialogueManager.PlayerHand.Remove(playedCard);
     }
 
     /// <summary>

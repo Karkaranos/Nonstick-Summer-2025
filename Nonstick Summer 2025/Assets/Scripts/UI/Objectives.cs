@@ -40,7 +40,8 @@ public class Objectives : MonoBehaviour
                     print("Check failed");
                     return;
                 }
-                _displayText.text = od.DisplayText;
+                if(_displayText != null)
+                    _displayText.text = od.DisplayText;
                 od.ConditionBeenMet = true;
             }
         }
@@ -52,7 +53,10 @@ public class Objectives : MonoBehaviour
     /// <param name="visibility">Bool denoting whether the objective should be visible or not</param>
     public void SetObjectiveVisibility(bool visibility)
     {
-        _objectiveCanvas.SetActive(visibility);
+        if (_objectiveCanvas != null)
+            _objectiveCanvas?.SetActive(visibility);
+        else
+            Debug.LogError("No objective Canvas");
     }
 
 

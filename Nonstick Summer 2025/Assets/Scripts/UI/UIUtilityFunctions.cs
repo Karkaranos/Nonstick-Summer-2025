@@ -18,6 +18,8 @@ public class UIUtilityFunctions : MonoBehaviour
         DialogueManager.PlayerHand.Add(CardData.NewCard(-2, emotion, CardIntention.Observation));
         DialogueManager.PlayerHand.Add(CardData.NewCard(-2, emotion, CardIntention.Question));
 
+        MoodManager.emotions[emotion].currentValue += 1;
+
         objRef.GetComponent<InteractableObjectBehavior>().GiveCard(emotion);
     }
 

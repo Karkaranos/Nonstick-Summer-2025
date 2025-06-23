@@ -684,8 +684,46 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7082734256917575745, guid: a43a57c0d0e02344f92cc630edc622a6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8975660692342209289}
   m_SourcePrefab: {fileID: 100100000, guid: a43a57c0d0e02344f92cc630edc622a6, type: 3}
+--- !u!1 &8975660692342209288 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7082734256917575745, guid: a43a57c0d0e02344f92cc630edc622a6, type: 3}
+  m_PrefabInstance: {fileID: 8975660692342209287}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8975660692342209289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8975660692342209288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba2a1a800a12e864baae78511a68328d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charmingStartingValues:
+    defaultEnergyCost: 0
+    maxEnergyCost: 0
+    expressionValue: 0
+    intervalBetweenADecreasedCost: 0
+    intervalBetweenIncreasedCosts: 0
+  assertiveStartingValues:
+    defaultEnergyCost: 0
+    maxEnergyCost: 0
+    expressionValue: 0
+    intervalBetweenADecreasedCost: 0
+    intervalBetweenIncreasedCosts: 0
+  sappyStartingValues:
+    defaultEnergyCost: 0
+    maxEnergyCost: 0
+    expressionValue: 0
+    intervalBetweenADecreasedCost: 0
+    intervalBetweenIncreasedCosts: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

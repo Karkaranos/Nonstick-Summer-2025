@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 /*****************************************************************************
 * File Name :         MoodStats.cs
@@ -15,9 +16,11 @@ public class MoodStats
 
     //TODO: add modifiers depending on CardIntention??
     [Tooltip("What should the default energy cost be for a card with this emotion? This should either be 0 or a negative value.")]
+    [AllowNesting] [MaxValue(0)]
     public int defaultEnergyCost;
 
     [Tooltip("What is the most energy that a card should EVER cost? Should be a negative value.")]
+    [AllowNesting] [MaxValue(-1)]
     public int maxEnergyCost;
 
 

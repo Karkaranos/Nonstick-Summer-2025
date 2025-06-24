@@ -65,8 +65,6 @@ public class MoodManager: MonoBehaviour
 
         }
 
-        DialogueManager.PlayerHand.UpdateCardCosts();
-
     }
 
 }

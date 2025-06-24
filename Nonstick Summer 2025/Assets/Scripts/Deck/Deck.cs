@@ -131,21 +131,6 @@ public class Deck
     }
 
     /// <summary>
-    /// updates the energy costs of cards based on emotions expressed
-    /// </summary>
-    public void UpdateCardCosts()
-    {
-
-        for(int i = 0; i < _cards.Count; i++)
-        {
-
-            _cards[i].EnergyCost = MoodManager.emotions[_cards[i].Emotion].defaultEnergyCost;
-
-        }
-
-    }
-
-    /// <summary>
     /// Shuffles the deck
     /// </summary>
     public void Shuffle()

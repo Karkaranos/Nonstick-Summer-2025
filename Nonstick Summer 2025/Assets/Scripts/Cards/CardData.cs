@@ -68,7 +68,7 @@ public partial class CardData : ScriptableObject
 
     public float GetEnergyCost() 
     {
-        float newCost = _energyCost;
+        float newCost = MoodManager.emotions[_emotion].defaultEnergyCost;
 
         if(_stamps.Count > 0)
         {
@@ -142,11 +142,8 @@ public partial class CardData : ScriptableObject
     public static CardData NewCard (int EnergyCost, CardEmotion Emotion, CardIntention Intention)
     {
         CardData newcard = ScriptableObject.CreateInstance<CardData>();
-        //newcard._energyCost = EnergyCost; 
+        newcard._energyCost = EnergyCost; 
         newcard._emotion = Emotion;
-
-        //this makes the EnergyCost int null and void but i don't wanna fuck with this function too much for the time being
-        newcard._energyCost = MoodManager.emotions[Emotion].defaultEnergyCost;
         newcard._intention = Intention;
         return newcard;
     }

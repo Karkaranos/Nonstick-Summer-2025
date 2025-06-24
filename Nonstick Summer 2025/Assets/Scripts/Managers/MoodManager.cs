@@ -38,10 +38,10 @@ public class MoodManager: MonoBehaviour
         for (int i = 0; i < emotions[emotion].expressionValue; i++)
         {
 
-            if(i % emotions[emotion].intervalBetweenADecreasedCost == 0 & emotions[emotion].defaultEnergyCost > 0)
+            if(i % emotions[emotion].intervalBetweenADecreasedCost == 0 & emotions[emotion].baseEnergyCost > 0)
             {
 
-                emotions[emotion].defaultEnergyCost += 1;
+                emotions[emotion].baseEnergyCost += 1;
 
             }
 
@@ -51,10 +51,10 @@ public class MoodManager: MonoBehaviour
                 foreach(var key in emotions.Keys)
                 {
 
-                    if(key != emotion & emotions[key].defaultEnergyCost >= emotions[key].maxEnergyCost)
+                    if(key != emotion & emotions[key].baseEnergyCost >= emotions[key].maxEnergyCost)
                     {
 
-                        emotions[key].defaultEnergyCost -= 1;
+                        emotions[key].baseEnergyCost -= 1;
 
                     }
 

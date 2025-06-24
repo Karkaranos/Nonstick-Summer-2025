@@ -68,7 +68,7 @@ public partial class CardData : ScriptableObject
 
     public float GetEnergyCost() 
     {
-        float newCost = MoodManager.emotions[_emotion].defaultEnergyCost;
+        float newCost = _energyCost + MoodManager.emotions[_emotion].baseEnergyCost;
 
         if(_stamps.Count > 0)
         {
@@ -84,7 +84,7 @@ public partial class CardData : ScriptableObject
     public CardEmotion GetEmotion() { return _emotion; }
 
 
-    public float GetRelationshopChange(DialogueOption dialogueOption)
+    public float GetRelationshipChange(DialogueOption dialogueOption)
     {
         float newRelationshipChange = dialogueOption.ChangeInRelationshipStatus;
 
@@ -142,8 +142,16 @@ public partial class CardData : ScriptableObject
     public static CardData NewCard (int EnergyCost, CardEmotion Emotion, CardIntention Intention)
     {
         CardData newcard = ScriptableObject.CreateInstance<CardData>();
-        newcard._energyCost = EnergyCost; 
         newcard._emotion = Emotion;
+
+        if(MoodManager.emotions != null)
+        {
+
+            newcard._energyCost = MoodManager.emotions[Emotion].baseEnergyCost;
+
+        }
+        else { newcard._energyCost = EnergyCost; }
+
         newcard._intention = Intention;
         return newcard;
     }

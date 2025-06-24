@@ -152,7 +152,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
             {
                 GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.TALK_TO_SIDE_CHARACTER, inWorldCharacter);
                 GameManager.ObjectiveReference.SetObjectiveVisibility(true);
-                Debug.LogWarning("Give stamp here");
+                inWorldCharacter.GetComponent<SideCharacterInteractable>().GetModifier();
             }
 
             return;

@@ -34,6 +34,10 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
 
     private GameObject openedCanvas;
 
+
+    public ModifierData[] PossibleModifiers;
+
+
     /// <summary>
     /// Opens prompt canvas and loads desired data
     /// </summary>
@@ -57,5 +61,11 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
         var dialogueController = menu.GetComponentInChildren<DialogueUIController>();
         GameManager.ObjectiveReference.SetObjectiveVisibility(false);
         StartCoroutine(dialogueController.Initialize(StartingDialogueBranch, character));
+    }
+
+    public void GetModifier()
+    {
+        int i = PossibleModifiers.Length;
+        ModifierManager.AddCard(PossibleModifiers[(int)Random.Range(int.MinValue, int.MaxValue) % i]);
     }
 }

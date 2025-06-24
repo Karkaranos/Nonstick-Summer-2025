@@ -57,11 +57,17 @@ public class DialogueUIController : Singleton<DialogueUIController>
                 || ( DialogueManager.CurrentDialogueBranch.End && PlayerReadAllNPCText); } }
     private bool _ui_interactable = true;
 
-    public IEnumerator Initialize(DialogueBranch startBranch, characters character)
+    private bool isBoss;
+    private GameObject inWorldCharacter;
+
+    public IEnumerator Initialize(DialogueBranch startBranch, characters character, bool isBoss = true, GameObject objRef = null)
     {
         DialogueManager.OnOpenCombatUI(startBranch, character);
 
         MusicManager.instance.TransitionMusic(true);
+
+        Instance.isBoss = isBoss;
+        inWorldCharacter = objRef;
 
         // all the rest of this ui initialization stuff is gonna run every time an npc combat encounter happens.
         // i think our game is not complicated enough that its gonna be a problem performance wise, 
@@ -135,10 +141,19 @@ public class DialogueUIController : Singleton<DialogueUIController>
             // TODO open a new menu?
             Debug.Log("Close combat!");
             UITransitionManager.CloseMenu();
-            GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.FINISH_COMBAT);
-            GameManager.ObjectiveReference.SetObjectiveVisibility(true);
-            var bed = FindFirstObjectByType<BedBehavior>();
-            if(bed!=null) bed.BossDefeated = true;
+            if(isBoss)
+            {
+                GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.FINISH_COMBAT);
+                GameManager.ObjectiveReference.SetObjectiveVisibility(true);
+                var bed = FindFirstObjectByType<BedBehavior>();
+                if (bed != null) bed.BossDefeated = true;
+            }
+            else
+            {
+                GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.TALK_TO_SIDE_CHARACTER, inWorldCharacter);
+                GameManager.ObjectiveReference.SetObjectiveVisibility(true);
+                Debug.LogWarning("Give stamp here");
+            }
 
             return;
         }
@@ -205,8 +220,10 @@ public class DialogueUIController : Singleton<DialogueUIController>
     //TODO move to play button script
     public void ClosingOutCombat()
     {
-        if(DialogueManager.CurrentDialogueBranch.End)
+        if (DialogueManager.CurrentDialogueBranch.End)
+        {
             playCardButtonText.text = EndDialogueText;
+        }
     }
 
     public IEnumerator ToggleUIForDialogueProgression(bool interactable)
@@ -225,7 +242,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         if(interactable)
         {
             Debug.LogWarning("This statement runs too often");
-            deckDisplay.DrawToDefaultHand();
+            deckDisplay.DrawOneCard();
         }
 
         deckDisplay?.gameObject.SetActive(interactable);

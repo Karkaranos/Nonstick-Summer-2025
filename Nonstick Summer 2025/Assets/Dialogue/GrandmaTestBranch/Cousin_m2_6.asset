@@ -10,71 +10,69 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
-  m_Name: Branch2
+  m_Name: Cousin_m2_6
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Well!
-    Portrait: {fileID: 0}
-  - Dialogue: That wasn't very nice.
+  - Dialogue: Welp, bye-bye!
     Portrait: {fileID: 0}
   Charming_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
-    PlayerDialogue: 
+    BranchingDialogue: {fileID: 0}
+    PlayerDialogue: Oh! Sweet!
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: 15
   Assertive_Expression:
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: 
+    PlayerDialogue: Hey! Those are supposed to be MINE!
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: -10
   Sappy_Expression:
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: 
+    PlayerDialogue: My cards...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: 5
   Charming_Observation:
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: 
+    PlayerDialogue: "...Wait, what?! You can\u2019t do that!"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: -10
   Assertive_Observation:
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: 
+    PlayerDialogue: Hey! You opened MY present!
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: -10
   Sappy_Observation:
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: 
+    PlayerDialogue: That was supposed to be a gift.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: -5
   Charming_Question:
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: 
+    PlayerDialogue: When did you get those?!
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: 5
   Assertive_Question:
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: 
+    PlayerDialogue: YOU OPENED UP MY PRESENT? YOU STOLE MY CARDS?!
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: -15
   Sappy_Question:
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: 
+    PlayerDialogue: "Hey, that\u2019s kind of rude. You know that, right?"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: 5
   Silent:
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: 
+    PlayerDialogue: ...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: -5
   End: 1

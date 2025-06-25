@@ -13,65 +13,67 @@ MonoBehaviour:
   m_Name: Mom_m1_2_negative
   m_EditorClassIdentifier: 
   dialogue:
+  - Dialogue: "Well, I told you to, didn\u2019t I? You had plenty of time."
+    Portrait: {fileID: 0}
   - Dialogue: Are you ready for your first day of school tomorrow?
     Portrait: {fileID: 0}
   Charming_Expression:
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     PlayerDialogue: "I\u2019m gonna have so much fun! Don\u2019t worry Mama, I\u2019ll
       save some for you!"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     PlayerDialogue: "I don\u2019t wanna go!"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Expression:
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     PlayerDialogue: "I\u2019m gonna miss you."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Charming_Observation:
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     PlayerDialogue: "I already went, so I don\u2019t need to go."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Assertive_Observation:
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     PlayerDialogue: "School is dumb and smelly. I don\u2019t like it."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Observation:
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     PlayerDialogue: "I\u2019m gonna be fine, Mama."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Charming_Question:
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     PlayerDialogue: Are YOU ready?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Question:
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     PlayerDialogue: Do I have to go?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Sappy_Question:
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     PlayerDialogue: What are you gonna do all day?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Silent:
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     PlayerDialogue: ...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}

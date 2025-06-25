@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{3dc6f555-51cf-4adc-a69e-77a8f34b3c00}">
+		<property name="name">
+			<value>Room</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a71f947b-03ec-4e4b-9205-8afd9a06b6dc}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{d5f8806e-57fc-4998-87cc-d276d93b1bd8}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{d5f8806e-57fc-4998-87cc-d276d93b1bd8}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

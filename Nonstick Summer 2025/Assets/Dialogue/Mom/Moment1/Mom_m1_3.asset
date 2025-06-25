@@ -10,69 +10,71 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
-  m_Name: Mom_m1_1
+  m_Name: Mom_m1_3
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: There you are! Did you clean up all your toys?
+  - Dialogue: "Don\u2019t forget that Grandma is going to be babysitting you today."
+    Portrait: {fileID: 0}
+  - Dialogue: Make sure to behave yourself for her, okay?
     Portrait: {fileID: 0}
   Charming_Expression:
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: I did, and really fast too!
-    RelationshipRequirement: 0
+    PlayerDialogue: I love Grandma! She smells funny.
+    RelationshipRequirement: -5
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: 10
   Assertive_Expression:
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: Yeah.
-    RelationshipRequirement: 0
+    PlayerDialogue: "I don\u2019t need a babysitter. I\u2019m not a baby anymore."
+    RelationshipRequirement: -5
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: -10
   Sappy_Expression:
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: "No...I\u2019m sorry..."
-    RelationshipRequirement: 0
+    PlayerDialogue: But I always behave!
+    RelationshipRequirement: -5
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Charming_Observation:
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: "I don\u2019t see them."
-    RelationshipRequirement: 0
+    PlayerDialogue: "She\u2019s wrinkly. Like a raisin with arms."
+    RelationshipRequirement: -5
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Assertive_Observation:
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: "I don\u2019t wanna."
-    RelationshipRequirement: 0
+    PlayerDialogue: "I don\u2019t WANT Grandma to come over!"
+    RelationshipRequirement: -5
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -15
   Sappy_Observation:
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: "But you\u2019re so much better at cleaning up than me!"
-    RelationshipRequirement: 0
+    PlayerDialogue: Really? Grandma is the best!
+    RelationshipRequirement: -5
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Charming_Question:
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: I dunno...diiid I?
-    RelationshipRequirement: 0
+    PlayerDialogue: Is SHE going to behave?
+    RelationshipRequirement: -5
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Question:
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: Why?
-    RelationshipRequirement: 0
+    PlayerDialogue: Why should I behave?
+    RelationshipRequirement: -5
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Question:
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: Do I have to?
-    RelationshipRequirement: 0
+    PlayerDialogue: "Why doesn\u2019t she visit more?"
+    RelationshipRequirement: -5
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: 10
   Silent:
     BranchingDialogue: {fileID: 0}
     PlayerDialogue: ...
-    RelationshipRequirement: 0
+    RelationshipRequirement: -5
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -5
   End: 0

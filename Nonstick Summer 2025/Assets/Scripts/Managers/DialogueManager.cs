@@ -167,6 +167,8 @@ public class DialogueManager
         ReadUserInput = true;//!CurrentDialogueBranch.End; 
 
         DialogueManager.PlayerHand.Remove(playedCard);
+
+        MoodManager.UpdateMood(playedCard.Emotion);
     }
 
     /// <summary>

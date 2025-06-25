@@ -139,7 +139,7 @@ public class DialogueManager
         // progress dialogue:
         var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
 
-        float relationshipChange = playedCard.GetRelationshopChange(dialogueOption);
+        float relationshipChange = playedCard.GetRelationshipChange(dialogueOption);
         yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange);
 
         // progress dialogue:

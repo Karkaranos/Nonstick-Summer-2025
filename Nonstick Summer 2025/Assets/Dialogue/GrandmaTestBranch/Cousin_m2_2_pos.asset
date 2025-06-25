@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
-  m_Name: Cousin_m2_2
+  m_Name: Cousin_m2_2_pos
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: Teehee!
@@ -26,7 +26,7 @@ MonoBehaviour:
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
+    BranchingDialogue: {fileID: 11400000, guid: 0a4ed63cd9af8a74782555ef5b681bd7, type: 2}
     PlayerDialogue: Not really.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
@@ -44,13 +44,13 @@ MonoBehaviour:
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
+    BranchingDialogue: {fileID: 11400000, guid: 0a4ed63cd9af8a74782555ef5b681bd7, type: 2}
     PlayerDialogue: Mine are better.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
+    BranchingDialogue: {fileID: 11400000, guid: 0a4ed63cd9af8a74782555ef5b681bd7, type: 2}
     PlayerDialogue: This is MY birthday...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
@@ -62,7 +62,7 @@ MonoBehaviour:
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Assertive_Question:
-    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
+    BranchingDialogue: {fileID: 11400000, guid: 0a4ed63cd9af8a74782555ef5b681bd7, type: 2}
     PlayerDialogue: "Hey, isn\u2019t this supposed to be MY birthday?"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
@@ -74,7 +74,7 @@ MonoBehaviour:
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Silent:
-    BranchingDialogue: {fileID: 11400000, guid: a30f23876f7fcfe4180258c3133ef9fa, type: 2}
+    BranchingDialogue: {fileID: 11400000, guid: 1a8100792af26a34b8a2b5beed896b01, type: 2}
     PlayerDialogue: ...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}

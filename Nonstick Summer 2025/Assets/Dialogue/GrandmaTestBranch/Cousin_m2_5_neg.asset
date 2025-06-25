@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
-  m_Name: Cousin_m2_5_pos
+  m_Name: Cousin_m2_5_neg
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Yep! They're so cool.
+  - Dialogue: But I was just so excited...
     Portrait: {fileID: 0}
   - Dialogue: You can even use the cards that my Dad got you...
     Portrait: {fileID: 0}
@@ -72,7 +72,7 @@ MonoBehaviour:
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Silent:
-    BranchingDialogue: {fileID: 11400000, guid: 8283ddc3a09fca94c92ded91f590e81c, type: 2}
+    BranchingDialogue: {fileID: 11400000}
     PlayerDialogue: ...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}

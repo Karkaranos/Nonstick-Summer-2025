@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
-  m_Name: Cousin_m2_3
+  m_Name: Cousin_m2_3_pos
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: Dad got them! Awesome, right?!
@@ -20,61 +20,61 @@ MonoBehaviour:
   - Dialogue: You'll play with me, right?
     Portrait: {fileID: 0}
   Charming_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
+    BranchingDialogue: {fileID: 11400000, guid: 6c05a1b900e54cc4db026e9e3ac109bc, type: 2}
     PlayerDialogue: I can play later for sure! I wanna see my other presents.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 389515ed54ad5f5438f3a02d4a9f636a, type: 2}
     PlayerDialogue: Leave me ALONE!
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Expression:
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 6c05a1b900e54cc4db026e9e3ac109bc, type: 2}
     PlayerDialogue: "I\u2019m tired. We can play later."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Charming_Observation:
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 6c05a1b900e54cc4db026e9e3ac109bc, type: 2}
     PlayerDialogue: "I\u2019ve got other presents that I wanna see first."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Assertive_Observation:
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 389515ed54ad5f5438f3a02d4a9f636a, type: 2}
     PlayerDialogue: "No! You\u2019re annoying!"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Observation:
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 389515ed54ad5f5438f3a02d4a9f636a, type: 2}
     PlayerDialogue: Grandma wants to talk with me, I think.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Charming_Question:
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 6c05a1b900e54cc4db026e9e3ac109bc, type: 2}
     PlayerDialogue: Hey, since when have you been into cards, anyhow?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Assertive_Question:
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 389515ed54ad5f5438f3a02d4a9f636a, type: 2}
     PlayerDialogue: "Don\u2019t you have anything better to be doing?"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Sappy_Question:
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 389515ed54ad5f5438f3a02d4a9f636a, type: 2}
     PlayerDialogue: Do you even know how to play with them?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Silent:
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 0a4ed63cd9af8a74782555ef5b681bd7, type: 2}
     PlayerDialogue: ...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}

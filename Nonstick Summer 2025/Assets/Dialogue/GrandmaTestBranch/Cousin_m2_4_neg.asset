@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
-  m_Name: Cousin_m2_4_pos
+  m_Name: Cousin_m2_4_neg
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Aw, but I wanna play now!
+  - Dialogue: You're so mean!
     Portrait: {fileID: 0}
   - Dialogue: Please? Please? Please?
     Portrait: {fileID: 0}
@@ -74,7 +74,7 @@ MonoBehaviour:
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Silent:
-    BranchingDialogue: {fileID: 11400000, guid: 8283ddc3a09fca94c92ded91f590e81c, type: 2}
+    BranchingDialogue: {fileID: 11400000}
     PlayerDialogue: ...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}

@@ -10,73 +10,71 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
-  m_Name: Cousin_m2_1_pos
+  m_Name: Cousin_m2_2_neg
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Hey! Hey! Hey!
-    Portrait: {fileID: 1760810401, guid: 91ce67e45f0fe424a9920e2c3763bd9f, type: 3}
-  - Dialogue: Guess what?
+  - Dialogue: Hmph...
     Portrait: {fileID: 0}
-  - Dialogue: ...
+  - Dialogue: Ok, well, get this!
     Portrait: {fileID: 0}
-  - Dialogue: ...C'mon! Guess!
+  - Dialogue: I've got my own cards! Isn't that cool?
     Portrait: {fileID: 0}
   Charming_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
-    PlayerDialogue: Um... Ok! What?
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
+    PlayerDialogue: "Yeah! That\u2019s really cool!"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
     BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
-    PlayerDialogue: Leave me alone!
+    PlayerDialogue: Not really.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -5
   Sappy_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
-    PlayerDialogue: Look at all of the presents that I got! They're so awesome.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 10
-  Charming_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
-    PlayerDialogue: Oh! I didn't know you'd be here.
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
+    PlayerDialogue: I guess.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
+  Charming_Observation:
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
+    PlayerDialogue: Huh! Those look new.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
   Assertive_Observation:
     BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
-    PlayerDialogue: I can't guess if I don't know what this is about, stupid.
+    PlayerDialogue: Mine are better.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
-    PlayerDialogue: "You haven\u2019t even wished me a happy birthday yet..."
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
+    PlayerDialogue: This is MY birthday...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: -10
   Charming_Question:
-    BranchingDialogue: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
-    PlayerDialogue: What am I supposed to be guessing?
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
+    PlayerDialogue: Woah. When did you get those?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: 5
   Assertive_Question:
-    BranchingDialogue: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
-    PlayerDialogue: Do I have to?
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
+    PlayerDialogue: "Hey, isn\u2019t this supposed to be MY birthday?"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Sappy_Question:
-    BranchingDialogue: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
-    PlayerDialogue: Where have you been lately?
+    BranchingDialogue: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
+    PlayerDialogue: You collect them, too?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: 15
   Silent:
-    BranchingDialogue: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
+    BranchingDialogue: {fileID: 11400000, guid: a30f23876f7fcfe4180258c3133ef9fa, type: 2}
     PlayerDialogue: ...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}

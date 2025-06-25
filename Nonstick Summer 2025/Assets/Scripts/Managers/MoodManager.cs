@@ -22,10 +22,28 @@ public class MoodManager: MonoBehaviour
 
     [HideInInspector] public static Dictionary<CardEmotion, MoodStats> emotions = new Dictionary<CardEmotion, MoodStats>();
 
+    public MoodManager MoodManagerReference;
+
     [Foldout("Mood Stats")][SerializeField] private MoodStats charmingStartingValues;
     [Foldout("Mood Stats")][SerializeField] private MoodStats assertiveStartingValues;
     [Foldout("Mood Stats")][SerializeField] private MoodStats sappyStartingValues;
 
+    public MoodManager(MoodStats charmingStartingValues, MoodStats assertiveStartingValues, MoodStats sappyStartingValues)
+    {
+
+        emotions.Add(CardEmotion.Charming, charmingStartingValues);
+        emotions.Add(CardEmotion.Assertive, assertiveStartingValues);
+        emotions.Add(CardEmotion.Sappy, sappyStartingValues);
+
+    }
+
+
+    void Start()
+    {
+
+        MoodManagerReference = MoodManagerReference ?? new MoodManager(charmingStartingValues, assertiveStartingValues, sappyStartingValues);
+
+    }
     /// <summary>
     /// updates the energy costs of cards based on emotions expressed
     /// </summary>

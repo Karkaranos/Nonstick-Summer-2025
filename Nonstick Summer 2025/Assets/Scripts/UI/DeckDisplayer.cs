@@ -249,13 +249,13 @@ public class DeckDisplayer : MonoBehaviour
              * so it works for now*/
             
             VisualDisplay.Add(Instantiate(_cardPrefab, Vector2.zero, Quaternion.identity, transform));
-            //_visualDisplay[i].GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            //_visualDisplays[i].GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
 
             var cardDisplay = VisualDisplay[i].GetComponent<CardDisplay>();
             displayedData.Add(cards[i]);
 
             VisualDisplay[i].transform.localPosition = position[i];
-            cardDisplay.UpdatePosition();
+            cardDisplay.SetCurrentPositionAsBase();
 
             cardDisplay.SetCard(cards[i]);
             cardDisplay.OnMouseDown.AddListener(OnCardClicked);
@@ -320,8 +320,6 @@ public class DeckDisplayer : MonoBehaviour
 
     #region Computational Variables
 
-    private int finishedDeselects;
-
     private bool showSwapSelected => MaxSelectedCards == 1;
 
     #endregion
@@ -363,7 +361,7 @@ public class DeckDisplayer : MonoBehaviour
 
         selectedCards.Add(cardDisplay);
 
-        cardDisplay.SetPositionOffset( (Vector3)selectedCardOffset );
+        cardDisplay.SetPositionAndOffset( offset: (Vector3)selectedCardOffset );
         cardDisplay.transform.SetAsFirstSibling(); // bring to front so player can see it
 
         OnCardsSelectedChanged.Invoke();

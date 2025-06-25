@@ -28,6 +28,7 @@ public partial class CardDisplay : MonoBehaviour
     private CardData card;
 
     private MouseInteractionEvents mouseInteraction;
+    private RectTransform rectTransform;
 
     public UnityEvent<CardDisplay> OnMouseDown = new UnityEvent<CardDisplay> ();
 
@@ -36,6 +37,7 @@ public partial class CardDisplay : MonoBehaviour
         if(card != null) SetCard(card); // mostly for debugging
 
         mouseInteraction = GetComponent<MouseInteractionEvents>();
+        rectTransform = GetComponent<RectTransform>();
 
         mouseInteraction.OnMouseHoverStart.AddListener(OnMouseHoverStart);
         mouseInteraction.OnMouseHoverEnd.AddListener(OnMouseHoverEnd);

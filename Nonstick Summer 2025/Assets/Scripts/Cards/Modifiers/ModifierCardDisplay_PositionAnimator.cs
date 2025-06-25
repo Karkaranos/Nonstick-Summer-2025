@@ -1,7 +1,7 @@
 /*****************************************************************************
-* File Name :         CardDisplay_PositionAnimator.cs
+* File Name :         ModifierCardDisplay_PositionAnimator.cs
 * Author :            Toby
-* Creation Date :     June 22, 2025
+* Creation Date :     June 24, 2025
 *
 * Brief Description : Cards have a base position, and a offset position. 
 * Useful for cases when you might want a card to move up an inch when it is selected,
@@ -9,23 +9,20 @@
 * 
 * Use these utility functions to automatically animate cards.
 * 
-* This script takes advantage of the fact that the entire card display is childed under
-* an empty parent.
-* 
 *****************************************************************************/
 
 using UnityEngine;
 using NaughtyAttributes;
 using System.Collections;
 
-public partial class CardDisplay : MonoBehaviour
+public partial class ModifierCardDisplay : MonoBehaviour
 {
     [Header("Position Animation")]
 
     [Tooltip("Canvas units/sec")]
-    [SerializeField] private float MovementSpeed = 1000;
+    [SerializeField] private float MovementSpeed = 1500;
 
-    private Vector2 basePosition, positionOffset;
+    private Vector2 basePosition, positionOffset = default;
     private Coroutine translatePositionCoroutine;
 
     public void SetCurrentPositionAsBase()
@@ -34,7 +31,7 @@ public partial class CardDisplay : MonoBehaviour
         positionOffset = Vector2.zero;
     }
 
-    public void SetPositionAndOffsetNoAnimation(Vector2? position = null, Vector2? offset = null)
+    public void SetPositionAndOffsetNoAnimation(Vector2? position =null, Vector2? offset = null)
     {
         // real problem that happens sometimes
         if (this == null) return;
@@ -48,7 +45,7 @@ public partial class CardDisplay : MonoBehaviour
         cardBackground.anchoredPosition = positionOffset;
     }
 
-    public void SetPosition(Vector2 position, float? speed = null)
+    public void SetPosition(Vector2 position, float? speed=null)
     {
         // real problem that happens sometimes
         if (this == null) return;
@@ -66,7 +63,7 @@ public partial class CardDisplay : MonoBehaviour
         translatePositionCoroutine = StartCoroutine(TranslatePosition(speed));
     }
 
-    public void SetPositionAndOffset(Vector2? position = null, Vector2? offset = null, float? speed = null)
+    public void SetPositionAndOffset(Vector2? position=null, Vector2? offset=null, float? speed = null)
     {
         // real problem that happens sometimes
         if (this == null) return;

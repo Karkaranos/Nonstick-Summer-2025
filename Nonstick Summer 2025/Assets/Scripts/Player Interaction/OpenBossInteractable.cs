@@ -51,6 +51,7 @@ public class OpenBossInteractable : MonoBehaviour
         if (other.GetComponent<PlayerMovement>())
         {
             OpenCanvas();
+            Destroy(gameObject.GetComponent<Collider>());
         }
     }
 

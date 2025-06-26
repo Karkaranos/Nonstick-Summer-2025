@@ -114,7 +114,8 @@ public class DialogueManager
 
         ReadUserInput = false;
 
-        playedCard.TryTriggerStampEffect(StampTriggerConditions.BeforeCardPlayed);
+        if(playedCard != null)
+            playedCard.TryTriggerStampEffect(StampTriggerConditions.BeforeCardPlayed);
         //TODO wait for potential _modifier animations to finish
 
         yield return DialogueUIController.Instance.ToggleUIForDialogueProgression(false);

@@ -75,7 +75,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         energyBar.Initalize();
         relationshipSlider.Initialize(RelationshipManager.characterRelationships[character].maxValue, RelationshipManager.characterRelationships[character].currentValue);
-        deckDisplay.SetRemainingDeck(ref DialogueManager.PlayerHand);
+        deckDisplay.SetDisplayDeck(ref DialogueManager.PlayerHand);
+        deckDisplay.SetRemainingDeck(DeckManager.PlayerDeck.GetCopy());
         DeckDisplay.DrawToDefaultHand();
 
         deckDisplay.OnCardsSelectedChanged.AddListener(OnSelectionUpdated);
@@ -240,14 +241,15 @@ public class DialogueUIController : Singleton<DialogueUIController>
         playCardButtonText.text = interactable ? CardNotSelectedText : "->";
         playCardButton.SetColors(normalColor: Color.white, highlightedColor: Color.gray, selectedColor: Color.white, pressedColor:Color.gray);
 
+        deckDisplay?.gameObject.SetActive(interactable);
+
         //okay this isn't as clean here but whatever
-        if(interactable)
+        if (interactable)
         {
             Debug.LogWarning("This statement runs too often");
             deckDisplay.DrawOneCard();
         }
 
-        deckDisplay?.gameObject.SetActive(interactable);
 
         yield return null;
 

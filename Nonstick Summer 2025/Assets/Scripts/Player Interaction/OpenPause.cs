@@ -30,14 +30,15 @@ public class OpenPause : MonoBehaviour
     /// </summary>
     public void PausePressed()
     {
-        Debug.Log("Called");
-        if (UITransitionManager.PlayerInMenu &&
-            UITransitionManager.CurrentCanvasReference.GetComponent<PauseAndSettings>() != null)
+        if (UITransitionManager.PlayerInMenu)
         {
-            UITransitionManager.CloseMenu();
+            // close pause or inventory menu if those are open.
+            var currentMenu = UITransitionManager.CurrentCanvasReference;
+            if (currentMenu.GetComponent<PauseAndSettings>() || currentMenu.GetComponent<ModifierInventoy>())
+                UITransitionManager.CloseMenu();
+
             return;
         }
-
         // Prevents the player from pausing while in combat. can be revisited later
         UITransitionManager.OpenMenuIfNoOtherMenusAreOpenRightNow(PauseMenu, out GameObject _);
 
@@ -58,7 +59,6 @@ public class OpenPause : MonoBehaviour
     /// </summary>
     private void InventoryPressed()
     {
-        Debug.Log("Called");
         if (UITransitionManager.PlayerInMenu &&
             UITransitionManager.CurrentCanvasReference.GetComponent<ModifierInventoy>() != null)
         {

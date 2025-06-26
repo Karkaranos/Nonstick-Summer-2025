@@ -23,9 +23,9 @@ public partial class CardDisplay : MonoBehaviour
     [Header("Position Animation")]
 
     [Tooltip("Canvas units/sec")]
-    [SerializeField] private float MovementSpeed = 1000;
+    [SerializeField] private float MovementSpeed = 1500;
 
-    private Vector2 basePosition, positionOffset;
+    private Vector2 basePosition, positionOffset=default;
     private Coroutine translatePositionCoroutine;
 
     public void SetCurrentPositionAsBase()
@@ -81,6 +81,9 @@ public partial class CardDisplay : MonoBehaviour
             else
                 return;
         }
+
+        // another real problem that happens sometimes
+        this.gameObject.SetActive(true);
 
         translatePositionCoroutine = StartCoroutine(TranslatePosition(speed));
     }

@@ -26,6 +26,14 @@ public class ModifierManager
 
     private static List<ModifierData> _modifierCollection = new List<ModifierData>();
 
+    public ModifierManager(ModifierData[] defaultModifiers)
+    {
+        foreach(var modifier in defaultModifiers)
+        {
+            _modifierCollection.Add(modifier);
+        }
+    }
+
     #region Function References
     
     /// <summary>

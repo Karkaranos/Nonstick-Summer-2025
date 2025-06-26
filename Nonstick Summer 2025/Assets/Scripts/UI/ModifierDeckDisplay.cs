@@ -21,6 +21,7 @@ using NaughtyAttributes;
 using UnityEngine.Events;
 using Unity.VisualScripting;
 using UnityEngine.UIElements;
+using static Unity.Cinemachine.CinemachineFreeLookModifier;
 
 // This script needed to be a Monobehavior to get some of the references needed
 public class ModifierDeckDisplay : MonoBehaviour
@@ -112,6 +113,8 @@ public class ModifierDeckDisplay : MonoBehaviour
             display.SetCard(newCard);
             display.SetPositionAndOffsetNoAnimation(position:spawnCardsPosition, offset:Vector2.zero);
             _visualDisplays.Add(display);
+
+            display.OnMouseDown.AddListener(OnCardClicked);
         }
     }
 
@@ -143,7 +146,7 @@ public class ModifierDeckDisplay : MonoBehaviour
             float x = Mathf.Lerp(left, right, t);
             modifier.SetPositionAndOffset(position:new Vector2(x,0), offset:Vector2.zero, speed:5000);
 
-            modifier.OnMouseDown.AddListener(OnCardClicked);
+            //modifier.OnMouseDown.AddListener(OnCardClicked);
         }
 
         // Assigns the last position to the right side of the display area, as a percaution
@@ -178,6 +181,7 @@ public class ModifierDeckDisplay : MonoBehaviour
     // See SpawnCards
     private void OnCardClicked(ModifierCardDisplay cardDisplay)
     {
+        Debug.Log("selected changed");
         if (selectedCard == cardDisplay)
             DeselectCard();
         else
@@ -200,7 +204,7 @@ public class ModifierDeckDisplay : MonoBehaviour
         selectedCard = cardDisplay;
 
         cardDisplay.SetPositionAndOffset(offset: (Vector3) selectedCardOffset);
-        cardDisplay.transform.SetAsFirstSibling(); // bring to front so player can see it
+        cardDisplay.transform.SetAsLastSibling(); // bring to front so player can see it
 
         OnModifierSelectedChanged.Invoke();
     }

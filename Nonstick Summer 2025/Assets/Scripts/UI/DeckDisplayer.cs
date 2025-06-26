@@ -4,6 +4,11 @@ Date Created :          June 6, 2025
 Date Modified :         June 26, 2025
 Brief Description :     Handles visual display for the deck
 
+Inside of you there are two decks: your hand and 
+your remaining cards.
+You can still display cards without ever setting 
+remaining cards, you just gotta be careful.
+
 I might've gone really overboard with the animations, sorry cader :,(
 
 TODO :                  Create functions for easier updating
@@ -62,9 +67,12 @@ public class DeckDisplayer : MonoBehaviour
         rectTransformCenter = transform.localPosition;
     }
 
-    public void SetDisplayDeck(ref Deck deckRef)
+    public void SetDisplayDeck(ref Deck deckRef, bool displayAll=true)
     {
         displayedData = deckRef;
+
+        if(displayAll)
+            DisplayAllCards();
     }
 
     public void SetRemainingDeck(ref Deck deckRef)
@@ -72,6 +80,11 @@ public class DeckDisplayer : MonoBehaviour
         RemainingDeckRef = deckRef;
         //This was moved elsewhere
         //DrawToDefaultHand();
+    }
+
+    public void SetRemainingDeck(Deck deckRef)
+    {
+        RemainingDeckRef = deckRef;
     }
 
     /// <summary>
@@ -118,8 +131,11 @@ public class DeckDisplayer : MonoBehaviour
             var newCardGameObj = Instantiate(_cardPrefab, this.transform);
             var display = newCardGameObj.GetComponent<CardDisplay>();
             display.SetCard(newCard);
+
             display.SetPositionAndOffsetNoAnimation(position: spawnCardsPosition, offset: Vector2.zero);
             _visualDisplays.Add(display);
+
+            display.OnMouseDown.AddListener(OnCardClicked);
         }
     }
 
@@ -183,55 +199,6 @@ public class DeckDisplayer : MonoBehaviour
 
         // Generates spawn positions
         GenerateAndSetPositions(0, n - 1);
-
-        // Spawns the specified number of cards
-        SpawnCards(RemainingDeckRef.PopAndReplaceNCards(n), spawnPositions);*/
-    }
-
-
-    /// <summary>
-    /// Displays a specified number of cards from the player's hand
-    /// If no number is specified, displays max number of cards visible as stated on GameManager
-    /// </summary>
-    /// <param name="n">The number of cards to display</param>
-    public void DisplayNCards(int n=0)
-    {
-        if (_visualDisplays == null)
-            _visualDisplays = new List<CardDisplay>();
-
-        // clear modifiers that arent in hand anymore
-        var cardsNotInHand = _visualDisplays
-            .Where(card => !RemainingDeckRef.Cards.Contains(card.cardData));
-
-        foreach (var disp in cardsNotInHand)
-        {
-            Destroy(disp);
-            _visualDisplays.Remove(disp);
-        }
-
-        if (RemainingDeckRef.Cards.Count == 0)
-            return;
-
-        SpawnNewCards();
-
-        // Generates spawn positions
-        GenerateAndSetPositions();
-
-        /*ClearDisplay();
-
-        Debug.Log("Displaying " + n + " of " + RemainingDeckRef.Cards.Count + " cards.");
-
-        // If no value was passed in, set the display count to the number from GameManager
-        if(n==0)
-        {
-            n = DefaultHandSize;
-        }
-
-        // Creates referenced array
-        Vector2[] spawnPositions = new Vector2[n];
-
-        // Generates spawn positions
-        GenerateAndSetPositions(0, n-1);
 
         // Spawns the specified number of cards
         SpawnCards(RemainingDeckRef.PopAndReplaceNCards(n), spawnPositions);*/
@@ -310,13 +277,6 @@ public class DeckDisplayer : MonoBehaviour
         startIndex = startIndex ?? 0;
         endIndex = endIndex ?? _visualDisplays.Count-1;
 
-        // Assign the first position to the left side of the display area
-        //Vector2 nextPosition = new Vector2(_bufferFromEdgeOfRegion - (.5f * _dimensions.x) + rectTransformCenter.x, 0);
-        //Vector2 nextPosition = new Vector2(cardArea.rect.xMin + _bufferFromEdgeOfRegion, 0);
-
-        // Calculate the space needed
-        //float additiveValue = (_dimensions.x - (_bufferFromEdgeOfRegion*2)) / (_visualDisplays.Count);
-
         float left = cardArea.rect.xMin + _bufferFromEdgeOfRegion;
         float right = cardArea.rect.xMax - _bufferFromEdgeOfRegion;
 
@@ -326,7 +286,7 @@ public class DeckDisplayer : MonoBehaviour
 
         for (int i = startIndex.Value; i <= endIndex.Value; i++)
         {
-            var modifier = _visualDisplays[i];
+            var card = _visualDisplays[i];
 
             float t;
             if (_visualDisplays.Count <= 1)
@@ -336,10 +296,15 @@ public class DeckDisplayer : MonoBehaviour
 
             float x = Mathf.Lerp(left, right, t);
             Debug.Log(x);
-            modifier.SetPositionAndOffset(position: new Vector2(x, 0), offset: Vector2.zero, speed: 5000);
-
-            modifier.OnMouseDown.AddListener(OnCardClicked);
+            card.SetPositionAndOffset(position: new Vector2(x, 0), offset: Vector2.zero, speed: 5000);
         }
+
+        // Assign the first position to the left side of the display area
+        //Vector2 nextPosition = new Vector2(_bufferFromEdgeOfRegion - (.5f * _dimensions.x) + rectTransformCenter.x, 0);
+        //Vector2 nextPosition = new Vector2(cardArea.rect.xMin + _bufferFromEdgeOfRegion, 0);
+
+        // Calculate the space needed
+        //float additiveValue = (_dimensions.x - (_bufferFromEdgeOfRegion*2)) / (_visualDisplays.Count);
 
         // Assigns the last position to the right side of the display area, as a percaution
         // also yeah the numbers are weird. I will fix it later. i'm a lil tired tbh
@@ -364,6 +329,8 @@ public class DeckDisplayer : MonoBehaviour
         positions[end] =    new Vector2(rectTransformCenter.x + .5f *_dimensions.x + .3f * _cardWidth -_bufferFromEdgeOfRegion, 150);*/
     }
 
+    #region Obselete
+
     /// <summary>
     /// Contains the actual logic for spawning the cards
     /// Adds them to a list for storage
@@ -374,17 +341,17 @@ public class DeckDisplayer : MonoBehaviour
     private void SpawnCards(CardData[] cards, Vector2[] position)
     {
         displayedData.Clear();
-        for(int i=0; i<cards.Length; i++)
+        for (int i = 0; i < cards.Length; i++)
         {
             //Debug.Log("spawning card at " + position[i]);
             /* There is probably a better way to do this
              * However, I needed to spawn the card, set its anchor, then adjust the position after setting the anchor
              * so it works for now*/
-            
+
             var displayGameobject = Instantiate(_cardPrefab, Vector2.zero, Quaternion.identity, transform);
             var cardDisplay = displayGameobject.GetComponent<CardDisplay>();
             _visualDisplays.Add(cardDisplay);
-            
+
             displayedData.Add(cards[i]);
 
             cardDisplay.SetPositionAndOffset(position: position[i], offset: Vector2.zero, speed: 5000);
@@ -394,7 +361,34 @@ public class DeckDisplayer : MonoBehaviour
         }
     }
 
-    #region Obselete
+    /// <summary>
+    /// Displays a specified number of cards from the player's hand
+    /// If no number is specified, displays max number of cards visible as stated on GameManager
+    /// </summary>
+    /// <param name="n">The number of cards to display</param>
+    [Obsolete]
+    public void DisplayNCards(int n = 0)
+    {
+        ClearDisplay();
+
+        Debug.Log("Displaying " + n + " of " + RemainingDeckRef.Cards.Count + " cards.");
+
+        // If no value was passed in, set the display count to the number from GameManager
+        if (n == 0)
+        {
+            n = DefaultHandSize;
+        }
+
+        // Creates referenced array
+        Vector2[] spawnPositions = new Vector2[n];
+
+        // Generates spawn positions
+        GenerateAndSetPositions(0, n - 1);
+
+        // Spawns the specified number of cards
+        SpawnCards(RemainingDeckRef.PopAndReplaceNCards(n), spawnPositions);
+    }
+
     // ok so I was being a little bit of a dumbass trying to get this to work
     // will probably revisit it later for efficiency 
     // actually nevermind the entire thing is more complex
@@ -495,7 +489,7 @@ public class DeckDisplayer : MonoBehaviour
         selectedCards.Add(cardDisplay);
 
         cardDisplay.SetPositionAndOffset( offset: (Vector3)selectedCardOffset );
-        cardDisplay.transform.SetAsFirstSibling(); // bring to front so player can see it
+        cardDisplay.transform.SetAsLastSibling(); // bring to front so player can see it
 
         OnCardsSelectedChanged.Invoke();
     }

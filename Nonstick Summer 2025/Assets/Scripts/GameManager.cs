@@ -27,7 +27,7 @@ public class GameManager : Singleton<GameManager>
     public static ModifierManager ModifierManagerReference;
     public static Objectives ObjectiveReference;
 
-    public static int MaxCardsVisibleInDeck = 7;
+    public static int MaxCardsVisibleInDeck = 100; // why is this here?
 
     [Foldout("Card Styles")] [SerializeField] private CardValueStyle 
         Card_CharmingStyle, Card_AssertiveStyle, Card_SappyStyle,
@@ -48,7 +48,7 @@ public class GameManager : Singleton<GameManager>
     [Foldout("Social Battery")] [SerializeField] private int _energyGainedPerRound=1;
     [Foldout("Social Battery")][SerializeField] private int _energyGainedIfSilent = 2;
     [Foldout("Social Battery")] [SerializeField] private int _maxEnergy=10;
-    [Foldout("Dialogue Manager")] public static int DefaultCardsInHand=5;
+    [Foldout("Dialogue Manager")] public static int DefaultCardsInHand=5; // why is this hardcoded?
 
     [Header("Relationship Manager")]
     [Foldout("Relationship Manager")] [SerializeField] private RelationshipStats grandmaStartingValue;

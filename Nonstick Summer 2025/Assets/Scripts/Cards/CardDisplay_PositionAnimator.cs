@@ -82,8 +82,7 @@ public partial class CardDisplay : MonoBehaviour
                 return;
         }
 
-        // another real problem that happens sometimes
-        this.gameObject.SetActive(true);
+        Debug.Log("base position: " + basePosition);
 
         translatePositionCoroutine = StartCoroutine(TranslatePosition(speed));
     }
@@ -126,6 +125,9 @@ public partial class CardDisplay : MonoBehaviour
             cardBackground.anchoredPosition = Vector2.MoveTowards(currentOffset, positionOffset, speed.Value * Time.deltaTime);
             yield return null;
         }
+
+        Debug.Log("final base position: " + currentBasePosition);
+
 
         translatePositionCoroutine = null;
     }

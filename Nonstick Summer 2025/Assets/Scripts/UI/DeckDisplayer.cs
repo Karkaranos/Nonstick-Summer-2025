@@ -99,10 +99,10 @@ public class DeckDisplayer : MonoBehaviour
             _visualDisplays = new List<CardDisplay>();
 
         // clear modifiers that arent in hand anymore
-        var cardsNotInHand = _visualDisplays
+        var cardsRemovedFromHand = _visualDisplays
             .Where(card => !displayedData.Cards.Contains(card.cardData));
 
-        foreach (var disp in cardsNotInHand)
+        foreach (var disp in cardsRemovedFromHand)
         {
             Destroy(disp);
             _visualDisplays.Remove(disp);

@@ -75,7 +75,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         energyBar.Initalize();
         relationshipSlider.Initialize(RelationshipManager.characterRelationships[character].maxValue, RelationshipManager.characterRelationships[character].currentValue);
-        deckDisplay.SetDeck(ref DialogueManager.PlayerHand);
+        deckDisplay.SetRemainingDeck(ref DialogueManager.PlayerHand);
+        DeckDisplay.DrawToDefaultHand();
 
         deckDisplay.OnCardsSelectedChanged.AddListener(OnSelectionUpdated);
 

@@ -123,13 +123,6 @@ public class ModifierDeckDisplay : MonoBehaviour
     /// <param name="end">The ending index</param>
     private void GenerateAndSetPositions()
     {
-        // Assign the first position to the left side of the display area
-        //Vector2 nextPosition = new Vector2(_bufferFromEdgeOfRegion - (.5f * _dimensions.x) + rectTransformCenter.x, 0);
-        //Vector2 nextPosition = new Vector2(cardArea.rect.xMin + _bufferFromEdgeOfRegion, 0);
-
-        // Calculate the space needed
-        //float additiveValue = (_dimensions.x - (_bufferFromEdgeOfRegion*2)) / (_visualDisplays.Count);
-
         float left = cardArea.rect.xMin + _bufferFromEdgeOfRegion;
         float right = cardArea.rect.xMax - _bufferFromEdgeOfRegion;
 
@@ -146,8 +139,6 @@ public class ModifierDeckDisplay : MonoBehaviour
                 t = 0.5f; // halfway through to avoid dividing by 0
             else
                 t = (float)i / (_visualDisplays.Count - 1);
-
-            Debug.Log(t);
 
             float x = Mathf.Lerp(left, right, t);
             modifier.SetPositionAndOffset(position:new Vector2(x,0), offset:Vector2.zero, speed:5000);

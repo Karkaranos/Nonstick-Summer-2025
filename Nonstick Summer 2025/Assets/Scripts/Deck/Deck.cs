@@ -23,6 +23,8 @@ public class Deck
 
     public List<CardData> Cards { get => _cards;}
 
+    public int Count => _cards.Count;
+
     private int numberOfCardsDrawn = 0;
     #endregion
 

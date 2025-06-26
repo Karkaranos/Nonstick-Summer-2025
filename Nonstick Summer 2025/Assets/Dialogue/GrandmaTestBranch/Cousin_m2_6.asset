@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Cousin_m2_6
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: Welp, bye-bye!
+    Portrait: {fileID: 0}
+  Charming_Expression:
+    BranchingDialogue: {fileID: 0}
+    PlayerDialogue: Oh! Sweet!
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Expression:
+    BranchingDialogue: {fileID: 0}
+    PlayerDialogue: Hey! Those are supposed to be MINE!
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Expression:
+    BranchingDialogue: {fileID: 0}
+    PlayerDialogue: My cards...
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Charming_Observation:
+    BranchingDialogue: {fileID: 0}
+    PlayerDialogue: "...Wait, what?! You can\u2019t do that!"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Assertive_Observation:
+    BranchingDialogue: {fileID: 0}
+    PlayerDialogue: Hey! You opened MY present!
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Observation:
+    BranchingDialogue: {fileID: 0}
+    PlayerDialogue: That was supposed to be a gift.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Charming_Question:
+    BranchingDialogue: {fileID: 0}
+    PlayerDialogue: When did you get those?!
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Assertive_Question:
+    BranchingDialogue: {fileID: 0}
+    PlayerDialogue: YOU OPENED UP MY PRESENT? YOU STOLE MY CARDS?!
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Question:
+    BranchingDialogue: {fileID: 0}
+    PlayerDialogue: "Hey, that\u2019s kind of rude. You know that, right?"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Silent:
+    BranchingDialogue: {fileID: 0}
+    PlayerDialogue: ...
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  End: 1

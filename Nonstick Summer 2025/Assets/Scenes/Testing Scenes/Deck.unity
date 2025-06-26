@@ -488,6 +488,93 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1001 &1427707242
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 621988117311664097, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.75493
+      objectReference: {fileID: 0}
+    - target: {fileID: 621988117311664097, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 621988117311664097, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.39565
+      objectReference: {fileID: 0}
+    - target: {fileID: 621988117311664097, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7208324
+      objectReference: {fileID: 0}
+    - target: {fileID: 621988117311664097, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 621988117311664097, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.69310945
+      objectReference: {fileID: 0}
+    - target: {fileID: 621988117311664097, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 621988117311664097, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 621988117311664097, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 87.754
+      objectReference: {fileID: 0}
+    - target: {fileID: 621988117311664097, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010602745331249561, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: m_Name
+      value: Side NPC
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3216093029526474184, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7010602745331249561, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1427707244}
+  m_SourcePrefab: {fileID: 100100000, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+--- !u!1 &1427707243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7010602745331249561, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+  m_PrefabInstance: {fileID: 1427707242}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1427707244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427707243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b949eba572aeb7409f4e7a6d838d049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptCanvas: {fileID: 8537043226331206475, guid: bf3dfcdf21315f84998bb1e2d5d1939b, type: 3}
+  combatPrompt: Talk with Grandma?
+  preCombatLine: Hi honey! It's been a while since I heard from you. How has school
+    been?
+  characterSprite: {fileID: 1760810401, guid: 91ce67e45f0fe424a9920e2c3763bd9f, type: 3}
+  CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: f8dd72b5a21b9b341ae4f2b2aa00a8c3, type: 3}
+  StartingDialogueBranch: {fileID: 11400000, guid: a30f23876f7fcfe4180258c3133ef9fa, type: 2}
+  cameraAnchor: {fileID: 0}
+  character: 0
 --- !u!1 &1692684990
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,3 +1051,4 @@ SceneRoots:
   - {fileID: 1796551426}
   - {fileID: 955789318065267691}
   - {fileID: 1692684992}
+  - {fileID: 1427707242}

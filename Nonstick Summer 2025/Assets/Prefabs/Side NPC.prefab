@@ -128,9 +128,9 @@ GameObject:
   m_Component:
   - component: {fileID: 621988117311664097}
   - component: {fileID: 454548493651250203}
-  - component: {fileID: 3216093029526474184}
+  - component: {fileID: 3722136018739801623}
   m_Layer: 0
-  m_Name: NPC Example
+  m_Name: Side NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,7 +176,7 @@ CapsuleCollider:
   m_Height: 3.37
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: -0.014939785}
---- !u!114 &3216093029526474184
+--- !u!114 &3722136018739801623
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,10 +185,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7010602745331249561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8e7a984732793e47a9de0995e255ffe, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b949eba572aeb7409f4e7a6d838d049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  promptCanvas: {fileID: 8537043226331206475, guid: bf3dfcdf21315f84998bb1e2d5d1939b, type: 3}
+  combatPrompt: Talk with Grandma?
+  preCombatLine: Hi honey! It's been a while since I heard from you. How has school
+    been?
+  characterSprite: {fileID: 1760810401, guid: 91ce67e45f0fe424a9920e2c3763bd9f, type: 3}
   CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: f8dd72b5a21b9b341ae4f2b2aa00a8c3, type: 3}
   StartingDialogueBranch: {fileID: 11400000, guid: a30f23876f7fcfe4180258c3133ef9fa, type: 2}
-  cameraAnchor: {fileID: 707064104867182951}
+  cameraAnchor: {fileID: 0}
   character: 0

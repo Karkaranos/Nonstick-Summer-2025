@@ -55,8 +55,8 @@ public class Objectives : MonoBehaviour
     {
         if (_objectiveCanvas != null)
             _objectiveCanvas?.SetActive(visibility);
-        else
-            Debug.LogError("No objective Canvas");
+        //else
+            //Debug.LogError("No objective Canvas");
     }
 
 

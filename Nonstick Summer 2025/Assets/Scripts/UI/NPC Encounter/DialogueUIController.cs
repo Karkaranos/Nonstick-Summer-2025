@@ -61,7 +61,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     {
         DialogueManager.OnOpenCombatUI(startBranch, character);
 
-        MusicManager.instance.TransitionMusic(true);
+        MusicManager.instance.StartCombat(0);
 
         // all the rest of this ui initialization stuff is gonna run every time an npc combat encounter happens.
         // i think our game is not complicated enough that its gonna be a problem performance wise, 
@@ -207,6 +207,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     {
         if(DialogueManager.CurrentDialogueBranch.End)
             playCardButtonText.text = EndDialogueText;
+        MusicManager.instance.StartHouse();
     }
 
     public IEnumerator ToggleUIForDialogueProgression(bool interactable)

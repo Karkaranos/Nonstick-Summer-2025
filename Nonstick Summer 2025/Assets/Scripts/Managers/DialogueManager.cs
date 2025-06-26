@@ -68,6 +68,16 @@ public class DialogueManager
             yield break;
         }
 
+        if (CurrentRelationshipScore > relationshipScore)
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.NegRelationSFX);
+            Debug.Log("NegativeSFX played");
+        }
+        else
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.PosRelationSFX);
+        }
+
         RelationshipManager.characterRelationships[currentCharacter].currentValue = relationshipScore;
 
         if(DialogueUIController.Instance != null)

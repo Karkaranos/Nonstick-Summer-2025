@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{8cc2520f-ea82-4825-952e-de0d8caf6396}">
+		<property name="name">
+			<value>Reactions</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a71f947b-03ec-4e4b-9205-8afd9a06b6dc}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{cb90c7ee-4103-4627-8eee-ee4d28cb0642}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{cb90c7ee-4103-4627-8eee-ee4d28cb0642}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>7</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Agree</value>
+			<value>Disgust</value>
+			<value>Laugh</value>
+			<value>Neutral</value>
+			<value>Sad</value>
+			<value>Satisfaction</value>
+			<value>Suprise</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

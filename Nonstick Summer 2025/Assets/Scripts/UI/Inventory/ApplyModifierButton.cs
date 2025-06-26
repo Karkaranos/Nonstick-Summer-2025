@@ -25,6 +25,12 @@ public class ApplyModifierButton : MonoBehaviour
     void Start()
     {
         button = GetComponent<Button>();
+        button.onClick.AddListener(OnButtonPressed);
+
+        deckDisplay.OnCardsSelectedChanged.AddListener(OnAnyCardSelectedChanged);
+        modifierDisplay.OnSelectedChanged.AddListener(OnAnyCardSelectedChanged);
+
+        OnAnyCardSelectedChanged();
     }
 
     /// <summary>
@@ -32,8 +38,10 @@ public class ApplyModifierButton : MonoBehaviour
     /// </summary>
     private void OnAnyCardSelectedChanged()
     {
+        Debug.Log("any selected changed");
         var canPlay = CanPlayModifier();
-        button.enabled = canPlay;
+        //button.enabled = canPlay;
+        button.SetColors(normalColor: canPlay? Color.green: Color.gray);
     }
 
     private void OnButtonPressed()
@@ -43,6 +51,11 @@ public class ApplyModifierButton : MonoBehaviour
 
         // All of my work in the last week in one grand ass line of code...
         modifierDisplay.selectedCard.modifierData.TryApplyModifier(deckDisplay.selectedCards.Select(display=>display.cardData).ToArray());
+
+        ModifierManager.RemoveCard(modifierDisplay.selectedCard.modifierData);
+        modifierDisplay.DisplayAllCards();
+        deckDisplay.DeselectAllCards();
+        deckDisplay.DisplayAllCards();
     }
 
     private bool CanPlayModifier()

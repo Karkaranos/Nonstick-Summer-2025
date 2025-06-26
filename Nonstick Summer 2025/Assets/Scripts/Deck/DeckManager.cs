@@ -19,7 +19,10 @@ public class DeckManager
 
     public DeckManager(CardData[] defaultPlayerCards)
     {
-        PlayerDeck.Add(defaultPlayerCards);
+        foreach (CardData card in defaultPlayerCards)
+        {
+            PlayerDeck.Add(card.CopyCard(),false);
+        }
     }
 
     /// <summary>

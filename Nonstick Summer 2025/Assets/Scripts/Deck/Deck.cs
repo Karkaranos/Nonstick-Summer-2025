@@ -324,7 +324,7 @@ public class Deck
         // Returning <n cards
         else if (Cards.Count >= 0)
         {
-            CardData[] result = new CardData[Cards.Count - 1];
+            CardData[] result = new CardData[Cards.Count];
             for (int i = 0; i < Cards.Count; i++)
             {
                 result[i] = Pop();

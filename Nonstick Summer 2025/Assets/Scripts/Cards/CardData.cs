@@ -68,7 +68,11 @@ public partial class CardData : ScriptableObject
 
     public float GetEnergyCost() 
     {
-        float newCost = _energyCost + MoodManager.emotions[_emotion].baseEnergyCost;
+        float newCost;
+        if(Application.isEditor)
+            newCost = _energyCost;
+        else
+            newCost = _energyCost + MoodManager.emotions[_emotion].baseEnergyCost;
 
         if(_stamps.Count > 0)
         {

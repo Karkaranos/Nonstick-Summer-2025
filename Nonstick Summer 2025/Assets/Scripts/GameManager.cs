@@ -31,9 +31,12 @@ public class GameManager : Singleton<GameManager>
 
     [Foldout("Card Styles")] [SerializeField] private CardValueStyle 
         Card_CharmingStyle, Card_AssertiveStyle, Card_SappyStyle,
-        Card_ExpressionStyle, Card_ObservationStyle, Card_QuestionStyle = new CardValueStyle(Color.white,""); 
-    //[Foldout("Card Styles")] [SerializeField] private CardValueStyle Card_RedColor;
-    //[Foldout("Card Styles")] [SerializeField] private CardValueStyle Card_BlueColor;
+        Card_ExpressionStyle, Card_ObservationStyle, Card_QuestionStyle = new CardValueStyle(Color.white,"");
+
+    [Tooltip("The initial cards in the players hand at the very beginning of the game")]
+    [Foldout("Card Values"), SerializeField] private CardData[] startingCards;
+    [Tooltip("The initial modifiers in the players hand at the very beginning of the game")]
+    [Foldout("Card Values"), SerializeField] private ModifierData[] startingModifiers;
 
     [Header("Intention Sprites")]
     [Foldout("Card Styles")] [SerializeField] private Sprite Card_ExpressionSprite;
@@ -68,7 +71,7 @@ public class GameManager : Singleton<GameManager>
         CardStyleManagerReference = CardStyleManagerReference ?? new CardStyleManager(Card_CharmingStyle, Card_AssertiveStyle, Card_SappyStyle,
             Card_ExpressionStyle, Card_ObservationStyle, Card_QuestionStyle,
             Card_ExpressionSprite, Card_ObservationSprite, Card_QuestionSprite);
-        DeckManagerReference = DeckManagerReference ?? new DeckManager();
+        DeckManagerReference = DeckManagerReference ?? new DeckManager(startingCards);
         DialogueManagerReference = DialogueManagerReference ?? new DialogueManager(_defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent, _maxEnergy, DefaultCardsInHand);
         RelationshipManagerReference = RelationshipManagerReference ?? new RelationshipManager(grandmaStartingValue, uncleStartingValue, cousinStartingValue, momStartingValue);
         ModifierManagerReference = ModifierManagerReference ?? new ModifierManager();

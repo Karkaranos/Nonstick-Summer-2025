@@ -14,18 +14,20 @@ public class DeckManager
     public static DeckManager Instance => GameManager.DeckManagerReference;
 
     public static Deck PlayerDeck = new Deck();
-
-    private static GameObject _deckDisplayObj;
     
     #region Initialization
+
+    public DeckManager(CardData[] defaultPlayerCards)
+    {
+        PlayerDeck.Add(defaultPlayerCards);
+    }
+
     /// <summary>
     /// Runs after the first scene has finished loading
-    /// Snags a reference to the deck display location
     /// </summary>
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     static void AfterSceneLoad()
     {
-        _deckDisplayObj = GameObject.Find("DeckDisplay");
     }
 
     #endregion

@@ -53,6 +53,7 @@ public partial class ModifierCardDisplay : MonoBehaviour
 
     private void OnMouseDownStart()
     {
+        Debug.Log(this.name + " clicked");
         OnMouseDown.Invoke(this);
     }
 

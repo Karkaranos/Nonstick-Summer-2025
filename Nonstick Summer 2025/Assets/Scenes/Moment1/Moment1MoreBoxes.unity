@@ -148166,6 +148166,38 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _question
+      value: What should they say?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _statement
+      value: fridge magnets.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[0].Emotion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[1].Emotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[2].Emotion
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[0].ButtonText
+      value: Live
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[1].ButtonText
+      value: Laugh
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[2].ButtonText
+      value: Love
+      objectReference: {fileID: 0}
     - target: {fileID: 8263027944320005954, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_Name
       value: Interaction Object (Fridge magnets)
@@ -162774,6 +162806,38 @@ PrefabInstance:
     - target: {fileID: 7876626950297978052, guid: 88005069b76bb5247a29c7d7a536ccdb, type: 3}
       propertyPath: m_Name
       value: MoodManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791148013464925354, guid: 88005069b76bb5247a29c7d7a536ccdb, type: 3}
+      propertyPath: MoodManagerReference
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791148013464925354, guid: 88005069b76bb5247a29c7d7a536ccdb, type: 3}
+      propertyPath: charmingStartingValues.baseEnergyCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791148013464925354, guid: 88005069b76bb5247a29c7d7a536ccdb, type: 3}
+      propertyPath: sappyStartingValues.intervalBetweenADecreasedCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791148013464925354, guid: 88005069b76bb5247a29c7d7a536ccdb, type: 3}
+      propertyPath: sappyStartingValues.intervalBetweenIncreasedCosts
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791148013464925354, guid: 88005069b76bb5247a29c7d7a536ccdb, type: 3}
+      propertyPath: charmingStartingValues.intervalBetweenADecreasedCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791148013464925354, guid: 88005069b76bb5247a29c7d7a536ccdb, type: 3}
+      propertyPath: charmingStartingValues.intervalBetweenIncreasedCosts
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791148013464925354, guid: 88005069b76bb5247a29c7d7a536ccdb, type: 3}
+      propertyPath: assertiveStartingValues.intervalBetweenADecreasedCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791148013464925354, guid: 88005069b76bb5247a29c7d7a536ccdb, type: 3}
+      propertyPath: assertiveStartingValues.intervalBetweenIncreasedCosts
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

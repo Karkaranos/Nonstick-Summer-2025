@@ -7,18 +7,19 @@ using UnityEngine;
  */
 public class UIUtilityFunctions : MonoBehaviour
 {
-
+    private static GameObject objRef;
     /// <summary>
     /// Gives all intents of the specified emotion
     /// </summary>
     /// <param name="emotion">The emotion to give intents of</param>
-    public static void GetEmotion(CardEmotion emotion, GameObject objRef)
+    public static void GetEmotion(CardEmotion emotion, GameObject openedFrom)
     {
+        objRef = openedFrom;
         DialogueManager.PlayerHand.Add(CardData.NewCard(-2, emotion, CardIntention.Expression));
         DialogueManager.PlayerHand.Add(CardData.NewCard(-2, emotion, CardIntention.Observation));
         DialogueManager.PlayerHand.Add(CardData.NewCard(-2, emotion, CardIntention.Question));
 
-        objRef.GetComponent<InteractableObjectBehavior>().GiveCard(emotion);
+        openedFrom.GetComponent<InteractableObjectBehavior>().GiveCard(emotion);
     }
 
     public static void CloseCurrentPopup()

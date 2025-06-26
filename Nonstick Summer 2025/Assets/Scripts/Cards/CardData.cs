@@ -145,15 +145,9 @@ public partial class CardData : ScriptableObject
     public static CardData NewCard (int EnergyCost, CardEmotion Emotion, CardIntention Intention)
     {
         CardData newcard = ScriptableObject.CreateInstance<CardData>();
+
+        newcard._energyCost = EnergyCost;
         newcard._emotion = Emotion;
-
-        if(MoodManager.emotions != null)
-        {
-
-            newcard._energyCost = MoodManager.emotions[Emotion].baseEnergyCost;
-
-        }
-        else { newcard._energyCost = EnergyCost; }
 
         newcard._intention = Intention;
         return newcard;

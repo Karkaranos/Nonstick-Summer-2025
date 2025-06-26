@@ -29,9 +29,11 @@ public class MoodStats
 
 
     [Tooltip("How often would a player have to express this emotion before this emotion becomes easier to play? The lower the value, the more effective.")]
+    [AllowNesting] [MinValue(1)]
     public int intervalBetweenADecreasedCost;
 
     [Tooltip("How often would a player have to express this emotion before other emotions become harder to play? The lower the value, the more effective.")]
+    [AllowNesting] [MinValue(1)]
     public int intervalBetweenIncreasedCosts;
 
 

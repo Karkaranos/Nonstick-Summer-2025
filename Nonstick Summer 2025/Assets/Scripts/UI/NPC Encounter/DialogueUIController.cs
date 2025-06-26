@@ -194,12 +194,13 @@ public class DialogueUIController : Singleton<DialogueUIController>
         if (!DialogueManager.ReadUserInput)
         {
             Debug.Log("not while animations are playing!");
+
+            yield return dialogueBox.LoadNewDialogue(DialogueManager.CurrentDialogueBranch);
+
             yield break;
         }
 
         Debug.Log("reset dialogue");
-
-        yield return dialogueBox.LoadNewDialogue(DialogueManager.CurrentDialogueBranch);
 
         // in case the npc text was only 1 blurb long. (updated in dialogueBox.LoadNewDialogue)
         if (PlayerReadAllNPCText)

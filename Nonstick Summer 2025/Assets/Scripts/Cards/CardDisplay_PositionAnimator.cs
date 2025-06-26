@@ -116,7 +116,7 @@ public partial class CardDisplay : MonoBehaviour
         var currentBasePosition = rectTransform.anchoredPosition;
         var currentOffset = cardBackground.anchoredPosition;
 
-        while (currentBasePosition != basePosition || currentOffset != positionOffset)         // just learned using == on vectors actually does an approximate equals. so thats good thats what we want.
+        while (currentBasePosition != basePosition || currentOffset != positionOffset) // just learned using == on vectors actually does an approximate equals. so thats good thats what we want.
         {
             currentBasePosition = rectTransform.anchoredPosition;
             currentOffset = cardBackground.anchoredPosition;
@@ -128,8 +128,12 @@ public partial class CardDisplay : MonoBehaviour
 
         Debug.Log("final base position: " + currentBasePosition);
 
-
         translatePositionCoroutine = null;
+    }
+
+    private bool DidStart()
+    {
+        return didStart;
     }
 
     private void OnDisable()

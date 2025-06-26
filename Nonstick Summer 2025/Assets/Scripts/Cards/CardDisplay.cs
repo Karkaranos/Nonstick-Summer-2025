@@ -34,7 +34,7 @@ public partial class CardDisplay : MonoBehaviour
 
     private void Start()
     {
-        if(card != null) SetCard(card); // mostly for debugging
+        if (card != null) SetCard(card); // mostly for debugging
 
         mouseInteraction = GetComponent<MouseInteractionEvents>();
         rectTransform = GetComponent<RectTransform>();
@@ -43,7 +43,8 @@ public partial class CardDisplay : MonoBehaviour
         mouseInteraction.OnMouseHoverEnd.AddListener(OnMouseHoverEnd);
         mouseInteraction.OnMouseDown.AddListener(OnMouseDownStart);
 
-        basePosition = cardBackground.anchoredPosition;
+        // EVERYTHING breaks if you uncomment this. DO NOT touch it.
+        //basePosition = cardBackground.anchoredPosition;
     }
 
     private void OnMouseHoverStart() // TODO this should be moved to another script

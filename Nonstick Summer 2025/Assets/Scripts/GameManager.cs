@@ -27,13 +27,16 @@ public class GameManager : Singleton<GameManager>
     public static ModifierManager ModifierManagerReference;
     public static Objectives ObjectiveReference;
 
-    public static int MaxCardsVisibleInDeck = 7;
+    public static int MaxCardsVisibleInDeck = 100; // why is this here?
 
     [Foldout("Card Styles")] [SerializeField] private CardValueStyle 
         Card_CharmingStyle, Card_AssertiveStyle, Card_SappyStyle,
-        Card_ExpressionStyle, Card_ObservationStyle, Card_QuestionStyle = new CardValueStyle(Color.white,""); 
-    //[Foldout("Card Styles")] [SerializeField] private CardValueStyle Card_RedColor;
-    //[Foldout("Card Styles")] [SerializeField] private CardValueStyle Card_BlueColor;
+        Card_ExpressionStyle, Card_ObservationStyle, Card_QuestionStyle = new CardValueStyle(Color.white,"");
+
+    [Tooltip("The initial cards in the players hand at the very beginning of the game")]
+    [Foldout("Card Values"), SerializeField] private CardData[] startingCards;
+    [Tooltip("The initial modifiers in the players hand at the very beginning of the game")]
+    [Foldout("Card Values"), SerializeField] private ModifierData[] startingModifiers;
 
     [Header("Intention Sprites")]
     [Foldout("Card Styles")] [SerializeField] private Sprite Card_ExpressionSprite;
@@ -45,7 +48,8 @@ public class GameManager : Singleton<GameManager>
     [Foldout("Social Battery")] [SerializeField] private int _energyGainedPerRound=1;
     [Foldout("Social Battery")][SerializeField] private int _energyGainedIfSilent = 2;
     [Foldout("Social Battery")] [SerializeField] private int _maxEnergy=10;
-    [Foldout("Dialogue Manager")] public static int DefaultCardsInHand=5;
+    [Foldout("Social Battery")] [SerializeField] private int _cardsDrawnPerRound=1;
+    [Foldout("Dialogue Manager")] public static int DefaultCardsInHand=5; // why is this hardcoded?
 
     [Header("Relationship Manager")]
     [Foldout("Relationship Manager")] [SerializeField] private RelationshipStats grandmaStartingValue;
@@ -68,10 +72,10 @@ public class GameManager : Singleton<GameManager>
         CardStyleManagerReference = CardStyleManagerReference ?? new CardStyleManager(Card_CharmingStyle, Card_AssertiveStyle, Card_SappyStyle,
             Card_ExpressionStyle, Card_ObservationStyle, Card_QuestionStyle,
             Card_ExpressionSprite, Card_ObservationSprite, Card_QuestionSprite);
-        DeckManagerReference = DeckManagerReference ?? new DeckManager();
-        DialogueManagerReference = DialogueManagerReference ?? new DialogueManager(_defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent, _maxEnergy, DefaultCardsInHand);
+        DeckManagerReference = DeckManagerReference ?? new DeckManager(startingCards);
+        DialogueManagerReference = DialogueManagerReference ?? new DialogueManager(_defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent, _maxEnergy, DefaultCardsInHand, _cardsDrawnPerRound);
         RelationshipManagerReference = RelationshipManagerReference ?? new RelationshipManager(grandmaStartingValue, uncleStartingValue, cousinStartingValue, momStartingValue);
-        ModifierManagerReference = ModifierManagerReference ?? new ModifierManager();
+        ModifierManagerReference = ModifierManagerReference ?? new ModifierManager(startingModifiers);
         ObjectiveReference = FindFirstObjectByType<Objectives>();
 
     }

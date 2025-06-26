@@ -12,6 +12,7 @@
                             - Top Retrieval
 *****************************************************************************/
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -23,7 +24,12 @@ public class Deck
 
     public List<CardData> Cards { get => _cards;}
 
+    public int Count => _cards.Count;
+
     private int numberOfCardsDrawn = 0;
+
+    public UnityEvent OnDeckChanged = new UnityEvent();
+
     #endregion
 
     #region Functions
@@ -32,9 +38,12 @@ public class Deck
     /// Adds a card into the deck
     /// </summary>
     /// <param name="newCard">The card to add to the deck</param>
-    public void Add(CardData newCard)
+    public void Add(CardData newCard, bool invokeOnDeckChanged = true)
     {
         _cards.Add(newCard/*.CopyCard(newCard)*/);  // commenting out CopyCard to bridge disconnect between copies of deck (in case player modifies a card)
+        
+        if(invokeOnDeckChanged)
+            OnDeckChanged.Invoke();
     }
 
 
@@ -42,12 +51,14 @@ public class Deck
     /// Add multiple cards into the deck
     /// </summary>
     /// <param name="newCards">The card to add to the deck</param>
-    public void Add(CardData[] newCards)
+    public void Add(CardData[] newCards, bool invokeOnDeckChanged=true)
     {
         foreach(CardData c in newCards)
         {
-            _cards.Add(c);
+            Add(c, false);
         }
+        if(invokeOnDeckChanged)
+            OnDeckChanged.Invoke();
     }
 
     /// <summary>
@@ -111,9 +122,10 @@ public class Deck
     /// <param name="toRemove">The card to remove from the deck</param>
     public void Remove(CardData toRemove)
     {
-        if (_cards.Count > 0)
+        if (_cards.Contains(toRemove))
         {
             _cards.Remove(toRemove);
+            OnDeckChanged.Invoke();
             return;
         }
         throw new System.Exception("No cards in Deck");
@@ -128,6 +140,8 @@ public class Deck
     {
         int cardRef = _cards.FindIndex(x=> x == oldCard);
         _cards[cardRef] = newCard;
+
+        OnDeckChanged.Invoke();
     }
 
     /// <summary>
@@ -137,6 +151,7 @@ public class Deck
     {
         // refactored with O(n) shuffle. old implementation (still exists in Shuffled) could have (in theory) run forever i think?
         _cards.Shuffle();
+        OnDeckChanged.Invoke();
     }
 
     /// <summary>
@@ -170,6 +185,7 @@ public class Deck
             c.Intention = CardIntention.NotSelected;
             c.EnergyCost = 0;
         }
+        OnDeckChanged.Invoke();
     }
 
     /// <summary>
@@ -181,7 +197,7 @@ public class Deck
         Deck deckCopy = new Deck();
         foreach(CardData c in _cards)
         {
-            deckCopy.Add(c);
+            deckCopy.Add(c, false);
         }
         return deckCopy;
     }
@@ -200,6 +216,7 @@ public class Deck
             CardData toReturn = Cards[0];
             Cards.RemoveAt(0);
             //Debug.Log(Cards.Count + " cards left");
+            OnDeckChanged.Invoke();
             return toReturn;
         }
         throw new System.Exception("No cards in Deck");
@@ -324,7 +341,7 @@ public class Deck
         // Returning <n cards
         else if (Cards.Count >= 0)
         {
-            CardData[] result = new CardData[Cards.Count - 1];
+            CardData[] result = new CardData[Cards.Count];
             for (int i = 0; i < Cards.Count; i++)
             {
                 result[i] = Pop();
@@ -340,6 +357,7 @@ public class Deck
     public void Clear()
     {
         _cards.Clear();
+        OnDeckChanged.Invoke();
     }
     #endregion
 }

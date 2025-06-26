@@ -75,7 +75,9 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         energyBar.Initalize();
         relationshipSlider.Initialize(RelationshipManager.characterRelationships[character].maxValue, RelationshipManager.characterRelationships[character].currentValue);
-        deckDisplay.SetDeck(ref DialogueManager.PlayerHand);
+        deckDisplay.SetDisplayDeck(ref DialogueManager.PlayerHand);
+        deckDisplay.SetRemainingDeck(DeckManager.PlayerDeck.GetCopy());
+        DeckDisplay.DrawToDefaultHand();
 
         deckDisplay.OnCardsSelectedChanged.AddListener(OnSelectionUpdated);
 
@@ -162,12 +164,11 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         StartCoroutine(ToggleUIForDialogueProgression(false));
 
-        CardData selectedCard = selectedCardData;
         //DialogueManager.PlayerHand.Remove(selectedCard);
 
         if (DialogueManager.UserCanPlayCard)
             // Play a card
-            StartCoroutine(DialogueManager.ProcessPlayCard(selectedCard));
+            StartCoroutine(DialogueManager.ProcessPlayCard(selectedCardData));
         else
             // Next Dialogue pls
             StartCoroutine(UpdateNextNPCDialogueDisplay());
@@ -209,6 +210,11 @@ public class DialogueUIController : Singleton<DialogueUIController>
             {
                 playCardButtonText.text = EndDialogueText;
                 yield return ToggleUIForDialogueProgression(false);
+
+                Debug.LogWarning("This statement runs too often");
+
+                for (int i = 0; i< DialogueManager.CardsDrawnPerRound;i++)
+                    deckDisplay.DrawOneCard();
             }
             else
             {
@@ -239,14 +245,11 @@ public class DialogueUIController : Singleton<DialogueUIController>
         playCardButtonText.text = interactable ? CardNotSelectedText : "->";
         playCardButton.SetColors(normalColor: Color.white, highlightedColor: Color.gray, selectedColor: Color.white, pressedColor:Color.gray);
 
-        //okay this isn't as clean here but whatever
-        if(interactable)
-        {
-            Debug.LogWarning("This statement runs too often");
-            deckDisplay.DrawOneCard();
-        }
-
-        deckDisplay?.gameObject.SetActive(interactable);
+        //deckDisplay?.gameObject.SetActive(interactable);
+        if (interactable)
+            StaticUtilities.EnableCanvasGroup(deckDisplay.canvasGroup);
+        else
+            StaticUtilities.DisableCanvasGroup(deckDisplay.canvasGroup, alpha:0.2f);
 
         yield return null;
 

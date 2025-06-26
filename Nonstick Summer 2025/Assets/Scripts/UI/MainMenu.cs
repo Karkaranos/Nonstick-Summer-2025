@@ -1,3 +1,14 @@
+/*****************************************************************************
+* File Name :         MainMenu.cs
+* Author :            Toby, Cade, Sky, Jay, Caleb
+* Creation Date :     tbd
+*
+* Brief Description : 
+*
+* TODO:
+* 
+*****************************************************************************/
+
 using UnityEngine;
 using NaughtyAttributes;
 

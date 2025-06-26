@@ -17,78 +17,71 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using NaughtyAttributes;
+using UnityEngine.Events;
+using Unity.VisualScripting;
+using UnityEngine.UIElements;
+using static Unity.Cinemachine.CinemachineFreeLookModifier;
 
 // This script needed to be a Monobehavior to get some of the references needed
 public class ModifierDeckDisplay : MonoBehaviour
 {
-    #region Variables
-
-        #region Display
-    private IReadOnlyCollection<ModifierData> playerModifiers => ModifierManager.ModifierCollection; // changed to be generalized, because deck will not always be the players.
-    
-    public List<GameObject> VisualDisplay { get => _visualDisplay; private set => _visualDisplay = value; }
-
-    [SerializeField, Tooltip("Adjusts horizontal space between cards and edge of display")]
-    private float _bufferFromEdgeOfRegion = 10;
-    [SerializeField, Tooltip("A reference to the visual Card Prefab")] private GameObject modifierCardPrefab;
-
-    private Vector2 _dimensions;    // Dimensions of the rectTransform cards will spawn in
-    private Vector3 rectTransformCenter;    // Position of the rectTransform, in screen space
-    private float _cardWidth;
-
-    private List<GameObject> _visualDisplay = new List<GameObject>();
-    private Vector2[] spawnPositions;
-    private List<ModifierData> displayedData = new List<ModifierData>();
-
-    #endregion
-
-    #region Input
-
-
-    #endregion
-
-
-    #endregion Variables
-
-
-
     #region Display
 
-    /// <summary>
-    /// Called upon the first frame
-    /// Gets a reference to the size and position of the transform in appropriate units
-    /// </summary>
-    private void Awake()
+    #region Variables
+
+    [SerializeField, Required]
+    private RectTransform cardArea;
+    [SerializeField, Tooltip("Adjusts horizontal space between cards and edge of display")]
+    private float _bufferFromEdgeOfRegion = 10;
+    [SerializeField, Tooltip("A reference to the visual Card Prefab")] 
+    private GameObject modifierCardPrefab;
+    [SerializeField, Tooltip("Point to spawn cards from")]
+    private Vector2 spawnCardsPosition = new Vector2(2400, 1350); // screen dimensions * 1.25
+
+    [HideInInspector]
+    public UnityEvent OnSelectedChanged=new UnityEvent();
+
+    private IReadOnlyCollection<ModifierData> playerModifiers => ModifierManager.ModifierCollection; // changed to be generalized, because deck will not always be the players.
+
+    private List<ModifierCardDisplay> _visualDisplays = new List<ModifierCardDisplay>();
+
+    #endregion
+
+    #region Functions
+
+    private void Start()
     {
-        _dimensions = GetComponent<RectTransform>().sizeDelta;
-        _cardWidth = modifierCardPrefab.transform.GetComponent<RectTransform>().sizeDelta.x;
-        _dimensions.x -= _cardWidth;
-
-        /*GameObject temp = Instantiate(modifierCardPrefab);
-        _cardWidth = temp.transform.GetComponent<RectTransform>().sizeDelta.x;
-        _dimensions.x -= _cardWidth;
-        Destroy(temp);*/
-
-        rectTransformCenter = transform.localPosition;
+        DisplayAllCards();
     }
 
     /// <summary>
     /// Displays all cards in the player's deck
     /// </summary>
-    public void DisplayAllCards()
+    public void DisplayAllCards(bool fullReset = false)
     {
-        ClearDisplay();
+        if(fullReset)
+            ClearDisplay();
 
+        if (_visualDisplays == null)
+            _visualDisplays = new List<ModifierCardDisplay>();
 
-        // Creates referenced array
-        spawnPositions = new Vector2[playerModifiers.Count];
+        // clear modifiers that arent in hand anymore
+        var cardsRemovedFromHand = _visualDisplays
+            .Where(mod => !playerModifiers.Contains(mod.modifierData));
+        for (int i = cardsRemovedFromHand.Count() - 1; i >= 0; i--)
+        {
+            Destroy(cardsRemovedFromHand.ElementAt(i).gameObject);
+            _visualDisplays.RemoveAt(i);
+        }
+
+        if (playerModifiers.Count == 0)
+            return;
+
+        SpawnNewCards();
 
         // Generates spawn positions
-        GeneratePositions(ref spawnPositions, 0, playerModifiers.Count - 1);
-
-        // Spawns all cards
-        SpawnCards(spawnPositions);
-
+        GenerateAndSetPositions();
     }
 
     /// <summary>
@@ -96,11 +89,32 @@ public class ModifierDeckDisplay : MonoBehaviour
     /// </summary>
     public void ClearDisplay()
     {
-        for (int i = 0; i < VisualDisplay.Count; i++)
+        for (int i = 0; i < _visualDisplays.Count; i++)
         {
-            Destroy(VisualDisplay[i]);
+            Destroy(_visualDisplays[i]);
         }
-        VisualDisplay.Clear();
+        _visualDisplays.Clear();
+    }
+
+    private void SpawnNewCards()
+    {
+        // Cards that havent been instantiated yet
+        var newCards = playerModifiers.
+            Where(mod => 
+                _visualDisplays.Select(display=>display.modifierData) // what the lambda
+                .Contains(mod) == false); 
+        // programming equivalent of doing an awesome skateboard trick ^
+
+        foreach(var newCard in newCards)
+        {
+            var newCardGameObj = Instantiate(modifierCardPrefab, this.transform);
+            var display = newCardGameObj.GetComponent<ModifierCardDisplay>();
+            display.SetCard(newCard);
+            display.SetPositionAndOffsetNoAnimation(position:spawnCardsPosition, offset:Vector2.zero);
+            _visualDisplays.Add(display);
+
+            display.OnMouseDown.AddListener(OnCardClicked);
+        }
     }
 
     /// <summary>
@@ -109,70 +123,104 @@ public class ModifierDeckDisplay : MonoBehaviour
     /// <param name="positions">Vector2 array of spawn positions, passed by reference</param>
     /// <param name="start">The starting index</param>
     /// <param name="end">The ending index</param>
-    private void GeneratePositions(ref Vector2[] positions, int start, int end)
+    private void GenerateAndSetPositions()
     {
-        print("Ran");
-        // Assign the first position to the left side of the display area
-        positions[start] = new Vector2(_bufferFromEdgeOfRegion - .5f * _dimensions.x + rectTransformCenter.x, 150);
+        float left = cardArea.rect.xMin + _bufferFromEdgeOfRegion;
+        float right = cardArea.rect.xMax - _bufferFromEdgeOfRegion;
 
-        // Calculate the space needed
-        float additiveValue = (_dimensions.x - _bufferFromEdgeOfRegion) / (end - start);
+        Debug.Log($"left {left}, right {right}");
 
-        // Position generation
-        for (int i = start + 1; i < end; i++)
+        //TODO sort cards somehow
+
+        for(int i=0; i<_visualDisplays.Count; i++)
         {
-            positions[i] = positions[i - 1];
-            positions[i].x += additiveValue;
+            var modifier = _visualDisplays[i];
+
+            float t;
+            if (_visualDisplays.Count <= 1)
+                t = 0.5f; // halfway through to avoid dividing by 0
+            else
+                t = (float)i / (_visualDisplays.Count - 1);
+
+            float x = Mathf.Lerp(left, right, t);
+            modifier.SetPositionAndOffset(position:new Vector2(x,0), offset:Vector2.zero, speed:5000);
+
+            //modifier.OnMouseDown.AddListener(OnCardClicked);
         }
 
         // Assigns the last position to the right side of the display area, as a percaution
         // also yeah the numbers are weird. I will fix it later. i'm a lil tired tbh
-        positions[end] = new Vector2(rectTransformCenter.x + .5f * _dimensions.x + .3f * _cardWidth - _bufferFromEdgeOfRegion, 150);
-    }
-
-    /// <summary>
-    /// Contains the actual logic for spawning the cards
-    /// Adds them to a list for storage
-    /// </summary>
-    /// <param name="cards">An array of CardData for the cards to create</param>
-    /// <param name="position">Where the spawned cards should be located</param>
-    private void SpawnCards(Vector2[] positions)
-    {
-        displayedData.Clear();
-        for (int i = 0; i < playerModifiers.Count; i++)
-        {
-            //Debug.Log("spawning card at " + position[i]);
-            /* There is probably a better way to do this
-             * However, I needed to spawn the card, set its anchor, then adjust the position after setting the anchor
-             * so it works for now*/
-
-            VisualDisplay.Add(Instantiate(modifierCardPrefab, Vector2.zero, Quaternion.identity, transform));
-            VisualDisplay[i].GetComponent<ModifierCardDisplay>().SetModifier(playerModifiers.ElementAt(i));
-            VisualDisplay[i].transform.localPosition = positions[i];
-            displayedData.Add(playerModifiers.ElementAt(i));
-        }
+        //positions[end] = new Vector2(rectTransformCenter.x + .5f * _dimensions.x + .3f * _cardWidth - _bufferFromEdgeOfRegion, 150);
     }
 
     #endregion
 
-    #region Player Input
+    #endregion
 
-    // card click handling See SpawnCards for event references
+    #region Selection Input
 
-    private void OnModifierClicked(ModifierData modifier)
+    #region Variables
+
+    [Header("Card Selection")]
+
+    [Tooltip("Add this number to the cards position when a card is selected")]
+    [SerializeField] private Vector2 selectedCardOffset = new Vector2(0, 50);
+
+    [HideInInspector] // use this in other scripts to detect when the user selects cards
+    public UnityEvent OnModifierSelectedChanged = new UnityEvent();
+
+    // tobys first HashSet in Unity! 6/21/2025
+    [HideInInspector]
+    public ModifierCardDisplay selectedCard { get; private set; }
+
+    #endregion
+
+    #region Functions
+
+    // See SpawnCards
+    private void OnCardClicked(ModifierCardDisplay cardDisplay)
     {
-
+        Debug.Log("selected changed");
+        if (selectedCard == cardDisplay)
+            DeselectCard();
+        else
+            SelectCard(cardDisplay);
     }
 
-    private void SelectModifier(ModifierData modifier)
+    public void SelectCard(ModifierCardDisplay cardDisplay)
     {
+        if (DialogueUIController.Instance != null && !DialogueManager.ReadUserInput)
+            return;
 
+        if (selectedCard == cardDisplay)
+            return;
+
+        Debug.Log("selecting card");
+
+        // swap cards 
+        DeselectCard();
+
+        selectedCard = cardDisplay;
+
+        cardDisplay.SetPositionAndOffset(offset: (Vector3) selectedCardOffset);
+        cardDisplay.transform.SetAsLastSibling(); // bring to front so player can see it
+
+        OnModifierSelectedChanged.Invoke();
     }
 
-    private void DeselectModifier(ModifierData modifier)
+    public void DeselectCard()
     {
+        Debug.Log("deselect");
 
+        if (selectedCard == null)
+            return;
+
+        selectedCard.ResetOffset();
+
+        OnModifierSelectedChanged.Invoke();
     }
+
+    #endregion
 
     #endregion
 }

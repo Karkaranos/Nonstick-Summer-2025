@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 305072751656914347}
   - component: {fileID: 1232316957933619253}
   m_Layer: 5
-  m_Name: Modifier Card
+  m_Name: Stamp Modifier Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,7 +180,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IconImage: {fileID: 3423703043375703025}
+  cardBackground: {fileID: 8105009320447421010}
   _modifier: {fileID: 11400000, guid: 7ea86a966298e524e81d7076ef263b99, type: 2}
+  MovementSpeed: 1000
 --- !u!114 &1232316957933619253
 MonoBehaviour:
   m_ObjectHideFlags: 0

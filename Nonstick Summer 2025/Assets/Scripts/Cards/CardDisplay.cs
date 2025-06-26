@@ -28,20 +28,23 @@ public partial class CardDisplay : MonoBehaviour
     private CardData card;
 
     private MouseInteractionEvents mouseInteraction;
+    private RectTransform rectTransform;
 
     public UnityEvent<CardDisplay> OnMouseDown = new UnityEvent<CardDisplay> ();
 
     private void Start()
     {
-        if(card != null) SetCard(card); // mostly for debugging
+        if (card != null) SetCard(card); // mostly for debugging
 
         mouseInteraction = GetComponent<MouseInteractionEvents>();
+        rectTransform = GetComponent<RectTransform>();
 
         mouseInteraction.OnMouseHoverStart.AddListener(OnMouseHoverStart);
         mouseInteraction.OnMouseHoverEnd.AddListener(OnMouseHoverEnd);
         mouseInteraction.OnMouseDown.AddListener(OnMouseDownStart);
 
-        basePosition = cardBackground.anchoredPosition;
+        // EVERYTHING breaks if you uncomment this. DO NOT touch it.
+        //basePosition = cardBackground.anchoredPosition;
     }
 
     private void OnMouseHoverStart() // TODO this should be moved to another script

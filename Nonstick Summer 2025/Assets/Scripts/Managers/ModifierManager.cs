@@ -16,6 +16,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UIElements;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class ModifierManager
 {
@@ -25,14 +26,26 @@ public class ModifierManager
 
     private static List<ModifierData> _modifierCollection = new List<ModifierData>();
 
+    public ModifierManager(ModifierData[] defaultModifiers)
+    {
+        foreach(var modifier in defaultModifiers)
+        {
+            _modifierCollection.Add(modifier);
+        }
+    }
+
     #region Function References
     
     /// <summary>
     /// Adds a modifier to collection
     /// </summary>
-    public static void AddCard(ModifierData modifier)
+    public static void AddCard(ModifierData modifier, bool makeCopy=true)
     {
-        _modifierCollection.Add(modifier);
+        if (makeCopy)
+            _modifierCollection.Add(GameManager.Instantiate(modifier));
+        else
+            _modifierCollection.Add(modifier);
+        
     }
 
     /// <summary>

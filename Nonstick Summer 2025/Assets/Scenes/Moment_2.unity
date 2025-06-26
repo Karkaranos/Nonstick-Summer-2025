@@ -27879,6 +27879,69 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &593851213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 593851215}
+  - component: {fileID: 593851214}
+  m_Layer: 0
+  m_Name: MoodManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &593851214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593851213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba2a1a800a12e864baae78511a68328d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoodManagerReference: {fileID: 0}
+  charmingStartingValues:
+    baseEnergyCost: -2
+    maxEnergyCost: -1
+    expressionValue: 0
+    intervalBetweenADecreasedCost: 100
+    intervalBetweenIncreasedCosts: 100
+  assertiveStartingValues:
+    baseEnergyCost: -2
+    maxEnergyCost: -1
+    expressionValue: 0
+    intervalBetweenADecreasedCost: 100
+    intervalBetweenIncreasedCosts: 100
+  sappyStartingValues:
+    baseEnergyCost: -2
+    maxEnergyCost: -1
+    expressionValue: 0
+    intervalBetweenADecreasedCost: 100
+    intervalBetweenIncreasedCosts: 100
+--- !u!4 &593851215
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593851213}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 28.274067, y: -2.126509, z: -22.718866}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &594338634
 Mesh:
   m_ObjectHideFlags: 0
@@ -54718,6 +54781,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8412335191130524943, guid: 1b5ab685e734f574c9d1e7815a237b25, type: 3}
+      propertyPath: _maxEnergy
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412335191130524943, guid: 1b5ab685e734f574c9d1e7815a237b25, type: 3}
+      propertyPath: _defaultEnergy
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412335191130524943, guid: 1b5ab685e734f574c9d1e7815a237b25, type: 3}
+      propertyPath: _energyGainedPerRound
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -59596,6 +59671,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1366320130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8263027944320005954, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+  m_PrefabInstance: {fileID: 1963039751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1370194230 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8842614811997714787, guid: 702cb239d264c454ba27ebf46eccb99b, type: 3}
@@ -68973,9 +69053,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 454548493651250203, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+      propertyPath: m_Height
+      value: 6.061063
+      objectReference: {fileID: 0}
+    - target: {fileID: 454548493651250203, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+      propertyPath: m_Radius
+      value: 3.030531
+      objectReference: {fileID: 0}
+    - target: {fileID: 454548493651250203, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+      propertyPath: m_Center.x
+      value: -0.9909325
+      objectReference: {fileID: 0}
+    - target: {fileID: 454548493651250203, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+      propertyPath: m_Center.z
+      value: -0.9196096
+      objectReference: {fileID: 0}
     - target: {fileID: 621988117311664097, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.060635
+      value: 1.341
       objectReference: {fileID: 0}
     - target: {fileID: 621988117311664097, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalPosition.y
@@ -68983,11 +69079,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 621988117311664097, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.683727
+      value: 2.684
       objectReference: {fileID: 0}
     - target: {fileID: 621988117311664097, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9675801
+      value: 0.30041656
       objectReference: {fileID: 0}
     - target: {fileID: 621988117311664097, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalRotation.x
@@ -68995,7 +69091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 621988117311664097, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.25256443
+      value: 0.9538081
       objectReference: {fileID: 0}
     - target: {fileID: 621988117311664097, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalRotation.z
@@ -69007,7 +69103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 621988117311664097, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 29.259
+      value: 145.035
       objectReference: {fileID: 0}
     - target: {fileID: 621988117311664097, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -71411,6 +71507,42 @@ PrefabInstance:
       propertyPath: _objectiveCanvas
       value: 
       objectReference: {fileID: 36675585}
+    - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
+      propertyPath: _conditions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
+      propertyPath: _conditions.Array.data[0].DisplayText
+      value: Get slice of cake
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
+      propertyPath: _conditions.Array.data[1].DisplayText
+      value: Go get your present
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
+      propertyPath: _conditions.Array.data[2].DisplayText
+      value: Go to sleep
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
+      propertyPath: _conditions.Array.data[1].RequiredObject
+      value: 
+      objectReference: {fileID: 1366320130}
+    - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
+      propertyPath: _conditions.Array.data[2].RequiredObject
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
+      propertyPath: _conditions.Array.data[0].TriggerCondition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
+      propertyPath: _conditions.Array.data[1].TriggerCondition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
+      propertyPath: _conditions.Array.data[2].TriggerCondition
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -80225,6 +80357,38 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _question
+      value: What do you hope it is?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _statement
+      value: It's your birthday present!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[0].Emotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[1].Emotion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[2].Emotion
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[0].ButtonText
+      value: Splendid!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[1].ButtonText
+      value: Drums
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[2].ButtonText
+      value: Picture
+      objectReference: {fileID: 0}
     - target: {fileID: 8263027944320005954, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_Name
       value: Interaction Object
@@ -84159,6 +84323,38 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _question
+      value: How do you feel about getting older?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _statement
+      value: It's your birthday cake!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[0].Emotion
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[1].Emotion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[2].Emotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[0].ButtonText
+      value: Scared
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[1].ButtonText
+      value: Annoyed
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[2].ButtonText
+      value: Wise
+      objectReference: {fileID: 0}
     - target: {fileID: 8263027944320005954, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_Name
       value: Interaction Object (1)
@@ -84601,6 +84797,38 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _question
+      value: How do you feel about this piece of art?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _statement
+      value: It's a drawing you made when you were younger.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[0].Emotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[1].Emotion
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[2].Emotion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[0].ButtonText
+      value: Amused
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[1].ButtonText
+      value: Nostalgic
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[2].ButtonText
+      value: Embarrased
+      objectReference: {fileID: 0}
     - target: {fileID: 8263027944320005954, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_Name
       value: Interaction Object (2)
@@ -84623,7 +84851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.875
+      value: 1.989
       objectReference: {fileID: 0}
     - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_LocalPosition.z
@@ -93766,3 +93994,4 @@ SceneRoots:
   - {fileID: 1643650100}
   - {fileID: 147177824}
   - {fileID: 966217804}
+  - {fileID: 593851215}

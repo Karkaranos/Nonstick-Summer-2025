@@ -313,6 +313,7 @@ public class DeckDisplayer : MonoBehaviour
     [HideInInspector] // use this in other scripts to detect when the user selects cards
     public UnityEvent OnCardsSelectedChanged = new UnityEvent();
     public CardData FirstSelectedCard => selectedCards.Count > 0 ? selectedCards.First().cardData : null;
+    public bool HasCardsSelected => selectedCards.Count > 0;
 
     // tobys first HashSet in Unity! 6/21/2025
     [HideInInspector]

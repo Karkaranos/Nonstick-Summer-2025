@@ -38,15 +38,12 @@ public class ModifierDeckDisplay : MonoBehaviour
     [SerializeField, Tooltip("Point to spawn cards from")]
     private Vector2 spawnCardsPosition = new Vector2(2400, 1350); // screen dimensions * 1.25
 
-    private IReadOnlyCollection<ModifierData> playerModifiers => ModifierManager.ModifierCollection; // changed to be generalized, because deck will not always be the players.
-    public List<ModifierCardDisplay> VisualDisplay { get => _visualDisplays; private set => _visualDisplays = value; }
+    [HideInInspector]
+    public UnityEvent OnSelectedChanged=new UnityEvent();
 
-    private Vector2 _dimensions;    // Dimensions of the rectTransform cards will spawn in
-    private Vector3 rectTransformCenter;    // Position of the rectTransform, in screen space
-    private float _cardWidth;
+    private IReadOnlyCollection<ModifierData> playerModifiers => ModifierManager.ModifierCollection; // changed to be generalized, because deck will not always be the players.
 
     private List<ModifierCardDisplay> _visualDisplays = new List<ModifierCardDisplay>();
-    private List<ModifierData> displayedData = new List<ModifierData>();
 
     public List<ModifierData> tests;
 
@@ -61,11 +58,6 @@ public class ModifierDeckDisplay : MonoBehaviour
     {
         foreach (var test in tests)
             ModifierManager.AddCard(test);
-
-        _dimensions = cardArea.sizeDelta;
-        _cardWidth = modifierCardPrefab.GetComponent<RectTransform>().sizeDelta.x;
-        //_dimensions.x -= _cardWidth;
-        rectTransformCenter = transform.localPosition;
     }
 
     private void Start()
@@ -108,11 +100,11 @@ public class ModifierDeckDisplay : MonoBehaviour
     /// </summary>
     public void ClearDisplay()
     {
-        for (int i = 0; i < VisualDisplay.Count; i++)
+        for (int i = 0; i < _visualDisplays.Count; i++)
         {
-            Destroy(VisualDisplay[i]);
+            Destroy(_visualDisplays[i]);
         }
-        VisualDisplay.Clear();
+        _visualDisplays.Clear();
     }
 
     private void SpawnNewCards()

@@ -13,7 +13,7 @@ public class DeckManager
 {
     public static DeckManager Instance => GameManager.DeckManagerReference;
 
-    public Deck PlayerDeck = new Deck();
+    public static Deck PlayerDeck = new Deck();
 
     private static GameObject _deckDisplayObj;
     
@@ -119,7 +119,7 @@ public class DeckManager
         {
             return;
         }
-        d = Instance.PlayerDeck;
+        d = PlayerDeck;
     }
     #endregion
 

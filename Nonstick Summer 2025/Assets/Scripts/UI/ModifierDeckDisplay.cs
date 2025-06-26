@@ -45,20 +45,9 @@ public class ModifierDeckDisplay : MonoBehaviour
 
     private List<ModifierCardDisplay> _visualDisplays = new List<ModifierCardDisplay>();
 
-    public List<ModifierData> tests;
-
     #endregion
 
     #region Functions
-    /// <summary>
-    /// Called upon the first frame
-    /// Gets a reference to the size and position of the transform in appropriate units
-    /// </summary>
-    private void Awake()
-    {
-        foreach (var test in tests)
-            ModifierManager.AddCard(test);
-    }
 
     private void Start()
     {

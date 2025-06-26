@@ -24,11 +24,14 @@ public class UITransitionManager
     }
 
     //TODO rename this function
-    public static bool OpenMenuIfNoOtherMenusAreOpenRightNow(GameObject canvasPrefab, ref GameObject CanvasCreated, 
+    public static bool OpenMenuIfNoOtherMenusAreOpenRightNow(GameObject canvasPrefab, out GameObject CanvasCreated, 
         Transform cameraAnchor = null, GameObject objectRef = null)
     {
         if (PlayerInMenu)
+        {
+            CanvasCreated = null;
             return false;
+        }
 
         CanvasCreated = OpenMenu(canvasPrefab, cameraAnchor, objectRef);
         return true;

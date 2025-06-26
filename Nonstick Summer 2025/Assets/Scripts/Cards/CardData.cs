@@ -120,7 +120,6 @@ public partial class CardData : ScriptableObject
 
     #endregion
 
-
     public CardData CopyCard()
     {
         CardData copy = ScriptableObject.CreateInstance<CardData>();

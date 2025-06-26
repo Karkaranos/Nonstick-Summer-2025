@@ -184,7 +184,7 @@ public class DeckDisplayer : MonoBehaviour
         }
         else
         {
-            throw new System.Exception("Maximum hand size reached");
+            //throw new System.Exception("Maximum hand size reached");
         }
 
     }

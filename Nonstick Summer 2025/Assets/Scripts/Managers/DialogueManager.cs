@@ -47,6 +47,7 @@ public class DialogueManager
     private static float _defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent;
     public static float MaxEnergy;
     public static int DefaultCardsInHand { get; private set; }
+    public static int CardsDrawnPerRound;
 
     #region Getters and setters
 
@@ -78,7 +79,7 @@ public class DialogueManager
 
     #endregion
 
-    public DialogueManager(float defaultEnergy, float energyGainedPerRound, float energyGainedIfSilent, float maxEnergy, int defaultCardsInHand)
+    public DialogueManager(float defaultEnergy, float energyGainedPerRound, float energyGainedIfSilent, float maxEnergy, int defaultCardsInHand, int _cardsDrawnPerRound)
     {
         _defaultEnergy = defaultEnergy;
         _energyGainedPerRound = energyGainedPerRound;
@@ -88,6 +89,7 @@ public class DialogueManager
 
         _currentEnergy = defaultEnergy;
         PlayerHand = new Deck();
+        CardsDrawnPerRound = _cardsDrawnPerRound;
     }
 
     public static void OnOpenCombatUI(DialogueBranch startDialogueBranch, characters character)
@@ -131,8 +133,12 @@ public class DialogueManager
         // progress dialogue:
         var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
 
-        float relationshipChange = playedCard.GetRelationshipChange(dialogueOption);
+        float relationshipChange = dialogueOption.ChangeInRelationshipStatus;
+        //float relationshipChange = playedCard.GetRelationshipChange(dialogueOption);
         yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange);
+
+        if(playedCard!=null)
+            DialogueManager.PlayerHand.Remove(playedCard);
 
         // progress dialogue:
         if (RelationshipManager.characterRelationships[currentCharacter].currentValue >= dialogueOption.RelationshipRequirement)
@@ -157,8 +163,6 @@ public class DialogueManager
         Debug.Log("Completed processing card");
         // only keep reading user input if theres more
         ReadUserInput = true;//!CurrentDialogueBranch.End; 
-
-        DialogueManager.PlayerHand.Remove(playedCard);
 
         MoodManager.UpdateMood(playedCard.Emotion);
     }

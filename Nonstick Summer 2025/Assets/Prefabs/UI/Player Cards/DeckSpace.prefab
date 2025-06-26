@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4321626072033629584}
   - component: {fileID: 2981215848723532769}
   - component: {fileID: 1936609171585248286}
+  - component: {fileID: 1524080476049554778}
   m_Layer: 5
   m_Name: DeckSpace
   m_TagString: Untagged
@@ -91,6 +92,9 @@ MonoBehaviour:
   cardArea: {fileID: 1970675229695781645}
   RemainingDeckRef:
     _cards: []
+    OnDeckChanged:
+      m_PersistentCalls:
+        m_Calls: []
   _bufferFromEdgeOfRegion: 50
   _cardPrefab: {fileID: 1637363475462070288, guid: e2cdc7b280a72e042a5184d474c4e2dc, type: 3}
   spawnCardsPosition: {x: 2400, y: 1350}
@@ -100,3 +104,15 @@ MonoBehaviour:
   OnCardsSelectedChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!225 &1524080476049554778
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3874485821357406822}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

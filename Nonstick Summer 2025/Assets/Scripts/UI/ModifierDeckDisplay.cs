@@ -67,13 +67,12 @@ public class ModifierDeckDisplay : MonoBehaviour
             _visualDisplays = new List<ModifierCardDisplay>();
 
         // clear modifiers that arent in hand anymore
-        var modifiersNotInHand = _visualDisplays
+        var cardsRemovedFromHand = _visualDisplays
             .Where(mod => !playerModifiers.Contains(mod.modifierData));
-
-        foreach (var disp in modifiersNotInHand)
+        for (int i = cardsRemovedFromHand.Count() - 1; i >= 0; i--)
         {
-            Destroy(disp);
-            _visualDisplays.Remove(disp);
+            Destroy(cardsRemovedFromHand.ElementAt(i).gameObject);
+            _visualDisplays.RemoveAt(i);
         }
 
         if (playerModifiers.Count == 0)

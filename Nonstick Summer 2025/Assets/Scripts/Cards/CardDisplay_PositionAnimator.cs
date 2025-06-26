@@ -82,8 +82,6 @@ public partial class CardDisplay : MonoBehaviour
                 return;
         }
 
-        Debug.Log("base position: " + basePosition);
-
         translatePositionCoroutine = StartCoroutine(TranslatePosition(speed));
     }
 
@@ -129,11 +127,6 @@ public partial class CardDisplay : MonoBehaviour
         Debug.Log("final base position: " + currentBasePosition);
 
         translatePositionCoroutine = null;
-    }
-
-    private bool DidStart()
-    {
-        return didStart;
     }
 
     private void OnDisable()

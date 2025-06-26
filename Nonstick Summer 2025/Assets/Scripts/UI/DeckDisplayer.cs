@@ -12,6 +12,7 @@ remaining cards, you just gotta be careful.
 I might've gone really overboard with the animations, sorry cader :,(
 
 TODO :                  Create functions for easier updating
+                        _visualDisplays and displayedData are basically storing the same thing. figure out how to clean that up
 ***************************************************/
 using UnityEngine;
 using UnityEngine.Events;
@@ -21,8 +22,10 @@ using System.Linq;
 using System;
 using NaughtyAttributes;
 using static Unity.Cinemachine.CinemachineFreeLookModifier;
+using FMOD;
 
 // This script needed to be a Monobehavior to get some of the references needed
+[RequireComponent(typeof(CanvasGroup))]
 public class DeckDisplayer : MonoBehaviour
 {
     #region DISPLAY
@@ -31,6 +34,9 @@ public class DeckDisplayer : MonoBehaviour
 
     [SerializeField, Required]
     private RectTransform cardArea;
+
+    [HideInInspector]
+    public CanvasGroup canvasGroup;
 
     //private static Deck PlayerDeckRef => GameManager.DeckManagerReference.PlayerDeck;
     [SerializeField] private Deck RemainingDeckRef; // changed to be generalized, because deck will not always be the players.
@@ -50,7 +56,6 @@ public class DeckDisplayer : MonoBehaviour
     private float _cardWidth;
 
     private List<CardDisplay> _visualDisplays = new List<CardDisplay>();
-
     private Deck displayedData = new Deck();
 
     #endregion Variables
@@ -64,6 +69,7 @@ public class DeckDisplayer : MonoBehaviour
     {
         _dimensions = GetComponent<RectTransform>().sizeDelta;
         _cardWidth = _cardPrefab.transform.GetComponent<RectTransform>().sizeDelta.x;
+        canvasGroup = GetComponent<CanvasGroup>();
         rectTransformCenter = transform.localPosition;
     }
 
@@ -71,29 +77,35 @@ public class DeckDisplayer : MonoBehaviour
     {
         displayedData = deckRef;
 
-        if(displayAll)
+        deckRef.OnDeckChanged.AddListener(DisplayAllCards); // this function Can cause changes to the deck, but if it keeps running, it will run out of things to change
+
+        if (displayAll)
             DisplayAllCards();
     }
 
-    public void SetRemainingDeck(ref Deck deckRef)
+    public void SetRemainingDeck(ref Deck deckRef, bool shuffle = true)
     {
         RemainingDeckRef = deckRef;
         //This was moved elsewhere
         //DrawToDefaultHand();
+
+        if (shuffle)
+            RemainingDeckRef.Shuffle();
     }
 
-    public void SetRemainingDeck(Deck deckRef)
+    public void SetRemainingDeck(Deck deckRef, bool shuffle = true)
     {
         RemainingDeckRef = deckRef;
+        if(shuffle)
+            RemainingDeckRef.Shuffle();
     }
 
     /// <summary>
     /// Displays all cards in the player's deck
     /// </summary>
-    public void DisplayAllCards(bool fullReset = false)
+    public void DisplayAllCards()
     {
-        if (fullReset)
-            ClearDisplay();
+        UnityEngine.Debug.Log("displaying cards");
 
         if (_visualDisplays == null)
             _visualDisplays = new List<CardDisplay>();
@@ -101,12 +113,15 @@ public class DeckDisplayer : MonoBehaviour
         // clear modifiers that arent in hand anymore
         var cardsRemovedFromHand = _visualDisplays
             .Where(card => !displayedData.Cards.Contains(card.cardData));
-
-        foreach (var disp in cardsRemovedFromHand)
+        for(int i=cardsRemovedFromHand.Count()-1; i>=0; i--)
         {
-            Destroy(disp);
-            _visualDisplays.Remove(disp);
+            if(cardsRemovedFromHand.ElementAt(i).gameObject != null)
+                Destroy(cardsRemovedFromHand.ElementAt(i).gameObject);
         }
+
+        //_visualDisplays = _visualDisplays.Where(disp => disp != null).ToList();
+        _visualDisplays
+            .Where(card => displayedData.Cards.Contains(card.cardData));
 
         if (displayedData.Count == 0)
             return;
@@ -156,7 +171,7 @@ public class DeckDisplayer : MonoBehaviour
         }
 
         while(displayedData.Count < DefaultHandSize)
-            displayedData.Add(RemainingDeckRef.Pop());
+            displayedData.Add(RemainingDeckRef.Pop(), false);
 
         DisplayAllCards();
 
@@ -186,7 +201,7 @@ public class DeckDisplayer : MonoBehaviour
         }
 
         while (displayedData.Count < MaxHandSize)
-            displayedData.Add(RemainingDeckRef.Pop());
+            displayedData.Add(RemainingDeckRef.Pop(),false);
 
         DisplayAllCards();
 
@@ -226,7 +241,7 @@ public class DeckDisplayer : MonoBehaviour
 
         if (RemainingDeckRef.Count < MaxHandSize)
         {
-            displayedData.Add(RemainingDeckRef.Pop());
+            displayedData.Add(RemainingDeckRef.Pop(), false);
 
             DisplayAllCards();
 
@@ -280,7 +295,7 @@ public class DeckDisplayer : MonoBehaviour
         float left = cardArea.rect.xMin + _bufferFromEdgeOfRegion;
         float right = cardArea.rect.xMax - _bufferFromEdgeOfRegion;
 
-        Debug.Log($"left {left}, right {right}");
+        //Debug.Log($"left {left}, right {right}");
 
         //TODO sort cards somehow
 
@@ -295,7 +310,6 @@ public class DeckDisplayer : MonoBehaviour
                 t = (float)i / (_visualDisplays.Count - 1);
 
             float x = Mathf.Lerp(left, right, t);
-            Debug.Log(x);
             card.SetPositionAndOffset(position: new Vector2(x, 0), offset: Vector2.zero, speed: 5000);
         }
 
@@ -371,7 +385,7 @@ public class DeckDisplayer : MonoBehaviour
     {
         ClearDisplay();
 
-        Debug.Log("Displaying " + n + " of " + RemainingDeckRef.Cards.Count + " cards.");
+        UnityEngine.Debug.Log("Displaying " + n + " of " + RemainingDeckRef.Cards.Count + " cards.");
 
         // If no value was passed in, set the display count to the number from GameManager
         if (n == 0)
@@ -472,7 +486,7 @@ public class DeckDisplayer : MonoBehaviour
         if (selectedCards.Contains(cardDisplay))
             return;
 
-        Debug.Log("selecting card");
+        UnityEngine.Debug.Log("selecting card");
 
         // swap cards if player can only have one 
         if(MaxSelectedCards == 1 && SwapCardsOnSelection)
@@ -482,7 +496,7 @@ public class DeckDisplayer : MonoBehaviour
 
         if(selectedCards.Count >= MaxHandSize)
         {
-            Debug.Log("too many cards selected!");
+            UnityEngine.Debug.Log("too many cards selected!");
             return;
         }
 
@@ -498,7 +512,7 @@ public class DeckDisplayer : MonoBehaviour
         if (!selectedCards.Contains(cardDisplay))
             return;
 
-        Debug.Log("deselect");
+        UnityEngine.Debug.Log("deselect");
 
         selectedCards.Remove(cardDisplay);
 

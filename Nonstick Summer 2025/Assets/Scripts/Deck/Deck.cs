@@ -125,7 +125,7 @@ public class Deck
         if (_cards.Contains(toRemove))
         {
             _cards.Remove(toRemove);
-            OnDeckChanged.Invoke();
+            //OnDeckChanged.Invoke();
             return;
         }
         throw new System.Exception("No cards in Deck");

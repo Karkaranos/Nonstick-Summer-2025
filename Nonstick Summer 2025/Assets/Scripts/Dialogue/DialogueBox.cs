@@ -78,9 +78,10 @@ public class DialogueBox : MonoBehaviour
 
         Debug.Log($"({NumberInList + 1}/{branch.dialogue.Length}): {branch.dialogue[NumberInList].Dialogue}");
 
+        DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(branch.dialogue[NumberInList]);
+
         //TODO typewriter text goes here
         npcText.text = branch.dialogue[NumberInList].Dialogue;
-
 
         if (PlayerReadAllDialogue)
         {

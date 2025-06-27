@@ -1,3 +1,12 @@
+/*****************************************************************************
+* File Name :         DialogueNPC.cs
+* Author :            Jay
+* Creation Date :     ? 2025
+*
+* Brief Description :  
+* 
+*****************************************************************************/
+
 using NaughtyAttributes;
 using TMPro;
 using UnityEngine;
@@ -9,7 +18,7 @@ public class DialogueNPC
 {
     public string Dialogue;
 
-    [ShowAssetPreview(32,32)]
+    [ShowAssetPreview(32,32), Tooltip("Leave null to use the sprite from the last dialogue bubble")]
     public Sprite Portrait;
 
 }

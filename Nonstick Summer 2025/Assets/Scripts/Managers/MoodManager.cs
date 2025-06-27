@@ -41,7 +41,20 @@ public class MoodManager: MonoBehaviour
     void Start()
     {
 
-        MoodManagerReference = MoodManagerReference ?? new MoodManager(charmingStartingValues, assertiveStartingValues, sappyStartingValues);
+        //MoodManagerReference = MoodManagerReference ?? new MoodManager(charmingStartingValues, assertiveStartingValues, sappyStartingValues);
+        if(!emotions.ContainsKey(CardEmotion.Charming))
+        {
+            emotions.Add(CardEmotion.Charming, charmingStartingValues);
+        }
+        if (!emotions.ContainsKey(CardEmotion.Assertive))
+        {
+
+            emotions.Add(CardEmotion.Assertive, assertiveStartingValues);
+        }
+        if (!emotions.ContainsKey(CardEmotion.Sappy))
+        {
+            emotions.Add(CardEmotion.Sappy, sappyStartingValues);
+        }
 
     }
     /// <summary>

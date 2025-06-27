@@ -104,4 +104,11 @@ public class UITransitionManager
         }
 
     }
+
+    public static void NullWorldReference()
+    {
+        WorldObjectReference = null;
+    }
+
+    
 }

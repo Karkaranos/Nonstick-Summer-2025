@@ -28,27 +28,28 @@ public class Objectives : MonoBehaviour
     /// <param name="condition">The condition that has been met</param>
     public void MetCondition(ObjectiveConditions condition, GameObject obj = null)
     {
-        foreach(ObjectiveData od in _conditions)
+        foreach (ObjectiveData od in _conditions)
         {
-            if(od.condition.TriggerCondition == condition && !od.ConditionBeenMet)
+            if (od.condition.TriggerCondition == condition && !od.ConditionBeenMet)
             {
                 // If the condition is interacting with a specific object and that object was not just interacted with, return
                 // Otherwise the condition has been met; update the display
-                if((condition == ObjectiveConditions.INTERACT_WITH_OBJECT || 
+                if ((condition == ObjectiveConditions.INTERACT_WITH_OBJECT ||
                     condition == ObjectiveConditions.TALK_TO_SIDE_CHARACTER) && obj != od.condition.RequiredObject)
                 {
                     continue;
-                if(od.HideNextObjectiveIfClear)
+                }
+                if (od.HideNextObjectiveIfClear)
                 {
                     // yes I know this is O(n*n*n) time
-                    foreach(ObjectiveObjectLink oc in od.ConditionsToHide)
+                    foreach (ObjectiveObjectLink oc in od.ConditionsToHide)
                     {
-                        for(int i=0; i<_conditions.Length; i++)
+                        for (int i = 0; i < _conditions.Length; i++)
                         {
-                            if(_conditions[i].condition.TriggerCondition == oc.TriggerCondition)
+                            if (_conditions[i].condition.TriggerCondition == oc.TriggerCondition)
                             {
                                 if ((oc.TriggerCondition == ObjectiveConditions.INTERACT_WITH_OBJECT ||
-                                    oc.TriggerCondition == ObjectiveConditions.TALK_TO_SIDE_CHARACTER) && 
+                                    oc.TriggerCondition == ObjectiveConditions.TALK_TO_SIDE_CHARACTER) &&
                                     _conditions[i].condition.RequiredObject != oc.RequiredObject)
                                 {
                                     continue;

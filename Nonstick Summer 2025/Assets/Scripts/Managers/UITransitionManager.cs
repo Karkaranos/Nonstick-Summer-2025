@@ -42,7 +42,10 @@ public class UITransitionManager
         if(PlayerInMenu)
         {
             Debug.LogWarning("Player is already in a menu. Force closing current menu.");
-            CloseMenu(false);
+            if(canvasPrefab.name.Contains("Setting") && CurrentCanvasReference.name.Contains("Pause"))
+                CloseMenu(false, false);
+            else
+                CloseMenu(false);
         }
 
         PlayerInMenu = true;
@@ -77,7 +80,7 @@ public class UITransitionManager
         return CurrentCanvasReference;
     }
 
-    public static void CloseMenu(bool disableMouse = true)
+    public static void CloseMenu(bool disableMouse = true, bool changeCam = true)
     {
         if (disableMouse)
         {
@@ -92,10 +95,13 @@ public class UITransitionManager
         if (playerMesh != null) playerMesh.enabled = true;
 
         // move camera back
-        GameManager.playerCameraRef.transform.SetParent(oldCameraAnchorPoint);
-        playerCamTransform.localPosition = oldCameraLocalPosition;
-        playerCamTransform.localRotation = oldCameraLocalRotation;
-        oldCameraAnchorPoint = null;
+        if(changeCam)
+        {
+            GameManager.playerCameraRef.transform.SetParent(oldCameraAnchorPoint);
+            playerCamTransform.localPosition = oldCameraLocalPosition;
+            playerCamTransform.localRotation = oldCameraLocalRotation;
+            oldCameraAnchorPoint = null;
+        }
         
         if(CurrentCanvasReference != null)
         {

@@ -55,7 +55,7 @@ public class Interact : MonoBehaviour
         if(_interactable != null)
         {
             _interactable.Interact(gameObject);
-
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.InteractSFX);
 
         }
     }

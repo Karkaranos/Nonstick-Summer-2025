@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{22132fb5-3e6b-4314-85b0-0f4ee1442c84}">
+		<property name="name">
+			<value>Combat</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a71f947b-03ec-4e4b-9205-8afd9a06b6dc}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{bd31959a-7507-452e-82fb-d04cd0d381c8}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{bd31959a-7507-452e-82fb-d04cd0d381c8}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Side Fight</value>
+			<value>Mom Boss</value>
+			<value>Cousin Boss</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

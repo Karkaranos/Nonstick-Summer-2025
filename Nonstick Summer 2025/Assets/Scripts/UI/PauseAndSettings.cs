@@ -26,6 +26,7 @@ public class PauseAndSettings : MonoBehaviour
     /// <param name="scene">the scene index to go to</param>
     public void LoadScene(int scene)
     {
+        UITransitionManager.CloseMenu();
         UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
     }
 

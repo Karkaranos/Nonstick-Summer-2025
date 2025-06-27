@@ -69,6 +69,16 @@ public class DialogueManager
             yield break;
         }
 
+        if (CurrentRelationshipScore > relationshipScore)
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.NegRelationSFX);
+            Debug.Log("NegativeSFX played");
+        }
+        else
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.PosRelationSFX);
+        }
+
         RelationshipManager.characterRelationships[currentCharacter].currentValue = relationshipScore;
 
         if(DialogueUIController.Instance != null)
@@ -116,9 +126,13 @@ public class DialogueManager
 
         ReadUserInput = false;
 
-        if(playedCard != null)
+        if (playedCard != null)
             playedCard.TryTriggerStampEffect(StampTriggerConditions.BeforeCardPlayed);
+
         //TODO wait for potential _modifier animations to finish
+
+        if (playedCard != null)
+            DialogueUIController.Instance.DeckDisplay.DiscardCard(playedCard);
 
         yield return DialogueUIController.Instance.ToggleUIForDialogueProgression(false);
 
@@ -135,10 +149,8 @@ public class DialogueManager
 
         float relationshipChange = dialogueOption.ChangeInRelationshipStatus;
         //float relationshipChange = playedCard.GetRelationshipChange(dialogueOption);
-        yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange);
-
-        if(playedCard!=null)
-            DialogueManager.PlayerHand.Remove(playedCard);
+        //yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange);
+        GameManager.Instance.StartCoroutine(SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange));
 
         // progress dialogue:
         if (RelationshipManager.characterRelationships[currentCharacter].currentValue >= dialogueOption.RelationshipRequirement)

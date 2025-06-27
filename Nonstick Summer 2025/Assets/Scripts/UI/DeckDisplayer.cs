@@ -115,13 +115,22 @@ public class DeckDisplayer : MonoBehaviour
             .Where(card => !displayedData.Cards.Contains(card.cardData));
         for(int i=cardsRemovedFromHand.Count()-1; i>=0; i--)
         {
+            if(cardsRemovedFromHand.ElementAt(i) == null)
+                continue;
+
             if(cardsRemovedFromHand.ElementAt(i).gameObject != null)
                 Destroy(cardsRemovedFromHand.ElementAt(i).gameObject);
         }
 
         //_visualDisplays = _visualDisplays.Where(disp => disp != null).ToList();
-        _visualDisplays
-            .Where(card => displayedData.Cards.Contains(card.cardData));
+
+        // TODO: do this better. im running out of options
+        for (int i = _visualDisplays.Count() - 1; i >= 0; i--)
+        {
+            if (_visualDisplays[i] == null || _visualDisplays[i].gameObject == null)
+                _visualDisplays.RemoveAt(i);
+        }
+
 
         if (displayedData.Count == 0)
             return;
@@ -268,17 +277,6 @@ public class DeckDisplayer : MonoBehaviour
         displayedData.Remove(card);
 
         DisplayAllCards();
-
-        //ClearDisplay();
-
-        // Creates referenced array
-        /*Vector2[] spawnPositions = new Vector2[displayedData.Count];
-
-        // Generates spawn positions
-        GeneratePositions(ref spawnPositions, 0, displayedData.Count - 1);
-
-        // Spawns the specified number of cards
-        SpawnCards(StaticUtilities.ListToArray(displayedData), spawnPositions);*/
     }
 
     /// <summary>

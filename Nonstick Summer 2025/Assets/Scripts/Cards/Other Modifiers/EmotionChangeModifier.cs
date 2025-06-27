@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 /*****************************************************************************
 // File Name :          EmotionChangeModifier.cs
@@ -14,7 +15,7 @@ public class EmotionChangeModifier : ModifierData
     [SerializeField]
     private CardEmotion emotionToSet;
 
-    [SerializeField]
+    [SerializeField, ShowAssetPreview(32, 32)]
     private Sprite modifierSprite;
 
     public override bool CanApplyModifier(CardData[] cards)

@@ -111,24 +111,21 @@ public class DeckDisplayer : MonoBehaviour
             _visualDisplays = new List<CardDisplay>();
 
         // clear modifiers that arent in hand anymore
-        var cardsRemovedFromHand = _visualDisplays
-            .Where(card => !displayedData.Cards.Contains(card.cardData));
-        for(int i=cardsRemovedFromHand.Count()-1; i>=0; i--)
-        {
-            if(cardsRemovedFromHand.ElementAt(i) == null)
-                continue;
-
-            if(cardsRemovedFromHand.ElementAt(i).gameObject != null)
-                Destroy(cardsRemovedFromHand.ElementAt(i).gameObject);
-        }
-
-        //_visualDisplays = _visualDisplays.Where(disp => disp != null).ToList();
-
-        // TODO: do this better. im running out of options
         for (int i = _visualDisplays.Count() - 1; i >= 0; i--)
         {
-            if (_visualDisplays[i] == null || _visualDisplays[i].gameObject == null)
+            var display = _visualDisplays[i];
+            if (display == null || display.gameObject == null || display.cardData == null)
+            {
                 _visualDisplays.RemoveAt(i);
+                continue;
+            }
+
+            if (!displayedData.Contains(display.cardData))
+            {
+                Destroy(display.gameObject);
+                _visualDisplays.RemoveAt(i);
+                continue;
+            }
         }
 
 

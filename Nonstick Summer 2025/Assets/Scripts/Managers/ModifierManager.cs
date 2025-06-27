@@ -30,7 +30,7 @@ public class ModifierManager
     {
         foreach(var modifier in defaultModifiers)
         {
-            _modifierCollection.Add(modifier);
+            AddCard(modifier, makeCopy: true);
         }
     }
 
@@ -53,7 +53,8 @@ public class ModifierManager
     /// </summary>
     public static void RemoveCard(ModifierData modifier)
     {
-        _modifierCollection.Remove(modifier);
+        if(_modifierCollection.Contains(modifier))
+            _modifierCollection.Remove(modifier);
     }
 
     /// <summary>

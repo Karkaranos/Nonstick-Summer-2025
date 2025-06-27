@@ -1,10 +1,18 @@
 /*************************************************
 Author Names :          Cade, Naylor, Toby
 Date Created :          June 6, 2025
-Date Modified :         June 10, 2025
+Date Modified :         June 26, 2025
 Brief Description :     Handles visual display for the deck
 
+Inside of you there are two decks: your hand and 
+your remaining cards.
+You can still display cards without ever setting 
+remaining cards, you just gotta be careful.
+
+I might've gone really overboard with the animations, sorry cader :,(
+
 TODO :                  Create functions for easier updating
+                        _visualDisplays and displayedData are basically storing the same thing. figure out how to clean that up
 ***************************************************/
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,33 +21,42 @@ using System.Collections;
 using System.Linq;
 using System;
 using NaughtyAttributes;
+using static Unity.Cinemachine.CinemachineFreeLookModifier;
+using FMOD;
 
 // This script needed to be a Monobehavior to get some of the references needed
+[RequireComponent(typeof(CanvasGroup))]
 public class DeckDisplayer : MonoBehaviour
 {
     #region DISPLAY
 
     #region Variables
+
+    [SerializeField, Required]
+    private RectTransform cardArea;
+
+    [HideInInspector]
+    public CanvasGroup canvasGroup;
+
     //private static Deck PlayerDeckRef => GameManager.DeckManagerReference.PlayerDeck;
-    [SerializeField] private Deck DeckRef; // changed to be generalized, because deck will not always be the players.
+    [SerializeField] private Deck RemainingDeckRef; // changed to be generalized, because deck will not always be the players.
     private static int DefaultHandSize => GameManager.DefaultCardsInHand;
     private static int MaxHandSize => GameManager.MaxCardsVisibleInDeck;
 
-    public List<GameObject> VisualDisplay { get => _visualDisplay; private set => _visualDisplay = value; }
+    public List<CardDisplay> VisualDisplays { get => _visualDisplays; private set => _visualDisplays = value; }
 
     [SerializeField, Tooltip("Adjusts horizontal space between cards and edge of display")]
     private float _bufferFromEdgeOfRegion = 10;
     [SerializeField, Tooltip("A reference to the visual Card Prefab")] private GameObject _cardPrefab;
+    [SerializeField, Tooltip("Point to spawn cards from")]
+    private Vector2 spawnCardsPosition = new Vector2(2400, 1350); // screen dimensions * 1.25
 
     private Vector2 _dimensions;    // Dimensions of the rectTransform cards will spawn in
     private Vector3 rectTransformCenter;    // Position of the rectTransform, in screen space
     private float _cardWidth;
 
-    private List<GameObject> _visualDisplay = new List<GameObject>();
-
-    private Vector2[] spawnPositions;
-
-    private List<CardData> displayedData = new List<CardData>();
+    private List<CardDisplay> _visualDisplays = new List<CardDisplay>();
+    private Deck displayedData = new Deck();
 
     #endregion Variables
 
@@ -51,18 +68,36 @@ public class DeckDisplayer : MonoBehaviour
     private void Awake()
     {
         _dimensions = GetComponent<RectTransform>().sizeDelta;
-        GameObject temp = Instantiate(_cardPrefab);
-        _cardWidth = temp.transform.GetComponent<RectTransform>().sizeDelta.x;
-        _dimensions.x -= _cardWidth;
-        Destroy(temp);
+        _cardWidth = _cardPrefab.transform.GetComponent<RectTransform>().sizeDelta.x;
+        canvasGroup = GetComponent<CanvasGroup>();
         rectTransformCenter = transform.localPosition;
     }
 
-    public void SetDeck(ref Deck deckRef)
+    public void SetDisplayDeck(ref Deck deckRef, bool displayAll=true)
     {
-        DeckRef = deckRef;
-        //This will eventually be moved elsewhere
-        DrawToDefaultHand();
+        displayedData = deckRef;
+
+        deckRef.OnDeckChanged.AddListener(DisplayAllCards); // this function Can cause changes to the deck, but if it keeps running, it will run out of things to change
+
+        if (displayAll)
+            DisplayAllCards();
+    }
+
+    public void SetRemainingDeck(ref Deck deckRef, bool shuffle = true)
+    {
+        RemainingDeckRef = deckRef;
+        //This was moved elsewhere
+        //DrawToDefaultHand();
+
+        if (shuffle)
+            RemainingDeckRef.Shuffle();
+    }
+
+    public void SetRemainingDeck(Deck deckRef, bool shuffle = true)
+    {
+        RemainingDeckRef = deckRef;
+        if(shuffle)
+            RemainingDeckRef.Shuffle();
     }
 
     /// <summary>
@@ -70,18 +105,53 @@ public class DeckDisplayer : MonoBehaviour
     /// </summary>
     public void DisplayAllCards()
     {
-        ClearDisplay();
+        UnityEngine.Debug.Log("displaying cards");
 
+        if (_visualDisplays == null)
+            _visualDisplays = new List<CardDisplay>();
 
-        // Creates referenced array
-        spawnPositions = new Vector2[DeckRef.Cards.Count];
+        // clear modifiers that arent in hand anymore
+        var cardsRemovedFromHand = _visualDisplays
+            .Where(card => !displayedData.Cards.Contains(card.cardData));
+        for(int i=cardsRemovedFromHand.Count()-1; i>=0; i--)
+        {
+            if(cardsRemovedFromHand.ElementAt(i).gameObject != null)
+                Destroy(cardsRemovedFromHand.ElementAt(i).gameObject);
+        }
+
+        //_visualDisplays = _visualDisplays.Where(disp => disp != null).ToList();
+        _visualDisplays
+            .Where(card => displayedData.Cards.Contains(card.cardData));
+
+        if (displayedData.Count == 0)
+            return;
+
+        SpawnNewCards();
 
         // Generates spawn positions
-        GeneratePositions(ref spawnPositions, 0, DeckRef.Cards.Count-1);
+        GenerateAndSetPositions();
+    }
 
-        // Spawns all cards
-        SpawnCards(DeckRef.PopAndReplaceNCards(DeckRef.Cards.Count), spawnPositions);
+    private void SpawnNewCards()
+    {
+        // Cards that havent been instantiated yet
+        var newCards = displayedData.Cards.
+            Where(card =>
+                _visualDisplays.Select(display => display.cardData) // what the lambda
+                .Contains(card) == false);
+        // programming equivalent of doing an awesome skateboard trick ^
 
+        foreach (var newCard in newCards)
+        {
+            var newCardGameObj = Instantiate(_cardPrefab, this.transform);
+            var display = newCardGameObj.GetComponent<CardDisplay>();
+            display.SetCard(newCard);
+
+            display.SetPositionAndOffsetNoAnimation(position: spawnCardsPosition, offset: Vector2.zero);
+            _visualDisplays.Add(display);
+
+            display.OnMouseDown.AddListener(OnCardClicked);
+        }
     }
 
     /// <summary>
@@ -90,18 +160,33 @@ public class DeckDisplayer : MonoBehaviour
     /// </summary>
     public void DrawToDefaultHand()
     {
-        ClearDisplay();
+        if(RemainingDeckRef == null)
+        {
+            throw new ArgumentNullException("No deck to draw from");
+        }
+
+        if(RemainingDeckRef.Count == 0)
+        {
+            throw new ArgumentOutOfRangeException("No cards to draw");
+        }
+
+        while(displayedData.Count < DefaultHandSize)
+            displayedData.Add(RemainingDeckRef.Pop(), false);
+
+        DisplayAllCards();
+
+        /*ClearDisplay();
 
         int n = DefaultHandSize;
 
         // Creates referenced array
-        Vector2[] spawnPositions = new Vector2[n];
+        //Vector2[] spawnPositions = new Vector2[n];
 
         // Generates spawn positions
-        GeneratePositions(ref spawnPositions, 0, n - 1);
+        GenerateAndSetPositions(0, n - 1);
 
         // Spawns the specified number of cards
-        SpawnCards(DeckRef.PopAndReplaceNCards(n), spawnPositions);
+        SpawnCards(RemainingDeckRef.PopAndReplaceNCards(n), spawnPositions);*/
     }
 
     /// <summary>
@@ -110,7 +195,17 @@ public class DeckDisplayer : MonoBehaviour
     /// </summary>
     public void DrawToMaxHand()
     {
-        ClearDisplay();
+        if (RemainingDeckRef == null)
+        {
+            throw new ArgumentNullException("No deck to draw from");
+        }
+
+        while (displayedData.Count < MaxHandSize)
+            displayedData.Add(RemainingDeckRef.Pop(),false);
+
+        DisplayAllCards();
+
+        /*ClearDisplay();
 
         int n = MaxHandSize;
 
@@ -118,38 +213,10 @@ public class DeckDisplayer : MonoBehaviour
         Vector2[] spawnPositions = new Vector2[n];
 
         // Generates spawn positions
-        GeneratePositions(ref spawnPositions, 0, n - 1);
+        GenerateAndSetPositions(0, n - 1);
 
         // Spawns the specified number of cards
-        SpawnCards(DeckRef.PopAndReplaceNCards(n), spawnPositions);
-    }
-
-
-    /// <summary>
-    /// Displays a specified number of cards from the player's hand
-    /// If no number is specified, displays max number of cards visible as stated on GameManager
-    /// </summary>
-    /// <param name="n">The number of cards to display</param>
-    public void DisplayNCards(int n=0)
-    {
-        ClearDisplay();
-
-        Debug.Log("Displaying " + n + " of " + DeckRef.Cards.Count + " cards.");
-
-        // If no value was passed in, set the display count to the number from GameManager
-        if(n==0)
-        {
-            n = DefaultHandSize;
-        }
-
-        // Creates referenced array
-        Vector2[] spawnPositions = new Vector2[n];
-
-        // Generates spawn positions
-        GeneratePositions(ref spawnPositions, 0, n-1);
-
-        // Spawns the specified number of cards
-        SpawnCards(DeckRef.PopAndReplaceNCards(n), spawnPositions);
+        SpawnCards(RemainingDeckRef.PopAndReplaceNCards(n), spawnPositions);*/
     }
 
     /// <summary>
@@ -157,30 +224,37 @@ public class DeckDisplayer : MonoBehaviour
     /// </summary>
     public void ClearDisplay()
     {
-        for(int i=0; i<VisualDisplay.Count; i++)
+        for(int i=0; i<_visualDisplays.Count; i++)
         {
-            Destroy(VisualDisplay[i]);
+            Destroy(_visualDisplays[i]);
         }
-        VisualDisplay.Clear();
+        _visualDisplays.Clear();
     }
 
 
     public void DrawOneCard()
     {
-        if (displayedData.Count < MaxHandSize)
+        if (RemainingDeckRef == null)
         {
-            displayedData.Add(DeckRef.GetNextCardCopy());
+            throw new ArgumentNullException("No deck to draw from");
+        }
 
-            ClearDisplay();
+        if (RemainingDeckRef.Count < MaxHandSize)
+        {
+            displayedData.Add(RemainingDeckRef.Pop(), false);
+
+            DisplayAllCards();
+
+            /*ClearDisplay();
 
             // Creates referenced array
             Vector2[] spawnPositions = new Vector2[displayedData.Count];
 
             // Generates spawn positions
-            GeneratePositions(ref spawnPositions, 0, displayedData.Count - 1);
+            GenerateAndSetPositions(0, displayedData.Count - 1);
 
             // Spawns the specified number of cards
-            SpawnCards(StaticUtilities.ListToArray(displayedData), spawnPositions);
+            SpawnCards(StaticUtilities.ListToArray(displayedData), spawnPositions);*/
         }
         else
         {
@@ -193,16 +267,18 @@ public class DeckDisplayer : MonoBehaviour
     {
         displayedData.Remove(card);
 
-        ClearDisplay();
+        DisplayAllCards();
+
+        //ClearDisplay();
 
         // Creates referenced array
-        Vector2[] spawnPositions = new Vector2[displayedData.Count];
+        /*Vector2[] spawnPositions = new Vector2[displayedData.Count];
 
         // Generates spawn positions
         GeneratePositions(ref spawnPositions, 0, displayedData.Count - 1);
 
         // Spawns the specified number of cards
-        SpawnCards(StaticUtilities.ListToArray(displayedData), spawnPositions);
+        SpawnCards(StaticUtilities.ListToArray(displayedData), spawnPositions);*/
     }
 
     /// <summary>
@@ -211,9 +287,44 @@ public class DeckDisplayer : MonoBehaviour
     /// <param name="positions">Vector2 array of spawn positions, passed by reference</param>
     /// <param name="start">The starting index</param>
     /// <param name="end">The ending index</param>
-    private void GeneratePositions(ref Vector2[] positions, int start, int end)
+    private void GenerateAndSetPositions(int? startIndex = null, int? endIndex = null)
     {
-        print("Ran");
+        startIndex = startIndex ?? 0;
+        endIndex = endIndex ?? _visualDisplays.Count-1;
+
+        float left = cardArea.rect.xMin + _bufferFromEdgeOfRegion;
+        float right = cardArea.rect.xMax - _bufferFromEdgeOfRegion;
+
+        //Debug.Log($"left {left}, right {right}");
+
+        //TODO sort cards somehow
+
+        for (int i = startIndex.Value; i <= endIndex.Value; i++)
+        {
+            var card = _visualDisplays[i];
+
+            float t;
+            if (_visualDisplays.Count <= 1)
+                t = 0.5f; // halfway through to avoid dividing by 0
+            else
+                t = (float)i / (_visualDisplays.Count - 1);
+
+            float x = Mathf.Lerp(left, right, t);
+            card.SetPositionAndOffset(position: new Vector2(x, 0), offset: Vector2.zero, speed: 5000);
+        }
+
+        // Assign the first position to the left side of the display area
+        //Vector2 nextPosition = new Vector2(_bufferFromEdgeOfRegion - (.5f * _dimensions.x) + rectTransformCenter.x, 0);
+        //Vector2 nextPosition = new Vector2(cardArea.rect.xMin + _bufferFromEdgeOfRegion, 0);
+
+        // Calculate the space needed
+        //float additiveValue = (_dimensions.x - (_bufferFromEdgeOfRegion*2)) / (_visualDisplays.Count);
+
+        // Assigns the last position to the right side of the display area, as a percaution
+        // also yeah the numbers are weird. I will fix it later. i'm a lil tired tbh
+        //positions[end] = new Vector2(rectTransformCenter.x + .5f * _dimensions.x + .3f * _cardWidth - _bufferFromEdgeOfRegion, 150);
+
+        /*
         // Assign the first position to the left side of the display area
         positions[start] =  new Vector2(_bufferFromEdgeOfRegion - .5f *_dimensions.x + rectTransformCenter.x,150);
 
@@ -229,8 +340,10 @@ public class DeckDisplayer : MonoBehaviour
 
         // Assigns the last position to the right side of the display area, as a percaution
         // also yeah the numbers are weird. I will fix it later. i'm a lil tired tbh
-        positions[end] =    new Vector2(rectTransformCenter.x + .5f *_dimensions.x + .3f * _cardWidth -_bufferFromEdgeOfRegion, 150);
+        positions[end] =    new Vector2(rectTransformCenter.x + .5f *_dimensions.x + .3f * _cardWidth -_bufferFromEdgeOfRegion, 150);*/
     }
+
+    #region Obselete
 
     /// <summary>
     /// Contains the actual logic for spawning the cards
@@ -238,31 +351,58 @@ public class DeckDisplayer : MonoBehaviour
     /// </summary>
     /// <param name="cards">An array of CardData for the cards to create</param>
     /// <param name="position">Where the spawned cards should be located</param>
+    [System.Obsolete]
     private void SpawnCards(CardData[] cards, Vector2[] position)
     {
         displayedData.Clear();
-        for(int i=0; i<cards.Length; i++)
+        for (int i = 0; i < cards.Length; i++)
         {
             //Debug.Log("spawning card at " + position[i]);
             /* There is probably a better way to do this
              * However, I needed to spawn the card, set its anchor, then adjust the position after setting the anchor
              * so it works for now*/
-            
-            VisualDisplay.Add(Instantiate(_cardPrefab, Vector2.zero, Quaternion.identity, transform));
-            //_visualDisplay[i].GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
 
-            var cardDisplay = VisualDisplay[i].GetComponent<CardDisplay>();
+            var displayGameobject = Instantiate(_cardPrefab, Vector2.zero, Quaternion.identity, transform);
+            var cardDisplay = displayGameobject.GetComponent<CardDisplay>();
+            _visualDisplays.Add(cardDisplay);
+
             displayedData.Add(cards[i]);
 
-            VisualDisplay[i].transform.localPosition = position[i];
-            cardDisplay.UpdatePosition();
+            cardDisplay.SetPositionAndOffset(position: position[i], offset: Vector2.zero, speed: 5000);
 
             cardDisplay.SetCard(cards[i]);
             cardDisplay.OnMouseDown.AddListener(OnCardClicked);
         }
     }
 
-    #region Obselete
+    /// <summary>
+    /// Displays a specified number of cards from the player's hand
+    /// If no number is specified, displays max number of cards visible as stated on GameManager
+    /// </summary>
+    /// <param name="n">The number of cards to display</param>
+    [Obsolete]
+    public void DisplayNCards(int n = 0)
+    {
+        ClearDisplay();
+
+        UnityEngine.Debug.Log("Displaying " + n + " of " + RemainingDeckRef.Cards.Count + " cards.");
+
+        // If no value was passed in, set the display count to the number from GameManager
+        if (n == 0)
+        {
+            n = DefaultHandSize;
+        }
+
+        // Creates referenced array
+        Vector2[] spawnPositions = new Vector2[n];
+
+        // Generates spawn positions
+        GenerateAndSetPositions(0, n - 1);
+
+        // Spawns the specified number of cards
+        SpawnCards(RemainingDeckRef.PopAndReplaceNCards(n), spawnPositions);
+    }
+
     // ok so I was being a little bit of a dumbass trying to get this to work
     // will probably revisit it later for efficiency 
     // actually nevermind the entire thing is more complex
@@ -313,14 +453,13 @@ public class DeckDisplayer : MonoBehaviour
     [HideInInspector] // use this in other scripts to detect when the user selects cards
     public UnityEvent OnCardsSelectedChanged = new UnityEvent();
     public CardData FirstSelectedCard => selectedCards.Count > 0 ? selectedCards.First().cardData : null;
+    public bool HasCardsSelected => selectedCards.Count > 0;
 
     // tobys first HashSet in Unity! 6/21/2025
     [HideInInspector]
     public HashSet<CardDisplay> selectedCards = new HashSet<CardDisplay>();
 
     #region Computational Variables
-
-    private int finishedDeselects;
 
     private bool showSwapSelected => MaxSelectedCards == 1;
 
@@ -347,7 +486,7 @@ public class DeckDisplayer : MonoBehaviour
         if (selectedCards.Contains(cardDisplay))
             return;
 
-        Debug.Log("selecting card");
+        UnityEngine.Debug.Log("selecting card");
 
         // swap cards if player can only have one 
         if(MaxSelectedCards == 1 && SwapCardsOnSelection)
@@ -357,14 +496,14 @@ public class DeckDisplayer : MonoBehaviour
 
         if(selectedCards.Count >= MaxHandSize)
         {
-            Debug.Log("too many cards selected!");
+            UnityEngine.Debug.Log("too many cards selected!");
             return;
         }
 
         selectedCards.Add(cardDisplay);
 
-        cardDisplay.SetPositionOffset( (Vector3)selectedCardOffset );
-        cardDisplay.transform.SetAsFirstSibling(); // bring to front so player can see it
+        cardDisplay.SetPositionAndOffset( offset: (Vector3)selectedCardOffset );
+        cardDisplay.transform.SetAsLastSibling(); // bring to front so player can see it
 
         OnCardsSelectedChanged.Invoke();
     }
@@ -373,7 +512,7 @@ public class DeckDisplayer : MonoBehaviour
         if (!selectedCards.Contains(cardDisplay))
             return;
 
-        Debug.Log("deselect");
+        UnityEngine.Debug.Log("deselect");
 
         selectedCards.Remove(cardDisplay);
 

@@ -47,6 +47,7 @@ public class DialogueManager
     private static float _defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent;
     public static float MaxEnergy;
     public static int DefaultCardsInHand { get; private set; }
+    public static int CardsDrawnPerRound;
 
     #region Getters and setters
 
@@ -88,7 +89,7 @@ public class DialogueManager
 
     #endregion
 
-    public DialogueManager(float defaultEnergy, float energyGainedPerRound, float energyGainedIfSilent, float maxEnergy, int defaultCardsInHand)
+    public DialogueManager(float defaultEnergy, float energyGainedPerRound, float energyGainedIfSilent, float maxEnergy, int defaultCardsInHand, int _cardsDrawnPerRound)
     {
         _defaultEnergy = defaultEnergy;
         _energyGainedPerRound = energyGainedPerRound;
@@ -98,6 +99,7 @@ public class DialogueManager
 
         _currentEnergy = defaultEnergy;
         PlayerHand = new Deck();
+        CardsDrawnPerRound = _cardsDrawnPerRound;
     }
 
     public static void OnOpenCombatUI(DialogueBranch startDialogueBranch, characters character)
@@ -107,17 +109,8 @@ public class DialogueManager
         currentCharacter = character;
 
         // testing only: please delete later
-        //PlayerHand.Clear();
-        PlayerHand.Add(CardData.NewCard(1, CardEmotion.Sappy, CardIntention.Expression));
-        PlayerHand.Add(CardData.NewCard(0, CardEmotion.Charming, CardIntention.Observation));
-        PlayerHand.Add(CardData.NewCard(-3, CardEmotion.Assertive, CardIntention.Question));
-        PlayerHand.Add(CardData.NewCard(2, CardEmotion.Assertive, CardIntention.Expression));
-        PlayerHand.Add(CardData.NewCard(0, CardEmotion.Sappy, CardIntention.Observation));
-        PlayerHand.Add(CardData.NewCard(-3, CardEmotion.Charming, CardIntention.Question));
-        PlayerHand.Add(CardData.NewCard(1, CardEmotion.Charming, CardIntention.Expression));
-        PlayerHand.Add(CardData.NewCard(0, CardEmotion.Assertive, CardIntention.Observation));
-        PlayerHand.Add(CardData.NewCard(-3, CardEmotion.Sappy, CardIntention.Question));
-        Debug.LogWarning("Added 1 of each hard-coded test cards to hand.");
+        // ok i did it
+
         PlayerHand.Shuffle();
     }
 
@@ -133,7 +126,8 @@ public class DialogueManager
 
         ReadUserInput = false;
 
-        playedCard.TryTriggerStampEffect(StampTriggerConditions.BeforeCardPlayed);
+        if(playedCard != null)
+            playedCard.TryTriggerStampEffect(StampTriggerConditions.BeforeCardPlayed);
         //TODO wait for potential _modifier animations to finish
 
         yield return DialogueUIController.Instance.ToggleUIForDialogueProgression(false);
@@ -149,8 +143,12 @@ public class DialogueManager
         // progress dialogue:
         var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
 
-        float relationshipChange = playedCard.GetRelationshipChange(dialogueOption);
+        float relationshipChange = dialogueOption.ChangeInRelationshipStatus;
+        //float relationshipChange = playedCard.GetRelationshipChange(dialogueOption);
         yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange);
+
+        if(playedCard!=null)
+            DialogueManager.PlayerHand.Remove(playedCard);
 
         // progress dialogue:
         if (RelationshipManager.characterRelationships[currentCharacter].currentValue >= dialogueOption.RelationshipRequirement)
@@ -175,8 +173,6 @@ public class DialogueManager
         Debug.Log("Completed processing card");
         // only keep reading user input if theres more
         ReadUserInput = true;//!CurrentDialogueBranch.End; 
-
-        DialogueManager.PlayerHand.Remove(playedCard);
 
         MoodManager.UpdateMood(playedCard.Emotion);
     }

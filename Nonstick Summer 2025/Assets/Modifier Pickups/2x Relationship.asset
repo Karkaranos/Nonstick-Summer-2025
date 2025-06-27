@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf86d3cd08e62142bee760217e6f3f7, type: 3}
-  m_Name: TEST
+  m_Script: {fileID: 11500000, guid: 305ed51a54b892448a18e85c1f8ba3a0, type: 3}
+  m_Name: 2x Relationship
   m_EditorClassIdentifier: 
-  _energyCost: 1
-  _emotion: 2
-  _intention: 1
-  _stamps: []
+  MaxCardsApplied: 1
+  MinCardsApplied: 1
+  StampToApply: {fileID: 11400000, guid: a317e6d50f1673747834416afe1935ea, type: 2}

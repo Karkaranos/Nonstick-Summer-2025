@@ -9,6 +9,7 @@ using Unity.VisualScripting;
 using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
+using System.Linq;
 
 [RequireComponent(typeof(MouseInteractionEvents))]
 public partial class CardDisplay : MonoBehaviour
@@ -21,6 +22,7 @@ public partial class CardDisplay : MonoBehaviour
     [Foldout("UI Components"), SerializeField, Required] RectTransform cardBackground;
     [Foldout("UI Components"), SerializeField, Required] Image IntentionImage;
     [Foldout("UI Components"), SerializeField, Required] TMP_Text EnergyText;
+    [Foldout("UI Components"), SerializeField] Image[] StampImages;
 
     public CardData cardData { get{ return card; } }
 
@@ -28,20 +30,23 @@ public partial class CardDisplay : MonoBehaviour
     private CardData card;
 
     private MouseInteractionEvents mouseInteraction;
+    private RectTransform rectTransform;
 
     public UnityEvent<CardDisplay> OnMouseDown = new UnityEvent<CardDisplay> ();
 
     private void Start()
     {
-        if(card != null) SetCard(card); // mostly for debugging
+        if (card != null) SetCard(card); // mostly for debugging
 
         mouseInteraction = GetComponent<MouseInteractionEvents>();
+        rectTransform = GetComponent<RectTransform>();
 
         mouseInteraction.OnMouseHoverStart.AddListener(OnMouseHoverStart);
         mouseInteraction.OnMouseHoverEnd.AddListener(OnMouseHoverEnd);
         mouseInteraction.OnMouseDown.AddListener(OnMouseDownStart);
 
-        basePosition = cardBackground.anchoredPosition;
+        // EVERYTHING breaks if you uncomment this. DO NOT touch it.
+        //basePosition = cardBackground.anchoredPosition;
     }
 
     private void OnMouseHoverStart() // TODO this should be moved to another script
@@ -98,6 +103,29 @@ public partial class CardDisplay : MonoBehaviour
         IntentionImage.sprite = CardStyleManager.GetIntentionSprite(card);
         CardBackgroundImage.color = CardStyleManager.GetEmotionColor(card);
 
+        UpdateStampIcons();
+
         // maybe play a lil animation? (add a parameter?)
+    }
+
+    private void UpdateStampIcons()
+    {
+        int i;
+        for (i = 0; i<card.Stamps.Count && i<StampImages.Length; i++)
+        {
+            StampImages[i].sprite = card.Stamps.ElementAt(i).Icon;
+            StampImages[i].color = Color.white;
+        }
+
+        for(;i<StampImages.Length; i++)
+        {
+            StampImages[i].sprite = null;
+            StampImages[i].color = Color.clear;
+        }
+
+        if (card.Stamps.Count > StampImages.Length)
+        {
+            Debug.LogError("not enough stamp icons for the number of stamps");
+        }
     }
 }

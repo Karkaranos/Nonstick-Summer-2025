@@ -23,6 +23,20 @@ public class UITransitionManager
         playerMesh = GameObject.FindFirstObjectByType<PlayerMovement>()?.GetComponentInChildren<MeshRenderer>();
     }
 
+    //TODO rename this function
+    public static bool OpenMenuIfNoOtherMenusAreOpenRightNow(GameObject canvasPrefab, out GameObject CanvasCreated, 
+        Transform cameraAnchor = null, GameObject objectRef = null)
+    {
+        if (PlayerInMenu)
+        {
+            CanvasCreated = null;
+            return false;
+        }
+
+        CanvasCreated = OpenMenu(canvasPrefab, cameraAnchor, objectRef);
+        return true;
+    }
+
     public static GameObject OpenMenu(GameObject canvasPrefab, Transform cameraAnchor = null, GameObject objectRef = null)
     {
         if(PlayerInMenu)

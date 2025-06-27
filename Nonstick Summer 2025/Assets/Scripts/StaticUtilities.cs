@@ -33,9 +33,9 @@ public static class StaticUtilities
         canvasgroup.blocksRaycasts = blocksRaycasts;
     }
 
-    public static void DisableCanvasGroup(CanvasGroup canvasgroup)
+    public static void DisableCanvasGroup(CanvasGroup canvasgroup, float alpha = 0)
     {
-        canvasgroup.alpha = 0;
+        canvasgroup.alpha = alpha;
         canvasgroup.interactable = false;
         canvasgroup.blocksRaycasts = false;
     }

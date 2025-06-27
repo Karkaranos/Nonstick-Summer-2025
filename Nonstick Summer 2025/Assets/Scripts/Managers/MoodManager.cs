@@ -50,7 +50,11 @@ public class MoodManager: MonoBehaviour
     /// <param name="emotion">the emotion expressed by the player</param>
     public static void UpdateMood(CardEmotion emotion)
     {
-
+        if(!emotions.ContainsKey(emotion))
+        {
+            Debug.LogError(emotion.ToString());
+            return;
+        }
         emotions[emotion].expressionValue += 1;
 
         for (int i = 0; i < emotions[emotion].expressionValue; i++)

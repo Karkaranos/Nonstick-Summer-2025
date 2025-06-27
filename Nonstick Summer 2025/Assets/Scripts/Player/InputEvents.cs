@@ -23,6 +23,8 @@ public class InputEvents : Singleton<InputEvents>
 
     [HideInInspector] public static UnityEvent PauseStarted = new UnityEvent();
 
+    [HideInInspector] public static UnityEvent InventoryStarted = new UnityEvent();
+
     [HideInInspector] public static UnityEvent ClickStarted = new UnityEvent();
     [HideInInspector] public static UnityEvent ClickHeld = new UnityEvent();
     [HideInInspector] public static UnityEvent ClickCanceled = new UnityEvent();
@@ -36,14 +38,14 @@ public class InputEvents : Singleton<InputEvents>
     [HideInInspector] public static UnityEvent InteractCanceled = new UnityEvent();
 
     // Input values and flags
-    public static bool MovePressed, /*JumpPressed,*/ PausePressed, ClickPressed, RightClickPressed, DashPressed, InteractPressed;
+    public static bool MovePressed, /*JumpPressed,*/ PausePressed, InventoryPressed, ClickPressed, RightClickPressed, DashPressed, InteractPressed;
 
     public Vector2 InputDirection => UITransitionManager.PlayerInMenu ? Vector2.zero : Move.ReadValue<Vector2>();
     public static Vector2 MousePosition => Mouse.current.position.value;
     public static Vector2 MouseDelta => UITransitionManager.PlayerInMenu ? Vector2.zero : mouseDelta.ReadValue<Vector2>();     // uses canvas space *sigh
 
     private PlayerInput playerInput;
-    private static InputAction Move, /*Jump,*/ Pause, LeftClick, RightClick, mouseDelta, Interact;
+    private static InputAction Move, /*Jump,*/ Pause, Inventory, LeftClick, RightClick, mouseDelta, Interact;
 
     private void Start()
     {
@@ -61,12 +63,14 @@ public class InputEvents : Singleton<InputEvents>
         Pause = map.FindAction("Pause");
         mouseDelta = map.FindAction("MouseDelta");
         Interact = map.FindAction("Interact");
+        Inventory = map.FindAction("Open Inventory");
 
         Move.started += ctx => ActionStarted(ref MovePressed, MoveStarted);
         //Jump.started += ctx => ActionStarted(ref JumpPressed, JumpStarted);
         LeftClick.started += ctx => ActionStarted(ref ClickPressed, ClickStarted);
         RightClick.started += ctx => ActionStarted(ref RightClickPressed, RightClickStarted);
         Pause.started += ctx => { PausePressed = true; PauseStarted?.Invoke(); };
+        Inventory.started += ctx => { InventoryPressed = true; InventoryStarted?.Invoke(); };
         Interact.started += ctx => ActionStarted(ref InteractPressed, InteractStarted);
 
         Move.canceled += ctx => ActionCanceled(ref MovePressed, MoveCanceled);
@@ -76,18 +80,18 @@ public class InputEvents : Singleton<InputEvents>
         Interact.canceled += ctx => ActionCanceled(ref InteractPressed, InteractCanceled);
     }
 
-    void ActionStarted(ref bool pressedFlag, UnityEvent actionEvent)
+    void ActionStarted(ref bool pressedFlag, UnityEvent actionEvent, bool overrideInMenu=false)
     {
-        if (UITransitionManager.PlayerInMenu) return;
+        if (UITransitionManager.PlayerInMenu && !overrideInMenu) return;
 
         pressedFlag = true;
         actionEvent?.Invoke();
     }
-    void ActionCanceled(ref bool pressedFlag, UnityEvent actionEvent)
+    void ActionCanceled(ref bool pressedFlag, UnityEvent actionEvent, bool overrideInMenu = false)
     {
         pressedFlag = false;
 
-        if (UITransitionManager.PlayerInMenu) return;
+        if (UITransitionManager.PlayerInMenu && !overrideInMenu) return;
 
         actionEvent?.Invoke();
     }
@@ -109,6 +113,7 @@ public class InputEvents : Singleton<InputEvents>
         RightClick.RemoveAllBindingOverrides();
         Pause.RemoveAllBindingOverrides();
         Interact.RemoveAllBindingOverrides();
+        Inventory.RemoveAllBindingOverrides();
 
         /*Move.started -= ctx => ActionStarted(ref MovePressed, MoveStarted);
         //Jump.started -= ctx => ActionStarted(ref JumpPressed, JumpStarted);

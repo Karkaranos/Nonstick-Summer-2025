@@ -57,11 +57,17 @@ public class DialogueUIController : Singleton<DialogueUIController>
                 || ( DialogueManager.CurrentDialogueBranch.End && PlayerReadAllNPCText); } }
     private bool _ui_interactable = true;
 
-    public IEnumerator Initialize(DialogueBranch startBranch, characters character)
+    private bool isBoss;
+    private GameObject inWorldCharacter;
+
+    public IEnumerator Initialize(DialogueBranch startBranch, characters character, bool isBoss = true, GameObject objRef = null)
     {
         DialogueManager.OnOpenCombatUI(startBranch, character);
 
         MusicManager.instance.StartCombat(0);
+
+        Instance.isBoss = isBoss;
+        inWorldCharacter = objRef;
 
         // all the rest of this ui initialization stuff is gonna run every time an npc combat encounter happens.
         // i think our game is not complicated enough that its gonna be a problem performance wise, 
@@ -69,7 +75,9 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         energyBar.Initalize();
         relationshipSlider.Initialize(RelationshipManager.characterRelationships[character].maxValue, RelationshipManager.characterRelationships[character].currentValue);
-        deckDisplay.SetDeck(ref DialogueManager.PlayerHand);
+        deckDisplay.SetDisplayDeck(ref DialogueManager.PlayerHand);
+        deckDisplay.SetRemainingDeck(DeckManager.PlayerDeck.GetCopy());
+        DeckDisplay.DrawToDefaultHand();
 
         deckDisplay.OnCardsSelectedChanged.AddListener(OnSelectionUpdated);
 
@@ -137,10 +145,19 @@ public class DialogueUIController : Singleton<DialogueUIController>
             // TODO open a new menu?
             Debug.Log("Close combat!");
             UITransitionManager.CloseMenu();
-            GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.FINISH_COMBAT);
-            GameManager.ObjectiveReference.SetObjectiveVisibility(true);
-            var bed = FindFirstObjectByType<BedBehavior>();
-            if(bed!=null) bed.BossDefeated = true;
+            if(isBoss)
+            {
+                GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.FINISH_COMBAT);
+                GameManager.ObjectiveReference.SetObjectiveVisibility(true);
+                var bed = FindFirstObjectByType<BedBehavior>();
+                if (bed != null) bed.BossDefeated = true;
+            }
+            else
+            {
+                GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.TALK_TO_SIDE_CHARACTER, inWorldCharacter);
+                GameManager.ObjectiveReference.SetObjectiveVisibility(true);
+                inWorldCharacter.GetComponent<SideCharacterInteractable>().GetModifier();
+            }
 
             return;
         }
@@ -150,12 +167,11 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         StartCoroutine(ToggleUIForDialogueProgression(false));
 
-        CardData selectedCard = selectedCardData;
         //DialogueManager.PlayerHand.Remove(selectedCard);
 
         if (DialogueManager.UserCanPlayCard)
             // Play a card
-            StartCoroutine(DialogueManager.ProcessPlayCard(selectedCard));
+            StartCoroutine(DialogueManager.ProcessPlayCard(selectedCardData));
         else
             // Next Dialogue pls
             StartCoroutine(UpdateNextNPCDialogueDisplay());
@@ -182,12 +198,13 @@ public class DialogueUIController : Singleton<DialogueUIController>
         if (!DialogueManager.ReadUserInput)
         {
             Debug.Log("not while animations are playing!");
+
+            yield return dialogueBox.LoadNewDialogue(DialogueManager.CurrentDialogueBranch);
+
             yield break;
         }
 
         Debug.Log("reset dialogue");
-
-        yield return dialogueBox.LoadNewDialogue(DialogueManager.CurrentDialogueBranch);
 
         // in case the npc text was only 1 blurb long. (updated in dialogueBox.LoadNewDialogue)
         if (PlayerReadAllNPCText)
@@ -196,6 +213,11 @@ public class DialogueUIController : Singleton<DialogueUIController>
             {
                 playCardButtonText.text = EndDialogueText;
                 yield return ToggleUIForDialogueProgression(false);
+
+                Debug.LogWarning("This statement runs too often");
+
+                for (int i = 0; i< DialogueManager.CardsDrawnPerRound;i++)
+                    deckDisplay.DrawOneCard();
             }
             else
             {
@@ -208,9 +230,11 @@ public class DialogueUIController : Singleton<DialogueUIController>
     //TODO move to play button script
     public void ClosingOutCombat()
     {
-        if(DialogueManager.CurrentDialogueBranch.End)
+        if (DialogueManager.CurrentDialogueBranch.End)
+        {
             playCardButtonText.text = EndDialogueText;
         MusicManager.instance.StartHouse();
+        }
     }
 
     public IEnumerator ToggleUIForDialogueProgression(bool interactable)
@@ -225,14 +249,11 @@ public class DialogueUIController : Singleton<DialogueUIController>
         playCardButtonText.text = interactable ? CardNotSelectedText : "->";
         playCardButton.SetColors(normalColor: Color.white, highlightedColor: Color.gray, selectedColor: Color.white, pressedColor:Color.gray);
 
-        //okay this isn't as clean here but whatever
-        if(interactable)
-        {
-            Debug.LogWarning("This statement runs too often");
-            deckDisplay.DrawToDefaultHand();
-        }
-
-        deckDisplay?.gameObject.SetActive(interactable);
+        //deckDisplay?.gameObject.SetActive(interactable);
+        if (interactable)
+            StaticUtilities.EnableCanvasGroup(deckDisplay.canvasGroup);
+        else
+            StaticUtilities.DisableCanvasGroup(deckDisplay.canvasGroup, alpha:0.2f);
 
         yield return null;
 

@@ -237,6 +237,7 @@ public class ModifierDeckDisplay : MonoBehaviour
             return;
 
         selectedCard.ResetOffset();
+        selectedCard = null;
     }
 
     #endregion

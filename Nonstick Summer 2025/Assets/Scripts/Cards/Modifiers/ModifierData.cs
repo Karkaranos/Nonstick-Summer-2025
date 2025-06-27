@@ -13,6 +13,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 using NaughtyAttributes;
+using NUnit.Framework;
+using System.Collections.Generic;
+using System.Linq;
 
 //[CreateAssetMenu(fileName = "ModifierData", menuName = "Scriptable Objects/ModifierData")]
 public abstract class ModifierData : ScriptableObject
@@ -43,7 +46,6 @@ public abstract class ModifierData : ScriptableObject
     {
         return cards.Length >= 1 && cards.Length <= MaxCardsApplied;
     }
-
     protected abstract void ApplyModifier(CardData[] cards);
 
     public abstract Sprite GetIcon();

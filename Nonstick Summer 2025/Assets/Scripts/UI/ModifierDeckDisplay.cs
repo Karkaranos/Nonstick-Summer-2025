@@ -67,6 +67,29 @@ public class ModifierDeckDisplay : MonoBehaviour
         if (_visualDisplays == null)
             _visualDisplays = new List<ModifierCardDisplay>();
 
+        ClearRemovedCards();
+
+        if (playerModifiers.Count == 0)
+        return;
+
+        // TODO: sort a little better? like, a different type of sort
+        // Sort by name, and then by type. Mid solution, imo (especially because it does two sorts),
+        // but it Does group moddies by what they are
+        _visualDisplays = _visualDisplays
+            .OrderBy(d => d.modifierData.name)
+            .OrderBy(d => d.modifierData.GetType().ToSafeString())
+            .ToList();
+
+        SpawnNewCards();
+
+        // Generates spawn positions
+        GenerateAndSetPositions();
+
+        Debug.Log($"{_visualDisplays.Count} modifier displays, {playerModifiers.Count} modifiers in player inventory");
+    }
+
+    private void ClearRemovedCards()
+    {
         // clear modifiers that arent in hand anymore
         for (int i = _visualDisplays.Count() - 1; i >= 0; i--)
         {
@@ -76,56 +99,14 @@ public class ModifierDeckDisplay : MonoBehaviour
                 _visualDisplays.RemoveAt(i);
                 continue;
             }
-            
-            if(!playerModifiers.Contains(display.modifierData))
+
+            if (!playerModifiers.Contains(display.modifierData))
             {
                 Destroy(display.gameObject);
                 _visualDisplays.RemoveAt(i);
                 continue;
             }
         }
-
-        /*
-        // clear modifiers that arent in hand anymore
-        var cardsRemovedFromHand = _visualDisplays
-            .Where(mod => !playerModifiers.Contains(mod.modifierData));
-        for (int i = cardsRemovedFromHand.Count() - 1; i >= 0; i--)
-        {
-            var elem = cardsRemovedFromHand.ElementAt(i);
-            if (elem == null)
-                continue;
-
-            if (elem.gameObject != null)
-                Destroy(elem.gameObject);
-        }
-
-        //_visualDisplays = _visualDisplays.Where(disp => disp != null).ToList();
-
-        // TODONE: do this better. im running out of options
-        // it could be better, but i think it works for what we need.
-        for (int i = _visualDisplays.Count - 1; i >= 0; i--)
-        {
-            while ( (i>=0 && i < _visualDisplays.Count) &&
-                (_visualDisplays[i] == null || _visualDisplays[i].gameObject == null || _visualDisplays[i].modifierData == null))
-                _visualDisplays.RemoveAt(i);
-        }*/
-
-        if (playerModifiers.Count == 0)
-        return;
-
-        // TODO: sort a little better? like, a different type of sort
-        // Sort by name, and then by type. Mid solution, imo (especially because it does two sorts),
-        // but it Does group moddies by what they are
-        _visualDisplays
-            .OrderBy(d => d.modifierData.name)
-            .OrderBy(d => d.modifierData.GetType().ToSafeString());
-
-        SpawnNewCards();
-
-        // Generates spawn positions
-        GenerateAndSetPositions();
-
-        Debug.Log($"{_visualDisplays.Count} modifier displays, {playerModifiers.Count} modifiers in player inventory");
     }
 
     /// <summary>

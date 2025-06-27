@@ -110,6 +110,19 @@ public class DeckDisplayer : MonoBehaviour
         if (_visualDisplays == null)
             _visualDisplays = new List<CardDisplay>();
 
+        ClearRemovedCards();
+
+        if (displayedData.Count == 0)
+            return;
+
+        SpawnNewCards();
+
+        // Generates spawn positions
+        GenerateAndSetPositions();
+    }
+
+    private void ClearRemovedCards()
+    {
         // clear modifiers that arent in hand anymore
         for (int i = _visualDisplays.Count() - 1; i >= 0; i--)
         {
@@ -127,15 +140,6 @@ public class DeckDisplayer : MonoBehaviour
                 continue;
             }
         }
-
-
-        if (displayedData.Count == 0)
-            return;
-
-        SpawnNewCards();
-
-        // Generates spawn positions
-        GenerateAndSetPositions();
     }
 
     private void SpawnNewCards()

@@ -17051,6 +17051,138 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &398052539
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1419933608}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 5309f57e470eceb4ebdeadd187de9b7e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.026794003
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5309f57e470eceb4ebdeadd187de9b7e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.026794
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5309f57e470eceb4ebdeadd187de9b7e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.026794003
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5309f57e470eceb4ebdeadd187de9b7e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.3383536
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5309f57e470eceb4ebdeadd187de9b7e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4913
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5309f57e470eceb4ebdeadd187de9b7e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.224575
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5309f57e470eceb4ebdeadd187de9b7e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9954549
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5309f57e470eceb4ebdeadd187de9b7e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5309f57e470eceb4ebdeadd187de9b7e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0952339
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5309f57e470eceb4ebdeadd187de9b7e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5309f57e470eceb4ebdeadd187de9b7e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5309f57e470eceb4ebdeadd187de9b7e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -10.93
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5309f57e470eceb4ebdeadd187de9b7e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5309f57e470eceb4ebdeadd187de9b7e, type: 3}
+      propertyPath: m_Name
+      value: CardDeck
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5309f57e470eceb4ebdeadd187de9b7e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 398052543}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5309f57e470eceb4ebdeadd187de9b7e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 398052542}
+  m_SourcePrefab: {fileID: 100100000, guid: 5309f57e470eceb4ebdeadd187de9b7e, type: 3}
+--- !u!4 &398052540 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5309f57e470eceb4ebdeadd187de9b7e, type: 3}
+  m_PrefabInstance: {fileID: 398052539}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &398052541 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5309f57e470eceb4ebdeadd187de9b7e, type: 3}
+  m_PrefabInstance: {fileID: 398052539}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &398052542
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398052541}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 28.330715, y: 6.0270815, z: 14.664119}
+  m_Center: {x: -0.9834366, y: 2.513541, z: 1.220878}
+--- !u!114 &398052543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398052541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39efb718f49966749b43bf99a2c99f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: 8a396213697e3d24f944fe34be909bbe, type: 3}
+  cameraAnchor: {fileID: 0}
+  _statement: A new deck of cards for your birthday
+  _question: Who would you wanna play a game with first?
+  _options:
+  - ButtonText: Your family
+    ButtonColor: {r: 1, g: 1, b: 1, a: 1}
+    Emotion: 3
+  - ButtonText: Your friends
+    ButtonColor: {r: 1, g: 1, b: 1, a: 1}
+    Emotion: 1
+  - ButtonText: Yourself
+    ButtonColor: {r: 1, g: 1, b: 1, a: 1}
+    Emotion: 2
 --- !u!1 &399830100
 GameObject:
   m_ObjectHideFlags: 0
@@ -41296,16 +41428,40 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
-      propertyPath: PossibleModifiers.Array.size
-      value: 0
+      propertyPath: character
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: combatPrompt
+      value: Talk with Uncle?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: preCombatLine
+      value: Hey, Kiddo! How's it going?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: characterSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 599283ca56aa9da4f85f3d7e2e07d0a4, type: 3}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: StartingDialogueBranch
+      value: 
+      objectReference: {fileID: 11400000, guid: 5697ae4f9ebf5744d873d4deef107f73, type: 2}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: PossibleModifiers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: 'PossibleModifiers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c195a113035d86c458c41d0c875da62f, type: 2}
     - target: {fileID: 6140443048461262060, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 599283ca56aa9da4f85f3d7e2e07d0a4, type: 3}
     - target: {fileID: 7010602745331249561, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_Name
-      value: Side NPC
+      value: Uncle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -61761,10 +61917,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 730531223}
+  - {fileID: 398052540}
   - {fileID: 1945355055}
   - {fileID: 1876758531}
   - {fileID: 1956174629}
-  - {fileID: 1963039752}
   - {fileID: 1531648266}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -64623,13 +64779,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: preCombatLine
+      value: Oh, birthdays are such wonderful celebrations!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: StartingDialogueBranch
+      value: 
+      objectReference: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: PossibleModifiers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: 'PossibleModifiers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7ea86a966298e524e81d7076ef263b99, type: 2}
     - target: {fileID: 6140443048461262060, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
     - target: {fileID: 7010602745331249561, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_Name
-      value: Side NPC (2)
+      value: Grandma
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -69466,7 +69638,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 56fb52eb6f26be6429532fcc44dd7cad, type: 3}
     - target: {fileID: 7010602745331249561, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_Name
-      value: NPC Example
+      value: Cousin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -85289,128 +85461,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!1001 &1963039751
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1419933608}
-    m_Modifications:
-    - target: {fileID: 6548987443636036780, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6548987443636036780, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_Size.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6548987443636036780, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: _question
-      value: How do you feel about this piece of art?
-      objectReference: {fileID: 0}
-    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: _statement
-      value: It's a drawing you made when you were younger.
-      objectReference: {fileID: 0}
-    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: _options.Array.data[0].Emotion
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: _options.Array.data[1].Emotion
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: _options.Array.data[2].Emotion
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: _options.Array.data[0].ButtonText
-      value: Amused
-      objectReference: {fileID: 0}
-    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: _options.Array.data[1].ButtonText
-      value: Nostalgic
-      objectReference: {fileID: 0}
-    - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: _options.Array.data[2].ButtonText
-      value: Embarrased
-      objectReference: {fileID: 0}
-    - target: {fileID: 8263027944320005954, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_Name
-      value: Interaction Object (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.989
-      objectReference: {fileID: 0}
-    - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
---- !u!4 &1963039752 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-  m_PrefabInstance: {fileID: 1963039751}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1971096533
 GameObject:
   m_ObjectHideFlags: 0
@@ -93711,13 +93761,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: character
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: preCombatLine
+      value: Everything's going just as scheduled
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: characterSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: StartingDialogueBranch
+      value: 
+      objectReference: {fileID: 11400000, guid: 87f8b6b59cf17c348b5151515ad3e407, type: 2}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: PossibleModifiers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: 'PossibleModifiers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7ea86a966298e524e81d7076ef263b99, type: 2}
     - target: {fileID: 6140443048461262060, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
     - target: {fileID: 7010602745331249561, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_Name
-      value: Side NPC (1)
+      value: Mom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

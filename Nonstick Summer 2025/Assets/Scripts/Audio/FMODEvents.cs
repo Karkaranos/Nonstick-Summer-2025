@@ -6,8 +6,18 @@ using FMODUnity;
 public class FMODEvents : MonoBehaviour
 {
     [field: Header("Music")]
-    [field: SerializeField] public EventReference HomeBGM { get; private set; }
-    [field: Header("Other")]
+    [field: SerializeField] public EventReference HouseBGM { get; private set; }
+    [field: SerializeField] public EventReference CombatBGM { get; private set; }
+    [field: SerializeField] public EventReference ReflectionBGM { get; private set; }
+    [field: Header("SFX")]
+    [field: SerializeField] public EventReference InteractSFX { get; private set; }
+    [field: SerializeField] public EventReference CharacterReactGenericSFX { get; private set; }
+    [field: SerializeField] public EventReference CardHoverSFX { get; private set; }
+    [field: SerializeField] public EventReference CardSelectSFX { get; private set; }
+    [field: SerializeField] public EventReference CardPlaySFX { get; private set; }
+    [field: SerializeField] public EventReference PosRelationSFX { get; private set; }
+    [field: SerializeField] public EventReference NegRelationSFX { get; private set; }
+
 
 
     public static FMODEvents instance { get; private set; }

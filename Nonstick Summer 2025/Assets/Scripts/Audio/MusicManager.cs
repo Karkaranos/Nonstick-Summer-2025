@@ -6,7 +6,9 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class MusicManager : MonoBehaviour
 {
-    private EventInstance HomeBGM;
+    private EventInstance HouseBGM;
+    private EventInstance CombatBGM;
+    private EventInstance ReflectionBGM;
 
     public static MusicManager instance { get; private set; }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,23 +20,47 @@ public class MusicManager : MonoBehaviour
         }
         instance = this;
 
-        HomeBGM = AudioManager.instance.CreateEventInstance(FMODEvents.instance.HomeBGM);
-        HomeBGM.start();
+        HouseBGM = AudioManager.instance.CreateEventInstance(FMODEvents.instance.HouseBGM);
+        CombatBGM = AudioManager.instance.CreateEventInstance(FMODEvents.instance.CombatBGM);
+        ReflectionBGM = AudioManager.instance.CreateEventInstance(FMODEvents.instance.ReflectionBGM);
+
+        HouseBGM.start();
     }
 
-    public void TransitionMusic(bool isNormal)
+    public void StartCombat(int val)
     {
-        if (isNormal)
-        {
-            StartCoroutine(MusicToBattle(0));
-        }
-        else
-        {
-            StartCoroutine(MusicToNormal(1));
-        }
+        StopAll();
+        CombatBGM.setParameterByName("Combat", val);
+        CombatBGM.start();
     }
 
-    IEnumerator MusicToBattle(float val)
+    public void StartReflection()
+    {
+        StopAll();
+        ReflectionBGM.start();
+    }
+
+    public void StartHouse()
+    {
+        StopAll();
+        HouseBGM.start();
+    }
+
+    private void StopAll()
+    {
+        HouseBGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        CombatBGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        ReflectionBGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
+
+    private void OnDisable()
+    {
+        HouseBGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        CombatBGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        ReflectionBGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
+
+    /*IEnumerator MusicToBattle(float val)
     {
         val += 0.05f;
         HomeBGM.setParameterByName("Battle", val);
@@ -44,7 +70,6 @@ public class MusicManager : MonoBehaviour
             StartCoroutine(MusicToBattle(val));
         }
     }
-
     IEnumerator MusicToNormal(float val)
     {
         val -= 0.05f;
@@ -54,5 +79,5 @@ public class MusicManager : MonoBehaviour
         {
             StartCoroutine(MusicToNormal(val));
         }
-    }
+    }*/
 }

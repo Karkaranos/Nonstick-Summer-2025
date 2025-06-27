@@ -64,7 +64,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     {
         DialogueManager.OnOpenCombatUI(startBranch, character);
 
-        MusicManager.instance.TransitionMusic(true);
+        MusicManager.instance.StartCombat(0);
 
         Instance.isBoss = isBoss;
         inWorldCharacter = objRef;
@@ -99,12 +99,14 @@ public class DialogueUIController : Singleton<DialogueUIController>
     {
         // card is null, it hides the text bubble
         playerDialogueBubble.WriteText(card);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.CardHoverSFX);
     }
 
     // TODO move a lot of this to play button script
     private void OnSelectionUpdated()
     {
         // Card movement animation is handled in DeckDisplayer / CardDisplay_PositionAnimator
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.CardSelectSFX);
 
         if (selectedCardData == null)
         {
@@ -159,6 +161,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
             return;
         }
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.CardPlaySFX);
 
         Debug.Log("Play button pressed");
 
@@ -230,6 +233,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         if (DialogueManager.CurrentDialogueBranch.End)
         {
             playCardButtonText.text = EndDialogueText;
+        MusicManager.instance.StartHouse();
         }
     }
 

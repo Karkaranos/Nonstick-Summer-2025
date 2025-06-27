@@ -28,21 +28,42 @@ public class Objectives : MonoBehaviour
     /// <param name="condition">The condition that has been met</param>
     public void MetCondition(ObjectiveConditions condition, GameObject obj = null)
     {
-        foreach(ObjectiveData od in _conditions)
+        foreach (ObjectiveData od in _conditions)
         {
-            if(od.TriggerCondition == condition && !od.ConditionBeenMet)
+            if (od.condition.TriggerCondition == condition && !od.ConditionBeenMet)
             {
                 // If the condition is interacting with a specific object and that object was not just interacted with, return
                 // Otherwise the condition has been met; update the display
-                if((condition == ObjectiveConditions.INTERACT_WITH_OBJECT || 
-                    condition == ObjectiveConditions.TALK_TO_SIDE_CHARACTER) && obj != od.RequiredObject)
+                if ((condition == ObjectiveConditions.INTERACT_WITH_OBJECT ||
+                    condition == ObjectiveConditions.TALK_TO_SIDE_CHARACTER) && obj != od.condition.RequiredObject)
                 {
-                    print("Check failed");
-                    return;
+                    continue;
                 }
-                if(_displayText != null)
-                    _displayText.text = od.DisplayText;
+                if (od.HideNextObjectiveIfClear)
+                {
+                    // yes I know this is O(n*n*n) time
+                    foreach (ObjectiveObjectLink oc in od.ConditionsToHide)
+                    {
+                        for (int i = 0; i < _conditions.Length; i++)
+                        {
+                            if (_conditions[i].condition.TriggerCondition == oc.TriggerCondition)
+                            {
+                                if ((oc.TriggerCondition == ObjectiveConditions.INTERACT_WITH_OBJECT ||
+                                    oc.TriggerCondition == ObjectiveConditions.TALK_TO_SIDE_CHARACTER) &&
+                                    _conditions[i].condition.RequiredObject != oc.RequiredObject)
+                                {
+                                    continue;
+                                }
+                                _conditions[i].ConditionBeenMet = true;
+                                print("yay");
+
+                            }
+                        }
+                    }
+                }
                 od.ConditionBeenMet = true;
+                if (_displayText != null)
+                    _displayText.text = od.DisplayText;
             }
         }
     }
@@ -64,22 +85,34 @@ public class Objectives : MonoBehaviour
 
 public enum ObjectiveConditions
 {
-    LEVEL_START, LEAVE_BEDROOM, INTERACT_WITH_OBJECT, TALK_TO_SIDE_CHARACTER, FINISH_COMBAT
+    LEVEL_START, LEAVE_BEDROOM, INTERACT_WITH_OBJECT, TALK_TO_SIDE_CHARACTER, FINISH_COMBAT, NONE
 }
 
 [System.Serializable]
 public class ObjectiveData
 {
     public string DisplayText;
-    [Tooltip("What makes this objective appear")]public ObjectiveConditions TriggerCondition; 
+    public ObjectiveObjectLink condition;
 
+
+    [HideInInspector] public bool ConditionBeenMet = false;
+    [Tooltip("Prevents the specified objectives from triggering")] public bool HideNextObjectiveIfClear;
+    [EnableIf("HideNextObjectiveIfClear"), Tooltip("What the objective to hide is triggered by"), AllowNesting] // i dont want this to appear unless the bool is true but it hates me for whatever reason
+                                                                                                // no amount of 'allow nesting' worked :(
+    public ObjectiveObjectLink[] ConditionsToHide;
+
+
+
+}
+
+[System.Serializable]
+public class ObjectiveObjectLink
+{
+    [Tooltip("What makes this objective appear")]public ObjectiveConditions TriggerCondition;
     [ShowIf(nameof(showOrHide))]
     [AllowNesting]
     public GameObject RequiredObject;
-    [HideInInspector] public bool ConditionBeenMet = false;
 
-    bool showOrHide => TriggerCondition == ObjectiveConditions.INTERACT_WITH_OBJECT 
-        || TriggerCondition == ObjectiveConditions.TALK_TO_SIDE_CHARACTER;
-
-
+    bool showOrHide => TriggerCondition == ObjectiveConditions.INTERACT_WITH_OBJECT
+    || TriggerCondition == ObjectiveConditions.TALK_TO_SIDE_CHARACTER;
 }

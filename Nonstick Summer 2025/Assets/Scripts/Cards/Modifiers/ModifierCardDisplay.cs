@@ -26,7 +26,8 @@ public partial class ModifierCardDisplay : MonoBehaviour
     [Tooltip("Set this for debug only")]
     private ModifierData _modifier;
 
-    private MouseInteractionEvents mouseInteraction;
+    [HideInInspector]
+    public MouseInteractionEvents mouseInteraction;
     private RectTransform rectTransform;
 
     private void Start()
@@ -55,6 +56,12 @@ public partial class ModifierCardDisplay : MonoBehaviour
     {
         Debug.Log(this.name + " clicked");
         OnMouseDown.Invoke(this);
+
+        // TODO: repent
+        // if you know me as a person at all, then you should know that i would only be writing
+        // code like this as a very last resort.
+        var deck = FindFirstObjectByType<ModifierDeckDisplay>();
+        deck.OnCardClicked(this); 
     }
 
     public void SetCard(ModifierData newModifier)

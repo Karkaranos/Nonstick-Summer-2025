@@ -91,7 +91,7 @@ public class ModifierDeckDisplay : MonoBehaviour
     {
         for (int i = 0; i < _visualDisplays.Count; i++)
         {
-            Destroy(_visualDisplays[i]);
+            Destroy(_visualDisplays[i].gameObject);
         }
         _visualDisplays.Clear();
     }
@@ -109,11 +109,12 @@ public class ModifierDeckDisplay : MonoBehaviour
         {
             var newCardGameObj = Instantiate(modifierCardPrefab, this.transform);
             var display = newCardGameObj.GetComponent<ModifierCardDisplay>();
+            //display.OnMouseDown.AddListener(OnCardClicked); // TODO why does this not work D:
+            //display.mouseInteraction.OnMouseDown.AddListener(() => OnCardClicked(display));
             display.SetCard(newCard);
             display.SetPositionAndOffsetNoAnimation(position:spawnCardsPosition, offset:Vector2.zero);
             _visualDisplays.Add(display);
 
-            display.OnMouseDown.AddListener(OnCardClicked);
         }
     }
 
@@ -166,9 +167,6 @@ public class ModifierDeckDisplay : MonoBehaviour
     [Tooltip("Add this number to the cards position when a card is selected")]
     [SerializeField] private Vector2 selectedCardOffset = new Vector2(0, 50);
 
-    [HideInInspector] // use this in other scripts to detect when the user selects cards
-    public UnityEvent OnModifierSelectedChanged = new UnityEvent();
-
     // tobys first HashSet in Unity! 6/21/2025
     [HideInInspector]
     public ModifierCardDisplay selectedCard { get; private set; }
@@ -178,13 +176,15 @@ public class ModifierDeckDisplay : MonoBehaviour
     #region Functions
 
     // See SpawnCards
-    private void OnCardClicked(ModifierCardDisplay cardDisplay)
+    public void OnCardClicked(ModifierCardDisplay cardDisplay)
     {
         Debug.Log("selected changed");
         if (selectedCard == cardDisplay)
             DeselectCard();
         else
             SelectCard(cardDisplay);
+
+        OnSelectedChanged.Invoke();
     }
 
     public void SelectCard(ModifierCardDisplay cardDisplay)
@@ -204,20 +204,14 @@ public class ModifierDeckDisplay : MonoBehaviour
 
         cardDisplay.SetPositionAndOffset(offset: (Vector3) selectedCardOffset);
         cardDisplay.transform.SetAsLastSibling(); // bring to front so player can see it
-
-        OnModifierSelectedChanged.Invoke();
     }
 
     public void DeselectCard()
     {
-        Debug.Log("deselect");
-
         if (selectedCard == null)
             return;
 
         selectedCard.ResetOffset();
-
-        OnModifierSelectedChanged.Invoke();
     }
 
     #endregion

@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Grandma_m1_3
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: Are you excited for your first day of school?
+    Portrait: {fileID: 0}
+  Charming_Expression:
+    BranchingDialogue: {fileID: 11400000, guid: 05693c730dc917046b1ea64852734d1f, type: 2}
+    PlayerDialogue: I am so excited for school Nanna!
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Expression:
+    BranchingDialogue: {fileID: 11400000, guid: 05693c730dc917046b1ea64852734d1f, type: 2}
+    PlayerDialogue: No, I never want to go to school! School is STUPID.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Expression:
+    BranchingDialogue: {fileID: 11400000, guid: 05693c730dc917046b1ea64852734d1f, type: 2}
+    PlayerDialogue: ".. Maybe ... I\u2019m kind of nervous.."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Charming_Observation:
+    BranchingDialogue: {fileID: 11400000, guid: 05693c730dc917046b1ea64852734d1f, type: 2}
+    PlayerDialogue: I hope to make a ton of new friends
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Observation:
+    BranchingDialogue: {fileID: 11400000, guid: 05693c730dc917046b1ea64852734d1f, type: 2}
+    PlayerDialogue: "No! I don\u2019t wanna make new friends. Ugh."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Observation:
+    BranchingDialogue: {fileID: 11400000, guid: 05693c730dc917046b1ea64852734d1f, type: 2}
+    PlayerDialogue: "I hope everyone likes me... Mom said there\u2019s going to be
+      20 kids....."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Charming_Question:
+    BranchingDialogue: {fileID: 11400000, guid: 05693c730dc917046b1ea64852734d1f, type: 2}
+    PlayerDialogue: Are you excited when a dog farts!? hehehe....
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Assertive_Question:
+    BranchingDialogue: {fileID: 11400000, guid: 05693c730dc917046b1ea64852734d1f, type: 2}
+    PlayerDialogue: "Wouldn\u2019t you like to know Nanna?"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Question:
+    BranchingDialogue: {fileID: 11400000, guid: 05693c730dc917046b1ea64852734d1f, type: 2}
+    PlayerDialogue: Were you worried for your first day of school, Nanna?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Silent:
+    BranchingDialogue: {fileID: 11400000, guid: 05693c730dc917046b1ea64852734d1f, type: 2}
+    PlayerDialogue: ...
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  End: 0

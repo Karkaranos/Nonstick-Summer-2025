@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Grandma_m1_1
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: "There\u2019s my little sunshine, has Mommy been treating you alright
+      recently?"
+    Portrait: {fileID: 0}
+  Charming_Expression:
+    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    PlayerDialogue: Nanna, Mommy and I have been having so much fun!
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Expression:
+    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    PlayerDialogue: Nanna! Thanks for saving me from evil mommy!
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Sappy_Expression:
+    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    PlayerDialogue: Nanna, I am so glad to see you!
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Charming_Observation:
+    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    PlayerDialogue: Grandma... you smell like an old person...
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Assertive_Observation:
+    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    PlayerDialogue: I thought Mommy was going to play with me.... I only play games
+      with her....
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Observation:
+    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    PlayerDialogue: "Mommy\u2019s been real busy recently."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Charming_Question:
+    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    PlayerDialogue: "Mommy has been so mean, you wouldn\u2019t be mean to me right
+      Nanna?"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Question:
+    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    PlayerDialogue: "\u201CNanna, why can\u2019t I play at your house instead?\u201D"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Sappy_Question:
+    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    PlayerDialogue: Hey Nanna, are you going to stay around for a while?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Silent:
+    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    PlayerDialogue: ...
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  End: 0

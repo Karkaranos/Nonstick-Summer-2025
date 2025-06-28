@@ -64,13 +64,18 @@ public class ApplyModifierButton : MonoBehaviour
         if (modifierDisplay.selectedCard == null || !deckDisplay.HasCardsSelected)
             return false;
 
+        var carddatas = deckDisplay.selectedCards.Select(display => display.cardData).ToArray();
+
+        return modifierDisplay.selectedCard.modifierData.CanApplyModifier(carddatas);
+
+        /*
         // if player is biting off more than they can chew
         if (deckDisplay.selectedCards.Count > modifierDisplay.selectedCard.modifierData.MaxCardsApplied)
             return false;
 
         // if player is biting off less than they should chew
         if (deckDisplay.selectedCards.Count < modifierDisplay.selectedCard.modifierData.MinCardsApplied)
-            return false;
+            return false;*/
 
         return true;
     }

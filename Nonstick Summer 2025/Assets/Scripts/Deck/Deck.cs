@@ -177,6 +177,10 @@ public class Deck
         return this;
     }
 
+    public bool Contains(CardData card)
+    {
+        return _cards.Contains(card);
+    }
     private void WipeDeckElements(Deck deck)
     {
         foreach(CardData c in deck._cards)

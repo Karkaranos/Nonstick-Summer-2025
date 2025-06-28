@@ -38,6 +38,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Tooltip("Relationship slider UI element")]
     [Required][SerializeField] private RelationshipSlider relationshipSlider;
     [Required][SerializeField] private DialogueBox dialogueBox;
+    [Required, SerializeField] public  DialogueNPCPortraitDisplay portraitDisplay;
 
     //i can make this a whole 'nother script if necessary but idk
     // TODO: ^

@@ -60,7 +60,7 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor);
         var dialogueController = menu.GetComponentInChildren<DialogueUIController>();
         GameManager.ObjectiveReference.SetObjectiveVisibility(false);
-        StartCoroutine(dialogueController.Initialize(StartingDialogueBranch, character));
+        StartCoroutine(dialogueController.Initialize(StartingDialogueBranch, character, false, gameObject));
     }
 
     public void GetModifier()

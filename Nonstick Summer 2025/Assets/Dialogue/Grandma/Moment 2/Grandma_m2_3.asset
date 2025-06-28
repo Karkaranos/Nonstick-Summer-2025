@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Grandma_m2_3
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: Did you like your cake, honey?
+    Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+  Charming_Expression:
+    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    PlayerDialogue: Yes!! It was sooooooo good....
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Expression:
+    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    PlayerDialogue: "It was fine... I liked it because you\u2019re the one who made
+      it."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Sappy_Expression:
+    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    PlayerDialogue: It was so sweet and special.. and just like I imagined...
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Charming_Observation:
+    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    PlayerDialogue: Yes.. the left overs better be for me!
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Observation:
+    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    PlayerDialogue: It tasted like cardboard.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Observation:
+    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    PlayerDialogue: "It was good, but Cousin ate so much of it that there\u2019s
+      not much left....Ugh"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Charming_Question:
+    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    PlayerDialogue: Could you bake for me again next year, Nanna? It was so good!
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Question:
+    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    PlayerDialogue: Yeah, but why did I have to share it with everyone?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Sappy_Question:
+    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    PlayerDialogue: I was sad it was so small.... could be bigger for more people,
+      no?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Silent:
+    BranchingDialogue: {fileID: 11400000}
+    PlayerDialogue: ...
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  End: 0

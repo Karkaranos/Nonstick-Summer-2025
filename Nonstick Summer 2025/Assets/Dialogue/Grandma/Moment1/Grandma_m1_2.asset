@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Grandma_m1_2
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: Are these your toys? Do you want Nanna to help you?
+    Portrait: {fileID: 0}
+  Charming_Expression:
+    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    PlayerDialogue: Sure Nanna, please help
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Expression:
+    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    PlayerDialogue: No, I can do it.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Sappy_Expression:
+    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    PlayerDialogue: I want to do it on my own.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Charming_Observation:
+    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    PlayerDialogue: These are kids toys Nanna.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Assertive_Observation:
+    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    PlayerDialogue: "You\u2019re too old, these are kids toys."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Observation:
+    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    PlayerDialogue: Your hands shake too much.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Charming_Question:
+    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    PlayerDialogue: Sure, can you get those blocks over there?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Question:
+    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    PlayerDialogue: "Aren\u2019t you too old?"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Sappy_Question:
+    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    PlayerDialogue: Have you built one before?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Silent:
+    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    PlayerDialogue: ...
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  End: 0

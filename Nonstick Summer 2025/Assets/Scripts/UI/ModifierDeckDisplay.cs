@@ -22,6 +22,7 @@ using UnityEngine.Events;
 using Unity.VisualScripting;
 using UnityEngine.UIElements;
 using static Unity.Cinemachine.CinemachineFreeLookModifier;
+using NUnit.Framework;
 
 // This script needed to be a Monobehavior to get some of the references needed
 public class ModifierDeckDisplay : MonoBehaviour
@@ -40,7 +41,7 @@ public class ModifierDeckDisplay : MonoBehaviour
     private Vector2 spawnCardsPosition = new Vector2(2400, 1350); // screen dimensions * 1.25
 
     [HideInInspector]
-    public UnityEvent OnSelectedChanged=new UnityEvent();
+    public UnityEvent OnSelectedChanged = new UnityEvent();
 
     private IReadOnlyCollection<ModifierData> playerModifiers => ModifierManager.ModifierCollection; // changed to be generalized, because deck will not always be the players.
 
@@ -66,34 +67,46 @@ public class ModifierDeckDisplay : MonoBehaviour
         if (_visualDisplays == null)
             _visualDisplays = new List<ModifierCardDisplay>();
 
-        // clear modifiers that arent in hand anymore
-        var cardsRemovedFromHand = _visualDisplays
-            .Where(mod => !playerModifiers.Contains(mod.modifierData));
-        for (int i = cardsRemovedFromHand.Count() - 1; i >= 0; i--)
-        {
-            if (cardsRemovedFromHand.ElementAt(i) == null)
-                continue;
-
-            if (cardsRemovedFromHand.ElementAt(i).gameObject != null)
-                Destroy(cardsRemovedFromHand.ElementAt(i).gameObject);
-        }
-
-        //_visualDisplays = _visualDisplays.Where(disp => disp != null).ToList();
-
-        // TODO: do this better. im running out of options
-        for (int i = _visualDisplays.Count() - 1; i >= 0; i--)
-        {
-            if (_visualDisplays[i] == null || _visualDisplays[i].gameObject == null)
-                _visualDisplays.RemoveAt(i);
-        }
+        ClearRemovedCards();
 
         if (playerModifiers.Count == 0)
-            return;
+        return;
+
+        // TODO: sort a little better? like, a different type of sort
+        // Sort by name, and then by type. Mid solution, imo (especially because it does two sorts),
+        // but it Does group moddies by what they are
+        _visualDisplays = _visualDisplays
+            .OrderBy(d => d.modifierData.name)
+            .OrderBy(d => d.modifierData.GetType().ToSafeString())
+            .ToList();
 
         SpawnNewCards();
 
         // Generates spawn positions
         GenerateAndSetPositions();
+
+        Debug.Log($"{_visualDisplays.Count} modifier displays, {playerModifiers.Count} modifiers in player inventory");
+    }
+
+    private void ClearRemovedCards()
+    {
+        // clear modifiers that arent in hand anymore
+        for (int i = _visualDisplays.Count() - 1; i >= 0; i--)
+        {
+            var display = _visualDisplays[i];
+            if (display == null || display.gameObject == null || display.modifierData == null)
+            {
+                _visualDisplays.RemoveAt(i);
+                continue;
+            }
+
+            if (!playerModifiers.Contains(display.modifierData))
+            {
+                Destroy(display.gameObject);
+                _visualDisplays.RemoveAt(i);
+                continue;
+            }
+        }
     }
 
     /// <summary>
@@ -224,6 +237,7 @@ public class ModifierDeckDisplay : MonoBehaviour
             return;
 
         selectedCard.ResetOffset();
+        selectedCard = null;
     }
 
     #endregion

@@ -1,4 +1,5 @@
 using UnityEngine;
+using NaughtyAttributes;
 
 /*****************************************************************************
 // File Name :          IntentionChangeModifier.cs
@@ -14,7 +15,7 @@ public class IntentionChangeModifier : ModifierData
     [SerializeField]
     private CardIntention intentionToSet;
 
-    [SerializeField]
+    [SerializeField, ShowAssetPreview(32, 32)]
     private Sprite modifierSprite;
 
     public override bool CanApplyModifier(CardData[] cards)

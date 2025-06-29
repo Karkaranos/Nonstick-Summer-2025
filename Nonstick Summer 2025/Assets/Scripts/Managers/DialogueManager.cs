@@ -190,6 +190,7 @@ public class DialogueManager
         yield return DialogueUIController.Instance.ResetNPCDialogue();
 
         // TODO: move this to AFTER player reads all text, and can play cards again
+        GameManager.Instance.StopCoroutine(SetCurrentEnergy(_currentEnergy));
         GameManager.Instance.StartCoroutine(SetCurrentEnergy(_currentEnergy + _energyGainedPerRound));
 
         playedCard.TryTriggerStampEffect(StampTriggerConditions.AfterCardPlayed);

@@ -26,9 +26,19 @@ public class EnergyBar : MonoBehaviour
         float oldValue = slider.value;
         while (!Mathf.Approximately(slider.value, value))
         {
+
             slider.value = Mathf.MoveTowards(slider.value, value, Time.deltaTime * animationSpeed);
-            
+
             yield return new WaitForEndOfFrame();
+
+
+            if (slider.value < value)
+            {
+
+                yield return new WaitForEndOfFrame();
+
+            }
+
         }
 
         slider.value = value;

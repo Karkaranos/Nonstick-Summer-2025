@@ -14,6 +14,7 @@ public class DeckManager
     public static DeckManager Instance => GameManager.DeckManagerReference;
 
     public static Deck PlayerDeck = new Deck();
+    public static Deck RemainingDeck = new Deck();
     
     #region Initialization
 
@@ -21,7 +22,8 @@ public class DeckManager
     {
         foreach (CardData card in defaultPlayerCards)
         {
-            PlayerDeck.Add(card.CopyCard(),false);
+            //PlayerDeck.Add(card.CopyCard(),false);
+            AddCard(card); // add to player and remaining decks
         }
     }
 
@@ -29,8 +31,11 @@ public class DeckManager
     /// Runs after the first scene has finished loading
     /// </summary>
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-    static void AfterSceneLoad()
+    private static void AfterSceneLoad()
     {
+        Debug.Log("filling remaining deck");
+        RemainingDeck = PlayerDeck.GetCopy();
+        Debug.Log(PlayerDeck.Count);
     }
 
     #endregion
@@ -45,6 +50,8 @@ public class DeckManager
     {
         CheckDeck(ref d);
         d.Add(c);
+
+        if (d == PlayerDeck) RemainingDeck.Add(c);
     }
 
     /// <summary>
@@ -56,6 +63,8 @@ public class DeckManager
     {
         CheckDeck(ref d);
         d.Remove(c);
+
+        if (d == PlayerDeck) RemainingDeck.Remove(c);
     }
 
     /// <summary>
@@ -68,6 +77,8 @@ public class DeckManager
     {
         CheckDeck(ref d);
         d.UpdateCard(oldCard, newCard);
+
+        if (d == PlayerDeck) RemainingDeck.UpdateCard(oldCard, newCard);
     }
 
     /// <summary>
@@ -100,14 +111,6 @@ public class DeckManager
     {
         CheckDeck(ref d);
         d.Shuffle();
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    public static void DisplayDeck()
-    {
-
     }
 
     #endregion

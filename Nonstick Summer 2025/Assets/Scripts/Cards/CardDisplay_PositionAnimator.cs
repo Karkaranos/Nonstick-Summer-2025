@@ -124,8 +124,6 @@ public partial class CardDisplay : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log("final base position: " + currentBasePosition);
-
         translatePositionCoroutine = null;
     }
 

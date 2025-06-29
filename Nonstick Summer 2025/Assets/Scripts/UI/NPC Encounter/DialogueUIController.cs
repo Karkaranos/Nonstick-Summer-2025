@@ -162,6 +162,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
             return;
         }
+
+        // should this be playing EVERY time the button is pressed?
         AudioManager.instance.PlayOneShot(FMODEvents.instance.CardPlaySFX);
 
         Debug.Log("Play button pressed");
@@ -189,8 +191,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         // in case the npc text was only 1 blurb long. (updated in dialogueBox.ProgressNPCDialogue)
         if (PlayerReadAllNPCText && !DialogueManager.CurrentDialogueBranch.End)
         {
-            yield return ToggleUIForDialogueProgression(true);
-            DialogueManager.ReadUserInput = true;
+            DialogueManager.OnPlayerFinishReadingDialogue();
         }
     }
 
@@ -214,16 +215,10 @@ public class DialogueUIController : Singleton<DialogueUIController>
             {
                 playCardButtonText.text = EndDialogueText;
                 yield return ToggleUIForDialogueProgression(false);
-
-                Debug.LogWarning("This statement runs too often");
-
-                for (int i = 0; i< DialogueManager.CardsDrawnPerRound;i++)
-                    deckDisplay.DrawOneCard();
             }
             else
             {
-                yield return ToggleUIForDialogueProgression(true);
-                DialogueManager.ReadUserInput = true;
+                DialogueManager.OnPlayerFinishReadingDialogue();
             }
         }
     }

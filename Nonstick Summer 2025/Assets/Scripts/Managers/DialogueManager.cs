@@ -34,7 +34,7 @@ public class DialogueManager
     // these variables might get moved to a different script. 
     // idk if a 'discarded' variable is necessary so im just gonna not do that.
     // i see a big problem where if the player modifies a card in their deck, which deck gets updated? how do we bridge the gaps between these multiple decks? 
-    public static Deck PlayerHand, RemainingDeck;
+    public static Deck PlayerHand;
     private static characters currentCharacter;
     public static float CurrentRelationshipScore => RelationshipManager.characterRelationships[currentCharacter].currentValue;
     public static float CurrentEnergy { 
@@ -48,6 +48,12 @@ public class DialogueManager
     public static float MaxEnergy;
     public static int DefaultCardsInHand { get; private set; }
     public static int CardsDrawnPerRound;
+
+    #region calculation variables
+
+    private static bool playedCardSinceOpeningCombat = false;
+
+    #endregion
 
     #region Getters and setters
 
@@ -102,11 +108,23 @@ public class DialogueManager
         CardsDrawnPerRound = _cardsDrawnPerRound;
     }
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private static void OnMomentStarted()
+    {
+        Debug.Log("on moment started");
+        ReadUserInput = false;
+        CurrentEnergy = _defaultEnergy;
+        //RemainingDeck = DeckManager.CopyDeck().Shuffled();
+        PlayerHand = PlayerHand ?? new Deck();
+        PlayerHand.Clear();
+    }
+
     public static void OnOpenCombatUI(DialogueBranch startDialogueBranch, characters character)
     {
         ReadUserInput = false;
         CurrentDialogueBranch = startDialogueBranch;
         currentCharacter = character;
+        playedCardSinceOpeningCombat = false;
 
         // testing only: please delete later
         // ok i did it
@@ -119,6 +137,8 @@ public class DialogueManager
     /// </summary>
     public static IEnumerator ProcessPlayCard(CardData playedCard)
     {
+        playedCardSinceOpeningCombat = true;
+
         if (playedCard == null)
             Debug.Log("Played silent card");
         else
@@ -148,7 +168,7 @@ public class DialogueManager
         var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
 
         float relationshipChange = dialogueOption.ChangeInRelationshipStatus;
-        //float relationshipChange = playedCard.GetRelationshipChange(dialogueOption);
+        //float relationshipChange = playedCardSinceOpeningCombat.GetRelationshipChange(dialogueOption);
         //yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange);
         GameManager.Instance.StartCoroutine(SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange));
 
@@ -180,14 +200,34 @@ public class DialogueManager
     }
 
     /// <summary>
-    /// TODO: Call this function at start of 'moment'
+    /// When player has read all sets of dialogue in a branch
     /// </summary>
-    public static void OnMomentStarted()
+    public static void OnPlayerFinishReadingDialogue()
     {
-        ReadUserInput = false;
-        CurrentEnergy = _defaultEnergy;
-        RemainingDeck = DeckManager.CopyDeck().Shuffled();
-        PlayerHand.Clear();
+        DialogueUIController.Instance.StartCoroutine(DialogueUIController.Instance.ToggleUIForDialogueProgression(true));
+        ReadUserInput = true;
+        DrawCards();
     }
-    
+
+    private static void DrawCards()
+    {
+        if (!playedCardSinceOpeningCombat)
+            return;
+
+        Debug.Log("drawing now");
+
+        for (int i = 0; i < CardsDrawnPerRound; i++)
+        {
+            if (DeckManager.RemainingDeck.Count >= 1)
+            {
+                var nextCard = DeckManager.RemainingDeck.Pop();
+                PlayerHand.Add(nextCard, false);
+            }
+            else
+            {
+                Debug.Log("No cards left to draw!");
+            }
+            DialogueUIController.Instance.DeckDisplay.DisplayAllCards();
+        }
+    }
 }

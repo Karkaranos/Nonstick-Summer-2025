@@ -105,8 +105,6 @@ public class DeckDisplayer : MonoBehaviour
     /// </summary>
     public void DisplayAllCards()
     {
-        UnityEngine.Debug.Log("displaying cards");
-
         if (_visualDisplays == null)
             _visualDisplays = new List<CardDisplay>();
 

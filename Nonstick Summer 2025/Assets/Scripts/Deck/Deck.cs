@@ -128,7 +128,7 @@ public class Deck
             //OnDeckChanged.Invoke();
             return;
         }
-        throw new System.Exception("No cards in Deck");
+        //throw new System.Exception("No cards in Deck");
     }
 
     /// <summary>

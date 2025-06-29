@@ -43,13 +43,14 @@ public class GameManager : Singleton<GameManager>
     [Foldout("Card Styles")] [SerializeField] private Sprite Card_ObservationSprite;
     [Foldout("Card Styles")] [SerializeField] private Sprite Card_QuestionSprite;
 
-    [Header("Dialogue Manager")]
-    [Foldout("Social Battery")] [SerializeField] private int _defaultEnergy=5;
-    [Foldout("Social Battery")] [SerializeField] private int _energyGainedPerRound=1;
-    [Foldout("Social Battery")][SerializeField] private int _energyGainedIfSilent = 2;
-    [Foldout("Social Battery")] [SerializeField] private int _maxEnergy=10;
-    [Foldout("Social Battery")] [SerializeField] private int _cardsDrawnPerRound=1;
-    [Foldout("Dialogue Manager")] public static int DefaultCardsInHand=5; // why is this hardcoded?
+    [Header("Social Battery")]
+    [Foldout("Combat"),SerializeField] private int _defaultEnergy=5;
+    [Foldout("Combat"),SerializeField] private int _energyGainedPerRound=1;
+    [Foldout("Combat"),SerializeField] private int _energyGainedIfSilent = 2;
+    [Foldout("Combat"),SerializeField] private int _maxEnergy=10;
+    [Header("Cards")]
+    [Foldout("Combat"),SerializeField] private int _cardsDrawnPerRound=1;
+    [Foldout("Combat"),SerializeField] public static int DefaultCardsInHand=5; // why is this hardcoded?
 
     [Header("Relationship Manager")]
     [Foldout("Relationship Manager")] [SerializeField] private RelationshipStats grandmaStartingValue;

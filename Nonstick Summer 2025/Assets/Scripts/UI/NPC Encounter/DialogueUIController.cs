@@ -37,8 +37,9 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Required][SerializeField] private DeckDisplayer deckDisplay;
     [Tooltip("Relationship slider UI element")]
     [Required][SerializeField] private RelationshipSlider relationshipSlider;
-    [Required][SerializeField] private DialogueBox dialogueBox;
+    [Required, SerializeField] private DialogueBox dialogueBox;
     [Required, SerializeField] public  DialogueNPCPortraitDisplay portraitDisplay;
+    [Required, SerializeField] private DrawButton drawButton;
 
     //i can make this a whole 'nother script if necessary but idk
     // TODO: ^
@@ -74,11 +75,13 @@ public class DialogueUIController : Singleton<DialogueUIController>
         // i think our game is not complicated enough that its gonna be a problem performance wise, 
         // but its gonna bug me that its happening extra times
 
+        // initialize all components
         energyBar.Initalize();
         relationshipSlider.Initialize(RelationshipManager.characterRelationships[character].maxValue, RelationshipManager.characterRelationships[character].currentValue);
         deckDisplay.SetDisplayDeck(ref DialogueManager.PlayerHand);
         deckDisplay.SetRemainingDeck(DeckManager.PlayerDeck.GetCopy());
         DeckDisplay.DrawToDefaultHand();
+        drawButton.Initialize();
 
         deckDisplay.OnCardsSelectedChanged.AddListener(OnSelectionUpdated);
 
@@ -162,6 +165,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
             return;
         }
+
+        // should this be playing EVERY time the button is pressed?
         AudioManager.instance.PlayOneShot(FMODEvents.instance.CardPlaySFX);
 
         Debug.Log("Play button pressed");
@@ -189,8 +194,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         // in case the npc text was only 1 blurb long. (updated in dialogueBox.ProgressNPCDialogue)
         if (PlayerReadAllNPCText && !DialogueManager.CurrentDialogueBranch.End)
         {
-            yield return ToggleUIForDialogueProgression(true);
-            DialogueManager.ReadUserInput = true;
+            DialogueManager.OnPlayerFinishReadingDialogue();
         }
     }
 
@@ -214,16 +218,10 @@ public class DialogueUIController : Singleton<DialogueUIController>
             {
                 playCardButtonText.text = EndDialogueText;
                 yield return ToggleUIForDialogueProgression(false);
-
-                Debug.LogWarning("This statement runs too often");
-
-                for (int i = 0; i< DialogueManager.CardsDrawnPerRound;i++)
-                    deckDisplay.DrawOneCard();
             }
             else
             {
-                yield return ToggleUIForDialogueProgression(true);
-                DialogueManager.ReadUserInput = true;
+                DialogueManager.OnPlayerFinishReadingDialogue();
             }
         }
     }
@@ -270,13 +268,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
     public IEnumerator UpdateRelationship(float? value, characters character)
     {
         yield return relationshipSlider?.SetValue(value ?? RelationshipManager.characterRelationships[character].currentValue);
-    }
-
-    public void DrawOneCard()
-    {
-        DialogueManager.SetCurrentEnergy(DialogueManager.CurrentEnergy -= 2);
-        
-        deckDisplay.DrawOneCard();
     }
 
     public void DiscardCard()

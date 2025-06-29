@@ -35,7 +35,6 @@ public class DeckManager
     {
         Debug.Log("filling remaining deck");
         RemainingDeck = PlayerDeck.GetCopy();
-        Debug.Log(PlayerDeck.Count);
     }
 
     #endregion

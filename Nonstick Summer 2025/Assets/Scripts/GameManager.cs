@@ -48,6 +48,7 @@ public class GameManager : Singleton<GameManager>
     [Foldout("Combat"),SerializeField] private int _energyGainedPerRound=1;
     [Foldout("Combat"),SerializeField] private int _energyGainedIfSilent = 2;
     [Foldout("Combat"),SerializeField] private int _maxEnergy=10;
+    [Foldout("Combat"),SerializeField] private int _drawButtonEnergyCost = 2;
     [Header("Cards")]
     [Foldout("Combat"),SerializeField] private int _cardsDrawnPerRound=1;
     [Foldout("Combat"),SerializeField] public static int DefaultCardsInHand=5; // why is this hardcoded?
@@ -74,7 +75,8 @@ public class GameManager : Singleton<GameManager>
             Card_ExpressionStyle, Card_ObservationStyle, Card_QuestionStyle,
             Card_ExpressionSprite, Card_ObservationSprite, Card_QuestionSprite);
         DeckManagerReference = DeckManagerReference ?? new DeckManager(startingCards);
-        DialogueManagerReference = DialogueManagerReference ?? new DialogueManager(_defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent, _maxEnergy, DefaultCardsInHand, _cardsDrawnPerRound);
+        DialogueManagerReference = DialogueManagerReference ?? new DialogueManager(_defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent, 
+            _maxEnergy, DefaultCardsInHand, _cardsDrawnPerRound, _drawButtonEnergyCost);
         RelationshipManagerReference = RelationshipManagerReference ?? new RelationshipManager(grandmaStartingValue, uncleStartingValue, cousinStartingValue, momStartingValue);
         ModifierManagerReference = ModifierManagerReference ?? new ModifierManager(startingModifiers);
         ObjectiveReference = FindFirstObjectByType<Objectives>();

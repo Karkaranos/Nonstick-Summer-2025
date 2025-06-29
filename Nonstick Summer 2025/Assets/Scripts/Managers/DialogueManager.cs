@@ -27,7 +27,8 @@ public class DialogueManager
 
     public static bool ReadUserInput;
     public static bool UserCanPlayCard=>ReadUserInput && DialogueUIController.Instance.PlayerReadAllNPCText;
-    public static UnityEvent OnCardPlayed = new UnityEvent();
+    public static UnityEvent OnCardPlayedStarted = new UnityEvent();
+    public static UnityEvent OnCardPlayedFinished = new UnityEvent();
     public static DialogueBranch CurrentDialogueBranch { get; private set; }
     public static bool PlayerInCombat => DialogueUIController.Instance != null;
 
@@ -39,7 +40,7 @@ public class DialogueManager
     public static float CurrentRelationshipScore => RelationshipManager.characterRelationships[currentCharacter].currentValue;
     public static float CurrentEnergy { 
         get { return _currentEnergy; }
-        set { SetCurrentEnergy(value); }
+        set { GameManager.Instance.StartCoroutine(SetCurrentEnergy(value)); }
     }
     private static float _currentEnergy;
 
@@ -47,7 +48,7 @@ public class DialogueManager
     private static float _defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent;
     public static float MaxEnergy;
     public static int DefaultCardsInHand { get; private set; }
-    public static int CardsDrawnPerRound;
+    public static int CardsDrawnPerRound, DrawButtonEnergyCost;
 
     #region calculation variables
 
@@ -95,7 +96,8 @@ public class DialogueManager
 
     #endregion
 
-    public DialogueManager(float defaultEnergy, float energyGainedPerRound, float energyGainedIfSilent, float maxEnergy, int defaultCardsInHand, int _cardsDrawnPerRound)
+    public DialogueManager(float defaultEnergy, float energyGainedPerRound, float energyGainedIfSilent, float maxEnergy, 
+        int defaultCardsInHand, int cardsDrawnPerRound, int drawButtonEnergyCost)
     {
         _defaultEnergy = defaultEnergy;
         _energyGainedPerRound = energyGainedPerRound;
@@ -105,7 +107,8 @@ public class DialogueManager
 
         _currentEnergy = defaultEnergy;
         PlayerHand = new Deck();
-        CardsDrawnPerRound = _cardsDrawnPerRound;
+        CardsDrawnPerRound = cardsDrawnPerRound;
+        DrawButtonEnergyCost = drawButtonEnergyCost;
     }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
@@ -138,13 +141,13 @@ public class DialogueManager
     public static IEnumerator ProcessPlayCard(CardData playedCard)
     {
         playedCardSinceOpeningCombat = true;
+        ReadUserInput = false;
+        OnCardPlayedStarted.Invoke();
 
         if (playedCard == null)
             Debug.Log("Played silent card");
         else
             Debug.Log($"playing card: {playedCard.Emotion.ToString()}, {playedCard.Intention.ToString()}");
-
-        ReadUserInput = false;
 
         if (playedCard != null)
             playedCard.TryTriggerStampEffect(StampTriggerConditions.BeforeCardPlayed);
@@ -197,6 +200,8 @@ public class DialogueManager
         ReadUserInput = true;//!CurrentDialogueBranch.End; 
 
         MoodManager.UpdateMood(playedCard.Emotion);
+
+        OnCardPlayedFinished.Invoke();
     }
 
     /// <summary>
@@ -209,14 +214,16 @@ public class DialogueManager
         DrawCards();
     }
 
-    private static void DrawCards()
+    public static void DrawCards(int? N=null, bool forceDraw = false)
     {
-        if (!playedCardSinceOpeningCombat)
+        N = N ?? CardsDrawnPerRound;
+
+        if (!playedCardSinceOpeningCombat && !forceDraw)
             return;
 
         Debug.Log("drawing now");
 
-        for (int i = 0; i < CardsDrawnPerRound; i++)
+        for (int i = 0; i < N; i++)
         {
             if (DeckManager.RemainingDeck.Count >= 1)
             {

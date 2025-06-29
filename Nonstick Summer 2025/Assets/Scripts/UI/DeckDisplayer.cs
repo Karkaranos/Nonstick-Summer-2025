@@ -273,9 +273,12 @@ public class DeckDisplayer : MonoBehaviour
 
     public void DiscardCard(CardData card)
     {
+
         displayedData.Remove(card);
 
         DisplayAllCards();
+
+        DeselectAllCards();
     }
 
     /// <summary>

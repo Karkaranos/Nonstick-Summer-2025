@@ -18,16 +18,18 @@ public class EnergyBar : MonoBehaviour
 
     public IEnumerator SetValue(float value)
     {
+
         slider = slider ?? GetComponent<Slider>();
+
         //if (slider.value == value)
         if (Mathf.Approximately(slider.value, value))
             yield break;
 
         float oldValue = slider.value;
+
         while (!Mathf.Approximately(slider.value, value))
         {
             slider.value = Mathf.MoveTowards(slider.value, value, Time.deltaTime * animationSpeed);
-            
             yield return new WaitForEndOfFrame();
         }
 

@@ -152,7 +152,7 @@ public class DeckDisplayer : MonoBehaviour
     /// Yeahh basically just copied DisplayNCards
     /// Draws the hand back to the default size
     /// </summary>
-    public void DrawToDefaultd()
+    public void DrawToDefaultHand()
     {
         if(DeckManager.RemainingDeck == null)
         {

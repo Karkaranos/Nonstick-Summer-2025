@@ -107,7 +107,7 @@ public class DeckDisplayer : MonoBehaviour
 
     private void ClearRemovedCards()
     {
-        // clear modifiers that arent in handDisplay anymore
+        // clear modifiers that arent in hand anymore
         for (int i = _visualDisplays.Count() - 1; i >= 0; i--)
         {
             var display = _visualDisplays[i];
@@ -150,9 +150,9 @@ public class DeckDisplayer : MonoBehaviour
 
     /// <summary>
     /// Yeahh basically just copied DisplayNCards
-    /// Draws the handDisplay back to the default size
+    /// Draws the dDisplay back to the default size
     /// </summary>
-    public void DrawToDefaultHand()
+    public void DrawToDefaultd()
     {
         if(DeckManager.RemainingDeck == null)
         {
@@ -164,7 +164,7 @@ public class DeckDisplayer : MonoBehaviour
             throw new ArgumentOutOfRangeException("No cards to draw");
         }
 
-        while(displayedData.Count < DefaultHandSize)
+        while(displayedData.Count < DefaultdSize)
             displayedData.Add(DeckManager.RemainingDeck.Pop(), false);
 
         DisplayAllCards();
@@ -172,7 +172,7 @@ public class DeckDisplayer : MonoBehaviour
 
     /// <summary>
     /// Yeahh basically just copied DisplayNCards
-    /// Draws the handDisplay back to the max size
+    /// Draws the hand back to the max size
     /// </summary>
     public void DrawToMaxHand()
     {
@@ -325,7 +325,7 @@ public class DeckDisplayer : MonoBehaviour
     }
 
     /// <summary>
-    /// Displays a specified number of cards from the player's handDisplay
+    /// Displays a specified number of cards from the player's hand
     /// If no number is specified, displays max number of cards visible as stated on GameManager
     /// </summary>
     /// <param name="n">The number of cards to display</param>

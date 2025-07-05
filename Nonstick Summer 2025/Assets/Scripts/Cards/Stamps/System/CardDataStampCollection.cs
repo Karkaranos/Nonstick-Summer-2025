@@ -87,7 +87,7 @@ public partial class CardData
     }
 
     /// <summary>
-    /// TODO use this function with the _modifier that puts a copy of a card into the players handDisplay (but not into permanent deck)
+    /// TODO use this function with the _modifier that puts a copy of a card into the players hand (but not into permanent deck)
     /// </summary>
     public CardData CopyCardWithoutStampType(Type stampType)
     {

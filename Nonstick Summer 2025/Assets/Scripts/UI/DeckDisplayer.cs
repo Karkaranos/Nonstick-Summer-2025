@@ -4,7 +4,7 @@ Date Created :          June 6, 2025
 Date Modified :         June 26, 2025
 Brief Description :     Handles visual display for the deck
 
-Inside of you there are two decks: your handDisplay and 
+Inside of you there are two decks: your hand and 
 your remaining cards.
 You can still display cards without ever setting 
 remaining cards, you just gotta be careful.

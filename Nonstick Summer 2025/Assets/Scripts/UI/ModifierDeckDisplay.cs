@@ -90,7 +90,7 @@ public class ModifierDeckDisplay : MonoBehaviour
 
     private void ClearRemovedCards()
     {
-        // clear modifiers that arent in hand anymore
+        // clear modifiers that arent in handDisplay anymore
         for (int i = _visualDisplays.Count() - 1; i >= 0; i--)
         {
             var display = _visualDisplays[i];

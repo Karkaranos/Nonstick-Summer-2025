@@ -44,7 +44,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     //i can make this a whole 'nother script if necessary but idk
     // TODO: ^
-    [SerializeField] private Button playCardButton;
+    [SerializeField] public Button playCardButton;
     [SerializeField] private TMP_Text playCardButtonText;
 
     public DeckDisplayer DeckDisplay { get { return deckDisplay; } }
@@ -79,8 +79,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         // initialize all components
         energyBar.Initalize();
         relationshipSlider.Initialize(RelationshipManager.characterRelationships[character].maxValue, RelationshipManager.characterRelationships[character].currentValue);
-        deckDisplay.SetDisplayDeck(ref DialogueManager.PlayerHand);
-        deckDisplay.SetRemainingDeck(ref DeckManager.PlayerDeck.GetCopy());
+        deckDisplay.SetDisplayDeck(ref DeckManager.PlayerHand);
         DeckDisplay.DrawToDefaultHand();
         drawButton.Initialize();
         discardButton.Initialize();

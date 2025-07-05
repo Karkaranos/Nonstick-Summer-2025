@@ -26,6 +26,7 @@ public class DiscardButton : MonoBehaviour
         button.onClick.AddListener(OnButtonPressed);
 
         hand.OnCardsSelectedChanged.AddListener(UpdateButtonEnabled);
+        DialogueUIController.Instance.playCardButton.onClick.AddListener(UpdateButtonEnabled);
     }
 
     /// <summary>
@@ -33,7 +34,7 @@ public class DiscardButton : MonoBehaviour
     /// </summary>
     public void UpdateButtonEnabled()
     {
-        bool enabled = (hand.HasCardsSelected);
+        bool enabled = (hand.HasCardsSelected && DialogueManager.ReadUserInput);
         button.interactable = enabled;
     }
 
@@ -42,13 +43,15 @@ public class DiscardButton : MonoBehaviour
     /// </summary>
     public void OnButtonPressed()
     {
-        DialogueManager.SetCurrentEnergy(DialogueManager.CurrentEnergy += 1);
 
         // foreach in case player somehow has multiple cards selected
         foreach(var card in hand.selectedCards.ToArray()) //ToArray so we can safely remove items from the original collection
         {
             hand.DiscardCard(card.cardData);
+
+            
         }
+        DialogueManager.CurrentEnergy += DialogueManager.EnergyGainedPerDiscard;
 
         UpdateButtonEnabled();
     }

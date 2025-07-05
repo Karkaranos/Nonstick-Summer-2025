@@ -33,12 +33,6 @@ public class DialogueManager
     public static DialogueBranch CurrentDialogueBranch { get; private set; }
     public static bool PlayerInCombat => DialogueUIController.Instance != null;
 
-    // these variables might get moved to a different script. 
-    // idk if a 'discarded' variable is necessary so im just gonna not do that.
-    // i see a big problem where if the player modifies a card in their deck, which deck gets updated? how do we bridge the gaps between these multiple decks? 
-    public static Deck PlayerHand;
-    public static Deck RemainingCards;
-
     private static characters currentCharacter;
     public static float CurrentRelationshipScore => RelationshipManager.characterRelationships[currentCharacter].currentValue;
     public static float CurrentEnergy { 
@@ -49,9 +43,8 @@ public class DialogueManager
 
     // parameters
     private static float _defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent;
-    public static float MaxEnergy;
-    public static int DefaultCardsInHand { get; private set; }
-    public static int CardsDrawnPerRound, DrawButtonEnergyCost;
+    public static float MaxEnergy, DrawButtonEnergyCost, EnergyGainedPerDiscard;
+    public static int DefaultCardsInHand, CardsDrawnPerRound;
 
     #region calculation variables
 
@@ -100,7 +93,7 @@ public class DialogueManager
     #endregion
 
     public DialogueManager(float defaultEnergy, float energyGainedPerRound, float energyGainedIfSilent, float maxEnergy, 
-        int defaultCardsInHand, int cardsDrawnPerRound, int drawButtonEnergyCost)
+        int defaultCardsInHand, int cardsDrawnPerRound, float drawButtonEnergyCost, float energyGainedPerDiscard)
     {
         _defaultEnergy = defaultEnergy;
         _energyGainedPerRound = energyGainedPerRound;
@@ -109,10 +102,9 @@ public class DialogueManager
         DefaultCardsInHand = defaultCardsInHand;
         CardsDrawnPerRound = cardsDrawnPerRound;
         DrawButtonEnergyCost = drawButtonEnergyCost;
+        EnergyGainedPerDiscard = energyGainedPerDiscard;
 
         _currentEnergy = defaultEnergy;
-
-        PlayerHand = new Deck();
     }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
@@ -121,9 +113,6 @@ public class DialogueManager
         Debug.Log("on moment started");
         ReadUserInput = false;
         CurrentEnergy = _defaultEnergy;
-        //RemainingDeck = DeckManager.CopyDeck().Shuffled();
-        PlayerHand = PlayerHand ?? new Deck();
-        PlayerHand.Clear();
     }
 
     public static void OnOpenCombatUI(DialogueBranch startDialogueBranch, characters character)
@@ -135,8 +124,6 @@ public class DialogueManager
 
         // testing only: please delete later
         // ok i did it
-
-        PlayerHand.Shuffle();
     }
 
     /// <summary>
@@ -229,6 +216,7 @@ public class DialogueManager
             return;
 
         Debug.Log("drawing now");
+        DialogueUIController.Instance.DeckDisplay.DeselectAllCards();   
 
         for (int i = 0; i < N; i++)
         {
@@ -240,9 +228,11 @@ public class DialogueManager
             }
             else
             {
+                DialogueUIController.Instance.DeckDisplay.DisplayAllCards();
                 Debug.Log("No cards left to draw!");
             }
-            DialogueUIController.Instance.DeckDisplay.DisplayAllCards();
+            // Called in draw one card
+            //DialogueUIController.Instance.DeckDisplay.DisplayAllCards();
         }
     }
 }

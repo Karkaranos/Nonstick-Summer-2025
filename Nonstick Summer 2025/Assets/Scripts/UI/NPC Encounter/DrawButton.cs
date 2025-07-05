@@ -15,7 +15,7 @@ using UnityEngine.UI;
 public class DrawButton : MonoBehaviour
 {
     [SerializeField, Required] private Button button;
-    private DeckDisplayer hand => DialogueUIController.Instance.DeckDisplay;
+    private DeckDisplayer handDisplay => DialogueUIController.Instance.DeckDisplay;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,7 +26,9 @@ public class DrawButton : MonoBehaviour
 
         DialogueManager.OnCardPlayedStarted.AddListener(UpdateButtonEnabled);
         DialogueManager.OnCardPlayedFinished.AddListener(UpdateButtonEnabled);
-        hand.OnCardsSelectedChanged.AddListener(UpdateButtonEnabled); // idk it just feels right
+        handDisplay.OnCardsSelectedChanged.AddListener(UpdateButtonEnabled); // idk it just feels right
+        DialogueUIController.Instance.playCardButton.onClick.AddListener(UpdateButtonEnabled);
+        DeckManager.PlayerHand.OnDeckChanged.AddListener(UpdateButtonEnabled);
     }
 
     /// <summary>
@@ -34,8 +36,9 @@ public class DrawButton : MonoBehaviour
     /// </summary>
     public void UpdateButtonEnabled()
     {
-        bool enabled = (DeckManager.RemainingDeck.Count > 0) 
-            && (DialogueManager.CurrentEnergy >= DialogueManager.DrawButtonEnergyCost);
+        Debug.Log($"{DeckManager.RemainingDeck.Count} Cards left in remaining deck");
+        bool enabled = (DeckManager.RemainingDeck.Count > 0) && DialogueManager.ReadUserInput
+            && (DialogueManager.CurrentEnergy >= DialogueManager.DrawButtonEnergyCost );
         button.interactable = enabled;
     }
 

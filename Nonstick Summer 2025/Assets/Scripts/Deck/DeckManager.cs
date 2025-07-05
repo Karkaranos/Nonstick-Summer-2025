@@ -13,7 +13,8 @@ public class DeckManager
 {
     public static DeckManager Instance => GameManager.DeckManagerReference;
 
-    public static Deck PlayerDeck = new Deck();
+    public static Deck PlayerFullDeck = new Deck();
+    public static Deck PlayerHand = new Deck();
     public static Deck RemainingDeck = new Deck();
     
     #region Initialization
@@ -22,7 +23,7 @@ public class DeckManager
     {
         foreach (CardData card in defaultPlayerCards)
         {
-            //PlayerDeck.Add(card.CopyCard(),false);
+            //PlayerFullDeck.Add(card.CopyCard(),false);
             AddCard(card); // add to player and remaining decks
         }
     }
@@ -33,8 +34,13 @@ public class DeckManager
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     private static void AfterSceneLoad()
     {
+        if(PlayerHand != null)
+            PlayerHand.Clear();
+        else
+            PlayerHand = new Deck();
+
         Debug.Log("filling remaining deck");
-        RemainingDeck = PlayerDeck.GetCopy();
+        RemainingDeck = PlayerFullDeck.GetCopy();
     }
 
     #endregion
@@ -50,7 +56,7 @@ public class DeckManager
         CheckDeck(ref d);
         d.Add(c);
 
-        if (d == PlayerDeck) RemainingDeck.Add(c);
+        if (d == PlayerFullDeck) RemainingDeck.Add(c);
     }
 
     /// <summary>
@@ -63,7 +69,7 @@ public class DeckManager
         CheckDeck(ref d);
         d.Remove(c);
 
-        if (d == PlayerDeck) RemainingDeck.Remove(c);
+        if (d == PlayerFullDeck) RemainingDeck.Remove(c);
     }
 
     /// <summary>
@@ -77,7 +83,7 @@ public class DeckManager
         CheckDeck(ref d);
         d.UpdateCard(oldCard, newCard);
 
-        if (d == PlayerDeck) RemainingDeck.UpdateCard(oldCard, newCard);
+        if (d == PlayerFullDeck) RemainingDeck.UpdateCard(oldCard, newCard);
     }
 
     /// <summary>
@@ -126,7 +132,7 @@ public class DeckManager
         {
             return;
         }
-        d = PlayerDeck;
+        d = PlayerFullDeck;
     }
     #endregion
 

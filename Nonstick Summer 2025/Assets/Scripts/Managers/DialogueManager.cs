@@ -18,6 +18,7 @@
 using NaughtyAttributes;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -36,6 +37,8 @@ public class DialogueManager
     // idk if a 'discarded' variable is necessary so im just gonna not do that.
     // i see a big problem where if the player modifies a card in their deck, which deck gets updated? how do we bridge the gaps between these multiple decks? 
     public static Deck PlayerHand;
+    public static Deck RemainingCards;
+
     private static characters currentCharacter;
     public static float CurrentRelationshipScore => RelationshipManager.characterRelationships[currentCharacter].currentValue;
     public static float CurrentEnergy { 
@@ -104,11 +107,12 @@ public class DialogueManager
         _energyGainedIfSilent = energyGainedIfSilent;
         MaxEnergy = maxEnergy;
         DefaultCardsInHand = defaultCardsInHand;
-
-        _currentEnergy = defaultEnergy;
-        PlayerHand = new Deck();
         CardsDrawnPerRound = cardsDrawnPerRound;
         DrawButtonEnergyCost = drawButtonEnergyCost;
+
+        _currentEnergy = defaultEnergy;
+
+        PlayerHand = new Deck();
     }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
@@ -193,14 +197,16 @@ public class DialogueManager
         GameManager.Instance.StopCoroutine(SetCurrentEnergy(_currentEnergy));
         GameManager.Instance.StartCoroutine(SetCurrentEnergy(_currentEnergy + _energyGainedPerRound));
 
-        playedCard.TryTriggerStampEffect(StampTriggerConditions.AfterCardPlayed);
+        if(playedCard != null)
+            playedCard.TryTriggerStampEffect(StampTriggerConditions.AfterCardPlayed);
         //TODO wait for potential _modifier animations to finish
 
         Debug.Log("Completed processing card");
         // only keep reading user input if theres more
         ReadUserInput = true;//!CurrentDialogueBranch.End; 
 
-        MoodManager.UpdateMood(playedCard.Emotion);
+        if(playedCard != null)
+            MoodManager.UpdateMood(playedCard.Emotion);
 
         OnCardPlayedFinished.Invoke();
     }
@@ -228,8 +234,9 @@ public class DialogueManager
         {
             if (DeckManager.RemainingDeck.Count >= 1)
             {
-                var nextCard = DeckManager.RemainingDeck.Pop();
-                PlayerHand.Add(nextCard, false);
+                //var nextCard = DeckManager.RemainingDeck.Pop();
+                //PlayerHand.Add(nextCard, false);
+                DialogueUIController.Instance.DeckDisplay.DrawOneCard();
             }
             else
             {

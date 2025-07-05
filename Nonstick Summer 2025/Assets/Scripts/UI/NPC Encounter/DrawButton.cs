@@ -15,6 +15,8 @@ using UnityEngine.UI;
 public class DrawButton : MonoBehaviour
 {
     [SerializeField, Required] private Button button;
+    private DeckDisplayer hand => DialogueUIController.Instance.DeckDisplay;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Initialize()
@@ -24,6 +26,7 @@ public class DrawButton : MonoBehaviour
 
         DialogueManager.OnCardPlayedStarted.AddListener(UpdateButtonEnabled);
         DialogueManager.OnCardPlayedFinished.AddListener(UpdateButtonEnabled);
+        hand.OnCardsSelectedChanged.AddListener(UpdateButtonEnabled); // idk it just feels right
     }
 
     /// <summary>

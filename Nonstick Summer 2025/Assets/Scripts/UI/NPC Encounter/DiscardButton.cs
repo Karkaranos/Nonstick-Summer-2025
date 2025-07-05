@@ -9,6 +9,7 @@
 *****************************************************************************/
 
 using NaughtyAttributes;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,13 +17,15 @@ public class DiscardButton : MonoBehaviour
 {
     [SerializeField, Required] private Button button;
 
+    private DeckDisplayer hand => DialogueUIController.Instance.DeckDisplay;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Initialize()
     {
         UpdateButtonEnabled();
         button.onClick.AddListener(OnButtonPressed);
 
-        DialogueUIController.Instance.DeckDisplay.OnCardsSelectedChanged.AddListener(UpdateButtonEnabled);
+        hand.OnCardsSelectedChanged.AddListener(UpdateButtonEnabled);
     }
 
     /// <summary>
@@ -30,15 +33,23 @@ public class DiscardButton : MonoBehaviour
     /// </summary>
     public void UpdateButtonEnabled()
     {
-        bool enabled = (DeckManager.RemainingDeck.Count > 0)
-            && (DialogueManager.CurrentEnergy >= DialogueManager.DrawButtonEnergyCost);
+        bool enabled = (hand.HasCardsSelected);
         button.interactable = enabled;
     }
 
+    /// <summary>
+    /// can only be pressed if button is interactable
+    /// </summary>
     public void OnButtonPressed()
     {
-        DialogueManager.DrawCards(N: 1, forceDraw: true);
-        DialogueManager.CurrentEnergy = DialogueManager.CurrentEnergy - DialogueManager.DrawButtonEnergyCost;
+        DialogueManager.SetCurrentEnergy(DialogueManager.CurrentEnergy += 1);
+
+        // foreach in case player somehow has multiple cards selected
+        foreach(var card in hand.selectedCards.ToArray()) //ToArray so we can safely remove items from the original collection
+        {
+            hand.DiscardCard(card.cardData);
+        }
+
         UpdateButtonEnabled();
     }
 }

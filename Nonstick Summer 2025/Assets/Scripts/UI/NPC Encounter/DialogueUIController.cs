@@ -40,6 +40,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Required, SerializeField] private DialogueBox dialogueBox;
     [Required, SerializeField] public  DialogueNPCPortraitDisplay portraitDisplay;
     [Required, SerializeField] private DrawButton drawButton;
+    [Required, SerializeField] private DiscardButton discardButton;
 
     //i can make this a whole 'nother script if necessary but idk
     // TODO: ^
@@ -79,9 +80,10 @@ public class DialogueUIController : Singleton<DialogueUIController>
         energyBar.Initalize();
         relationshipSlider.Initialize(RelationshipManager.characterRelationships[character].maxValue, RelationshipManager.characterRelationships[character].currentValue);
         deckDisplay.SetDisplayDeck(ref DialogueManager.PlayerHand);
-        deckDisplay.SetRemainingDeck(DeckManager.PlayerDeck.GetCopy());
+        deckDisplay.SetRemainingDeck(ref DeckManager.PlayerDeck.GetCopy());
         DeckDisplay.DrawToDefaultHand();
         drawButton.Initialize();
+        discardButton.Initialize();
 
         deckDisplay.OnCardsSelectedChanged.AddListener(OnSelectionUpdated);
 
@@ -269,14 +271,5 @@ public class DialogueUIController : Singleton<DialogueUIController>
     {
         yield return relationshipSlider?.SetValue(value ?? RelationshipManager.characterRelationships[character].currentValue);
     }
-
-    public void DiscardCard()
-    {
-        DialogueManager.SetCurrentEnergy(DialogueManager.CurrentEnergy +=1);
-
-        deckDisplay.DiscardCard(selectedCardData);
-    }
-
-
 }
 

@@ -39,7 +39,7 @@ public class DeckDisplayer : MonoBehaviour
     public CanvasGroup canvasGroup;
 
     //private static Deck PlayerDeckRef => GameManager.DeckManagerReference.PlayerDeck;
-    [SerializeField] private Deck RemainingDeckRef; // changed to be generalized, because deck will not always be the players.
+    private Deck RemainingDeckRef; // changed to be generalized, because deck will not always be the players.
     private static int DefaultHandSize => GameManager.DefaultCardsInHand;
     private static int MaxHandSize => GameManager.MaxCardsVisibleInDeck;
 
@@ -90,13 +90,6 @@ public class DeckDisplayer : MonoBehaviour
         //DrawToDefaultHand();
 
         if (shuffle)
-            RemainingDeckRef.Shuffle();
-    }
-
-    public void SetRemainingDeck(Deck deckRef, bool shuffle = true)
-    {
-        RemainingDeckRef = deckRef;
-        if(shuffle)
             RemainingDeckRef.Shuffle();
     }
 
@@ -182,19 +175,6 @@ public class DeckDisplayer : MonoBehaviour
             displayedData.Add(RemainingDeckRef.Pop(), false);
 
         DisplayAllCards();
-
-        /*ClearDisplay();
-
-        int n = DefaultHandSize;
-
-        // Creates referenced array
-        //Vector2[] spawnPositions = new Vector2[n];
-
-        // Generates spawn positions
-        GenerateAndSetPositions(0, n - 1);
-
-        // Spawns the specified number of cards
-        SpawnCards(RemainingDeckRef.PopAndReplaceNCards(n), spawnPositions);*/
     }
 
     /// <summary>
@@ -212,19 +192,6 @@ public class DeckDisplayer : MonoBehaviour
             displayedData.Add(RemainingDeckRef.Pop(),false);
 
         DisplayAllCards();
-
-        /*ClearDisplay();
-
-        int n = MaxHandSize;
-
-        // Creates referenced array
-        Vector2[] spawnPositions = new Vector2[n];
-
-        // Generates spawn positions
-        GenerateAndSetPositions(0, n - 1);
-
-        // Spawns the specified number of cards
-        SpawnCards(RemainingDeckRef.PopAndReplaceNCards(n), spawnPositions);*/
     }
 
     /// <summary>
@@ -252,17 +219,6 @@ public class DeckDisplayer : MonoBehaviour
             displayedData.Add(RemainingDeckRef.Pop(), false);
 
             DisplayAllCards();
-
-            /*ClearDisplay();
-
-            // Creates referenced array
-            Vector2[] spawnPositions = new Vector2[displayedData.Count];
-
-            // Generates spawn positions
-            GenerateAndSetPositions(0, displayedData.Count - 1);
-
-            // Spawns the specified number of cards
-            SpawnCards(StaticUtilities.ListToArray(displayedData), spawnPositions);*/
         }
         else
         {
@@ -273,12 +229,11 @@ public class DeckDisplayer : MonoBehaviour
 
     public void DiscardCard(CardData card)
     {
+        DeselectAllCards();
 
         displayedData.Remove(card);
 
         DisplayAllCards();
-
-        DeselectAllCards();
     }
 
     /// <summary>

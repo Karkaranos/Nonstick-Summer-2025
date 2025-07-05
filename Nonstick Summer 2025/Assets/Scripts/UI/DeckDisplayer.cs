@@ -150,7 +150,7 @@ public class DeckDisplayer : MonoBehaviour
 
     /// <summary>
     /// Yeahh basically just copied DisplayNCards
-    /// Draws the dDisplay back to the default size
+    /// Draws the hand back to the default size
     /// </summary>
     public void DrawToDefaultd()
     {

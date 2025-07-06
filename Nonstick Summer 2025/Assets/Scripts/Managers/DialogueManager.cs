@@ -28,6 +28,7 @@ public class DialogueManager
 
     public static bool ReadUserInput;
     public static bool UserCanPlayCard=>ReadUserInput && DialogueUIController.Instance.PlayerReadAllNPCText;
+    public static UnityEvent OnPlayerFinishReadingDialogue = new UnityEvent();
     public static UnityEvent OnCardPlayedStarted = new UnityEvent();
     public static UnityEvent OnCardPlayedFinished = new UnityEvent();
     public static DialogueBranch CurrentDialogueBranch { get; private set; }
@@ -201,11 +202,12 @@ public class DialogueManager
     /// <summary>
     /// When player has read all sets of dialogue in a branch
     /// </summary>
-    public static void OnPlayerFinishReadingDialogue()
+    public static void FinishReadingDialogue()
     {
         DialogueUIController.Instance.StartCoroutine(DialogueUIController.Instance.ToggleUIForDialogueProgression(true));
         ReadUserInput = true;
         DrawCards();
+        OnPlayerFinishReadingDialogue.Invoke();
     }
 
     public static void DrawCards(int? N=null, bool forceDraw = false)

@@ -195,7 +195,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         // in case the npc text was only 1 blurb long. (updated in dialogueBox.ProgressNPCDialogue)
         if (PlayerReadAllNPCText && !DialogueManager.CurrentDialogueBranch.End)
         {
-            DialogueManager.OnPlayerFinishReadingDialogue();
+            DialogueManager.FinishReadingDialogue();
         }
     }
 
@@ -222,7 +222,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
             }
             else
             {
-                DialogueManager.OnPlayerFinishReadingDialogue();
+                DialogueManager.FinishReadingDialogue();
             }
         }
     }

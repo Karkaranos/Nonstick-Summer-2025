@@ -19,12 +19,12 @@ public class DeckTest : MonoBehaviour
             DeckManager.AddCard(c);
         }
 
-        //print(Instance.PlayerDeck.PlayerDeck.Count);
+        //print(Instance.PlayerFullDeck.PlayerFullDeck.Count);
         
-        for (int i=0; i<= Instance.PlayerDeck.PlayerDeck.Count+1; i++)
+        for (int i=0; i<= Instance.PlayerFullDeck.PlayerFullDeck.Count+1; i++)
         //print(Instance.Cards.Cards.Count);
 
-        for (int i=0; i<= Instance.PlayerDeck.Cards.Count+1; i++)
+        for (int i=0; i<= Instance.PlayerFullDeck.Cards.Count+1; i++)
         {
             CardData top = DeckManager.PopTopCard();
             print("Element " + i + ": Emotion-" + top.Emotion + " Intent-" + top.Intention);
@@ -38,12 +38,12 @@ public class DeckTest : MonoBehaviour
         // Testing for shuffling deck
         
         /*
-        DeckManager.ShuffleDeck(ref Instance.PlayerDeck);
+        DeckManager.ShuffleDeck(ref Instance.PlayerFullDeck);
         print("Shuffled");
 
         //print(Instance.Cards.Cards.Count);
 
-        for (int i = 0; i <= Instance.PlayerDeck.Cards.Count+1; i++)
+        for (int i = 0; i <= Instance.PlayerFullDeck.Cards.Count+1; i++)
         {
             CardData top = DeckManager.PopTopCard();
             print("Element " + i + ": Emotion-" + top.Emotion + " Intent-" + top.Intention);

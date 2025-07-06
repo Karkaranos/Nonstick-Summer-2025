@@ -17,7 +17,7 @@ public class ModifierInventoy : MonoBehaviour
 
     private void Start()
     {
-        deckDisplay.SetDisplayDeck(ref DeckManager.PlayerDeck);
+        deckDisplay.SetDisplayDeck(ref DeckManager.PlayerFullDeck);
         // modifier deck is already set B)
     }
 }

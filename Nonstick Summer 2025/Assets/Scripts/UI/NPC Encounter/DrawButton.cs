@@ -15,15 +15,24 @@ using UnityEngine.UI;
 public class DrawButton : MonoBehaviour
 {
     [SerializeField, Required] private Button button;
+    private DeckDisplayer handDisplay => DialogueUIController.Instance.DeckDisplay;
+    private bool DrewCardThisTurn = false;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Initialize()
     {
-        UpdateButtonEnabled();
         button.onClick.AddListener(OnButtonPressed);
+        DrewCardThisTurn = false;
+        UpdateButtonEnabled();
 
         DialogueManager.OnCardPlayedStarted.AddListener(UpdateButtonEnabled);
-        DialogueManager.OnCardPlayedFinished.AddListener(UpdateButtonEnabled);
+        handDisplay.OnCardsSelectedChanged.AddListener(UpdateButtonEnabled); // idk it just feels right
+        //DialogueUIController.Instance.playCardButton.onClick.AddListener(UpdateButtonEnabled);
+        DialogueManager.OnPlayerFinishReadingDialogue.AddListener(UpdateButtonEnabled);
+        DeckManager.PlayerHand.OnDeckChanged.AddListener(UpdateButtonEnabled);
+
+        DialogueManager.OnCardPlayedFinished.AddListener(OnPlayerPlayedCardFinish);
     }
 
     /// <summary>
@@ -31,15 +40,29 @@ public class DrawButton : MonoBehaviour
     /// </summary>
     public void UpdateButtonEnabled()
     {
-        bool enabled = (DeckManager.RemainingDeck.Count > 0) 
-            && (DialogueManager.CurrentEnergy >= DialogueManager.DrawButtonEnergyCost);
+        bool enabled = 
+            DeckManager.RemainingDeck.Count > 0 && 
+            DialogueManager.ReadUserInput && 
+            DialogueManager.UserCanPlayCard &&
+            DialogueManager.CurrentEnergy >= DialogueManager.DrawButtonEnergyCost && 
+            !DrewCardThisTurn; // maybe add a bool in gamemanager/dialogueManager to toggle this.
         button.interactable = enabled;
     }
 
     public void OnButtonPressed()
     {
+        DrewCardThisTurn = true;
         DialogueManager.DrawCards(N: 1, forceDraw: true);
         DialogueManager.CurrentEnergy = DialogueManager.CurrentEnergy - DialogueManager.DrawButtonEnergyCost;
+        UpdateButtonEnabled();
+
+        Debug.Log($"{DeckManager.RemainingDeck.Count} Cards left in remaining deck");
+    }
+
+    public void OnPlayerPlayedCardFinish()
+    {
+        Debug.Log("PLayer played card finished");
+        DrewCardThisTurn = false;
         UpdateButtonEnabled();
     }
 }

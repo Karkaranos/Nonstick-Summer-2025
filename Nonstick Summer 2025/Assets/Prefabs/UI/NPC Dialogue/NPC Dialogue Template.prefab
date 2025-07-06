@@ -635,6 +635,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1720661989560155474}
   - component: {fileID: 8524873688590109143}
+  - component: {fileID: 8485676684081373501}
   - component: {fileID: 7216355371873800257}
   - component: {fileID: 1456299807510004181}
   m_Layer: 5
@@ -672,6 +673,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3060986392772401130}
   m_CullTransparentMesh: 1
+--- !u!114 &8485676684081373501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3060986392772401130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d58935b450f3e541accef1097da1a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1456299807510004181}
 --- !u!114 &7216355371873800257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -745,19 +759,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7216355371873800257}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6703924586895997319}
-        m_TargetAssemblyTypeName: DialogueUIController, Assembly-CSharp
-        m_MethodName: DiscardCard
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &3563109065109059754
 GameObject:
   m_ObjectHideFlags: 0
@@ -2326,6 +2328,7 @@ MonoBehaviour:
   dialogueBox: {fileID: 5063277960126387384}
   portraitDisplay: {fileID: 8866230592575021245}
   drawButton: {fileID: 6290512726271096613}
+  discardButton: {fileID: 8485676684081373501}
   playCardButton: {fileID: 2750696950675404513}
   playCardButtonText: {fileID: 4441261588584569892}
   CardSelectedText: Play Card

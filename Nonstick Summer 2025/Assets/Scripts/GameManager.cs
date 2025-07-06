@@ -26,6 +26,7 @@ public class GameManager : Singleton<GameManager>
     public static RelationshipManager RelationshipManagerReference;
     public static ModifierManager ModifierManagerReference;
     public static Objectives ObjectiveReference;
+    public static PlayerDataManager PlayerDataManagerReference;
 
     public static int MaxCardsVisibleInDeck = 100; // why is this here?
 
@@ -80,6 +81,7 @@ public class GameManager : Singleton<GameManager>
         RelationshipManagerReference = RelationshipManagerReference ?? new RelationshipManager(grandmaStartingValue, uncleStartingValue, cousinStartingValue, momStartingValue);
         ModifierManagerReference = ModifierManagerReference ?? new ModifierManager(startingModifiers);
         ObjectiveReference = FindFirstObjectByType<Objectives>();
+        PlayerDataManagerReference = PlayerDataManagerReference ?? new PlayerDataManager();
 
     }
 }

@@ -74,14 +74,14 @@ public partial class CardData : ScriptableObject
         else
             newCost = _energyCost + MoodManager.emotions[_emotion].baseEnergyCost;
 
-        if(_stamps.Count > 0)
+        /*if(_stamps.Count > 0)
         {
             foreach (ModifierStamp stamp in _stamps)
             {
-                if (stamp.type == typeof(CardStatAffectorStamp))
-                    ((CardStatAffectorStamp)stamp).ModifyEnergyCost(ref newCost);
+                if (stamp.type == typeof(RelationshipAffectorStamp))
+                    ((RelationshipAffectorStamp)stamp).ModifyEnergyCost(ref newCost);
             }
-        }
+        }*/
         return newCost; 
     }
     public CardIntention GetIntention() { return _intention; }
@@ -94,8 +94,8 @@ public partial class CardData : ScriptableObject
 
         foreach (ModifierStamp stamp in _stamps)
         {
-            if (stamp.type == typeof(CardStatAffectorStamp))
-                ((CardStatAffectorStamp)stamp).ModifyEnergyCost(ref newRelationshipChange);
+            if (stamp.type == typeof(RelationshipAffectorStamp))
+                ((RelationshipAffectorStamp)stamp).ModifyRelationshipValue(ref newRelationshipChange);
         }
         return newRelationshipChange;
     }

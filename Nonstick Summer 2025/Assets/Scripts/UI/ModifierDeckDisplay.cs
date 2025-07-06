@@ -70,7 +70,9 @@ public class ModifierDeckDisplay : MonoBehaviour
         ClearRemovedCards();
 
         if (playerModifiers.Count == 0)
-        return;
+            return;
+
+        SpawnNewCards();
 
         // TODO: sort a little better? like, a different type of sort
         // Sort by name, and then by type. Mid solution, imo (especially because it does two sorts),
@@ -79,8 +81,6 @@ public class ModifierDeckDisplay : MonoBehaviour
             .OrderBy(d => d.modifierData.name)
             .OrderBy(d => d.modifierData.GetType().ToSafeString())
             .ToList();
-
-        SpawnNewCards();
 
         // Generates spawn positions
         GenerateAndSetPositions();

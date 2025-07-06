@@ -113,7 +113,12 @@ public partial class CardDisplay : MonoBehaviour
         int i;
         for (i = 0; i<card.Stamps.Count && i<StampImages.Length; i++)
         {
-            StampImages[i].sprite = card.Stamps.ElementAt(i).Icon;
+            var stamp = card.Stamps.ElementAt(i);
+
+            if (stamp == null)
+                continue;
+
+            StampImages[i].sprite = stamp.Icon;
             StampImages[i].color = Color.white;
         }
 

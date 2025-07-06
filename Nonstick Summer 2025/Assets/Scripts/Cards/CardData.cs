@@ -139,7 +139,7 @@ public partial class CardData : ScriptableObject
     #region debug
     private void Debug_InvokeOnCardValueChanged()
     {
-        OnCardValueChanged.Invoke();
+        OnCardValueChanged?.Invoke();
     }
 
     public static CardData NewCard (int EnergyCost, CardEmotion Emotion, CardIntention Intention)

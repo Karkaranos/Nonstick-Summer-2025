@@ -132,6 +132,9 @@ public class ModifierDeckDisplay : MonoBehaviour
 
         foreach(var newCard in newCards)
         {
+            if (newCard == null)
+                continue;
+
             var newCardGameObj = Instantiate(modifierCardPrefab, this.transform);
             var display = newCardGameObj.GetComponent<ModifierCardDisplay>();
             //display.OnMouseDown.AddListener(OnCardClicked); // TODO why does this not work D:

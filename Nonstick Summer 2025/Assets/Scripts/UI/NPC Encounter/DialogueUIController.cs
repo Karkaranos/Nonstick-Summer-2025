@@ -40,10 +40,11 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Required, SerializeField] private DialogueBox dialogueBox;
     [Required, SerializeField] public  DialogueNPCPortraitDisplay portraitDisplay;
     [Required, SerializeField] private DrawButton drawButton;
+    [Required, SerializeField] private DiscardButton discardButton;
 
     //i can make this a whole 'nother script if necessary but idk
     // TODO: ^
-    [SerializeField] private Button playCardButton;
+    [SerializeField] public Button playCardButton;
     [SerializeField] private TMP_Text playCardButtonText;
 
     public DeckDisplayer DeckDisplay { get { return deckDisplay; } }
@@ -78,10 +79,10 @@ public class DialogueUIController : Singleton<DialogueUIController>
         // initialize all components
         energyBar.Initalize();
         relationshipSlider.Initialize(RelationshipManager.characterRelationships[character].maxValue, RelationshipManager.characterRelationships[character].currentValue);
-        deckDisplay.SetDisplayDeck(ref DialogueManager.PlayerHand);
-        deckDisplay.SetRemainingDeck(DeckManager.PlayerDeck.GetCopy());
+        deckDisplay.SetDisplayDeck(ref DeckManager.PlayerHand);
         DeckDisplay.DrawToDefaultHand();
         drawButton.Initialize();
+        discardButton.Initialize();
 
         deckDisplay.OnCardsSelectedChanged.AddListener(OnSelectionUpdated);
 
@@ -194,7 +195,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         // in case the npc text was only 1 blurb long. (updated in dialogueBox.ProgressNPCDialogue)
         if (PlayerReadAllNPCText && !DialogueManager.CurrentDialogueBranch.End)
         {
-            DialogueManager.OnPlayerFinishReadingDialogue();
+            DialogueManager.FinishReadingDialogue();
         }
     }
 
@@ -221,7 +222,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
             }
             else
             {
-                DialogueManager.OnPlayerFinishReadingDialogue();
+                DialogueManager.FinishReadingDialogue();
             }
         }
     }
@@ -269,14 +270,5 @@ public class DialogueUIController : Singleton<DialogueUIController>
     {
         yield return relationshipSlider?.SetValue(value ?? RelationshipManager.characterRelationships[character].currentValue);
     }
-
-    public void DiscardCard()
-    {
-        DialogueManager.SetCurrentEnergy(DialogueManager.CurrentEnergy +=1);
-
-        deckDisplay.DiscardCard(selectedCardData);
-    }
-
-
 }
 

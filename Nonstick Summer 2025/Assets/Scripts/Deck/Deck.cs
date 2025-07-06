@@ -215,10 +215,10 @@ public class Deck
     /// <returns></returns>
     public CardData Pop()
     {
-        if (Cards.Count >= 0)
+        if (_cards.Count >= 0)
         {
-            CardData toReturn = Cards[0];
-            Cards.RemoveAt(0);
+            CardData toReturn = _cards[0];
+            _cards.RemoveAt(0);
             //Debug.Log(Cards.Count + " cards left");
             OnDeckChanged.Invoke();
             return toReturn;
@@ -228,9 +228,9 @@ public class Deck
 
     public CardData Peek()
     {
-        if (Cards.Count >= 0)
+        if (_cards.Count >= 0)
         {
-            return Cards[0];
+            return _cards[0];
         }
         throw new System.Exception("No cards in Deck");
     }

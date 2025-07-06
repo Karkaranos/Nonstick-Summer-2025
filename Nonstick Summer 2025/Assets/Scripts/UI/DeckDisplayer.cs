@@ -37,9 +37,6 @@ public class DeckDisplayer : MonoBehaviour
 
     [HideInInspector]
     public CanvasGroup canvasGroup;
-
-    //private static Deck PlayerDeckRef => GameManager.DeckManagerReference.PlayerDeck;
-    [SerializeField] private Deck RemainingDeckRef; // changed to be generalized, because deck will not always be the players.
     private static int DefaultHandSize => GameManager.DefaultCardsInHand;
     private static int MaxHandSize => GameManager.MaxCardsVisibleInDeck;
 
@@ -75,29 +72,18 @@ public class DeckDisplayer : MonoBehaviour
 
     public void SetDisplayDeck(ref Deck deckRef, bool displayAll=true)
     {
+        // Reset current deck
+        if(displayedData != null)
+        {
+            displayedData.OnDeckChanged.RemoveAllListeners();
+        }
+
         displayedData = deckRef;
 
         deckRef.OnDeckChanged.AddListener(DisplayAllCards); // this function Can cause changes to the deck, but if it keeps running, it will run out of things to change
 
         if (displayAll)
             DisplayAllCards();
-    }
-
-    public void SetRemainingDeck(ref Deck deckRef, bool shuffle = true)
-    {
-        RemainingDeckRef = deckRef;
-        //This was moved elsewhere
-        //DrawToDefaultHand();
-
-        if (shuffle)
-            RemainingDeckRef.Shuffle();
-    }
-
-    public void SetRemainingDeck(Deck deckRef, bool shuffle = true)
-    {
-        RemainingDeckRef = deckRef;
-        if(shuffle)
-            RemainingDeckRef.Shuffle();
     }
 
     /// <summary>
@@ -168,33 +154,20 @@ public class DeckDisplayer : MonoBehaviour
     /// </summary>
     public void DrawToDefaultHand()
     {
-        if(RemainingDeckRef == null)
+        if(DeckManager.RemainingDeck == null)
         {
             throw new ArgumentNullException("No deck to draw from");
         }
 
-        if(RemainingDeckRef.Count == 0)
+        if(DeckManager.RemainingDeck.Count == 0)
         {
             throw new ArgumentOutOfRangeException("No cards to draw");
         }
 
         while(displayedData.Count < DefaultHandSize)
-            displayedData.Add(RemainingDeckRef.Pop(), false);
+            displayedData.Add(DeckManager.RemainingDeck.Pop(), false);
 
         DisplayAllCards();
-
-        /*ClearDisplay();
-
-        int n = DefaultHandSize;
-
-        // Creates referenced array
-        //Vector2[] spawnPositions = new Vector2[n];
-
-        // Generates spawn positions
-        GenerateAndSetPositions(0, n - 1);
-
-        // Spawns the specified number of cards
-        SpawnCards(RemainingDeckRef.PopAndReplaceNCards(n), spawnPositions);*/
     }
 
     /// <summary>
@@ -203,28 +176,15 @@ public class DeckDisplayer : MonoBehaviour
     /// </summary>
     public void DrawToMaxHand()
     {
-        if (RemainingDeckRef == null)
+        if (DeckManager.RemainingDeck == null)
         {
             throw new ArgumentNullException("No deck to draw from");
         }
 
         while (displayedData.Count < MaxHandSize)
-            displayedData.Add(RemainingDeckRef.Pop(),false);
+            displayedData.Add(DeckManager.RemainingDeck.Pop(),false);
 
         DisplayAllCards();
-
-        /*ClearDisplay();
-
-        int n = MaxHandSize;
-
-        // Creates referenced array
-        Vector2[] spawnPositions = new Vector2[n];
-
-        // Generates spawn positions
-        GenerateAndSetPositions(0, n - 1);
-
-        // Spawns the specified number of cards
-        SpawnCards(RemainingDeckRef.PopAndReplaceNCards(n), spawnPositions);*/
     }
 
     /// <summary>
@@ -239,30 +199,20 @@ public class DeckDisplayer : MonoBehaviour
         _visualDisplays.Clear();
     }
 
-
+    /// <summary>
+    /// NOTE: does not subtract energy
+    /// </summary>
     public void DrawOneCard()
     {
-        if (RemainingDeckRef == null)
+        if (DeckManager.RemainingDeck == null)
         {
             throw new ArgumentNullException("No deck to draw from");
         }
 
-        if (RemainingDeckRef.Count < MaxHandSize)
+        if (DeckManager.RemainingDeck.Count < MaxHandSize && DeckManager.RemainingDeck.Count > 0)
         {
-            displayedData.Add(RemainingDeckRef.Pop(), false);
-
+            displayedData.Add(DeckManager.RemainingDeck.Pop(), false);
             DisplayAllCards();
-
-            /*ClearDisplay();
-
-            // Creates referenced array
-            Vector2[] spawnPositions = new Vector2[displayedData.Count];
-
-            // Generates spawn positions
-            GenerateAndSetPositions(0, displayedData.Count - 1);
-
-            // Spawns the specified number of cards
-            SpawnCards(StaticUtilities.ListToArray(displayedData), spawnPositions);*/
         }
         else
         {
@@ -273,12 +223,11 @@ public class DeckDisplayer : MonoBehaviour
 
     public void DiscardCard(CardData card)
     {
+        DeselectAllCards();
 
         displayedData.Remove(card);
 
         DisplayAllCards();
-
-        DeselectAllCards();
     }
 
     /// <summary>
@@ -385,7 +334,7 @@ public class DeckDisplayer : MonoBehaviour
     {
         ClearDisplay();
 
-        UnityEngine.Debug.Log("Displaying " + n + " of " + RemainingDeckRef.Cards.Count + " cards.");
+        UnityEngine.Debug.Log("Displaying " + n + " of " + DeckManager.RemainingDeck.Cards.Count + " cards.");
 
         // If no value was passed in, set the display count to the number from GameManager
         if (n == 0)
@@ -400,7 +349,7 @@ public class DeckDisplayer : MonoBehaviour
         GenerateAndSetPositions(0, n - 1);
 
         // Spawns the specified number of cards
-        SpawnCards(RemainingDeckRef.PopAndReplaceNCards(n), spawnPositions);
+        SpawnCards(DeckManager.RemainingDeck.PopAndReplaceNCards(n), spawnPositions);
     }
 
     // ok so I was being a little bit of a dumbass trying to get this to work
@@ -524,7 +473,7 @@ public class DeckDisplayer : MonoBehaviour
 
     public void DeselectAllCards()
     {
-        var cards = selectedCards.ToList();
+        var cards = selectedCards.ToArray();
         foreach (CardDisplay cardDisplay in cards)
             DeselectCard(cardDisplay, false);
 

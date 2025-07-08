@@ -13,5 +13,9 @@ using UnityEngine.SceneManagement;
 ***************************************************/
 public class PlayerData
 {
-    public int currentScene;
+    public int CurrentScene;
+    public float GrandmaRelationshipValue;
+    public float MomRelationshipValue;
+    public float CousinRelationshipValue;
+    public float UncleRelationshipValue;
 }

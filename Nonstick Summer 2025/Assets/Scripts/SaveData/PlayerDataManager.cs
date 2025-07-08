@@ -1,7 +1,8 @@
+using NaughtyAttributes;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using NaughtyAttributes;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 /*************************************************
 * Author Names :          Sky 
 * References   :          Kozmobot Games' tutorial on saving/loading
@@ -12,7 +13,7 @@ using NaughtyAttributes;
 *   TODO: when to save, why to save, who to save, how to save, where to save
 *   
 ***************************************************/
-public class PlayerDataManager
+public class PlayerDataManager : MonoBehaviour 
 {
     static string path = "Assets/Saves/PlayerData.json";
 
@@ -23,7 +24,13 @@ public class PlayerDataManager
     public static void SaveGame()
     {
         PlayerData playerData = new PlayerData();
-        playerData.currentScene = SceneManager.GetActiveScene().buildIndex;
+
+        //all variables are found here
+        playerData.CurrentScene = SceneManager.GetActiveScene().buildIndex;
+        playerData.CousinRelationshipValue = RelationshipManager.characterRelationships[characters.Cousin].currentValue;
+        playerData.GrandmaRelationshipValue = RelationshipManager.characterRelationships[characters.Grandma].currentValue;
+        playerData.MomRelationshipValue = RelationshipManager.characterRelationships[characters.Mom].currentValue;
+        playerData.UncleRelationshipValue = RelationshipManager.characterRelationships[characters.Uncle].currentValue;
 
         string json = JsonUtility.ToJson(playerData);
         
@@ -41,9 +48,18 @@ public class PlayerDataManager
             string json = System.IO.File.ReadAllText(path);
             PlayerData loadedData = JsonUtility.FromJson<PlayerData>(json);
 
-
             //this is where everything gets set
-            SceneManager.LoadScene(loadedData.currentScene);
+            SceneManager.LoadScene(loadedData.CurrentScene);
+            
+
+            RelationshipManager.characterRelationships[characters.Cousin].currentValue = loadedData.CousinRelationshipValue;
+            RelationshipManager.characterRelationships[characters.Mom].currentValue = loadedData.MomRelationshipValue;
+            RelationshipManager.characterRelationships[characters.Uncle].currentValue = loadedData.UncleRelationshipValue;
+            RelationshipManager.characterRelationships[characters.Grandma].currentValue = loadedData.GrandmaRelationshipValue;
+            Debug.Log(loadedData.CousinRelationshipValue + "cousin");
+            Debug.Log(loadedData.MomRelationshipValue + "mom");
+            Debug.Log(loadedData.UncleRelationshipValue + "uncle");
+            Debug.Log(loadedData.GrandmaRelationshipValue + "grandma");
             Debug.Log("hallo");
         }
         else

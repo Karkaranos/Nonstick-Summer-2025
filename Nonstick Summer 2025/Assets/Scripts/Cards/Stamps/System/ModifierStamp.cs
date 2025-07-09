@@ -11,7 +11,7 @@ using System;
 using UnityEngine;
 using NaughtyAttributes;
 
-//[CreateAssetMenu(fileName = "DialogueBranch", menuName = "Scriptable Objects/DialogueBranch")]
+//[CreateAssetMenu(fileName = "Modifer Stamp", menuName = "Scriptable Objects/Stamp/...")]
 public abstract class ModifierStamp : ScriptableObject
 {
     public StampTriggerConditions TriggerCondition;
@@ -27,9 +27,8 @@ public abstract class ModifierStamp : ScriptableObject
     /// <summary>
     /// Invoked in CardStampCollection. this function should ideally have 1 reference besides overrides.
     /// </summary>
-    public virtual void TryTriggerEffect(StampTriggerConditions reason, CardData affectedCard)
+    public virtual void TryTriggerEffect(StampTriggerConditions reason, CardData affectedCard) // virtual in case the modifier needs to have some extra logic
     {
-        // virtual in case the modifier needs to have some extra logic
         if (TriggerCondition == reason)
             EffectTriggered(affectedCard);
     }

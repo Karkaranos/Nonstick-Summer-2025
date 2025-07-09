@@ -11,7 +11,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class InteractableObjectBehavior : MonoBehaviour, IInteractable
+public class InteractableObjectBehavior : MonoBehaviour, IInteractableObj
 {
     [SerializeField]
     [Required]
@@ -31,48 +31,72 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractable
     private int chosenOption = -1;
     private bool hasGivenCard = false;
 
+    bool isObjective = false;
+    bool canBeInteractedWith = false;
+
+    /// <summary>
+    /// Allows this object to be interacted with, if it is an objective
+    /// </summary>
+    public void ClearBlocker()
+    {
+        canBeInteractedWith = true;
+    }
+
+    /// <summary>
+    /// Sets whether this object is part of objectives
+    /// </summary>
+    /// <param name="objectiveStatus"></param>
+    public void SetIsObjective(bool objectiveStatus)
+    {
+        isObjective = objectiveStatus;
+    }
+
     /// <summary>
     /// Opens or closes the canvas and handles setting visuals
     /// </summary>
     /// <param name="player"></param>
     public void Interact(GameObject player)
     {
-        GameManager.ObjectiveReference.SetObjectiveVisibility(false);
-        GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.INTERACT_WITH_OBJECT, gameObject);
-
-        openedCanvas = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor, gameObject);
-
-        openedCanvas.transform.GetChild(1).GetComponent<TMP_Text>().text = _statement;
-
-        // If this object has given cards, set the card button to false
-        if (hasGivenCard)
+        if (!isObjective || (isObjective && canBeInteractedWith))
         {
-            openedCanvas.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
 
-            // Display what the player last chose
-            openedCanvas.transform.GetChild(0).transform.GetChild(1).GetChild(1).GetComponent<TMP_Text>().text = _options[chosenOption].ButtonText;
-        }
-        // If this object has not given cards, set the buttons and assign their on click
-        else
-        {
-            Transform savedObject = openedCanvas.transform.GetChild(0).transform.GetChild(0);
-            openedCanvas.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(false);
+            GameManager.ObjectiveReference.SetObjectiveVisibility(false);
+            GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.INTERACT_WITH_OBJECT, gameObject);
 
-            // Set button visuals for each option
-            for(int i=0; i<3; i++)
+            openedCanvas = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor, gameObject);
+
+            openedCanvas.transform.GetChild(1).GetComponent<TMP_Text>().text = _statement;
+
+            // If this object has given cards, set the card button to false
+            if (hasGivenCard)
             {
-                savedObject.GetChild(i).GetComponent<Image>().color = _options[i].ButtonColor;
-                savedObject.GetChild(i).GetChild(0).GetComponent<TMP_Text>().text = _options[i].ButtonText;
+                openedCanvas.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
+
+                // Display what the player last chose
+                openedCanvas.transform.GetChild(0).transform.GetChild(1).GetChild(1).GetComponent<TMP_Text>().text = _options[chosenOption].ButtonText;
             }
+            // If this object has not given cards, set the buttons and assign their on click
+            else
+            {
+                Transform savedObject = openedCanvas.transform.GetChild(0).transform.GetChild(0);
+                openedCanvas.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(false);
 
-            // Set button on click references
-            // Unity didn't like it when this occured in the loop, hence why it is hardcoded
-            savedObject.GetChild(0).GetComponent<Button>().onClick.AddListener(() => CallGiveCard(_options[0].Emotion));
-            savedObject.GetChild(1).GetComponent<Button>().onClick.AddListener(() => CallGiveCard(_options[1].Emotion));
-            savedObject.GetChild(2).GetComponent<Button>().onClick.AddListener(() => CallGiveCard(_options[2].Emotion));
+                // Set button visuals for each option
+                for (int i = 0; i < 3; i++)
+                {
+                    savedObject.GetChild(i).GetComponent<Image>().color = _options[i].ButtonColor;
+                    savedObject.GetChild(i).GetChild(0).GetComponent<TMP_Text>().text = _options[i].ButtonText;
+                }
 
-            savedObject.GetChild(3).GetComponent<TMP_Text>().text = _question;
+                // Set button on click references
+                // Unity didn't like it when this occured in the loop, hence why it is hardcoded
+                savedObject.GetChild(0).GetComponent<Button>().onClick.AddListener(() => CallGiveCard(_options[0].Emotion));
+                savedObject.GetChild(1).GetComponent<Button>().onClick.AddListener(() => CallGiveCard(_options[1].Emotion));
+                savedObject.GetChild(2).GetComponent<Button>().onClick.AddListener(() => CallGiveCard(_options[2].Emotion));
 
+                savedObject.GetChild(3).GetComponent<TMP_Text>().text = _question;
+
+            }
         }
     }
 

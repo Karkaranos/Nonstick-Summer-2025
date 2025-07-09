@@ -155,7 +155,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
                 GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.FINISH_COMBAT);
                 GameManager.ObjectiveReference.SetObjectiveVisibility(true);
                 var bed = FindFirstObjectByType<BedBehavior>();
-                if (bed != null) bed.BossDefeated = true;
+                if (bed != null) bed.ClearBlocker();
             }
             else
             {

@@ -18,6 +18,7 @@
 using NaughtyAttributes;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -27,27 +28,30 @@ public class DialogueManager
 
     public static bool ReadUserInput;
     public static bool UserCanPlayCard=>ReadUserInput && DialogueUIController.Instance.PlayerReadAllNPCText;
-    public static UnityEvent OnCardPlayed = new UnityEvent();
+    public static UnityEvent OnPlayerFinishReadingDialogue = new UnityEvent();
+    public static UnityEvent OnCardPlayedStarted = new UnityEvent();
+    public static UnityEvent OnCardPlayedFinished = new UnityEvent();
     public static DialogueBranch CurrentDialogueBranch { get; private set; }
     public static bool PlayerInCombat => DialogueUIController.Instance != null;
 
-    // these variables might get moved to a different script. 
-    // idk if a 'discarded' variable is necessary so im just gonna not do that.
-    // i see a big problem where if the player modifies a card in their deck, which deck gets updated? how do we bridge the gaps between these multiple decks? 
-    public static Deck PlayerHand, RemainingDeck;
     private static characters currentCharacter;
     public static float CurrentRelationshipScore => RelationshipManager.characterRelationships[currentCharacter].currentValue;
     public static float CurrentEnergy { 
         get { return _currentEnergy; }
-        set { SetCurrentEnergy(value); }
+        set { GameManager.Instance.StartCoroutine(SetCurrentEnergy(value)); }
     }
     private static float _currentEnergy;
 
     // parameters
     private static float _defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent;
-    public static float MaxEnergy;
-    public static int DefaultCardsInHand { get; private set; }
-    public static int CardsDrawnPerRound;
+    public static float MaxEnergy, DrawButtonEnergyCost, EnergyGainedPerDiscard;
+    public static int DefaultCardsInHand, CardsDrawnPerRound;
+
+    #region calculation variables
+
+    private static bool playedCardSinceOpeningCombat = false;
+
+    #endregion
 
     #region Getters and setters
 
@@ -89,17 +93,27 @@ public class DialogueManager
 
     #endregion
 
-    public DialogueManager(float defaultEnergy, float energyGainedPerRound, float energyGainedIfSilent, float maxEnergy, int defaultCardsInHand, int _cardsDrawnPerRound)
+    public DialogueManager(float defaultEnergy, float energyGainedPerRound, float energyGainedIfSilent, float maxEnergy, 
+        int defaultCardsInHand, int cardsDrawnPerRound, float drawButtonEnergyCost, float energyGainedPerDiscard)
     {
         _defaultEnergy = defaultEnergy;
         _energyGainedPerRound = energyGainedPerRound;
         _energyGainedIfSilent = energyGainedIfSilent;
         MaxEnergy = maxEnergy;
         DefaultCardsInHand = defaultCardsInHand;
+        CardsDrawnPerRound = cardsDrawnPerRound;
+        DrawButtonEnergyCost = drawButtonEnergyCost;
+        EnergyGainedPerDiscard = energyGainedPerDiscard;
 
         _currentEnergy = defaultEnergy;
-        PlayerHand = new Deck();
-        CardsDrawnPerRound = _cardsDrawnPerRound;
+    }
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private static void OnMomentStarted()
+    {
+        Debug.Log("on moment started");
+        ReadUserInput = false;
+        CurrentEnergy = _defaultEnergy;
     }
 
     public static void OnOpenCombatUI(DialogueBranch startDialogueBranch, characters character)
@@ -107,11 +121,10 @@ public class DialogueManager
         ReadUserInput = false;
         CurrentDialogueBranch = startDialogueBranch;
         currentCharacter = character;
+        playedCardSinceOpeningCombat = false;
 
         // testing only: please delete later
         // ok i did it
-
-        PlayerHand.Shuffle();
     }
 
     /// <summary>
@@ -119,12 +132,14 @@ public class DialogueManager
     /// </summary>
     public static IEnumerator ProcessPlayCard(CardData playedCard)
     {
+        playedCardSinceOpeningCombat = true;
+        ReadUserInput = false;
+        OnCardPlayedStarted.Invoke();
+
         if (playedCard == null)
             Debug.Log("Played silent card");
         else
             Debug.Log($"playing card: {playedCard.Emotion.ToString()}, {playedCard.Intention.ToString()}");
-
-        ReadUserInput = false;
 
         if (playedCard != null)
             playedCard.TryTriggerStampEffect(StampTriggerConditions.BeforeCardPlayed);
@@ -148,7 +163,7 @@ public class DialogueManager
         var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
 
         float relationshipChange = dialogueOption.ChangeInRelationshipStatus;
-        //float relationshipChange = playedCard.GetRelationshipChange(dialogueOption);
+        //float relationshipChange = playedCardSinceOpeningCombat.GetRelationshipChange(dialogueOption);
         //yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange);
         GameManager.Instance.StartCoroutine(SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange));
 
@@ -167,27 +182,59 @@ public class DialogueManager
         yield return DialogueUIController.Instance.ResetNPCDialogue();
 
         // TODO: move this to AFTER player reads all text, and can play cards again
+        GameManager.Instance.StopCoroutine(SetCurrentEnergy(_currentEnergy));
         GameManager.Instance.StartCoroutine(SetCurrentEnergy(_currentEnergy + _energyGainedPerRound));
 
-        playedCard.TryTriggerStampEffect(StampTriggerConditions.AfterCardPlayed);
+        if(playedCard != null)
+            playedCard.TryTriggerStampEffect(StampTriggerConditions.AfterCardPlayed);
         //TODO wait for potential _modifier animations to finish
 
         Debug.Log("Completed processing card");
         // only keep reading user input if theres more
         ReadUserInput = true;//!CurrentDialogueBranch.End; 
 
-        MoodManager.UpdateMood(playedCard.Emotion);
+        if(playedCard != null)
+            MoodManager.UpdateMood(playedCard.Emotion);
+
+        OnCardPlayedFinished.Invoke();
     }
 
     /// <summary>
-    /// TODO: Call this function at start of 'moment'
+    /// When player has read all sets of dialogue in a branch
     /// </summary>
-    public static void OnMomentStarted()
+    public static void FinishReadingDialogue()
     {
-        ReadUserInput = false;
-        CurrentEnergy = _defaultEnergy;
-        RemainingDeck = DeckManager.CopyDeck().Shuffled();
-        PlayerHand.Clear();
+        DialogueUIController.Instance.StartCoroutine(DialogueUIController.Instance.ToggleUIForDialogueProgression(true));
+        ReadUserInput = true;
+        DrawCards();
+        OnPlayerFinishReadingDialogue.Invoke();
     }
-    
+
+    public static void DrawCards(int? N=null, bool forceDraw = false)
+    {
+        N = N ?? CardsDrawnPerRound;
+
+        if (!playedCardSinceOpeningCombat && !forceDraw)
+            return;
+
+        Debug.Log("drawing now");
+        DialogueUIController.Instance.DeckDisplay.DeselectAllCards();   
+
+        for (int i = 0; i < N; i++)
+        {
+            if (DeckManager.RemainingDeck.Count >= 1)
+            {
+                //var nextCard = DeckManager.RemainingDeck.Pop();
+                //PlayerHand.Add(nextCard, false);
+                DialogueUIController.Instance.DeckDisplay.DrawOneCard();
+            }
+            else
+            {
+                DialogueUIController.Instance.DeckDisplay.DisplayAllCards();
+                Debug.Log("No cards left to draw!");
+            }
+            // Called in draw one card
+            //DialogueUIController.Instance.DeckDisplay.DisplayAllCards();
+        }
+    }
 }

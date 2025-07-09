@@ -15,9 +15,9 @@ public class UIUtilityFunctions : MonoBehaviour
     public static void GetEmotion(CardEmotion emotion, GameObject openedFrom)
     {
         objRef = openedFrom;
-        DialogueManager.PlayerHand.Add(CardData.NewCard(-2, emotion, CardIntention.Expression));
-        DialogueManager.PlayerHand.Add(CardData.NewCard(-2, emotion, CardIntention.Observation));
-        DialogueManager.PlayerHand.Add(CardData.NewCard(-2, emotion, CardIntention.Question));
+        DeckManager.PlayerFullDeck.Add(CardData.NewCard(-2, emotion, CardIntention.Expression));
+        DeckManager.PlayerFullDeck.Add(CardData.NewCard(-2, emotion, CardIntention.Observation));
+        DeckManager.PlayerFullDeck.Add(CardData.NewCard(-2, emotion, CardIntention.Question));
 
         openedFrom.GetComponent<InteractableObjectBehavior>().GiveCard(emotion);
     }

@@ -13,7 +13,9 @@ public class DeckManager
 {
     public static DeckManager Instance => GameManager.DeckManagerReference;
 
-    public static Deck PlayerDeck = new Deck();
+    public static Deck PlayerFullDeck = new Deck();
+    public static Deck PlayerHand = new Deck();
+    public static Deck RemainingDeck = new Deck();
     
     #region Initialization
 
@@ -21,7 +23,8 @@ public class DeckManager
     {
         foreach (CardData card in defaultPlayerCards)
         {
-            PlayerDeck.Add(card.CopyCard(),false);
+            //PlayerFullDeck.Add(card.CopyCard(),false);
+            AddCard(card); // add to player and remaining decks
         }
     }
 
@@ -29,8 +32,15 @@ public class DeckManager
     /// Runs after the first scene has finished loading
     /// </summary>
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-    static void AfterSceneLoad()
+    private static void AfterSceneLoad()
     {
+        if(PlayerHand != null)
+            PlayerHand.Clear();
+        else
+            PlayerHand = new Deck();
+
+        Debug.Log("filling remaining deck");
+        RemainingDeck = PlayerFullDeck.GetCopy();
     }
 
     #endregion
@@ -45,6 +55,8 @@ public class DeckManager
     {
         CheckDeck(ref d);
         d.Add(c);
+
+        if (d == PlayerFullDeck) RemainingDeck.Add(c);
     }
 
     /// <summary>
@@ -56,6 +68,8 @@ public class DeckManager
     {
         CheckDeck(ref d);
         d.Remove(c);
+
+        if (d == PlayerFullDeck) RemainingDeck.Remove(c);
     }
 
     /// <summary>
@@ -68,6 +82,8 @@ public class DeckManager
     {
         CheckDeck(ref d);
         d.UpdateCard(oldCard, newCard);
+
+        if (d == PlayerFullDeck) RemainingDeck.UpdateCard(oldCard, newCard);
     }
 
     /// <summary>
@@ -102,14 +118,6 @@ public class DeckManager
         d.Shuffle();
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    public static void DisplayDeck()
-    {
-
-    }
-
     #endregion
 
     #region Helper Functions
@@ -124,7 +132,7 @@ public class DeckManager
         {
             return;
         }
-        d = PlayerDeck;
+        d = PlayerFullDeck;
     }
     #endregion
 

@@ -9,7 +9,7 @@
 using UnityEngine;
 using NaughtyAttributes;
 
-public class BedBehavior : MonoBehaviour, IInteractable
+public class BedBehavior : MonoBehaviour, IInteractableObj
 {
     private bool _playerHasLeft = false;
     [HideInInspector] public bool BossDefeated = false;
@@ -26,6 +26,13 @@ public class BedBehavior : MonoBehaviour, IInteractable
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(_nextSceneIndex);
         }
+    }
+
+    public void SetIsObjective(bool b = false) { }
+
+    public void ClearBlocker()
+    {
+        BossDefeated = true;
     }
 
 }

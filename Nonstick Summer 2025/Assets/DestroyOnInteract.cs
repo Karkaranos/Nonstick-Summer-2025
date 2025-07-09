@@ -8,14 +8,23 @@ using UnityEngine;
 
 public class DestroyOnInteract : MonoBehaviour, IInteractableObj
 {
+    [HideInInspector] public bool InteractSuccessful = false;
     bool isObjective = false;
     bool canBeInteractedWith = false;
+    OpenBossInteractable obi;
+
+    private void Start()
+    {
+        obi = FindFirstObjectByType<OpenBossInteractable>(FindObjectsInactive.Include);
+    }
 
     public void Interact(GameObject player)
     {
         if (!isObjective || (isObjective && canBeInteractedWith))
         {
             player.GetComponent<Objectives>().MetCondition(ObjectiveConditions.INTERACT_WITH_OBJECT, gameObject);
+            InteractSuccessful = true;
+            TryBoss();
             Destroy(gameObject);
         }
     }
@@ -37,4 +46,8 @@ public class DestroyOnInteract : MonoBehaviour, IInteractableObj
         isObjective = objectiveStatus;
     }
     
+    public void TryBoss()
+    {
+        obi?.TryActivatingBoss(gameObject);
+    }
 }

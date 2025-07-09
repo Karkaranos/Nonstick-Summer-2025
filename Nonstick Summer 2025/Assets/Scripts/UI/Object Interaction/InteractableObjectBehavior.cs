@@ -13,6 +13,8 @@ using TMPro;
 
 public class InteractableObjectBehavior : MonoBehaviour, IInteractableObj
 {
+    [HideInInspector] public bool InteractSuccessful = false;
+
     [SerializeField]
     [Required]
     public GameObject CanvasToOpenPrefab;
@@ -34,6 +36,12 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObj
     bool isObjective = false;
     bool canBeInteractedWith = false;
 
+    OpenBossInteractable obi;
+
+    private void Start()
+    {
+        obi = FindFirstObjectByType<OpenBossInteractable>(FindObjectsInactive.Include);
+    }
     /// <summary>
     /// Allows this object to be interacted with, if it is an objective
     /// </summary>
@@ -97,6 +105,8 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObj
                 savedObject.GetChild(3).GetComponent<TMP_Text>().text = _question;
 
             }
+            InteractSuccessful = true;
+            TryBoss();
         }
     }
 
@@ -125,6 +135,11 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObj
                 chosenOption = i;
             }
         }
+    }
+
+    public void TryBoss()
+    {
+        obi?.TryActivatingBoss(gameObject);
     }
 
 #if UNITY_EDITOR

@@ -14,7 +14,8 @@ using UnityEngine;
 *****************************************************************************/
 public class OpenBossInteractable : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField] bool _isMoment4 = false;
+    [ShowIf("_isMoment4"), Tooltip("Interacting with this object will make the boss appear"), SerializeField] private GameObject _bossAppearItem;
     [Required]
     public GameObject CanvasToOpenPrefab;
 
@@ -29,6 +30,27 @@ public class OpenBossInteractable : MonoBehaviour
     [Tooltip("Current character you're interacting with.")]
     [SerializeField]
     private characters character;
+
+    private void Start()
+    {
+        if(_isMoment4)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    public void TryActivatingBoss(GameObject obj)
+    {
+        print("Called");
+        if(!_isMoment4)
+        {
+            return;
+        }
+        if(obj == _bossAppearItem)
+        {
+            gameObject.SetActive(true);
+        }
+    }
 
     /// <summary>
     /// opens combat on trigger enter.

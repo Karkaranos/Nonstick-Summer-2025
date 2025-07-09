@@ -11,6 +11,7 @@ using NaughtyAttributes;
 
 public class BedBehavior : MonoBehaviour, IInteractableObj
 {
+    [HideInInspector] public bool InteractSuccessful = false;
     private bool _playerHasLeft = false;
     [HideInInspector] public bool BossDefeated = false;
     [SerializeField, Scene] private int _nextSceneIndex;
@@ -24,6 +25,7 @@ public class BedBehavior : MonoBehaviour, IInteractableObj
     {
         if (BossDefeated)
         {
+            InteractSuccessful = true;
             UnityEngine.SceneManagement.SceneManager.LoadScene(_nextSceneIndex);
         }
     }
@@ -34,5 +36,7 @@ public class BedBehavior : MonoBehaviour, IInteractableObj
     {
         BossDefeated = true;
     }
+
+    public void TryBoss() { }
 
 }

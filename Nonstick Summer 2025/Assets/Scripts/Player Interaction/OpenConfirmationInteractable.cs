@@ -19,7 +19,8 @@ public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
 
     public void Interact(GameObject player)
     {
-        UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor, gameObject);
+        var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor, gameObject);
+        menu.GetComponent<OpenConfirmationInteractable>().be
     }
 
 

@@ -28,7 +28,7 @@ public class Objectives : MonoBehaviour
                 od.RequiredInteractions = od.RequiredObjects.Length;
                 foreach(GameObject g in od.RequiredObjects)
                 {
-                    g.GetComponent<IInteractableObj>()?.SetIsObjective(true);
+                    g.GetComponent<IInteractableObjective>()?.SetIsObjective(true);
                 }
             }
         }
@@ -62,7 +62,7 @@ public class Objectives : MonoBehaviour
                     _conditions[j].ConditionBeenMet = true;
                     foreach(GameObject g in _conditions[j].RequiredObjects)
                     {
-                        if(g!=null) g.GetComponent<IInteractableObj>()?.ClearBlocker();
+                        if(g!=null) g.GetComponent<IInteractableObjective>()?.ClearBlocker();
                     }
                 }
                 /*if (_conditions[i].HideNextObjectiveIfClear)
@@ -95,7 +95,7 @@ public class Objectives : MonoBehaviour
                 {
                     foreach(GameObject g in _conditions[i+1].RequiredObjects)
                     {
-                        g.GetComponent<IInteractableObj>()?.ClearBlocker();
+                        g.GetComponent<IInteractableObjective>()?.ClearBlocker();
                     }
                 }
             }

@@ -6,7 +6,7 @@ Brief Description :     Handles functionality for interactable objects that are 
 ***************************************************/
 using UnityEngine;
 
-public class DestroyOnInteract : MonoBehaviour, IInteractableObj
+public class DestroyOnInteract : MonoBehaviour, IInteractableObjective
 {
     [HideInInspector] public bool InteractSuccessful = false;
     bool isObjective = false;

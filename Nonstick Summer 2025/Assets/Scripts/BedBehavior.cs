@@ -9,7 +9,7 @@
 using UnityEngine;
 using NaughtyAttributes;
 
-public class BedBehavior : MonoBehaviour, IInteractableObj
+public class BedBehavior : MonoBehaviour, IInteractableObjective
 {
     [HideInInspector] public bool InteractSuccessful = false;
     private bool _playerHasLeft = false;

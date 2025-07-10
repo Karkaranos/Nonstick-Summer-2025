@@ -11,7 +11,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class InteractableObjectBehavior : MonoBehaviour, IInteractableObj
+public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
 {
     [HideInInspector] public bool InteractSuccessful = false;
 

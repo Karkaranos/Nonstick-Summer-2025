@@ -25,6 +25,29 @@ public static class StaticUtilities
 
     #endregion
 
+    #region VFX
+
+    /// <summary>
+    /// Instiates a particle system, and destroys it after its done playing.
+    /// If a particle is set to loop, it will play forever
+    /// </summary>
+    public static void PlayAndDestroyParticles(GameObject particleSystemPrefab, Vector3 position, Vector3? scale, Quaternion? rotation)
+    {
+        if(particleSystemPrefab == null) return;
+        scale = scale ?? Vector3.one;
+        rotation = rotation ?? Quaternion.identity;
+
+        if(particleSystemPrefab.GetComponentInChildren<ParticleSystem>() == null)
+        {
+            Debug.LogWarning("Tried to spawn a particle, but no ParticleSystem was attached");
+            return;
+        }
+
+        var ps = GameObject.Instantiate(particleSystemPrefab, position, rotation.Value);
+    }
+
+    #endregion
+
     #region UI
     public static void EnableCanvasGroup(CanvasGroup canvasgroup, float alpha = 1, bool interactable = true, bool blocksRaycasts=true)
     {

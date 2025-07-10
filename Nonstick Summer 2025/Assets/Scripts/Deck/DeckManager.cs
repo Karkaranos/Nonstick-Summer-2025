@@ -59,17 +59,8 @@ public class DeckManager
         if (d == PlayerFullDeck && applyToRemainingDeck) RemainingDeck.Add(c);
     }
 
-    public static void AddCardCopy(CardData c, Deck d = null, bool applyToRemainingDeck = true)
-    {
-        CheckDeck(ref d);
-        CardData copy = c.CopyCard();
-        d.Add(copy);
-
-        if (d == PlayerFullDeck && applyToRemainingDeck) RemainingDeck.Add(copy);
-    }
-
     /// <summary>
-    /// Adds a card to any deck
+    /// Adds a copy of card to any deck
     /// </summary>
     /// <param name="c">The card to be added</param>
     /// <param name="d">The deck to add to. Leave blank for Player's Deck</param>
@@ -79,7 +70,7 @@ public class DeckManager
         CheckDeck(ref d);
         d.Add(copy);
 
-        if (d == PlayerFullDeck) RemainingDeck.AddCopy(copy);
+        if (d == PlayerFullDeck) RemainingDeck.Add(copy);
     }
 
     /// <summary>

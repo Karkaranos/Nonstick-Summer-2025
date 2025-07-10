@@ -184,13 +184,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedComponents:
+    - {fileID: 7408760534927881801, guid: e2cdc7b280a72e042a5184d474c4e2dc, type: 3}
+    - {fileID: 5967317029181718190, guid: e2cdc7b280a72e042a5184d474c4e2dc, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 1144823498424770248, guid: e2cdc7b280a72e042a5184d474c4e2dc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1637363475462070288, guid: e2cdc7b280a72e042a5184d474c4e2dc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 178474829474536298}
+    - targetCorrespondingSourceObject: {fileID: 1637363475462070288, guid: e2cdc7b280a72e042a5184d474c4e2dc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7805617450659687426}
   m_SourcePrefab: {fileID: 100100000, guid: e2cdc7b280a72e042a5184d474c4e2dc, type: 3}
 --- !u!1 &7920477371739067570 stripped
 GameObject:
@@ -212,9 +218,21 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 200, y: 300, z: 50}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7805617450659687426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7920477371739067570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3864bccaaf2c1c84e9eaa9bf359d16e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

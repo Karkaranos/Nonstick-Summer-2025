@@ -138,23 +138,6 @@ public partial class CardData : ScriptableObject
         return copy;
     }
 
-    public int GetHashCode()
-    {
-        // Combine basic fields first
-        int hash = HashCode.Combine(_energyCost, _emotion, _intention);
-
-        // Combine hash codes for the list of types
-        if (Stamps != null)
-        {
-            foreach (var type in Stamps.Select(s => s.type))
-            {
-                hash = HashCode.Combine(hash, type?.GetHashCode() ?? 0);
-            }
-        }
-
-        return hash;
-    }
-
     #region debug
     private void Debug_InvokeOnCardValueChanged()
     {
@@ -171,6 +154,25 @@ public partial class CardData : ScriptableObject
         newcard._intention = Intention;
         return newcard;
     }
+
+    // didnt get the chance to test this. i dont think it was needed.
+    // named the function this because overriding GetHashCode felt like a bad idea.
+    public int GetHashCodeByProperties()
+    {
+        int hash;
+
+        if (Stamps != null)
+        {
+            hash = HashCode.Combine(_energyCost, _emotion, _intention, Stamps);
+        }
+        else
+        {
+            hash = HashCode.Combine(_energyCost, _emotion, _intention);
+        }
+
+        return hash;
+    }
+
 
     #endregion
 }

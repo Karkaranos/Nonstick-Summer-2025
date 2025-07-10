@@ -41,6 +41,12 @@ public class ModifierManager
     /// </summary>
     public static void AddCard(ModifierData modifier, bool makeCopy=true)
     {
+        if(modifier == null)
+        {
+            Debug.LogError("Modifier is null");
+            return;
+        }
+
         if (makeCopy)
             _modifierCollection.Add(GameManager.Instantiate(modifier));
         else

@@ -24,7 +24,7 @@ public class DeckManager
         foreach (CardData card in defaultPlayerCards)
         {
             //PlayerFullDeck.Add(card.CopyCard(),false);
-            AddCard(card); // add to player and remaining decks
+            AddCardCopy(card); // add to player and remaining decks
         }
     }
 
@@ -51,12 +51,21 @@ public class DeckManager
     /// </summary>
     /// <param name="c">The card to be added</param>
     /// <param name="d">The deck to add to. Leave blank for Player's Deck</param>
-    public static void AddCard(CardData c, Deck d = null)
+    public static void AddCard(CardData c, Deck d = null, bool applyToRemainingDeck = true)
     {
         CheckDeck(ref d);
         d.Add(c);
 
-        if (d == PlayerFullDeck) RemainingDeck.Add(c);
+        if (d == PlayerFullDeck && applyToRemainingDeck) RemainingDeck.Add(c);
+    }
+
+    public static void AddCardCopy(CardData c, Deck d = null, bool applyToRemainingDeck = true)
+    {
+        CheckDeck(ref d);
+        CardData copy = c.CopyCard();
+        d.Add(copy);
+
+        if (d == PlayerFullDeck && applyToRemainingDeck) RemainingDeck.Add(copy);
     }
 
     /// <summary>
@@ -78,12 +87,12 @@ public class DeckManager
     /// </summary>
     /// <param name="c">The card to be removed</param>
     /// <param name="d">The deck to be removed from. Leave blank for Player's Deck</param>
-    public static void RemoveCard(CardData c, Deck d = null)
+    public static void RemoveCard(CardData c, Deck d = null, bool applyToRemainingDeck = true)
     {
         CheckDeck(ref d);
         d.Remove(c);
 
-        if (d == PlayerFullDeck) RemainingDeck.Remove(c);
+        if (d == PlayerFullDeck && applyToRemainingDeck) RemainingDeck.Remove(c);
     }
 
     /// <summary>
@@ -92,12 +101,12 @@ public class DeckManager
     /// <param name="oldCard">The old values of the card</param>
     /// <param name="newCard">The new values of the card</param>
     /// <param name="d">The deck to update the card in. Leave blank for Player's Deck</param>
-    public static void UpdateCard(CardData oldCard, CardData newCard, Deck d = null)
+    public static void UpdateCard(CardData oldCard, CardData newCard, Deck d = null, bool applyToRemainingDeck = true)
     {
         CheckDeck(ref d);
         d.UpdateCard(oldCard, newCard);
 
-        if (d == PlayerFullDeck) RemainingDeck.UpdateCard(oldCard, newCard);
+        if (d == PlayerFullDeck && applyToRemainingDeck) RemainingDeck.UpdateCard(oldCard, newCard);
     }
 
     /// <summary>

@@ -15,7 +15,10 @@ using NaughtyAttributes;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using static Unity.VisualScripting.StickyNote;
+using static UnityEngine.Rendering.DebugUI;
 
 [CreateAssetMenu(fileName = "CardData", menuName = "Scriptable Objects/CardData")]
 public partial class CardData : ScriptableObject
@@ -121,7 +124,6 @@ public partial class CardData : ScriptableObject
         OnCardValueChanged.Invoke();
     }
 
-
     #endregion
 
     public CardData CopyCard()
@@ -134,6 +136,23 @@ public partial class CardData : ScriptableObject
         copy._stamps = new List<ModifierStamp>(_stamps);
 
         return copy;
+    }
+
+    public int GetHashCode()
+    {
+        // Combine basic fields first
+        int hash = HashCode.Combine(_energyCost, _emotion, _intention);
+
+        // Combine hash codes for the list of types
+        if (Stamps != null)
+        {
+            foreach (var type in Stamps.Select(s => s.type))
+            {
+                hash = HashCode.Combine(hash, type?.GetHashCode() ?? 0);
+            }
+        }
+
+        return hash;
     }
 
     #region debug

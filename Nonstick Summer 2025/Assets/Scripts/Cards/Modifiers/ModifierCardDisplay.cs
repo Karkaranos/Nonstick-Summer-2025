@@ -3,7 +3,7 @@
 * Author :            Toby
 * Creation Date :     June 20, 2025
 *
-* Brief Description : lots of shared code with cardDisplay, but they will be more 
+* Brief Description : lots of shared code with dialogueCardDisplay, but they will be more 
 * differenter in the future.
 *****************************************************************************/
 

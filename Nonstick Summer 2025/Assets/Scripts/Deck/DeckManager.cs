@@ -60,6 +60,20 @@ public class DeckManager
     }
 
     /// <summary>
+    /// Adds a card to any deck
+    /// </summary>
+    /// <param name="c">The card to be added</param>
+    /// <param name="d">The deck to add to. Leave blank for Player's Deck</param>
+    public static void AddCardCopy(CardData c, Deck d = null)
+    {
+        var copy = c.CopyCard();
+        CheckDeck(ref d);
+        d.Add(copy);
+
+        if (d == PlayerFullDeck) RemainingDeck.AddCopy(copy);
+    }
+
+    /// <summary>
     /// Removes a card from any deck
     /// </summary>
     /// <param name="c">The card to be removed</param>

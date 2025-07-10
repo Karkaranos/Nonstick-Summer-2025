@@ -2,15 +2,17 @@
 // File Name :          BedBehavior.cs
 // Author :             Cade R. Naylor
 // Creation Date :      June 20, 2025
-// Modified Date :      June 21, 2025
+// Modified Date :      July 10, 2025
 //
 // Brief Description :  Handles triggers and setting states with the Bed 
+
+MOVED TO OPENCOMFIRMATIONINTERACTABLE
 *****************************************************************************/
 using UnityEngine;
 using NaughtyAttributes;
 
-public class BedBehavior : MonoBehaviour, IInteractableObjective
-{
+public class BedBehavior : MonoBehaviour//, IInteractableObjective
+{/*
     [HideInInspector] public bool InteractSuccessful = false;
     private bool _playerHasLeft = false;
     [HideInInspector] public bool BossDefeated = false;
@@ -30,6 +32,20 @@ public class BedBehavior : MonoBehaviour, IInteractableObjective
         }
     }
 
+    public void GoToBed()
+    {
+        if (BossDefeated)
+        {
+            InteractSuccessful = true;
+            UnityEngine.SceneManagement.SceneManager.LoadScene(_nextSceneIndex);
+        }
+
+        else
+        {
+            Debug.Log("Boss not defeated.");
+        }
+    }
+
     public void SetIsObjective(bool b = false) { }
 
     public void ClearBlocker()
@@ -38,5 +54,6 @@ public class BedBehavior : MonoBehaviour, IInteractableObjective
     }
 
     public void TryBoss() { }
-
+ */
 }
+   

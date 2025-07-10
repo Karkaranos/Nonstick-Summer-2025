@@ -154,7 +154,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
             {
                 GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.FINISH_COMBAT);
                 GameManager.ObjectiveReference.SetObjectiveVisibility(true);
-                var bed = FindFirstObjectByType<BedBehavior>();
+                var bed = FindFirstObjectByType<OpenConfirmationInteractable>();
                 if (bed != null) bed.ClearBlocker();
             }
             else
@@ -233,7 +233,11 @@ public class DialogueUIController : Singleton<DialogueUIController>
         if (DialogueManager.CurrentDialogueBranch.End)
         {
             playCardButtonText.text = EndDialogueText;
-        MusicManager.instance.StartHouse();
+            MusicManager.instance.StartHouse();
+
+            var bed = FindFirstObjectByType<OpenConfirmationInteractable>();
+            if (bed != null) bed.ClearBlocker();
+            Debug.Log(bed.BossDefeated);
         }
     }
 

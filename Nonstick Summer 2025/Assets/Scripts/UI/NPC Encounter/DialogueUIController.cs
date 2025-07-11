@@ -154,8 +154,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
             {
                 GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.FINISH_COMBAT);
                 GameManager.ObjectiveReference.SetObjectiveVisibility(true);
-                var bed = FindFirstObjectByType<OpenConfirmationInteractable>();
-                if (bed != null) bed.ClearBlocker();
             }
             else
             {

@@ -257,9 +257,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3520667051158493986}
-        m_TargetAssemblyTypeName: UIUtilityFunctions, Assembly-CSharp
-        m_MethodName: CloseCurrentPopup
+      - m_Target: {fileID: 8962704393444946355}
+        m_TargetAssemblyTypeName: BedInteractionPopupCanvas, Assembly-CSharp
+        m_MethodName: OnNoPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -402,9 +402,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1345678300399072241, guid: f5a6320da360ba24fa6229b90eb0b1c6, type: 3}
-        m_TargetAssemblyTypeName: OpenConfirmationInteractable, Assembly-CSharp
-        m_MethodName: GoToBed
+      - m_Target: {fileID: 8962704393444946355}
+        m_TargetAssemblyTypeName: BedInteractionPopupCanvas, Assembly-CSharp
+        m_MethodName: OnYesPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -963,6 +963,7 @@ GameObject:
   - component: {fileID: 7421230209631648612}
   - component: {fileID: 6705393980171763282}
   - component: {fileID: 1167099519900063157}
+  - component: {fileID: 8962704393444946355}
   m_Layer: 5
   m_Name: Confirmation Popup Template
   m_TagString: Untagged
@@ -1066,3 +1067,16 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8962704393444946355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8553161507268041164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75dbccf4d203c824a91a83f3e00a7d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bed: {fileID: 0}

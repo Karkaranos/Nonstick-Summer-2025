@@ -1,9 +1,9 @@
 /*****************************************************************************
 * File Name :         CardData.cs
 * Author :            Sky
-* Creation Date :     June 6, 2025
+* Creation Date :     July 10, 2025
 *
-* Brief Description :
+* Brief Description : Controls confirmation UI buttons for going to sleep.
 * 
 *****************************************************************************/
 
@@ -11,15 +11,23 @@ using UnityEngine;
 
 public class BedInteractionPopupCanvas : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public OpenConfirmationInteractable Bed;
+
+    public void OnYesPressed()
     {
-        
+        if (Bed.BossDefeated)
+        {
+            Bed.InteractSuccessful = true;
+            UnityEngine.SceneManagement.SceneManager.LoadScene(Bed._nextSceneIndex);
+        }
+        else
+        {
+            Debug.Log("Boss not defeated.");
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnNoPressed()
     {
-        
+        UITransitionManager.CloseMenu();
     }
 }

@@ -1,13 +1,20 @@
 using NaughtyAttributes;
 using UnityEngine;
 
+/*****************************************************************************
+// File Name :          OpenConfirmationInteractable.cs
+// Author :             Sky
+// Creation Date :      July 10, 2025
+// Modified Date :      July 10, 2025
+//
+// Brief Description :  Controls confirmation menu popups through interaction.
+
+*****************************************************************************/
 public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
 {
     [HideInInspector] public bool InteractSuccessful = false;
-    //private bool _playerHasLeft = false;
-    //[HideInInspector]
-    public bool BossDefeated = false;
-    [SerializeField, Scene] private int _nextSceneIndex;
+    [HideInInspector] public bool BossDefeated = false;
+    [SerializeField, Scene] public int _nextSceneIndex;
 
     [SerializeField]
     [Required]
@@ -20,9 +27,8 @@ public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
     public void Interact(GameObject player)
     {
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor, gameObject);
-        menu.GetComponent<OpenConfirmationInteractable>().be
+        menu.GetComponent<BedInteractionPopupCanvas>().Bed = this;
     }
-
 
     private void OnDrawGizmos()
     {
@@ -35,19 +41,6 @@ public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
         Gizmos.color = Color.blue; // blue becuase the unity camera icon color is blue
         Gizmos.DrawRay(cameraAnchor.position, cameraAnchor.forward);
         Gizmos.DrawWireSphere(cameraAnchor.position, 0.25f);
-    }
-
-    public void GoToBed()
-    {
-        if (BossDefeated)
-        {
-            InteractSuccessful = true;
-            UnityEngine.SceneManagement.SceneManager.LoadScene(_nextSceneIndex);
-        }
-        else
-        {
-            Debug.Log("Boss not defeated.");
-        }
     }
 
     public void SetIsObjective(bool b = false) { }

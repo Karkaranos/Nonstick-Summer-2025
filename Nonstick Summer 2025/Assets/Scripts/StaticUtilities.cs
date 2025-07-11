@@ -201,8 +201,23 @@ public static class StaticUtilities
 #if UNITY_EDITOR
 
         var selected = UnityEditor.Selection.activeTransform;
-        return UnityEditor.Selection.activeTransform != null &&
-            (selected == parent || selected.IsChildOf(parent));
+        return selected != null && (selected == parent || selected.IsChildOf(parent));
+#else
+        return false;
+#endif
+    }
+
+    /// <summary>
+    /// (Editor only) Returns true if the user is selecting parent, or any of its children
+    /// </summary>
+    /// <param name="parent"></param>
+    /// <returns></returns>
+    public static bool Editor_SelectingTransform(Transform transform)
+    {
+#if UNITY_EDITOR
+
+        var selected = UnityEditor.Selection.activeTransform;
+        return selected != null && selected == transform;
 #else
         return false;
 #endif

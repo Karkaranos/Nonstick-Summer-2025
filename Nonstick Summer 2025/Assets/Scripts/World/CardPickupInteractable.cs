@@ -18,6 +18,7 @@ using System.Collections;
 using UnityEngine;
 using NaughtyAttributes;
 using System;
+using UnityEditor;
 
 public class CardPickupInteractable : MonoBehaviour, IInteractable
 {
@@ -31,13 +32,14 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
     private RectTransform rectTransform;
     private Vector3 startPosition;
 
+    [ReadOnly] public int Hash = -1;
+
+    // my magicians hat full of magic numbers
     const float backflipSeconds = 1.25f;
     const float backflipsSpeed = 3;
     const float height = 1.5f;
 
     const float goToPlayerSeconds = 1;
-
-    [ReadOnly] public int Hash = -1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

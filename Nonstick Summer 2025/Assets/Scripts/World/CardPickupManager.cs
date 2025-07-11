@@ -14,6 +14,7 @@
 
 using System.Collections.Generic;
 using NaughtyAttributes;
+using UnityEditor;
 using UnityEngine;
 
 public class CardPickupManager : Singleton<CardPickupManager>
@@ -22,6 +23,8 @@ public class CardPickupManager : Singleton<CardPickupManager>
     public Dictionary<int, bool> PickupCollectedStatus = new Dictionary<int, bool>();
 
     private RectTransform? rectTransform;
+
+    const string DefaultGameObjectName = "Card Pickups";
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     // Start is only called ONCE with DontDestroyOnLoad
@@ -82,9 +85,18 @@ public class CardPickupManager : Singleton<CardPickupManager>
 
     public void OnDrawGizmosSelected()
     {
-        rectTransform = rectTransform ?? GetComponent<RectTransform>();
+        rectTransform = GetComponent<RectTransform>();
         // dont fucking touch it
         rectTransform.position = Vector3.zero;
         rectTransform.rotation = Quaternion.identity;
+    }
+
+    public void OnDrawGizmos()
+    {
+        // if unsaved prefab changes AND the designer is not selecting this object
+        Debug.Log(PrefabUtility.HasPrefabInstanceAnyOverrides(gameObject, false));
+        gameObject.name = DefaultGameObjectName +
+            (PrefabUtility.HasPrefabInstanceAnyOverrides(gameObject, false) && !StaticUtilities.Editor_SelectingTransform(transform)
+                ? " (UNSAVED CHANGES TO PREFAB)" : "");
     }
 }

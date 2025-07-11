@@ -14,7 +14,7 @@ public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
 {
     [HideInInspector] public bool InteractSuccessful = false;
     [HideInInspector] public bool BossDefeated = false;
-    [SerializeField, Scene] public int _nextSceneIndex;
+    [SerializeField, Scene] public int NextSceneIndex;
 
     [SerializeField]
     [Required]
@@ -43,12 +43,8 @@ public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
         Gizmos.DrawWireSphere(cameraAnchor.position, 0.25f);
     }
 
-    public void SetIsObjective(bool b = false) { }
-
     public void ClearBlocker()
     {
         BossDefeated = true;
     }
-
-    public void TryBoss() { }
 }

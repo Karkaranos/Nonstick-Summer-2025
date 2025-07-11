@@ -235,7 +235,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
             var bed = FindFirstObjectByType<OpenConfirmationInteractable>();
             if (bed != null) bed.ClearBlocker();
-            Debug.Log(bed.BossDefeated);
         }
     }
 

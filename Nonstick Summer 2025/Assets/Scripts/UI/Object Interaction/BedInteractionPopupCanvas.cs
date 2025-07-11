@@ -11,6 +11,7 @@ using UnityEngine;
 
 public class BedInteractionPopupCanvas : MonoBehaviour
 {
+    [HideInInspector]
     public OpenConfirmationInteractable Bed;
 
     public void OnYesPressed()
@@ -18,7 +19,7 @@ public class BedInteractionPopupCanvas : MonoBehaviour
         if (Bed.BossDefeated)
         {
             Bed.InteractSuccessful = true;
-            UnityEngine.SceneManagement.SceneManager.LoadScene(Bed._nextSceneIndex);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(Bed.NextSceneIndex);
         }
         else
         {

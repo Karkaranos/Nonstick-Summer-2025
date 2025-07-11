@@ -13,7 +13,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(MouseInteractionEvents))]
+//[RequireComponent(typeof(MouseInteractionEvents))]
 public partial class ModifierCardDisplay : MonoBehaviour
 {
     [BoxGroup("UI Components")][SerializeField] Image IconImage;
@@ -37,19 +37,8 @@ public partial class ModifierCardDisplay : MonoBehaviour
         mouseInteraction = GetComponent<MouseInteractionEvents>();
         rectTransform = GetComponent<RectTransform>();
 
-        mouseInteraction.OnMouseHoverStart.AddListener(OnMouseHoverStart);
-        mouseInteraction.OnMouseHoverEnd.AddListener(OnMouseHoverEnd);
-        mouseInteraction.OnMouseDown.AddListener(OnMouseDownStart);
-    }
-
-    private void OnMouseHoverStart() // this should be moved to another script
-    {
-        
-    }
-
-    private void OnMouseHoverEnd() // this should be moved to another script
-    {
-        
+        if(mouseInteraction != null)
+            mouseInteraction.OnMouseDown.AddListener(OnMouseDownStart);
     }
 
     private void OnMouseDownStart()

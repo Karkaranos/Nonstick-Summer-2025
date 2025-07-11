@@ -47,20 +47,14 @@ public static class StaticUtilities
 
         // Build
         var particleGameObject = GameObject.Instantiate(particleSystemPrefab, position, rotation.Value);
-        
         if(!ps.main.playOnAwake)
-        {
-            Debug.Log("playing");
             ps.Play();
-        }
 
         // Destroy
         if (!ps.main.loop)
         {
             float time = ps.main.startLifetime.constantMax;
-            Debug.Log("destroying after " + time);
-            //GameObject.Destroy(particleGameObject, ps.main.duration);
-            GameObject.Destroy(particleGameObject, 30f);
+            GameObject.Destroy(particleGameObject, ps.main.duration);
         }
            
     }

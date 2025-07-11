@@ -124,6 +124,11 @@ public partial class CardData : ScriptableObject
         OnCardValueChanged.Invoke();
     }
 
+    public int GetHashCodeByProperties()
+    {
+        return HashCode.Combine(_energyCost, _emotion, _intention, this.name, Stamps);
+    }
+
     #endregion
 
     public CardData CopyCard()
@@ -155,25 +160,6 @@ public partial class CardData : ScriptableObject
         return newcard;
     }
 
-    // didnt get the chance to test this. i dont think it was needed.
-    // named the function this because overriding GetHashCode felt like a bad idea.
-    public int GetHashCodeByProperties()
-    {
-        int hash;
-
-        if (Stamps != null)
-        {
-            hash = HashCode.Combine(_energyCost, _emotion, _intention, Stamps);
-        }
-        else
-        {
-            hash = HashCode.Combine(_energyCost, _emotion, _intention);
-        }
-
-        return hash;
-    }
-
-
     #endregion
 }
 
@@ -182,7 +168,7 @@ public enum CardIntention
     NotSelected, // Error case
     Expression,
     Observation,
-    Question, // Will update these later when Intentions are finalized
+    Question, 
 }
 
 public enum CardEmotion
@@ -190,5 +176,5 @@ public enum CardEmotion
     NotSelected, // Error case
     Charming,
     Assertive,
-    Sappy, // Will update these later when Emotions are finalized
+    Sappy, 
 }

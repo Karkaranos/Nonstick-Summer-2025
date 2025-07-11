@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1637363475462070288, guid: e2cdc7b280a72e042a5184d474c4e2dc, type: 3}
       propertyPath: m_Name
-      value: Card Pickup
+      value: Dialogue Pickup
       objectReference: {fileID: 0}
     - target: {fileID: 1883335359776313308, guid: e2cdc7b280a72e042a5184d474c4e2dc, type: 3}
       propertyPath: m_Color.a
@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -2210434942944035985, guid: cd47f6d5edd2c7541a0baf3774a54fdd, type: 3}
+    - target: {fileID: 6443241130234411971, guid: e2cdc7b280a72e042a5184d474c4e2dc, type: 3}
+      propertyPath: card
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7044094302959180984, guid: e2cdc7b280a72e042a5184d474c4e2dc, type: 3}
       propertyPath: m_text
       value: Expression
@@ -236,3 +240,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3864bccaaf2c1c84e9eaa9bf359d16e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectedParticlesPrefab: {fileID: 8306819529709543630, guid: 9abdde8e41523e04994f124e5bb4da75, type: 3}
+  Hash: -1

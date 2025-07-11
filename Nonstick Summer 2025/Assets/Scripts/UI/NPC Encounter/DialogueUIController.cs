@@ -199,13 +199,13 @@ public class DialogueUIController : Singleton<DialogueUIController>
         }
     }
 
-    public IEnumerator ResetNPCDialogue()
+    public IEnumerator ResetNPCDialogue(DialogueOption option, bool branchSwitch)
     {
         if (!DialogueManager.ReadUserInput)
         {
             Debug.Log("not while animations are playing!");
 
-            yield return dialogueBox.LoadNewDialogue(DialogueManager.CurrentDialogueBranch);
+            yield return dialogueBox.LoadNewDialogue(DialogueManager.CurrentDialogueBranch, option, branchSwitch);
 
             yield break;
         }

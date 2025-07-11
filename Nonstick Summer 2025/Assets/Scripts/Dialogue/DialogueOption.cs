@@ -2,6 +2,9 @@ using UnityEngine;
 using System;
 using TMPro;
 using NaughtyAttributes;
+using NUnit.Framework;
+using System.Collections.Generic;
+using System.Collections;
 
 /*****************************************************************************
 * File Name :         DialogueOption.cs
@@ -20,11 +23,13 @@ public class DialogueOption
 {
 
     //buttons?
-    [Required]
-    public DialogueBranch BranchingDialogue;
+    //[Required]
+    //public DialogueBranch BranchingDialogue;
 
     [ResizableTextArea]
     public string PlayerDialogue;
+
+    public DialogueNPC[] NpcReactionText;
 
     [Tooltip("How good should the player's relationship be with this NPC in order to progress past this point?")]
     public float RelationshipRequirement;

@@ -21,4 +21,7 @@ public class DialogueNPC
     [ShowAssetPreview(32,32), Tooltip("Leave null to use the sprite from the last dialogue bubble")]
     public Sprite Portrait;
 
+    //bringing this back
+    [Tooltip("Check this off if it's time for the player to play a card!")] public bool Pause;
+
 }

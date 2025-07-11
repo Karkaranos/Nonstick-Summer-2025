@@ -168,18 +168,22 @@ public class DialogueManager
         GameManager.Instance.StartCoroutine(SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange));
 
         // progress dialogue:
+
+        bool newBranch;
+
         if (RelationshipManager.characterRelationships[currentCharacter].currentValue >= dialogueOption.RelationshipRequirement)
         {
             Debug.Log("Player has enough RP for good branch");
-            CurrentDialogueBranch = dialogueOption.BranchingDialogue; 
+            newBranch = false;
         }
         else 
         {
             Debug.Log("Player has not met RP requirement");
-            CurrentDialogueBranch = dialogueOption.AlternateBranch; 
+            newBranch = true;
+            CurrentDialogueBranch = dialogueOption.AlternateBranch;
         }
 
-        yield return DialogueUIController.Instance.ResetNPCDialogue();
+        yield return DialogueUIController.Instance.ResetNPCDialogue(dialogueOption, newBranch);
 
         // TODO: move this to AFTER player reads all text, and can play cards again
         GameManager.Instance.StopCoroutine(SetCurrentEnergy(_currentEnergy));

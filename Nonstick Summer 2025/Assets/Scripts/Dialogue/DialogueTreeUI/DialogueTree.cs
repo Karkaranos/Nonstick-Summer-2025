@@ -38,13 +38,13 @@ public class DialogueTree : MonoBehaviour
         foreach (DialogueOption option in branch.GetComponents<DialogueOption>())
         {
 
-            DialogueBranch newBranch = option.BranchingDialogue;
-            if (!nodes.Contains(newBranch))
-            {
+            //DialogueBranch newBranch = option.BranchingDialogue;
+            //if (!nodes.Contains(newBranch))
+            //{
 
-                nodes.Add(newBranch);
+            //    nodes.Add(newBranch);
 
-            }
+            //}
 
         }
         for (int i = 0; i < nodes.Count; i++)

@@ -11,6 +11,7 @@ using System.Collections;
 using TMPro;
 using NaughtyAttributes;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class DialogueBox : MonoBehaviour
 {
@@ -37,14 +38,67 @@ public class DialogueBox : MonoBehaviour
 
     #region Dialogue Iteration
 
-    public IEnumerator LoadNewDialogue(DialogueBranch branch = null)
+    public IEnumerator LoadNewDialogue(DialogueBranch branch = null, DialogueOption option = null, bool branchSwitch = false)
     {
         branch = branch ?? DialogueManager.CurrentDialogueBranch;
 
         PlayerReadAllDialogue = false;
-        NumberInList = 0;
 
-        yield return SetDialogueIndex(0,branch);
+        if(branchSwitch)
+        {
+
+            NumberInList = 0;
+
+            DialogueNPC[] newText = new DialogueNPC[option.NpcReactionText.Length + branch.dialogue.Length];
+
+            for (int i = 0; i < option.NpcReactionText.Length; i++)
+            {
+
+                newText[i] = option.NpcReactionText[i];
+
+            }
+            for(int i = 0; i < branch.dialogue.Length; i++)
+            {
+
+                newText[i + option.NpcReactionText.Length] = branch.dialogue[i];
+
+            }
+
+            branch.dialogue = newText;
+
+            yield return SetDialogueIndex(0, branch);
+
+        }
+        else if (!branchSwitch)
+        {
+
+            DialogueNPC[] combinedTexts = new DialogueNPC[branch.dialogue.Length + option.NpcReactionText.Length];
+
+            for(int i = 0; i < (NumberInList + 1); i++)
+            {
+
+                combinedTexts[i] = branch.dialogue[i];
+
+            }
+            for(int i = 0; i < option.NpcReactionText.Length; i++)
+            {
+
+                combinedTexts[i + (NumberInList + 1)] = option.NpcReactionText[i];
+
+            }
+            for (int i = (NumberInList + 1); i < branch.dialogue.Length; i++)
+            {
+
+                combinedTexts[i + option.NpcReactionText.Length] = branch.dialogue[i];
+
+            }
+
+            branch.dialogue = combinedTexts;
+
+            yield return SetDialogueIndex(NumberInList + 1, branch);
+
+        }
+
     }
 
     /// <summary>
@@ -67,7 +121,7 @@ public class DialogueBox : MonoBehaviour
             yield break;
         }
 
-        if (numberInList >= branch.dialogue.Length - 1)
+        if (branch.dialogue[NumberInList].Pause == true)
         {
             PlayerReadAllDialogue = true;
             Debug.Log("player read all text");

@@ -69,7 +69,7 @@ public class DialogueBox : MonoBehaviour
             yield return SetDialogueIndex(0, branch);
 
         }
-        else if (!branchSwitch)
+        else
         {
 
             DialogueNPC[] combinedTexts = new DialogueNPC[branch.dialogue.Length + option.NpcReactionText.Length];

@@ -31,19 +31,38 @@ public static class StaticUtilities
     /// Instiates a particle system, and destroys it after its done playing.
     /// If a particle is set to loop, it will play forever
     /// </summary>
-    public static void PlayAndDestroyParticles(GameObject particleSystemPrefab, Vector3 position, Vector3? scale, Quaternion? rotation)
+    public static void PlayAndDestroyParticle(GameObject particleSystemPrefab, Vector3 position, Vector3? scale=null, Quaternion? rotation=null)
     {
         if(particleSystemPrefab == null) return;
         scale = scale ?? Vector3.one;
         rotation = rotation ?? Quaternion.identity;
 
-        if(particleSystemPrefab.GetComponentInChildren<ParticleSystem>() == null)
+        // Destroy
+        var ps = particleSystemPrefab.GetComponentInChildren<ParticleSystem>();
+        if (ps == null)
         {
             Debug.LogWarning("Tried to spawn a particle, but no ParticleSystem was attached");
             return;
         }
 
-        var ps = GameObject.Instantiate(particleSystemPrefab, position, rotation.Value);
+        // Build
+        var particleGameObject = GameObject.Instantiate(particleSystemPrefab, position, rotation.Value);
+        
+        if(!ps.main.playOnAwake)
+        {
+            Debug.Log("playing");
+            ps.Play();
+        }
+
+        // Destroy
+        if (!ps.main.loop)
+        {
+            float time = ps.main.startLifetime.constantMax;
+            Debug.Log("destroying after " + time);
+            //GameObject.Destroy(particleGameObject, ps.main.duration);
+            GameObject.Destroy(particleGameObject, 30f);
+        }
+           
     }
 
     #endregion
@@ -93,10 +112,27 @@ public static class StaticUtilities
         uiComponent.colors = colors;
     }
 
+    public static Vector3 WorldPosition(this RectTransform rt)
+    {
+        Vector3[] corners = new Vector3[4];
+        rt.GetWorldCorners(corners);
+        return corners.Average();
+    }
+
     #endregion
 
     #region Math
     
+    public static Vector3 Average(this Vector3[] vectors)
+    {
+        Vector3 total = Vector3.zero;
+        foreach (var v in vectors)
+        {
+            total += v;
+        }
+        return total / vectors.Length;
+    }
+
     #endregion
 
     #region Lists

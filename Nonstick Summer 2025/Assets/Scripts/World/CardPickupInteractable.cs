@@ -26,6 +26,12 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
 
     private RectTransform rectTransform;
 
+    const float backflipSeconds = 1.25f;
+    const float backflipsSpeed = 3;
+    const float height = 1.5f;
+
+    const float goToPlayerSeconds = 1;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -46,7 +52,10 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
     /// </summary>
     public void Interact(GameObject player)
     {
-        if(dialogueCardDisplay != null)
+        RemoveCollider();
+        StaticUtilities.PlayAndDestroyParticle(collectedParticlesPrefab, rectTransform.WorldPosition());
+
+        if (dialogueCardDisplay != null)
         {
             DeckManager.AddCardCopy(dialogueCardDisplay.cardData);
             Debug.Log($"Added dialogue card: {dialogueCardDisplay.cardData.name} to deck");
@@ -61,42 +70,74 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
     }
 
     /// <summary>
-    /// I felt like there should be some kind of animation. wasnt sure what it should be tho, so its a hardcoded backflip rn
+    /// I felt like there should be some kind of animation. wasnt sure what it should be tho, so its a hardcoded backflip rn.
+    /// this code sucx pls dont put it 
     /// </summary>
     /// <returns></returns>
     private IEnumerator CollectAnimation()
     {
         //TODO: change animation to anything else
 
-        float animseconds = 2;
-        float numberOfBackflips = 3;
-        float height = 2;
         Vector3 startPos = rectTransform.position;
-        Vector3 startRotation = rectTransform.eulerAngles;
+        Vector3 startEulers = rectTransform.eulerAngles;
+        Vector3 startScale = rectTransform.localScale;
 
+        // Backflips
         float timeStarted = Time.time;
         float t=0;
         while(t<1)
         {
-            t = (Time.time-timeStarted) / animseconds;
+            t = (Time.time-timeStarted) / backflipSeconds;
 
             // if this code doesnt make sense to you then u shouldve paid more attention in ur trig class
-            float y = Mathf.Sin(Mathf.PI * t) * height;
+            float y = Mathf.Sin(Mathf.PI * t / 2) * height;
             var pos = startPos + new Vector3(0, y, 0);
 
-            var rot = startRotation + new Vector3(t * numberOfBackflips * 360, 0, 0);
+            var rot = startEulers + new Vector3(t * backflipsSpeed * 360, 0, 0);
 
             rectTransform.position = pos;
             rectTransform.eulerAngles = rot;
 
             yield return null;
         }
+
+        Debug.Log("Confetti particles go here???"); //TODO:
+
+        // Go to her...
+        timeStarted = Time.time;
+        t = 0;
+        startPos = rectTransform.position;
+        var startRotation = rectTransform.rotation; 
+        while (t < 1)
+        {
+            Debug.Log(t);
+            t = (Time.time - timeStarted) / goToPlayerSeconds;
+
+            // if this code doesnt make sense to you then u shouldve paid more attention in ur trig class
+
+            var pos = Vector3.Lerp(startPos, GameManager.playerTransformRef.position, t * t); // t * t so it gets faster (plug x^2 into desmos and look at 0-1 to see the effect for yourself! it will be mind boggling!!!!!)
+            var targetRot = Quaternion.LookRotation(GameManager.playerTransformRef.position - rectTransform.WorldPosition());
+            var rot = Quaternion.Lerp(startRotation, targetRot, t * 3);
+            var scale = Vector3.Lerp(startScale, Vector3.zero, t);
+
+            rectTransform.position = pos;
+            rectTransform.rotation = rot;
+            rectTransform.localScale = scale;
+
+            yield return null;
+        }
+
         AfterCollectAnimationFinished();
     }
 
     private void AfterCollectAnimationFinished()
     {
-
+        StaticUtilities.PlayAndDestroyParticle(collectedParticlesPrefab, rectTransform.WorldPosition());
         Destroy(this.gameObject);
+    }
+
+    private void RemoveCollider()
+    {
+        Destroy(gameObject.GetComponentInChildren<Collider>());
     }
 }

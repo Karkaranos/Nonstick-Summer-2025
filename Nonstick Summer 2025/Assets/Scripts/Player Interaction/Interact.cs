@@ -96,7 +96,6 @@ public class Interact : MonoBehaviour
                 //sets the _interactable variable for the InteractPressed function
                 if (_targetGameObj.TryGetComponent(out IInteractable interactable))
                 {
-                    Debug.Log("im looking at something");
                     _interactable = _targetGameObj.GetComponent<IInteractable>();
                     CanvasInteractionBehavior.ShowInteractUI?.Invoke();
 

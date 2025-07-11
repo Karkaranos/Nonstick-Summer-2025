@@ -22,6 +22,7 @@ public interface IInteractable
     /// <param name="player"></param>
     void Interact(GameObject player);
 
+
     /// <summary>
     /// Called when interaction input is canceled. Is not required to implement
     /// for all interactable objects.
@@ -42,4 +43,6 @@ public interface IInteractable
     /// used to hide the specific UI prompt for the interactable object.
     /// </summary>
     void HideInteractUI() { }
+
+
 }

@@ -34450,6 +34450,30 @@ PrefabInstance:
       propertyPath: MoodManagerReference
       value: 
       objectReference: {fileID: 1500127191}
+    - target: {fileID: 8791148013464925354, guid: 88005069b76bb5247a29c7d7a536ccdb, type: 3}
+      propertyPath: sappyStartingValues.intervalBetweenADecreasedCost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791148013464925354, guid: 88005069b76bb5247a29c7d7a536ccdb, type: 3}
+      propertyPath: sappyStartingValues.intervalBetweenIncreasedCosts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791148013464925354, guid: 88005069b76bb5247a29c7d7a536ccdb, type: 3}
+      propertyPath: charmingStartingValues.intervalBetweenADecreasedCost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791148013464925354, guid: 88005069b76bb5247a29c7d7a536ccdb, type: 3}
+      propertyPath: charmingStartingValues.intervalBetweenIncreasedCosts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791148013464925354, guid: 88005069b76bb5247a29c7d7a536ccdb, type: 3}
+      propertyPath: assertiveStartingValues.intervalBetweenADecreasedCost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791148013464925354, guid: 88005069b76bb5247a29c7d7a536ccdb, type: 3}
+      propertyPath: assertiveStartingValues.intervalBetweenIncreasedCosts
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -65890,6 +65914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd087649bb24bf4d9eca4a98ffe6100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InteractSuccessful: 0
   BossDefeated: 0
   _nextSceneIndex: 0
 --- !u!65 &1531648273

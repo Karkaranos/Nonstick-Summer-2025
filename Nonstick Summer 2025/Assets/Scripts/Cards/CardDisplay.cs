@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using System.Linq;
 
-[RequireComponent(typeof(MouseInteractionEvents))]
+//[RequireComponent(typeof(MouseInteractionEvents))]
 public partial class CardDisplay : MonoBehaviour
 {
     [Header("Display")]
@@ -38,12 +38,14 @@ public partial class CardDisplay : MonoBehaviour
     {
         if (card != null) SetCard(card); // mostly for debugging
 
-        mouseInteraction = GetComponent<MouseInteractionEvents>();
         rectTransform = GetComponent<RectTransform>();
 
-        mouseInteraction.OnMouseHoverStart.AddListener(OnMouseHoverStart);
-        mouseInteraction.OnMouseHoverEnd.AddListener(OnMouseHoverEnd);
-        mouseInteraction.OnMouseDown.AddListener(OnMouseDownStart);
+        if(TryGetComponent<MouseInteractionEvents>(out mouseInteraction))
+        {
+            mouseInteraction.OnMouseHoverStart.AddListener(OnMouseHoverStart);
+            mouseInteraction.OnMouseHoverEnd.AddListener(OnMouseHoverEnd);
+            mouseInteraction.OnMouseDown.AddListener(OnMouseDownStart);
+        }
 
         // EVERYTHING breaks if you uncomment this. DO NOT touch it.
         //basePosition = cardBackground.anchoredPosition;

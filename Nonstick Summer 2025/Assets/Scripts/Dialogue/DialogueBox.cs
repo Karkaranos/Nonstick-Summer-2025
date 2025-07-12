@@ -37,14 +37,16 @@ public class DialogueBox : MonoBehaviour
 
     #region Dialogue Iteration
 
-    public IEnumerator LoadNewDialogue(DialogueBranch branch = null)
+    public IEnumerator LoadNewDialogue(DialogueBranch branch = null, DialogueOption option = null)
     {
         branch = branch ?? DialogueManager.CurrentDialogueBranch;
+
+        option.SetNextBranchReaction();
 
         PlayerReadAllDialogue = false;
         NumberInList = 0;
 
-        yield return SetDialogueIndex(0,branch);
+        yield return SetDialogueIndex(0, branch, option.CombinedDialogue);
     }
 
     /// <summary>
@@ -57,7 +59,7 @@ public class DialogueBox : MonoBehaviour
         yield return SetDialogueIndex(NumberInList+1); // mods it in this function dw
     }
 
-    public IEnumerator SetDialogueIndex(int numberInList, DialogueBranch branch = null)
+    public IEnumerator SetDialogueIndex(int numberInList, DialogueBranch branch = null, DialogueNPC[] dialogue = null)
     {
         branch = branch ?? DialogueManager.CurrentDialogueBranch;
 
@@ -67,21 +69,48 @@ public class DialogueBox : MonoBehaviour
             yield break;
         }
 
-        if (numberInList >= branch.dialogue.Length - 1)
+        if (dialogue == null && numberInList >= branch.dialogue.Length - 1)
         {
             PlayerReadAllDialogue = true;
             Debug.Log("player read all text");
         }
+        else if (dialogue != null && numberInList >= dialogue.Length)
+        {
+
+            PlayerReadAllDialogue = true;
+            Debug.Log("player read all text");
+
+        }
 
         // go to next 
-        NumberInList = numberInList % branch.dialogue.Length;
+        if (dialogue != null)
+        {
+
+            NumberInList = numberInList % dialogue.Length;
+
+            DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(dialogue[NumberInList]);
+
+            DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(dialogue[NumberInList]);
+
+            npcText.text = dialogue[NumberInList].Dialogue;
+
+        }
+        else
+        {
+
+            NumberInList = numberInList % branch.dialogue.Length;
+
+            DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(branch.dialogue[NumberInList]);
+
+            DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(branch.dialogue[NumberInList]);
+
+            npcText.text = branch.dialogue[NumberInList].Dialogue;
+
+        }
 
         Debug.Log($"({NumberInList + 1}/{branch.dialogue.Length}): {branch.dialogue[NumberInList].Dialogue}");
 
-        DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(branch.dialogue[NumberInList]);
-
         //TODO typewriter text goes here
-        npcText.text = branch.dialogue[NumberInList].Dialogue;
 
         if (PlayerReadAllDialogue)
         {

@@ -10,109 +10,113 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
-  m_Name: Cousin_m2_2_neg
+  m_Name: Cousin_m2_7
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Ok, well, get this!
+  - Dialogue: Well. Um. We can still play!
     Portrait: {fileID: 0}
-  - Dialogue: I've got my own cards! Isn't that cool?
+  - Dialogue: ...We CAN still play, right?
     Portrait: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: It is! It is!
+    - Dialogue: "Oh... I mean, oh! Okay. That\u2019s, um, okay!"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 0a4ed63cd9af8a74782555ef5b681bd7, type: 2}
+    BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "Yeah! That\u2019s really cool!"
+    PlayerDialogue: Sure, but I need my space. I need my own things, too.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: 10
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: Um... Ooh! But get this!
+    - Dialogue: "Oh... I mean, oh! Okay. That\u2019s, um, okay!"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 0a4ed63cd9af8a74782555ef5b681bd7, type: 2}
+    BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Not really.
+    PlayerDialogue: Ugh. Ask me again later.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: It is! It is!
+    - Dialogue: "Um... Oh. Oh! I get it now. I\u2019m sorry."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 0a4ed63cd9af8a74782555ef5b681bd7, type: 2}
+    BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: I guess.
+    PlayerDialogue: "...Alright, but I\u2019m gonna need my cards back. AND my other
+      gifts."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Charming_Observation:
     NpcReactionText:
-    - Dialogue: Dad got them! Awesome, right?!
+    - Dialogue: Yes! Yes! I can do that!
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 0a4ed63cd9af8a74782555ef5b681bd7, type: 2}
+    BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Huh! Those look new.
+    PlayerDialogue: I know you wanna hang out, but give me some time.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -5
   Assertive_Observation:
     NpcReactionText:
-    - Dialogue: "No! No they aren\u2019t! In fact, MINE are better! But whatever!"
+    - Dialogue: "THEY AREN\u2019T GRUBBY! You\u2019re so mean!"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 0a4ed63cd9af8a74782555ef5b681bd7, type: 2}
+    BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Mine are better.
+    PlayerDialogue: No! You got your grubby little fingerprints all over my NEW cards!
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Observation:
     NpcReactionText:
-    - Dialogue: Yes? It is? Anyway!
+    - Dialogue: "I am?! I mean, of course I am! Ehehe. You\u2019re pretty cool, too.
+        You\u2019re awesome!"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 0a4ed63cd9af8a74782555ef5b681bd7, type: 2}
+    BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: This is MY birthday...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -10
-  Charming_Question:
-    NpcReactionText:
-    - Dialogue: Dad got them! Awesome, right?!
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 0a4ed63cd9af8a74782555ef5b681bd7, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: Woah. When did you get those?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 5
-  Assertive_Question:
-    NpcReactionText:
-    - Dialogue: Yes? It is? Anyway!
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 0a4ed63cd9af8a74782555ef5b681bd7, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: "Hey, isn\u2019t this supposed to be MY birthday?"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -5
-  Sappy_Question:
-    NpcReactionText:
-    - Dialogue: Yep! I love them! I love cards!
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 0a4ed63cd9af8a74782555ef5b681bd7, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: You collect them, too?
+    PlayerDialogue: "We can after the party. You\u2019re still my favorite cousin,
+      you know."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: Yes! Yes! I can do that!
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: If I PROMISE to play later, will you let me open up all of my
+      other gifts first?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: ...Yeah! I can, uh. I can go. Now. I can go now.
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "WE\u2019LL. SEE. Can you go now?"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "Um... Oh. Oh! I get it now. I\u2019m sorry."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Will you apologize for opening one of my presents AND the cards?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
   Silent:
     NpcReactionText: []
-    BranchingDialogue: {fileID: 11400000, guid: 0a4ed63cd9af8a74782555ef5b681bd7, type: 2}
+    BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -5
   End: 0

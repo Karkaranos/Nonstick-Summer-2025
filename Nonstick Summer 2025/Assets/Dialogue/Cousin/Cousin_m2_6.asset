@@ -13,66 +13,110 @@ MonoBehaviour:
   m_Name: Cousin_m2_6
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Welp, bye-bye!
+  - Dialogue: Well. Um. We can still play!
+    Portrait: {fileID: 0}
+  - Dialogue: ...We CAN still play, right?
     Portrait: {fileID: 0}
   Charming_Expression:
+    NpcReactionText:
+    - Dialogue: "Oh... I mean, oh! Okay. That\u2019s, um, okay!"
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: Oh! Sweet!
+    CombinedDialogue: []
+    PlayerDialogue: Sure, but I need my space. I need my own things, too.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: 10
   Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "Oh... I mean, oh! Okay. That\u2019s, um, okay!"
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: Hey! Those are supposed to be MINE!
+    CombinedDialogue: []
+    PlayerDialogue: Ugh. Ask me again later.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -5
   Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "Um... Oh. Oh! I get it now. I\u2019m sorry."
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: My cards...
+    CombinedDialogue: []
+    PlayerDialogue: "...Alright, but I\u2019m gonna need my cards back. AND my other
+      gifts."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Charming_Observation:
+    NpcReactionText:
+    - Dialogue: Yes! Yes! I can do that!
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: "...Wait, what?! You can\u2019t do that!"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -10
-  Assertive_Observation:
-    BranchingDialogue: {fileID: 0}
-    PlayerDialogue: Hey! You opened MY present!
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -10
-  Sappy_Observation:
-    BranchingDialogue: {fileID: 0}
-    PlayerDialogue: That was supposed to be a gift.
+    CombinedDialogue: []
+    PlayerDialogue: I know you wanna hang out, but give me some time.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -5
-  Charming_Question:
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: "THEY AREN\u2019T GRUBBY! You\u2019re so mean!"
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: When did you get those?!
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 5
-  Assertive_Question:
-    BranchingDialogue: {fileID: 0}
-    PlayerDialogue: YOU OPENED UP MY PRESENT? YOU STOLE MY CARDS?!
+    CombinedDialogue: []
+    PlayerDialogue: No! You got your grubby little fingerprints all over my NEW cards!
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -15
-  Sappy_Question:
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: "I am?! I mean, of course I am! Ehehe. You\u2019re pretty cool, too.
+        You\u2019re awesome!"
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 0}
-    PlayerDialogue: "Hey, that\u2019s kind of rude. You know that, right?"
+    CombinedDialogue: []
+    PlayerDialogue: "We can after the party. You\u2019re still my favorite cousin,
+      you know."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: Yes! Yes! I can do that!
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: If I PROMISE to play later, will you let me open up all of my
+      other gifts first?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: ...Yeah! I can, uh. I can go. Now. I can go now.
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "WE\u2019LL. SEE. Can you go now?"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "Um... Oh. Oh! I get it now. I\u2019m sorry."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Will you apologize for opening one of my presents AND the cards?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Silent:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -5
-  End: 1
+  End: 0

@@ -15,7 +15,10 @@ using NaughtyAttributes;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using static Unity.VisualScripting.StickyNote;
+using static UnityEngine.Rendering.DebugUI;
 
 [CreateAssetMenu(fileName = "CardData", menuName = "Scriptable Objects/CardData")]
 public partial class CardData : ScriptableObject
@@ -121,6 +124,10 @@ public partial class CardData : ScriptableObject
         OnCardValueChanged.Invoke();
     }
 
+    public int GetHashCodeByProperties()
+    {
+        return HashCode.Combine(_energyCost, _emotion, _intention, this.name, Stamps);
+    }
 
     #endregion
 
@@ -161,7 +168,7 @@ public enum CardIntention
     NotSelected, // Error case
     Expression,
     Observation,
-    Question, // Will update these later when Intentions are finalized
+    Question, 
 }
 
 public enum CardEmotion
@@ -169,5 +176,5 @@ public enum CardEmotion
     NotSelected, // Error case
     Charming,
     Assertive,
-    Sappy, // Will update these later when Emotions are finalized
+    Sappy, 
 }

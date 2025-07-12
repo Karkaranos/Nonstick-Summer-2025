@@ -35,12 +35,12 @@ public class Deck
     #region Functions
 
     /// <summary>
-    /// Adds a card into the deck
+    /// Adds a reference to a card into the deck
     /// </summary>
     /// <param name="newCard">The card to add to the deck</param>
     public void Add(CardData newCard, bool invokeOnDeckChanged = true)
     {
-        _cards.Add(newCard/*.CopyCard(newCard)*/);  // commenting out CopyCard to bridge disconnect between copies of deck (in case player modifies a card)
+        _cards.Add(newCard); // explicit reference, same card as whatever the source is.
         
         if(invokeOnDeckChanged)
             OnDeckChanged.Invoke();
@@ -58,6 +58,18 @@ public class Deck
             Add(c, false);
         }
         if(invokeOnDeckChanged)
+            OnDeckChanged.Invoke();
+    }
+
+    /// <summary>
+    /// Adds a copy of a card into the deck
+    /// </summary>
+    /// <param name="newCard">The card to add to the deck</param>
+    public void AddCopy(CardData newCard, bool invokeOnDeckChanged = true)
+    {
+        _cards.Add(newCard.CopyCard()); 
+
+        if (invokeOnDeckChanged)
             OnDeckChanged.Invoke();
     }
 

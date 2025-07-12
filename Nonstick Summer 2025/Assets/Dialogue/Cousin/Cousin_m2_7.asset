@@ -13,27 +13,31 @@ MonoBehaviour:
   m_Name: Cousin_m2_7
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Well. Um. We can still play!
+  - Dialogue: Well, I'm gonna do something else, I guess.
     Portrait: {fileID: 0}
-  - Dialogue: ...We CAN still play, right?
+  - Dialogue: But talk to me later! Or something!
+    Portrait: {fileID: 0}
+  - Dialogue: And here are your cards, probably...
+    Portrait: {fileID: 0}
+  - Dialogue: They got a little mixed up, though
     Portrait: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "Oh... I mean, oh! Okay. That\u2019s, um, okay!"
+    - Dialogue: Ehehe!
       Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Sure, but I need my space. I need my own things, too.
+    PlayerDialogue: Hey, thanks!
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "Oh... I mean, oh! Okay. That\u2019s, um, okay!"
+    - Dialogue: Ehehe...
       Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Ugh. Ask me again later.
+    PlayerDialogue: Whatever. Sure.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -5

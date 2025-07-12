@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
-  m_Name: Cousin_m2_3_neg
+  m_Name: END1Cousin_m2
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: The point is that we match!
+  - Dialogue: ...You don't wanna talk to me, do you?
     Portrait: {fileID: 0}
-  - Dialogue: You'll play with me, right?
+  - Dialogue: '*Sniffle* *Sniffle* Fine, I didn''t wanna talk anyway!'
     Portrait: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
@@ -25,7 +25,7 @@ MonoBehaviour:
     CombinedDialogue: []
     PlayerDialogue: I can play later for sure! I wanna see my other presents.
     RelationshipRequirement: 50
-    AlternateBranch: {fileID: 0}
+    AlternateBranch: {fileID: 11400000}
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
@@ -35,8 +35,8 @@ MonoBehaviour:
     BranchingDialogue: {fileID: 11400000, guid: 389515ed54ad5f5438f3a02d4a9f636a, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Leave me ALONE!
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipRequirement: 50
+    AlternateBranch: {fileID: 11400000}
     ChangeInRelationshipStatus: -15
   Sappy_Expression:
     NpcReactionText:
@@ -45,8 +45,8 @@ MonoBehaviour:
     BranchingDialogue: {fileID: 11400000, guid: 389515ed54ad5f5438f3a02d4a9f636a, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m tired. We can play later."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipRequirement: 50
+    AlternateBranch: {fileID: 11400000}
     ChangeInRelationshipStatus: 10
   Charming_Observation:
     NpcReactionText:
@@ -55,8 +55,8 @@ MonoBehaviour:
     BranchingDialogue: {fileID: 11400000, guid: 389515ed54ad5f5438f3a02d4a9f636a, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "I\u2019ve got other presents that I wanna see first."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipRequirement: 50
+    AlternateBranch: {fileID: 11400000}
     ChangeInRelationshipStatus: 5
   Assertive_Observation:
     NpcReactionText:
@@ -66,8 +66,8 @@ MonoBehaviour:
     BranchingDialogue: {fileID: 11400000, guid: 389515ed54ad5f5438f3a02d4a9f636a, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "No! You\u2019re annoying!"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipRequirement: 50
+    AlternateBranch: {fileID: 11400000}
     ChangeInRelationshipStatus: -15
   Sappy_Observation:
     NpcReactionText:
@@ -76,8 +76,8 @@ MonoBehaviour:
     BranchingDialogue: {fileID: 11400000, guid: 389515ed54ad5f5438f3a02d4a9f636a, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Grandma wants to talk with me, I think.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipRequirement: 50
+    AlternateBranch: {fileID: 11400000}
     ChangeInRelationshipStatus: -5
   Charming_Question:
     NpcReactionText:
@@ -86,8 +86,8 @@ MonoBehaviour:
     BranchingDialogue: {fileID: 11400000, guid: 389515ed54ad5f5438f3a02d4a9f636a, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Hey, since when have you been into cards, anyhow?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipRequirement: 50
+    AlternateBranch: {fileID: 11400000}
     ChangeInRelationshipStatus: 5
   Assertive_Question:
     NpcReactionText:
@@ -96,8 +96,8 @@ MonoBehaviour:
     BranchingDialogue: {fileID: 11400000, guid: 389515ed54ad5f5438f3a02d4a9f636a, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "Don\u2019t you have anything better to be doing?"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipRequirement: 50
+    AlternateBranch: {fileID: 11400000}
     ChangeInRelationshipStatus: -5
   Sappy_Question:
     NpcReactionText:
@@ -106,8 +106,8 @@ MonoBehaviour:
     BranchingDialogue: {fileID: 11400000, guid: 389515ed54ad5f5438f3a02d4a9f636a, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Do you even know how to play with them?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipRequirement: 50
+    AlternateBranch: {fileID: 11400000}
     ChangeInRelationshipStatus: -5
   Silent:
     NpcReactionText: []
@@ -117,4 +117,4 @@ MonoBehaviour:
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -5
-  End: 0
+  End: 1

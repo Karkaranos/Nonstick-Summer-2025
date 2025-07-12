@@ -97,6 +97,6 @@ public class CardPickupManager : Singleton<CardPickupManager>
         Debug.Log(PrefabUtility.HasPrefabInstanceAnyOverrides(gameObject, false));
         gameObject.name = DefaultGameObjectName +
             (PrefabUtility.HasPrefabInstanceAnyOverrides(gameObject, false) && !StaticUtilities.Editor_SelectingTransform(transform)
-                ? " (UNSAVED CHANGES TO PREFAB)" : "");
+                ? " (UNAPPLIED CHANGES TO PREFAB)" : "");
     }
 }

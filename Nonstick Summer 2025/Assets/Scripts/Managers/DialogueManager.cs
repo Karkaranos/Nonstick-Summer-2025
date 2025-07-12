@@ -179,7 +179,7 @@ public class DialogueManager
             CurrentDialogueBranch = dialogueOption.AlternateBranch; 
         }
 
-        yield return DialogueUIController.Instance.ResetNPCDialogue();
+        yield return DialogueUIController.Instance.ResetNPCDialogue(dialogueOption);
 
         // TODO: move this to AFTER player reads all text, and can play cards again
         GameManager.Instance.StopCoroutine(SetCurrentEnergy(_currentEnergy));

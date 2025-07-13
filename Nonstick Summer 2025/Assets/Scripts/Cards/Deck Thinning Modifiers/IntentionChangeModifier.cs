@@ -1,6 +1,3 @@
-using UnityEngine;
-using NaughtyAttributes;
-
 /*****************************************************************************
 // File Name :          IntentionChangeModifier.cs
 // Author :             Sky
@@ -9,14 +6,15 @@ using NaughtyAttributes;
 //
 // Brief Description :  Modifier for changing intention
 *****************************************************************************/
-[CreateAssetMenu(fileName = "IntentionChangeModifier", menuName = "Scriptable Objects/IntentionChangeModifier")]
+
+using UnityEngine;
+using NaughtyAttributes;
+
+[CreateAssetMenu(fileName = "IntentionChangeModifier", menuName = "Modifier Card/Change Intention")]
 public class IntentionChangeModifier : ModifierData
 {
     [SerializeField]
     private CardIntention intentionToSet;
-
-    [SerializeField, ShowAssetPreview(32, 32)]
-    private Sprite modifierSprite;
 
     public override bool CanApplyModifier(CardData[] cards)
     {
@@ -38,10 +36,5 @@ public class IntentionChangeModifier : ModifierData
         {
             card.Intention = intentionToSet;
         }
-    }
-
-    public override Sprite GetIcon()
-    {
-        return modifierSprite;
     }
 }

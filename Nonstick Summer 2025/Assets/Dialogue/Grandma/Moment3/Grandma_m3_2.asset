@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Grandma_m3_2
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: Has your mom been treating you well?
+    Portrait: {fileID: 0}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: "That\u2019s great to hear, I\u2019m glad everything seems to be
+        smooth sailing."
+      Portrait: {fileID: 0}
+    - Dialogue: "I was worried that Grandpa\u2019s passing would throw everything
+        for a loop."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "We\u2019re right as rain just like we always are!"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "I\u2019m sorry to hear that, just give your mother some time."
+      Portrait: {fileID: 0}
+    - Dialogue: "Your grandfather\u2019s passing is still fresh in her mind, I\u2019m
+        sure..."
+      Portrait: {fileID: 0}
+    - Dialogue: but things will go back to normal eventually.
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "We\u2019ve been fighting a lot lately."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "That\u2019s good. I\u2019ll talk to her to make sure she makes time
+        for you."
+      Portrait: {fileID: 0}
+    - Dialogue: I know she has two jobs, but...
+      Portrait: {fileID: 0}
+    - Dialogue: "That\u2019s no excuse not to have time for you."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Yep, but I wish we were able to spend more time with each other.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: "That\u2019s great to hear, I\u2019m glad everything seems to be
+        smooth sailing."
+      Portrait: {fileID: 0}
+    - Dialogue: "I was worried that Grandpa\u2019s passing would throw everything
+        for a loop."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "As always, she\u2019s the one that\u2019s making sure I\u2019m
+      staying on top of my training schedule."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: "Sorry, you\u2019re right, I guess I was just in my head a bit."
+      Portrait: {fileID: 0}
+    - Dialogue: You have to be focused if you want to help win that trophy.
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: 'That is an odd thing that bring up at a time like this. '
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: I was worried that might be the case...
+      Portrait: {fileID: 0}
+    - Dialogue: Just give your mother some time.
+      Portrait: {fileID: 0}
+    - Dialogue: "I know we all need time after going through something like your
+        grandfather\u2019s passing."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "It\u2019s been a bit rough lately, I just hope that she isn\u2019t
+      biting off more than she can chew."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: "I was worried that Grandpa\u2019s passing might have thrown everyone
+        off balance."
+      Portrait: {fileID: 0}
+    - Dialogue: "It\u2019s good to see and hear that's not the case."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Things have been going great, what makes you bring that up?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: "Sorry, you\u2019re right, I guess I was just in my head a bit."
+      Portrait: {fileID: 0}
+    - Dialogue: You have to be focused if you want to help win that trophy.
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Why do you ask?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "I was worried that Grandpa\u2019s passing might have thrown everyone
+        off balance."
+      Portrait: {fileID: 0}
+    - Dialogue: "It\u2019s good to see and hear that\u2019s is not the case."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Yeah, I just wish we could spend more time together. Is there
+      a reason you brought that up?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Silent:
+    NpcReactionText:
+    - Dialogue: ...
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  End: 0

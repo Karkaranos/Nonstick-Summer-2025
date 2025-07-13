@@ -13,86 +13,113 @@ MonoBehaviour:
   m_Name: Grandma_m3_1
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Hello Pumpkin, you look like you are ready for the big game!
+  - Dialogue: Hello Pumpkin, you look like you're ready for the big game!
     Portrait: {fileID: 0}
   Charming_Expression:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: "That\u2019s what I like to hear, I know you are going to do great!"
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: 
+    PlayerDialogue: You know it Grandma!
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: 10
   Assertive_Expression:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: Oh yeah, I guess you are right, it is pretty obvious just looking
+        at you.
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: 
+    PlayerDialogue: Obviously.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: 5
   Sappy_Expression:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: "Come on, don\u2019t think like that, remember all the time and effort
+        you put into practicing for this game. You are more than ready!"
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: 
+    PlayerDialogue: I don't really know if I am.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: -5
   Charming_Observation:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: Thank you very much my little charmer!
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: 
+    PlayerDialogue: Right back at ya Grandma! You're looking good today!
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: 15
   Assertive_Observation:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: I know I do, but I am serious. I can already tell that you are going
+        to put on a great show!
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: 
+    PlayerDialogue: You always say that kind of stuff.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: 5
   Sappy_Observation:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: I really mean it, watching you play never fails to put a huge smile
+        on my face!
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: 
+    PlayerDialogue: "I know you\u2019re just saying that..."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: -5
   Charming_Question:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: I really mean it, watching you play never fails to put a huge smile
+        on my face!
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: 
+    PlayerDialogue: You mean it?!
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: 5
   Assertive_Question:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: Oh yeah, I guess you are right, it is pretty obvious just looking
+        at you.
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: 
+    PlayerDialogue: "Isn\u2019t that obvious?"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: -15
   Sappy_Question:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: I really mean it, watching you play never fails to put a huge smile
+        on my face!
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: 
+    PlayerDialogue: Do you really mean it?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: 10
   Silent:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: ...
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: 
+    PlayerDialogue: ...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: -5
   End: 0

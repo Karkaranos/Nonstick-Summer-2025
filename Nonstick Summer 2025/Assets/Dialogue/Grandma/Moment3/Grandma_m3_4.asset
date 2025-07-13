@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Grandma_m3_4
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: I still can't seem to understand that rule that you told me about.
+    Portrait: {fileID: 0}
+  - Dialogue: What was it?
+    Portrait: {fileID: 0}
+  - Dialogue: Oh right, offsides I think it was.
+    Portrait: {fileID: 0}
+  - Dialogue: Could you explain it to me again just one more time?
+    Portrait: {fileID: 0}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: Thank you pumpkin! Thanks for bearing with me.
+      Portrait: {fileID: 0}
+    - Dialogue: I love you!
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: Of course, I will explain it as many times as you want!
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "Oh yeah, that\u2019s right haha."
+      Portrait: {fileID: 0}
+    - Dialogue: Silly me...
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: I've already explained it to you at least a million times.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: It really has, sorry that I keep making you explain them to me.
+      Portrait: {fileID: 0}
+    - Dialogue: One of these days I am sure I will get the hang of them.
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "Sure, I bet it\u2019s been tough to keep up with all the rules
+      now that Grandpa is gone."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: Thank you pumpkin! Thanks for bearing with me.
+      Portrait: {fileID: 0}
+    - Dialogue: I love you!
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: Of course, I've got all the time in the world for you Grandma!
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: Oh, alright...
+      Portrait: {fileID: 0}
+    - Dialogue: Sorry for bothering you.
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: I don't have time to explain it again, I just need to get my
+      water
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: That would be great!
+      Portrait: {fileID: 0}
+    - Dialogue: I feel bad for making you explain it to me all the time.
+      Portrait: {fileID: 0}
+    - Dialogue: "This time I promise I won\u2019t forget!"
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: Yeah, I think I have just enough time to explain it again.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: That would be great!
+      Portrait: {fileID: 0}
+    - Dialogue: I feel bad for making you explain it to me all the time.
+      Portrait: {fileID: 0}
+    - Dialogue: "This time I promise I won\u2019t forget!"
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: Of course, do you need me to write it down for you this time?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: Sorry, my memory has really been getting worse lately.
+      Portrait: {fileID: 0}
+    - Dialogue: Ever since your Grandfather passed away,
+      Portrait: {fileID: 0}
+    - Dialogue: "there\u2019s been a lot on my mind."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: Really? How do you keep forgetting?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: Sorry, my memory has really been getting worse lately.
+      Portrait: {fileID: 0}
+    - Dialogue: Ever since your Grandfather passed away,
+      Portrait: {fileID: 0}
+    - Dialogue: "there\u2019s been a lot on my mind."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: Yeah, I can explain it to you again. How has your memory been
+      lately?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Silent:
+    NpcReactionText:
+    - Dialogue: ...
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  End: 0

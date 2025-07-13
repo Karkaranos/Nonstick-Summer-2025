@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Cousin_m4_3
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: Okay. Um, how about this?
+    Portrait: {fileID: 0}
+  - Dialogue: I've brought my cards with me! From way back when!
+    Portrait: {fileID: 0}
+  - Dialogue: Maybe we could play a round? Like we used to?
+    Portrait: {fileID: 0}
+  - Dialogue: I'll warn you that I'm probably, like, REALLY rusty
+    Portrait: {fileID: 0}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: "Oh! Really? Okay! I\u2019ll be waiting, then!"
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 8374d955cfa518c49b157a30bbbb88dc, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "Oh, wow! Uh, later. I\u2019ve got something to do first."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "Right. Right... Can\u2019t believe I bothered..."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: dac4ae234837d7b4d86d19d9b2e91671, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "I didn\u2019t want to play then and I don\u2019t want to play
+      now."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "Oh, really? That\u2019s, um... That\u2019s a little crazy. But hey,
+        we can still try later, right? Right..."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 8374d955cfa518c49b157a30bbbb88dc, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "I, um, haven\u2019t really played in a long time, either."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: "Oh, really? That\u2019s, um... That\u2019s a little crazy. But hey,
+        we can still try later, right? Right..."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 8374d955cfa518c49b157a30bbbb88dc, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "Oh, man. I\u2019d kinda forgotten about these things..."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: "Right. Right... Can\u2019t believe I bothered..."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: dac4ae234837d7b4d86d19d9b2e91671, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "You\u2019re trying way, WAY too hard."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: You really think so? Haha! How time flies...
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 8374d955cfa518c49b157a30bbbb88dc, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: Heh. You probably remember how the game works better than I do
+      nowadays.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: "Of course I do! They meant a lot to me, you know! Uh... Let me know
+        when, alright? I\u2019m free whenever, I guess."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 8374d955cfa518c49b157a30bbbb88dc, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: Do you still have the cards that I gave you?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: ...Ugh. Was it really so wrong that I wanted to be close to you?!
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: dac4ae234837d7b4d86d19d9b2e91671, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "You still don\u2019t have an identity of your own, huh?"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "Oh! Really? Okay! I\u2019ll be waiting, then!"
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 8374d955cfa518c49b157a30bbbb88dc, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: ...Maybe later, okay?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Silent:
+    NpcReactionText: []
+    BranchingDialogue: {fileID: 11400000, guid: 8374d955cfa518c49b157a30bbbb88dc, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  End: 0

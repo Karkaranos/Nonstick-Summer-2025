@@ -20,6 +20,8 @@ public class DialogueBox : MonoBehaviour
 
     [ReadOnly] public bool PlayerReadAllDialogue;
 
+    private DialogueNPC[] dialogueStored;
+
 
     /// <summary>
     /// displays dialogue according to where the player is in a dialogue branch
@@ -41,7 +43,9 @@ public class DialogueBox : MonoBehaviour
     {
         branch = branch ?? DialogueManager.CurrentDialogueBranch;
 
-        option.SetNextBranchReaction();
+        dialogueStored = option.CombinedDialogue;
+
+        option.SetNextBranchReaction(branch);
 
         PlayerReadAllDialogue = false;
         NumberInList = 0;
@@ -56,7 +60,7 @@ public class DialogueBox : MonoBehaviour
     /// <param name="numberInList">the current line of dialogue that the player is on</param>
     public IEnumerator ProgressNPCDialogue(DialogueBranch branch=null)
     {
-        yield return SetDialogueIndex(NumberInList+1); // mods it in this function dw
+        yield return SetDialogueIndex(NumberInList+1, null, dialogueStored); // mods it in this function dw
     }
 
     public IEnumerator SetDialogueIndex(int numberInList, DialogueBranch branch = null, DialogueNPC[] dialogue = null)

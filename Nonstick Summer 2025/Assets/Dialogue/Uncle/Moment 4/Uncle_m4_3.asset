@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Uncle_m4_3
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: Just...
+    Portrait: {fileID: 21300000, guid: 599283ca56aa9da4f85f3d7e2e07d0a4, type: 3}
+  - Dialogue: Stick around for awhile longer, alright?
+    Portrait: {fileID: 21300000, guid: 599283ca56aa9da4f85f3d7e2e07d0a4, type: 3}
+  - Dialogue: "Your mother\u2019s worried about you."
+    Portrait: {fileID: 21300000, guid: 599283ca56aa9da4f85f3d7e2e07d0a4, type: 3}
+  - Dialogue: "We\u2019re all worried about you!"
+    Portrait: {fileID: 21300000, guid: 599283ca56aa9da4f85f3d7e2e07d0a4, type: 3}
+  - Dialogue: ...Please.
+    Portrait: {fileID: 21300000, guid: 599283ca56aa9da4f85f3d7e2e07d0a4, type: 3}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: "Okay! Of course. I\u2019ll be here."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: eb9b3756df137fd4eb3a315c1643decd, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "Maybe later. I\u2019ve got plans."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: Um... Sure. Alright. Sure...
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: eb9b3756df137fd4eb3a315c1643decd, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: I already know that. Leave me alone.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: Oh. Oh! Of course. Stay out of trouble, kid...
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: eb9b3756df137fd4eb3a315c1643decd, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "Thanks for checking in. I really needed that, I think. But I\u2019ve
+      gotta go."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: "Okay! Of course. I\u2019ll be here."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: eb9b3756df137fd4eb3a315c1643decd, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: I appreciate the concern. Seriously. We can talk later.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: What, am I not allowed to check in with you anymore? Whatever, kid...
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: eb9b3756df137fd4eb3a315c1643decd, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "Come on. I know you\u2019re only bugging me because you\u2019re
+      bored."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: "Okay! Of course. I\u2019ll be here."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: eb9b3756df137fd4eb3a315c1643decd, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "I... I can probably hang out with you later, if you\u2019d like."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: "You don\u2019t have to worry about that kiddo, seeing you smile
+        is all that matters to me."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: eb9b3756df137fd4eb3a315c1643decd, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: Have, uh, you seen Mom around?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: What, am I not allowed to check in with you anymore? Whatever, kid...
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: eb9b3756df137fd4eb3a315c1643decd, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "You really don\u2019t have anything better to do, do you?"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "Of course I do. Why wouldn\u2019t I?"
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: eb9b3756df137fd4eb3a315c1643decd, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: Do you really mean that?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Silent:
+    NpcReactionText: []
+    BranchingDialogue: {fileID: 11400000, guid: eb9b3756df137fd4eb3a315c1643decd, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  End: 0

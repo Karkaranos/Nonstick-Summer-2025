@@ -28043,19 +28043,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoodManagerReference: {fileID: 0}
   charmingStartingValues:
-    baseEnergyCost: -2
+    energyCostOffset: 0
     maxEnergyCost: -1
     expressionValue: 0
     intervalBetweenADecreasedCost: 100
     intervalBetweenIncreasedCosts: 100
   assertiveStartingValues:
-    baseEnergyCost: -2
+    energyCostOffset: 0
     maxEnergyCost: -1
     expressionValue: 0
     intervalBetweenADecreasedCost: 100
     intervalBetweenIncreasedCosts: 100
   sappyStartingValues:
-    baseEnergyCost: -2
+    energyCostOffset: 0
     maxEnergyCost: -1
     expressionValue: 0
     intervalBetweenADecreasedCost: 100
@@ -41439,7 +41439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: preCombatLine
-      value: Hey, Kiddo! How's it going?
+      value: What's up?
       objectReference: {fileID: 0}
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: characterSprite
@@ -64788,7 +64788,7 @@ PrefabInstance:
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: StartingDialogueBranch
       value: 
-      objectReference: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
+      objectReference: {fileID: 11400000, guid: e8eaba5b8855efa46a11505c93ce485f, type: 2}
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: PossibleModifiers.Array.size
       value: 1
@@ -69635,6 +69635,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3216093029526474184, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+      propertyPath: StartingDialogueBranch
+      value: 
+      objectReference: {fileID: 11400000, guid: e1f697b59736dda4aa7322a91beb598a, type: 2}
     - target: {fileID: 6140443048461262060, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -69643,11 +69647,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cousin
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3216093029526474184, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7010602745331249561, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1643650102}
   m_SourcePrefab: {fileID: 100100000, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+--- !u!1 &1643650101 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7010602745331249561, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+  m_PrefabInstance: {fileID: 1643650100}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1643650102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643650101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b949eba572aeb7409f4e7a6d838d049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptCanvas: {fileID: 8537043226331206475, guid: bf3dfcdf21315f84998bb1e2d5d1939b, type: 3}
+  combatPrompt: Wanna chat with Cousin?
+  preCombatLine: Oh, hey...
+  characterSprite: {fileID: 21300000, guid: 56fb52eb6f26be6429532fcc44dd7cad, type: 3}
+  CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: f8dd72b5a21b9b341ae4f2b2aa00a8c3, type: 3}
+  StartingDialogueBranch: {fileID: 11400000, guid: e1f697b59736dda4aa7322a91beb598a, type: 2}
+  cameraAnchor: {fileID: 0}
+  character: 2
+  PossibleModifiers: []
 --- !u!1 &1652541061
 GameObject:
   m_ObjectHideFlags: 0
@@ -93852,8 +93886,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7010602745331249561, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2128451450}
   m_SourcePrefab: {fileID: 100100000, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+--- !u!1 &2128451449 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7010602745331249561, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+  m_PrefabInstance: {fileID: 2128451448}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2128451450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128451449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8e7a984732793e47a9de0995e255ffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isMoment4: 0
+  _bossAppearItem: {fileID: 0}
+  CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: f8dd72b5a21b9b341ae4f2b2aa00a8c3, type: 3}
+  StartingDialogueBranch: {fileID: 0}
+  cameraAnchor: {fileID: 0}
+  character: 3
 --- !u!1 &2133888957
 GameObject:
   m_ObjectHideFlags: 0

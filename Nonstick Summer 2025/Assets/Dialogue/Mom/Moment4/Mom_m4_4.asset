@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Mom_m4_4
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: I work day and night for this family, but all I ever see you care about
+      is your phone!
+    Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
+  - Dialogue: You are grounded, do you understand that?!
+    Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: ..!
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: WOW. A mother who works for her own family? What a tragedy
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "Is that really what you think of me? Do you think I\u2019m doing
+        this because I \"hate\" you?"
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "The only thing I understand is how UNFAIR you\u2019re being
+      right now!"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "Are you sure? Because you\u2019re not making a good case for  yourself
+        by sneaking behind my back like this."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "That\u2019s not true!"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: "Is that really what you think of me? Do you think I\u2019m doing
+        this because I \"hate\" you?"
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "At least my PHONE doesn\u2019t hate me!"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: "Is it MY fault that you didn\u2019t study?! Is it MY fault that
+        you\u2019ve been clothed and fed with a roof over your head?"
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "No one asked you to do that! And it\u2019s not even my fault!"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: "Are you sure? Because you\u2019re not making a good case for  yourself
+        by sneaking behind my back like this."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "I\u2019m not trying to sound ungrateful. I AM grateful."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: ..!
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "If you work more, does that mean I\u2019ll have to see you less?"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: "I don\u2019t HAVE to take care of you, but a little RESPECT shouldn\u2019t
+        be too much to ask for either."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: What, am I supposed to be grateful?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "Like what? Because I\u2019m tired of you thinking you can walk all
+        over me."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: Look, can we talk about this? There has to be something else
+      you can take besides my phone.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Silent:
+    NpcReactionText:
+    - Dialogue: Did you hear me?
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  End: 0

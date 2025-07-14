@@ -168,17 +168,17 @@ public class DialogueManager
         GameManager.Instance.StartCoroutine(SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange));
 
         // progress dialogue:
-        if (!dialogueOption.RelationshipCheckRequired || RelationshipManager.characterRelationships[currentCharacter].currentValue > dialogueOption.RelationshipRange.y)
+        if (dialogueOption.RelationshipCheckRequired == false || RelationshipManager.characterRelationships[currentCharacter].currentValue > dialogueOption.RelationshipRange.y)
         {
             Debug.Log("Player has enough RP for good branch");
             CurrentDialogueBranch = dialogueOption.BranchingDialogueHigh; 
         }
-        else if(RelationshipManager.characterRelationships[currentCharacter].currentValue <= dialogueOption.RelationshipRange.y && RelationshipManager.characterRelationships[currentCharacter].currentValue >= dialogueOption.RelationshipRange.x)
+        else if(dialogueOption.RelationshipCheckRequired = true && RelationshipManager.characterRelationships[currentCharacter].currentValue <= dialogueOption.RelationshipRange.y && RelationshipManager.characterRelationships[currentCharacter].currentValue >= dialogueOption.RelationshipRange.x)
         {
             Debug.Log("Player has met RP requirement");
             CurrentDialogueBranch = dialogueOption.BranchingDialogueNeutral; 
         }
-        else if(RelationshipManager.characterRelationships[currentCharacter].currentValue < dialogueOption.RelationshipRange.x)
+        else if(dialogueOption.RelationshipCheckRequired = true && RelationshipManager.characterRelationships[currentCharacter].currentValue < dialogueOption.RelationshipRange.x)
         {
 
             Debug.Log("Player has not met RP requirement");

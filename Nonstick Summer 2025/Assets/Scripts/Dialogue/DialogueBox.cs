@@ -90,8 +90,6 @@ public class DialogueBox : MonoBehaviour
 
             DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(dialogue[NumberInList]);
 
-            DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(dialogue[NumberInList]);
-
             npcText.text = dialogue[NumberInList].Dialogue;
 
         }
@@ -99,8 +97,6 @@ public class DialogueBox : MonoBehaviour
         {
 
             NumberInList = numberInList % branch.dialogue.Length;
-
-            DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(branch.dialogue[NumberInList]);
 
             DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(branch.dialogue[NumberInList]);
 

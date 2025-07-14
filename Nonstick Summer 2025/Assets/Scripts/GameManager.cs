@@ -68,9 +68,6 @@ public class GameManager : Singleton<GameManager>
     {
         DontDestroyOnLoad(this.gameObject);
 
-        playerTransformRef = FindFirstObjectByType<PlayerMovement>()?.transform;
-        playerCameraRef = FindFirstObjectByType<PlayerCamera>()?.playerCamera;
-
         UITransitionManagerReference = UITransitionManagerReference ?? new UITransitionManager();
         CardStyleManagerReference = CardStyleManagerReference ?? new CardStyleManager(Card_CharmingStyle, Card_AssertiveStyle, Card_SappyStyle,
             Card_ExpressionStyle, Card_ObservationStyle, Card_QuestionStyle,
@@ -81,6 +78,17 @@ public class GameManager : Singleton<GameManager>
         RelationshipManagerReference = RelationshipManagerReference ?? new RelationshipManager(grandmaStartingValue, uncleStartingValue, cousinStartingValue, momStartingValue);
         ModifierManagerReference = ModifierManagerReference ?? new ModifierManager(startingModifiers);
         ObjectiveReference = FindFirstObjectByType<Objectives>();
+
+    }
+
+    /// <summary>
+    /// Runs after the first scene has finished loading
+    /// </summary>
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private static void AfterSceneLoad()
+    {
+        playerTransformRef = FindFirstObjectByType<PlayerMovement>()?.transform;
+        playerCameraRef = FindFirstObjectByType<PlayerCamera>()?.playerCamera;
 
     }
 }

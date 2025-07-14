@@ -193,8 +193,8 @@ public class DialogueManager
         // only keep reading user input if theres more
         ReadUserInput = true;//!CurrentDialogueBranch.End; 
 
-        if(playedCard != null)
-            MoodManager.UpdateMood(playedCard.Emotion);
+        //if(playedCard != null)
+            //MoodManager.UpdateMood(playedCard.Emotion);
 
         OnCardPlayedFinished.Invoke();
     }

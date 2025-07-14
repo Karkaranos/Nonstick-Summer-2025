@@ -27,16 +27,6 @@ public class DialogueOption
     [ResizableTextArea]
     public string PlayerDialogue;
 
-    //[Tooltip("How good should the player's relationship be with this NPC in order to progress past this point?")]
-    public float RelationshipRequirement;
-
-    //private bool showOtherBranch => RelationshipRequirement == 0;
-
-    //[Tooltip("What is the minimum amount of relationship points needed to get the positive-leaning branch?")] public float RelationshipRequirementHigh;
-
-    //[AllowNesting]
-    //[Tooltip("What is the minimum amount of relationship points needed to get the negative-leaning branch?")] public float RelationshipRequirementLow;
-
     [Required]
     [Tooltip("The player has exceeded the range required to at least progress through the conversation OR a relationship check was not required.")] 
     public DialogueBranch BranchingDialogueHigh;

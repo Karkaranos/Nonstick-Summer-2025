@@ -20,104 +20,131 @@ MonoBehaviour:
     - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
         you."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
+        you."
+      Portrait: {fileID: 0}
+    - Dialogue: My, where has the time gone...
+      Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+    - Dialogue: Who knew that my little Pumpkin could grow so tall?
+      Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
     PlayerDialogue: You seem excited to see me.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: "No hug, then? I suppose you\u2019re too old for that now..."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Hey.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: "I just wanted to stop by while I had the time. It\u2019s good to
         see you!"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Hi, Grandma!
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Charming_Observation:
     NpcReactionText:
     - Dialogue: Oh...is that suppose to be a joke?
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
     CombinedDialogue: []
     PlayerDialogue: You look awful.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Assertive_Observation:
     NpcReactionText:
     - Dialogue: "I just wanted to stop by while I had the time. It\u2019s good to
         see you!"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "We weren\u2019t expecting you to visit."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Observation:
     NpcReactionText:
     - Dialogue: "I just wanted to stop by while I had the time. It\u2019s good to
         see you!"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m glad you could come over."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
     - Dialogue: "No, I only realized I hadn\u2019t visited in a while and just wanted
         to say hello. It\u2019s good to see you."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Have you been waiting here the whole time?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Assertive_Question:
     NpcReactionText:
     - Dialogue: "No, I only realized I hadn\u2019t visited in a while and just wanted
         to say hello. It\u2019s good to see you."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Do you need something?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Sappy_Question:
     NpcReactionText:
     - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
         you."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Is there something wrong?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Silent:
     NpcReactionText: []
-    BranchingDialogue: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
     CombinedDialogue: []
     PlayerDialogue: ...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   End: 0

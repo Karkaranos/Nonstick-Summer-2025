@@ -22,105 +22,136 @@ MonoBehaviour:
     - Dialogue: "Fantastic! That\u2019s good to hear. You haven\u2019t been looking
         too good lately, y\u2019know?"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "Good! I\u2019ve, uh, been good."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: "C\u2019mon. Don\u2019t be like that. I just wanna be in your life,
         alright?"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Not now.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: Oh, man... That sucks. Sorry, buddy. Um, let me know if you need
         anything, okay?
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "Um, bad. But I\u2019m working on it."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "You really did, huh? You\u2019ve gotta start paying attention to
         the world around you, buddy."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: "You really did, huh? You\u2019ve gotta start paying attention to
+        the world around you, buddy."
+      Portrait: {fileID: 0}
+    - Dialogue: "Uh, listen. I\u2019ve been meaning to check in with you for awhile,
+        actually..."
+      Portrait: {fileID: 21300000, guid: 599283ca56aa9da4f85f3d7e2e07d0a4, type: 3}
+    - Dialogue: "I\u2019m worried about you! I\u2019m worried about the sort of things
+        you\u2019re hearing without us to check up on you."
+      Portrait: {fileID: 21300000, guid: 599283ca56aa9da4f85f3d7e2e07d0a4, type: 3}
+    - Dialogue: "It\u2019s a crazy world out there, you know?"
+      Portrait: {fileID: 21300000, guid: 599283ca56aa9da4f85f3d7e2e07d0a4, type: 3}
     PlayerDialogue: Decently. I forgot that there was a gathering today...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Assertive_Observation:
     NpcReactionText:
     - Dialogue: "C\u2019mon. Don\u2019t be like that. I just wanna be in your life,
         alright?"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "Ugh. Don\u2019t call me that, first of all."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Observation:
     NpcReactionText:
     - Dialogue: "I mean, you\u2019re in your room twenty-three hours of the day,
         kid! Otherwise, you\u2019re out with your friends and whatnot..."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Huh. You seem genuinely surprised.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Charming_Question:
     NpcReactionText:
     - Dialogue: "Me? Well, I\u2019m doing just peachy! Hunky-dory even!"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Erm... How about YOU?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Question:
     NpcReactionText:
     - Dialogue: "C\u2019mon. Don\u2019t be like that. I just wanna be in your life,
         alright?"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "Don\u2019t you have someone your own age to talk to?"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Question:
     NpcReactionText:
     - Dialogue: "I mean, you\u2019re in your room twenty-three hours of the day,
         kid! Otherwise, you\u2019re out with your friends and whatnot..."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "You didn\u2019t? I feel as though I see you all the time..."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Silent:
     NpcReactionText: []
-    BranchingDialogue: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
     CombinedDialogue: []
     PlayerDialogue: ...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   End: 0

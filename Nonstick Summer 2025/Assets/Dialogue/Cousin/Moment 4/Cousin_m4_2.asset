@@ -29,100 +29,138 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Good. I mean, cool. I mean, whatever! I mean, thank you. Really.
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "Heh. It wasn\u2019t. You\u2019re cool."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: "Hey! I\u2019m trying here! I\u2019m really, really trying, you jerk!"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Ha. That WAS lame.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: ...Thank you. Really.
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "It\u2019s not. I mean, I, uh, missed talking to you, too."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "Um. I\u2019m not sure what they\u2019re supposed to look like..."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: "Um. I\u2019m not sure what they\u2019re supposed to look like..."
+      Portrait: {fileID: 0}
+    - Dialogue: Okay. Um, how about this?
+      Portrait: {fileID: 0}
+    - Dialogue: I've brought my cards with me! From way back when!
+      Portrait: {fileID: 0}
+    - Dialogue: Maybe we could play a round? Like we used to?
+      Portrait: {fileID: 0}
+    - Dialogue: I'll warn you that I'm probably, like, REALLY rusty.
+      Portrait: {fileID: 0}
     PlayerDialogue: "You\u2019re STILL nervous! Don\u2019t worry about it. Really."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Observation:
     NpcReactionText:
     - Dialogue: "Hey! I\u2019m trying here! I\u2019m really, really trying, you jerk!"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "Ugh. You\u2019ve always been desperate for approval like this..."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Observation:
     NpcReactionText:
     - Dialogue: "Hey, of course I did! Why wouldn\u2019t I? You meant the world to
         me, once."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "Huh... I didn\u2019t think that you would care this much."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
     - Dialogue: "Hey, of course I did! Why wouldn\u2019t I? You meant the world to
         me, once."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
     CombinedDialogue: []
     PlayerDialogue: ...You used to idolize me? Haha.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Assertive_Question:
     NpcReactionText:
     - Dialogue: "Hey! I\u2019m trying here! I\u2019m really, really trying, you jerk!"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "You\u2019re aware of how pathetic this all sounds, right?"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Question:
     NpcReactionText:
     - Dialogue: No? I mean, looking back on it, I was probably annoying you, right?
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "You don\u2019t think that we were close?"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Silent:
     NpcReactionText: []
-    BranchingDialogue: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: Okay. Um, how about this?
+      Portrait: {fileID: 0}
+    - Dialogue: I've brought my cards with me! From way back when!
+      Portrait: {fileID: 0}
+    - Dialogue: Maybe we could play a round? Like we used to?
+      Portrait: {fileID: 0}
+    - Dialogue: I'll warn you that I'm probably, like, REALLY rusty.
+      Portrait: {fileID: 0}
     PlayerDialogue: ...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   End: 0

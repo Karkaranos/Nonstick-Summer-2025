@@ -31,7 +31,7 @@ public class StampIconDisplay : MonoBehaviour
     public void RefreshDisplay()
     {
         // hide if no stamp
-        icon.color = icon == null ? Color.clear : Color.white;
+        icon.color = modifierStamp == null ? Color.clear : Color.white;
 
         if(modifierStamp != null)
             icon.sprite = modifierStamp.Icon;

@@ -16,6 +16,7 @@ public class ModifierTooltip : HoverTooltip
     protected override void Start()
     {
         base.Start(); // ! important
+        cardDisplay = GetComponent<ModifierCardDisplay>();
     }
 
     public override string GetText()

@@ -27,7 +27,7 @@ public abstract class ModifierData : ScriptableObject
     [ShowIf("_showMinCardsApplied")] [Min(1)]
     public int MinCardsApplied = 1;
 
-    [SerializeField]
+    [SerializeField, ResizableTextArea]
     protected string _tooltipDescription;
 
     private bool _showMinCardsApplied => MaxCardsApplied > 1;

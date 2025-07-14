@@ -18,7 +18,7 @@ public abstract class HoverTooltip : MonoBehaviour
     //[ResizableTextArea]
     //[SerializeField] protected string text;
 
-    [Required]
+    [Required("Make sure the tooltip has a canvas group attached")]
     [SerializeField] private CanvasGroup tooltipGroup;
     private TMP_Text tooltipText;
 
@@ -27,10 +27,11 @@ public abstract class HoverTooltip : MonoBehaviour
     {
         mouseInteraction = GetComponent<MouseInteractionEvents>();
         tooltipText = tooltipGroup.GetComponentInChildren<TMP_Text>();
-        Close();
 
         mouseInteraction.OnMouseHoverStart.AddListener(Open);
         mouseInteraction.OnMouseHoverEnd.AddListener(Close);
+
+        Close();
     }
 
     public void Open()

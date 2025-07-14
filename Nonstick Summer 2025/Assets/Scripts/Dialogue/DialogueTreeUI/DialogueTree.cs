@@ -38,7 +38,24 @@ public class DialogueTree : MonoBehaviour
         foreach (DialogueOption option in branch.GetComponents<DialogueOption>())
         {
 
+
+            //there's for sure a better way to do this but i'm not even sure if we're bringing dialogue tree visualization back after recent meetings
+
             DialogueBranch newBranch = option.BranchingDialogueHigh;
+            if (!nodes.Contains(newBranch))
+            {
+
+                nodes.Add(newBranch);
+
+            }
+            newBranch = option.BranchingDialogueNeutral;
+            if (!nodes.Contains(newBranch))
+            {
+
+                nodes.Add(newBranch);
+
+            }
+            newBranch = option.BranchingDialogueLow;
             if (!nodes.Contains(newBranch))
             {
 

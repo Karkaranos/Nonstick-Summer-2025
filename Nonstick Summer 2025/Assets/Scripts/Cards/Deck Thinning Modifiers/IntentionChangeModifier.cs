@@ -1,6 +1,3 @@
-using UnityEngine;
-using NaughtyAttributes;
-
 /*****************************************************************************
 // File Name :          IntentionChangeModifier.cs
 // Author :             Sky
@@ -8,15 +5,19 @@ using NaughtyAttributes;
 // Modified Date :      June 26, 2025
 //
 // Brief Description :  Modifier for changing intention
+*
+* TODO: Hide the image icon variable, somehow
+* 
 *****************************************************************************/
-[CreateAssetMenu(fileName = "IntentionChangeModifier", menuName = "Scriptable Objects/IntentionChangeModifier")]
+
+using UnityEngine;
+using NaughtyAttributes;
+
+[CreateAssetMenu(fileName = "IntentionChangeModifier", menuName = "Modifier Card/Change Intention")]
 public class IntentionChangeModifier : ModifierData
 {
     [SerializeField]
     private CardIntention intentionToSet;
-
-    [SerializeField, ShowAssetPreview(32, 32)]
-    private Sprite modifierSprite;
 
     public override bool CanApplyModifier(CardData[] cards)
     {
@@ -42,6 +43,17 @@ public class IntentionChangeModifier : ModifierData
 
     public override Sprite GetIcon()
     {
-        return modifierSprite;
+        switch (intentionToSet)
+        {
+            case CardIntention.Expression:
+                return CardStyleManager.ExpressionSprite;
+            case CardIntention.Observation:
+                return CardStyleManager.ObservationSprite;
+            case CardIntention.Question:
+                return CardStyleManager.QuestionSprite;
+        }
+
+        Debug.LogError("Don't let this happen");
+        return null;
     }
 }

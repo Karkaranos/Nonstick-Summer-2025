@@ -20,7 +20,7 @@ using UnityEngine;
 using static Unity.VisualScripting.StickyNote;
 using static UnityEngine.Rendering.DebugUI;
 
-[CreateAssetMenu(fileName = "CardData", menuName = "Scriptable Objects/CardData")]
+[CreateAssetMenu(fileName = "CardData", menuName = "Dialogue Card/CardData")]
 public partial class CardData : ScriptableObject
 {
     [HideInInspector] public Action OnCardValueChanged;

@@ -9,7 +9,7 @@
 
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "EmotionChangeModifier", menuName = "Modifier Card/Destroy Card")]
+[CreateAssetMenu(fileName = "DestroyCardModifier", menuName = "Modifier Card/Destroy Card")]
 public class DestroyCardModifier : ModifierData
 {
     protected override void ApplyModifier(CardData[] cards)

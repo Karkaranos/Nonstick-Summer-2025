@@ -37,7 +37,7 @@ public abstract class HoverTooltip : MonoBehaviour
     public void Open()
     {
         if(tooltipText != null)
-            tooltipText.text = GetText() ;
+            tooltipText.text = GetText_PreProcess() ;
 
         StaticUtilities.EnableCanvasGroup(tooltipGroup);
     }
@@ -47,7 +47,13 @@ public abstract class HoverTooltip : MonoBehaviour
         StaticUtilities.DisableCanvasGroup(tooltipGroup);
     }
 
-    public abstract string GetText();
+    protected abstract string GetText_PreProcess();
+
+    public string GetText()
+    {
+        string text = GetText_PreProcess();
+
+    }
 
     void OnDrawGizmos()
     {

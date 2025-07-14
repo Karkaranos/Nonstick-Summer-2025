@@ -18,7 +18,7 @@ public class StampTooltip : HoverTooltip
         base.Start(); // ! important
     }
 
-    public override string GetText()
+    public override string GetText_PreProcess()
     {
         return modifierData.GetTooltipDescription();
     }

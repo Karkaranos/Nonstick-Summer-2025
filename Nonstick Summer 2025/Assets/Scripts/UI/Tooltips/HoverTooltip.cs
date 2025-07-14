@@ -37,7 +37,7 @@ public abstract class HoverTooltip : MonoBehaviour
     public void Open()
     {
         if(tooltipText != null)
-            tooltipText.text = GetText_PreProcess() ;
+            tooltipText.text = GetRawText() ;
 
         StaticUtilities.EnableCanvasGroup(tooltipGroup);
     }
@@ -47,12 +47,20 @@ public abstract class HoverTooltip : MonoBehaviour
         StaticUtilities.DisableCanvasGroup(tooltipGroup);
     }
 
-    protected abstract string GetText_PreProcess();
+    /// <summary>
+    /// Text before its [Style Tags] have been applied
+    /// </summary>
+    /// <returns></returns>
+    protected abstract string GetRawText();
 
     public string GetText()
     {
-        string text = GetText_PreProcess();
+        string text = GetRawText();
 
+        text
+            .Replace("[Assertive]", $"<color={ColorUtility.ToHtmlStringRGB(CardStyleManager.AssertiveStyle.color)}>{CardStyleManager.AssertiveStyle.DisplayName}</color>")
+            .Replace("[Charming]", $"<color={ColorUtility.ToHtmlStringRGB(CardStyleManager.CharmingStyle.color)}>{CardStyleManager.CharmingStyle.DisplayName}</color>");
+            .Replace("[Sappy]", $"<color={ColorUtility.ToHtmlStringRGB(CardStyleManager.SappyStyle.color)}>{CardStyleManager.SappyStyle.DisplayName}</color>");
     }
 
     void OnDrawGizmos()

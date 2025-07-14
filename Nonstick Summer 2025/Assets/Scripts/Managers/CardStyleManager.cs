@@ -10,20 +10,20 @@ public class CardStyleManager
 {
     public static CardStyleManager Instance => GameManager.CardStyleManagerReference;
 
-    private static CardValueStyle YellowStyle, RedStyle, BlueStyle, 
+    public static CardValueStyle CharmingStyle, AssertiveStyle, SappyStyle, 
         ExpressionStyle, ObservationStyle, QuestionStyle; // names subject to change
     public static Sprite ExpressionSprite, ObservationSprite, QuestionSprite;
 
-    private static CardValueStyle _errorStyle;
+    public static CardValueStyle ErrorStyle;
     
     public CardStyleManager(
-        CardValueStyle yellowStyle, CardValueStyle redStyle, CardValueStyle blueStyle, 
+        CardValueStyle yellowStyle, CardValueStyle assertiveStyle, CardValueStyle blueStyle, 
         CardValueStyle expressionStyle, CardValueStyle observationStyle, CardValueStyle questionStyle,
         Sprite expressionSprite, Sprite observationSprite, Sprite questionSprite) 
     { 
-        YellowStyle = yellowStyle;
-        RedStyle = redStyle;
-        BlueStyle = blueStyle;
+        CharmingStyle = yellowStyle;
+        AssertiveStyle = assertiveStyle;
+        SappyStyle = blueStyle;
         ExpressionStyle = expressionStyle;
         ObservationStyle = observationStyle;
         QuestionStyle = questionStyle;
@@ -31,7 +31,7 @@ public class CardStyleManager
         ObservationSprite = observationSprite;
         QuestionSprite = questionSprite;
 
-        _errorStyle = new CardValueStyle(Color.red, "ERROR");
+        ErrorStyle = new CardValueStyle(Color.red, "ERROR");
     }
 
     public static Sprite GetIntentionSprite(CardData card)
@@ -63,14 +63,14 @@ public class CardStyleManager
         switch (card.Emotion)
         {
             case CardEmotion.Charming:
-                return YellowStyle;
+                return CharmingStyle;
             case CardEmotion.Assertive:
-                return RedStyle;
+                return AssertiveStyle;
             case CardEmotion.Sappy:
-                return BlueStyle;
+                return SappyStyle;
             default:
                 Debug.LogWarning("Card has no emotion set!");
-                return _errorStyle;
+                return ErrorStyle;
         }
     }
 
@@ -91,7 +91,7 @@ public class CardStyleManager
                 return QuestionStyle;
             default:
                 Debug.LogWarning("Card has no intention set!");
-                return _errorStyle;
+                return ErrorStyle;
         }
     }
 }

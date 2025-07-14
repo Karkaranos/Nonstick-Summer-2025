@@ -28,6 +28,8 @@ public class MoodManager: MonoBehaviour
     [Foldout("Mood Stats")][SerializeField] private MoodStats assertiveStartingValues;
     [Foldout("Mood Stats")][SerializeField] private MoodStats sappyStartingValues;
 
+    [SerializeField] private static int unselectedPersonalityCost = 0;
+    [SerializeField] private static int selectedPersonalityCost = 1;
     public MoodManager(MoodStats charmingStartingValues, MoodStats assertiveStartingValues, MoodStats sappyStartingValues)
     {
 
@@ -73,10 +75,10 @@ public class MoodManager: MonoBehaviour
         for (int i = 0; i < emotions[emotion].expressionValue; i++)
         {
 
-            if(i % emotions[emotion].intervalBetweenADecreasedCost == 0 & emotions[emotion].baseEnergyCost > 0)
+            if(i % emotions[emotion].intervalBetweenADecreasedCost == 0 & emotions[emotion].energyCostOffset > 0)
             {
 
-                emotions[emotion].baseEnergyCost += 1;
+                emotions[emotion].energyCostOffset += 1;
 
             }
 
@@ -86,10 +88,10 @@ public class MoodManager: MonoBehaviour
                 foreach(var key in emotions.Keys)
                 {
 
-                    if(key != emotion & emotions[key].baseEnergyCost >= emotions[key].maxEnergyCost)
+                    if(key != emotion & emotions[key].energyCostOffset >= emotions[key].maxEnergyCost)
                     {
 
-                        emotions[key].baseEnergyCost -= 1;
+                        emotions[key].energyCostOffset -= 1;
 
                     }
 
@@ -97,9 +99,23 @@ public class MoodManager: MonoBehaviour
 
             }
 
-
         }
 
+    }
+
+    public static void SetDreamSequenceCost(CardEmotion emotion)
+    {
+        foreach (CardEmotion cEmotion in emotions.Keys)
+        {
+            if (cEmotion == emotion)
+            {
+                emotions[cEmotion].energyCostOffset = selectedPersonalityCost;
+            }
+            else
+            {
+                emotions[cEmotion].energyCostOffset = unselectedPersonalityCost;
+            }
+        }
     }
 
 }

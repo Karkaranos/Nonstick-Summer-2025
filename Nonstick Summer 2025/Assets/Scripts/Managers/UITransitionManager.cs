@@ -12,7 +12,7 @@ public class UITransitionManager
     private static Quaternion oldCameraLocalRotation;
 
     private static MeshRenderer playerMesh;
-    private static Transform playerCamTransform => GameManager.playerCameraRef.transform;
+    private static Transform playerCamTransform => GameManager.playerCameraRef == null ? GameObject.FindFirstObjectByType<PlayerCamera>().transform : GameManager.playerCameraRef?.transform;
 
 
     public static GameObject CurrentCanvasReference { get; private set; }
@@ -97,7 +97,7 @@ public class UITransitionManager
         // move camera back
         if(changeCam)
         {
-            GameManager.playerCameraRef.transform.SetParent(oldCameraAnchorPoint);
+            playerCamTransform.SetParent(oldCameraAnchorPoint);
             playerCamTransform.localPosition = oldCameraLocalPosition;
             playerCamTransform.localRotation = oldCameraLocalRotation;
             oldCameraAnchorPoint = null;

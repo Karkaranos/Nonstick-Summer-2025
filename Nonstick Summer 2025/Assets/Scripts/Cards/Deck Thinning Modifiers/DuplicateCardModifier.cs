@@ -10,7 +10,7 @@
 using UnityEngine;
 using NaughtyAttributes;
 
-[CreateAssetMenu(fileName = "EmotionChangeModifier", menuName = "Modifier Card/Destroy Card")]
+[CreateAssetMenu(fileName = "EmotionChangeModifier", menuName = "Modifier Card/Duplicate Card")]
 public class DuplicateCardModifier : ModifierData
 {
     [SerializeField, Min(1)]

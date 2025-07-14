@@ -5,6 +5,9 @@
 // Modified Date :      June 26, 2025
 //
 // Brief Description :  Modifier for changing intention
+*
+* TODO: Hide the image icon variable, somehow
+* 
 *****************************************************************************/
 
 using UnityEngine;
@@ -36,5 +39,21 @@ public class IntentionChangeModifier : ModifierData
         {
             card.Intention = intentionToSet;
         }
+    }
+
+    public override Sprite GetIcon()
+    {
+        switch (intentionToSet)
+        {
+            case CardIntention.Expression:
+                return CardStyleManager.ExpressionSprite;
+            case CardIntention.Observation:
+                return CardStyleManager.ObservationSprite;
+            case CardIntention.Question:
+                return CardStyleManager.QuestionSprite;
+        }
+
+        Debug.LogError("Don't let this happen");
+        return null;
     }
 }

@@ -179,7 +179,7 @@ public class DialogueManager
             CurrentDialogueBranch = dialogueOption.AlternateBranch; 
         }
 
-        yield return DialogueUIController.Instance.ResetNPCDialogue();
+        yield return DialogueUIController.Instance.ResetNPCDialogue(dialogueOption);
 
         // TODO: move this to AFTER player reads all text, and can play cards again
         GameManager.Instance.StopCoroutine(SetCurrentEnergy(_currentEnergy));
@@ -193,8 +193,8 @@ public class DialogueManager
         // only keep reading user input if theres more
         ReadUserInput = true;//!CurrentDialogueBranch.End; 
 
-        if(playedCard != null)
-            MoodManager.UpdateMood(playedCard.Emotion);
+        //if(playedCard != null)
+            //MoodManager.UpdateMood(playedCard.Emotion);
 
         OnCardPlayedFinished.Invoke();
     }

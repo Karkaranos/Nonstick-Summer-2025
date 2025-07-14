@@ -16,6 +16,7 @@ using NaughtyAttributes;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 //[CreateAssetMenu(fileName = "ModifierData", menuName = "Scriptable Objects/ModifierData")]
 public abstract class ModifierData : ScriptableObject
@@ -49,4 +50,10 @@ public abstract class ModifierData : ScriptableObject
     protected abstract void ApplyModifier(CardData[] cards);
 
     public abstract Sprite GetIcon();
+
+    public virtual int GetHashCodeByProperties()
+    {
+        // Modifiers dont have that much to differentiate them :/
+        return HashCode.Combine(this.name); // <- this.name is single and ready to mingle
+    }
 }

@@ -25,7 +25,7 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: I can't wait!
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "Sure! Just let me know when and I\u2019ll break out the ol cards."
     RelationshipRequirement: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: "I definitely won\u2019t go down as easily as last time."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "Careful what you wish for, I\u2019ll beat you just like old
       times if I have to."
@@ -52,7 +52,7 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: but it could be something fun to do together.
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t know. I haven\u2019t played that game in a long
       time."
@@ -61,9 +61,11 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Charming_Observation:
     NpcReactionText:
-    - Dialogue: 
+    - Dialogue: Right, yeah, of course...
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 0}
+    - Dialogue: Maybe some other time then.
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Well, I am a bit busy lately so I am not sure if I will have
       the time.
@@ -71,8 +73,12 @@ MonoBehaviour:
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Assertive_Observation:
-    NpcReactionText: []
-    BranchingDialogue: {fileID: 0}
+    NpcReactionText:
+    - Dialogue: Oh... I guess so.
+      Portrait: {fileID: 0}
+    - Dialogue: Sorry for asking, that was a stupid question.
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m good, I\u2019m sure I would just destroy you anyways.
       I always did."
@@ -80,16 +86,24 @@ MonoBehaviour:
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Observation:
-    NpcReactionText: []
-    BranchingDialogue: {fileID: 0}
+    NpcReactionText:
+    - Dialogue: Right, yeah, of course...
+      Portrait: {fileID: 0}
+    - Dialogue: Maybe some other time then.
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "Maybe some other time, I\u2019ve had a lot on my mind recently."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Charming_Question:
-    NpcReactionText: []
-    BranchingDialogue: {fileID: 0}
+    NpcReactionText:
+    - Dialogue: "Yeah that\u2019s fine, I\u2019ll be sure to catch you up to speed."
+      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019m looking forward to it already!"
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "Sure, you might have to teach me how to play again if that\u2019s
       alright?"
@@ -97,16 +111,25 @@ MonoBehaviour:
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Question:
-    NpcReactionText: []
-    BranchingDialogue: {fileID: 0}
+    NpcReactionText:
+    - Dialogue: "Oh yeah? Hey you\u2019re the one who hasn\u2019t played in a while,
+        while I\u2019ve been slowly honing my skills all these years."
+      Portrait: {fileID: 0}
+    - Dialogue: "I definitely won\u2019t go down as easily as last time."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Better question is, are you ready to lose?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Sappy_Question:
-    NpcReactionText: []
-    BranchingDialogue: {fileID: 0}
+    NpcReactionText:
+    - Dialogue: Oh... I guess so.
+      Portrait: {fileID: 0}
+    - Dialogue: Sorry for asking, that was a stupid question.
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t know, aren\u2019t we getting a bit too old to be
       playing with cards?"
@@ -114,8 +137,10 @@ MonoBehaviour:
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Silent:
-    NpcReactionText: []
-    BranchingDialogue: {fileID: 0}
+    NpcReactionText:
+    - Dialogue: ...
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: ..
     RelationshipRequirement: 0

@@ -34,10 +34,12 @@ public class DialogueOption
     [Tooltip("Check this off if this should lead to one of multiple branches based off of the player's relationship with the NPC!")] 
     public bool RelationshipCheckRequired;
 
+    //TODO: documentation
+
     [AllowNesting]
     [ShowIf("RelationshipCheckRequired")]
     [MinMaxSlider(0, 100)]
-    [Tooltip("Play around with the range!")]
+    [Tooltip("Set a range! Read each tooltip to figure out what score leads to which branch.")]
     public Vector2 RelationshipRange;
 
     private bool showBranchingDialogueNeutral => RelationshipRange.y < 100;

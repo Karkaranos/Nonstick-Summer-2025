@@ -27,6 +27,9 @@ public abstract class ModifierData : ScriptableObject
     [ShowIf("_showMinCardsApplied")] [Min(1)]
     public int MinCardsApplied = 1;
 
+    [SerializeField]
+    protected string _tooltipDescription;
+
     private bool _showMinCardsApplied => MaxCardsApplied > 1;
 
     /// <summary>
@@ -50,6 +53,11 @@ public abstract class ModifierData : ScriptableObject
     protected abstract void ApplyModifier(CardData[] cards);
 
     public abstract Sprite GetIcon();
+
+    public virtual string GetTooltipDescription()
+    {
+        return _tooltipDescription;
+    }
 
     public virtual int GetHashCodeByProperties()
     {

@@ -1,7 +1,10 @@
-/*
- * Tooltips display a bit of text when [the object this script is attached too] is hovered over.
+/*************************************************
+* Author Names :          Toby
+* Date Created :          ?
+* Brief Description :     Tooltips display a bit of text when [the object this script is attached too] is hovered over.
  * In the future this script should dynamically generate tooltips based on certain criteria, for dynamic numbers and stuff.
- */
+*   
+***************************************************/
 
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,19 +13,17 @@ using NaughtyAttributes;
 using System.Collections;
 
 [RequireComponent(typeof(MouseInteractionEvents))]
-public class HoverTooltip : MonoBehaviour
+public abstract class HoverTooltip : MonoBehaviour
 {
-    [ResizableTextArea]
-    [SerializeField] protected string text;
+    //[ResizableTextArea]
+    //[SerializeField] protected string text;
 
     [Required]
     [SerializeField] private CanvasGroup tooltipGroup;
     private TMP_Text tooltipText;
 
     private MouseInteractionEvents mouseInteraction;
-
-
-    void Start()
+    protected virtual void Start()
     {
         mouseInteraction = GetComponent<MouseInteractionEvents>();
         tooltipText = tooltipGroup.GetComponentInChildren<TMP_Text>();
@@ -43,14 +44,9 @@ public class HoverTooltip : MonoBehaviour
     public void Close()
     { 
         StaticUtilities.DisableCanvasGroup(tooltipGroup);
-
     }
 
-    public virtual string GetText()
-    {
-        // better text getting system coming soon
-        return text;
-    }
+    public abstract string GetText();
 
     void OnDrawGizmos()
     {

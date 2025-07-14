@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5623006898504241021}
   - component: {fileID: 8412335191130524943}
+  - component: {fileID: 4965210857596705646}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -107,3 +108,25 @@ MonoBehaviour:
     maxValue: 100
     currentValue: 25
     relationshipQuota: 75
+--- !u!114 &4965210857596705646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6718083272177840946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7761a8204aae874290affb17471c236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanvasToOpen: {fileID: 8553161507268041164, guid: d4941f5e9e1c0a04ca348fe19252aa41, type: 3}
+  statement: You are lost in thought.
+  question: How do you feel?
+  _options:
+  - ButtonText: Charming
+    ButtonColor: {r: 1, g: 1, b: 1, a: 1}
+  - ButtonText: Sappy
+    ButtonColor: {r: 1, g: 1, b: 1, a: 1}
+  - ButtonText: Assertive
+    ButtonColor: {r: 1, g: 1, b: 1, a: 1}

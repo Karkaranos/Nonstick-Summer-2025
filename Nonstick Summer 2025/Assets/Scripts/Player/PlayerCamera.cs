@@ -24,7 +24,7 @@ public class PlayerCamera : MonoBehaviour
         if(playerCamera == null) 
             playerCamera = Camera.main; // taking a shot in the dark with this one
 
-        StaticUtilities.DisableCursor();
+        //StaticUtilities.DisableCursor();
 
         Vector3 startRotation = camTransform.localRotation.eulerAngles;
         xLook = startRotation.x;

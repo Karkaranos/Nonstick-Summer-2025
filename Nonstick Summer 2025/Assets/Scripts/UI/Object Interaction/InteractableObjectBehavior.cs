@@ -10,136 +10,65 @@ using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
-public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
+public class InteractableObjectBehavior : MonoBehaviour
 {
     [HideInInspector] public bool InteractSuccessful = false;
-
-    [SerializeField]
-    [Required]
-    public GameObject CanvasToOpenPrefab;
 
     [Tooltip("Can be left null if you don't want the camera to move.")]
     [SerializeField]
     private Transform cameraAnchor;
 
-    private GameObject openedCanvas;
+    [SerializeField]
+    [Required]
+    private Button Button1;
 
-    [SerializeField, Tooltip("Text that always appears when this object is selected")] private string _statement = "You are looking at an object";
+    [SerializeField]
+    [Required]
+    private Button Button2;
 
-    [Header("Personality Question")]
-    [SerializeField] private string _question;
-    [SerializeField] private PersonalityOption[] _options = new PersonalityOption[3];
-    private int chosenOption = -1;
-    private bool hasGivenCard = false;
+    [SerializeField]
+    [Required]
+    private Button Button3;
 
-    bool isObjective = false;
-    bool canBeInteractedWith = false;
+    [SerializeField] [Required] private TMP_Text statementField;
+    [SerializeField] [Required] private TMP_Text questionField;
 
-    OpenBossInteractable obi;
-
-    private void Start()
+    public void Initialize(string statement, string question, PersonalityOption[] options)
     {
-        obi = FindFirstObjectByType<OpenBossInteractable>(FindObjectsInactive.Include);
-    }
-    /// <summary>
-    /// Allows this object to be interacted with, if it is an objective
-    /// </summary>
-    public void ClearBlocker()
-    {
-        canBeInteractedWith = true;
-    }
+        Button1.onClick.AddListener(() => OnClickInteractableObject(options[0]));
+        Button2.onClick.AddListener(() => OnClickInteractableObject(options[1]));
+        Button3.onClick.AddListener(() => OnClickInteractableObject(options[2]));
 
-    /// <summary>
-    /// Sets whether this object is part of objectives
-    /// </summary>
-    /// <param name="objectiveStatus"></param>
-    public void SetIsObjective(bool objectiveStatus)
-    {
-        isObjective = objectiveStatus;
-    }
+        statementField.text = statement;
+        questionField.text = question;
 
-    /// <summary>
-    /// Opens or closes the canvas and handles setting visuals
-    /// </summary>
-    /// <param name="player"></param>
-    public void Interact(GameObject player)
-    {
-        if (!isObjective || (isObjective && canBeInteractedWith))
-        {
+        Button1.image.color = options[0].ButtonColor;
+        Button2.image.color = options[1].ButtonColor;
+        Button3.image.color = options[2].ButtonColor;
 
-            GameManager.ObjectiveReference.SetObjectiveVisibility(false);
-            GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.INTERACT_WITH_OBJECT, gameObject);
+        TMP_Text button1Text = Button1.GetComponentInChildren<TMP_Text>();
+        button1Text.text = options[0].ButtonText;
 
-            openedCanvas = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor, gameObject);
+        TMP_Text button2Text = Button2.GetComponentInChildren<TMP_Text>();
+        button2Text.text = options[1].ButtonText;
 
-            openedCanvas.transform.GetChild(1).GetComponent<TMP_Text>().text = _statement;
+        TMP_Text button3Text = Button3.GetComponentInChildren<TMP_Text>();
+        button3Text.text = options[2].ButtonText;
 
-            // If this object has given cards, set the card button to false
-            if (hasGivenCard)
-            {
-                openedCanvas.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
-
-                // Display what the player last chose
-                openedCanvas.transform.GetChild(0).transform.GetChild(1).GetChild(1).GetComponent<TMP_Text>().text = _options[chosenOption].ButtonText;
-            }
-            // If this object has not given cards, set the buttons and assign their on click
-            else
-            {
-                Transform savedObject = openedCanvas.transform.GetChild(0).transform.GetChild(0);
-                openedCanvas.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(false);
-
-                // Set button visuals for each option
-                for (int i = 0; i < 3; i++)
-                {
-                    savedObject.GetChild(i).GetComponent<Image>().color = _options[i].ButtonColor;
-                    savedObject.GetChild(i).GetChild(0).GetComponent<TMP_Text>().text = _options[i].ButtonText;
-                }
-
-                // Set button on click references
-                // Unity didn't like it when this occured in the loop, hence why it is hardcoded
-                savedObject.GetChild(0).GetComponent<Button>().onClick.AddListener(() => CallGiveCard(_options[0].Emotion));
-                savedObject.GetChild(1).GetComponent<Button>().onClick.AddListener(() => CallGiveCard(_options[1].Emotion));
-                savedObject.GetChild(2).GetComponent<Button>().onClick.AddListener(() => CallGiveCard(_options[2].Emotion));
-
-                savedObject.GetChild(3).GetComponent<TMP_Text>().text = _question;
-
-            }
-            InteractSuccessful = true;
-            TryBoss();
-        }
     }
 
     /// <summary>
-    /// Helper function to streamline assigning onClick. Calls GetEmotion and yields one of each intent
-    /// </summary>
-    /// <param name="emotion">The emotion to give cards of</param>
-    public void CallGiveCard(CardEmotion emotion)
-    {
-        UIUtilityFunctions.GetEmotion(emotion, gameObject);
-    }
-
-    /// <summary>
-    /// Ensures the player gets cards only once
-    /// Saves the emotion
+    /// Gives player modifier cards based on their emotion choice
     /// </summary>
     /// <param name="emotion">The chosen emotion</param>
-    public void GiveCard(CardEmotion emotion)
+    public void OnClickInteractableObject(PersonalityOption PO)
     {
-        hasGivenCard = true;
-
-        for(int i=0; i<_options.Length; i++)
+        foreach (ModifierData md in PO.ModifiersToGive)
         {
-            if(_options[i].Emotion == emotion)
-            {
-                chosenOption = i;
-            }
+            ModifierManager.AddCard(md, true);
         }
-    }
-
-    public void TryBoss()
-    {
-        obi?.TryActivatingBoss(gameObject);
     }
 
 #if UNITY_EDITOR
@@ -156,20 +85,4 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
         Gizmos.DrawWireSphere(cameraAnchor.position, 0.25f);
     }
 #endif
-}
-
-
-[System.Serializable]
-/*************************************************
-Author Names :          Cade Naylor
-Date Created :          June 19, 2025
-Date Modified :         June 19, 2025
-Brief Description :     Stores information for interactable object questions
-***************************************************/
-public class PersonalityOption
-{
-    [Tooltip("Option text")]public string ButtonText;
-    [Tooltip("An optional tint for the button. Leave white if not")]public Color ButtonColor = Color.white;
-    [Tooltip("The emotion of cards to yield")] public CardEmotion Emotion;
-
 }

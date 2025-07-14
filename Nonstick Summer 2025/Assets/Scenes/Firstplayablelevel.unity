@@ -85128,6 +85128,70 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1419933608}
     m_Modifications:
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _question
+      value: How do you feel?
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[0].ButtonText
+      value: Saucy
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[1].ButtonText
+      value: Emotional
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[2].ButtonText
+      value: Full of rage
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[3].ButtonText
+      value: Full of rage
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[3].ButtonColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[3].ButtonColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[3].ButtonColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[3].ButtonColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[0].ModifiersToGive.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[1].ModifiersToGive.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[2].ModifiersToGive.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: '_options.Array.data[0].ModifiersToGive.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ee82f2ab5548cd54b9229a935295297c, type: 2}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: '_options.Array.data[1].ModifiersToGive.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4236df83ca6b76d48b35473ec9993a0e, type: 2}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: '_options.Array.data[2].ModifiersToGive.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2388c5239da79564292dc953a127cbbb, type: 2}
     - target: {fileID: 6548987443636036780, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_Size.x
       value: 2
@@ -89062,6 +89126,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1419933608}
     m_Modifications:
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _question
+      value: Will you change this later?
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _statement
+      value: I'm testing you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[0].ButtonText
+      value: Yes! I'm happy about it!
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[1].ButtonText
+      value: I don't wanna...
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[2].ButtonText
+      value: NO.
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[0].ModifiersToGive.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[2].ModifiersToGive.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: '_options.Array.data[0].ModifiersToGive.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ee82f2ab5548cd54b9229a935295297c, type: 2}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: '_options.Array.data[2].ModifiersToGive.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2388c5239da79564292dc953a127cbbb, type: 2}
     - target: {fileID: 6548987443636036780, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_Size.x
       value: 2
@@ -89504,6 +89604,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1419933608}
     m_Modifications:
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _question
+      value: Hi designers!!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[0].ButtonText
+      value: Hi!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[1].ButtonText
+      value: Hey...
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[2].ButtonText
+      value: Hello.
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[0].ModifiersToGive.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[1].ModifiersToGive.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[2].ModifiersToGive.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: '_options.Array.data[0].ModifiersToGive.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ee82f2ab5548cd54b9229a935295297c, type: 2}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: '_options.Array.data[1].ModifiersToGive.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4236df83ca6b76d48b35473ec9993a0e, type: 2}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: '_options.Array.data[2].ModifiersToGive.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2388c5239da79564292dc953a127cbbb, type: 2}
     - target: {fileID: 6548987443636036780, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_Size.x
       value: 2
@@ -98669,9 +98809,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 658095341855880829, guid: 40145010bd980da4f802576a05b59857, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368135660271604385, guid: 40145010bd980da4f802576a05b59857, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368135660271604385, guid: 40145010bd980da4f802576a05b59857, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368135660271604385, guid: 40145010bd980da4f802576a05b59857, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200.23999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368135660271604385, guid: 40145010bd980da4f802576a05b59857, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368135660271604385, guid: 40145010bd980da4f802576a05b59857, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100.119995
+      objectReference: {fileID: 0}
+    - target: {fileID: 1517520485467913668, guid: 40145010bd980da4f802576a05b59857, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1830049853470792543, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_Name
-      value: Card Pickups
+      value: Card Pickups (UNAPPLIED CHANGES TO PREFAB)
       objectReference: {fileID: 0}
     - target: {fileID: 6031660080498346531, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_Pivot.x
@@ -98752,6 +98920,46 @@ PrefabInstance:
     - target: {fileID: 6031660080498346531, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349930388729856566, guid: 40145010bd980da4f802576a05b59857, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349930388729856566, guid: 40145010bd980da4f802576a05b59857, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349930388729856566, guid: 40145010bd980da4f802576a05b59857, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349930388729856566, guid: 40145010bd980da4f802576a05b59857, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349930388729856566, guid: 40145010bd980da4f802576a05b59857, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905702727399936531, guid: 40145010bd980da4f802576a05b59857, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905702727399936531, guid: 40145010bd980da4f802576a05b59857, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905702727399936531, guid: 40145010bd980da4f802576a05b59857, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200.23999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905702727399936531, guid: 40145010bd980da4f802576a05b59857, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905702727399936531, guid: 40145010bd980da4f802576a05b59857, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100.119995
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

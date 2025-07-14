@@ -1,16 +1,16 @@
 /*****************************************************************************
-* File Name :         DestroyCardModifier.cs
+* File Name :         DuplicateCardModifier.cs
 * Author :            Toby
 * Creation Date :     July 13 2025
 *
-* Brief Description : Modifier that destroys inputted card/cards
+* Brief Description : Modifier that duplicates inputted card/cards
 * 
 *****************************************************************************/
 
 using UnityEngine;
 using NaughtyAttributes;
 
-[CreateAssetMenu(fileName = "EmotionChangeModifier", menuName = "Modifier Card/Duplicate Card")]
+[CreateAssetMenu(fileName = "DuplicateCardModifier", menuName = "Modifier Card/Duplicate Card")]
 public class DuplicateCardModifier : ModifierData
 {
     [SerializeField, Min(1)]

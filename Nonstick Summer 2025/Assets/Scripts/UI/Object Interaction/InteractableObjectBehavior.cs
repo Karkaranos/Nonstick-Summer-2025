@@ -171,5 +171,4 @@ public class PersonalityOption
     [Tooltip("Option text")]public string ButtonText;
     [Tooltip("An optional tint for the button. Leave white if not")]public Color ButtonColor = Color.white;
     [Tooltip("The emotion of cards to yield")] public CardEmotion Emotion;
-
 }

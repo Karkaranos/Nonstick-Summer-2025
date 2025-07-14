@@ -24,13 +24,18 @@ public abstract class ModifierData : ScriptableObject
     [Tooltip("How many cards this modifier can apply to")] [Min(1)]
     public int MaxCardsApplied = 1;
 
-    [ShowIf("_showMinCardsApplied")] [Min(1)]
+    [ShowIf(nameof(_showMinCardsApplied)), Min(1)]
     public int MinCardsApplied = 1;
 
     [SerializeField, ResizableTextArea]
     protected string _tooltipDescription;
 
+    [SerializeField, ShowAssetPreview(32, 32)]
+    protected Sprite icon;
+
+    #region Debug
     private bool _showMinCardsApplied => MaxCardsApplied > 1;
+    #endregion
 
     /// <summary>
     /// Returns if modifier was successfully used
@@ -52,7 +57,10 @@ public abstract class ModifierData : ScriptableObject
     }
     protected abstract void ApplyModifier(CardData[] cards);
 
-    public abstract Sprite GetIcon();
+    public virtual Sprite GetIcon()
+    {
+        return icon;
+    }
 
     public virtual string GetTooltipDescription()
     {

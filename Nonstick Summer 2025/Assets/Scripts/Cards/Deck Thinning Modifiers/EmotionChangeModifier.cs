@@ -9,14 +9,11 @@ using UnityEngine;
 // Brief Description :  Modifier for changing emotion
 *****************************************************************************/
 
-[CreateAssetMenu(fileName = "EmotionChangeModifier", menuName = "Scriptable Objects/EmotionChangeModifier")]
+[CreateAssetMenu(fileName = "EmotionChangeModifier", menuName = "Modifier Card/Change Emotion")]
 public class EmotionChangeModifier : ModifierData
 {
     [SerializeField]
     private CardEmotion emotionToSet;
-
-    [SerializeField, ShowAssetPreview(32, 32)]
-    private Sprite modifierSprite;
 
     public override bool CanApplyModifier(CardData[] cards)
     {
@@ -38,10 +35,5 @@ public class EmotionChangeModifier : ModifierData
         {
             card.Emotion = emotionToSet;
         }
-    }
-
-    public override Sprite GetIcon()
-    {
-        return modifierSprite;
     }
 }

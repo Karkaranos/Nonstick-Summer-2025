@@ -20,7 +20,7 @@ using UnityEngine;
 using static Unity.VisualScripting.StickyNote;
 using static UnityEngine.Rendering.DebugUI;
 
-[CreateAssetMenu(fileName = "CardData", menuName = "Scriptable Objects/CardData")]
+[CreateAssetMenu(fileName = "CardData", menuName = "Dialogue Card/CardData")]
 public partial class CardData : ScriptableObject
 {
     [HideInInspector] public Action OnCardValueChanged;
@@ -72,10 +72,10 @@ public partial class CardData : ScriptableObject
     public float GetEnergyCost() 
     {
         float newCost;
-        if(Application.isEditor)
+        if(!Application.isPlaying)
             newCost = _energyCost;
         else
-            newCost = _energyCost + MoodManager.emotions[_emotion].baseEnergyCost;
+            newCost = _energyCost + MoodManager.emotions[_emotion].energyCostOffset;
 
         /*if(_stamps.Count > 0)
         {

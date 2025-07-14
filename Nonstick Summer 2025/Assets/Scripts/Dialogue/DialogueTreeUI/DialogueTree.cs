@@ -38,7 +38,7 @@ public class DialogueTree : MonoBehaviour
         foreach (DialogueOption option in branch.GetComponents<DialogueOption>())
         {
 
-            DialogueBranch newBranch = option.BranchingDialogue;
+            DialogueBranch newBranch = option.BranchingDialogueHigh;
             if (!nodes.Contains(newBranch))
             {
 

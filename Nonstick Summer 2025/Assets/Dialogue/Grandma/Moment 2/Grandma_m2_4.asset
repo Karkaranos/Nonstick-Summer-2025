@@ -13,70 +13,90 @@ MonoBehaviour:
   m_Name: Grandma_m2_4
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: I really appreciate you talking to me!
+  - Dialogue: Have you said hi to your Cousin yet?
     Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
-  - Dialogue: And be kind to your Cousin.
+  - Dialogue: It's always so nice to see the two of you playing...
     Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
-  - Dialogue: You know how much he hates it when you're mean to him...
+  - Dialogue: I don't think I've ever heard him laugh as much as he does with you.
     Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
   Charming_Expression:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "I\u2019m going to destroy the kitchen...!"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Assertive_Expression:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "No, you don\u2019t even need my help."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Expression:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: Thanks mom.. You really helped make it special today for me.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Charming_Observation:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: I got 7 gifts!! And one of them is giant!!
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Observation:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "It was fine. It\u2019s just a birthday.  Like any other old
       day."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Observation:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "It\u2019s been so nice, even if Grandpa couldn\u2019t come."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Charming_Question:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "It\u2019s been super fun! Are there more presents for meee?"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Question:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: When is everyone going to leave already?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Question:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "\u201CIt\u2019s been fun... but am I going to get everything
       from my wishlist..?\u201D"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Silent:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}

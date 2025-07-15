@@ -223,7 +223,7 @@ public class ModifierDeckDisplay : MonoBehaviour
         if (selectedCard == cardDisplay)
             return;
 
-        Debug.Log("selecting card");
+        //Debug.Log("selecting card");
 
         // swap cards 
         DeselectCard();

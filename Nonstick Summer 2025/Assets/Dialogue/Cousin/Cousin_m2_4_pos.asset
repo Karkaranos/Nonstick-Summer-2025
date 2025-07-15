@@ -13,68 +13,86 @@ MonoBehaviour:
   m_Name: Cousin_m2_4_pos
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Aw, but I wanna play now!
-    Portrait: {fileID: 0}
   - Dialogue: Please? Please? Please?
     Portrait: {fileID: 0}
   - Dialogue: You can even use the cards that my Dad got you...
     Portrait: {fileID: 0}
   Charming_Expression:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: 03b73ede6000711468aa973f6e85d4ce, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: Your dad got me cards?!
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: 03b73ede6000711468aa973f6e85d4ce, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: ...Out of the way! I need those cards!
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Sappy_Expression:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: 03b73ede6000711468aa973f6e85d4ce, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: I got cards?! He really DID read my wish list!
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Charming_Observation:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: 8283ddc3a09fca94c92ded91f590e81c, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "...I don\u2019t think that you were supposed to tell me that."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Assertive_Observation:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: 8283ddc3a09fca94c92ded91f590e81c, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "C\u2019mon, man. I was supposed to find that out on my own!"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Observation:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: 8283ddc3a09fca94c92ded91f590e81c, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: That was supposed to be a surprise...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Charming_Question:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: 03b73ede6000711468aa973f6e85d4ce, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: What?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Assertive_Question:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: 03b73ede6000711468aa973f6e85d4ce, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: WHAT?!
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Sappy_Question:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: 03b73ede6000711468aa973f6e85d4ce, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: ...What?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Silent:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: 8283ddc3a09fca94c92ded91f590e81c, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}

@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Uncle_m3_1
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: "There\u2019s our all star player! I\u2019m going to cheer loud enough
+      for me and your mom."
+    Portrait: {fileID: 0}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: "We\u2019re just going to have to cheer your way to victory."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Don\u2019t be too loud, I have to hear my coach."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 178831001abe8eb438cd4e68f2e81625, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "Hey now, you know she wants to be there, but her boss wouldn\u2019t
+        let her take work off."
+      Portrait: {fileID: 0}
+    - Dialogue: The rest of us will be there cheering you on.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Thanks for reminding me my mom isn\u2019t coming."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 178831001abe8eb438cd4e68f2e81625, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "Hey now, you know she wants to be there, but her boss wouldn\u2019t
+        let her take work off."
+      Portrait: {fileID: 0}
+    - Dialogue: The rest of us will be there cheering you on.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: 'Thanks, but I still wish she could be there. '
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 178831001abe8eb438cd4e68f2e81625, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: "I\u2019ll warn her, but she\u2019d be missing out on the full game
+        experience."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: You better tell Grandma to turn her hearing aids down.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 178831001abe8eb438cd4e68f2e81625, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: "Fair enough, but I\u2019m pretty sure it\u2019ll help you win."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Cheering isn\u2019t going to help me get there on time. "
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 178831001abe8eb438cd4e68f2e81625, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: "We\u2019re just going to have to cheer your way to victory."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: You, Grandma, and Cousin make a pretty good cheering section.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 178831001abe8eb438cd4e68f2e81625, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: "It\u2019ll be a challenge for sure but I\u2019m prepared to be your
+        ultimate cheerleader."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Mom\u2019s pretty loud, do you really think you can cheer loud
+      enough for mom?"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 178831001abe8eb438cd4e68f2e81625, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: This is a soccer family, of course I know the rules.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Do you even know how soccer works?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 178831001abe8eb438cd4e68f2e81625, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "Hey now, you know she wants to be there, but her boss wouldn\u2019t
+        let her take work off."
+      Portrait: {fileID: 0}
+    - Dialogue: The rest of us will be there cheering you on.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Can you convince her to come?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 178831001abe8eb438cd4e68f2e81625, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Silent:
+    NpcReactionText:
+    - Dialogue: ...
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 178831001abe8eb438cd4e68f2e81625, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  End: 0

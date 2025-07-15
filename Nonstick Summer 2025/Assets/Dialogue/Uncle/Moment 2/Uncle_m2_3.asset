@@ -22,66 +22,113 @@ MonoBehaviour:
   - Dialogue: Have you seen all that stuff about the aliens?
     Portrait: {fileID: 0}
   Charming_Expression:
+    NpcReactionText:
+    - Dialogue: "That\u2019s awesome, you guys must be really close. You guys will
+        definitely make it to the other side if it all hits the fan."
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: cd8144ceafb8c9d4f95961ab12e9d3e5, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: Yeah, all my friends at school have been talking about it recently.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "Oh that\u2019s alright, just thought it might have been something
+        you and your friends might have been talking about."
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: cd8144ceafb8c9d4f95961ab12e9d3e5, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "No, I don\u2019t really watch that kind of stuff."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "Sorry kiddo, I didn\u2019t mean to scare you. You are going to be
+        just fine trust me. All that stuff isn\u2019t real anyways."
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: cd8144ceafb8c9d4f95961ab12e9d3e5, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "Oh yeah, scary stuff, I\u2019ve been sleeping in Mom\u2019s
       room for that past few nights."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Charming_Observation:
+    NpcReactionText:
+    - Dialogue: "That\u2019s awesome, you guys must be really close. You guys will
+        definitely make it to the other side if it all hits the fan."
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: cd8144ceafb8c9d4f95961ab12e9d3e5, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: Yeah, my friends and I have been preparing the fort in the back
       with food and defenses.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: Oh yeah, real crazy people nowadays. They might even be scarier than
+        the aliens they talk about all the time.
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: cd8144ceafb8c9d4f95961ab12e9d3e5, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "I saw some parts of it, I can\u2019t understand how people actually
       believe in all that stuff."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: "Oh that\u2019s alright, just thought it might have been something
+        you and your friends might have been talking about."
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: cd8144ceafb8c9d4f95961ab12e9d3e5, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "I haven\u2019t really had the time to watch the news, been way
       to busy with school."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Charming_Question:
+    NpcReactionText:
+    - Dialogue: "Of course. I\u2019ve even got a fort in my backyard packed with
+        food and defenses that will last me at least a decade if the worst comes."
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: cd8144ceafb8c9d4f95961ab12e9d3e5, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: Do you believe that stuff too?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Question:
+    NpcReactionText:
+    - Dialogue: Oh no, I was just kidding, just thought it was really funny when
+        I saw it the other day, your Little Cousin and I could not stop laughing.
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: cd8144ceafb8c9d4f95961ab12e9d3e5, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: Do you really believe all that stuff?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Question:
+    NpcReactionText:
+    - Dialogue: Oh no, I was just kidding, just thought it was really funny when
+        I saw it the other day, your Little Cousin and I could not stop laughing.
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: cd8144ceafb8c9d4f95961ab12e9d3e5, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "I haven\u2019t been able to sleep a wink the past few nights.
       Do you really think they will come and get me?"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Silent:
-    BranchingDialogue: {fileID: 11400000}
+    NpcReactionText: []
+    BranchingDialogue: {fileID: 11400000, guid: cd8144ceafb8c9d4f95961ab12e9d3e5, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}

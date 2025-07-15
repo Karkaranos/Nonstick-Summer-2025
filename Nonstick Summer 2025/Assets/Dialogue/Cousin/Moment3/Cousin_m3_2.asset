@@ -1,0 +1,169 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Cousin_m3_2
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: "Listen I got some more cards the other day, and I\u2019ve been itchin
+      to try them out."
+    Portrait: {fileID: 0}
+  - Dialogue: Wanna play a round or two?
+    Portrait: {fileID: 0}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: "Alright! Obviously we can\u2019t play right now, but maybe next
+        time."
+      Portrait: {fileID: 0}
+    - Dialogue: I can't wait!
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Sure! Just let me know when and I\u2019ll break out the ol cards."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "Oh yeah? Hey you\u2019re the one who hasn\u2019t played in a while,
+        while I\u2019ve been slowly honing my skills all these years."
+      Portrait: {fileID: 0}
+    - Dialogue: "I definitely won\u2019t go down as easily as last time."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Careful what you wish for, I\u2019ll beat you just like old
+      times if I have to."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "I can teach you if you want. I know you don\u2019t have enough time
+        these days,"
+      Portrait: {fileID: 0}
+    - Dialogue: but it could be something fun to do together.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "I don\u2019t know. I haven\u2019t played that game in a long
+      time."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: Right, yeah, of course...
+      Portrait: {fileID: 0}
+    - Dialogue: Maybe some other time then.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Well, I am a bit busy lately so I am not sure if I will have
+      the time.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: Oh... I guess so.
+      Portrait: {fileID: 0}
+    - Dialogue: Sorry for asking, that was a stupid question.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "I\u2019m good, I\u2019m sure I would just destroy you anyways.
+      I always did."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: Right, yeah, of course...
+      Portrait: {fileID: 0}
+    - Dialogue: Maybe some other time then.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Maybe some other time, I\u2019ve had a lot on my mind recently."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: "Yeah that\u2019s fine, I\u2019ll be sure to catch you up to speed."
+      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019m looking forward to it already!"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Sure, you might have to teach me how to play again if that\u2019s
+      alright?"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: "Oh yeah? Hey you\u2019re the one who hasn\u2019t played in a while,
+        while I\u2019ve been slowly honing my skills all these years."
+      Portrait: {fileID: 0}
+    - Dialogue: "I definitely won\u2019t go down as easily as last time."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Better question is, are you ready to lose?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: Oh... I guess so.
+      Portrait: {fileID: 0}
+    - Dialogue: Sorry for asking, that was a stupid question.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "I don\u2019t know, aren\u2019t we getting a bit too old to be
+      playing with cards?"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Silent:
+    NpcReactionText:
+    - Dialogue: ...
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: ..
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  End: 0

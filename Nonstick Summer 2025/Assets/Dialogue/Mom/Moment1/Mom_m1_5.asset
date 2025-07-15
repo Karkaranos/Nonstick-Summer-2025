@@ -13,68 +13,112 @@ MonoBehaviour:
   m_Name: Mom_m1_5
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Listen, I know moving to a new place can be scary, but it can be just
-      as exciting.
+  - Dialogue: ...Listen, I know moving to a new place can be scary, but it can be
+      just as exciting.
     Portrait: {fileID: 0}
   - Dialogue: We just need to make the most of it, okay? Can you do that for me?
     Portrait: {fileID: 0}
   Charming_Expression:
+    NpcReactionText:
+    - Dialogue: "I\u2019m so proud of you, honey, but it\u2019s okay to be scared."
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: b4dae051c3aa5b14f983515b2f09466c, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "It\u2019s like an adventure, so we have to be brave!"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: ...
+      Portrait: {fileID: 0}
+    - Dialogue: I need you to at least try for me.
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: b4dae051c3aa5b14f983515b2f09466c, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: No.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "I\u2019m so proud of you, honey, but it\u2019s okay to be scared."
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: b4dae051c3aa5b14f983515b2f09466c, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "I\u2019m scared, but I wanna make the most of it for you. Like
       you said."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Charming_Observation:
+    NpcReactionText:
+    - Dialogue: "I\u2019m so proud of you, honey, but it\u2019s okay to be scared."
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: b4dae051c3aa5b14f983515b2f09466c, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "I\u2019m not scared!"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: "Me too, but we\u2019re here now."
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: b4dae051c3aa5b14f983515b2f09466c, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: I hate moving. I want to go back.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: "Me too, but we\u2019re here now."
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: b4dae051c3aa5b14f983515b2f09466c, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: I miss our old home.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Charming_Question:
+    NpcReactionText:
+    - Dialogue: "...We\u2019ll see."
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: b4dae051c3aa5b14f983515b2f09466c, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: Can YOU do that for me?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Question:
+    NpcReactionText:
+    - Dialogue: "It\u2019s much closer to Grandma and Grandpa, for one, but also...for
+        a lot of reasons."
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: b4dae051c3aa5b14f983515b2f09466c, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: Why did we have to move away?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "...We\u2019ll see."
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: b4dae051c3aa5b14f983515b2f09466c, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: Are you scared, Mama?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Silent:
+    NpcReactionText:
+    - Dialogue: "\u201CDon\u2019t be scared, honey. It\u2019s okay to be nervous.
+        I am too.\u201D"
+      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: b4dae051c3aa5b14f983515b2f09466c, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}

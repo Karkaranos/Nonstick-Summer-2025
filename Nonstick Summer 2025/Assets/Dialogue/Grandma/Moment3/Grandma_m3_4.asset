@@ -27,11 +27,13 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: I love you!
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Of course, I will explain it as many times as you want!
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
@@ -39,11 +41,13 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: Silly me...
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: I've already explained it to you at least a million times.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Expression:
     NpcReactionText:
@@ -51,12 +55,14 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: One of these days I am sure I will get the hang of them.
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "Sure, I bet it\u2019s been tough to keep up with all the rules
       now that Grandpa is gone."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Charming_Observation:
     NpcReactionText:
@@ -64,11 +70,13 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: I love you!
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Of course, I've got all the time in the world for you Grandma!
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Observation:
     NpcReactionText:
@@ -76,12 +84,14 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: Sorry for bothering you.
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: I don't have time to explain it again, I just need to get my
       water
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Observation:
     NpcReactionText:
@@ -91,11 +101,13 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: "This time I promise I won\u2019t forget!"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Yeah, I think I have just enough time to explain it again.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
@@ -105,11 +117,13 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: "This time I promise I won\u2019t forget!"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Of course, do you need me to write it down for you this time?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Question:
     NpcReactionText:
@@ -119,11 +133,13 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: "there\u2019s been a lot on my mind."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Really? How do you keep forgetting?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Question:
     NpcReactionText:
@@ -133,21 +149,25 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: "there\u2019s been a lot on my mind."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Yeah, I can explain it to you again. How has your memory been
       lately?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Silent:
     NpcReactionText:
     - Dialogue: ...
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     CombinedDialogue: []
     PlayerDialogue: ...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   End: 0

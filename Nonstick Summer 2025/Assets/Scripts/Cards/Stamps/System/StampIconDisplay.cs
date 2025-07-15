@@ -15,7 +15,7 @@ public class StampIconDisplay : MonoBehaviour
     [SerializeField, Required]
     private Image icon;
 
-    private ModifierStamp modifierStamp = null;
+    public ModifierStamp modifierStamp { get; private set; }
 
     private void Start()
     {

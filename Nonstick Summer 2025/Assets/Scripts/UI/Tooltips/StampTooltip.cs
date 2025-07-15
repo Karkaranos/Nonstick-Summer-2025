@@ -10,16 +10,24 @@ using UnityEngine;
 [RequireComponent(typeof(MouseInteractionEvents))]
 public class StampTooltip : HoverTooltip
 {
-    private ModifierCardDisplay cardDisplay;
-    private ModifierData modifierData => cardDisplay.modifierData;
+    [SerializeField]
+    private StampIconDisplay stampDisplay;
+    private ModifierStamp stampData => stampDisplay.modifierStamp;
 
     protected override void Start()
     {
         base.Start(); // ! important
     }
 
+    protected override bool CanOpenTooltip()
+    {
+        return stampData != null;
+    }
+
     protected override string GetRawText()
     {
-        return modifierData.GetTooltipDescription();
+        return stampData == null ? "No Stamp! If youre reading this, there's a problem" : stampData.ShortDescription;
     }
+
+
 }

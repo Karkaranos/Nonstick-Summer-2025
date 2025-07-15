@@ -38,14 +38,22 @@ public abstract class HoverTooltip : MonoBehaviour
 
     public void Open()
     {
+        if(!CanOpenTooltip())
+        {
+            Close();
+            return;
+        }
+
         if(tooltipText != null)
             tooltipText.text = GetText() ;
 
+        tooltipGroup.gameObject.gameObject.SetActive(true);
         StaticUtilities.EnableCanvasGroup(tooltipGroup);
     }
 
     public void Close()
-    { 
+    {
+        tooltipGroup.gameObject.gameObject.SetActive(false);
         StaticUtilities.DisableCanvasGroup(tooltipGroup);
     }
 
@@ -54,6 +62,11 @@ public abstract class HoverTooltip : MonoBehaviour
     /// </summary>
     /// <returns></returns>
     protected abstract string GetRawText();
+
+    protected virtual bool CanOpenTooltip()
+    {
+        return true;
+    }
 
     /// <summary>
     /// Reads through raw text and replaces certain keywords to have certain styles

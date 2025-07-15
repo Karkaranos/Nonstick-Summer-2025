@@ -26,11 +26,13 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: "I\u2019m sure she\u2019d love share soccer with you."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "Soccer really is the whole family\u2019s sport."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Expression:
     NpcReactionText:
@@ -38,33 +40,39 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: "I think she\u2019d much rather be playing with you than at work."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "She\u2019s too busy to help me practice."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: "He loved watching you play kiddo. I\u2019m sure he would\u2019ve
         loved to play with you."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "I wish I could\u2019ve played with grandpa."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "You\u2019re pretty good, but my money is still on your mom."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "So you\u2019re saying if I beat mom I\u2019m officially the
       best player in the family."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Assertive_Observation:
     NpcReactionText:
@@ -72,12 +80,14 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: "I think she\u2019d much rather be playing with you than at work."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "I\u2019ve been playing for years and she\u2019s never played
       with me."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Observation:
     NpcReactionText:
@@ -88,22 +98,26 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: "I\u2019m sure she\u2019d love share soccer with you."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "I\u2019d like that."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Charming_Question:
     NpcReactionText:
     - Dialogue: She definitely enjoys watching it more these days, but when I was
         a kid she gave me a run for my money.
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "You\u2019re telling me Grandma can play soccer?"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Question:
     NpcReactionText:
@@ -111,11 +125,13 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: "I think she\u2019d much rather be playing with you than at work."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Oh so your parents actually had time to play with you?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Question:
     NpcReactionText:
@@ -126,20 +142,24 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: "I\u2019m sure she\u2019d love share soccer with you."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Do you think playing soccer with me will help her?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Silent:
     NpcReactionText:
     - Dialogue: ...Maybe?
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
     CombinedDialogue: []
     PlayerDialogue: ...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: bb16b3a9546c37947818a47e3ad0ab29, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   End: 0

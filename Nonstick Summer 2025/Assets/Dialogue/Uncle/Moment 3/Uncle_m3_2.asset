@@ -23,11 +23,13 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: Your mom was the best player on the playground.
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "So you\u2019re saying you can help me warm up."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
@@ -37,11 +39,13 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: Your mom was the best player on the playground.
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m sure I\u2019m better than both of you."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Sappy_Expression:
     NpcReactionText:
@@ -53,22 +57,26 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: "We\u2019re so proud of you for making the school team."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "I didn\u2019t know that."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Charming_Observation:
     NpcReactionText:
     - Dialogue: Yeah, Mom and Dad made that for her when we were kids....
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "So that\u2019s why she has a soccer quilt...she never struck
       me as a sports person."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Observation:
     NpcReactionText:
@@ -80,11 +88,13 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: "We\u2019re so proud of you for making the school team."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     CombinedDialogue: []
     PlayerDialogue: No one told me that.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Sappy_Observation:
     NpcReactionText:
@@ -96,11 +106,13 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: "We\u2019re so proud of you for making the school team."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Mom never told me she was on a soccer team.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Charming_Question:
     NpcReactionText:
@@ -112,11 +124,13 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: "We\u2019re so proud of you for making the school team."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     CombinedDialogue: []
     PlayerDialogue: And how often did you beat her?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Assertive_Question:
     NpcReactionText:
@@ -124,11 +138,13 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: "I guess I\u2019ll just cheer loud enough for me."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Did you know that your cheering is embarrassing?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 19.075157, y: 19.075157}
+    BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Question:
     NpcReactionText:
@@ -140,20 +156,24 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: "We\u2019re so proud of you for making the school team."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "Why didn\u2019t she tell me that?"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 20.809258, y: 33.526024}
+    BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Silent:
     NpcReactionText:
     - Dialogue: ...
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     CombinedDialogue: []
     PlayerDialogue: ...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   End: 0

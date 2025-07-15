@@ -1,0 +1,184 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Cousin_m4_1
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: It's been a while, huh?
+    Portrait: {fileID: 0}
+  - Dialogue: Almost started to think you weren't going to show up. Haha...
+    Portrait: {fileID: 0}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: Yep. Uh-huh... Gah, this is so embarrassing for, like, NO reason.
+        Sorry.
+      Portrait: {fileID: 0}
+    CombinedDialogue:
+    - Dialogue: Yep. Uh-huh... Gah, this is so embarrassing for, like, NO reason.
+        Sorry.
+      Portrait: {fileID: 0}
+    - Dialogue: Ugh! This is so weird!
+      Portrait: {fileID: 0}
+    - Dialogue: I mean.. I used to sort of idolize you. Did you know that?
+      Portrait: {fileID: 0}
+    - Dialogue: We, uh, probably weren't as close as I thought, but...
+      Portrait: {fileID: 0}
+    - Dialogue: ...
+      Portrait: {fileID: 0}
+    - Dialogue: I don't know! I missed talking to you.
+      Portrait: {fileID: 0}
+    - Dialogue: Sorry if that's, like, lame. Or whatever.
+      Portrait: {fileID: 0}
+    PlayerDialogue: Uh... Yeah! I guess.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 31.53153, y: 56.756756}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db35aa4caf8f0e842bd0eaadc61c1435, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: Right! Sorry! Sorry...
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "That\u2019s awfully presumptuous of you."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db35aa4caf8f0e842bd0eaadc61c1435, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: Yep. Uh-huh... Gah, this is so embarrassing for, like, NO reason.
+        Sorry.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: I guess it has been a while...
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db35aa4caf8f0e842bd0eaadc61c1435, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: Right! Sorry! Sorry...
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "You don\u2019t have to be so nervous, y\u2019know."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db35aa4caf8f0e842bd0eaadc61c1435, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: Right! Sorry! Sorry...
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Geez... You don\u2019t have to try THIS hard."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db35aa4caf8f0e842bd0eaadc61c1435, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: You have? I mean, of course you have! Ehehe...
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Yeah, yeah. I\u2019ve missed you, too."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db35aa4caf8f0e842bd0eaadc61c1435, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: "Uh, good! I\u2019ve been good! Mostly. Y\u2019know. Busy. But good!"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Yeah, man. How have you been?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db35aa4caf8f0e842bd0eaadc61c1435, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: "I dunno. You just, uh... You haven\u2019t been around, recently.
+        Like, at all."
+      Portrait: {fileID: 0}
+    CombinedDialogue:
+    - Dialogue: "I dunno. You just, uh... You haven\u2019t been around, recently.
+        Like, at all."
+      Portrait: {fileID: 0}
+    - Dialogue: Ugh! This is so weird!
+      Portrait: {fileID: 0}
+    - Dialogue: I mean.. I used to sort of idolize you. Did you know that?
+      Portrait: {fileID: 0}
+    - Dialogue: We, uh, probably weren't as close as I thought, but...
+      Portrait: {fileID: 0}
+    - Dialogue: ...
+      Portrait: {fileID: 0}
+    - Dialogue: I don't know! I missed talking to you.
+      Portrait: {fileID: 0}
+    - Dialogue: Sorry if that's, like, lame. Or whatever.
+      Portrait: {fileID: 0}
+    PlayerDialogue: "I mean, I live here. Why wouldn\u2019t I show up?"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db35aa4caf8f0e842bd0eaadc61c1435, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: I dunno. Awhile. Haha. Seriously, though? Uh, a year or two. At least.
+        Probably.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: How long HAS it been, actually?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db35aa4caf8f0e842bd0eaadc61c1435, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Silent:
+    NpcReactionText: []
+    CombinedDialogue:
+    - Dialogue: Ugh! This is so weird!
+      Portrait: {fileID: 0}
+    - Dialogue: I mean.. I used to sort of idolize you. Did you know that?
+      Portrait: {fileID: 0}
+    - Dialogue: We, uh, probably weren't as close as I thought, but...
+      Portrait: {fileID: 0}
+    - Dialogue: ...
+      Portrait: {fileID: 0}
+    - Dialogue: I don't know! I missed talking to you.
+      Portrait: {fileID: 0}
+    - Dialogue: Sorry if that's, like, lame. Or whatever.
+      Portrait: {fileID: 0}
+    PlayerDialogue: ...
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db35aa4caf8f0e842bd0eaadc61c1435, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  End: 0

@@ -1,0 +1,161 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Mom_m5_2
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: How can I help you?
+    Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: "Well since you asked so nicely, I\u2019ll call off the construction
+        guys."
+      Portrait: {fileID: 0}
+    - Dialogue: "You\u2019ll always have a place here."
+      Portrait: {fileID: 0}
+    CombinedDialogue:
+    - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
+        you."
+      Portrait: {fileID: 0}
+    - Dialogue: My, where has the time gone...
+      Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+    - Dialogue: Who knew that my little Pumpkin could grow so tall?
+      Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+    PlayerDialogue: "Don\u2019t turn my room into a gym while I\u2019m gone."
+    RelationshipCheckRequired: 1
+    RelationshipRange: {x: 35, y: 75}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 2b9f59df324641d42801382d059d2e46, type: 2}
+    BranchingDialogueNeutral: {fileID: 11400000, guid: ba4e12e3f014fe744a00cbda084a20a1, type: 2}
+    BranchingDialogueLow: {fileID: 11400000, guid: 9811cb0413a18314eb9cef281291266b, type: 2}
+    ChangeInRelationshipStatus: 10
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: I just wanted to spend some time with you before you leave.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: 'Get out of my way. '
+    RelationshipCheckRequired: 1
+    RelationshipRange: {x: 35, y: 75}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 2b9f59df324641d42801382d059d2e46, type: 2}
+    BranchingDialogueNeutral: {fileID: 11400000, guid: ba4e12e3f014fe744a00cbda084a20a1, type: 2}
+    BranchingDialogueLow: {fileID: 11400000, guid: 9811cb0413a18314eb9cef281291266b, type: 2}
+    ChangeInRelationshipStatus: -15
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: Hey, always be prepared for the worst, remember?
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: I need to learn to do it on my own.
+    RelationshipCheckRequired: 1
+    RelationshipRange: {x: 35, y: 75}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 2b9f59df324641d42801382d059d2e46, type: 2}
+    BranchingDialogueNeutral: {fileID: 11400000, guid: ba4e12e3f014fe744a00cbda084a20a1, type: 2}
+    BranchingDialogueLow: {fileID: 11400000, guid: 9811cb0413a18314eb9cef281291266b, type: 2}
+    ChangeInRelationshipStatus: 5
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: '...You got it. Watch me here and we can each fill a box. '
+      Portrait: {fileID: 0}
+    - Dialogue: Make sure you fold it 3 times to we can really pack the box!
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Help me pack so I can get out of here faster.
+    RelationshipCheckRequired: 1
+    RelationshipRange: {x: 35, y: 75}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 2b9f59df324641d42801382d059d2e46, type: 2}
+    BranchingDialogueNeutral: {fileID: 11400000, guid: ba4e12e3f014fe744a00cbda084a20a1, type: 2}
+    BranchingDialogueLow: {fileID: 11400000, guid: 9811cb0413a18314eb9cef281291266b, type: 2}
+    ChangeInRelationshipStatus: 10
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: You got it. Watch me here and we can each fill a box.
+      Portrait: {fileID: 0}
+    - Dialogue: Make sure you fold it 3 times to we can really pack the box!
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "If you\u2019re going to stick around to chat at least help me
+      pack. "
+    RelationshipCheckRequired: 1
+    RelationshipRange: {x: 35, y: 75}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 2b9f59df324641d42801382d059d2e46, type: 2}
+    BranchingDialogueNeutral: {fileID: 11400000, guid: ba4e12e3f014fe744a00cbda084a20a1, type: 2}
+    BranchingDialogueLow: {fileID: 11400000, guid: 9811cb0413a18314eb9cef281291266b, type: 2}
+    ChangeInRelationshipStatus: 5
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: You got it! Watch me here and we can each fill a box.
+      Portrait: {fileID: 0}
+    - Dialogue: Make sure you fold it 3 times to we can really pack the box!
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Teach me how to fold this the way you do so everything fits in
+      the box.
+    RelationshipCheckRequired: 1
+    RelationshipRange: {x: 35, y: 75}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 2b9f59df324641d42801382d059d2e46, type: 2}
+    BranchingDialogueNeutral: {fileID: 11400000, guid: ba4e12e3f014fe744a00cbda084a20a1, type: 2}
+    BranchingDialogueLow: {fileID: 11400000, guid: 9811cb0413a18314eb9cef281291266b, type: 2}
+    ChangeInRelationshipStatus: 15
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: "Haha. You\u2019ve still got to be there tomorrow but I think everyone
+        will appreciate getting to say goodbye a little while longer."
+      Portrait: {fileID: 0}
+    - Dialogue: You always have a place here sweetie.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Can you go back in time and tell me not to procrastinate packing?
+    RelationshipCheckRequired: 1
+    RelationshipRange: {x: 35, y: 75}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 2b9f59df324641d42801382d059d2e46, type: 2}
+    BranchingDialogueNeutral: {fileID: 11400000, guid: ba4e12e3f014fe744a00cbda084a20a1, type: 2}
+    BranchingDialogueLow: {fileID: 11400000, guid: 9811cb0413a18314eb9cef281291266b, type: 2}
+    ChangeInRelationshipStatus: 10
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: "We all want to say goodbye before you leave for your next adventure.
+        It\u2019ll be awhile before we see you again."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Can you get everyone to leave me alone so I can focus?
+    RelationshipCheckRequired: 1
+    RelationshipRange: {x: 35, y: 75}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 2b9f59df324641d42801382d059d2e46, type: 2}
+    BranchingDialogueNeutral: {fileID: 11400000, guid: ba4e12e3f014fe744a00cbda084a20a1, type: 2}
+    BranchingDialogueLow: {fileID: 11400000, guid: 9811cb0413a18314eb9cef281291266b, type: 2}
+    ChangeInRelationshipStatus: -15
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "Haha. You\u2019ve still got to be there tomorrow but I think everyone
+        will appreciate getting to say goodbye a little while longer."
+      Portrait: {fileID: 0}
+    - Dialogue: You always have a place here sweetie.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Can you let me stay here a little longer?
+    RelationshipCheckRequired: 1
+    RelationshipRange: {x: 35, y: 75}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 2b9f59df324641d42801382d059d2e46, type: 2}
+    BranchingDialogueNeutral: {fileID: 11400000, guid: ba4e12e3f014fe744a00cbda084a20a1, type: 2}
+    BranchingDialogueLow: {fileID: 11400000, guid: 9811cb0413a18314eb9cef281291266b, type: 2}
+    ChangeInRelationshipStatus: 15
+  Silent:
+    NpcReactionText: []
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipCheckRequired: 1
+    RelationshipRange: {x: 35, y: 75}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 2b9f59df324641d42801382d059d2e46, type: 2}
+    BranchingDialogueNeutral: {fileID: 11400000, guid: ba4e12e3f014fe744a00cbda084a20a1, type: 2}
+    BranchingDialogueLow: {fileID: 11400000, guid: 9811cb0413a18314eb9cef281291266b, type: 2}
+    ChangeInRelationshipStatus: -5
+  End: 0

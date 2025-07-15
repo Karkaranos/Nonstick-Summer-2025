@@ -12,14 +12,12 @@ public class CardStyleManager
 
     public static CardValueStyle CharmingStyle, AssertiveStyle, SappyStyle, 
         ExpressionStyle, ObservationStyle, QuestionStyle; // names subject to change
-    public static Sprite ExpressionSprite, ObservationSprite, QuestionSprite;
 
     public static CardValueStyle ErrorStyle;
     
     public CardStyleManager(
         CardValueStyle yellowStyle, CardValueStyle assertiveStyle, CardValueStyle blueStyle, 
-        CardValueStyle expressionStyle, CardValueStyle observationStyle, CardValueStyle questionStyle,
-        Sprite expressionSprite, Sprite observationSprite, Sprite questionSprite) 
+        CardValueStyle expressionStyle, CardValueStyle observationStyle, CardValueStyle questionStyle) 
     { 
         CharmingStyle = yellowStyle;
         AssertiveStyle = assertiveStyle;
@@ -27,26 +25,25 @@ public class CardStyleManager
         ExpressionStyle = expressionStyle;
         ObservationStyle = observationStyle;
         QuestionStyle = questionStyle;
-        ExpressionSprite = expressionSprite;
-        ObservationSprite = observationSprite;
-        QuestionSprite = questionSprite;
 
         ErrorStyle = new CardValueStyle(Color.red, "ERROR");
     }
 
     public static Sprite GetIntentionSprite(CardData card)
     {
-        // there might be individual sprites for each emotion,
-        // in that case i will be making a dictionary with [tuple<Emotion, CardIntention>] keys
+        return GetIntentionSprite(card.Intention);
+    }
 
-        switch (card.Intention)
+    public static Sprite GetIntentionSprite(CardIntention intention)
+    {
+        switch (intention)
         {
             case CardIntention.Expression:
-                return ExpressionSprite;
+                return ExpressionStyle.sprite;
             case CardIntention.Observation:
-                return ObservationSprite;
+                return ObservationStyle.sprite;
             case CardIntention.Question:
-                return QuestionSprite;
+                return QuestionStyle.sprite;
             default:
                 Debug.LogWarning("Card has no intention set!");
                 return null;

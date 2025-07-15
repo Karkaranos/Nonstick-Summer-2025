@@ -11,6 +11,7 @@ using UnityEngine.EventSystems;
 using TMPro;
 using NaughtyAttributes;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 [RequireComponent(typeof(MouseInteractionEvents))]
 public abstract class HoverTooltip : MonoBehaviour
@@ -18,6 +19,7 @@ public abstract class HoverTooltip : MonoBehaviour
     //[ResizableTextArea]
     //[SerializeField] protected string text;
 
+    [InfoBox("Possible style tags: [Assertive] [Charming] [Sappy] [Observation] [Question] [Expression]\n[Confidence]")]
     [Required("Make sure the tooltip has a canvas group attached")]
     [SerializeField] private CanvasGroup tooltipGroup;
     private TMP_Text tooltipText;
@@ -37,7 +39,7 @@ public abstract class HoverTooltip : MonoBehaviour
     public void Open()
     {
         if(tooltipText != null)
-            tooltipText.text = GetRawText() ;
+            tooltipText.text = GetText() ;
 
         StaticUtilities.EnableCanvasGroup(tooltipGroup);
     }
@@ -53,14 +55,29 @@ public abstract class HoverTooltip : MonoBehaviour
     /// <returns></returns>
     protected abstract string GetRawText();
 
+    /// <summary>
+    /// Reads through raw text and replaces certain keywords to have certain styles
+    /// </summary>
     public string GetText()
     {
+        // TODO: move this function to different script (so it can be used with npc text)
+
         string text = GetRawText();
 
-        text
-            .Replace("[Assertive]", $"<color={ColorUtility.ToHtmlStringRGB(CardStyleManager.AssertiveStyle.color)}>{CardStyleManager.AssertiveStyle.DisplayName}</color>")
-            .Replace("[Charming]", $"<color={ColorUtility.ToHtmlStringRGB(CardStyleManager.CharmingStyle.color)}>{CardStyleManager.CharmingStyle.DisplayName}</color>");
-            .Replace("[Sappy]", $"<color={ColorUtility.ToHtmlStringRGB(CardStyleManager.SappyStyle.color)}>{CardStyleManager.SappyStyle.DisplayName}</color>");
+        // i hope this is not extremely slow
+        text = text
+            // emotions
+            .Replace("[Assertive]", $"<color=#{ColorUtility.ToHtmlStringRGB(CardStyleManager.AssertiveStyle.color)}>{CardStyleManager.AssertiveStyle.DisplayName}</color>")
+            .Replace("[Charming]", $"<color=#{ColorUtility.ToHtmlStringRGB(CardStyleManager.CharmingStyle.color)}>{CardStyleManager.CharmingStyle.DisplayName}</color>")
+            .Replace("[Sappy]", $"<color=#{ColorUtility.ToHtmlStringRGB(CardStyleManager.SappyStyle.color)}>{CardStyleManager.SappyStyle.DisplayName}</color>")
+            // intentions
+            .Replace("[Expression]", $"<color=#{ColorUtility.ToHtmlStringRGB(CardStyleManager.ExpressionStyle.color)}>{CardStyleManager.ExpressionStyle.DisplayName}</color>")
+            .Replace("[Observation]", $"<color=#{ColorUtility.ToHtmlStringRGB(CardStyleManager.ObservationStyle.color)}>{CardStyleManager.ObservationStyle.DisplayName}</color>")
+            .Replace("[Question]", $"<color=#{ColorUtility.ToHtmlStringRGB(CardStyleManager.QuestionStyle.color)}>{CardStyleManager.QuestionStyle.DisplayName}</color>")
+            // stamps
+            .ReplaceTagColor("Stamp", ColorUtility.ToHtmlStringRGB(GameManager.Instance.StampTooltipColor));
+
+        return text;
     }
 
     void OnDrawGizmos()

@@ -19,7 +19,7 @@ public class ModifierTooltip : HoverTooltip
         cardDisplay = GetComponent<ModifierCardDisplay>();
     }
 
-    public override string GetText_PreProcess()
+    protected override string GetRawText()
     {
         return modifierData.GetTooltipDescription();
     }

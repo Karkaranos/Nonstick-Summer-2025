@@ -32,16 +32,12 @@ public class GameManager : Singleton<GameManager>
     [Foldout("Card Styles")] [SerializeField] private CardValueStyle 
         Card_CharmingStyle, Card_AssertiveStyle, Card_SappyStyle,
         Card_ExpressionStyle, Card_ObservationStyle, Card_QuestionStyle = new CardValueStyle(Color.white,"");
+    public Color StampTooltipColor = new Color(1, 0.8f, 0.1f);
 
     [Tooltip("The initial cards in the players hand at the very beginning of the game")]
     [Foldout("Card Values"), SerializeField] private CardData[] startingCards;
     [Tooltip("The initial modifiers in the players hand at the very beginning of the game")]
     [Foldout("Card Values"), SerializeField] private ModifierData[] startingModifiers;
-
-    [Header("Intention Sprites")]
-    [Foldout("Card Styles")] [SerializeField] private Sprite Card_ExpressionSprite;
-    [Foldout("Card Styles")] [SerializeField] private Sprite Card_ObservationSprite;
-    [Foldout("Card Styles")] [SerializeField] private Sprite Card_QuestionSprite;
 
     [Header("Social Battery")]
     [Foldout("Combat"),SerializeField] private int _defaultEnergy=5;
@@ -70,8 +66,7 @@ public class GameManager : Singleton<GameManager>
 
         UITransitionManagerReference = UITransitionManagerReference ?? new UITransitionManager();
         CardStyleManagerReference = CardStyleManagerReference ?? new CardStyleManager(Card_CharmingStyle, Card_AssertiveStyle, Card_SappyStyle,
-            Card_ExpressionStyle, Card_ObservationStyle, Card_QuestionStyle,
-            Card_ExpressionSprite, Card_ObservationSprite, Card_QuestionSprite);
+            Card_ExpressionStyle, Card_ObservationStyle, Card_QuestionStyle);
         DeckManagerReference = DeckManagerReference ?? new DeckManager(startingCards);
         DialogueManagerReference = DialogueManagerReference ?? new DialogueManager(_defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent, 
             _maxEnergy, DefaultCardsInHand, _cardsDrawnPerRound, _drawButtonEnergyCost, _energyGainedPerDiscard);

@@ -43,9 +43,8 @@ public class DialogueBox : MonoBehaviour
     {
         branch = branch ?? DialogueManager.CurrentDialogueBranch;
 
-        dialogueStored = option.CombinedDialogue;
-
         option.SetNextBranchReaction(branch);
+        dialogueStored = option.CombinedDialogue;
 
         PlayerReadAllDialogue = false;
         NumberInList = 0;

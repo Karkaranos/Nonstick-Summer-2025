@@ -1,0 +1,160 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Mom_m3_2
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: "Did you pack enough water? Sunscreen? I\u2019m sure Grandma can help
+      you put together some snacks."
+    Portrait: {fileID: 0}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: "Don\u2019t call them gross! Your Grandma puts a lot of hard work
+        into making those for you kids."
+      Portrait: {fileID: 0}
+    - Dialogue: "Although It wouldn\u2019t kill her to put in a little sugar too..."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: No need, she already made those gross granola balls for the team.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 8cb10061bd303d442bc4c7567918db15, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "If you want to be on your A-game, you do. Don\u2019t want you catching
+        heatstroke out there."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "I don\u2019t need all of that!"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 8cb10061bd303d442bc4c7567918db15, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: Mhm.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Not yet. I\u2019ll go ask her."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 8cb10061bd303d442bc4c7567918db15, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: Mhm.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "But Mom, Grandma ate everything! There\u2019s nothing left!"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 8cb10061bd303d442bc4c7567918db15, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: "Well, you\u2019re still MY kid, so mind the attitude."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "I\u2019m not a kid anymore."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 8cb10061bd303d442bc4c7567918db15, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: ...
+      Portrait: {fileID: 0}
+    - Dialogue: "Look, I\u2019ve already tried to talk my supervisor into letting
+        me drive over during my lunch break, but it\u2019s too far of a drive."
+      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019ll make it up to you, I promise."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: I did...I also asked Grandma to save you a seat, just in case.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 8cb10061bd303d442bc4c7567918db15, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: "Don\u2019t even think about it."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "What if I used all of it now? That way, there\u2019s no need
+      to bring any of it."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 8cb10061bd303d442bc4c7567918db15, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: "If you want to be on your A-game, you do. Don\u2019t want you catching
+        heatstroke out there."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Do I really need all of that?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 8cb10061bd303d442bc4c7567918db15, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: ...
+      Portrait: {fileID: 0}
+    - Dialogue: "Look, I\u2019ve already tried to talk my supervisor into letting
+        me drive over during my lunch break, but it\u2019s too far of a drive."
+      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019ll make it up to you, I promise."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Are you sure you can\u2019t make it..?"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 8cb10061bd303d442bc4c7567918db15, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Silent:
+    NpcReactionText:
+    - Dialogue: ...Look,
+      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019ve already tried to talk my supervisor into letting me drive
+        over during my lunch break, but it\u2019s too far of a drive."
+      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019ll make it up to you, I promise."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 8cb10061bd303d442bc4c7567918db15, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  End: 0

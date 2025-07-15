@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Grandma_m3_3End
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: "Alright, I\u2019ll leave you to it then."
+    Portrait: {fileID: 0}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: Right? Who could ever forget such an amazing game. I was so proud
+        of you in that moment.
+      Portrait: {fileID: 0}
+    - Dialogue: "I know you\u2019ll make us feel the exact same way tonight. I just
+        know it!"
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Of course! I could never forget that game.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: Right? Who could ever forget such an amazing game. I was so proud
+        of you in that moment.
+      Portrait: {fileID: 0}
+    - Dialogue: "I know you\u2019ll make us feel the exact same way tonight. I just
+        know it!"
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Yep! How could I? I was incredible in that game.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "Me too, even though I\u2019m starting to forget things a bit more
+        lately."
+      Portrait: {fileID: 0}
+    - Dialogue: I could never forget that for the rest of my life.
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: I remember it like it was yesterday.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: We were completely taken aback.
+      Portrait: {fileID: 0}
+    - Dialogue: To think that my little pumpkin could do something as awesome as
+        that!
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: I remember I scored the game winning goal. The looks on your
+      faces afterwards were just incredible.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: I just thought it was really cool, and just know that you will make
+        us proud like that again.
+      Portrait: {fileID: 0}
+    - Dialogue: All of us.
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "I don\u2019t have time to talk about that right now Grandma."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: We were completely taken aback.
+      Portrait: {fileID: 0}
+    - Dialogue: To think that my little pumpkin could do something as awesome as
+        that!
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: I still remember the faces you guys made right after I scored
+      that game winning goal.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: Looking at you in your uniform all ready to kick some butt at the
+        game reminded me of it.
+      Portrait: {fileID: 0}
+    - Dialogue: "I know you\u2019ll make us proud like that again."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: I could never forget it, what makes you bring it up now?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: I just thought it was really cool, and just know that you will make
+        us proud like that again.
+      Portrait: {fileID: 0}
+    - Dialogue: All of us.
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Yeah, what about it?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: I do, he and I both were so shocked to see our little pumpkin out
+        there running around all of those kids and kicking the ball with such force.
+      Portrait: {fileID: 0}
+    - Dialogue: If only he were here to see you today.
+      Portrait: {fileID: 0}
+    - Dialogue: I know he would be just as shocked.
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Yeah, do you still remember the look on Grandpa\u2019s face
+      when I sent that final ball into the back of the net?"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Silent:
+    NpcReactionText:
+    - Dialogue: ...
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  End: 1

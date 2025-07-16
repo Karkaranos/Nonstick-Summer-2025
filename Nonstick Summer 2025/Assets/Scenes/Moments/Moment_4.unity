@@ -13473,15 +13473,30 @@ PrefabInstance:
       addedObject: {fileID: 338953374}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c178e4d1451c1114caf0def2f24e9e9c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 338953373}
+      addedObject: {fileID: 338953375}
   m_SourcePrefab: {fileID: 100100000, guid: c178e4d1451c1114caf0def2f24e9e9c, type: 3}
 --- !u!1 &338953372 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c178e4d1451c1114caf0def2f24e9e9c, type: 3}
   m_PrefabInstance: {fileID: 338953371}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &338953373
-MeshCollider:
+--- !u!114 &338953374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338953372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd087649bb24bf4d9eca4a98ffe6100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractSuccessful: 0
+  BossDefeated: 0
+  _nextSceneIndex: 5
+--- !u!65 &338953375
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -13498,25 +13513,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
---- !u!114 &338953374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338953372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bd087649bb24bf4d9eca4a98ffe6100, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractSuccessful: 0
-  BossDefeated: 0
-  _nextSceneIndex: 5
+  serializedVersion: 3
+  m_Size: {x: 2.5675144, y: 0.6773721, z: 1.5204401}
+  m_Center: {x: -0.020924568, y: -0.16131395, z: 0.01371336}
 --- !u!43 &341645769
 Mesh:
   m_ObjectHideFlags: 0

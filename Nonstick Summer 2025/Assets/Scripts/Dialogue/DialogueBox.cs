@@ -77,7 +77,7 @@ public class DialogueBox : MonoBehaviour
             PlayerReadAllDialogue = true;
             Debug.Log("player read all text");
         }
-        else if (dialogue != null && numberInList >= dialogue.Length)
+        else if (dialogue != null && numberInList >= dialogue.Length - 1)
         {
 
             PlayerReadAllDialogue = true;

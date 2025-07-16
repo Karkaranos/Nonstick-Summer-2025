@@ -94,6 +94,7 @@ public class CardPickupManager : Singleton<CardPickupManager>
     public void OnDrawGizmos()
     {
         // if unsaved prefab changes AND the designer is not selecting this object
+        Debug.Log(PrefabUtility.HasPrefabInstanceAnyOverrides(gameObject, false));
         gameObject.name = DefaultGameObjectName +
             (PrefabUtility.HasPrefabInstanceAnyOverrides(gameObject, false) && !StaticUtilities.Editor_SelectingTransform(transform)
                 ? " (UNAPPLIED CHANGES TO PREFAB)" : "");

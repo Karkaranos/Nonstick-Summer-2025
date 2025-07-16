@@ -22,47 +22,31 @@ public class DialogueOption
     [SerializeField]
     [Label("NPC Reaction")] private DialogueNPC[] NpcReactionText;
 
+    //buttons?
+    [Required]
+    public DialogueBranch BranchingDialogue;
+
     [HideInInspector] public DialogueNPC[] CombinedDialogue;
 
     [ResizableTextArea]
     public string PlayerDialogue;
 
-    [Tooltip("Check this off if this should lead to one of multiple branches based off of the player's relationship with the NPC!")] 
-    public bool RelationshipCheckRequired;
+    [Tooltip("How good should the player's relationship be with this NPC in order to progress past this point?")]
+    public float RelationshipRequirement;
 
-    //TODO: documentation
-
-    [AllowNesting]
-    [ShowIf("RelationshipCheckRequired")]
-    [MinMaxSlider(0, 100)]
-    [Tooltip("Set a range! Read each tooltip to figure out what score leads to which branch.")]
-    public Vector2 RelationshipRange;
-
-    [Required]
-    [Tooltip("The player has exceeded the range required to at least progress through the conversation OR a relationship check was not required.")]
-    public DialogueBranch BranchingDialogueHigh;
-
-    private bool showBranchingDialogueNeutral => RelationshipRange.y < 100 && RelationshipCheckRequired;
+    private bool showOtherBranch => RelationshipRequirement == 0;
 
     [AllowNesting]
-    [ShowIf("showBranchingDialogueNeutral")]
-    [Tooltip("The player is within the range to at least continue the conversation, but not to get the best branch.")]
-    public DialogueBranch BranchingDialogueNeutral;
-
-    private bool showBranchingDialogueLow => RelationshipRange.x > 0 && RelationshipCheckRequired;
-
-    [AllowNesting]
-    [ShowIf("showBranchingDialogueLow")]
-    [Tooltip("The player has not met the range required to further converse with this NPC.")]
-    public DialogueBranch BranchingDialogueLow;
+    [HideIf("showOtherBranch")] [Tooltip("If the player's relationship score with an NPC is too low, they go here.")] public DialogueBranch AlternateBranch;
 
     [Tooltip("How much this dialogue option changes the character's relationship value.")]
     public float ChangeInRelationshipStatus;
 
-    public void SetNextBranchReaction(DialogueBranch branch)
+
+    public void SetNextBranchReaction()
     {
 
-        CombinedDialogue = new DialogueNPC[NpcReactionText.Length + branch.dialogue.Length];
+        CombinedDialogue = new DialogueNPC[NpcReactionText.Length + BranchingDialogue.dialogue.Length];
 
         for(int i = 0; i < NpcReactionText.Length; i++)
         {
@@ -70,12 +54,13 @@ public class DialogueOption
             CombinedDialogue[i] = NpcReactionText[i];
 
         }
-        for(int i = 0; i < branch.dialogue.Length; i++)
+        for(int i = 0; i < BranchingDialogue.dialogue.Length; i++)
         {
 
-            CombinedDialogue[i + NpcReactionText.Length] = branch.dialogue[i];
+            CombinedDialogue[i + NpcReactionText.Length] = BranchingDialogue.dialogue[i];
 
         }
+
 
     }
 

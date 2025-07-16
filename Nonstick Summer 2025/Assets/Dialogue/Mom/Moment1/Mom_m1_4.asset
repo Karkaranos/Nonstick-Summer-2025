@@ -13,113 +13,68 @@ MonoBehaviour:
   m_Name: Mom_m1_4
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Now, Are you ready for your first day of school tomorrow? Big day.
+  - Dialogue: Anyway, have you thought about what you want for your birthday yet?
+    Portrait: {fileID: 0}
+  - Dialogue: "It\u2019ll be here before you know it."
     Portrait: {fileID: 0}
   Charming_Expression:
-    NpcReactionText:
-    - Dialogue: Aww...thank you honey. That means a lot.
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: 4b65f41e5261340488d85ab47e2f1fe6, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: "I\u2019m gonna have so much fun! Don\u2019t worry Mama, I\u2019ll
-      save some for you!"
+    PlayerDialogue: I want all my birthdays today. All the presents.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: 10
   Assertive_Expression:
-    NpcReactionText:
-    - Dialogue: "Don\u2019t say that! You\u2019re going to have so much fun, but
-        only if you let yourself."
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: 4b65f41e5261340488d85ab47e2f1fe6, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: "I don\u2019t wanna go!"
+    PlayerDialogue: "It doesn\u2019t matter. Birthdays are lame."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -15
   Sappy_Expression:
-    NpcReactionText:
-    - Dialogue: Aww...thank you honey. That means a lot.
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: 4b65f41e5261340488d85ab47e2f1fe6, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: "I\u2019m gonna miss you."
+    PlayerDialogue: I want Grandma to make my cake. She makes the best cake.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Charming_Observation:
-    NpcReactionText:
-    - Dialogue: Is that so?
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: 4b65f41e5261340488d85ab47e2f1fe6, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: "I already went, so I don\u2019t need to go."
+    PlayerDialogue: "I\u2019m gonna be as old and smelly as you!"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: -10
   Assertive_Observation:
-    NpcReactionText:
-    - Dialogue: "Don\u2019t say that! You\u2019re going to have so much fun, but
-        only if you let yourself."
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: 4b65f41e5261340488d85ab47e2f1fe6, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: "School is dumb and smelly. I don\u2019t like it."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -15
-  Sappy_Observation:
-    NpcReactionText:
-    - Dialogue: I know.
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 4b65f41e5261340488d85ab47e2f1fe6, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: "I\u2019m gonna be fine, Mama."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 15
-  Charming_Question:
-    NpcReactionText:
-    - Dialogue: "I don\u2019t know, honey, but I\u2019ll be fine. You just worry
-        about having fun, okay?"
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 4b65f41e5261340488d85ab47e2f1fe6, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: Are YOU ready?
+    PlayerDialogue: "I don\u2019t know yet."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
-  Assertive_Question:
-    NpcReactionText:
-    - Dialogue: "Yes, but don\u2019t worry, dear. You\u2019re going to have so much
-        fun!"
-      Portrait: {fileID: 0}
+  Sappy_Observation:
     BranchingDialogue: {fileID: 11400000, guid: 4b65f41e5261340488d85ab47e2f1fe6, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: Do I have to go?
+    PlayerDialogue: "I don\u2019t feel older."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Charming_Question:
+    BranchingDialogue: {fileID: 11400000, guid: 4b65f41e5261340488d85ab47e2f1fe6, type: 2}
+    PlayerDialogue: Can I ask for a pony?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Question:
+    BranchingDialogue: {fileID: 11400000, guid: 4b65f41e5261340488d85ab47e2f1fe6, type: 2}
+    PlayerDialogue: Do I have to know by now?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Sappy_Question:
-    NpcReactionText:
-    - Dialogue: "I don\u2019t know, honey, but I\u2019ll be fine. You just worry
-        about having fun, okay?"
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: 4b65f41e5261340488d85ab47e2f1fe6, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: What are you gonna do all day?
+    PlayerDialogue: I dunno...can you help me?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Silent:
-    NpcReactionText:
-    - Dialogue: "\u201CIt\u2019s okay to be nervous, honey. Don\u2019t worry, you\u2019re
-        going to make so many new friends.\u201D"
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: 4b65f41e5261340488d85ab47e2f1fe6, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -1
+    ChangeInRelationshipStatus: -5
   End: 0

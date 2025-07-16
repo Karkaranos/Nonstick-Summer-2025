@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf86d3cd08e62142bee760217e6f3f7, type: 3}
-  m_Name: Charming Observation
+  m_Script: {fileID: 11500000, guid: 01d1bf99924aa08459f804aa4823e1e5, type: 3}
+  m_Name: ChangeToExpression
   m_EditorClassIdentifier: 
-  _energyCost: -2
-  _emotion: 1
-  _intention: 2
-  _stamps:
-  - {fileID: 11400000, guid: 7f02ae394bcf2374b83edb05d6f6bd4d, type: 2}
+  MaxCardsApplied: 2
+  MinCardsApplied: 1
+  intentionToSet: 1
+  modifierSprite: {fileID: -4520544496107484141, guid: 60e80b0fa23ea904b92263803d64319c, type: 3}

@@ -12,7 +12,7 @@ public class CardStyleManager
 
     private static CardValueStyle YellowStyle, RedStyle, BlueStyle, 
         ExpressionStyle, ObservationStyle, QuestionStyle; // names subject to change
-    public static Sprite ExpressionSprite, ObservationSprite, QuestionSprite;
+    private static Sprite ExpressionSprite, ObservationSprite, QuestionSprite;
 
     private static CardValueStyle _errorStyle;
     

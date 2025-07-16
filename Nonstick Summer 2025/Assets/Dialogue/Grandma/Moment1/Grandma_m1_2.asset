@@ -16,101 +16,61 @@ MonoBehaviour:
   - Dialogue: Are these your toys? Do you want Nanna to help you?
     Portrait: {fileID: 0}
   Charming_Expression:
-    NpcReactionText:
-    - Dialogue: Of course sweety, just tell me where to put stuff.
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: Sure Nanna, please help
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
-    NpcReactionText:
-    - Dialogue: Alright, just let me know if you ever need anything.
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: No, I can do it.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Sappy_Expression:
-    NpcReactionText:
-    - Dialogue: Alright, just let me know if you ever need anything.
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: I want to do it on my own.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Charming_Observation:
-    NpcReactionText:
-    - Dialogue: "You\u2019re right silly me, I must have just forgotten."
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: These are kids toys Nanna.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Assertive_Observation:
-    NpcReactionText:
-    - Dialogue: "You\u2019re right silly me, I must have just forgotten."
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: "You\u2019re too old, these are kids toys."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Observation:
-    NpcReactionText:
-    - Dialogue: "That\u2019s right, I almost forgot, I can try handing you some of
-        the blocks at least."
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: Your hands shake too much.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Charming_Question:
-    NpcReactionText:
-    - Dialogue: Of course sweety, just tell me where to put stuff.
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: Sure, can you get those blocks over there?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Question:
-    NpcReactionText:
-    - Dialogue: "I\u2019m getting up there, but not up there enough to not be able
-        to build a mean castle of blocks."
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: "Aren\u2019t you too old?"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Sappy_Question:
-    NpcReactionText:
-    - Dialogue: Yep, when I was your age I had a set just like this one.
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: Have you built one before?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Silent:
-    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}

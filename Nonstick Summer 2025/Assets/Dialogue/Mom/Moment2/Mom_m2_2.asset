@@ -18,104 +18,62 @@ MonoBehaviour:
   - Dialogue: Do you feel all grown up?
     Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
   Charming_Expression:
-    NpcReactionText:
-    - Dialogue: "Older...? You\u2019re only 8, silly. But maybe you will get wiser."
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: 9bc506d4cf1c8734c91dec3a11bce56f, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: Mmmm, yes...older.... and wiser.........
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
-    NpcReactionText:
-    - Dialogue: "\u201CEveryone should stop asking me that. I don\u2019t know!\u201D"
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: 9bc506d4cf1c8734c91dec3a11bce56f, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: "Everyone should stop asking me that. I don\u2019t know!"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Expression:
-    NpcReactionText:
-    - Dialogue: "Hehe. I\u2019m glad. Birthdays are really more so about a reason
-        to see everyone, if you ask me."
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: 9bc506d4cf1c8734c91dec3a11bce56f, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: "Not really, but it\u2019s really nice everyone comes over to
       celebrate with me."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Charming_Observation:
-    NpcReactionText:
-    - Dialogue: This kid..... Be nice! I am your mother!
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: 9bc506d4cf1c8734c91dec3a11bce56f, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: No, but your face makes you look grown up.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Assertive_Observation:
-    NpcReactionText:
-    - Dialogue: "Well, you\u2019re a year older from last year. Maybe you\u2019ve
-        learned some lessons since then."
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: 9bc506d4cf1c8734c91dec3a11bce56f, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: "Well, it\u2019s not like I feel any different."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Sappy_Observation:
-    NpcReactionText:
-    - Dialogue: "Don\u2019t worry, you\u2019ve got many more years.. more than enough
-        time to have more favorite shirts."
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: 9bc506d4cf1c8734c91dec3a11bce56f, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: "Sorta... my favorite shirt doesn\u2019t fit anymore."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Charming_Question:
-    NpcReactionText:
-    - Dialogue: I feel like a grown up every time I talk to you.
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: 9bc506d4cf1c8734c91dec3a11bce56f, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: "Do you feel grown up? I\u2019m only 8!"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Assertive_Question:
-    NpcReactionText:
-    - Dialogue: "Well, you\u2019re a year older from last year. Maybe you\u2019ve
-        learned some lessons since then."
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: 9bc506d4cf1c8734c91dec3a11bce56f, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: Why would I feel grown up?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Sappy_Question:
-    NpcReactionText:
-    - Dialogue: "Older...? You\u2019re only 8, silly. But maybe you will get wiser."
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: 9bc506d4cf1c8734c91dec3a11bce56f, type: 2}
-    CombinedDialogue: []
     PlayerDialogue: Am I supposed to feel older..?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Silent:
-    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000}
-    CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}

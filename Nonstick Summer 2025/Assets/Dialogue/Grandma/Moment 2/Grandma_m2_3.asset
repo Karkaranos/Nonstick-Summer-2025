@@ -13,116 +13,69 @@ MonoBehaviour:
   m_Name: Grandma_m2_3
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: You better be good...
-    Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
-  - Dialogue: Otherwise, no extra cake for you!
+  - Dialogue: Did you like your cake, honey?
     Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
   Charming_Expression:
-    NpcReactionText:
-    - Dialogue: "Well.. no cake for those who don\u2019t want more! Early striker
-        gets the sugar, hehe. Maybe I should bring it home with me instead, or give
-        it to your cousin...."
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: Maybe I already had all the cake I wanted before!
+    PlayerDialogue: Yes!! It was sooooooo good....
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: 10
   Assertive_Expression:
-    NpcReactionText:
-    - Dialogue: "Well.. no cake for those who don\u2019t want more! Early striker
-        gets the sugar, hehe. Maybe I should bring it home with me instead, or give
-        it to your cousin...."
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: I already had cake earlier.
+    PlayerDialogue: "It was fine... I liked it because you\u2019re the one who made
+      it."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: 10
   Sappy_Expression:
-    NpcReactionText:
-    - Dialogue: "You\u2019ve had enough sugar for now! Maybe if you are good, you
-        can ask your Mama later."
-      Portrait: {fileID: 0}
     BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: Aww.. I wanted another one.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 10
-  Charming_Observation:
-    NpcReactionText:
-    - Dialogue: Well, your Nanna has had enough for now. Maybe you can finish it
-        later yourself.
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: I bet I will be able to find it in the fridge later.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -10
-  Assertive_Observation:
-    NpcReactionText:
-    - Dialogue: 3 slices .. and lots of baking made with love!
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: "There\u2019s only 3 slices left anyways."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -5
-  Sappy_Observation:
-    NpcReactionText:
-    - Dialogue: Mmmm, I suppose Nanna can make an exception... you can have some
-        later if you keep being good, kiddo.
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: "Oh.. I suppose that\u2019s okay, if you don\u2019t want to share..."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 5
-  Charming_Question:
-    NpcReactionText:
-    - Dialogue: "Don\u2019t take from your sweet Nanna, silly! Hands away, we need
-        to put it in the fridge to keep it good."
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: Haha, what if I take it first?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 10
-  Assertive_Question:
-    NpcReactionText:
-    - Dialogue: Well, your Nanna has had enough for now. Maybe you can finish it
-        later yourself.
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: Are you going to eat it all yourself?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -15
-  Sappy_Question:
-    NpcReactionText:
-    - Dialogue: Mmmm, I suppose Nanna can make an exception... you can have some
-        later if you keep being good, kiddo.
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: But Nanna, can I have any more..?
+    PlayerDialogue: It was so sweet and special.. and just like I imagined...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
-  Silent:
-    NpcReactionText: []
+  Charming_Observation:
     BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: ...
+    PlayerDialogue: Yes.. the left overs better be for me!
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Observation:
+    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    PlayerDialogue: It tasted like cardboard.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Observation:
+    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    PlayerDialogue: "It was good, but Cousin ate so much of it that there\u2019s
+      not much left....Ugh"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Charming_Question:
+    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    PlayerDialogue: Could you bake for me again next year, Nanna? It was so good!
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Question:
+    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    PlayerDialogue: Yeah, but why did I have to share it with everyone?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Sappy_Question:
+    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    PlayerDialogue: I was sad it was so small.... could be bigger for more people,
+      no?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -10
+  Silent:
+    BranchingDialogue: {fileID: 11400000}
+    PlayerDialogue: ...
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
   End: 0

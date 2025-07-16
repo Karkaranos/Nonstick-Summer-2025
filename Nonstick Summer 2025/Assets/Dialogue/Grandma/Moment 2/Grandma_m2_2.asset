@@ -13,108 +13,68 @@ MonoBehaviour:
   m_Name: Grandma_m2_2
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Now, have you come to help your Nanna clean the kitchen?
+  - Dialogue: You better be good...
+    Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+  - Dialogue: Otherwise, no extra cake for you!
     Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
   Charming_Expression:
-    NpcReactionText:
-    - Dialogue: Nooo!! Not the kitchen! Your mother is going to end us!
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: "I\u2019m going to destroy the kitchen...!"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 5
-  Assertive_Expression:
-    NpcReactionText:
-    - Dialogue: "Oh, a little help can go a long ways. Even if it\u2019s not much
-        you\u2019re doing!"
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: "No, you don\u2019t even need my help."
+    BranchingDialogue: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
+    PlayerDialogue: Maybe I already had all the cake I wanted before!
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -10
+  Assertive_Expression:
+    BranchingDialogue: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
+    PlayerDialogue: I already had cake earlier.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
   Sappy_Expression:
-    NpcReactionText:
-    - Dialogue: "That\u2019s the spirit! It\u2019s more fun with help, anyways."
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: Yeah... I always like helping!
+    BranchingDialogue: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
+    PlayerDialogue: Aww.. I wanted another one.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: 10
   Charming_Observation:
-    NpcReactionText:
-    - Dialogue: "I suppose so... It\u2019s still nice to help your Nanna though!"
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: Looks like you have most of it handled, Nanna!
+    BranchingDialogue: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
+    PlayerDialogue: I bet I will be able to find it in the fridge later.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: -10
   Assertive_Observation:
-    NpcReactionText:
-    - Dialogue: "I suppose so... It\u2019s still nice to help your Nanna though!"
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: "There doesn\u2019t look like much left to help with if I wanted
-      to."
+    BranchingDialogue: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
+    PlayerDialogue: "There\u2019s only 3 slices left anyways."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Sappy_Observation:
-    NpcReactionText:
-    - Dialogue: Yeah, your Nanna has most of it handled. You can still help a little
-        though.
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: "Sure, but there isn\u2019t much left to help with..."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 10
-  Charming_Question:
-    NpcReactionText:
-    - Dialogue: Oh.. just cleaning. Gotta tidy up some of the fun!
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: Yeah, but what can Nanna not handle on her own?
+    BranchingDialogue: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
+    PlayerDialogue: "Oh.. I suppose that\u2019s okay, if you don\u2019t want to share..."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
-  Assertive_Question:
-    NpcReactionText:
-    - Dialogue: Oh.. just cleaning. Gotta tidy up some of the fun!
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: What're you even doing?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -10
-  Sappy_Question:
-    NpcReactionText:
-    - Dialogue: Yeah, your Nanna has most of it handled. You can still help a little
-        though.
-      Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
-    CombinedDialogue: []
-    PlayerDialogue: Sure, but what would I even be able to help with..?
+  Charming_Question:
+    BranchingDialogue: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
+    PlayerDialogue: Haha, what if I take it first?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
+  Assertive_Question:
+    BranchingDialogue: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
+    PlayerDialogue: Are you going to eat it all yourself?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Question:
+    BranchingDialogue: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
+    PlayerDialogue: But Nanna, can I have any more..?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
   Silent:
-    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000}
-    CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: -10
   End: 0

@@ -88,7 +88,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         yield return ToggleUIForDialogueProgression(false);
 
-        yield return OpenCombatUI_Coroutine();
+        //yield return OpenCombatUI_Coroutine();
 
         yield return dialogueBox.Initialize(startBranch);
     }

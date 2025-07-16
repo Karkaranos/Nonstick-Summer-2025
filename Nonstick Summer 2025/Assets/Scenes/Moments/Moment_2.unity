@@ -17169,6 +17169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39efb718f49966749b43bf99a2c99f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InteractSuccessful: 0
   CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: 8a396213697e3d24f944fe34be909bbe, type: 3}
   cameraAnchor: {fileID: 0}
   _statement: A new deck of cards for your birthday
@@ -28042,19 +28043,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoodManagerReference: {fileID: 0}
   charmingStartingValues:
-    baseEnergyCost: -2
+    energyCostOffset: 0
     maxEnergyCost: -1
     expressionValue: 0
     intervalBetweenADecreasedCost: 100
     intervalBetweenIncreasedCosts: 100
   assertiveStartingValues:
-    baseEnergyCost: -2
+    energyCostOffset: 0
     maxEnergyCost: -1
     expressionValue: 0
     intervalBetweenADecreasedCost: 100
     intervalBetweenIncreasedCosts: 100
   sappyStartingValues:
-    baseEnergyCost: -2
+    energyCostOffset: 0
     maxEnergyCost: -1
     expressionValue: 0
     intervalBetweenADecreasedCost: 100
@@ -35224,6 +35225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39efb718f49966749b43bf99a2c99f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InteractSuccessful: 0
   CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: 8a396213697e3d24f944fe34be909bbe, type: 3}
   cameraAnchor: {fileID: 0}
   _statement: It's your birthday present!
@@ -66372,6 +66374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd087649bb24bf4d9eca4a98ffe6100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InteractSuccessful: 0
   BossDefeated: 0
   _nextSceneIndex: 0
 --- !u!65 &1531648273
@@ -72095,8 +72098,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 730531224}
     - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
+      propertyPath: _conditions.Array.data[1].RequiredObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
       propertyPath: _conditions.Array.data[1].condition.TriggerCondition
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
+      propertyPath: _conditions.Array.data[2].RequiredObjects.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
       propertyPath: _conditions.Array.data[2].condition.TriggerCondition
@@ -72110,6 +72121,14 @@ PrefabInstance:
       propertyPath: _conditions.Array.data[1].ConditionsToHide.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
+      propertyPath: '_conditions.Array.data[1].RequiredObjects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1945355056}
+    - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
+      propertyPath: '_conditions.Array.data[2].RequiredObjects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 730531224}
     - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
       propertyPath: _conditions.Array.data[0].ConditionsToHide.Array.data[0].RequiredObject
       value: 
@@ -84852,6 +84871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39efb718f49966749b43bf99a2c99f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InteractSuccessful: 0
   CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: 8a396213697e3d24f944fe34be909bbe, type: 3}
   cameraAnchor: {fileID: 0}
   _statement: It's your birthday cake!

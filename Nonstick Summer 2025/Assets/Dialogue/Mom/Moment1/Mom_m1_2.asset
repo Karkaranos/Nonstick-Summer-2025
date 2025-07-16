@@ -22,104 +22,124 @@ MonoBehaviour:
     - Dialogue: "That\u2019s...nice. Please don\u2019t say that to her when she gets
         here, okay?"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
     CombinedDialogue: []
     PlayerDialogue: I love Grandma! She smells funny.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 11400000, guid: 5b121f534c74f534288df6ebe03df590, type: 2}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: "Well, I\u2019m sorry to hear that, but she\u2019s coming over, and
         that\u2019s final."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t need a babysitter. I\u2019m not a baby anymore."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 11400000, guid: 5b121f534c74f534288df6ebe03df590, type: 2}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: "I\u2019m glad to hear that, honey."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
     CombinedDialogue: []
     PlayerDialogue: But I always behave!
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 11400000, guid: 5b121f534c74f534288df6ebe03df590, type: 2}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "That\u2019s...nice. Please don\u2019t say that to her when she gets
         here, okay?"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "She\u2019s wrinkly. Like a raisin with arms."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 11400000, guid: 5b121f534c74f534288df6ebe03df590, type: 2}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Assertive_Observation:
     NpcReactionText:
     - Dialogue: "Well, I\u2019m sorry to hear that, but she\u2019s coming over, and
         that\u2019s final."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t WANT Grandma to come over!"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 11400000, guid: 5b121f534c74f534288df6ebe03df590, type: 2}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Observation:
     NpcReactionText:
     - Dialogue: "I\u2019m glad to hear that, honey."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Really? Grandma is the best!
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 11400000, guid: 5b121f534c74f534288df6ebe03df590, type: 2}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
     - Dialogue: I hope she will. Keep an eye on her for me, alright?
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Is SHE going to behave?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 11400000, guid: 5b121f534c74f534288df6ebe03df590, type: 2}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Question:
     NpcReactionText:
     - Dialogue: Because I said so.
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Why should I behave?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 11400000, guid: 5b121f534c74f534288df6ebe03df590, type: 2}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Question:
     NpcReactionText:
     - Dialogue: "Well, sometimes Grandma can\u2019t make the drive by herself, and
         sometimes we can\u2019t either."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "Why doesn\u2019t she visit more?"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 11400000, guid: 5b121f534c74f534288df6ebe03df590, type: 2}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Silent:
     NpcReactionText:
     - Dialogue: "\u201C...Well, I\u2019m sure you will.\u201D"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
     CombinedDialogue: []
     PlayerDialogue: ...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 11400000, guid: 5b121f534c74f534288df6ebe03df590, type: 2}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   End: 0

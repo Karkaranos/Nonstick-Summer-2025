@@ -43,6 +43,19 @@ public class DeckManager
         RemainingDeck = PlayerFullDeck.GetCopy();
     }
 
+    public void RefreshDeck()
+    {
+
+        if (PlayerHand != null)
+            PlayerHand.Clear();
+        else
+            PlayerHand = new Deck();
+
+        Debug.Log("filling remaining deck");
+        RemainingDeck = PlayerFullDeck.GetCopy();
+
+    }
+
     #endregion
 
     #region Function References

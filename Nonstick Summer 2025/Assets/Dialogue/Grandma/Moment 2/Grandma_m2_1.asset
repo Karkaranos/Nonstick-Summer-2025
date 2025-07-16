@@ -20,68 +20,80 @@ MonoBehaviour:
     - Dialogue: "Haha, I\u2019m glad you liked it, honey. It was baked with lots
         of love."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Yes!! It was sooooooo good....
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: "Haha, I\u2019m glad you liked it, honey. It was baked with lots
         of love."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "It was fine... I liked it because you\u2019re the one who made
       it."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: "Oh silly, don\u2019t gobble it all down! And make sure to ask your
         mom before you eat a bunch at once. Savor it!"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
     CombinedDialogue: []
     PlayerDialogue: It was so sweet and special.. and just like I imagined...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "Oh silly, don\u2019t gobble it all down! And make sure to ask your
         mom before you eat a bunch at once. Savor it!"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Yes.. the left overs better be for me!
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Observation:
     NpcReactionText:
     - Dialogue: "Well... I\u2019m sorry to hear that honey. I thought you\u2019d
         like it."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
     CombinedDialogue: []
     PlayerDialogue: It tasted like cardboard.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Observation:
     NpcReactionText:
     - Dialogue: "Well, part of throwing a party is sharing.... you\u2019d want your
         Cousin to share his cake with you at his next birthday, right?"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
     CombinedDialogue: []
     PlayerDialogue: "It was good, but Cousin ate so much of it that there\u2019s
       not much left....Ugh"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Charming_Question:
     NpcReactionText:
@@ -89,41 +101,49 @@ MonoBehaviour:
         Just tell me what you\u2019d like close to your birthday and I\u2019ll bake
         for you again."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Could you bake for me again next year, Nanna? It was so good!
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Question:
     NpcReactionText:
     - Dialogue: "Well, part of throwing a party is sharing.... you\u2019d want your
         Cousin to share his cake with you at his next birthday, right?"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
     CombinedDialogue: []
     PlayerDialogue: Yeah, but why did I have to share it with everyone?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Sappy_Question:
     NpcReactionText:
     - Dialogue: Making a big cake is a lot of work... you should savor each bite,
         with how much love was baked into it!
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
     CombinedDialogue: []
     PlayerDialogue: I was sad it was so small.... could be bigger for more people,
       no?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Silent:
     NpcReactionText: []
-    BranchingDialogue: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
     CombinedDialogue: []
     PlayerDialogue: ...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   End: 0

@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: EVILCousin_m2_6 1
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: Um... You like me, right? Like, you think I'm cool?
+    Portrait: {fileID: 0}
+  - Dialogue: Because I think you're the coolest! But, uh...
+    Portrait: {fileID: 0}
+  - Dialogue: You look mad right now. Are you mad at me?
+    Portrait: {fileID: 0}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: You do?! I mean, of course you do!
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: Of course I like you!
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: I think I'm kinda cool...
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "Um... I like you, I guess. But you\u2019re not cool."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "Haha, yeah! I\u2019m the coolest!"
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "...I\u2019m not mad. You\u2019re cool."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: ...I am? Oh...
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "I like you! You\u2019re just kinda annoying, sometimes."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: "I am NOT! I am not! I\u2019ve been a fan for longer than you have!
+        I mean it!"
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "I know you\u2019re a poser. You only like these cards because
+      I do. Copycat!"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: "I am NOT! I am not! I\u2019ve been a fan for longer than you have!
+        I mean it!"
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "You\u2019re cool... I know you\u2019re lying about liking these
+      cards, though."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: Um... No! I meant that- I just meant- Whatever!
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "Do you think I don\u2019t like you?"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: ...Bad.
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: How would YOU feel if I stole your stuff and ruined your birthday?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: Um... No! I meant that- I just meant- Whatever!
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "You think I\u2019m the coolest?"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Silent:
+    NpcReactionText: []
+    BranchingDialogue: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  End: 0

@@ -168,15 +168,22 @@ public class DialogueManager
         GameManager.Instance.StartCoroutine(SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange));
 
         // progress dialogue:
-        if (RelationshipManager.characterRelationships[currentCharacter].currentValue >= dialogueOption.RelationshipRequirement)
+        if (dialogueOption.RelationshipCheckRequired == false || RelationshipManager.characterRelationships[currentCharacter].currentValue > dialogueOption.RelationshipRange.y)
         {
             Debug.Log("Player has enough RP for good branch");
-            CurrentDialogueBranch = dialogueOption.BranchingDialogue; 
+            CurrentDialogueBranch = dialogueOption.BranchingDialogueHigh; 
         }
-        else 
+        else if(dialogueOption.RelationshipCheckRequired = true && RelationshipManager.characterRelationships[currentCharacter].currentValue <= dialogueOption.RelationshipRange.y && RelationshipManager.characterRelationships[currentCharacter].currentValue >= dialogueOption.RelationshipRange.x)
         {
+            Debug.Log("Player has met RP requirement");
+            CurrentDialogueBranch = dialogueOption.BranchingDialogueNeutral; 
+        }
+        else if(dialogueOption.RelationshipCheckRequired = true && RelationshipManager.characterRelationships[currentCharacter].currentValue < dialogueOption.RelationshipRange.x)
+        {
+
             Debug.Log("Player has not met RP requirement");
-            CurrentDialogueBranch = dialogueOption.AlternateBranch; 
+            CurrentDialogueBranch = dialogueOption.BranchingDialogueLow;
+
         }
 
         yield return DialogueUIController.Instance.ResetNPCDialogue(dialogueOption);

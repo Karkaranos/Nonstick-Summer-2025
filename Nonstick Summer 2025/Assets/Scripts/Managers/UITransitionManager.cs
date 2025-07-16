@@ -121,6 +121,8 @@ public class UITransitionManager
             CurrentCanvasReference = null;
         }
 
+        GameManager.DeckManagerReference.RefreshDeck();
+
     }
 
     public static void NullWorldReference()

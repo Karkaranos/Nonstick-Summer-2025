@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: Now, have you come to help your Nanna clean the kitchen?
-    Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+    Portrait: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Nooo!! Not the kitchen! Your mother is going to end us!
@@ -56,7 +56,13 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "I suppose so... It\u2019s still nice to help your Nanna though!"
       Portrait: {fileID: 0}
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: "I suppose so... It\u2019s still nice to help your Nanna though!"
+      Portrait: {fileID: 0}
+    - Dialogue: You better be good...
+      Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+    - Dialogue: Otherwise, no extra cake for you!
+      Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
     PlayerDialogue: Looks like you have most of it handled, Nanna!
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -94,7 +100,13 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Oh.. just cleaning. Gotta tidy up some of the fun!
       Portrait: {fileID: 0}
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: Oh.. just cleaning. Gotta tidy up some of the fun!
+      Portrait: {fileID: 0}
+    - Dialogue: You better be good...
+      Portrait: {fileID: 0}
+    - Dialogue: Otherwise, no extra cake for you!
+      Portrait: {fileID: 0}
     PlayerDialogue: Yeah, but what can Nanna not handle on her own?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}

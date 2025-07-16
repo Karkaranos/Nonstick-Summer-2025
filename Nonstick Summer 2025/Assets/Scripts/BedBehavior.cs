@@ -8,6 +8,7 @@
 *****************************************************************************/
 using UnityEngine;
 using NaughtyAttributes;
+using UnityEngine.SceneManagement;
 
 public class BedBehavior : MonoBehaviour, IInteractableObjective
 {
@@ -23,7 +24,7 @@ public class BedBehavior : MonoBehaviour, IInteractableObjective
     /// <param name="player"></param>
     public void Interact(GameObject player)
     {
-        if (BossDefeated)
+        if (BossDefeated || SceneManager.GetActiveScene().name.Contains("5"))
         {
             InteractSuccessful = true;
             UnityEngine.SceneManagement.SceneManager.LoadScene(_nextSceneIndex);

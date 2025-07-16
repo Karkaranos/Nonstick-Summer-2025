@@ -11,7 +11,7 @@ public class InteractableObjectInitializer : MonoBehaviour, IInteractable
 
     [Header("UI Text")]
     [SerializeField, Tooltip("Text that always appears when this object is selected")] private string _statement = "You are looking at an object";
-    [SerializeField] private string _question;
+    [SerializeField] private string _question = "Question not set.";
     [SerializeField] private PersonalityOption[] _options = new PersonalityOption[3];
 
     private bool hasGivenCard = false;
@@ -86,7 +86,7 @@ Brief Description :     Stores information for interactable object questions
 ***************************************************/
 public class PersonalityOption
 {
-    [Tooltip("Option text")]public string ButtonText;
+    [Tooltip("Option text")]public string ButtonText = "not set";
     [Tooltip("An optional tint for the button. Leave white if not")]public Color ButtonColor = Color.white;
     [Tooltip("Insert all modifiers you want to give the player here based on certain emotions")] public List<ModifierData> ModifiersToGive;
 

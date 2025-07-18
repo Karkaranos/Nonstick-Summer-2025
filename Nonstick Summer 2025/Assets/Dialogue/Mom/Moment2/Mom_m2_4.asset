@@ -13,64 +13,88 @@ MonoBehaviour:
   m_Name: Mom_m2_4
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Well, remember. I love you, Dear.
+  - Dialogue: Oh, and be nice to your cousin.
+    Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
+  - Dialogue: Just because he's younger, it doesn't mean you can be mean to him.
+    Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
+  - Dialogue: He looks up to you, you know.
     Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
   Charming_Expression:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: 8eec70f1a608e284b87a253cc171639b, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "I\u2019ll tell them thank you... thank you for nothing, haha!"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: 8eec70f1a608e284b87a253cc171639b, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: Yeah.
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Sappy_Expression:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: 8eec70f1a608e284b87a253cc171639b, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "No...I\u2019m sorry..."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Charming_Observation:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: a209ae90deb3d9947b756e4a4d7519c4, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "I don\u2019t see them."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Assertive_Observation:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: a209ae90deb3d9947b756e4a4d7519c4, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "I don\u2019t wanna."
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Observation:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: 8eec70f1a608e284b87a253cc171639b, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: "But you\u2019re so much better at cleaning up than me!"
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Charming_Question:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: 8eec70f1a608e284b87a253cc171639b, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: I dunno...diiid I?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Question:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: a209ae90deb3d9947b756e4a4d7519c4, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: Why?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Question:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: a209ae90deb3d9947b756e4a4d7519c4, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: Do I have to?
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Silent:
+    NpcReactionText: []
     BranchingDialogue: {fileID: 11400000, guid: a209ae90deb3d9947b756e4a4d7519c4, type: 2}
+    CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipRequirement: 0
     AlternateBranch: {fileID: 0}

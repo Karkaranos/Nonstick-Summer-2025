@@ -15,74 +15,143 @@ MonoBehaviour:
   dialogue:
   - Dialogue: "You know, I\u2019ve been getting pretty good at that new shooter game
       that came out."
-    Portrait: {fileID: 21300000, guid: 599283ca56aa9da4f85f3d7e2e07d0a4, type: 3}
+    Portrait: {fileID: 0}
   - Dialogue: Maybe we could play it sometime?
     Portrait: {fileID: 0}
   Charming_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    NpcReactionText:
+    - Dialogue: "That\u2019s what I like to hear, looks like I\u2019ll have to step
+        it up as well."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "Sure! I\u2019ve gotten a lot better since the last time we played."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    NpcReactionText:
+    - Dialogue: "Oho, looks like that energy hasn\u2019t gone anywhere. It might
+        not be as easy as last time, I\u2019ve been practicing just about every day
+        since the last time we played."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "Sure, you\u2019re not gonna get better than me though."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Sappy_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    NpcReactionText:
+    - Dialogue: "Come on, where is that energy from last time, don\u2019t worry about
+        how well you do, just have fun!"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: Sure, I know I am not all that good, but I will try my best.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Charming_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    NpcReactionText:
+    - Dialogue: "That won\u2019t be an issue, I\u2019ll be sure to convince her to
+        bump it up to at least 2 hours this time."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "Really? Hopefully my mom let\u2019s me play for longer than
       an hour this time."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Assertive_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    NpcReactionText:
+    - Dialogue: Oh alright no worries, I guess I will just have to practice in the
+        meantime.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "I don\u2019t know, you might have to step it up a little if
       I am going to play with you, I carried you last time."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    NpcReactionText:
+    - Dialogue: "Don\u2019t you worry about that, being able to spend time with you
+        is what really matters to me."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "That sounds great, I\u2019ve been really busy with school work
       lately so I haven\u2019t had much time to play though. Hopefully I won\u2019t
       hold you back too much."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Charming_Question:
-    BranchingDialogue: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    NpcReactionText:
+    - Dialogue: "Oho, looks like that energy hasn\u2019t gone anywhere. It might
+        not be as easy as last time, I\u2019ve been practicing just about every day
+        since the last time we played."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: Yeah, I had a lot of fun last time. Are you sure you are okay
       with being carried by me again?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Assertive_Question:
-    BranchingDialogue: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    NpcReactionText:
+    - Dialogue: Oh alright no worries, I guess I will just have to practice in the
+        meantime.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "I don\u2019t know, I might be playing it with my friends instead
       if that's alright?"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Sappy_Question:
-    BranchingDialogue: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    NpcReactionText:
+    - Dialogue: "Come on, where is that energy from last time, don\u2019t worry about
+        how well you do, just have fun!"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "Yeah I\u2019d really like to, you sure I won\u2019t be holding
       you back?"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Silent:
-    BranchingDialogue: {fileID: 11400000}
+    NpcReactionText: []
+    CombinedDialogue: []
     PlayerDialogue: ...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   End: 0

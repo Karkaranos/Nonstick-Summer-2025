@@ -15,72 +15,139 @@ MonoBehaviour:
   dialogue:
   - Dialogue: "There\u2019s the kid of the hour! Has this been the best birthday
       ever?"
-    Portrait: {fileID: 21300000, guid: 599283ca56aa9da4f85f3d7e2e07d0a4, type: 3}
+    Portrait: {fileID: 21300000, guid: 5b80e3e4b9e4ae24282ce0ed426c2aaa, type: 3}
   Charming_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    NpcReactionText:
+    - Dialogue: I was just like you when I was your age, always ready to prove to
+        my friends that I was the best in whichever game we found fun at the time.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "You know it!! I can\u2019t wait to use these card to defeat
       all of my friends!"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    NpcReactionText:
+    - Dialogue: I remember being like that too when I was your age. Just be sure
+        to spend time with your family every once in a while.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "I don\u2019t know.... I haven\u2019t opened up all my presents
       yet."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Sappy_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    NpcReactionText:
+    - Dialogue: Me too kiddo, once my Dad gets better we can spend time all together
+        again just like the good old days.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "Yeah, I\u2019m glad we got to spend time together as a family."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Charming_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    NpcReactionText:
+    - Dialogue: "You don\u2019t have to worry about that kiddo, seeing you smile
+        is all that matters to me."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "Yeah! I can\u2019t believe you got me that card set! It must
       have cost a fortune! "
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Assertive_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    NpcReactionText:
+    - Dialogue: Oops, sorry about that kiddo. I even asked my Son about which cards
+        to get you.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: Well... It would be better if you had gotten me the right card
       set.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    NpcReactionText:
+    - Dialogue: Me too kiddo, once my Dad gets better we can spend time all together
+        again just like the good old days.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: Yeah. I just wish Grandpa could be here. Mom said he is too sick.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Charming_Question:
-    BranchingDialogue: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    NpcReactionText:
+    - Dialogue: "You don\u2019t have to worry about that kiddo, seeing you smile
+        is all that matters to me."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: Of course, these cards that you got me are the real deal! How
       in the world did you get these!?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Assertive_Question:
-    BranchingDialogue: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    NpcReactionText:
+    - Dialogue: "You know I can\u2019t do that. I wish I could but your mother would
+        be in my ear for the rest of the day."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: Almost perfect... If only you could tell me what grandma gifted
       me? I know you saw her wrap it.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Question:
-    BranchingDialogue: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    NpcReactionText: []
+    CombinedDialogue: []
     PlayerDialogue: Of course!!! It was the best ever. What were your birthdays like
       when you were my age, Uncle?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Silent:
-    BranchingDialogue: {fileID: 11400000}
+    NpcReactionText:
+    - Dialogue: I was just like you when I was your age, always ready to prove to
+        my friends that I was the best in whichever game we found fun at the time.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: ...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   End: 0

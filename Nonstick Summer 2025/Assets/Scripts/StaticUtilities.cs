@@ -190,53 +190,11 @@ public static class StaticUtilities
 
     #endregion
 
-    #region Strings
+    #region Color
 
-    /// <summary>
-    /// made specificially for tooltips. honestly, not super universal. but it NEEDED to be in
-    /// a static class.
-    /// thank you, the internet.
-    /// </summary>
-    public static string ReplaceTagColor(this string str, string tag, string hex)
+    public static string ToHex(this Color color)
     {
-        if (string.IsNullOrEmpty(str) || string.IsNullOrEmpty(tag) || string.IsNullOrEmpty(hex))
-            return str;
-
-        if (hex[0] != '#')
-            hex = '#' + hex;
-
-        string startTag = $"[{tag}(";
-        string endTag = ")]";
-
-        int currentIndex = 0;
-        var result = new System.Text.StringBuilder();
-
-        while (currentIndex < str.Length)
-        {
-            int startIdx = str.IndexOf(startTag, currentIndex);
-            if (startIdx == -1)
-            {
-                result.Append(str.Substring(currentIndex));
-                break;
-            }
-
-            result.Append(str.Substring(currentIndex, startIdx - currentIndex));
-
-            int contentStartIdx = startIdx + startTag.Length;
-            int endIdx = str.IndexOf(endTag, contentStartIdx);
-            if (endIdx == -1)
-            {
-                result.Append(str.Substring(startIdx));
-                break;
-            }
-
-            string content = str.Substring(contentStartIdx, endIdx - contentStartIdx);
-            result.Append($"<color={hex}>{content}</color>");
-
-            currentIndex = endIdx + endTag.Length;
-        }
-
-        return result.ToString();
+        return ColorUtility.ToHtmlStringRGB(color);
     }
 
     #endregion

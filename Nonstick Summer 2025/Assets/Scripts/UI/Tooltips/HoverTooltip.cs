@@ -32,6 +32,7 @@ public abstract class HoverTooltip : MonoBehaviour
 
         mouseInteraction.OnMouseHoverStart.AddListener(Open);
         mouseInteraction.OnMouseHoverEnd.AddListener(Close);
+        mouseInteraction.OnMouseDown.AddListener(OnPlayerClickComponent);
 
         Close();
     }
@@ -44,17 +45,27 @@ public abstract class HoverTooltip : MonoBehaviour
             return;
         }
 
-        if(tooltipText != null)
-            tooltipText.text = GetText() ;
-
-        tooltipGroup.gameObject.gameObject.SetActive(true);
-        StaticUtilities.EnableCanvasGroup(tooltipGroup);
+        RefreshTooltipText();
     }
 
     public void Close()
     {
         tooltipGroup.gameObject.gameObject.SetActive(false);
         StaticUtilities.DisableCanvasGroup(tooltipGroup);
+    }
+
+    public void RefreshTooltipText()
+    {
+        if (tooltipText != null)
+            tooltipText.text = GetText();
+
+        tooltipGroup.gameObject.gameObject.SetActive(true);
+        StaticUtilities.EnableCanvasGroup(tooltipGroup);
+    }
+
+    protected virtual void OnPlayerClickComponent()
+    {
+        // Crickets...
     }
 
     /// <summary>
@@ -73,24 +84,8 @@ public abstract class HoverTooltip : MonoBehaviour
     /// </summary>
     public string GetText()
     {
-        // TODO: move this function to different script (so it can be used with npc text)
-
         string text = GetRawText();
-
-        // i hope this is not extremely slow
-        text = text
-            // emotions
-            .Replace("[Assertive]", $"<color=#{ColorUtility.ToHtmlStringRGB(CardStyleManager.AssertiveStyle.color)}>{CardStyleManager.AssertiveStyle.DisplayName}</color>")
-            .Replace("[Charming]", $"<color=#{ColorUtility.ToHtmlStringRGB(CardStyleManager.CharmingStyle.color)}>{CardStyleManager.CharmingStyle.DisplayName}</color>")
-            .Replace("[Sappy]", $"<color=#{ColorUtility.ToHtmlStringRGB(CardStyleManager.SappyStyle.color)}>{CardStyleManager.SappyStyle.DisplayName}</color>")
-            // intentions
-            .Replace("[Expression]", $"<color=#{ColorUtility.ToHtmlStringRGB(CardStyleManager.ExpressionStyle.color)}>{CardStyleManager.ExpressionStyle.DisplayName}</color>")
-            .Replace("[Observation]", $"<color=#{ColorUtility.ToHtmlStringRGB(CardStyleManager.ObservationStyle.color)}>{CardStyleManager.ObservationStyle.DisplayName}</color>")
-            .Replace("[Question]", $"<color=#{ColorUtility.ToHtmlStringRGB(CardStyleManager.QuestionStyle.color)}>{CardStyleManager.QuestionStyle.DisplayName}</color>")
-            // stamps
-            .ReplaceTagColor("Stamp", ColorUtility.ToHtmlStringRGB(GameManager.Instance.StampTooltipColor));
-
-        return text;
+        return TextUtilities.FilterText(text);
     }
 
     void OnDrawGizmos()

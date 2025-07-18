@@ -26,7 +26,8 @@ public class StampTooltip : HoverTooltip
 
     protected override string GetRawText()
     {
-        return stampData == null ? "No Stamp! If youre reading this, there's a problem" : stampData.ShortDescription;
+        return stampData == null ? "No Stamp! If youre reading this, there's a problem" : 
+            $"[Stamp({stampData.StampName})]\n{stampData.ShortDescription}";
     }
 
 

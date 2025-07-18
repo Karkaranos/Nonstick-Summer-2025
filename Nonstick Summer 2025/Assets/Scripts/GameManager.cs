@@ -32,7 +32,11 @@ public class GameManager : Singleton<GameManager>
     [Foldout("Card Styles")] [SerializeField] private CardValueStyle 
         Card_CharmingStyle, Card_AssertiveStyle, Card_SappyStyle,
         Card_ExpressionStyle, Card_ObservationStyle, Card_QuestionStyle = new CardValueStyle(Color.white,"");
+    //TODO: move these to different script probably
     public Color StampTooltipColor = new Color(1, 0.8f, 0.1f);
+    public Color PositiveEnergyColor = Color.green;
+    public Color NegativeEnergyColor = Color.red;
+    public Color NeutralEnergyColor = Color.gray;
 
     [Tooltip("The initial cards in the players hand at the very beginning of the game")]
     [Foldout("Card Values"), SerializeField] private CardData[] startingCards;

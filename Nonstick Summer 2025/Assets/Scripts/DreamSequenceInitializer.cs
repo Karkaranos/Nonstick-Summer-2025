@@ -18,6 +18,7 @@ public class DreamSequenceInitializer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        UITransitionManager.OpenMenu(CanvasToOpen);
+        var dream = UITransitionManager.OpenMenu(CanvasToOpen);
+        dream.GetComponent<DreamSequence>().Initialize();
     }
 }

@@ -64,7 +64,7 @@ public class DreamSequence : MonoBehaviour
         confirmButton.enabled = false;
         confirmButton.onClick.AddListener(OnConfirmPressed);
 
-        StartCoroutine(TransitionShaderProperties(NeutralColors, NeutralColors));
+        SetShaderProperties(NeutralColors);
     }
 
     public void OnCharmingChosen()
@@ -173,6 +173,30 @@ public class DreamSequence : MonoBehaviour
 
         selectedEmotionShaderData = to;
         transitionShaderCoroutine = null;
+    }
+
+    private void SetShaderProperties(DreamShaderDataCollection data)
+    {
+        // nightmare code nightmare code nightmare code
+
+        DreamMaterial.SetColor("_Color_1", data.Layer1.color);
+        DreamMaterial.SetFloat("_Speed_1", data.Layer1.Speed);
+        DreamMaterial.SetFloat("_Blob_Size_1", data.Layer1.BlobSize);
+        DreamMaterial.SetVector("_Min_Max_Opacity_1", data.Layer1.MinMaxOpacity);
+
+        DreamMaterial.SetColor("_Color_2", data.Layer2.color);
+        DreamMaterial.SetFloat("_Speed_2", data.Layer2.Speed);
+        DreamMaterial.SetFloat("_Blob_Size_2", data.Layer2.BlobSize);
+        DreamMaterial.SetVector("_Min_Max_Opacity_2", data.Layer2.MinMaxOpacity);
+
+        DreamMaterial.SetColor("_Color_3", data.Layer3.color);
+        DreamMaterial.SetFloat("_Speed_3", data.Layer3.Speed);
+        DreamMaterial.SetFloat("_Blob_Size_3", data.Layer3.BlobSize);
+        DreamMaterial.SetVector("_Min_Max_Opacity_3", data.Layer3.MinMaxOpacity);
+
+        DreamMaterial.SetColor("_Background_Color", data.BackgroundColor);
+
+        selectedEmotionShaderData = data;
     }
 
     private static DreamShaderDataCollection GetShaderProperties(Material material)

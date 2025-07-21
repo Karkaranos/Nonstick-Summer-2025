@@ -62,7 +62,7 @@ public class DialogueOption
     public void SetNextBranchReaction(DialogueBranch branch)
     {
 
-        CombinedDialogue = new DialogueNPC[NpcReactionText.Length + branch.dialogue.Length];
+        CombinedDialogue = new DialogueNPC[(NpcReactionText.Length + branch.dialogue.Length)];
 
         for(int i = 0; i < NpcReactionText.Length; i++)
         {

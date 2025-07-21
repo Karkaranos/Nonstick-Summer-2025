@@ -29,6 +29,11 @@ public class DialogueTree : MonoBehaviour
 
     [SerializeField][BoxGroup("Line Renderers")] LineRenderer lr1, lr2, lr3;
 
+    [Header("Offsets")]
+
+    [SerializeField] float xOffset;
+    [SerializeField] float yOffset;
+
     DialogueBranch newBranch;
     GameObject currentlyHighlightedNode;
 
@@ -107,7 +112,7 @@ public class DialogueTree : MonoBehaviour
             //node 1
             GameObject newNode = Instantiate(node);
             newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
-            newNode.transform.position = new Vector3(this.transform.position.x + 1, this.transform.position.y, this.transform.position.z);
+            newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y, this.transform.position.z);
 
             lr1.SetPosition(0, this.transform.position);
             lr1.SetPosition(1, newNode.transform.position);
@@ -120,7 +125,7 @@ public class DialogueTree : MonoBehaviour
             //node 1
             GameObject newNode = Instantiate(node);
             newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
-            newNode.transform.position = new Vector3(this.transform.position.x + 1, this.transform.position.y + 0.5f, this.transform.position.z);
+            newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y + yOffset, this.transform.position.z);
 
             lr1.SetPosition(0, this.transform.position);
             lr1.SetPosition(1, newNode.transform.position);
@@ -130,7 +135,7 @@ public class DialogueTree : MonoBehaviour
             //node 2
             newNode = Instantiate(node);
             newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
-            newNode.transform.position = new Vector3(this.transform.position.x + 1, this.transform.position.y - 0.5f, this.transform.position.z);
+            newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y - yOffset, this.transform.position.z);
 
             lr2.SetPosition(0, this.transform.position);
             lr2.SetPosition(1, newNode.transform.position);
@@ -144,7 +149,7 @@ public class DialogueTree : MonoBehaviour
             //node 1
             GameObject newNode = Instantiate(node);
             newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
-            newNode.transform.position = new Vector3(this.transform.position.x + 1, this.transform.position.y + 0.5f, this.transform.position.z);
+            newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y + yOffset, this.transform.position.z);
 
             lr1.SetPosition(0, this.transform.position);
             lr1.SetPosition(1, newNode.transform.position);
@@ -154,7 +159,7 @@ public class DialogueTree : MonoBehaviour
             //node 2
             newNode = Instantiate(node);
             newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
-            newNode.transform.position = new Vector3(this.transform.position.x + 1, this.transform.position.y, this.transform.position.z);
+            newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y, this.transform.position.z);
 
             lr2.SetPosition(0, this.transform.position);
             lr2.SetPosition(1, newNode.transform.position);
@@ -164,7 +169,7 @@ public class DialogueTree : MonoBehaviour
             //node 3
             newNode = Instantiate(node);
             newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
-            newNode.transform.position = new Vector3(this.transform.position.x + 1, this.transform.position.y - 0.5f, this.transform.position.z);
+            newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y - yOffset, this.transform.position.z);
 
             lr3.SetPosition(0, this.transform.position);
             lr3.SetPosition(1, newNode.transform.position);

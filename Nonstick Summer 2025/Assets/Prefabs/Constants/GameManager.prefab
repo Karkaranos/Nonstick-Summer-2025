@@ -61,35 +61,23 @@ MonoBehaviour:
     color: {r: 0, g: 0, b: 0, a: 1}
     DisplayName: Expression
     sprite: {fileID: -2210434942944035985, guid: cd47f6d5edd2c7541a0baf3774a54fdd, type: 3}
-  Card_ObservationStyle:
-    color: {r: 0, g: 0, b: 0, a: 1}
-    DisplayName: Observation
-    sprite: {fileID: 21300000, guid: ffdf80dc342e69344b2dccafe04c30ee, type: 3}
   Card_QuestionStyle:
     color: {r: 0, g: 0, b: 0, a: 1}
     DisplayName: Question
     sprite: {fileID: 21300000, guid: 90335e5423c010749a50f906b965fa54, type: 3}
   StampTooltipColor: {r: 1, g: 0.8, b: 0.1, a: 1}
+  PositiveEnergyColor: {r: 0, g: 1, b: 0, a: 1}
+  NegativeEnergyColor: {r: 1, g: 0, b: 0, a: 1}
+  NeutralEnergyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   startingCards:
   - {fileID: 11400000, guid: 6ac2c164d8055c04db47a6031bf810bf, type: 2}
-  - {fileID: 11400000, guid: 7c1a773e2b183134e80ac0d4665e4cd4, type: 2}
   - {fileID: 11400000, guid: 11ff6cbb98905de49b8c296c03e41b2d, type: 2}
   - {fileID: 11400000, guid: e751890e1b0a160428991ee5821f9a04, type: 2}
-  - {fileID: 11400000, guid: fbf91e7bc9ce6884fa6c5009c87184ef, type: 2}
   - {fileID: 11400000, guid: cc34d9ee41337294c9453b4fef716009, type: 2}
   - {fileID: 11400000, guid: 0da342f46216d694f89b4a595d5b572c, type: 2}
-  - {fileID: 11400000, guid: 782b387ccd9ea40418a2235568ebfab3, type: 2}
   - {fileID: 11400000, guid: 1c37b8fa9e8e5f64b83b11bd681c2500, type: 2}
-  startingModifiers:
-  - {fileID: 11400000, guid: c195a113035d86c458c41d0c875da62f, type: 2}
-  - {fileID: 11400000, guid: f2ca2cad2d5f3834187f980423098bc9, type: 2}
-  - {fileID: 11400000, guid: 2388c5239da79564292dc953a127cbbb, type: 2}
-  - {fileID: 11400000, guid: ee82f2ab5548cd54b9229a935295297c, type: 2}
-  - {fileID: 11400000, guid: 4236df83ca6b76d48b35473ec9993a0e, type: 2}
-  - {fileID: 11400000, guid: 2388c5239da79564292dc953a127cbbb, type: 2}
-  - {fileID: 11400000, guid: ee82f2ab5548cd54b9229a935295297c, type: 2}
-  - {fileID: 11400000, guid: 4236df83ca6b76d48b35473ec9993a0e, type: 2}
-  _defaultEnergy: 5
+  startingModifiers: []
+  _defaultEnergy: 10
   _energyGainedPerRound: 1
   _energyGainedIfSilent: 2
   _maxEnergy: 10

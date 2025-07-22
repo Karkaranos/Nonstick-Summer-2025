@@ -11,19 +11,19 @@ public class CardStyleManager
     public static CardStyleManager Instance => GameManager.CardStyleManagerReference;
 
     public static CardValueStyle YellowStyle, RedStyle, BlueStyle, 
-        ExpressionStyle, ObservationStyle, QuestionStyle; // names subject to change
+        ExpressionStyle/*, ObservationStyle*/, QuestionStyle; // names subject to change
 
     public static CardValueStyle ErrorStyle;
     
     public CardStyleManager(
         CardValueStyle yellowStyle, CardValueStyle assertiveStyle, CardValueStyle blueStyle, 
-        CardValueStyle expressionStyle, CardValueStyle observationStyle, CardValueStyle questionStyle) 
+        CardValueStyle expressionStyle/*, CardValueStyle observationStyle*/, CardValueStyle questionStyle) 
     { 
         YellowStyle = yellowStyle;
         RedStyle = assertiveStyle;
         BlueStyle = blueStyle;
         ExpressionStyle = expressionStyle;
-        ObservationStyle = observationStyle;
+        //ObservationStyle = observationStyle;
         QuestionStyle = questionStyle;
 
         ErrorStyle = new CardValueStyle(Color.red, "ERROR");
@@ -40,8 +40,8 @@ public class CardStyleManager
         {
             case CardIntention.Expression:
                 return ExpressionStyle.sprite;
-            case CardIntention.Observation:
-                return ObservationStyle.sprite;
+            /*case CardIntention.Observation:
+                return ObservationStyle.sprite;*/
             case CardIntention.Question:
                 return QuestionStyle.sprite;
             default:
@@ -82,8 +82,8 @@ public class CardStyleManager
         {
             case CardIntention.Expression:
                 return ExpressionStyle;
-            case CardIntention.Observation:
-                return ObservationStyle;
+            /*case CardIntention.Observation:
+                return ObservationStyle;*/
             case CardIntention.Question:
                 return QuestionStyle;
             default:

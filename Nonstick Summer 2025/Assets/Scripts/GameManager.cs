@@ -31,7 +31,7 @@ public class GameManager : Singleton<GameManager>
 
     [Foldout("Card Styles")] [SerializeField] private CardValueStyle 
         Card_CharmingStyle, Card_AssertiveStyle, Card_SappyStyle,
-        Card_ExpressionStyle, Card_ObservationStyle, Card_QuestionStyle = new CardValueStyle(Color.white,"");
+        Card_ExpressionStyle/*, Card_ObservationStyle*/, Card_QuestionStyle = new CardValueStyle(Color.white,"");
     //TODO: move these to different script probably
     public Color StampTooltipColor = new Color(1, 0.8f, 0.1f);
     public Color PositiveEnergyColor = Color.green;
@@ -70,7 +70,7 @@ public class GameManager : Singleton<GameManager>
 
         UITransitionManagerReference = UITransitionManagerReference ?? new UITransitionManager();
         CardStyleManagerReference = CardStyleManagerReference ?? new CardStyleManager(Card_CharmingStyle, Card_AssertiveStyle, Card_SappyStyle,
-            Card_ExpressionStyle, Card_ObservationStyle, Card_QuestionStyle);
+            Card_ExpressionStyle/*, Card_ObservationStyle*/, Card_QuestionStyle);
         DeckManagerReference = DeckManagerReference ?? new DeckManager(startingCards);
         DialogueManagerReference = DialogueManagerReference ?? new DialogueManager(_defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent, 
             _maxEnergy, DefaultCardsInHand, _cardsDrawnPerRound, _drawButtonEnergyCost, _energyGainedPerDiscard);

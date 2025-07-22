@@ -26023,9 +26023,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8042e056a33b91e449d50356e5544163, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 643723810}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8042e056a33b91e449d50356e5544163, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 643723811}
   m_SourcePrefab: {fileID: 100100000, guid: 8042e056a33b91e449d50356e5544163, type: 3}
 --- !u!1 &643723809 stripped
@@ -26033,33 +26030,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8042e056a33b91e449d50356e5544163, type: 3}
   m_PrefabInstance: {fileID: 643723808}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &643723810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 643723809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39efb718f49966749b43bf99a2c99f34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractSuccessful: 0
-  CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: 8a396213697e3d24f944fe34be909bbe, type: 3}
-  cameraAnchor: {fileID: 0}
-  _statement: It's a toy bin, full of your toys.
-  _question: How do you feel about moving your toys to a new place?
-  _options:
-  - ButtonText: Excited!
-    ButtonColor: {r: 1, g: 1, b: 1, a: 1}
-    Emotion: 1
-  - ButtonText: Anxious
-    ButtonColor: {r: 1, g: 1, b: 1, a: 1}
-    Emotion: 2
-  - ButtonText: Melancholy
-    ButtonColor: {r: 1, g: 1, b: 1, a: 1}
-    Emotion: 3
 --- !u!65 &643723811
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -72221,6 +72191,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1419933608}
     m_Modifications:
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[0].ButtonText
+      value: charm
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[1].ButtonText
+      value: assertive
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[2].ButtonText
+      value: sappy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1903305841387346248, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7253966867652435156, guid: 8042e056a33b91e449d50356e5544163, type: 3}
     - target: {fileID: 6548987443636036780, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_Size.x
       value: 1
@@ -72345,6 +72331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interaction Object (moving box)
       objectReference: {fileID: 0}
+    - target: {fileID: 8263027944320005954, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -72403,12 +72393,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9092100403283801934, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092100403283801934, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9092100403283801934, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 8f5645fa8d00f3442b90899b0233e846, type: 2}
+      objectReference: {fileID: 570321364444250367, guid: 8042e056a33b91e449d50356e5544163, type: 3}
+    - target: {fileID: 9092100403283801934, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4853200798383022538, guid: 8042e056a33b91e449d50356e5544163, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -75959,9 +75957,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd087649bb24bf4d9eca4a98ffe6100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractSuccessful: 0
-  BossDefeated: 0
-  _nextSceneIndex: 2
 --- !u!65 &2042483809
 BoxCollider:
   m_ObjectHideFlags: 0

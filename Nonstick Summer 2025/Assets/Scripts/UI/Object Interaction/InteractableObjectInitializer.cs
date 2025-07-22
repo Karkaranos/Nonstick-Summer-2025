@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InteractableObjectInitializer : MonoBehaviour, IInteractable
+public class InteractableObjectInitializer : MonoBehaviour, IInteractableObjective
 {
     [Required]
     public GameObject CanvasToOpen;
@@ -18,7 +18,10 @@ public class InteractableObjectInitializer : MonoBehaviour, IInteractable
     private bool canBeInteractedWith = false;
     private bool isObjective = false;
 
+    private GameObject openedCanvas;
+
     private OpenBossInteractable obi;
+    [HideInInspector] public bool InteractSuccessful = false;
 
     private void Start()
     {
@@ -28,14 +31,18 @@ public class InteractableObjectInitializer : MonoBehaviour, IInteractable
 
     public void Interact(GameObject player)
     {
-        if (!hasGivenCard)
+        if((!isObjective || (isObjective && canBeInteractedWith)) && !hasGivenCard)
         {
+            GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.INTERACT_WITH_OBJECT, gameObject);
             var canvas = UITransitionManager.OpenMenu(CanvasToOpen).GetComponent<InteractableObjectBehavior>();
             canvas.Initialize(_statement, _question, _options);
-            ClearBlocker();
-        }
 
-        hasGivenCard = true;
+            InteractSuccessful = true;
+            TryBoss();
+            hasGivenCard = true;
+
+            Destroy(gameObject.GetComponent<InteractableObjectInitializer>());
+        }
     }
 
 
@@ -58,7 +65,7 @@ public class InteractableObjectInitializer : MonoBehaviour, IInteractable
     }
 
 
-    /// <summary>
+   /* /// <summary>
     /// Gives player modifier cards based on their emotion choice
     /// </summary>
     /// <param name="emotion">The chosen emotion</param>
@@ -68,7 +75,7 @@ public class InteractableObjectInitializer : MonoBehaviour, IInteractable
         {
             ModifierManager.AddCard(md, true);
         }
-    }
+    }*/
 
 
     public void TryBoss()

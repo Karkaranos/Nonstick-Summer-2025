@@ -14,7 +14,6 @@ using System.Collections.Generic;
 
 public class InteractableObjectBehavior : MonoBehaviour
 {
-    [HideInInspector] public bool InteractSuccessful = false;
 
     [Tooltip("Can be left null if you don't want the camera to move.")]
     [SerializeField]
@@ -59,6 +58,7 @@ public class InteractableObjectBehavior : MonoBehaviour
 
     }
 
+
     /// <summary>
     /// Gives player modifier cards based on their emotion choice
     /// </summary>
@@ -70,6 +70,7 @@ public class InteractableObjectBehavior : MonoBehaviour
             ModifierManager.AddCard(md, true);
         }
     }
+
 
 #if UNITY_EDITOR
     private void OnDrawGizmos()

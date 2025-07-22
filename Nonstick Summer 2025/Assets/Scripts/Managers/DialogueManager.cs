@@ -42,6 +42,8 @@ public class DialogueManager
     }
     private static float _currentEnergy;
 
+    private static bool continueCardProcessing = false;
+
     // parameters
     private static float _defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent;
     public static float MaxEnergy, DrawButtonEnergyCost, EnergyGainedPerDiscard;
@@ -127,11 +129,21 @@ public class DialogueManager
         // ok i did it
     }
 
+    public static void StopCardProcessing()
+    {
+        continueCardProcessing = true;
+
+        Debug.Log("Make the npc say 'What was that?'");
+
+        OnCardPlayedFinished.Invoke();
+    }
+
     /// <summary>
     /// The big function that ties together everything. updates ui and processes a card
     /// </summary>
     public static IEnumerator ProcessPlayCard(CardData playedCard)
     {
+        continueCardProcessing = false;
         playedCardSinceOpeningCombat = true;
         ReadUserInput = false;
         OnCardPlayedStarted.Invoke();
@@ -146,8 +158,14 @@ public class DialogueManager
 
         //TODO wait for potential _modifier animations to finish
 
+
         if (playedCard != null)
             DialogueUIController.Instance.DeckDisplay.DiscardCard(playedCard);
+
+        if (continueCardProcessing)
+        {
+            yield break;
+        }
 
         yield return DialogueUIController.Instance.ToggleUIForDialogueProgression(false);
 

@@ -205,7 +205,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
             DialogueManager.FinishReadingDialogue();
         }
     }
-
     public IEnumerator ResetNPCDialogue(DialogueOption option)
     {
         if (!DialogueManager.ReadUserInput)

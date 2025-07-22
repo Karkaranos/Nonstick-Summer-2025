@@ -25965,97 +25965,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!1001 &643723808
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 851917280}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 8042e056a33b91e449d50356e5544163, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10.24166
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8042e056a33b91e449d50356e5544163, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5534644
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8042e056a33b91e449d50356e5544163, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -11.362999
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8042e056a33b91e449d50356e5544163, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8042e056a33b91e449d50356e5544163, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8042e056a33b91e449d50356e5544163, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8042e056a33b91e449d50356e5544163, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8042e056a33b91e449d50356e5544163, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8042e056a33b91e449d50356e5544163, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8042e056a33b91e449d50356e5544163, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 8042e056a33b91e449d50356e5544163, type: 3}
-      propertyPath: m_Name
-      value: ToyBin
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8042e056a33b91e449d50356e5544163, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 643723811}
-  m_SourcePrefab: {fileID: 100100000, guid: 8042e056a33b91e449d50356e5544163, type: 3}
---- !u!1 &643723809 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8042e056a33b91e449d50356e5544163, type: 3}
-  m_PrefabInstance: {fileID: 643723808}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &643723811
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 643723809}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 108.52783, y: 87.414, z: 173.6715}
-  m_Center: {x: 0.0130672455, y: 38.36055, z: 0}
---- !u!4 &643723812 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8042e056a33b91e449d50356e5544163, type: 3}
-  m_PrefabInstance: {fileID: 643723808}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &649453788
 Mesh:
   m_ObjectHideFlags: 0
@@ -33142,7 +33051,6 @@ Transform:
   - {fileID: 1580162005}
   - {fileID: 96790984}
   - {fileID: 267577575}
-  - {fileID: 643723812}
   - {fileID: 1796747330}
   m_Father: {fileID: 1985203548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62138,7 +62046,7 @@ PrefabInstance:
     - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
       propertyPath: '_conditions.Array.data[2].RequiredObjects.Array.data[0]'
       value: 
-      objectReference: {fileID: 643723809}
+      objectReference: {fileID: 0}
     - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
       propertyPath: _conditions.Array.data[1].condition.RequiredObjects.Array.size
       value: 4
@@ -67348,6 +67256,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1419933608}
     m_Modifications:
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _question
+      value: What do you think of it?
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _statement
+      value: A framed family photo.
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[0].ButtonText
+      value: I want to go back.
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[1].ButtonText
+      value: Looks bad.
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[2].ButtonText
+      value: We look great!
+      objectReference: {fileID: 0}
     - target: {fileID: 6548987443636036780, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_Size.x
       value: 1.189013
@@ -72054,6 +71982,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1419933608}
     m_Modifications:
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _question
+      value: What should they spell?
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _statement
+      value: Fridge Magnets.
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[0].ButtonText
+      value: MOM
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[1].ButtonText
+      value: OWW
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _options.Array.data[2].ButtonText
+      value: WOW
+      objectReference: {fileID: 0}
     - target: {fileID: 6548987443636036780, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_Size.x
       value: 0.7967429
@@ -72192,37 +72140,29 @@ PrefabInstance:
     m_TransformParent: {fileID: 1419933608}
     m_Modifications:
     - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _question
+      value: How do you feel about moving to a new place?
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: _statement
+      value: 'It''s a toy bin, full of your toys. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: _options.Array.data[0].ButtonText
-      value: charm
+      value: Excited!
       objectReference: {fileID: 0}
     - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: _options.Array.data[1].ButtonText
-      value: assertive
+      value: Anxious
       objectReference: {fileID: 0}
     - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: _options.Array.data[2].ButtonText
-      value: sappy
+      value: Melancholy
       objectReference: {fileID: 0}
     - target: {fileID: 1903305841387346248, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -7253966867652435156, guid: 8042e056a33b91e449d50356e5544163, type: 3}
-    - target: {fileID: 6548987443636036780, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6548987443636036780, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_Size.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6548987443636036780, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_Size.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6548987443636036780, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7287008436763146129, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: _question
       value: How do you feel about moving into a new place?
@@ -72329,7 +72269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8263027944320005954, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_Name
-      value: Interaction Object (moving box)
+      value: Interaction Object (Toy Box)
       objectReference: {fileID: 0}
     - target: {fileID: 8263027944320005954, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_IsActive
@@ -72337,27 +72277,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.01
+      value: -10.24166
       objectReference: {fileID: 0}
     - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.977
+      value: 0.5534644
       objectReference: {fileID: 0}
     - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.55
+      value: -11.362999
       objectReference: {fileID: 0}
     - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_LocalRotation.w
@@ -72389,7 +72329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9092100403283801934, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: m_Enabled

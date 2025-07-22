@@ -44,6 +44,11 @@ public abstract class ModifierStamp : ScriptableObject
         Debug.Log("Stamp added.");
     }
 
+    public virtual void OnCardDrawnFromDeck(CardData affectedCard)
+    {
+
+    }
+
     /// <summary>
     /// Performs a cards effect with absolute blind confidence that all of its conditions to activate have been met.
     /// </summary>

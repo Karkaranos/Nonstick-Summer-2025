@@ -43,17 +43,7 @@ public class IntentionChangeModifier : ModifierData
 
     public override Sprite GetIcon()
     {
-        switch (intentionToSet)
-        {
-            case CardIntention.Expression:
-                return CardStyleManager.ExpressionSprite;
-            case CardIntention.Observation:
-                return CardStyleManager.ObservationSprite;
-            case CardIntention.Question:
-                return CardStyleManager.QuestionSprite;
-        }
+        return CardStyleManager.GetIntentionSprite(intentionToSet);
 
-        Debug.LogError("Don't let this happen");
-        return null;
     }
 }

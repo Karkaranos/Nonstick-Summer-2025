@@ -25,13 +25,22 @@ public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
     [SerializeField]
     private Transform cameraAnchor;
 
+    private void Start()
+    {
+        if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.Contains('5'))
+        {
+            BossDefeated = true;
+        }
+    }
+
     public void Interact(GameObject player)
     {
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor, gameObject);
         menu.GetComponent<BedInteractionPopupCanvas>().Bed = this;
-        menu.GetComponent<BedInteractionPopupCanvas>().SceneTransitionType = sceneTransitionType = BedInteractionPopupCanvas.EndType.BED;
+        menu.GetComponent<BedInteractionPopupCanvas>().SceneTransitionType = sceneTransitionType;
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         if (cameraAnchor == null)
@@ -44,7 +53,7 @@ public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
         Gizmos.DrawRay(cameraAnchor.position, cameraAnchor.forward);
         Gizmos.DrawWireSphere(cameraAnchor.position, 0.25f);
     }
-
+#endif
     public void ClearBlocker()
     {
         BossDefeated = true;

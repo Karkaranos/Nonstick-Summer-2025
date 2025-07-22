@@ -86,6 +86,11 @@ public class DeckManager
         if (d == PlayerFullDeck) RemainingDeck.Add(copy);
     }
 
+    public static void AddCardHandOnly(CardData c)
+    {
+        PlayerHand.Add(c);
+    }
+
     /// <summary>
     /// Removes a card from any deck
     /// </summary>

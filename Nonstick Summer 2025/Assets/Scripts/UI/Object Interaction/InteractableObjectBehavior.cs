@@ -41,7 +41,7 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
             TryBoss();
             hasGivenCard = true;
 
-            Destroy(gameObject.GetComponent<InteractableObjectBehavior>());
+            //Destroy(gameObject.GetComponent<InteractableObjectBehavior>());
         }
     }
 

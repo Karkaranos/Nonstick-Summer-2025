@@ -16,9 +16,9 @@ public static class TextUtilities
         // i hope this is not extremely slow
         return rawText
             // emotions
-            .Replace("[Assertive]", $"<color=#{CardStyleManager.AssertiveStyle.color.ToHex()}>{CardStyleManager.AssertiveStyle.DisplayName}</color>")
-            .Replace("[Charming]", $"<color=#{CardStyleManager.CharmingStyle.color.ToHex()}>{CardStyleManager.CharmingStyle.DisplayName}</color>")
-            .Replace("[Sappy]", $"<color=#{CardStyleManager.SappyStyle.color.ToHex()}>{CardStyleManager.SappyStyle.DisplayName}</color>")
+            .Replace("[Assertive]", $"<color=#{CardStyleManager.RedStyle.color.ToHex()}>{CardStyleManager.RedStyle.DisplayName}</color>")
+            .Replace("[Charming]", $"<color=#{CardStyleManager.YellowStyle.color.ToHex()}>{CardStyleManager.YellowStyle.DisplayName}</color>")
+            .Replace("[Sappy]", $"<color=#{CardStyleManager.BlueStyle.color.ToHex()}>{CardStyleManager.BlueStyle.DisplayName}</color>")
             // intentions
             .Replace("[Expression]", $"<color=#{CardStyleManager.ExpressionStyle.color.ToHex()}>{CardStyleManager.ExpressionStyle.DisplayName}</color>")
             .Replace("[Observation]", $"<color=#{CardStyleManager.ObservationStyle.color.ToHex()}>{CardStyleManager.ObservationStyle.DisplayName}</color>")

@@ -10,7 +10,7 @@ public class CardStyleManager
 {
     public static CardStyleManager Instance => GameManager.CardStyleManagerReference;
 
-    public static CardValueStyle CharmingStyle, AssertiveStyle, SappyStyle, 
+    public static CardValueStyle YellowStyle, RedStyle, BlueStyle, 
         ExpressionStyle, ObservationStyle, QuestionStyle; // names subject to change
 
     public static CardValueStyle ErrorStyle;
@@ -19,9 +19,9 @@ public class CardStyleManager
         CardValueStyle yellowStyle, CardValueStyle assertiveStyle, CardValueStyle blueStyle, 
         CardValueStyle expressionStyle, CardValueStyle observationStyle, CardValueStyle questionStyle) 
     { 
-        CharmingStyle = yellowStyle;
-        AssertiveStyle = assertiveStyle;
-        SappyStyle = blueStyle;
+        YellowStyle = yellowStyle;
+        RedStyle = assertiveStyle;
+        BlueStyle = blueStyle;
         ExpressionStyle = expressionStyle;
         ObservationStyle = observationStyle;
         QuestionStyle = questionStyle;
@@ -60,11 +60,11 @@ public class CardStyleManager
         switch (card.Emotion)
         {
             case CardEmotion.Charming:
-                return CharmingStyle;
+                return YellowStyle;
             case CardEmotion.Assertive:
-                return AssertiveStyle;
+                return RedStyle;
             case CardEmotion.Sappy:
-                return SappyStyle;
+                return BlueStyle;
             default:
                 Debug.LogWarning("Card has no emotion set!");
                 return ErrorStyle;

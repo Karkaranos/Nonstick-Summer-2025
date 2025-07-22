@@ -15,6 +15,7 @@ public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
     [HideInInspector] public bool InteractSuccessful = false;
     [HideInInspector] public bool BossDefeated = false;
     [SerializeField, Scene] public int NextSceneIndex;
+    [SerializeField, Tooltip("Which object moves you between scenes.")] BedInteractionPopupCanvas.EndType sceneTransitionType;
 
     [SerializeField]
     [Required]
@@ -28,6 +29,7 @@ public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
     {
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor, gameObject);
         menu.GetComponent<BedInteractionPopupCanvas>().Bed = this;
+        menu.GetComponent<BedInteractionPopupCanvas>().SceneTransitionType = sceneTransitionType = BedInteractionPopupCanvas.EndType.BED;
     }
 
     private void OnDrawGizmos()

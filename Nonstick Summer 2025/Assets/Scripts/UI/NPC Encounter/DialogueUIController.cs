@@ -88,7 +88,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         yield return ToggleUIForDialogueProgression(false);
 
-        yield return OpenCombatUI_Coroutine();
+        //yield return OpenCombatUI_Coroutine();
 
         yield return dialogueBox.Initialize(startBranch);
     }
@@ -154,8 +154,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
             {
                 GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.FINISH_COMBAT);
                 GameManager.ObjectiveReference.SetObjectiveVisibility(true);
-                var bed = FindFirstObjectByType<BedBehavior>();
-                if (bed != null) bed.ClearBlocker();
             }
             else
             {
@@ -233,7 +231,10 @@ public class DialogueUIController : Singleton<DialogueUIController>
         if (DialogueManager.CurrentDialogueBranch.End)
         {
             playCardButtonText.text = EndDialogueText;
-        MusicManager.instance.StartHouse();
+            MusicManager.instance.StartHouse();
+
+            var bed = FindFirstObjectByType<OpenConfirmationInteractable>();
+            if (bed != null) bed.ClearBlocker();
         }
     }
 

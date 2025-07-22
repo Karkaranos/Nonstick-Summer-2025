@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Cousin_m2_6
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: Well. Um. We can still play!
+    Portrait: {fileID: 0}
+  - Dialogue: ...We CAN still play, right?
+    Portrait: {fileID: 0}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: "Oh... I mean, oh! Okay. That\u2019s, um, okay!"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Sure, but I need my space. I need my own things, too.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "Oh... I mean, oh! Okay. That\u2019s, um, okay!"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Ugh. Ask me again later.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "Um... Oh. Oh! I get it now. I\u2019m sorry."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "...Alright, but I\u2019m gonna need my cards back. AND my other
+      gifts."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: Yes! Yes! I can do that!
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: I know you wanna hang out, but give me some time.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: "THEY AREN\u2019T GRUBBY! You\u2019re so mean!"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: No! You got your grubby little fingerprints all over my NEW cards!
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: "I am?! I mean, of course I am! Ehehe. You\u2019re pretty cool, too.
+        You\u2019re awesome!"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "We can after the party. You\u2019re still my favorite cousin,
+      you know."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: Yes! Yes! I can do that!
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: If I PROMISE to play later, will you let me open up all of my
+      other gifts first?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: ...Yeah! I can, uh. I can go. Now. I can go now.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "WE\u2019LL. SEE. Can you go now?"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "Um... Oh. Oh! I get it now. I\u2019m sorry."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Will you apologize for opening one of my presents AND the cards?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Silent:
+    NpcReactionText: []
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  End: 0

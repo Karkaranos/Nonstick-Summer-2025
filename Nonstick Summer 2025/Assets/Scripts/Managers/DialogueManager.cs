@@ -186,6 +186,13 @@ public class DialogueManager
 
         }
 
+        if(playedCard != null)
+        {
+
+            DialogueUIController.Instance.UpdateDialogueTreeVisual(CurrentDialogueBranch);
+
+        }
+
         yield return DialogueUIController.Instance.ResetNPCDialogue(dialogueOption);
 
         // TODO: move this to AFTER player reads all text, and can play cards again

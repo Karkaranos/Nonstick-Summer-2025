@@ -114,8 +114,8 @@ public class DialogueTree : MonoBehaviour
             newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
             newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y, this.transform.position.z);
 
-            lr1.SetPosition(0, this.transform.position * 1.75f);
-            lr1.SetPosition(1, newNode.transform.position * 1.75f);
+            lr1.SetPosition(0, this.transform.position);
+            lr1.SetPosition(1, newNode.transform.position);
 
             nodeVisuals.Add(newNode);
 
@@ -127,8 +127,8 @@ public class DialogueTree : MonoBehaviour
             newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
             newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y + yOffset, this.transform.position.z);
 
-            lr1.SetPosition(0, this.transform.position * 1.75f);
-            lr1.SetPosition(1, newNode.transform.position * 1.75f);
+            lr1.SetPosition(0, this.transform.position);
+            lr1.SetPosition(1, newNode.transform.position);
 
             nodeVisuals.Add(newNode);
 
@@ -137,8 +137,8 @@ public class DialogueTree : MonoBehaviour
             newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
             newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y - yOffset, this.transform.position.z);
 
-            lr2.SetPosition(0, this.transform.position * 1.75f);
-            lr2.SetPosition(1, newNode.transform.position * 1.75f);
+            lr2.SetPosition(0, this.transform.position);
+            lr2.SetPosition(1, newNode.transform.position);
 
             nodeVisuals.Add(newNode);
 
@@ -151,8 +151,8 @@ public class DialogueTree : MonoBehaviour
             newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
             newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y + yOffset, this.transform.position.z);
 
-            lr1.SetPosition(0, this.transform.position * 1.75f);
-            lr1.SetPosition(1, newNode.transform.position * 1.75f);
+            lr1.SetPosition(0, this.transform.position);
+            lr1.SetPosition(1, newNode.transform.position);
 
             nodeVisuals.Add(newNode);
 
@@ -161,8 +161,8 @@ public class DialogueTree : MonoBehaviour
             newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
             newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y, this.transform.position.z);
 
-            lr2.SetPosition(0, this.transform.position * 1.75f);
-            lr2.SetPosition(1, newNode.transform.position * 1.75f);
+            lr2.SetPosition(0, this.transform.position);
+            lr2.SetPosition(1, newNode.transform.position);
 
             nodeVisuals.Add(newNode);
 
@@ -171,8 +171,8 @@ public class DialogueTree : MonoBehaviour
             newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
             newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y - yOffset, this.transform.position.z);
 
-            lr3.SetPosition(0, this.transform.position * 1.75f);
-            lr3.SetPosition(1, newNode.transform.position * 1.75f);
+            lr3.SetPosition(0, this.transform.position);
+            lr3.SetPosition(1, newNode.transform.position);
 
             nodeVisuals.Add(newNode);
 

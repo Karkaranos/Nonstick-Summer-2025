@@ -9,7 +9,7 @@
 using NaughtyAttributes;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "StampModifierData", menuName = "Scriptable Objects/Stamp Modifier Data")]
+[CreateAssetMenu(fileName = "StampModifierData", menuName = "Modifier Card/Stamp Applier")]
 public class StampModifierData : ModifierData
 {
     [Header("Stamps")]

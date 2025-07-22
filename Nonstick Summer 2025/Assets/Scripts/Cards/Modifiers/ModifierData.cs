@@ -27,6 +27,9 @@ public abstract class ModifierData : ScriptableObject
     [ShowIf(nameof(_showMinCardsApplied)), Min(1)]
     public int MinCardsApplied = 1;
 
+    [SerializeField, ResizableTextArea]
+    protected string _tooltipDescription;
+
     [SerializeField, ShowAssetPreview(32, 32)]
     protected Sprite icon;
 
@@ -57,6 +60,11 @@ public abstract class ModifierData : ScriptableObject
     public virtual Sprite GetIcon()
     {
         return icon;
+    }
+
+    public virtual string GetTooltipDescription()
+    {
+        return _tooltipDescription;
     }
 
     public virtual int GetHashCodeByProperties()

@@ -20,6 +20,7 @@ public abstract class ModifierStamp : ScriptableObject
     [ShowAssetPreview(32,32)]
     public Sprite Icon;
     public string StampName;
+    [ResizableTextArea]
     public string ShortDescription;
 
     public Type type => this.GetType();

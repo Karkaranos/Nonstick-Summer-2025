@@ -8,6 +8,7 @@
 
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "StatChange", menuName = "Scriptable Objects/Stamp/Draw Extra Card")]
 public class DrawExtraCardStamp : ModifierStamp
 {
     [SerializeField, Min(1)] private int NumCardsToDraw = 1;

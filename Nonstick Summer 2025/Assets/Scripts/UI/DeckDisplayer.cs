@@ -215,7 +215,7 @@ public class DeckDisplayer : MonoBehaviour
             throw new ArgumentNullException("No deck to draw from");
         }
 
-        if (DeckManager.RemainingDeck.Count < MaxHandSize && DeckManager.RemainingDeck.Count > 0)
+        if (DeckManager.PlayerHand.Count < MaxHandSize && DeckManager.RemainingDeck.Count > 0)
         {
             var card = DeckManager.RemainingDeck.Pop();
             AddCardToHand(card);

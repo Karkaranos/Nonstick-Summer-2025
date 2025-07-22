@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdde2f25cdb92504e92b27450210750c, type: 3}
+  m_Script: {fileID: 11500000, guid: 889cfb861dde3d34b884966bc1d2eb50, type: 3}
   m_Name: Draw Extra Card
   m_EditorClassIdentifier: 
   TriggerCondition: 1
   Icon: {fileID: 21300000, guid: d7a1c1d51604a2b4d93bbe61c23af14a, type: 3}
   StampName: Overthinking
-  ShortDescription: Draws one extra card after playing this card
+  ShortDescription: Draw one extra card after playing this card
+  NumCardsToDraw: 1

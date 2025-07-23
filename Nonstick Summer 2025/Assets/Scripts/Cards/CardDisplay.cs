@@ -22,7 +22,7 @@ public partial class CardDisplay : MonoBehaviour
     [Foldout("UI Components"), SerializeField, Required] RectTransform cardBackground;
     [Foldout("UI Components"), SerializeField, Required] Image IntentionImage;
     [Foldout("UI Components"), SerializeField, Required] TMP_Text EnergyText;
-    [Foldout("UI Components"), SerializeField] Image[] StampImages;
+    [Foldout("UI Components"), SerializeField] StampIconDisplay[] StampImages;
 
     public CardData cardData { get{ return card; } }
 
@@ -120,14 +120,12 @@ public partial class CardDisplay : MonoBehaviour
             if (stamp == null)
                 continue;
 
-            StampImages[i].sprite = stamp.Icon;
-            StampImages[i].color = Color.white;
+            StampImages[i].SetStamp(stamp);
         }
 
         for(;i<StampImages.Length; i++)
         {
-            StampImages[i].sprite = null;
-            StampImages[i].color = Color.clear;
+            StampImages[i].SetStamp(null);
         }
 
         if (card.Stamps.Count > StampImages.Length)

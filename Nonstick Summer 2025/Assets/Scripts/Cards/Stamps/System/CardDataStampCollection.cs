@@ -42,7 +42,7 @@ public partial class CardData
 
     public void AddStamp(ModifierStamp stamp)
     {
-        _stamps.Add(stamp);
+        _stamps.Add(Instantiate(stamp));
         stamp.OnStampAdded(this);
         OnCardValueChanged.Invoke();
     }
@@ -64,7 +64,7 @@ public partial class CardData
             if (stamp.GetType() == stampType)
             {
                 _stamps.Remove(stamp);
-                OnCardValueChanged.Invoke();
+                OnCardValueChanged?.Invoke();
 
                 return;
             }

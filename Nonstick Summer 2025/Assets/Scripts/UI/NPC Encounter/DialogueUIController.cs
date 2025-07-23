@@ -27,6 +27,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine.TextCore.Text;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class DialogueUIController : Singleton<DialogueUIController>
 {
@@ -38,6 +39,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Tooltip("Relationship slider UI element")]
     [Required][SerializeField] private RelationshipSlider relationshipSlider;
     [Required, SerializeField] private DialogueBox dialogueBox;
+    [SerializeField] private DialogueTree dialogueTree;
     [Required, SerializeField] public  DialogueNPCPortraitDisplay portraitDisplay;
     [Required, SerializeField] private DrawButton drawButton;
     [Required, SerializeField] private DiscardButton discardButton;
@@ -86,9 +88,16 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         deckDisplay.OnCardsSelectedChanged.AddListener(OnSelectionUpdated);
 
+        if(dialogueTree != null)
+        {
+
+            dialogueTree.Initialize(startBranch);
+
+        }
+
         yield return ToggleUIForDialogueProgression(false);
 
-        yield return OpenCombatUI_Coroutine();
+        //yield return OpenCombatUI_Coroutine();
 
         yield return dialogueBox.Initialize(startBranch);
     }
@@ -154,8 +163,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
             {
                 GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.FINISH_COMBAT);
                 GameManager.ObjectiveReference.SetObjectiveVisibility(true);
-                var bed = FindFirstObjectByType<BedBehavior>();
-                if (bed != null) bed.ClearBlocker();
             }
             else
             {
@@ -227,13 +234,23 @@ public class DialogueUIController : Singleton<DialogueUIController>
         }
     }
 
+    public void UpdateDialogueTreeVisual(DialogueBranch branch)
+    {
+
+        dialogueTree.HighlightActiveNode(branch);
+
+    }
+
     //TODO move to play button script
     public void ClosingOutCombat()
     {
         if (DialogueManager.CurrentDialogueBranch.End)
         {
             playCardButtonText.text = EndDialogueText;
-        MusicManager.instance.StartHouse();
+            MusicManager.instance.StartHouse();
+
+            var bed = FindFirstObjectByType<OpenConfirmationInteractable>();
+            if (bed != null) bed.ClearBlocker();
         }
     }
 

@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Cousin_m2_7
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: Well, I'm gonna do something else, I guess.
+    Portrait: {fileID: 0}
+  - Dialogue: But talk to me later! Or something!
+    Portrait: {fileID: 0}
+  - Dialogue: And here are your cards, probably...
+    Portrait: {fileID: 0}
+  - Dialogue: They got a little mixed up, though
+    Portrait: {fileID: 0}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: Ehehe!
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Hey, thanks!
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: ae9bcb8d5edaa2b429fc5d497b937f5b, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: Ehehe...
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Whatever. Sure.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: ae9bcb8d5edaa2b429fc5d497b937f5b, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: Ehehe!
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "...That\u2019s fine. It\u2019s fine. It\u2019s fine... Uh, thanks!"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: ae9bcb8d5edaa2b429fc5d497b937f5b, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: "Um. I\u2019m not sure what they\u2019re supposed to look like..."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Oh, they\u2019re definitely still mixed up."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: ae9bcb8d5edaa2b429fc5d497b937f5b, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: "They aren\u2019t! I swear! I bet I wash my hands WAY more than you
+        do!"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "They\u2019re so greasy..."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: ae9bcb8d5edaa2b429fc5d497b937f5b, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: Ehehe!
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: See you later!
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: ae9bcb8d5edaa2b429fc5d497b937f5b, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: "Um. I\u2019m not sure what they\u2019re supposed to look like..."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Are you SURE these are all of them?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: ae9bcb8d5edaa2b429fc5d497b937f5b, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: Give me a moment! Geez.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: ...Why are you still here?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: ae9bcb8d5edaa2b429fc5d497b937f5b, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: I promise! I swear!
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Will you really leave me alone this time?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: ae9bcb8d5edaa2b429fc5d497b937f5b, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Silent:
+    NpcReactionText: []
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: ae9bcb8d5edaa2b429fc5d497b937f5b, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  End: 0

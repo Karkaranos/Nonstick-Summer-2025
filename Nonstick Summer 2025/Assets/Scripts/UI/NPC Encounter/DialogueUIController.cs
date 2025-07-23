@@ -27,6 +27,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine.TextCore.Text;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class DialogueUIController : Singleton<DialogueUIController>
 {
@@ -38,6 +39,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Tooltip("Relationship slider UI element")]
     [Required][SerializeField] private RelationshipSlider relationshipSlider;
     [Required, SerializeField] private DialogueBox dialogueBox;
+    [SerializeField] private DialogueTree dialogueTree;
     [Required, SerializeField] public  DialogueNPCPortraitDisplay portraitDisplay;
     [Required, SerializeField] private DrawButton drawButton;
     [Required, SerializeField] private DiscardButton discardButton;
@@ -85,6 +87,13 @@ public class DialogueUIController : Singleton<DialogueUIController>
         discardButton.Initialize();
 
         deckDisplay.OnCardsSelectedChanged.AddListener(OnSelectionUpdated);
+
+        if(dialogueTree != null)
+        {
+
+            dialogueTree.Initialize(startBranch);
+
+        }
 
         yield return ToggleUIForDialogueProgression(false);
 
@@ -196,7 +205,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
             DialogueManager.FinishReadingDialogue();
         }
     }
-
     public IEnumerator ResetNPCDialogue(DialogueOption option)
     {
         if (!DialogueManager.ReadUserInput)
@@ -223,6 +231,18 @@ public class DialogueUIController : Singleton<DialogueUIController>
                 DialogueManager.FinishReadingDialogue();
             }
         }
+    }
+
+    public void MuffleText()
+    {
+        // hardcoded for now will fix so it can take a thing later
+        dialogueBox.DisplayOneLine("What was that?");
+    }
+    public void UpdateDialogueTreeVisual(DialogueBranch branch)
+    {
+
+        dialogueTree.HighlightActiveNode(branch);
+
     }
 
     //TODO move to play button script
@@ -268,6 +288,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     // Coroutine to handle animation (in the future)
     public IEnumerator UpdateRelationship(float? value, characters character)
+
+
     {
         yield return relationshipSlider?.SetValue(value ?? RelationshipManager.characterRelationships[character].currentValue);
     }

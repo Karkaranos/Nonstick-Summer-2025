@@ -16,7 +16,8 @@ public class DrawButton : MonoBehaviour
 {
     [SerializeField, Required] private Button button;
     private DeckDisplayer handDisplay => DialogueUIController.Instance.DeckDisplay;
-    private bool DrewCardThisTurn = false;
+    [ReadOnly]
+    public bool DrewCardThisTurn = false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

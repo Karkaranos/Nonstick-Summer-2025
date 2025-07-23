@@ -129,6 +129,12 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
         // Go to her...
         timeStarted = Time.time;
         t = 0;
+
+        if (GameManager.playerTransformRef == null)
+        {
+            GameManager.playerTransformRef = FindFirstObjectByType<PlayerCamera>().transform;   
+        }
+
         startPos = rectTransform.position;
         var startRotation = rectTransform.rotation; 
         while (t < 1)

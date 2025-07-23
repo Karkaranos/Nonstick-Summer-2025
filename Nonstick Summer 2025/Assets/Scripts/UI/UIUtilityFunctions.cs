@@ -7,7 +7,9 @@ using UnityEngine;
  */
 public class UIUtilityFunctions : MonoBehaviour
 {
+    /* MOVED TO INTERACTABLEOBJECTBEHAVIOUR
     private static GameObject objRef;
+    
     /// <summary>
     /// Gives all intents of the specified emotion
     /// </summary>
@@ -21,6 +23,7 @@ public class UIUtilityFunctions : MonoBehaviour
 
         openedFrom.GetComponent<InteractableObjectBehavior>().GiveCard(emotion);
     }
+    */
 
     public static void CloseCurrentPopup()
     {

@@ -53,6 +53,7 @@ public class DeckManager
 
         Debug.Log("filling remaining deck");
         RemainingDeck = PlayerFullDeck.GetCopy();
+        RemainingDeck.Shuffle();
 
     }
 
@@ -84,6 +85,11 @@ public class DeckManager
         d.Add(copy);
 
         if (d == PlayerFullDeck) RemainingDeck.Add(copy);
+    }
+
+    public static void AddCardHandOnly(CardData c)
+    {
+        PlayerHand.Add(c);
     }
 
     /// <summary>

@@ -133,7 +133,7 @@ public class DialogueManager
     {
         continueCardProcessing = true;
 
-        Debug.Log("Make the npc say 'What was that?'");
+        //hardcoded for now; fix so any string works later
         DialogueUIController.Instance.MuffleText();
 
         OnCardPlayedFinished.Invoke();

@@ -235,7 +235,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     public void MuffleText()
     {
-        dialogueBox.MuffleFeedback();
+        // hardcoded for now will fix so it can take a thing later
+        dialogueBox.DisplayOneLine("What was that?");
     }
     public void UpdateDialogueTreeVisual(DialogueBranch branch)
     {

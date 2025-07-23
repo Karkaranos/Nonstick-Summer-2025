@@ -20,7 +20,6 @@ public class MumbleStamp : ModifierStamp
 
         if(relationshipChange < 0)
         {
-            DialogueUIController.Instance.DeckDisplay.AddCardToHand(affectedCard.CopyCardWithoutStampType(this.type));
             DialogueManager.StopCardProcessing();
         }
     }

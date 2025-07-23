@@ -42,11 +42,38 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638866396695885649
+  lastModified: 638881924960941581
   FileSizes:
   - Name: Desktop
     Value: 1720
   Exists: 1
+--- !u!114 &-6381407632917228147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Steps
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Steps
+  Guid:
+    Data1: 760648952
+    Data2: 1213251932
+    Data3: 303134124
+    Data4: -866588109
+  Banks:
+  - {fileID: 1634051811715559137}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 522
 --- !u!114 &-5604641973045892702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,10 +144,10 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638866396695895641
+  lastModified: 638888082260846931
   FileSizes:
   - Name: Desktop
-    Value: 1590
+    Value: 1714
   Exists: 1
 --- !u!114 &-3369080826598713240
 MonoBehaviour:
@@ -149,6 +176,33 @@ MonoBehaviour:
   - Mom Boss
   - Cousin Boss
   Exists: 1
+--- !u!114 &-2690066693674928131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/UISelect
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/UISelect
+  Guid:
+    Data1: 1882378675
+    Data2: 1210365893
+    Data3: 1460373391
+    Data4: -927868543
+  Banks:
+  - {fileID: 1634051811715559137}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 400
 --- !u!114 &-2533828954921976497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +335,9 @@ MonoBehaviour:
   - {fileID: 2696384017540158741}
   - {fileID: -2182227563652261044}
   - {fileID: 2929946636224875393}
+  - {fileID: 8970712704328029775}
+  - {fileID: -2690066693674928131}
+  - {fileID: -6381407632917228147}
   EditorParameters:
   - {fileID: 5683601671587191834}
   - {fileID: 3213934903721604961}
@@ -288,7 +345,7 @@ MonoBehaviour:
   - {fileID: -7676539690225878646}
   StringsBanks:
   - {fileID: -5259588466323316940}
-  cacheTime: 638876838861161774
+  cacheTime: 638888082260873969
   cacheVersion: 131624
 --- !u!114 &34564258425666311
 MonoBehaviour:
@@ -305,7 +362,7 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/BGM.bank
   Name: BGM
   StudioPath: bank:/BGM
-  lastModified: 638866396695885649
+  lastModified: 638866396894096011
   FileSizes:
   - Name: Desktop
     Value: 7006016
@@ -325,10 +382,10 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638876838861161774
+  lastModified: 638888082260873969
   FileSizes:
   - Name: Desktop
-    Value: 239520
+    Value: 329152
   Exists: 1
 --- !u!114 &2696384017540158741
 MonoBehaviour:
@@ -576,3 +633,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8970712704328029775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/UIHover
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/UIHover
+  Guid:
+    Data1: 984431517
+    Data2: 1143120550
+    Data3: -332299615
+    Data4: -1705173648
+  Banks:
+  - {fileID: 1634051811715559137}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 200

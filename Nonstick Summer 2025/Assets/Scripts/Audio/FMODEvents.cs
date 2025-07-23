@@ -10,6 +10,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference CombatBGM { get; private set; }
     [field: SerializeField] public EventReference ReflectionBGM { get; private set; }
     [field: Header("SFX")]
+    [field: SerializeField] public EventReference WalkSFX { get; private set; }
     [field: SerializeField] public EventReference InteractSFX { get; private set; }
     [field: SerializeField] public EventReference CharacterReactGenericSFX { get; private set; }
     [field: SerializeField] public EventReference CardHoverSFX { get; private set; }
@@ -17,6 +18,8 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference CardPlaySFX { get; private set; }
     [field: SerializeField] public EventReference PosRelationSFX { get; private set; }
     [field: SerializeField] public EventReference NegRelationSFX { get; private set; }
+    [field: SerializeField] public EventReference UIClickSFX { get; private set; }
+    [field: SerializeField] public EventReference UIHoverSFX { get; private set; }
 
 
 

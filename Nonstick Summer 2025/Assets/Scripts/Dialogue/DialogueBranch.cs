@@ -42,58 +42,58 @@ public class DialogueBranch : ScriptableObject
                 {
                     return Charming_Expression;
                 }
-                else return blank;
+                else return Silent;
             case (CardIntention.Expression, CardEmotion.Assertive):
                 if (Assertive_Expression != null)
                 {
                     return Assertive_Expression;
                 }
-                else return blank;
+                else return Silent;
             case (CardIntention.Expression, CardEmotion.Sappy):
                 if (Sappy_Expression != null)
                 {
                     return Sappy_Expression;
                 }
-                else return blank;
+                else return Silent;
             case (CardIntention.Observation, CardEmotion.Charming):
                 if (Charming_Observation != null)
                 {
                     return Charming_Observation;
                 }
-                else return blank;
+                else return Silent;
             case (CardIntention.Observation, CardEmotion.Assertive):
                 if (Assertive_Observation != null)
                 {
                     return Assertive_Observation;
                 }
-                else return blank;
+                else return Silent;
             case (CardIntention.Observation, CardEmotion.Sappy):
                 if (Sappy_Observation != null)
                 {
                     return Sappy_Observation;
                 }
-                else return blank;
+                else return Silent;
             case (CardIntention.Question, CardEmotion.Charming):
                 if (Charming_Question != null)
                 {
                     return Charming_Question;
                 }
-                else return blank;
+                else return Silent;
             case (CardIntention.Question, CardEmotion.Assertive):
                 if (Assertive_Question != null)
                 {
                     return Assertive_Question;
                 }
-                else return blank;
+                else return Silent;
             case (CardIntention.Question, CardEmotion.Sappy):
                 if (Sappy_Question != null)
                 {
                     return Sappy_Question;
                 }
-                else return blank;
+                else return Silent;
             default:
                 Debug.LogError($"Can't match played card {card.Emotion.ToString()},{card.Intention.ToString()} to result");
-                return blank;
+                return Silent;
         }
 
     }

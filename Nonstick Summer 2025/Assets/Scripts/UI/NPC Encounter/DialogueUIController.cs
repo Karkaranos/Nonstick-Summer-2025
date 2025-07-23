@@ -288,6 +288,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     // Coroutine to handle animation (in the future)
     public IEnumerator UpdateRelationship(float? value, characters character)
+
+
     {
         yield return relationshipSlider?.SetValue(value ?? RelationshipManager.characterRelationships[character].currentValue);
     }

@@ -87,6 +87,13 @@ public class DialogueManager
 
         RelationshipManager.characterRelationships[currentCharacter].currentValue = relationshipScore;
 
+        if(relationshipScore < 0)
+        {
+
+            relationshipScore = 0;
+
+        }
+
         if(DialogueUIController.Instance != null)
         {
             yield return DialogueUIController.Instance.UpdateRelationship(relationshipScore, currentCharacter);
@@ -186,6 +193,13 @@ public class DialogueManager
         //yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange);
         GameManager.Instance.StartCoroutine(SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange));
 
+        if((CurrentRelationshipScore + relationshipChange) < 0)
+        {
+
+            RelationshipManager.characterRelationships[currentCharacter].currentValue = 0;
+
+        }
+
         // progress dialogue:
         if (dialogueOption.RelationshipCheckRequired == false || RelationshipManager.characterRelationships[currentCharacter].currentValue > dialogueOption.RelationshipRange.y)
         {
@@ -205,12 +219,7 @@ public class DialogueManager
 
         }
 
-        if(playedCard != null)
-        {
-
-            DialogueUIController.Instance.UpdateDialogueTreeVisual(CurrentDialogueBranch);
-
-        }
+        DialogueUIController.Instance.UpdateDialogueTreeVisual(CurrentDialogueBranch);
 
         yield return DialogueUIController.Instance.ResetNPCDialogue(dialogueOption);
 

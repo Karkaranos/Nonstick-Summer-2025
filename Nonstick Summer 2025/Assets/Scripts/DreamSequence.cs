@@ -107,7 +107,7 @@ public class DreamSequence : MonoBehaviour
 
     private void OnConfirmPressed()
     {
-        MoodManager.SetDreamSequenceCost(CardEmotion.Assertive);
+        MoodManager.SetDreamSequenceCost(selectedEmotion);
         UITransitionManager.CloseMenu(changeCam: false);
     }    
 

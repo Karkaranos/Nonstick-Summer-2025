@@ -66,7 +66,7 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
         StaticUtilities.EnableCursor();
     }
 
-    public void GetModifier()
+    public void FinishSideCombat()
     {
         conversationComplete = true;
         int i = PossibleModifiers.Length;

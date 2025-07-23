@@ -15,6 +15,7 @@ public class CombatPromptCanvas : MonoBehaviour
     [SerializeField] private TMP_Text dialogueBubbleText;
     [SerializeField] private TMP_Text questionText;
     [SerializeField] private Image characterImage;
+    [SerializeField] private Button startCombatButton;
     public void Initialize(string speechBubbleLine, bool hasInteracted, Sprite image, SideCharacterInteractable sci, string questionLine = null)
     {
         notInteractedUI.SetActive(!hasInteracted);
@@ -27,9 +28,6 @@ public class CombatPromptCanvas : MonoBehaviour
         if (questionLine != null)
             questionText.text = questionLine;
 
-        if(!hasInteracted)
-        {
-            notInteractedUI.transform.GetChild(1).GetChild(0).GetComponent<Button>().onClick.AddListener(() => sci.StartSideCombat());
-        }
+        startCombatButton.onClick.AddListener(()=> sci.StartSideCombat());
     }
 }

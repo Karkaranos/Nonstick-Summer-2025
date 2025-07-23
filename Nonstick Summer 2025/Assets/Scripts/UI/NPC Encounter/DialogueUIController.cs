@@ -233,6 +233,10 @@ public class DialogueUIController : Singleton<DialogueUIController>
         }
     }
 
+    public void MuffleText()
+    {
+        dialogueBox.MuffleFeedback();
+    }
     public void UpdateDialogueTreeVisual(DialogueBranch branch)
     {
 

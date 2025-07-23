@@ -134,6 +134,7 @@ public class DialogueManager
         continueCardProcessing = true;
 
         Debug.Log("Make the npc say 'What was that?'");
+        DialogueUIController.Instance.MuffleText();
 
         OnCardPlayedFinished.Invoke();
     }

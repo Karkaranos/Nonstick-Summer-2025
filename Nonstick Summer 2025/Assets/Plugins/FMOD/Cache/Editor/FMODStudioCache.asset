@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1306
+--- !u!114 &-8033845322687622138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/New Event
+  m_EditorClassIdentifier: 
+  Path: event:/Music/New Event
+  Guid:
+    Data1: -1961786996
+    Data2: 1273215805
+    Data3: -967979881
+    Data4: 862672950
+  Banks:
+  - {fileID: 34564258425666311}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 118796
 --- !u!114 &-7676539690225878646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,10 +69,10 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638866396695885649
+  lastModified: 638888112572092233
   FileSizes:
   - Name: Desktop
-    Value: 1720
+    Value: 1736
   Exists: 1
 --- !u!114 &-5604641973045892702
 MonoBehaviour:
@@ -117,10 +144,10 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638866396695895641
+  lastModified: 638888112572097128
   FileSizes:
   - Name: Desktop
-    Value: 1590
+    Value: 1630
   Exists: 1
 --- !u!114 &-3369080826598713240
 MonoBehaviour:
@@ -137,7 +164,7 @@ MonoBehaviour:
   Name: Combat
   StudioPath: 
   Min: 0
-  Max: 2
+  Max: 3
   Default: 0
   ID:
     data1: 2070745984
@@ -148,6 +175,7 @@ MonoBehaviour:
   - Side Fight
   - Mom Boss
   - Cousin Boss
+  - Grandma Boss
   Exists: 1
 --- !u!114 &-2533828954921976497
 MonoBehaviour:
@@ -281,6 +309,7 @@ MonoBehaviour:
   - {fileID: 2696384017540158741}
   - {fileID: -2182227563652261044}
   - {fileID: 2929946636224875393}
+  - {fileID: -8033845322687622138}
   EditorParameters:
   - {fileID: 5683601671587191834}
   - {fileID: 3213934903721604961}
@@ -288,7 +317,7 @@ MonoBehaviour:
   - {fileID: -7676539690225878646}
   StringsBanks:
   - {fileID: -5259588466323316940}
-  cacheTime: 638876838861161774
+  cacheTime: 638888112573068843
   cacheVersion: 131624
 --- !u!114 &34564258425666311
 MonoBehaviour:
@@ -305,10 +334,10 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/BGM.bank
   Name: BGM
   StudioPath: bank:/BGM
-  lastModified: 638866396695885649
+  lastModified: 638888112572052523
   FileSizes:
   - Name: Desktop
-    Value: 7006016
+    Value: 10381248
   Exists: 1
 --- !u!114 &1634051811715559137
 MonoBehaviour:
@@ -325,7 +354,7 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638876838861161774
+  lastModified: 638888112573068843
   FileSizes:
   - Name: Desktop
     Value: 239520
@@ -399,7 +428,7 @@ MonoBehaviour:
   Name: Combat
   StudioPath: parameter:/Combat
   Min: 0
-  Max: 2
+  Max: 3
   Default: 0
   ID:
     data1: 2070745984
@@ -410,6 +439,7 @@ MonoBehaviour:
   - Side Fight
   - Mom Boss
   - Cousin Boss
+  - Grandma Boss
   Exists: 1
 --- !u!114 &3589350382702972286
 MonoBehaviour:

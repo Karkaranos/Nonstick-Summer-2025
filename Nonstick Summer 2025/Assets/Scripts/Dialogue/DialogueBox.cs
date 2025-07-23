@@ -62,6 +62,11 @@ public class DialogueBox : MonoBehaviour
         yield return SetDialogueIndex(NumberInList+1, null, dialogueStored); // mods it in this function dw
     }
 
+    public void DisplayOneLine(string line)
+    {
+        npcText.text = line;
+    }
+
     public IEnumerator SetDialogueIndex(int numberInList, DialogueBranch branch = null, DialogueNPC[] dialogue = null)
     {
         branch = branch ?? DialogueManager.CurrentDialogueBranch;

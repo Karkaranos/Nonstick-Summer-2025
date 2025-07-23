@@ -205,7 +205,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
             DialogueManager.FinishReadingDialogue();
         }
     }
-
     public IEnumerator ResetNPCDialogue(DialogueOption option)
     {
         if (!DialogueManager.ReadUserInput)
@@ -234,6 +233,11 @@ public class DialogueUIController : Singleton<DialogueUIController>
         }
     }
 
+    public void MuffleText()
+    {
+        // hardcoded for now will fix so it can take a thing later
+        dialogueBox.DisplayOneLine("What was that?");
+    }
     public void UpdateDialogueTreeVisual(DialogueBranch branch)
     {
 

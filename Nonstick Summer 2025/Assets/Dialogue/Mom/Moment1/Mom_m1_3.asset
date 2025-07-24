@@ -21,12 +21,13 @@ MonoBehaviour:
     Portrait: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: No promises...
+    - Dialogue: "I\u2019m glad your appreciate her gifts. She appreciates getting
+        to spend time with you."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: I want all my birthdays today. All the presents.
+    PlayerDialogue: Grandma always gets me the best gifts!
     RelationshipCheckRequired: 1
-    RelationshipRange: {x: 5, y: 5}
+    RelationshipRange: {x: 35, y: 35}
     BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 11400000, guid: 5b121f534c74f534288df6ebe03df590, type: 2}
@@ -36,21 +37,22 @@ MonoBehaviour:
     - Dialogue: "Don\u2019t say that...we can go out for pizza, your favorite!"
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "It doesn\u2019t matter. Birthdays are lame."
+    PlayerDialogue: "Grandma doesn\u2019t understand the games I like."
     RelationshipCheckRequired: 1
-    RelationshipRange: {x: 5, y: 5}
+    RelationshipRange: {x: 35, y: 35}
     BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 11400000, guid: 5b121f534c74f534288df6ebe03df590, type: 2}
-    ChangeInRelationshipStatus: -15
+    ChangeInRelationshipStatus: -5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: Of course. We can talk about it tonight, okay?
+    - Dialogue: "I\u2019m sure she\u2019d love to. We\u2019ll ask her about it tonight,
+        okay?"
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: I want Grandma to make my cake. She makes the best cake.
     RelationshipCheckRequired: 1
-    RelationshipRange: {x: 5, y: 5}
+    RelationshipRange: {x: 35, y: 35}
     BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 11400000, guid: 5b121f534c74f534288df6ebe03df590, type: 2}
@@ -94,24 +96,26 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Charming_Question:
     NpcReactionText:
-    - Dialogue: No promises, but you can still ask.
+    - Dialogue: You should appreciate anything your Grandma gives you. She puts so
+        much thought and care into it.
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Can I ask for a pony?
+    PlayerDialogue: Do you think Grandma would buy me the really expensive game?
     RelationshipCheckRequired: 1
-    RelationshipRange: {x: 5, y: 5}
+    RelationshipRange: {x: 35, y: 35}
     BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 11400000, guid: 5b121f534c74f534288df6ebe03df590, type: 2}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: -10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: It's okay to not know. At least put some thought into it soon, alright?
+    - Dialogue: You should appreciate anything your Grandma gives you. She puts so
+        much thought and care into it.
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Do I have to know by now?
+    PlayerDialogue: "She\u2019s just going to make me another blanket, why bother?"
     RelationshipCheckRequired: 1
-    RelationshipRange: {x: 5, y: 5}
+    RelationshipRange: {x: 35, y: 35}
     BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 11400000, guid: 5b121f534c74f534288df6ebe03df590, type: 2}
@@ -123,7 +127,7 @@ MonoBehaviour:
     CombinedDialogue: []
     PlayerDialogue: I dunno...can you help me?
     RelationshipCheckRequired: 1
-    RelationshipRange: {x: 5, y: 5}
+    RelationshipRange: {x: 35, y: 35}
     BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 11400000, guid: 5b121f534c74f534288df6ebe03df590, type: 2}
@@ -135,7 +139,7 @@ MonoBehaviour:
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 1
-    RelationshipRange: {x: 5, y: 5}
+    RelationshipRange: {x: 35, y: 35}
     BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 11400000, guid: 5b121f534c74f534288df6ebe03df590, type: 2}

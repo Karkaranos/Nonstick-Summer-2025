@@ -109,6 +109,8 @@ public class DreamSequence : MonoBehaviour
     {
         MoodManager.SetDreamSequenceCost(selectedEmotion);
         UITransitionManager.CloseMenu(changeCam: false);
+
+        MusicManager.instance.StartHouse();
     }    
 
     /*************************************************

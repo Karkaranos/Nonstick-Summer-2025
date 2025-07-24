@@ -69,7 +69,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     {
         DialogueManager.OnOpenCombatUI(startBranch, character);
 
-        MusicManager.instance.StartCombat(0);
+        //MusicManager.instance.StartCombat(0);
 
         Instance.isBoss = isBoss;
         inWorldCharacter = objRef;
@@ -168,7 +168,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
             {
                 GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.TALK_TO_SIDE_CHARACTER, inWorldCharacter);
                 GameManager.ObjectiveReference.SetObjectiveVisibility(true);
-                inWorldCharacter.GetComponent<SideCharacterInteractable>().GetModifier();
+                inWorldCharacter.GetComponent<SideCharacterInteractable>().FinishSideCombat();
             }
 
             return;
@@ -253,8 +253,11 @@ public class DialogueUIController : Singleton<DialogueUIController>
             playCardButtonText.text = EndDialogueText;
             MusicManager.instance.StartHouse();
 
-            var bed = FindFirstObjectByType<OpenConfirmationInteractable>();
-            if (bed != null) bed.ClearBlocker();
+            if (isBoss)
+            {
+                var bed = FindFirstObjectByType<OpenConfirmationInteractable>();
+                if (bed != null) bed.ClearBlocker();
+            }
         }
     }
 

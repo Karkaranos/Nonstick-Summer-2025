@@ -168,7 +168,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
             {
                 GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.TALK_TO_SIDE_CHARACTER, inWorldCharacter);
                 GameManager.ObjectiveReference.SetObjectiveVisibility(true);
-                inWorldCharacter.GetComponent<SideCharacterInteractable>().GetModifier();
+                inWorldCharacter.GetComponent<SideCharacterInteractable>().FinishSideCombat();
             }
 
             return;
@@ -205,7 +205,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
             DialogueManager.FinishReadingDialogue();
         }
     }
-
     public IEnumerator ResetNPCDialogue(DialogueOption option)
     {
         if (!DialogueManager.ReadUserInput)
@@ -234,6 +233,11 @@ public class DialogueUIController : Singleton<DialogueUIController>
         }
     }
 
+    public void MuffleText()
+    {
+        // hardcoded for now will fix so it can take a thing later
+        dialogueBox.DisplayOneLine("What was that?");
+    }
     public void UpdateDialogueTreeVisual(DialogueBranch branch)
     {
 
@@ -249,8 +253,11 @@ public class DialogueUIController : Singleton<DialogueUIController>
             playCardButtonText.text = EndDialogueText;
             MusicManager.instance.StartHouse();
 
-            var bed = FindFirstObjectByType<OpenConfirmationInteractable>();
-            if (bed != null) bed.ClearBlocker();
+            if (isBoss)
+            {
+                var bed = FindFirstObjectByType<OpenConfirmationInteractable>();
+                if (bed != null) bed.ClearBlocker();
+            }
         }
     }
 
@@ -284,6 +291,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     // Coroutine to handle animation (in the future)
     public IEnumerator UpdateRelationship(float? value, characters character)
+
+
     {
         yield return relationshipSlider?.SetValue(value ?? RelationshipManager.characterRelationships[character].currentValue);
     }

@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
-  m_Name: Mom_m4_4
+  m_Name: Mom_m4_4End
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: I work day and night for this family, but all I ever see you care about
-      is your phone!
+  - Dialogue: Go to your room!
     Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
-  - Dialogue: You are grounded, do you understand that?!
+  - Dialogue: NOW!
     Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
   Charming_Expression:
     NpcReactionText:
@@ -29,10 +28,10 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: At least my PHONE listens to me!
-    RelationshipCheckRequired: 1
-    RelationshipRange: {x: 0, y: 30}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
-    BranchingDialogueNeutral: {fileID: 11400000, guid: 35a765a981612e641a15e6244d33e73a, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Assertive_Expression:
@@ -43,10 +42,10 @@ MonoBehaviour:
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m not trying to sound ungrateful. I AM grateful but you\u2019re
       being UNFAIR right now!"
-    RelationshipCheckRequired: 1
-    RelationshipRange: {x: 0, y: 30}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
-    BranchingDialogueNeutral: {fileID: 11400000, guid: 35a765a981612e641a15e6244d33e73a, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Sappy_Expression:
@@ -57,10 +56,10 @@ MonoBehaviour:
     CombinedDialogue: []
     PlayerDialogue: " A tragedy. It\u2019s almost like you\u2019re A MOTHER who is
       supposed to CARE ABOUT HER KID."
-    RelationshipCheckRequired: 1
-    RelationshipRange: {x: 0, y: 30}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
-    BranchingDialogueNeutral: {fileID: 11400000, guid: 35a765a981612e641a15e6244d33e73a, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Charming_Observation:
@@ -108,10 +107,10 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "If you work more, does that mean I\u2019ll have to see you less?"
-    RelationshipCheckRequired: 1
-    RelationshipRange: {x: 0, y: 30}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
-    BranchingDialogueNeutral: {fileID: 11400000, guid: 35a765a981612e641a15e6244d33e73a, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Assertive_Question:
@@ -122,10 +121,10 @@ MonoBehaviour:
     CombinedDialogue: []
     PlayerDialogue: "Can\u2019t we talk about this? There has to be something else
       you can take besides my phone."
-    RelationshipCheckRequired: 1
-    RelationshipRange: {x: 0, y: 30}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
-    BranchingDialogueNeutral: {fileID: 11400000, guid: 35a765a981612e641a15e6244d33e73a, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Sappy_Question:
@@ -142,10 +141,10 @@ MonoBehaviour:
     CombinedDialogue: []
     PlayerDialogue: Do you understand that you working so much leaves you with no
       time to pay attention to me?
-    RelationshipCheckRequired: 1
-    RelationshipRange: {x: 0, y: 30}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
-    BranchingDialogueNeutral: {fileID: 11400000, guid: 35a765a981612e641a15e6244d33e73a, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Silent:
@@ -160,4 +159,4 @@ MonoBehaviour:
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
-  End: 0
+  End: 1

@@ -30,10 +30,10 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: 10
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "That\u2019s, um, good! That\u2019s really good..."
+    - Dialogue: "Oh... Really? Well, we\u2019ll all miss you. You know that, right?"
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "Like I\u2019m happy to finally be getting out of here."
@@ -42,20 +42,19 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: -10
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "Haha. C\u2019mon! That\u2019s so corny. I guess that I\u2019m happy
-        to hear it, though."
+    - Dialogue: "Oh. Oh! Um... I\u2019m sorry. I wasn\u2019t, uh, prepared for that."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "Like I\u2019m going to miss everyone."
+    PlayerDialogue: Like I wish I had gotten to know you some more.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: 10
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "Haha. C\u2019mon! That\u2019s so corny. I guess that I\u2019m happy
@@ -109,8 +108,9 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: "Hey, I\u2019m trying here. I really am. We only have so much time
-        left, you know?"
+    - Dialogue: "Hey, I\u2019m trying here."
+      Portrait: {fileID: 0}
+    - Dialogue: I really am. We only have so much time left, you know?
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Why do you care? We barely talk anymore.
@@ -122,8 +122,10 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -15
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: "Huh? Well, I dunno. I\u2019m happy for you, but I\u2019m sad to
-        see you go. I\u2019m sure you\u2019ve heard it all before."
+    - Dialogue: Huh? Well, I dunno.
+      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019m happy for you, but I\u2019m sad to see you go. I\u2019m
+        sure you\u2019ve heard it all before."
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: What about you? How are you feeling?

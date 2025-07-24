@@ -18,7 +18,8 @@ MonoBehaviour:
     Portrait: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "See? That\u2019s the spirit!"
+    - Dialogue: "That\u2019s the little pumpkin that I know. Seems like you\u2019ve
+        still got that youthful spirit to you just like your Nanna."
       Portrait: {fileID: 0}
     CombinedDialogue:
     - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
@@ -28,41 +29,48 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
     - Dialogue: Who knew that my little Pumpkin could grow so tall?
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
-    PlayerDialogue: "I definitely wouldn\u2019t call it \u201Cexcited\u201D. More
-      like \u201Cexistentially apprehensive\u201D."
+    PlayerDialogue: "\u201CExcited\u201D might not be the right word. Let me think...
+      \u201CExistential dread\u201D might be more apt."
+    RelationshipCheckRequired: 1
+    RelationshipRange: {x: 35, y: 75}
+    BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "That\u2019s the spirit! Feeling nerves is a normal part of life,
+        it just means that you care."
+      Portrait: {fileID: 0}
+    - Dialogue: Never back down when your nerves start to become too much, push through
+        them like you always have and everything will turn out just fine!
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "I\u2019d be lying if I said I wasn\u2019t nervous, but despite
+      that I am ready to take on anything this new phase of my life throws at me."
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 35, y: 75}
     BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
-  Assertive_Expression:
-    NpcReactionText:
-    - Dialogue: "Aww, please don\u2019t look at it like that. It\u2019s what you
-        make of it that matters."
-      Portrait: {fileID: 0}
-    CombinedDialogue: []
-    PlayerDialogue: "I\u2019m so glad to finally be on my own. It\u2019s about time
-      I got to get away from all of you."
-    RelationshipCheckRequired: 1
-    RelationshipRange: {x: 35, y: 75}
-    BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -15
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "Aww, please don\u2019t look at it like that. It\u2019s what you
-        make of it that matters."
+    - Dialogue: Of course you are ready Pumpkin.
+      Portrait: {fileID: 0}
+    - Dialogue: Everything that you have gone through and you are still as bright
+        as they day that I first saw you.
+      Portrait: {fileID: 0}
+    - Dialogue: I promise, there is nothing that can stand in your way now.
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "To be honest, I\u2019m a little nervous. "
+    PlayerDialogue: "I\u2019m a bit nervous, I\u2019m not sure that I am ready."
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 35, y: 75}
     BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -5
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "See? That\u2019s the spirit!"
@@ -115,20 +123,22 @@ MonoBehaviour:
         you don\u2019t have. Better safe than sorry!"
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Do you think I really need this many boxes?
+    PlayerDialogue: "We\u2019ve got enough boxes to build a huge castle like we used
+      to. Are you sure we need this many?"
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 35, y: 75}
     BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: 10
   Assertive_Question:
     NpcReactionText:
     - Dialogue: "Aww, please don\u2019t look at it like that. It\u2019s what you
         make of it that matters."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Does this look exciting to you?
+    PlayerDialogue: I know Mom is probably the excited one now that I am moving out
+      of the house right?
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 35, y: 75}
     BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
@@ -137,19 +147,19 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: I did! Before me and your grandfather moved in together shortly after
-        uni, I shared a flat with some roommates for some odd years.
+    - Dialogue: "You know you can\u2019t do that pumpkin."
       Portrait: {fileID: 0}
-    - Dialogue: Those were the times...
+    - Dialogue: "You\u2019ll always be my little sunshine, but you have to go out
+        on your own and show the rest of the world just how amazing you are!"
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Did you move out when you were my age?
+    PlayerDialogue: "I\u2019m not ready Nanna, can\u2019t I just stay with you?"
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 35, y: 75}
     BranchingDialogueHigh: {fileID: 11400000, guid: 31a1d4d1fdbcb2b469cc6fca5cbe5769, type: 2}
     BranchingDialogueNeutral: {fileID: 11400000, guid: 81fdf8506f94941489f6a93ce882ec95, type: 2}
     BranchingDialogueLow: {fileID: 11400000, guid: 2094e15fc3fa10f4898e7d61cb0d12d7, type: 2}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -15
   Silent:
     NpcReactionText: []
     CombinedDialogue: []

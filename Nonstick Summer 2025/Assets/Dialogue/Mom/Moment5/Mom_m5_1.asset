@@ -17,8 +17,7 @@ MonoBehaviour:
     Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "Slow down there a bit. You\u2019ve got a bunch of new lessons to
-        learn out there, but don\u2019t forget all the ones we taught you."
+    - Dialogue: "Tomorrow is a new adventure and you\u2019re going to do great!"
       Portrait: {fileID: 0}
     CombinedDialogue:
     - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
@@ -28,13 +27,13 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
     - Dialogue: Who knew that my little Pumpkin could grow so tall?
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
-    PlayerDialogue: "I can\u2019t wait to get out of here."
+    PlayerDialogue: 'My new life begins tomorrow. '
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 0d729c42a30df2c4dbf87975e1d9a574, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: I can help you pack and we can figure it out.
@@ -46,19 +45,22 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 0d729c42a30df2c4dbf87975e1d9a574, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: -5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "Tomorrow is a new adventure and you\u2019re going to do great!"
+    - Dialogue: Slow down there a bit.
+      Portrait: {fileID: 0}
+    - Dialogue: "You\u2019ve got a bunch of new lessons to learn out there, but don\u2019t
+        forget all the ones we taught you."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "I\u2019m not ready."
+    PlayerDialogue: 'Tomorrow is a fresh start to the new chapter of my life. '
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 0d729c42a30df2c4dbf87975e1d9a574, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: 15
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "Tomorrow is a new adventure and you\u2019re going to do great!"
@@ -107,7 +109,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 0d729c42a30df2c4dbf87975e1d9a574, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: -10
   Assertive_Question:
     NpcReactionText:
     - Dialogue: "You don\u2019t have to feel anything, but the way I see it, tomorrow
@@ -120,7 +122,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 0d729c42a30df2c4dbf87975e1d9a574, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -10
   Sappy_Question:
     NpcReactionText:
     - Dialogue: "I\u2019m sure everyone wishes they could see you off."

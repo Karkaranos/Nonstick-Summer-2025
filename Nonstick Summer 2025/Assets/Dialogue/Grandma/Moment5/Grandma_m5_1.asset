@@ -17,8 +17,11 @@ MonoBehaviour:
     Portrait: {fileID: 21300000, guid: 7869ad9eba8e60e4dab075f9d8bc6428, type: 3}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "Don\u2019t worry; I\u2019m sure you\u2019ll be done before you know
-        it.hing to do you with you."
+    - Dialogue: "Of course! I\u2019m be more than willing to help my Pumpkin out.
+        ith me and you on the case nothing will be able to stop us."
+      Portrait: {fileID: 0}
+    - Dialogue: "I'm sure we can get this all unpacked before you can say, \u201CI
+        love you Nanna!\u201D"
       Portrait: {fileID: 0}
     CombinedDialogue:
     - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
@@ -29,19 +32,23 @@ MonoBehaviour:
     - Dialogue: Who knew that my little Pumpkin could grow so tall?
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
     PlayerDialogue: "Not anymore, but I\u2019ll definitely need some help unpacking
-      all of this."
+      all of this if you\u2019d be willing to help."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 1aba6adb79996f9458d3d60f30b902f4, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: Of course.
+    - Dialogue: Wow, you guys work really fast!
+      Portrait: {fileID: 0}
+    - Dialogue: And your poor old Nanna here thought that you might not be ready
+        to move out on your own.
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "I don\u2019t need any help."
+    PlayerDialogue: "We\u2019re already done, you don\u2019t have to worry about
+      it anymore."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 1aba6adb79996f9458d3d60f30b902f4, type: 2}
@@ -50,10 +57,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: Of course.
+    - Dialogue: "You should learn to rely on others sometimes. It\u2019s not good
+        to try and do everything yourself you know."
+      Portrait: {fileID: 0}
+    - Dialogue: We are all here for that exact reason, to help you.
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: No, but I appreciate the help.
+    PlayerDialogue: "Don\u2019t worry, I got it all."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 1aba6adb79996f9458d3d60f30b902f4, type: 2}
@@ -109,13 +119,16 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 1aba6adb79996f9458d3d60f30b902f4, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: 10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: "Oh, I hadn\u2019t noticed. Sorry, dear."
+    - Dialogue: "Oh, I hadn\u2019t noticed. Silly me, I must have missed all the
+        boxes lying around."
+      Portrait: {fileID: 0}
+    - Dialogue: Sorry, dear.
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "Do you think I haven\u2019t packed yet?"
+    PlayerDialogue: "We\u2019ve already taken care of it. Can\u2019t you see?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 1aba6adb79996f9458d3d60f30b902f4, type: 2}
@@ -124,17 +137,20 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: "I thought you\u2019d never ask! Here, I didn\u2019t want them to
-        get cold."
+    - Dialogue: Oh alright...
+      Portrait: {fileID: 0}
+    - Dialogue: I guess I will just sit back then and give you guys some moral support
+        from the sidelines, just like I always do...
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Is it too late to ask for some of your cookies to-go?
+    PlayerDialogue: The rest of us can handle this. Unless you are going to turn
+      down an open invitation to sit and relax?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 1aba6adb79996f9458d3d60f30b902f4, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: -15
   Silent:
     NpcReactionText: []
     CombinedDialogue: []

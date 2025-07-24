@@ -17,7 +17,10 @@ MonoBehaviour:
     Portrait: {fileID: 21300000, guid: 5b80e3e4b9e4ae24282ce0ed426c2aaa, type: 3}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "Everyone\u2019s gonna miss you a whole lot, kiddo. Me included."
+    - Dialogue: "If you\u2019re ever back in town, I can show you how to squeeze
+        a tent inside a backpack."
+      Portrait: {fileID: 0}
+    - Dialogue: Not exactly a house, but it gets the job done.
       Portrait: {fileID: 0}
     CombinedDialogue:
     - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
@@ -27,30 +30,33 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
     - Dialogue: Who knew that my little Pumpkin could grow so tall?
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
-    PlayerDialogue: "I\u2019m sure it\u2019s gonna feel a lot more empty without
-      me here."
+    PlayerDialogue: "I meant to pack the whole house, but didn\u2019t have time."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 1fb30350f01bdfa489b5e7e7f169ce01, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: A little bit of optimism never hurt anyone, you know. At least, until
-        it did.
+    - Dialogue: A little bit of optimism never hurt anyone, you know.
+      Portrait: {fileID: 0}
+    - Dialogue: "But hey, maybe I\u2019m not the one to talk."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: More relieved than ready.
+    PlayerDialogue: 'About time. '
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 1fb30350f01bdfa489b5e7e7f169ce01, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "Everyone\u2019s gonna miss you a whole lot, kiddo. Me included."
+    - Dialogue: "No you won\u2019t, or at least not for long."
+      Portrait: {fileID: 0}
+    - Dialogue: "Don\u2019t worry; I\u2019m fine with that even if it means you forget
+        about your weird uncle back home."
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m gonna miss you."
@@ -59,7 +65,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 1fb30350f01bdfa489b5e7e7f169ce01, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: -15
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "Really? In that case, you\u2019d better find a train to catch, and
@@ -116,7 +122,7 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: "What, I can\u2019t even say goodbye?"
+    - Dialogue: "What, a proud relative can\u2019t even say goodbye?"
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: What do you want?
@@ -125,10 +131,10 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 1fb30350f01bdfa489b5e7e7f169ce01, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -15
+    ChangeInRelationshipStatus: 5
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: "Trick question, kiddo: no one\u2019s ever ready."
+    - Dialogue: "No one\u2019s ever ready, kiddo."
       Portrait: {fileID: 0}
     - Dialogue: All we can do is hope for the best and prepare for everything else.
       Portrait: {fileID: 0}
@@ -139,7 +145,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 1fb30350f01bdfa489b5e7e7f169ce01, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -5
   Silent:
     NpcReactionText: []
     CombinedDialogue: []

@@ -26,10 +26,10 @@ MonoBehaviour:
     PlayerDialogue: I love Grandma! She smells funny.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: "Well, I\u2019m sorry to hear that, but she\u2019s coming over, and
@@ -39,7 +39,7 @@ MonoBehaviour:
     PlayerDialogue: "I don\u2019t need a babysitter. I\u2019m not a baby anymore."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
@@ -48,10 +48,10 @@ MonoBehaviour:
     - Dialogue: "I\u2019m glad to hear that, honey."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: But I always behave!
+    PlayerDialogue: Really? Grandma is the best!
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
@@ -95,16 +95,16 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
-    - Dialogue: I hope she will. Keep an eye on her for me, alright?
+    - Dialogue: "It shouldn\u2019t matter, you are going to behave for her regardless."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Is SHE going to behave?
+    PlayerDialogue: Is she going to bring candy?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -10
   Assertive_Question:
     NpcReactionText:
     - Dialogue: Because I said so.
@@ -113,7 +113,7 @@ MonoBehaviour:
     PlayerDialogue: Why should I behave?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
@@ -126,7 +126,7 @@ MonoBehaviour:
     PlayerDialogue: "Why doesn\u2019t she visit more?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
@@ -138,7 +138,7 @@ MonoBehaviour:
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5

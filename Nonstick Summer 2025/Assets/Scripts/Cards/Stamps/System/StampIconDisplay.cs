@@ -26,6 +26,8 @@ public class StampIconDisplay : MonoBehaviour
     {
         // newStamp will be null sometimes and that is good 
         modifierStamp = newStamp;
+
+        RefreshDisplay();
     }
 
     public void RefreshDisplay()

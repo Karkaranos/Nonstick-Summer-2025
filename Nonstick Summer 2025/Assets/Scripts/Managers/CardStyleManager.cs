@@ -11,20 +11,29 @@ public class CardStyleManager
     public static CardStyleManager Instance => GameManager.CardStyleManagerReference;
 
     public static CardValueStyle YellowStyle, RedStyle, BlueStyle, 
-        ExpressionStyle, ObservationStyle, QuestionStyle; // names subject to change
+        StatementStyle, QuestionStyle; // names subject to change
+
+    public static CardValueStyle ObservationStyle => StatementStyle;
+
+    public static Sprite DefaultCardBack, YellowCardBack, RedCardBack, BlueCardBack;
 
     public static CardValueStyle ErrorStyle;
     
     public CardStyleManager(
-        CardValueStyle yellowStyle, CardValueStyle assertiveStyle, CardValueStyle blueStyle, 
-        CardValueStyle expressionStyle, CardValueStyle observationStyle, CardValueStyle questionStyle) 
+        CardValueStyle yellowStyle, CardValueStyle redStyle, CardValueStyle blueStyle, 
+        CardValueStyle expressionStyle, CardValueStyle questionStyle, 
+        Sprite blankCardBack, Sprite yellowCardBack, Sprite redCardBack, Sprite blueCardBack) 
     { 
         YellowStyle = yellowStyle;
-        RedStyle = assertiveStyle;
+        RedStyle = redStyle;
         BlueStyle = blueStyle;
-        ExpressionStyle = expressionStyle;
-        ObservationStyle = observationStyle;
+        StatementStyle = expressionStyle;
         QuestionStyle = questionStyle;
+
+        DefaultCardBack = blankCardBack;
+        YellowCardBack = yellowCardBack;
+        RedCardBack = redCardBack;
+        BlueCardBack = blueCardBack;
 
         ErrorStyle = new CardValueStyle(Color.red, "ERROR");
     }
@@ -39,7 +48,7 @@ public class CardStyleManager
         switch (intention)
         {
             case CardIntention.Expression:
-                return ExpressionStyle.sprite;
+                return StatementStyle.sprite;
             case CardIntention.Observation:
                 return ObservationStyle.sprite;
             case CardIntention.Question:
@@ -49,15 +58,35 @@ public class CardStyleManager
                 return null;
         }
     }
-
-    public static Color GetEmotionColor(CardData card)
+    public static Color GetIntentionColor(CardData card)
     {
-        return GetEmotionStyle(card).color;
+        return GetIntentionStyle(card).color;
+    }
+
+    public static CardValueStyle GetIntentionStyle(CardData card)
+    {
+        switch (card.Intention)
+        {
+            case CardIntention.Expression:
+                return StatementStyle;
+            case CardIntention.Observation:
+                return ObservationStyle;
+            case CardIntention.Question:
+                return QuestionStyle;
+            default:
+                Debug.LogWarning("Card has no intention set!");
+                return ErrorStyle;
+        }
     }
 
     public static CardValueStyle GetEmotionStyle(CardData card)
     {
-        switch (card.Emotion)
+        return GetEmotionStyle(card.GetEmotion());
+    }
+
+    public static CardValueStyle GetEmotionStyle(CardEmotion emotion)
+    {
+        switch (emotion)
         {
             case CardEmotion.Charming:
                 return YellowStyle;
@@ -71,24 +100,34 @@ public class CardStyleManager
         }
     }
 
-    public static Color GetIntentionColor(CardData card)
+    public static Color GetEmotionColor(CardData card)
     {
-        return GetIntentionStyle(card).color;
+        return GetEmotionStyle(card).color;
     }
 
-    public static CardValueStyle GetIntentionStyle(CardData card)
+    public static Sprite GetEmotionSprite(CardData card)
     {
-        switch (card.Intention)
+       return GetEmotionStyle(card).sprite;
+    }
+
+    public static Sprite GetEmotionSprite(CardEmotion emotion)
+    {
+        return GetEmotionStyle(emotion).sprite;
+    }
+
+    public static Sprite GetCardBack(CardData card)
+    {
+        switch (card.Emotion)
         {
-            case CardIntention.Expression:
-                return ExpressionStyle;
-            case CardIntention.Observation:
-                return ObservationStyle;
-            case CardIntention.Question:
-                return QuestionStyle;
+            case CardEmotion.Charming:
+                return YellowCardBack;
+            case CardEmotion.Assertive:
+                return RedCardBack;
+            case CardEmotion.Sappy:
+                return BlueCardBack;
             default:
-                Debug.LogWarning("Card has no intention set!");
-                return ErrorStyle;
+                Debug.LogWarning("Card has no emotion set!");
+                return DefaultCardBack;
         }
     }
 }

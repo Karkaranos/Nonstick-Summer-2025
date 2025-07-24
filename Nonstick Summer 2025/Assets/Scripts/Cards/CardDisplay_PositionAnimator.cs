@@ -24,6 +24,7 @@ public partial class CardDisplay : MonoBehaviour
 
     [Tooltip("Canvas units/sec")]
     [SerializeField] private float MovementSpeed = 1500;
+    [SerializeField] private float RefreshCardTime = 0.4f;
 
     private Vector2 basePosition, positionOffset=default;
     private Coroutine translatePositionCoroutine;

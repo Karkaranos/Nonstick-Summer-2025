@@ -109,6 +109,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{ceca13d8-838e-4e09-9d0c-350206f4a55b}">
+		<property name="volume">
+			<value>2</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -189,7 +192,7 @@
 	<object class="MixerBusFader" id="{f82e24b8-7528-46a2-8cc4-beaddc2c0e57}" />
 	<object class="PitchShifterEffect" id="{2ff7cf6f-3c35-4611-ae83-f19a4bd0df0e}">
 		<property name="pitch">
-			<value>1.00999999</value>
+			<value>1</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{085b0a13-4b6d-4c91-8fab-411fed2a4de8}</destination>
@@ -197,8 +200,14 @@
 	</object>
 	<object class="MixerBusFader" id="{eceec071-15e1-4ab8-ba40-718de31a06d8}" />
 	<object class="ThreeEQEffect" id="{08e0f8d6-967c-4937-9cc1-81faf8c0cd0d}">
+		<property name="lowGain">
+			<value>-1</value>
+		</property>
 		<property name="highGain">
-			<value>-10</value>
+			<value>-14.5</value>
+		</property>
+		<property name="crossoverSlope">
+			<value>0</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{085b0a13-4b6d-4c91-8fab-411fed2a4de8}">
@@ -206,7 +215,7 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>10</value>
+			<value>5.5</value>
 		</property>
 	</object>
 </objects>

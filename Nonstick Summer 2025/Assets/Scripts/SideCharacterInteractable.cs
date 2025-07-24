@@ -14,7 +14,6 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
     [SerializeField, Required, Tooltip("Asks the player if they want to enter combat")] private GameObject promptCanvas;
     [SerializeField, Tooltip("Question phrasing")] private string combatPrompt;
     [SerializeField, Tooltip("The displayed line of dialogue before entering combat")] private string preCombatLine;
-    [SerializeField, Tooltip("The displayed line of dialogue after completing combat")] private string postCombatLine;
     [SerializeField] private Sprite characterSprite;
 
     [SerializeField, Tooltip("Dialogue Canvas")]
@@ -38,9 +37,6 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
 
     public ModifierData[] PossibleModifiers;
 
-    private bool conversationComplete = false;
-
-
 
     /// <summary>
     /// Opens prompt canvas and loads desired data
@@ -51,14 +47,16 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
         GameManager.ObjectiveReference.SetObjectiveVisibility(false);
 
         openedCanvas = UITransitionManager.OpenMenu(promptCanvas, cameraAnchor, gameObject);
-        openedCanvas.GetComponent<CombatPromptCanvas>().Initialize(
-            (conversationComplete ? postCombatLine : preCombatLine), conversationComplete, 
-            characterSprite, this, (conversationComplete ? null : combatPrompt)
-            );
+
+        openedCanvas.transform.GetChild(1).GetComponent<TMP_Text>().text = combatPrompt;
+        openedCanvas.transform.GetChild(4).GetChild(1).GetChild(1).GetChild(0).GetComponent<TMP_Text>().text = preCombatLine;
+        openedCanvas.transform.GetChild(3).GetChild(0).GetComponent<Image>().sprite = characterSprite;
+        openedCanvas.transform.GetChild(2).GetChild(0).GetComponent<Button>().onClick.AddListener(() => StartSideCombat());
     }
 
     public void StartSideCombat()
     {
+        print("Cah");
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor);
         var dialogueController = menu.GetComponentInChildren<DialogueUIController>();
         GameManager.ObjectiveReference.SetObjectiveVisibility(false);
@@ -66,9 +64,8 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
         StaticUtilities.EnableCursor();
     }
 
-    public void FinishSideCombat()
+    public void GetModifier()
     {
-        conversationComplete = true;
         int i = PossibleModifiers.Length;
         ModifierManager.AddCard(PossibleModifiers[(int)Random.Range(int.MinValue, int.MaxValue) % i]);
     }

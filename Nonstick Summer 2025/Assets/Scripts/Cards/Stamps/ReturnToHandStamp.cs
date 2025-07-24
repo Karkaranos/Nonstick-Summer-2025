@@ -9,9 +9,6 @@
 *****************************************************************************/
 
 using UnityEngine;
-using System.Collections.Generic;
-using System.Collections;
-using System;
 
 [CreateAssetMenu(fileName = "StatChange", menuName = "Scriptable Objects/Stamp/Return To Hand")]
 public class ReturnToHandStamp : ModifierStamp

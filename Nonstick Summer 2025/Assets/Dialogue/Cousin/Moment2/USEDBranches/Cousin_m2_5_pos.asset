@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: Cousin_m2_5_pos
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Please? Please? Please?
-    Portrait: {fileID: 0}
   - Dialogue: You can even use the cards that my Dad got you...
     Portrait: {fileID: 0}
   Charming_Expression:
@@ -59,13 +57,7 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Assertive_Observation:
     NpcReactionText: []
-    CombinedDialogue:
-    - Dialogue: Um... You like me, right? Like, you think I'm cool?
-      Portrait: {fileID: 0}
-    - Dialogue: Because I think you're the coolest! But, uh...
-      Portrait: {fileID: 0}
-    - Dialogue: You look mad right now. Are you mad at me?
-      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: Hey! You opened MY present!
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 0, y: 15}

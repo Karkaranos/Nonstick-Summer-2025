@@ -25,9 +25,6 @@ public class IntentionChangeModifier : ModifierData
 
         foreach (CardData card in cards)
         {
-            if(card==null)
-                continue;
-
             if (card.Intention == intentionToSet)
             {
                 return false;
@@ -40,9 +37,6 @@ public class IntentionChangeModifier : ModifierData
     {
         foreach (CardData card in cards)
         {
-            if (card == null)
-                continue;
-
             card.Intention = intentionToSet;
         }
     }

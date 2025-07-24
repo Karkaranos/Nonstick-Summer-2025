@@ -82,7 +82,7 @@ public class CardPickupManager : Singleton<CardPickupManager>
             }
         }
     }
-#if UNITY_EDITOR
+
     public void OnDrawGizmosSelected()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -98,5 +98,4 @@ public class CardPickupManager : Singleton<CardPickupManager>
             (PrefabUtility.HasPrefabInstanceAnyOverrides(gameObject, false) && !StaticUtilities.Editor_SelectingTransform(transform)
                 ? " (UNAPPLIED CHANGES TO PREFAB)" : "");
     }
-#endif
 }

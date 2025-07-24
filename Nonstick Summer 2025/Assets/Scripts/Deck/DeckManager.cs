@@ -53,7 +53,6 @@ public class DeckManager
 
         Debug.Log("filling remaining deck");
         RemainingDeck = PlayerFullDeck.GetCopy();
-        RemainingDeck.Shuffle();
 
     }
 

@@ -12,6 +12,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using System.Collections;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class DreamSequence : MonoBehaviour
 {
@@ -107,7 +108,7 @@ public class DreamSequence : MonoBehaviour
 
     private void OnConfirmPressed()
     {
-        MoodManager.SetDreamSequenceCost(selectedEmotion);
+        MoodManager.SetDreamSequenceCost(CardEmotion.Assertive);
         UITransitionManager.CloseMenu(changeCam: false);
     }    
 

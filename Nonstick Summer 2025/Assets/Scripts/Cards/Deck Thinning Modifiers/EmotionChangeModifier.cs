@@ -21,6 +21,9 @@ public class EmotionChangeModifier : ModifierData
 
         foreach (CardData card in cards)
         {
+            if(card==null)
+                continue;
+
             if (card.Emotion == emotionToSet)
             {
                 return false;
@@ -33,6 +36,8 @@ public class EmotionChangeModifier : ModifierData
     {
         foreach (CardData card in cards)
         {
+            if (card == null)
+                continue;
             card.Emotion = emotionToSet;
         }
     }

@@ -16,63 +16,127 @@ MonoBehaviour:
   - Dialogue: There you are! Did you clean up all your toys?
     Portrait: {fileID: 21300000, guid: e75a4353cbdb2e348bd3e228fb6af449, type: 3}
   Charming_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: 8eec70f1a608e284b87a253cc171639b, type: 2}
+    NpcReactionText:
+    - Dialogue: "Is that so? I\u2019ll believe it when I see it."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: I did, and really fast too!
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 15
-  Assertive_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: 8eec70f1a608e284b87a253cc171639b, type: 2}
-    PlayerDialogue: Yeah.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "Well, I told you to, didn\u2019t I? You had plenty of time."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "I\u2019ll do it later"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
   Sappy_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: 8eec70f1a608e284b87a253cc171639b, type: 2}
-    PlayerDialogue: "No...I\u2019m sorry..."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    NpcReactionText:
+    - Dialogue: "I will come look at it in a bit , but then we\u2019ll put it away
+        together, okay?"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: No...I wanted to show you what you built
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Charming_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: a209ae90deb3d9947b756e4a4d7519c4, type: 2}
-    PlayerDialogue: "I don\u2019t see them."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    NpcReactionText:
+    - Dialogue: "I don\u2019t see any, but if I trip over another one, you\u2019re
+        going to be in trouble."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: 
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Assertive_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: a209ae90deb3d9947b756e4a4d7519c4, type: 2}
-    PlayerDialogue: "I don\u2019t wanna."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    NpcReactionText:
+    - Dialogue: "Well, I told you to, didn\u2019t I? You had plenty of time."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: 
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: 8eec70f1a608e284b87a253cc171639b, type: 2}
-    PlayerDialogue: "But you\u2019re so much better at cleaning up than me!"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    NpcReactionText:
+    - Dialogue: Thank you dear.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: 
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Charming_Question:
-    BranchingDialogue: {fileID: 11400000, guid: 8eec70f1a608e284b87a253cc171639b, type: 2}
+    NpcReactionText:
+    - Dialogue: "I don\u2019t see any, but if I trip over another one, you\u2019re
+        going to be in trouble."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: I dunno...diiid I?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
   Assertive_Question:
-    BranchingDialogue: {fileID: 11400000, guid: a209ae90deb3d9947b756e4a4d7519c4, type: 2}
+    NpcReactionText:
+    - Dialogue: "Well, I told you to, didn\u2019t I? You had plenty of time."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: Why?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
   Sappy_Question:
-    BranchingDialogue: {fileID: 11400000, guid: a209ae90deb3d9947b756e4a4d7519c4, type: 2}
-    PlayerDialogue: Do I have to?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    NpcReactionText:
+    - Dialogue: "I will come look at it in a bit , but then we\u2019ll put it away
+        together, okay?"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Can you help me?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
   Silent:
-    BranchingDialogue: {fileID: 11400000, guid: a209ae90deb3d9947b756e4a4d7519c4, type: 2}
+    NpcReactionText:
+    - Dialogue: "\u201CWell...\u201D"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: ...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   End: 0

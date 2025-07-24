@@ -6,6 +6,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -17,12 +18,16 @@ public class PlayerMovement : MonoBehaviour
 
     private PlayerCamera playerCamera;
 
+    private EventInstance WalkSFX;
+
 
     // Start is called before the first frame update
     void Start()
     {
         playerCamera = FindFirstObjectByType<PlayerCamera>();
         rb = GetComponent<Rigidbody>();
+
+        WalkSFX = AudioManager.instance.CreateEventInstance(FMODEvents.instance.WalkSFX);
     }
 
     // Update is called once per frame
@@ -42,5 +47,19 @@ public class PlayerMovement : MonoBehaviour
         newvel.y = rb.linearVelocity.y; // maintain gravity
 
         rb.linearVelocity = newvel;
+
+        if (rb.linearVelocity.sqrMagnitude > 0.1)
+        {
+            PLAYBACK_STATE pbs;
+            WalkSFX.getPlaybackState(out pbs);
+            if (pbs.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                WalkSFX.start();
+            }
+        }
+        else
+        {
+            WalkSFX.stop(STOP_MODE.ALLOWFADEOUT);
+        }
     }
 }

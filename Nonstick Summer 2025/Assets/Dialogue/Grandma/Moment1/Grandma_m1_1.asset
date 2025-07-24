@@ -15,67 +15,132 @@ MonoBehaviour:
   dialogue:
   - Dialogue: "There\u2019s my little sunshine, has Mommy been treating you alright
       recently?"
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 7869ad9eba8e60e4dab075f9d8bc6428, type: 3}
   Charming_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    NpcReactionText:
+    - Dialogue: Hehehe, well... I taught your Mommy how to be fun, so you will love
+        playing with me!
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: Nanna, Mommy and I have been having so much fun!
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    NpcReactionText:
+    - Dialogue: "Hush, sweetie don\u2019t talk like that! Your momma may hear you!
+        Haha"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: Nanna! Thanks for saving me from evil mommy!
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Sappy_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    NpcReactionText:
+    - Dialogue: "And Nanna is so happy to see you! Come now, let\u2019s play."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: Nanna, I am so glad to see you!
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Charming_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    NpcReactionText:
+    - Dialogue: "It\u2019s called perfume, honey....... a perfume called Classic
+        Rose...."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: Grandma... you smell like an old person...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Assertive_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    NpcReactionText:
+    - Dialogue: "Well, Nanna is here..... let\u2019s show Nanna your room. Come here."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: I thought Mommy was going to play with me.... I only play games
       with her....
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    NpcReactionText:
+    - Dialogue: "Well, Nanna is here..... let\u2019s show Nanna your room. Come here."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "Mommy\u2019s been real busy recently."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Charming_Question:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    NpcReactionText:
+    - Dialogue: Super-Nanna train, coming through!! Of course... now lets play pretend!
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "Mommy has been so mean, you wouldn\u2019t be mean to me right
       Nanna?"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Question:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    NpcReactionText:
+    - Dialogue: "Hush, sweetie don\u2019t talk like that! Your momma may hear you!
+        Haha"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "\u201CNanna, why can\u2019t I play at your house instead?\u201D"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Sappy_Question:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    NpcReactionText:
+    - Dialogue: Super-Nanna train, coming through!! Of course... now lets play pretend!
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: Hey Nanna, are you going to stay around for a while?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Silent:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    NpcReactionText:
+    - Dialogue: "\u201CIt\u2019s okay sweetie, you don\u2019t have to use your words
+        unless you want..\u201D"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: ...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   End: 0

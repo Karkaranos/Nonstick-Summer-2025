@@ -20,6 +20,7 @@ public abstract class ModifierStamp : ScriptableObject
     [ShowAssetPreview(32,32)]
     public Sprite Icon;
     public string StampName;
+    [ResizableTextArea]
     public string ShortDescription;
 
     public Type type => this.GetType();
@@ -41,6 +42,11 @@ public abstract class ModifierStamp : ScriptableObject
     {
         // no further behaviour unless you override this method
         Debug.Log("Stamp added.");
+    }
+
+    public virtual void OnCardDrawnFromDeck(CardData affectedCard)
+    {
+
     }
 
     /// <summary>

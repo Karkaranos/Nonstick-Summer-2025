@@ -21,17 +21,21 @@ using System;
 //[CreateAssetMenu(fileName = "ModifierData", menuName = "Scriptable Objects/ModifierData")]
 public abstract class ModifierData : ScriptableObject
 {
-    [Tooltip("How many cards this modifier can apply to")] [Min(1)]
+    [Tooltip("How many cards this modifier can apply to")][Min(1)]
     public int MaxCardsApplied = 1;
 
     [ShowIf(nameof(_showMinCardsApplied)), Min(1)]
     public int MinCardsApplied = 1;
 
-    [SerializeField, ShowAssetPreview(32, 32)]
+    [SerializeField, ResizableTextArea]
+    protected string _tooltipDescription;
+
+    [SerializeField, ShowAssetPreview(32, 32), HideIf(nameof(_showIcon))]
     protected Sprite icon;
 
     #region Debug
     private bool _showMinCardsApplied => MaxCardsApplied > 1;
+    private bool _showIcon => new Type[] {typeof(EmotionChangeModifier), typeof(IntentionChangeModifier), typeof(StampModifierData)}.Contains(this.GetType());
     #endregion
 
     /// <summary>
@@ -57,6 +61,11 @@ public abstract class ModifierData : ScriptableObject
     public virtual Sprite GetIcon()
     {
         return icon;
+    }
+
+    public virtual string GetTooltipDescription()
+    {
+        return _tooltipDescription;
     }
 
     public virtual int GetHashCodeByProperties()

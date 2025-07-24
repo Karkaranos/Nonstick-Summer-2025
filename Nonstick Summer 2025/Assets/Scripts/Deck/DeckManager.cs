@@ -43,6 +43,20 @@ public class DeckManager
         RemainingDeck = PlayerFullDeck.GetCopy();
     }
 
+    public void RefreshDeck()
+    {
+
+        if (PlayerHand != null)
+            PlayerHand.Clear();
+        else
+            PlayerHand = new Deck();
+
+        Debug.Log("filling remaining deck");
+        RemainingDeck = PlayerFullDeck.GetCopy();
+        RemainingDeck.Shuffle();
+
+    }
+
     #endregion
 
     #region Function References
@@ -71,6 +85,11 @@ public class DeckManager
         d.Add(copy);
 
         if (d == PlayerFullDeck) RemainingDeck.Add(copy);
+    }
+
+    public static void AddCardHandOnly(CardData c)
+    {
+        PlayerHand.Add(c);
     }
 
     /// <summary>

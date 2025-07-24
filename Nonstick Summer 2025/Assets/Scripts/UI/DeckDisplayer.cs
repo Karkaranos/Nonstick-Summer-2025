@@ -165,7 +165,10 @@ public class DeckDisplayer : MonoBehaviour
         }
 
         while(displayedData.Count < DefaultHandSize)
+        {
             displayedData.Add(DeckManager.RemainingDeck.Pop(), false);
+        }
+            
 
         DisplayAllCards();
     }
@@ -182,7 +185,10 @@ public class DeckDisplayer : MonoBehaviour
         }
 
         while (displayedData.Count < MaxHandSize)
-            displayedData.Add(DeckManager.RemainingDeck.Pop(),false);
+        {
+            var card = DeckManager.RemainingDeck.Pop();
+            AddCardToHand(card);
+        }
 
         DisplayAllCards();
     }
@@ -209,16 +215,22 @@ public class DeckDisplayer : MonoBehaviour
             throw new ArgumentNullException("No deck to draw from");
         }
 
-        if (DeckManager.RemainingDeck.Count < MaxHandSize && DeckManager.RemainingDeck.Count > 0)
+        if (DeckManager.PlayerHand.Count < MaxHandSize && DeckManager.RemainingDeck.Count > 0)
         {
-            displayedData.Add(DeckManager.RemainingDeck.Pop(), false);
-            DisplayAllCards();
+            var card = DeckManager.RemainingDeck.Pop();
+            AddCardToHand(card);
         }
         else
         {
             throw new System.Exception("Maximum hand size reached");
         }
 
+    }
+
+    public void AddCardToHand(CardData card)
+    {
+        displayedData.Add(card, false);
+        DisplayAllCards();
     }
 
     public void DiscardCard(CardData card)

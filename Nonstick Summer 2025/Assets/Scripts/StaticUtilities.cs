@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -62,6 +63,14 @@ public static class StaticUtilities
     #endregion
 
     #region UI
+
+    public static void ToggleCanvasGroup(CanvasGroup canvasgroup, bool enabled)
+    {
+        if (enabled)
+            EnableCanvasGroup(canvasgroup);
+        else
+            DisableCanvasGroup(canvasgroup);
+    }
     public static void EnableCanvasGroup(CanvasGroup canvasgroup, float alpha = 1, bool interactable = true, bool blocksRaycasts=true)
     {
         canvasgroup.alpha = alpha;
@@ -185,6 +194,15 @@ public static class StaticUtilities
             result[i] = list.ElementAt(i);
         }
         return result;
+    }
+
+    #endregion
+
+    #region Color
+
+    public static string ToHex(this Color color)
+    {
+        return ColorUtility.ToHtmlStringRGB(color);
     }
 
     #endregion

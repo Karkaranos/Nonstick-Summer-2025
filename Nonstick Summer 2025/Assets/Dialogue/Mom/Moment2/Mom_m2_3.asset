@@ -16,65 +16,131 @@ MonoBehaviour:
   - Dialogue: Now, now. Go have some fun, and make sure to tell everyone thank you.
     Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
   Charming_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
+    NpcReactionText:
+    - Dialogue: You should be thanking them. They came all this way and gave gifts
+        to you for your birthday.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "I\u2019ll tell them thank you... thank you for nothing, haha!"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Assertive_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
+    NpcReactionText:
+    - Dialogue: You should be thanking them. They came all this way and gave gifts
+        to you for your birthday.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "I'd rather ask them when they\u2019re leaving."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Sappy_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
+    NpcReactionText:
+    - Dialogue: ".... Me too. It\u2019s okay, honey. We can call him on the phone
+        later. I\u2019m sure he would have come if he was feeling better."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: I wish I could thank grandpa.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Charming_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
+    NpcReactionText:
+    - Dialogue: "Yes, good. Don\u2019t get into too much trouble while you do."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "I\u2019ll be sure to thank everyone!"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
+    NpcReactionText:
+    - Dialogue: "It\u2019s not always about gifts! Your uncle drove him him here
+        to spend time with you on your birthday. You can at least be thankful for
+        that."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "\u201CLittle Cousin didn't even get me a gift. I don\u2019t
       want to thank him."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Sappy_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
+    NpcReactionText:
+    - Dialogue: Well.. Grandma is in the dining room. Your Uncle and cousin are in
+        the living room.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "I\u2019ll make sure to..! Once I find everyone...."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Charming_Question:
-    BranchingDialogue: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
+    NpcReactionText:
+    - Dialogue: Yes, good. Your grandma worked hard on it for you.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: Sure.. and Nanna for the cake? Hehe.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Question:
-    BranchingDialogue: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
+    NpcReactionText:
+    - Dialogue: You should be thanking them. They came all this way and gave gifts
+        to you for your birthday.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "What am I even thanking them for? I\u2019m not going to lie
       or something."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Question:
-    BranchingDialogue: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
+    NpcReactionText:
+    - Dialogue: Well.. Grandma is in the dining room. Your Uncle and cousin are in
+        the living room.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: Where is everyone?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Silent:
-    BranchingDialogue: {fileID: 11400000}
+    NpcReactionText: []
+    CombinedDialogue: []
     PlayerDialogue: ...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   End: 0

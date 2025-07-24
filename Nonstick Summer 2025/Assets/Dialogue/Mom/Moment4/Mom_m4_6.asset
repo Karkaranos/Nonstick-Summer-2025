@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Mom_m4_6
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: Just... go to your room.
+    Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
+  - Dialogue: I'm done arguing
+    Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: "Birthday gifts for your birthday!! I\u2019m glad you like them,
+        honey."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: HEHEH! Birthday gifts!!!!
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "I\u2019m glad you\u2019re excited to play with your toys, but be
+        nice to your family, okay? They came all this way for you!"
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: Yeah. But I wish I could be playing with my presents instead
+      of Uncle and Cousin being over.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "Of course I would make it special. It\u2019s a special day. It\u2019s
+        your birthday, where 8 years ago, I got to become your mother."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: Thanks mom.. You really helped make it special today for me.
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: "Birthday gifts for your birthday!! I\u2019m glad you like them,
+        honey."
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: I got 7 gifts!! And one of them is giant!!
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: Yeah, because any old day, we throw a party and have the family come
+        over? ... Yeah.
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "It was fine. It\u2019s just a birthday.  Like any other old
+      day."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: "I.... I know it\u2019s hard, honey. But you gotta keep your chin
+        up and have fun. He would be sad if he knew you felt sad, okay? Today is
+        your birthday!"
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "It\u2019s been so nice, even if Grandpa couldn\u2019t come."
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: "I know you\u2019re excited.. It\u2019s in the mail. Try to be a
+        little patient in the moment, no? Play with the ones you have!"
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "It\u2019s been super fun! Are there more presents for meee?"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: "I\u2019m glad you\u2019re excited to play with your toys, but be
+        nice to your family, okay? They came all this way for you!"
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: When is everyone going to leave already?
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "I know you\u2019re excited.. It\u2019s in the mail. Try to be a
+        little patient in the moment, no? Play with the ones you have!"
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: "\u201CIt\u2019s been fun... but am I going to get everything
+      from my wishlist..?\u201D"
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Silent:
+    NpcReactionText:
+    - Dialogue: Did you hear me?
+      Portrait: {fileID: 0}
+    BranchingDialogue: {fileID: 11400000, guid: d7918fcd4bc6f7741a6b8c47ac85eff1, type: 2}
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipRequirement: 0
+    AlternateBranch: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  End: 1

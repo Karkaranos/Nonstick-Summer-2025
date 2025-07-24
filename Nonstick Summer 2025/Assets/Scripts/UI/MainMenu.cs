@@ -17,10 +17,9 @@ using System.Collections;
 public class MainMenu : MonoBehaviour
 {
     [Scene] [SerializeField] private int MainGameplayScene = 1;
-    [SerializeField] [Required] private Image fadeToBlack;
-    [SerializeField] private float lengthOfFade = 3;
 
-    private Coroutine fadeOutCoroutine;
+    [Header ("Fade Transition Visuals")]
+    [SerializeField] [Required] private GameObject fadeToBlack;
 
     //maybe put cursor shenanigans here
     private void Start()
@@ -31,13 +30,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        //added fade in
-        if (fadeOutCoroutine == null)
-        {
-            fadeToBlack.enabled = true;
-            fadeOutCoroutine = StartCoroutine(FadeOut(fadeToBlack));
-        }
-        
+        DoFadeOut();
         //Cursor.visible = false; CALEB CALEB CALEB CALEB CALEB CALEB
     }
 
@@ -48,26 +41,15 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    /// <summary>
-    /// Fades out selected image
-    /// </summary>
-    /// <param name="image"></param>
-    /// <returns></returns>
-    public IEnumerator FadeOut(Image image)
+    public void DoFadeOut()
     {
-        float alpha = image.color.a;
-        Color color = image.color;
+        var canvas = UITransitionManager.OpenMenu(fadeToBlack);
+        var fade = canvas.GetComponent<FadeTransition>();
+        var image = canvas.GetComponent<Image>();
 
-        while (image.color.a < 1)
+        if (fade != null)
         {
-            float t = Time.time / lengthOfFade;
-            alpha = Mathf.Lerp(0, 1, t);
-            color.a = alpha;
-            image.color = color;
-            yield return new WaitForEndOfFrame();
+            fade.StartFadeOut(image);
         }
-
-        UnityEngine.SceneManagement.SceneManager.LoadScene(MainGameplayScene);
-        yield return null;
     }
 }

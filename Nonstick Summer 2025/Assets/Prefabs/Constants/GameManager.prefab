@@ -48,28 +48,31 @@ MonoBehaviour:
   Card_CharmingStyle:
     color: {r: 1, g: 0.9861843, b: 0.60188675, a: 1}
     DisplayName: Charming
-    sprite: {fileID: 21300000, guid: 98bd6fde45f36ac45806bec0e970b247, type: 3}
+    sprite: {fileID: 21300000, guid: 95355ec6a15cc7e4d962b7e5907b4a6c, type: 3}
   Card_AssertiveStyle:
     color: {r: 1, g: 0.58679235, b: 0.58679235, a: 1}
     DisplayName: Assertive
-    sprite: {fileID: 21300000, guid: e1f26d5f4d493f040baf4a9d4b2b4b18, type: 3}
+    sprite: {fileID: 21300000, guid: d2327af3ac5b834498656002112122c0, type: 3}
   Card_SappyStyle:
     color: {r: 0.42830187, g: 0.55752057, b: 1, a: 1}
     DisplayName: Sappy
-    sprite: {fileID: 21300000, guid: 66403d87615583a4b938e726140a3d88, type: 3}
-  Card_ExpressionStyle:
-    color: {r: 0, g: 0, b: 0, a: 1}
-    DisplayName: Expression
-    sprite: {fileID: -2210434942944035985, guid: cd47f6d5edd2c7541a0baf3774a54fdd, type: 3}
-  Card_ObservationStyle:
-    color: {r: 0, g: 0, b: 0, a: 1}
-    DisplayName: Observation
-    sprite: {fileID: 21300000, guid: ffdf80dc342e69344b2dccafe04c30ee, type: 3}
+    sprite: {fileID: 21300000, guid: 81845385426302b4f841d461b159a60b, type: 3}
+  Card_StatementStyle:
+    color: {r: 0, g: 0.12941177, b: 0.50980395, a: 1}
+    DisplayName: Statement
+    sprite: {fileID: 21300000, guid: 8a904d29669f41e46a8fef60237c8fac, type: 3}
   Card_QuestionStyle:
-    color: {r: 0, g: 0, b: 0, a: 1}
+    color: {r: 0, g: 0.12941177, b: 0.50980395, a: 1}
     DisplayName: Question
-    sprite: {fileID: 21300000, guid: 90335e5423c010749a50f906b965fa54, type: 3}
+    sprite: {fileID: 21300000, guid: 73f374ea446cd5046adee864da0d095d, type: 3}
+  BlankCard: {fileID: 21300000, guid: 22bb239dfe2216e44978f913348715eb, type: 3}
+  YellowCardBack: {fileID: 21300000, guid: 757b35c7951a6c4418efa851aa2bacc8, type: 3}
+  RedCardBack: {fileID: 21300000, guid: 0a1ac7973a83e464eb2c92de67c93ae8, type: 3}
+  BlueCardBack: {fileID: 21300000, guid: 2281de52241bde14289bf87582814c86, type: 3}
   StampTooltipColor: {r: 1, g: 0.8, b: 0.1, a: 1}
+  PositiveEnergyColor: {r: 0, g: 1, b: 0, a: 1}
+  NegativeEnergyColor: {r: 1, g: 0, b: 0, a: 1}
+  NeutralEnergyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   startingCards:
   - {fileID: 11400000, guid: 6ac2c164d8055c04db47a6031bf810bf, type: 2}
   - {fileID: 11400000, guid: 7c1a773e2b183134e80ac0d4665e4cd4, type: 2}

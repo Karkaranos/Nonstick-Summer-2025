@@ -63,6 +63,14 @@ public static class StaticUtilities
     #endregion
 
     #region UI
+
+    public static void ToggleCanvasGroup(CanvasGroup canvasgroup, bool enabled)
+    {
+        if (enabled)
+            EnableCanvasGroup(canvasgroup);
+        else
+            DisableCanvasGroup(canvasgroup);
+    }
     public static void EnableCanvasGroup(CanvasGroup canvasgroup, float alpha = 1, bool interactable = true, bool blocksRaycasts=true)
     {
         canvasgroup.alpha = alpha;

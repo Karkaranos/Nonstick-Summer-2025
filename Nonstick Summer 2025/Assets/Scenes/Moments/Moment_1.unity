@@ -54346,9 +54346,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: postCombatLine
+      value: Have you talked with your Mommy? Make sure you be kind to her, Pumpkin.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: characterSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7869ad9eba8e60e4dab075f9d8bc6428, type: 3}
+      objectReference: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: StartingDialogueBranch
       value: 
@@ -54360,7 +54364,7 @@ PrefabInstance:
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: 'PossibleModifiers.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: d744493b5a6fdd6458145060eeec9183, type: 2}
+      objectReference: {fileID: 11400000, guid: c195a113035d86c458c41d0c875da62f, type: 2}
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: 'PossibleModifiers.Array.data[1]'
       value: 
@@ -54368,7 +54372,7 @@ PrefabInstance:
     - target: {fileID: 6140443048461262060, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7869ad9eba8e60e4dab075f9d8bc6428, type: 3}
+      objectReference: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
     - target: {fileID: 7010602745331249561, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_Name
       value: Side NPC Grandma_m1
@@ -57458,6 +57462,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1022573212}
     m_Modifications:
+    - target: {fileID: 368249545651296241, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 368249545651296241, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 368249545651296241, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 368249545651296241, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.00000083201
+      objectReference: {fileID: 0}
+    - target: {fileID: 368249545651296241, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00000023842
+      objectReference: {fileID: 0}
+    - target: {fileID: 368249545651296241, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00000046611
+      objectReference: {fileID: 0}
+    - target: {fileID: 368249545651296241, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 454548493651250203, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_Radius
       value: 2.85
@@ -57517,7 +57549,7 @@ PrefabInstance:
     - target: {fileID: 6140443048461262060, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e75a4353cbdb2e348bd3e228fb6af449, type: 3}
+      objectReference: {fileID: 21300000, guid: c2360f7827c4e38498ba0e512f1c8260, type: 3}
     - target: {fileID: 7010602745331249561, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_Name
       value: NPC Mom_m1
@@ -73191,6 +73223,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8412335191130524943, guid: 1b5ab685e734f574c9d1e7815a237b25, type: 3}
+      propertyPath: startingCards.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412335191130524943, guid: 1b5ab685e734f574c9d1e7815a237b25, type: 3}
+      propertyPath: 'startingCards.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 11ff6cbb98905de49b8c296c03e41b2d, type: 2}
+    - target: {fileID: 8412335191130524943, guid: 1b5ab685e734f574c9d1e7815a237b25, type: 3}
+      propertyPath: 'startingCards.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e751890e1b0a160428991ee5821f9a04, type: 2}
+    - target: {fileID: 8412335191130524943, guid: 1b5ab685e734f574c9d1e7815a237b25, type: 3}
+      propertyPath: 'startingCards.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: cc34d9ee41337294c9453b4fef716009, type: 2}
+    - target: {fileID: 8412335191130524943, guid: 1b5ab685e734f574c9d1e7815a237b25, type: 3}
+      propertyPath: 'startingCards.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 0da342f46216d694f89b4a595d5b572c, type: 2}
+    - target: {fileID: 8412335191130524943, guid: 1b5ab685e734f574c9d1e7815a237b25, type: 3}
+      propertyPath: 'startingCards.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1c37b8fa9e8e5f64b83b11bd681c2500, type: 2}
+    - target: {fileID: 8412335191130524943, guid: 1b5ab685e734f574c9d1e7815a237b25, type: 3}
+      propertyPath: 'startingCards.Array.data[6]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1c37b8fa9e8e5f64b83b11bd681c2500, type: 2}
+    - target: {fileID: 8412335191130524943, guid: 1b5ab685e734f574c9d1e7815a237b25, type: 3}
+      propertyPath: 'startingCards.Array.data[7]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1c37b8fa9e8e5f64b83b11bd681c2500, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

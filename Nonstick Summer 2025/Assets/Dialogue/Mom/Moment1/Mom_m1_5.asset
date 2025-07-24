@@ -15,39 +15,39 @@ MonoBehaviour:
   dialogue:
   - Dialogue: ...Listen, I know moving to a new place can be scary, but it can be
       just as exciting.
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: c2360f7827c4e38498ba0e512f1c8260, type: 3}
   - Dialogue: We just need to make the most of it, okay? Can you do that for me?
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 032b2ac25e695414a96b9f1f4f473521, type: 3}
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "I\u2019m so proud of you, honey, but it\u2019s okay to be scared."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: "It\u2019s like an adventure, so we have to be brave!"
+    PlayerDialogue: "I\u2019m not scared!"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b4dae051c3aa5b14f983515b2f09466c, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: ...
-      Portrait: {fileID: 0}
-    - Dialogue: I need you to at least try for me.
-      Portrait: {fileID: 0}
+    - Dialogue: ...Me too.
+      Portrait: {fileID: 21300000, guid: 032b2ac25e695414a96b9f1f4f473521, type: 3}
+    - Dialogue: "But we\u2019re here now."
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: No.
+    PlayerDialogue: I want to go back.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b4dae051c3aa5b14f983515b2f09466c, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -15
+    ChangeInRelationshipStatus: -5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "I\u2019m so proud of you, honey, but it\u2019s okay to be scared."
-      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019m so proud of you, honey. It\u2019s okay to be scared."
+      Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m scared, but I wanna make the most of it for you. Like
       you said."
@@ -96,7 +96,7 @@ MonoBehaviour:
   Charming_Question:
     NpcReactionText:
     - Dialogue: "...We\u2019ll see."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 032b2ac25e695414a96b9f1f4f473521, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Can YOU do that for me?
     RelationshipCheckRequired: 0
@@ -104,12 +104,12 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: b4dae051c3aa5b14f983515b2f09466c, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -10
   Assertive_Question:
     NpcReactionText:
     - Dialogue: "It\u2019s much closer to Grandma and Grandpa, for one, but also...for
         a lot of reasons."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 032b2ac25e695414a96b9f1f4f473521, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Why did we have to move away?
     RelationshipCheckRequired: 0
@@ -117,11 +117,11 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: b4dae051c3aa5b14f983515b2f09466c, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -10
   Sappy_Question:
     NpcReactionText:
     - Dialogue: "...We\u2019ll see."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Are you scared, Mama?
     RelationshipCheckRequired: 0
@@ -129,12 +129,12 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: b4dae051c3aa5b14f983515b2f09466c, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: 10
   Silent:
     NpcReactionText:
     - Dialogue: "\u201CDon\u2019t be scared, honey. It\u2019s okay to be nervous.
         I am too.\u201D"
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: c2360f7827c4e38498ba0e512f1c8260, type: 3}
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

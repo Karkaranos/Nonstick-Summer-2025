@@ -33,6 +33,7 @@ public partial class CardDisplay : MonoBehaviour
 
     private MouseInteractionEvents mouseInteraction;
     private RectTransform rectTransform;
+    private RenderMode renderMode;
 
     public UnityEvent<CardDisplay> OnMouseDown = new UnityEvent<CardDisplay> ();
 
@@ -49,6 +50,8 @@ public partial class CardDisplay : MonoBehaviour
             mouseInteraction.OnMouseDown.AddListener(OnMouseDownStart);
         }
 
+        renderMode = transform.root.GetComponent<Canvas>().renderMode;
+
         // EVERYTHING breaks if you uncomment this. DO NOT touch it.
         //basePosition = cardBackground.anchoredPosition;
     }
@@ -64,15 +67,22 @@ public partial class CardDisplay : MonoBehaviour
             return;
         }
 
-        Vector3 toCamera = GameManager.PlayerCameraRef.transform.position - rectTransform.WorldPosition();
+        bool facingFront;
+        if(renderMode == RenderMode.WorldSpace)
+        {
+            // Math 
+            Vector3 toCamera = GameManager.PlayerCameraRef.transform.position - rectTransform.WorldPosition();
+            float dot = Vector3.Dot(transform.forward, toCamera.normalized);
+            facingFront = dot <= 0;
+        }
+        else
+        {
+            float y = rectTransform.localEulerAngles.y;
+            facingFront = ((-90 <= y && y <= 90) || (270 <= y && y <= 450));
+        }
 
-        // Dot product between card forward and direction to camera
-        float dot = Vector3.Dot(transform.forward, toCamera.normalized);
-
-        Debug.Log(dot);
-
-        StaticUtilities.ToggleCanvasGroup(CardFrontGroup, dot <= 0);
-        StaticUtilities.ToggleCanvasGroup(CardBackGroup, dot > 0);
+        StaticUtilities.ToggleCanvasGroup(CardFrontGroup, facingFront);
+        StaticUtilities.ToggleCanvasGroup(CardBackGroup, !facingFront);
     }
 
     private void OnMouseHoverStart() // TODO this should be moved to another script
@@ -102,16 +112,16 @@ public partial class CardDisplay : MonoBehaviour
     public void SetCard(CardData newCard)
     {
         if(card != null)
-            card.OnCardValueChanged -= RefreshDisplay;
+            card.OnCardValueChanged -= (() => RefreshDisplay(true));
 
         card = newCard;
-        card.OnCardValueChanged += RefreshDisplay;
+        card.OnCardValueChanged += (() => RefreshDisplay(true));
 
-        RefreshDisplay();
+        RefreshDisplay(false);
     }
 
     [Button]
-    public void RefreshDisplay()
+    public void RefreshDisplay(bool animate = true)
     {
         if(card == null)
         {
@@ -122,16 +132,63 @@ public partial class CardDisplay : MonoBehaviour
         if (GameManager.CardStyleManagerReference == null)
             return;
 
+        if(animate)
+        {
+            StartCoroutine(RefreshDisplayAnimation(animate));
+            return;
+        }
+        RefreshDisplayPrivate();
+    }
+
+    /// <summary>
+    /// Flippy dippy
+    /// </summary>
+    private IEnumerator RefreshDisplayAnimation(bool animate)
+    {
+        Vector3 startRotation = rectTransform.localEulerAngles;
+        float halfAnimationLength = RefreshCardTime / 2;
+        float time, t, y, timeStarted;
+
+        // 0 degrees to 180
+        timeStarted = Time.time;
+        do
+        {
+            time = Time.time - timeStarted;
+            t = time / (halfAnimationLength);
+            y = Mathf.Lerp(0, 180, t);
+            rectTransform.localEulerAngles = startRotation + new Vector3(0, y, 0);
+            yield return null;
+        }
+        while (time < halfAnimationLength);
+
+        // this is where the magic happens
+        RefreshDisplayPrivate();
+
+        // 180 to 360
+        timeStarted = Time.time;
+        do
+        {
+            time = Time.time - timeStarted;
+            t = time / (halfAnimationLength);
+            y = Mathf.Lerp(180, 360, t);
+            rectTransform.localEulerAngles = startRotation + new Vector3(0, y, 0);
+            yield return null;
+        }
+        while (time < halfAnimationLength);
+
+        rectTransform.localEulerAngles = startRotation;
+    }
+
+    private void RefreshDisplayPrivate()
+    {
         EmotionText.text = CardStyleManager.GetEmotionStyle(card).DisplayName;
         IntentionText.text = CardStyleManager.GetIntentionStyle(card).DisplayName;
         EnergyText.text = (card.EnergyCost == 0) ? "" : card.EnergyCost.ToString();
         EnergyText.color = (card.EnergyCost < 0) ? Color.red : Color.green;
         IntentionImage.sprite = CardStyleManager.GetIntentionSprite(card);
-        //CardBackgroundImage.sprite = CardStyleManager.GetCardBack(card);
+        CardBackgroundImage.sprite = CardStyleManager.GetCardBack(card);
 
         UpdateStampIcons();
-
-        // maybe play a lil animation? (add a parameter?)
     }
 
     private void UpdateStampIcons()

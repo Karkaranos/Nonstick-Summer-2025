@@ -13,38 +13,40 @@ MonoBehaviour:
   m_Name: Mom_m2_2
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: "Well, it\u2019s your 8th birthday... "
+  - Dialogue: 8 whole years! Where did the time go?
     Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
   - Dialogue: Do you feel all grown up?
     Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "Older...? You\u2019re only 8, silly. But maybe you will get wiser."
+    - Dialogue: "Don\u2019t worry, you\u2019ve got many more years. More than enough
+        time to have more favorite shirts."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Mmmm, yes...older.... and wiser.........
+    PlayerDialogue: "Sorta... my favorite shirt doesn\u2019t fit anymore."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 9bc506d4cf1c8734c91dec3a11bce56f, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "\u201CEveryone should stop asking me that. I don\u2019t know!\u201D"
+    - Dialogue: "Well, you\u2019re a year older from last year. Maybe you\u2019ve
+        learned some lessons since then."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "Everyone should stop asking me that. I don\u2019t know!"
+    PlayerDialogue: "Well, it\u2019s not like I feel any different."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 9bc506d4cf1c8734c91dec3a11bce56f, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -15
+    ChangeInRelationshipStatus: -5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "Hehe. I\u2019m glad. Birthdays are really more so about a reason
-        to see everyone, if you ask me."
+    - Dialogue: "I\u2019m glad. Birthdays are really more so about a reason to see
+        everyone, if you ask me."
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "Not really, but it\u2019s really nice everyone comes over to
@@ -95,32 +97,34 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
-    - Dialogue: I feel like a grown up every time I talk to you.
+    - Dialogue: "Well, you\u2019re a year older from last year. Maybe you\u2019ve
+        learned some lessons since then."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "Do you feel grown up? I\u2019m only 8!"
+    PlayerDialogue: "Why would I feel grown up? I\u2019m only 8!"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 9bc506d4cf1c8734c91dec3a11bce56f, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: -10
   Assertive_Question:
     NpcReactionText:
     - Dialogue: "Well, you\u2019re a year older from last year. Maybe you\u2019ve
         learned some lessons since then."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Why would I feel grown up?
+    PlayerDialogue: "Why won\u2019t everyone stop asking me that?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 9bc506d4cf1c8734c91dec3a11bce56f, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: -15
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: "Older...? You\u2019re only 8, silly. But maybe you will get wiser."
+    - Dialogue: "Well, you\u2019re a year older from last year. Maybe you\u2019ve
+        learned some lessons since then."
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Am I supposed to feel older..?

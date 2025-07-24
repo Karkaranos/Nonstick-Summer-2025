@@ -69,7 +69,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     {
         DialogueManager.OnOpenCombatUI(startBranch, character);
 
-        MusicManager.instance.StartCombat(0);
+        //MusicManager.instance.StartCombat(0);
 
         Instance.isBoss = isBoss;
         inWorldCharacter = objRef;

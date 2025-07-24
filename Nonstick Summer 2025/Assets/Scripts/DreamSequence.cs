@@ -110,6 +110,8 @@ public class DreamSequence : MonoBehaviour
     {
         MoodManager.SetDreamSequenceCost(CardEmotion.Assertive);
         UITransitionManager.CloseMenu(changeCam: false);
+
+        MusicManager.instance.StartHouse();
     }    
 
     /*************************************************

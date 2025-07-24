@@ -13,30 +13,31 @@ MonoBehaviour:
   m_Name: Uncle_m2_1
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: "There\u2019s the kid of the hour! Has this been the best birthday
-      ever?"
+  - Dialogue: There's the birthday champ!
+    Portrait: {fileID: 21300000, guid: 5b80e3e4b9e4ae24282ce0ed426c2aaa, type: 3}
+  - Dialogue: Has this been the best birthday ever or what?
     Portrait: {fileID: 21300000, guid: 5b80e3e4b9e4ae24282ce0ed426c2aaa, type: 3}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: I was just like you when I was your age, always ready to prove to
-        my friends that I was the best in whichever game we found fun at the time.
+    - Dialogue: "You don\u2019t have to worry about that, kiddo. Seeing you smile
+        is all that matters to me."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "You know it!! I can\u2019t wait to use these card to defeat
-      all of my friends!"
+    PlayerDialogue: "I can\u2019t believe you really got me that card set! It must
+      have cost a million dollars! "
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: I remember being like that too when I was your age. Just be sure
-        to spend time with your family every once in a while.
+    - Dialogue: I remember being like that when I was your age. Just be sure to spend
+        time with your family every once in a while.
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "I don\u2019t know.... I haven\u2019t opened up all my presents
+    PlayerDialogue: "I wouldn\u2019t know, I haven\u2019t opened up all my presents
       yet."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -46,17 +47,17 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: Me too kiddo, once my Dad gets better we can spend time all together
-        again just like the good old days.
+    - Dialogue: Me too kiddo...but once Grandpa gets better, we can all spend time
+        together. Maybe you can show him how to play!
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "Yeah, I\u2019m glad we got to spend time together as a family."
+    PlayerDialogue: Yeah, I just wish Grandpa could be here...Mom said he got sick.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: -15
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "You don\u2019t have to worry about that kiddo, seeing you smile
@@ -100,43 +101,46 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "You don\u2019t have to worry about that kiddo, seeing you smile
+    - Dialogue: "You don\u2019t have to worry about that, kiddo. Seeing you smile
         is all that matters to me."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Of course, these cards that you got me are the real deal! How
-      in the world did you get these!?
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
-  Assertive_Question:
-    NpcReactionText:
-    - Dialogue: "You know I can\u2019t do that. I wish I could but your mother would
-        be in my ear for the rest of the day."
-      Portrait: {fileID: 0}
-    CombinedDialogue: []
-    PlayerDialogue: Almost perfect... If only you could tell me what grandma gifted
-      me? I know you saw her wrap it.
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
-  Sappy_Question:
-    NpcReactionText: []
-    CombinedDialogue: []
-    PlayerDialogue: Of course!!! It was the best ever. What were your birthdays like
-      when you were my age, Uncle?
+    PlayerDialogue: Of course, these cards that you got me are awesome! Where did
+      you get them?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: "You know I can\u2019t do that. I wish I could, but your mother would
+        be in my ear for the rest of the day. Just trust me when I say you\u2019re
+        gonna like it."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: What did Nanna gifted me? I know you saw her wrap it.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: I was just like you when I was your age, always ready to prove to
+        my friends that I was the best in whichever game we found fun at the time.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Of course!!! It was the best ever. What were your birthdays like,
+      Uncle?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
   Silent:
     NpcReactionText:
     - Dialogue: I was just like you when I was your age, always ready to prove to

@@ -13,36 +13,41 @@ MonoBehaviour:
   m_Name: Cousin_m2_5_pos
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Please? Please? Please?
-    Portrait: {fileID: 0}
-  - Dialogue: You can even use the cards that my Dad got you...
+  - Dialogue: "That\u2019s why I\u2019ve got some of them here already!"
     Portrait: {fileID: 0}
   Charming_Expression:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: Hmph! Why not?! I just wanted to show them to you...
+      Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Oh! Sweet!
+    PlayerDialogue: "What?! You can\u2019t do that!"
     RelationshipCheckRequired: 1
-    RelationshipRange: {x: 0, y: 15}
+    RelationshipRange: {x: 0, y: 40}
     BranchingDialogueHigh: {fileID: 11400000, guid: 4caad9d0af48eb240be10ca7efaad70d, type: 2}
     BranchingDialogueNeutral: {fileID: 11400000, guid: 5502336f2cc21fe45b2ccf5a0b23e314, type: 2}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: -10
   Assertive_Expression:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: "What are you talking about? They are yours! I\u2019m bringing them
+        to you!"
+      Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Hey! Those are supposed to be MINE!
     RelationshipCheckRequired: 1
-    RelationshipRange: {x: 0, y: 15}
+    RelationshipRange: {x: 0, y: 40}
     BranchingDialogueHigh: {fileID: 11400000, guid: 4caad9d0af48eb240be10ca7efaad70d, type: 2}
     BranchingDialogueNeutral: {fileID: 11400000, guid: 5502336f2cc21fe45b2ccf5a0b23e314, type: 2}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Expression:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: "I mean, it\u2019s still your gift. Did I do something wrong?"
+      Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: My cards...
+    PlayerDialogue: That was supposed to be a gift...
     RelationshipCheckRequired: 1
-    RelationshipRange: {x: 0, y: 15}
+    RelationshipRange: {x: 0, y: 40}
     BranchingDialogueHigh: {fileID: 11400000, guid: 4caad9d0af48eb240be10ca7efaad70d, type: 2}
     BranchingDialogueNeutral: {fileID: 11400000, guid: 5502336f2cc21fe45b2ccf5a0b23e314, type: 2}
     BranchingDialogueLow: {fileID: 0}
@@ -84,41 +89,50 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Charming_Question:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: I borrowed them! This means that we can play, right?!
+      Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: When did you get those?!
     RelationshipCheckRequired: 1
-    RelationshipRange: {x: 0, y: 15}
+    RelationshipRange: {x: 0, y: 40}
     BranchingDialogueHigh: {fileID: 11400000, guid: 4caad9d0af48eb240be10ca7efaad70d, type: 2}
     BranchingDialogueNeutral: {fileID: 11400000, guid: 5502336f2cc21fe45b2ccf5a0b23e314, type: 2}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: 10
   Assertive_Question:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: "Hey! HEY! I didn\u2019t steal anything! I thought that you would
+        want them early!"
+      Portrait: {fileID: 0}
+    - Dialogue: Besides, I wanted to see them, too...
+      Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: YOU OPENED UP MY PRESENT? YOU STOLE MY CARDS?!
     RelationshipCheckRequired: 1
-    RelationshipRange: {x: 0, y: 15}
+    RelationshipRange: {x: 0, y: 40}
     BranchingDialogueHigh: {fileID: 11400000, guid: 4caad9d0af48eb240be10ca7efaad70d, type: 2}
     BranchingDialogueNeutral: {fileID: 11400000, guid: 5502336f2cc21fe45b2ccf5a0b23e314, type: 2}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Question:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: ...It is? What did I do?
+      Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "Hey, that\u2019s kind of rude. You know that, right?"
     RelationshipCheckRequired: 1
-    RelationshipRange: {x: 0, y: 15}
+    RelationshipRange: {x: 0, y: 40}
     BranchingDialogueHigh: {fileID: 11400000, guid: 4caad9d0af48eb240be10ca7efaad70d, type: 2}
     BranchingDialogueNeutral: {fileID: 11400000, guid: 5502336f2cc21fe45b2ccf5a0b23e314, type: 2}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: 10
   Silent:
     NpcReactionText: []
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 1
-    RelationshipRange: {x: 0, y: 15}
+    RelationshipRange: {x: 0, y: 40}
     BranchingDialogueHigh: {fileID: 11400000, guid: 4caad9d0af48eb240be10ca7efaad70d, type: 2}
     BranchingDialogueNeutral: {fileID: 11400000, guid: 5502336f2cc21fe45b2ccf5a0b23e314, type: 2}
     BranchingDialogueLow: {fileID: 0}

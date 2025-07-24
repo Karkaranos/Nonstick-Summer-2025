@@ -24,7 +24,7 @@ MonoBehaviour:
     - Dialogue: You do?! I mean, of course you do!
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Of course I like you!
+    PlayerDialogue: "Of course I like you. I just need my space, y\u2019know?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
@@ -33,22 +33,26 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: I think I'm kinda cool...
+    - Dialogue: "I am NOT! I am not! I\u2019ve been a fan for longer than you have!
+        I mean it!"
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "Um... I like you, I guess. But you\u2019re not cool."
+    PlayerDialogue: "I know you\u2019re a poser. You only like these cards because
+      I do. Copycat!"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: -15
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "Haha, yeah! I\u2019m the coolest!"
+    - Dialogue: "Haha, yeah! I\u2019m the coolest! And, uh, oh. Yeah. Yeah! I can
+        do that!"
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "...I\u2019m not mad. You\u2019re cool."
+    PlayerDialogue: "I\u2019m not mad. You\u2019re cool. But leave opening my gifts
+      to me next time. Please?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
@@ -97,7 +101,8 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Charming_Question:
     NpcReactionText:
-    - Dialogue: Um... No! I meant that- I just meant- Whatever!
+    - Dialogue: "It\u2019s not that I think that, but I also don\u2019t NOT think
+        that, or, um, whatever. Whatever! It\u2019s okay."
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "Do you think I don\u2019t like you?"
@@ -118,7 +123,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: -10
   Sappy_Question:
     NpcReactionText:
     - Dialogue: Um... No! I meant that- I just meant- Whatever!

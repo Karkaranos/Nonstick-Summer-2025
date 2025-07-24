@@ -27,34 +27,42 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "Haha, I\u2019m glad you liked it, honey. It was baked with lots
-        of love."
+    - Dialogue: "Well... That\u2019s sweet of you to say honey, but you can be honest
+        with your Nanna. I\u2019m getting a bit older so I might not be as on top
+        of it as I used to."
+      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019ll be sure to make the best cake I\u2019ve ever made for
+        you next time!"
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "It was fine... I liked it because you\u2019re the one who made
-      it."
+    PlayerDialogue: "It wasn\u2019t exactly as I remember... I liked it because you\u2019re
+      the one who made it."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "Oh silly, don\u2019t gobble it all down! And make sure to ask your
-        mom before you eat a bunch at once. Savor it!"
+    - Dialogue: "Well, part of throwing a party is sharing... You\u2019d want your
+        Cousin to share his cake with you at his next birthday, right?"
+      Portrait: {fileID: 0}
+    - Dialogue: So make sure to share as much as possible now so everyone else will
+        share with you on their birthday.
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: It was so sweet and special.. and just like I imagined...
+    PlayerDialogue: "It was good, but cousin ate so much of it that there\u2019s
+      not much left... Ugh"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: -5
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "Oh silly, don\u2019t gobble it all down! And make sure to ask your
@@ -102,9 +110,9 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "Oh you sweat pea... of course Nanna will bake for you next year.
-        Just tell me what you\u2019d like close to your birthday and I\u2019ll bake
-        for you again."
+    - Dialogue: "Oh you sweat pea... Of course Nanna will bake for you next year.
+        Just tell me what you\u2019d like close to your birthday and I\u2019ll make
+        it for you."
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Could you bake for me again next year, Nanna? It was so good!
@@ -113,11 +121,14 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: 10
   Assertive_Question:
     NpcReactionText:
     - Dialogue: "Well, part of throwing a party is sharing.... you\u2019d want your
         Cousin to share his cake with you at his next birthday, right?"
+      Portrait: {fileID: 0}
+    - Dialogue: So make sure to share as much as possible now so everyone else will
+        share with you on their birthday.
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Yeah, but why did I have to share it with everyone?
@@ -126,21 +137,24 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: -10
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: Making a big cake is a lot of work... you should savor each bite,
-        with how much love was baked into it!
+    - Dialogue: Making a big cake is a lot of work... With how much love was baked
+        into you should savor each bite. Make sure to leave some for the rest of
+        us though.
+      Portrait: {fileID: 0}
+    - Dialogue: " Next year I\u2019ll be sure to make an even bigger one for you."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: I was sad it was so small.... could be bigger for more people,
-      no?
+    PlayerDialogue: "I was a little sad that it was so small... Couldn\u2019t you
+      have made it bigger for more people?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -15
   Silent:
     NpcReactionText: []
     CombinedDialogue: []

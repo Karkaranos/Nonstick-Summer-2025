@@ -19,7 +19,6 @@ public abstract class HoverTooltip : MonoBehaviour
     //[ResizableTextArea]
     //[SerializeField] protected string text;
 
-    [InfoBox("Possible style tags: [Assertive] [Charming] [Sappy] [Observation] [Question] [Expression]\n[Confidence]")]
     [Required("Make sure the tooltip has a canvas group attached")]
     [SerializeField] private CanvasGroup tooltipGroup;
     private TMP_Text tooltipText;

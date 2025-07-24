@@ -19,6 +19,8 @@ public partial class CardDisplay : MonoBehaviour
     [Foldout("UI Components"), SerializeField, Required] TMP_Text EmotionText;
     [Foldout("UI Components"), SerializeField, Required] TMP_Text IntentionText;
     [Foldout("UI Components"), SerializeField, Required] Image CardBackgroundImage;
+    [Foldout("UI Components"), SerializeField, Required] CanvasGroup CardFrontGroup;
+    [Foldout("UI Components"), SerializeField, Required] CanvasGroup CardBackGroup;
     [Foldout("UI Components"), SerializeField, Required] RectTransform cardBackground;
     [Foldout("UI Components"), SerializeField, Required] Image IntentionImage;
     [Foldout("UI Components"), SerializeField, Required] TMP_Text EnergyText;
@@ -49,6 +51,28 @@ public partial class CardDisplay : MonoBehaviour
 
         // EVERYTHING breaks if you uncomment this. DO NOT touch it.
         //basePosition = cardBackground.anchoredPosition;
+    }
+
+    /// <summary>
+    /// using update because cards can move
+    /// </summary>
+    private void Update()
+    {
+        if(GameManager.PlayerCameraRef == null || rectTransform == null)
+        { 
+            rectTransform = GetComponent<RectTransform>();
+            return;
+        }
+
+        Vector3 toCamera = GameManager.PlayerCameraRef.transform.position - rectTransform.WorldPosition();
+
+        // Dot product between card forward and direction to camera
+        float dot = Vector3.Dot(transform.forward, toCamera.normalized);
+
+        Debug.Log(dot);
+
+        StaticUtilities.ToggleCanvasGroup(CardFrontGroup, dot <= 0);
+        StaticUtilities.ToggleCanvasGroup(CardBackGroup, dot > 0);
     }
 
     private void OnMouseHoverStart() // TODO this should be moved to another script
@@ -103,7 +127,7 @@ public partial class CardDisplay : MonoBehaviour
         EnergyText.text = (card.EnergyCost == 0) ? "" : card.EnergyCost.ToString();
         EnergyText.color = (card.EnergyCost < 0) ? Color.red : Color.green;
         IntentionImage.sprite = CardStyleManager.GetIntentionSprite(card);
-        CardBackgroundImage.color = CardStyleManager.GetEmotionColor(card);
+        //CardBackgroundImage.sprite = CardStyleManager.GetCardBack(card);
 
         UpdateStampIcons();
 

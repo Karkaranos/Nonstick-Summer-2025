@@ -44,4 +44,10 @@ public class StampModifierData : ModifierData
     {
         return StampToApply.Icon;
     }
+
+    public override string GetTooltipDescription()
+    {
+        return base.GetTooltipDescription()
+            .Replace("[StampName]", $"<color=#{GameManager.Instance.StampTooltipColor.ToHex()}>{StampToApply.StampName}</color>");
+    }
 }

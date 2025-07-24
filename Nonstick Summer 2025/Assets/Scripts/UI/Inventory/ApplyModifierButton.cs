@@ -38,7 +38,6 @@ public class ApplyModifierButton : MonoBehaviour
     /// </summary>
     private void OnAnyCardSelectedChanged()
     {
-        Debug.Log("any selected changed");
         var canPlay = CanPlayModifier();
         //button.enabled = canPlay;
         button.SetColors(normalColor: canPlay? Color.green: Color.gray);

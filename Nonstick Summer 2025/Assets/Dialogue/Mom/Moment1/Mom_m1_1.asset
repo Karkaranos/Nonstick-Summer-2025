@@ -26,25 +26,26 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: Thank you dear.
+    - Dialogue: "Well, I told you to, didn\u2019t I? You had plenty of time."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Yeah.
+    PlayerDialogue: "I\u2019ll do it later"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: -5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "Well, I told you to, didn\u2019t I? You had plenty of time."
+    - Dialogue: "I will come look at it in a bit , but then we\u2019ll put it away
+        together, okay?"
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "No...I\u2019m sorry..."
+    PlayerDialogue: No...I wanted to show you what you built
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
@@ -57,7 +58,7 @@ MonoBehaviour:
         going to be in trouble."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "I don\u2019t see them."
+    PlayerDialogue: 
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
@@ -69,7 +70,7 @@ MonoBehaviour:
     - Dialogue: "Well, I told you to, didn\u2019t I? You had plenty of time."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "I don\u2019t wanna."
+    PlayerDialogue: 
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
@@ -81,7 +82,7 @@ MonoBehaviour:
     - Dialogue: Thank you dear.
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "But you\u2019re so much better at cleaning up than me!"
+    PlayerDialogue: 
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
@@ -100,7 +101,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -10
   Assertive_Question:
     NpcReactionText:
     - Dialogue: "Well, I told you to, didn\u2019t I? You had plenty of time."
@@ -112,19 +113,20 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -15
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: "Well, I told you to, didn\u2019t I? You had plenty of time."
+    - Dialogue: "I will come look at it in a bit , but then we\u2019ll put it away
+        together, okay?"
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Do I have to?
+    PlayerDialogue: Can you help me?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: 10
   Silent:
     NpcReactionText:
     - Dialogue: "\u201CWell...\u201D"

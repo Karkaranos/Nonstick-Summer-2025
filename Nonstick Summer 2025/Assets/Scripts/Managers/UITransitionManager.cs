@@ -132,7 +132,7 @@ public class UITransitionManager
 
     private static Transform GetPlayerCam()
     {
-        return GameManager.playerCameraRef == null ? GameObject.FindFirstObjectByType<PlayerCamera>()?.transform : GameManager.playerCameraRef?.transform;
+        return GameManager.PlayerCameraRef == null ? GameObject.FindFirstObjectByType<PlayerCamera>()?.transform : GameManager.PlayerCameraRef?.transform;
     }
 
     

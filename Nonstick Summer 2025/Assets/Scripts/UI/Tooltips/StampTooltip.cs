@@ -21,6 +21,11 @@ public class StampTooltip : HoverTooltip
 
     protected override bool CanOpenTooltip()
     {
+#if UNITY_EDITOR
+        if (!Application.isPlaying)
+            return true; // for debug ;)
+#endif
+
         return stampData != null;
     }
 

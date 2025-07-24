@@ -20,8 +20,8 @@ public static class TextUtilities
             .Replace("[Charming]", $"<color=#{CardStyleManager.YellowStyle.color.ToHex()}>{CardStyleManager.YellowStyle.DisplayName}</color>")
             .Replace("[Sappy]", $"<color=#{CardStyleManager.BlueStyle.color.ToHex()}>{CardStyleManager.BlueStyle.DisplayName}</color>")
             // intentions
-            .Replace("[Expression]", $"<color=#{CardStyleManager.ExpressionStyle.color.ToHex()}>{CardStyleManager.ExpressionStyle.DisplayName}</color>")
-            //.Replace("[Observation]", $"<color=#{CardStyleManager.ObservationStyle.color.ToHex()}>{CardStyleManager.ObservationStyle.DisplayName}</color>")
+            .Replace("[Expression]", $"<color=#{CardStyleManager.StatementStyle.color.ToHex()}>{CardStyleManager.StatementStyle.DisplayName}</color>")
+            .Replace("[Observation]", $"<color=#{CardStyleManager.ObservationStyle.color.ToHex()}>{CardStyleManager.ObservationStyle.DisplayName}</color>")
             .Replace("[Question]", $"<color=#{CardStyleManager.QuestionStyle.color.ToHex()}>{CardStyleManager.QuestionStyle.DisplayName}</color>")
             // specific variables
             .Replace("[DrawButtonEnergy]", (-DialogueManager.DrawButtonEnergyCost).AddSignToString(additonalText: " energy"))

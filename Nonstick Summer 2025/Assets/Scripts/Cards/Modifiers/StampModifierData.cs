@@ -7,6 +7,7 @@
 *****************************************************************************/
 
 using NaughtyAttributes;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "StampModifierData", menuName = "Modifier Card/Stamp Applier")]
@@ -43,5 +44,12 @@ public class StampModifierData : ModifierData
     public override Sprite GetIcon()
     {
         return StampToApply.Icon;
+    }
+
+    public override string GetTooltipDescription()
+    {
+        return (base.GetTooltipDescription() + "\n\n[StampName]\n" + StampToApply.ShortDescription)
+            .Replace("[StampName]", $"<color=#{GameManager.Instance.StampTooltipColor.ToHex()}>{StampToApply.StampName}</color>");
+        
     }
 }

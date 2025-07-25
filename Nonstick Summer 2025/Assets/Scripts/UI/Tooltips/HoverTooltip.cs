@@ -60,7 +60,7 @@ public abstract class HoverTooltip : MonoBehaviour
         //StaticUtilities.EnableCanvasGroup(tooltipGroup);
 
         var newText = GetText();
-        if (newText != tooltipText.text)
+        if (tooltipText != null && newText != tooltipText.text)
             tooltipText.text = newText;
 
         StartCoroutine(DelayedLayoutUpdate());

@@ -31,7 +31,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: ba9b6e42745907d4c86bb46deb7362be, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 11400000, guid: 78ccc5e5c15ba7f4f8ea82ba2de38c55, type: 2}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -15
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: Right? Who could ever forget such an amazing game. I was so proud
@@ -62,7 +62,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: ba9b6e42745907d4c86bb46deb7362be, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 11400000, guid: 78ccc5e5c15ba7f4f8ea82ba2de38c55, type: 2}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: -5
   Charming_Observation:
     NpcReactionText:
     - Dialogue: We were completely taken aback.
@@ -124,7 +124,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: ba9b6e42745907d4c86bb46deb7362be, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 11400000, guid: 78ccc5e5c15ba7f4f8ea82ba2de38c55, type: 2}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: -10
   Assertive_Question:
     NpcReactionText:
     - Dialogue: I just thought it was really cool, and just know that you will make
@@ -132,14 +132,21 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: All of us.
       Portrait: {fileID: 0}
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: I just thought it was really cool, and just know that you will make
+        us proud like that again.
+      Portrait: {fileID: 0}
+    - Dialogue: All of us.
+      Portrait: {fileID: 0}
+    - Dialogue: "Alright, I\u2019ll leave you to it then."
+      Portrait: {fileID: 0}
     PlayerDialogue: Yeah, what about it?
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 30, y: 30}
     BranchingDialogueHigh: {fileID: 11400000, guid: ba9b6e42745907d4c86bb46deb7362be, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 11400000, guid: 78ccc5e5c15ba7f4f8ea82ba2de38c55, type: 2}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: 10
   Sappy_Question:
     NpcReactionText:
     - Dialogue: I do, he and I both were so shocked to see our little pumpkin out
@@ -169,5 +176,5 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: ba9b6e42745907d4c86bb46deb7362be, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 11400000, guid: 78ccc5e5c15ba7f4f8ea82ba2de38c55, type: 2}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -5
   End: 0

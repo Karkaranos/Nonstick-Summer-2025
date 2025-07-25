@@ -31,7 +31,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: b98f0011ea366da459066c9cc7eed3f8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -15
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: "I\u2019m sorry to hear that."
@@ -66,7 +66,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: b98f0011ea366da459066c9cc7eed3f8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: -5
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "That\u2019s great to hear, I\u2019m glad everything seems to be
@@ -130,7 +130,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: b98f0011ea366da459066c9cc7eed3f8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: -10
   Assertive_Question:
     NpcReactionText:
     - Dialogue: "I\u2019m doing fine now, thanks for asking."
@@ -148,7 +148,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: b98f0011ea366da459066c9cc7eed3f8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: 10
   Sappy_Question:
     NpcReactionText:
     - Dialogue: I was worried that might be the case...
@@ -171,7 +171,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: ...
       Portrait: {fileID: 0}
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: ...
+      Portrait: {fileID: 0}
+    - Dialogue: Do you remember that soccer game a couple years ago that grandpa
+        and I made it to?
+      Portrait: {fileID: 0}
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}

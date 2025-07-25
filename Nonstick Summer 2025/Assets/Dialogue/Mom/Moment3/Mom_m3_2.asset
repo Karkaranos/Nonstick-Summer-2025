@@ -33,7 +33,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 8cb10061bd303d442bc4c7567918db15, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: "Well, you\u2019re still MY kid."
@@ -47,7 +47,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 8cb10061bd303d442bc4c7567918db15, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -5
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: ...
@@ -57,14 +57,31 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: "I\u2019ll make it up to you, I promise."
       Portrait: {fileID: 0}
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: ...
+      Portrait: {fileID: 0}
+    - Dialogue: "Look, I\u2019ve already tried to talk my supervisor into letting
+        me drive over during my lunch break, but it\u2019s too far of a drive."
+      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019ll make it up to you, I promise."
+      Portrait: {fileID: 0}
+    - Dialogue: "Well, I\u2019m sure you\u2019re going to do--"
+      Portrait: {fileID: 0}
+    - Dialogue: Goddammit.
+      Portrait: {fileID: 0}
+    - Dialogue: Sorry honey, I have to go.
+      Portrait: {fileID: 0}
+    - Dialogue: Call me when you get back, okay?
+      Portrait: {fileID: 0}
+    - Dialogue: Love you.
+      Portrait: {fileID: 0}
     PlayerDialogue: I did...I also asked Grandma to save you a seat, just in case.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 8cb10061bd303d442bc4c7567918db15, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: 15
   Charming_Observation:
     NpcReactionText:
     - Dialogue: Mhm.
@@ -132,7 +149,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 8cb10061bd303d442bc4c7567918db15, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -15
   Sappy_Question:
     NpcReactionText:
     - Dialogue: ...
@@ -166,5 +183,5 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 8cb10061bd303d442bc4c7567918db15, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -5
   End: 0

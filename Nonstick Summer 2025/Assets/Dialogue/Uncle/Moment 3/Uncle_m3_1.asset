@@ -29,7 +29,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 178831001abe8eb438cd4e68f2e81625, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: "Fair enough, but I\u2019m pretty sure it\u2019ll help you win."
@@ -41,7 +41,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 178831001abe8eb438cd4e68f2e81625, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: "Hey now, you know she wants to be there, but she couldn\u2019t get
@@ -56,7 +56,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 178831001abe8eb438cd4e68f2e81625, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -5
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "I\u2019ll warn her, but she\u2019d be missing out on the full game
@@ -121,7 +121,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 178831001abe8eb438cd4e68f2e81625, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: 15
   Sappy_Question:
     NpcReactionText:
     - Dialogue: "Hey now, you know she wants to be there, but she couldn\u2019t get
@@ -136,7 +136,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 178831001abe8eb438cd4e68f2e81625, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -15
   Silent:
     NpcReactionText:
     - Dialogue: ...
@@ -148,5 +148,5 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 178831001abe8eb438cd4e68f2e81625, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -5
   End: 0

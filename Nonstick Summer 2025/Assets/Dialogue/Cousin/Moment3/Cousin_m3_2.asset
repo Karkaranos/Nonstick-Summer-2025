@@ -37,7 +37,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: -5
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: Oh yeah?
@@ -55,7 +55,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -5
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: I can give you a refresher!
@@ -63,7 +63,21 @@ MonoBehaviour:
     - Dialogue: "I know you don\u2019t have a lot of time for this sort of thing
         anymore, but it could be fun!"
       Portrait: {fileID: 0}
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: I can give you a refresher!
+      Portrait: {fileID: 0}
+    - Dialogue: "I know you don\u2019t have a lot of time for this sort of thing
+        anymore, but it could be fun!"
+      Portrait: {fileID: 0}
+    - Dialogue: But, um, back to soccer...
+      Portrait: {fileID: 0}
+    - Dialogue: I was thinking about joining the soccer team next year.
+      Portrait: {fileID: 0}
+    - Dialogue: Would you be willing to show me a thing or two to get a head start?
+      Portrait: {fileID: 0}
+    - Dialogue: It would be great to start learning from someone as good at it as
+        you!
+      Portrait: {fileID: 0}
     PlayerDialogue: "I don\u2019t know. I haven\u2019t played in a long time."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -144,7 +158,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -5
   Sappy_Question:
     NpcReactionText:
     - Dialogue: Oh...
@@ -176,5 +190,5 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -5
   End: 0

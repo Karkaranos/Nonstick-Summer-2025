@@ -57,7 +57,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: ae4ec5c1a4d2a7f4388624996d3dcf02, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -10
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: "What makes you think that I wouldn\u2019t like playing soccer?!"
@@ -76,7 +76,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: ae4ec5c1a4d2a7f4388624996d3dcf02, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -15
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "Awesome! I won\u2019t let you down I promise."
@@ -141,7 +141,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: ae4ec5c1a4d2a7f4388624996d3dcf02, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: 15
   Assertive_Question:
     NpcReactionText:
     - Dialogue: I am!
@@ -157,7 +157,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: ae4ec5c1a4d2a7f4388624996d3dcf02, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -5
   Sappy_Question:
     NpcReactionText:
     - Dialogue: "I already knew all that, and I\u2019m ready!"
@@ -166,7 +166,17 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: Getting myself some trophies would be a good way to do it, I think.
       Portrait: {fileID: 0}
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: "I already knew all that, and I\u2019m ready!"
+      Portrait: {fileID: 0}
+    - Dialogue: I want to make a name for myself!
+      Portrait: {fileID: 0}
+    - Dialogue: Getting myself some trophies would be a good way to do it, I think.
+      Portrait: {fileID: 0}
+    - Dialogue: Win or lose we should give grandma a hug after the game.
+      Portrait: {fileID: 0}
+    - Dialogue: I think that would help cheer her up.
+      Portrait: {fileID: 0}
     PlayerDialogue: "I don\u2019t know, It takes a lot of work, you know. Do you
       think that you could do it?"
     RelationshipCheckRequired: 0
@@ -186,5 +196,5 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: ae4ec5c1a4d2a7f4388624996d3dcf02, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -5
   End: 0

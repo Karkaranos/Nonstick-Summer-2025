@@ -37,7 +37,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: -15
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: Thank you so much sweet pea.
@@ -52,7 +52,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: It really has, he was really good about that kind of stuff.
@@ -130,7 +130,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: -10
   Assertive_Question:
     NpcReactionText:
     - Dialogue: That would be great!
@@ -150,7 +150,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -15
+    ChangeInRelationshipStatus: 10
   Sappy_Question:
     NpcReactionText:
     - Dialogue: That would be great!
@@ -170,7 +170,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: 15
   Silent:
     NpcReactionText:
     - Dialogue: ...
@@ -182,5 +182,5 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -5
   End: 0

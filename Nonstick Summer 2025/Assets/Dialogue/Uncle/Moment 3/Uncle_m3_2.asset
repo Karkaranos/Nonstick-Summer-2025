@@ -29,7 +29,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: "Oh ,you\u2019re definitely better than me."
@@ -47,7 +47,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: 15
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: Well, your mom was the best soccer player on the playground, but
@@ -65,7 +65,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -5
   Charming_Observation:
     NpcReactionText:
     - Dialogue: Yeah, Mom and Dad made that for her when we were kids....
@@ -125,14 +125,28 @@ MonoBehaviour:
     - Dialogue: "Let\u2019s just say I kicked enough soccer balls over the fence
         for them to give me a WIDE berth."
       Portrait: {fileID: 0}
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: Well, your mom was the best soccer player on the playground, but
+        she never tried out for the school team.
+      Portrait: {fileID: 0}
+    - Dialogue: Me?
+      Portrait: {fileID: 0}
+    - Dialogue: "Let\u2019s just say I kicked enough soccer balls over the fence
+        for them to give me a WIDE berth."
+      Portrait: {fileID: 0}
+    - Dialogue: "You know, I\u2019m sure if you asked your mom, she\u2019d love to
+        play with you!"
+      Portrait: {fileID: 0}
+    - Dialogue: "Call it practice, but I\u2019m sure she\u2019s itching to score
+        a goal after all these years."
+      Portrait: {fileID: 0}
     PlayerDialogue: And how often did you beat her?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: -5
   Assertive_Question:
     NpcReactionText:
     - Dialogue: Wow.
@@ -148,7 +162,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -15
+    ChangeInRelationshipStatus: 5
   Sappy_Question:
     NpcReactionText:
     - Dialogue: Well, your mom was the best soccer player on the playground, but
@@ -166,7 +180,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -5
   Silent:
     NpcReactionText:
     - Dialogue: ...

@@ -174,12 +174,8 @@ public class ModifierDeckDisplay : MonoBehaviour
             float x = Mathf.Lerp(left, right, t);
             modifier.SetPositionAndOffset(position:new Vector2(x,0), offset:Vector2.zero, speed:5000);
 
-            //modifier.OnMouseDown.AddListener(OnCardClicked);
+            modifier.transform.SetSiblingIndex(i);
         }
-
-        // Assigns the last position to the right side of the display area, as a percaution
-        // also yeah the numbers are weird. I will fix it later. i'm a lil tired tbh
-        //positions[end] = new Vector2(rectTransformCenter.x + .5f * _dimensions.x + .3f * _cardWidth - _bufferFromEdgeOfRegion, 150);
     }
 
     #endregion

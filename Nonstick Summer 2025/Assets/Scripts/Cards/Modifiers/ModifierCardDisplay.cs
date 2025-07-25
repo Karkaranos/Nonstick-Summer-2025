@@ -37,8 +37,10 @@ public partial class ModifierCardDisplay : MonoBehaviour
         mouseInteraction = GetComponent<MouseInteractionEvents>();
         rectTransform = GetComponent<RectTransform>();
 
-        if(mouseInteraction != null)
+        if (mouseInteraction != null)
+        {
             mouseInteraction.OnMouseDown.AddListener(OnMouseDownStart);
+        }
     }
 
     private void OnMouseDownStart()

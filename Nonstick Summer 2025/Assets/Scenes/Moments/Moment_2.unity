@@ -12367,8 +12367,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.6106093, y: 0.8404572, z: 1.5234361}
-  m_Center: {x: 0.34129655, y: -0.91799057, z: -1.1131029}
+  m_Size: {x: 2.6106093, y: 0.75921786, z: 1.5234361}
+  m_Center: {x: 0.34129655, y: -0.95861024, z: -1.1131029}
 --- !u!43 &322713590
 Mesh:
   m_ObjectHideFlags: 0
@@ -20863,8 +20863,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.9494958, y: 1.2445431, z: 2.8792005}
-  m_Center: {x: -0.026262045, y: 0.5298457, z: 0.04138112}
+  m_Size: {x: 3.2485018, y: 1.0795788, z: 2.8792005}
+  m_Center: {x: -0.08846998, y: 0.4473635, z: 0.04138112}
 --- !u!1 &566785576
 GameObject:
   m_ObjectHideFlags: 0
@@ -28963,8 +28963,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 37.29047, y: 30.328053, z: 37.92458}
-  m_Center: {x: -1.3114617, y: 14.664025, z: 0.63477755}
+  m_Size: {x: 37.29047, y: 27.51749, z: 37.92458}
+  m_Center: {x: -1.3114617, y: 16.069315, z: 0.63477755}
 --- !u!114 &730531226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35184,7 +35184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 621988117311664097, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0039999485
+      value: -0.079
       objectReference: {fileID: 0}
     - target: {fileID: 621988117311664097, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -35229,6 +35229,10 @@ PrefabInstance:
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: preCombatLine
       value: Hey, Kiddo! How's it going?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: postCombatLine
+      value: My son can be a handful sometimes, but he's a good kid.
       objectReference: {fileID: 0}
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: characterSprite
@@ -57966,7 +57970,7 @@ PrefabInstance:
     - target: {fileID: 2465959359689363297, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: card
       value: 
-      objectReference: {fileID: 11400000, guid: 782b387ccd9ea40418a2235568ebfab3, type: 2}
+      objectReference: {fileID: 11400000, guid: 1c37b8fa9e8e5f64b83b11bd681c2500, type: 2}
     - target: {fileID: 3496223543107628732, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -60166,6 +60170,10 @@ PrefabInstance:
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: preCombatLine
       value: Oh, birthdays are such wonderful celebrations!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: postCombatLine
+      value: Talk to your Cousin! He's still young, you know...
       objectReference: {fileID: 0}
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: characterSprite
@@ -65952,8 +65960,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.2553272, y: 1.3474466, z: 6.403784}
-  m_Center: {x: 2.980322, y: -1.6186273, z: 2.2089052}
+  m_Size: {x: 0.9355717, y: 1.1766725, z: 6.403784}
+  m_Center: {x: 3.1401997, y: -1.7040143, z: 2.2089052}
 --- !u!43 &1633682539
 Mesh:
   m_ObjectHideFlags: 0
@@ -66129,15 +66137,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 368249545651296241, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0896
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 368249545651296241, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0896
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 368249545651296241, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0896
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 368249545651296241, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalPosition.y
@@ -66162,6 +66170,10 @@ PrefabInstance:
     - target: {fileID: 368249545651296241, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 21.146
+      objectReference: {fileID: 0}
+    - target: {fileID: 368249545651296241, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 454548493651250203, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_Height
@@ -66222,7 +66234,7 @@ PrefabInstance:
     - target: {fileID: 6140443048461262060, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 56fb52eb6f26be6429532fcc44dd7cad, type: 3}
+      objectReference: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     - target: {fileID: 7010602745331249561, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_Name
       value: Cousin
@@ -83441,7 +83453,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: preCombatLine
-      value: Everything's going just as scheduled
+      value: Everything's going just as scheduled.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: postCombatLine
+      value: Remember, be nice to your Cousin!
       objectReference: {fileID: 0}
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: characterSprite

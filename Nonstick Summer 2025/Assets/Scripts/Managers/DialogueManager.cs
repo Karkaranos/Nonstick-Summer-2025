@@ -246,6 +246,7 @@ public class DialogueManager
     /// </summary>
     public static void FinishReadingDialogue()
     {
+        DialogueUIController.Instance.UpdateHoveringCard(null);
         DialogueUIController.Instance.StartCoroutine(DialogueUIController.Instance.ToggleUIForDialogueProgression(true));
         ReadUserInput = true;
         DrawCards();

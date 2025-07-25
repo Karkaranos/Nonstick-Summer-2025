@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: "Don\u2019t forget that Grandma is going to be babysitting you today."
-    Portrait: {fileID: 21300000, guid: c2360f7827c4e38498ba0e512f1c8260, type: 3}
+    Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
   - Dialogue: Make sure to behave yourself for her, okay?
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "That\u2019s...nice. Please don\u2019t say that to her when she gets
@@ -64,7 +64,7 @@ MonoBehaviour:
     PlayerDialogue: "She\u2019s wrinkly. Like a raisin with arms."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
@@ -77,7 +77,7 @@ MonoBehaviour:
     PlayerDialogue: "I don\u2019t WANT Grandma to come over!"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
@@ -89,7 +89,7 @@ MonoBehaviour:
     PlayerDialogue: Really? Grandma is the best!
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10

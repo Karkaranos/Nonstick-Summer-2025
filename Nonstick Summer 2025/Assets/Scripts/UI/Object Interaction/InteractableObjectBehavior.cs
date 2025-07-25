@@ -42,6 +42,7 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
             hasGivenCard = true;
 
             //Destroy(gameObject.GetComponent<InteractableObjectBehavior>());
+            GetComponent<SpecialInteractBehavior>()?.CallSpecialInteraction();
         }
     }
 

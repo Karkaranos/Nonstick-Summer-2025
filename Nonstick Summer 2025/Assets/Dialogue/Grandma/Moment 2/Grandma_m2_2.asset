@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: And you better be good... Otherwise no extra cake for you!
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Wow, there you go again shocking your Nanna. Maybe I should bring
         it home with me for Grandpa to try, or give it to your cousin instead...
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "You don\u2019t have to worry about me Nanna, your pumpkin has
       already had their fill of sugar for the foreseeable future."
@@ -33,7 +33,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Wow, there you go again shocking your Nanna. Maybe I should bring
         it home with me for Grandpa to try, or give it to your cousin instead...
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m full Nanna, I couldn\u2019t eat another bite"
     RelationshipCheckRequired: 0
@@ -44,9 +44,11 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "Now now, don\u2019t go pulling those tricks to prey on your deal
-        old Nanna\u2019s kindness. You can get another slice later if you are good."
-      Portrait: {fileID: 0}
+    - Dialogue: "Now now, don\u2019t go pulling those tricks to prey on your dear
+        old Nanna\u2019s kindness..."
+      Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
+    - Dialogue: ' You can get another slice later if you are good.'
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Aww... I wanted another one.
     RelationshipCheckRequired: 0
@@ -103,7 +105,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Don\u2019t take from your sweet Nanna, silly! Hands away, we need
         to put it in the fridge to keep it good."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
     CombinedDialogue:
     - Dialogue: Oh.. just cleaning. Gotta tidy up some of the fun!
       Portrait: {fileID: 0}
@@ -122,7 +124,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Watch yourself now, your Nanna is sweet as a plum but she doesn\u2019t
         have to be. Maybe you can help you Nanna finish it later."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Are you going to eat it all yourself?
     RelationshipCheckRequired: 0
@@ -135,7 +137,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "That isn\u2019t going to work on me pumpkin. You know better than
         to try and take advantage of your sweet old Nanna."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "But Nanna, please can I get another slice? It\u2019s my birthday
       after all."

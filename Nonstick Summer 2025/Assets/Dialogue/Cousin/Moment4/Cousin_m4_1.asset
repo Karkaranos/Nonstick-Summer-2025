@@ -14,19 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: Oh! Um... Hey!
-    Portrait: {fileID: 21300000, guid: 56fb52eb6f26be6429532fcc44dd7cad, type: 3}
+    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
   - Dialogue: It's been awhile, huh?
-    Portrait: {fileID: 21300000, guid: 56fb52eb6f26be6429532fcc44dd7cad, type: 3}
+    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
   - Dialogue: "I was starting to think that you weren\u2019t going to show up."
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
   - Dialogue: Haha...
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Yep. Uh-huh... Gah, this is so embarrassing for, like, NO reason.
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
     - Dialogue: Sorry.
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue:
     - Dialogue: Yep. Uh-huh... Gah, this is so embarrassing for, like, NO reason.
         Sorry.
@@ -53,7 +53,7 @@ MonoBehaviour:
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: Right! Sorry! Sorry...
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "Geez... You don\u2019t have to try THIS hard."
     RelationshipCheckRequired: 0
@@ -65,9 +65,9 @@ MonoBehaviour:
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: You have? I mean, of course you have!
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     - Dialogue: Ehehe...
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "Yeah, yeah. I\u2019ve missed you, too."
     RelationshipCheckRequired: 0
@@ -115,9 +115,9 @@ MonoBehaviour:
   Charming_Question:
     NpcReactionText:
     - Dialogue: "Uh, good! I\u2019ve been good! Mostly."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     - Dialogue: "Y\u2019know. Busy."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     - Dialogue: But good!
       Portrait: {fileID: 0}
     CombinedDialogue: []
@@ -131,9 +131,9 @@ MonoBehaviour:
   Assertive_Question:
     NpcReactionText:
     - Dialogue: I dunno. You just, uh...
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     - Dialogue: "You haven\u2019t been around, recently. Like, at all."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue:
     - Dialogue: "I dunno. You just, uh... You haven\u2019t been around, recently.
         Like, at all."
@@ -160,11 +160,11 @@ MonoBehaviour:
   Sappy_Question:
     NpcReactionText:
     - Dialogue: I dunno. Awhile. Haha.
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     - Dialogue: Seriously, though? Uh, a year or two. At least.
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     - Dialogue: Probably.
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue: []
     PlayerDialogue: How long HAS it been, actually?
     RelationshipCheckRequired: 0

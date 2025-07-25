@@ -14,23 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: Ugh! This is so weird!
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
   - Dialogue: I mean.. I used to sort of idolize you. Did you know that?
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
   - Dialogue: We, uh, probably weren't as close as I thought, but...
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
   - Dialogue: ...
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
   - Dialogue: I don't know! I missed talking to you.
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
   - Dialogue: Sorry if that's, like, lame. Or whatever.
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: Good. I mean, cool. I mean, whatever! I mean, thank you.
-      Portrait: {fileID: 0}
+    - Dialogue: Good. I mean, cool. I mean, whatever! I mean-
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+    - Dialogue: Thank you.
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     - Dialogue: Really.
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "Heh. It wasn\u2019t. You\u2019re cool."
     RelationshipCheckRequired: 0
@@ -42,7 +44,7 @@ MonoBehaviour:
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: It really was? Sorry, haha...
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Ha. That WAS lame.
     RelationshipCheckRequired: 0
@@ -53,8 +55,10 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Sappy_Expression:
     NpcReactionText:
+    - Dialogue: ...
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     - Dialogue: ...Thank you. Really.
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "It\u2019s not. I mean, I, uh, missed talking to you, too."
     RelationshipCheckRequired: 0
@@ -114,7 +118,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Hey, of course I did! Why wouldn\u2019t I? You meant the world to
         me, once."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue: []
     PlayerDialogue: ...You used to idolize me? Haha.
     RelationshipCheckRequired: 0
@@ -126,9 +130,9 @@ MonoBehaviour:
   Assertive_Question:
     NpcReactionText:
     - Dialogue: "Hey! I\u2019m trying here!"
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     - Dialogue: "I\u2019m really, really trying, you jerk!"
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "You\u2019re aware of how pathetic this all sounds, right?"
     RelationshipCheckRequired: 0
@@ -140,9 +144,9 @@ MonoBehaviour:
   Sappy_Question:
     NpcReactionText:
     - Dialogue: No?
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     - Dialogue: I mean, looking back on it, I was probably annoying you, right?
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "You don\u2019t think that we were close?"
     RelationshipCheckRequired: 0

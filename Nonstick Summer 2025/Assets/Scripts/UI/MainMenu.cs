@@ -13,13 +13,14 @@ using UnityEngine;
 using NaughtyAttributes;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    [Scene] [SerializeField] private int MainGameplayScene = 1;
+    [Scene][SerializeField] private int MainGameplayScene = 1;
 
-    [Header ("Fade Transition Visuals")]
-    [SerializeField] [Required] private GameObject fadeToBlack;
+    [Header("Fade Transition Visuals")]
+    [SerializeField][Required] private GameObject fadeToBlack;
 
     //maybe put cursor shenanigans here
     private void Start()
@@ -30,7 +31,9 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        DoFadeOut();
+        FadeTransition fade = fadeToBlack.GetComponent<FadeTransition>();
+
+        DoFadeOut(fade);
         //Cursor.visible = false; CALEB CALEB CALEB CALEB CALEB CALEB
     }
 
@@ -41,15 +44,13 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void DoFadeOut()
+    public void DoFadeOut(FadeTransition fade)
     {
-        var canvas = UITransitionManager.OpenMenu(fadeToBlack);
-        var fade = canvas.GetComponent<FadeTransition>();
-        var image = canvas.GetComponent<Image>();
+        Image image = fadeToBlack.GetComponentInChildren<Image>();
 
         if (fade != null)
         {
-            fade.StartFadeOut(image);
+            fade.StartFadeOut(image, MainGameplayScene);
         }
     }
 }

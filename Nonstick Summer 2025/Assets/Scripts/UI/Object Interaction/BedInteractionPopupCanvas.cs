@@ -9,6 +9,7 @@
 
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class BedInteractionPopupCanvas : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class BedInteractionPopupCanvas : MonoBehaviour
     [SerializeField] private TMP_Text statement;
     [SerializeField] private GameObject canSleepButtons;
     [SerializeField] private GameObject cannotSleepButtons;
+    [SerializeField] private GameObject fadeToBlack;
     public EndType SceneTransitionType;
 
     public enum EndType
@@ -45,6 +47,9 @@ public class BedInteractionPopupCanvas : MonoBehaviour
         if (Bed.BossDefeated)
         {
             Bed.InteractSuccessful = true;
+
+            DoFadeOut();
+
             UnityEngine.SceneManagement.SceneManager.LoadScene(Bed.NextSceneIndex);
             UITransitionManager.CloseMenu();
         }
@@ -57,5 +62,17 @@ public class BedInteractionPopupCanvas : MonoBehaviour
     public void OnNoPressed()
     {
         UITransitionManager.CloseMenu();
+    }
+
+    public void DoFadeOut()
+    {
+        var canvas = UITransitionManager.OpenMenu(fadeToBlack);
+        var fade = canvas.GetComponent<FadeTransition>();
+        var image = canvas.GetComponent<Image>();
+
+        if (fade != null)
+        {
+            fade.StartFadeOut(image, Bed.NextSceneIndex);
+        }
     }
 }

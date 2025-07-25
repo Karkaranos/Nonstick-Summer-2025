@@ -14,11 +14,26 @@ public class DreamSequenceInitializer : MonoBehaviour
 {
     [Header("Required Attributes")] [Required]
     public GameObject CanvasToOpen;
+    [SerializeField] private GameObject fadeFromBlack;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        DoFadeIn();
         var dream = UITransitionManager.OpenMenu(CanvasToOpen);
         dream.GetComponent<DreamSequence>().Initialize();
+    }
+
+
+    public void DoFadeIn()
+    {
+        var canvas = UITransitionManager.OpenMenu(fadeFromBlack);
+        var fade = canvas.GetComponent<FadeTransition>();
+        var image = canvas.GetComponentInChildren<Image>();
+
+        if (fade != null)
+        {
+            fade.StartFadeIn(image);
+        }
     }
 }

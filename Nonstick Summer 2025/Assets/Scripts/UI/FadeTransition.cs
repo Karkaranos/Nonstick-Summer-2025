@@ -1,17 +1,20 @@
 using System.Collections;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class FadeTransition : MonoBehaviour
 {
     private Coroutine fadeCoroutine;
-    private float lengthOfFade;
+    [SerializeField] private float lengthOfFade = 3;
 
-    public void StartFadeOut(Image image)
+    public void StartFadeOut(Image image, int nextScene)
     {
         if (fadeCoroutine == null)
         {
-            fadeCoroutine = StartCoroutine(FadeOut(image));
+            image.enabled = true;
+            fadeCoroutine = StartCoroutine(FadeOut(image, nextScene));
         }
     }
 
@@ -20,7 +23,7 @@ public class FadeTransition : MonoBehaviour
     /// </summary>
     /// <param name="image"></param>
     /// <returns></returns>
-    public IEnumerator FadeOut(Image image)
+    public IEnumerator FadeOut(Image image, int nextScene)
     {
         float alpha = image.color.a;
         Color color = image.color;
@@ -31,6 +34,42 @@ public class FadeTransition : MonoBehaviour
             alpha = Mathf.Lerp(0, 1, t);
             color.a = alpha;
             image.color = color;
+            yield return new WaitForEndOfFrame();
+        }
+
+        Destroy(image);
+        SceneManager.LoadScene(nextScene);
+        yield return null;
+    }
+
+
+    public void StartFadeIn(Image image)
+    {
+        Debug.Log("here");
+        if (fadeCoroutine == null)
+        {
+            image.enabled = true;
+            fadeCoroutine = StartCoroutine(FadeIn(image));
+        }
+    }
+
+    /// <summary>
+    /// Fades out selected image
+    /// </summary>
+    /// <param name="image"></param>
+    /// <returns></returns>
+    public IEnumerator FadeIn(Image image)
+    {
+        float alpha = image.color.a;
+        Color color = image.color;
+
+        while (alpha > 0)
+        {
+            float t = Time.time / lengthOfFade;
+            alpha = Mathf.Lerp(1, 0, t);
+            color.a = alpha;
+            image.color = color;
+            Debug.Log(alpha);
             yield return new WaitForEndOfFrame();
         }
 

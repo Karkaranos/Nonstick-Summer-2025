@@ -33,7 +33,12 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
     {
         if((!isObjective || (isObjective && canBeInteractedWith)) && !hasGivenCard)
         {
+            if (!GameManager.ObjectiveReference)
+            {
+                GameManager.ObjectiveReference = FindFirstObjectByType<Objectives>();
+            }
             GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.INTERACT_WITH_OBJECT, gameObject);
+
             var canvas = UITransitionManager.OpenMenu(CanvasToOpen).GetComponent<InteractableObjectCanvas>();
             canvas.Initialize(_statement, _question, _options);
 

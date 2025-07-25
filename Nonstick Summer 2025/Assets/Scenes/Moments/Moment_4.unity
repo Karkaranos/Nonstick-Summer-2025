@@ -38417,6 +38417,10 @@ PrefabInstance:
       value: What's up?
       objectReference: {fileID: 0}
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: postCombatLine
+      value: My sister gets heated sometimes. Don't let her walk all over you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: characterSprite
       value: 
       objectReference: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
@@ -60562,6 +60566,10 @@ PrefabInstance:
       value: ...Darling...
       objectReference: {fileID: 0}
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: postCombatLine
+      value: Be honest with your Mom...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: characterSprite
       value: 
       objectReference: {fileID: 21300000, guid: 7869ad9eba8e60e4dab075f9d8bc6428, type: 3}
@@ -65080,7 +65088,8 @@ MonoBehaviour:
   promptCanvas: {fileID: 8537043226331206475, guid: bf3dfcdf21315f84998bb1e2d5d1939b, type: 3}
   combatPrompt: Wanna chat with Cousin?
   preCombatLine: Oh, hey...
-  postCombatLine: 
+  postCombatLine: I think you should should stand up to your Mom, but that's just
+    me...
   characterSprite: {fileID: 21300000, guid: 56fb52eb6f26be6429532fcc44dd7cad, type: 3}
   CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: f8dd72b5a21b9b341ae4f2b2aa00a8c3, type: 3}
   StartingDialogueBranch: {fileID: 11400000, guid: e1f697b59736dda4aa7322a91beb598a, type: 2}
@@ -85832,7 +85841,7 @@ PrefabInstance:
     - target: {fileID: 6140443048461262060, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e75a4353cbdb2e348bd3e228fb6af449, type: 3}
+      objectReference: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
     - target: {fileID: 7010602745331249561, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_Name
       value: Mom

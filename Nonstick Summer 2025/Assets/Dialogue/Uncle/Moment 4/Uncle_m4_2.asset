@@ -16,17 +16,20 @@ MonoBehaviour:
   - Dialogue: "Uh, listen. I\u2019ve been meaning to check in with you for awhile,
       actually..."
     Portrait: {fileID: 0}
-  - Dialogue: "I\u2019m worried about you! I\u2019m worried about the sort of things
-      you\u2019re hearing without us to check up on you."
+  - Dialogue: "It\u2019s just...I\u2019m worried about you."
+    Portrait: {fileID: 0}
+  - Dialogue: "I\u2019m worried about the sort of things you might be getting into
+      without us checking up on you."
     Portrait: {fileID: 0}
   - Dialogue: "It\u2019s a crazy world out there, you know?"
     Portrait: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: Right. Right! Haha. Right.
+    - Dialogue: "Ha! You haven\u2019t seen the sorts of things that I\u2019ve seen,
+        kiddo! You have no idea!"
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "Right, right. I\u2019ll be fine."
+    PlayerDialogue: Sure I do, although you might be exaggerating...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 9202b01490dd39b49a15cae653236734, type: 2}
@@ -35,28 +38,29 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: Right. Right! Haha. Right.
+    - Dialogue: "Hey, come on! I don\u2019t mean it like that. I\u2019m just trying
+        to help."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "Of course... I\u2019m FINE."
+    PlayerDialogue: "You aren\u2019t my mom. Back off."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 9202b01490dd39b49a15cae653236734, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: Right. Right! Haha. Right.
+    - Dialogue: "I\u2019m fine, kiddo. But this isn\u2019t about me right now."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Thanks, man. But I can look after myself.
+    PlayerDialogue: "I\u2019m more worried about you, frankly..."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 9202b01490dd39b49a15cae653236734, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -15
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "Ha! You haven\u2019t seen the sorts of things that I\u2019ve seen,
@@ -97,7 +101,7 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "This isn\u2019t about trust, kid! This is about your safety!"
+    - Dialogue: "This isn\u2019t about trust! This is about your safety!"
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "You don\u2019t trust me?"
@@ -109,7 +113,9 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: "What makes you think that I can\u2019t? I\u2019m doing my best here."
+    - Dialogue: "I appreciate the skepticism, but what makes you think that I can\u2019t?"
+      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019m doing my best here."
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: What makes you think that YOU can protect me?
@@ -118,20 +124,20 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 9202b01490dd39b49a15cae653236734, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -15
+    ChangeInRelationshipStatus: 15
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: "I\u2019m fine, kid! Really! This isn\u2019t about me, anyhow!"
+    - Dialogue: "I\u2019m fine, kiddo. But this isn\u2019t about me right now."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "Uh... Are you sure you\u2019re doing alright? You\u2019ve been
+    PlayerDialogue: "Uh, are you sure YOU\u2019RE doing alright? You\u2019ve been
       extra paranoid lately..."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 9202b01490dd39b49a15cae653236734, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: -15
   Silent:
     NpcReactionText:
     - Dialogue: I was just like you when I was your age, always ready to prove to

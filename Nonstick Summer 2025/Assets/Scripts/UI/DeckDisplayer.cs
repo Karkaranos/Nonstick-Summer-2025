@@ -260,6 +260,8 @@ public class DeckDisplayer : MonoBehaviour
 
         //TODO sort cards somehow
 
+        _visualDisplays = _visualDisplays.OrderBy(v=> (int) v.cardData.Emotion).ToList();
+
         for (int i = startIndex.Value; i <= endIndex.Value; i++)
         {
             var card = _visualDisplays[i];

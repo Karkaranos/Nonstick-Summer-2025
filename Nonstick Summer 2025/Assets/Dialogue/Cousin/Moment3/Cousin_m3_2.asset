@@ -13,20 +13,25 @@ MonoBehaviour:
   m_Name: Cousin_m3_2
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: "Listen I got some more cards the other day, and I\u2019ve been itchin
-      to try them out."
+  - Dialogue: Oh! Listen!
+    Portrait: {fileID: 0}
+  - Dialogue: "I got some more cards the other day, and I\u2019ve been itchin to
+      try them out."
     Portrait: {fileID: 0}
   - Dialogue: Wanna play a round or two?
     Portrait: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "Alright! Obviously we can\u2019t play right now, but maybe next
-        time."
+    - Dialogue: Right!
       Portrait: {fileID: 0}
-    - Dialogue: I can't wait!
+    - Dialogue: Yeah.
+      Portrait: {fileID: 0}
+    - Dialogue: Of course.
+      Portrait: {fileID: 0}
+    - Dialogue: Maybe some other time, then.
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "Sure! Just let me know when and I\u2019ll break out the ol cards."
+    PlayerDialogue: "I\u2019m a bit busy... I\u2019m not sure if I have the time."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
@@ -35,14 +40,16 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "Oh yeah? Hey you\u2019re the one who hasn\u2019t played in a while,
-        while I\u2019ve been slowly honing my skills all these years."
+    - Dialogue: Oh yeah?
       Portrait: {fileID: 0}
-    - Dialogue: "I definitely won\u2019t go down as easily as last time."
+    - Dialogue: "You haven\u2019t played in forever! Meanwhile, I\u2019ve been slowly
+        honing my skills, hehe..."
+      Portrait: {fileID: 0}
+    - Dialogue: "I definitely won\u2019t go down easy!"
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "Careful what you wish for, I\u2019ll beat you just like old
-      times if I have to."
+    PlayerDialogue: "Careful what you wish for! You know I\u2019d destroy you again
+      if I had to."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
@@ -51,14 +58,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "I can teach you if you want. I know you don\u2019t have enough time
-        these days,"
+    - Dialogue: I can give you a refresher!
       Portrait: {fileID: 0}
-    - Dialogue: but it could be something fun to do together.
+    - Dialogue: "I know you don\u2019t have a lot of time for this sort of thing
+        anymore, but it could be fun!"
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "I don\u2019t know. I haven\u2019t played that game in a long
-      time."
+    PlayerDialogue: "I don\u2019t know. I haven\u2019t played in a long time."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
@@ -111,13 +117,14 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "Yeah that\u2019s fine, I\u2019ll be sure to catch you up to speed."
+    - Dialogue: Yeah!
+      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019ll be sure to catch you up to speed."
       Portrait: {fileID: 0}
     - Dialogue: "I\u2019m looking forward to it already!"
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "Sure, you might have to teach me how to play again if that\u2019s
-      alright?"
+    PlayerDialogue: Would you be okay with teaching me how to play again?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
@@ -126,13 +133,12 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: "Oh yeah? Hey you\u2019re the one who hasn\u2019t played in a while,
-        while I\u2019ve been slowly honing my skills all these years."
+    - Dialogue: No way am I losing!
       Portrait: {fileID: 0}
-    - Dialogue: "I definitely won\u2019t go down as easily as last time."
+    - Dialogue: "You have no idea how much better I\u2019ve gotten!"
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Better question is, are you ready to lose?
+    PlayerDialogue: Depends. Are you ready to lose?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}
@@ -141,13 +147,18 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: Oh... I guess so.
+    - Dialogue: Oh...
       Portrait: {fileID: 0}
-    - Dialogue: Sorry for asking, that was a stupid question.
+    - Dialogue: I guess so.
+      Portrait: {fileID: 0}
+    - Dialogue: Maybe.
+      Portrait: {fileID: 0}
+    - Dialogue: "You\u2019re right."
+      Portrait: {fileID: 0}
+    - Dialogue: Sorry.
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "I don\u2019t know, aren\u2019t we getting a bit too old to be
-      playing with cards?"
+    PlayerDialogue: "Aren\u2019t we getting a bit too old to be playing with cards?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 49dc780579956e849ae90b220a1124f8, type: 2}

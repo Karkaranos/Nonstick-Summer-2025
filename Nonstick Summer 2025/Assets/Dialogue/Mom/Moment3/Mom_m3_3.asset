@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: Mom_m3_3
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: "Well, I\u2019m sure you\u2019re going to do-             goddammit."
+  - Dialogue: "Well, I\u2019m sure you\u2019re going to do--"
     Portrait: {fileID: 0}
-  - Dialogue: Sorry honey, I have to go. Call me when you get back, okay?
+  - Dialogue: Goddammit.
+    Portrait: {fileID: 0}
+  - Dialogue: Sorry honey, I have to go.
+    Portrait: {fileID: 0}
+  - Dialogue: Call me when you get back, okay?
     Portrait: {fileID: 0}
   - Dialogue: Love you.
     Portrait: {fileID: 0}
@@ -24,7 +28,7 @@ MonoBehaviour:
     - Dialogue: '*Before you can finish your response, Mom hangs up*'
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: -Love you. Jinx, you owe me pizza.
+    PlayerDialogue: Have fun!
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 272a1e19d7313134a82b8bd3d21d9a18, type: 2}
@@ -36,7 +40,7 @@ MonoBehaviour:
     - Dialogue: '*Before you can finish your response, Mom hangs up*'
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: '*Hang up*'
+    PlayerDialogue: Sure.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 272a1e19d7313134a82b8bd3d21d9a18, type: 2}
@@ -48,7 +52,7 @@ MonoBehaviour:
     - Dialogue: '*Before you can finish your response, Mom hangs up*'
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Bye Mom. Love you too.
+    PlayerDialogue: Love you. Hope work goes well!
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 272a1e19d7313134a82b8bd3d21d9a18, type: 2}

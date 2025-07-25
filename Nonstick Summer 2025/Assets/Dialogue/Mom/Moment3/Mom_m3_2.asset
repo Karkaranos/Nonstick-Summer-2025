@@ -13,18 +13,21 @@ MonoBehaviour:
   m_Name: Mom_m3_2
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: "Did you pack enough water? Sunscreen? I\u2019m sure Grandma can help
-      you put together some snacks."
+  - Dialogue: Did you pack enough water?
+    Portrait: {fileID: 0}
+  - Dialogue: Sunscreen?
+    Portrait: {fileID: 0}
+  - Dialogue: "I\u2019m sure Grandma can help you put together some snacks."
     Portrait: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "Don\u2019t call them gross! Your Grandma puts a lot of hard work
-        into making those for you kids."
+    - Dialogue: Good thing your Grandma made her famous granola balls for the team!
       Portrait: {fileID: 0}
-    - Dialogue: "Although It wouldn\u2019t kill her to put in a little sugar too..."
+    - Dialogue: "She\u2019d never let you go hungry."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: No need, she already made those gross granola balls for the team.
+    PlayerDialogue: "Grandma ate everything! I guess we\u2019ll to have to buy more
+      of the good snacks."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 8cb10061bd303d442bc4c7567918db15, type: 2}
@@ -33,11 +36,12 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "If you want to be on your A-game, you do. Don\u2019t want you catching
-        heatstroke out there."
+    - Dialogue: "Well, you\u2019re still MY kid."
+      Portrait: {fileID: 0}
+    - Dialogue: Mind the attitude.
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "I don\u2019t need all of that!"
+    PlayerDialogue: "I\u2019m not a kid anymore. I can pack my own snacks."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 8cb10061bd303d442bc4c7567918db15, type: 2}
@@ -46,10 +50,15 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: Mhm.
+    - Dialogue: ...
+      Portrait: {fileID: 0}
+    - Dialogue: "Look, I\u2019ve already tried to talk my supervisor into letting
+        me drive over during my lunch break, but it\u2019s too far of a drive."
+      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019ll make it up to you, I promise."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "Not yet. I\u2019ll go ask her."
+    PlayerDialogue: I did...I also asked Grandma to save you a seat, just in case.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 8cb10061bd303d442bc4c7567918db15, type: 2}
@@ -112,8 +121,9 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: "If you want to be on your A-game, you do. Don\u2019t want you catching
-        heatstroke out there."
+    - Dialogue: If you want to be on your A-game, you do.
+      Portrait: {fileID: 0}
+    - Dialogue: "Don\u2019t want you catching heatstroke out there."
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Do I really need all of that?

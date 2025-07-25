@@ -13,17 +13,20 @@ MonoBehaviour:
   m_Name: Grandma_m3_5
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Good luck out there, I'll be rooting for you!
+  - Dialogue: Good luck out there, We'll be rooting for you!
     Portrait: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "No matter what I know you'll do your best. That\u2019s all that
-        matters."
+    - Dialogue: "It\u2019s not always about winning you know."
       Portrait: {fileID: 0}
-    - Dialogue: I love you!
+    - Dialogue: "It\u2019s about having fun and working together as a team."
+      Portrait: {fileID: 0}
+    - Dialogue: "And if you don\u2019t end up winning the game, that is okay, at
+        least you guys have each other."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: I'll be sure to put on a performance!
+    PlayerDialogue: "I don\u2019t know if the world is ready for what is about to
+      happen if I don\u2019t win."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 481e7042a7fd02848926d60f4685b6cd, type: 2}
@@ -32,13 +35,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "No matter what I know you'll do your best. That\u2019s all that
-        matters."
+    - Dialogue: I like that confidence!
       Portrait: {fileID: 0}
-    - Dialogue: I love you!
+    - Dialogue: "As long as you guys work together and everyone plays their roles,
+        nobody can stand in your guys\u2019 way."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: I'm going to win that trophy!
+    PlayerDialogue: We're going to win that trophy!
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 481e7042a7fd02848926d60f4685b6cd, type: 2}
@@ -49,10 +52,11 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Of course you are ready.
       Portrait: {fileID: 0}
-    - Dialogue: "I\u2019ll been cheering the loudest for you on the sidelines."
+    - Dialogue: Remember all of the hard work that you and everyone else put in to
+        get to this point.
       Portrait: {fileID: 0}
-    - Dialogue: Be sure to listen out for me when you hoist that trophy up in the
-        air.
+    - Dialogue: "I\u2019ll been cheering the loudest on the sidelines once you guys
+        secure the win!"
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Thanks, I really don't know if I'm ready.
@@ -110,15 +114,15 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Charming_Question:
     NpcReactionText:
-    - Dialogue: There is not a doubt in my mind. You all put in so much work to get
-        here.
+    - Dialogue: "It\u2019s not always about winning you know."
       Portrait: {fileID: 0}
-    - Dialogue: "You\u2019ve already proven you\u2019ve gotten what it takes,"
+    - Dialogue: "It\u2019s about having fun and working together as a team."
       Portrait: {fileID: 0}
-    - Dialogue: now you just have to go out there and show the world.
+    - Dialogue: "And if you don\u2019t end up winning the game, that is okay, at
+        least you guys have each other."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Do you think we can win?
+    PlayerDialogue: How are we going to celebrate once I win?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 481e7042a7fd02848926d60f4685b6cd, type: 2}
@@ -127,13 +131,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: "I don\u2019t know if rush is the right word,"
+    - Dialogue: "I don\u2019t know if rush is the right word..."
       Portrait: {fileID: 0}
-    - Dialogue: but you can be sure that I will be making my way out there as fast
-        as I can to give my pumpkin the biggest hug.
+    - Dialogue: But you can be sure that I will be making my way out there as fast
+        as I can to give my Pumpkin the biggest hug.
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Are you going to rush the pitch after I win that trophy?
+    PlayerDialogue: Are you going to rush the pitch after we win that trophy?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 481e7042a7fd02848926d60f4685b6cd, type: 2}
@@ -142,12 +146,12 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: There is not a doubt in my mind. You all put in so much work to get
-        here.
+    - Dialogue: There is not a doubt in my mind.
       Portrait: {fileID: 0}
-    - Dialogue: "You\u2019ve already proven you\u2019ve gotten what it takes,"
+    - Dialogue: "You\u2019ve all put in so much work to get here."
       Portrait: {fileID: 0}
-    - Dialogue: now you just have to go out there and show the world.
+    - Dialogue: "You\u2019ve already proven you\u2019ve gotten what it takes, now
+        you just have to go out there and show the world."
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Do you think we really have what it takes to win?

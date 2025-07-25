@@ -17,14 +17,13 @@ MonoBehaviour:
     Portrait: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "You\u2019re definitely better than me."
+    - Dialogue: Yeah, Mom made that for her when we were kids, and Dad...
       Portrait: {fileID: 0}
-    - Dialogue: I kicked my ball over the fence and big foot stole it, but your mom...
-      Portrait: {fileID: 0}
-    - Dialogue: Your mom was the best player on the playground.
+    - Dialogue: Grandpa loved playing with us.
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "So you\u2019re saying you can help me warm up."
+    PlayerDialogue: "So that\u2019s why she has a soccer quilt...she never struck
+      me as a sports person."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
@@ -33,11 +32,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "You\u2019re definitely better than me."
+    - Dialogue: "Oh ,you\u2019re definitely better than me."
       Portrait: {fileID: 0}
-    - Dialogue: I kicked my ball over the fence and big foot stole it, but your mom...
+    - Dialogue: I kicked my ball over the fence on the regular, but your mom...
       Portrait: {fileID: 0}
     - Dialogue: Your mom was the best player on the playground.
+      Portrait: {fileID: 0}
+    - Dialogue: "It\u2019s in your blood, for sure."
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m sure I\u2019m better than both of you."
@@ -49,16 +50,16 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: Well your mom was the best soccer player on the playground. But she
-        never went for the school team.
+    - Dialogue: Well, your mom was the best soccer player on the playground, but
+        she never tried out for the school team.
       Portrait: {fileID: 0}
-    - Dialogue: I on the other hand, kicked my ball over the fence and big foot stole
-        it...
+    - Dialogue: Me?
       Portrait: {fileID: 0}
-    - Dialogue: "We\u2019re so proud of you for making the school team."
+    - Dialogue: "Let\u2019s just say I kicked enough soccer balls over the fence
+        for them to give me a WIDE berth."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "I didn\u2019t know that."
+    PlayerDialogue: Mom never told me she was on a soccer team.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
@@ -116,13 +117,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Charming_Question:
     NpcReactionText:
-    - Dialogue: Well your mom was the best soccer player on the playground. But she
-        never went for the school team.
+    - Dialogue: Well, your mom was the best soccer player on the playground, but
+        she never tried out for the school team.
       Portrait: {fileID: 0}
-    - Dialogue: I on the other hand, kicked my ball over the fence and big foot stole
-        it...
+    - Dialogue: Me?
       Portrait: {fileID: 0}
-    - Dialogue: "We\u2019re so proud of you for making the school team."
+    - Dialogue: "Let\u2019s just say I kicked enough soccer balls over the fence
+        for them to give me a WIDE berth."
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: And how often did you beat her?
@@ -134,9 +135,11 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: "Wow. I\u2019m sorry that we love you."
+    - Dialogue: Wow.
       Portrait: {fileID: 0}
-    - Dialogue: "I guess I\u2019ll just cheer loud enough for me."
+    - Dialogue: "I\u2019m sorry that we love you."
+      Portrait: {fileID: 0}
+    - Dialogue: "I guess I\u2019ll just cheer for myself, then."
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Did you know that your cheering is embarrassing?
@@ -148,13 +151,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -15
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: Well your mom was the best soccer player on the playground. But she
-        never went for the school team.
+    - Dialogue: Well, your mom was the best soccer player on the playground, but
+        she never tried out for the school team.
       Portrait: {fileID: 0}
-    - Dialogue: I on the other hand, kicked my ball over the fence and big foot stole
-        it...
+    - Dialogue: Me?
       Portrait: {fileID: 0}
-    - Dialogue: "We\u2019re so proud of you for making the school team."
+    - Dialogue: "Let\u2019s just say I kicked enough soccer balls over the fence
+        for them to give me a WIDE berth."
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "Why didn\u2019t she tell me that?"

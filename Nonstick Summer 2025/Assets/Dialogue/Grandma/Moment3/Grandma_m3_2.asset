@@ -17,14 +17,15 @@ MonoBehaviour:
     Portrait: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "That\u2019s great to hear, I\u2019m glad everything seems to be
-        smooth sailing."
+    - Dialogue: "You don\u2019t have to lie to me Pumpkin."
       Portrait: {fileID: 0}
-    - Dialogue: "I was worried that Grandpa\u2019s passing would throw everything
-        for a loop."
+    - Dialogue: "I know what happened has been hard on us all, but you don\u2019t
+        need to hide it from me."
+      Portrait: {fileID: 0}
+    - Dialogue: Your Nanna is strong you know, she can handle it.
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "We\u2019re right as rain just like we always are!"
+    PlayerDialogue: You know us, right as rain just like we always are!
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b98f0011ea366da459066c9cc7eed3f8, type: 2}
@@ -33,15 +34,17 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "I\u2019m sorry to hear that, just give your mother some time."
+    - Dialogue: "I\u2019m sorry to hear that."
       Portrait: {fileID: 0}
-    - Dialogue: "Your grandfather\u2019s passing is still fresh in her mind, I\u2019m
-        sure..."
+    - Dialogue: I appreciate you being honest with me.
       Portrait: {fileID: 0}
-    - Dialogue: but things will go back to normal eventually.
+    - Dialogue: Ever since your Grandpa passed, everyone has been a bit on edge.
+      Portrait: {fileID: 0}
+    - Dialogue: Just give your mother some time and I am sure things will go back
+        to normal eventually...
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "We\u2019ve been fighting a lot lately."
+    PlayerDialogue: "To be honest, we\u2019ve been fighting a lot lately."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b98f0011ea366da459066c9cc7eed3f8, type: 2}
@@ -50,15 +53,14 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "That\u2019s good. I\u2019ll talk to her to make sure she makes time
+    - Dialogue: "I\u2019ll talk to her to make sure she makes time for you."
+      Portrait: {fileID: 0}
+    - Dialogue: "I know she has two jobs, but that\u2019s no excuse not to have time
         for you."
       Portrait: {fileID: 0}
-    - Dialogue: I know she has two jobs, but...
-      Portrait: {fileID: 0}
-    - Dialogue: "That\u2019s no excuse not to have time for you."
-      Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Yep, but I wish we were able to spend more time with each other.
+    PlayerDialogue: "We haven\u2019t really had the time to spend it with each other
+      recently."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b98f0011ea366da459066c9cc7eed3f8, type: 2}
@@ -116,13 +118,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "I was worried that Grandpa\u2019s passing might have thrown everyone
-        off balance."
+    - Dialogue: "You don\u2019t have to walk on eggshells around me sweet pea, I\u2019d
+        rather you just talk with me and be honest with me."
       Portrait: {fileID: 0}
-    - Dialogue: "It\u2019s good to see and hear that's not the case."
+    - Dialogue: Make some time for your Nanna okay?
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Things have been going great, what makes you bring that up?
+    PlayerDialogue: Things have never been better, what makes you bring that up though?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b98f0011ea366da459066c9cc7eed3f8, type: 2}
@@ -131,12 +133,16 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: "Sorry, you\u2019re right, I guess I was just in my head a bit."
+    - Dialogue: "I\u2019m doing fine now, thanks for asking."
       Portrait: {fileID: 0}
-    - Dialogue: You have to be focused if you want to help win that trophy.
+    - Dialogue: "I\u2019ve just been a bit out of it ever since your Grandfather
+        passed."
+      Portrait: {fileID: 0}
+    - Dialogue: "Don\u2019t worry about me though, I\u2019m sure your super Nanna
+        will be back to her usual self before you know it!"
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Why do you ask?
+    PlayerDialogue: Are you alright Nanna?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b98f0011ea366da459066c9cc7eed3f8, type: 2}
@@ -145,14 +151,16 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: "I was worried that Grandpa\u2019s passing might have thrown everyone
-        off balance."
+    - Dialogue: I was worried that might be the case...
       Portrait: {fileID: 0}
-    - Dialogue: "It\u2019s good to see and hear that\u2019s is not the case."
+    - Dialogue: "I\u2019m doing alright, just a bit out of it lately."
+      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019m glad I get to watch my amazing Pumpkin perform in the big
+        game, hopefully it can take my mind off things for even just a moment."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Yeah, I just wish we could spend more time together. Is there
-      a reason you brought that up?
+    PlayerDialogue: "Yeah, we\u2019ve been alright, just a bit busy lately. More
+      importantly, how are you Nanna?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b98f0011ea366da459066c9cc7eed3f8, type: 2}

@@ -14537,6 +14537,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanvasToOpen: {fileID: 8553161507268041164, guid: 8a396213697e3d24f944fe34be909bbe, type: 3}
+  applyShaders: 0
+  applyObjectiveShaders: 0
+  applyInteractableShaders: 0
+  applyIfActiveObjective: 1
+  objectiveShader: {fileID: 0}
+  interactableShader: {fileID: 0}
+  affectedMeshes: []
   _statement: Your water bottle.
   _question: Do you think you can do this?
   _options:
@@ -28408,6 +28415,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanvasToOpen: {fileID: 8553161507268041164, guid: 8a396213697e3d24f944fe34be909bbe, type: 3}
+  applyShaders: 0
+  applyObjectiveShaders: 0
+  applyInteractableShaders: 0
+  applyIfActiveObjective: 1
+  objectiveShader: {fileID: 0}
+  interactableShader: {fileID: 0}
+  affectedMeshes: []
   _statement: It's your soccer bag.
   _question: Today's the State Championship game.
   _options:
@@ -60406,6 +60420,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -305091885687274788, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -305091885687274788, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8026074366731539009, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+    - target: {fileID: -305091885687274788, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4917468115937326199, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+    - target: {fileID: -305091885687274788, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: -7791486788655378091, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+    - target: {fileID: -305091885687274788, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: -8848810374240701247, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+    - target: {fileID: -305091885687274788, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+      propertyPath: 'm_Materials.Array.data[4]'
+      value: 
+      objectReference: {fileID: 5470113347495681512, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+    - target: {fileID: -305091885687274788, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+      propertyPath: 'm_Materials.Array.data[5]'
+      value: 
+      objectReference: {fileID: 8556262120643298411, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+    - target: {fileID: -305091885687274788, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+      propertyPath: 'm_Materials.Array.data[6]'
+      value: 
+      objectReference: {fileID: 8806331072206959801, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+    - target: {fileID: -305091885687274788, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+      propertyPath: 'm_Materials.Array.data[7]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 587ac99705018de4581cd8b0f79fbf2b, type: 2}
     - target: {fileID: 919132149155446097, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
       propertyPath: m_Name
       value: Front_Door
@@ -60427,6 +60477,11 @@ PrefabInstance:
 --- !u!1 &1461719199 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+  m_PrefabInstance: {fileID: 1461719198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1461719200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8068073526183931155, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
   m_PrefabInstance: {fileID: 1461719198}
   m_PrefabAsset: {fileID: 0}
 --- !u!64 &1461719201
@@ -60489,6 +60544,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e3eef7fb0d58814db237c7f5897caf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  applyLevelEndShader: 1
+  levelEndShader: {fileID: 2100000, guid: 587ac99705018de4581cd8b0f79fbf2b, type: 2}
+  affectedMeshes:
+  - {fileID: 1461719199}
+  - {fileID: 1461719200}
   InteractSuccessful: 0
   BossDefeated: 0
   NextSceneIndex: 4

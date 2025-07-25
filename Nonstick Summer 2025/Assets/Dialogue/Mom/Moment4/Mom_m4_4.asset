@@ -15,18 +15,18 @@ MonoBehaviour:
   dialogue:
   - Dialogue: I work day and night for this family, but all I ever see you care about
       is your phone!
-    Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
+    Portrait: {fileID: 21300000, guid: c2360f7827c4e38498ba0e512f1c8260, type: 3}
   - Dialogue: You are grounded, do you understand that?!
-    Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
+    Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "Is that really what you think of me? Do you think I\u2019m doing
         this because I HATE YOU?"
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
     - Dialogue: " I don\u2019t want to be the bad guy,"
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: c2360f7827c4e38498ba0e512f1c8260, type: 3}
     - Dialogue: "but you\u2019re forcing my hand!"
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
     CombinedDialogue: []
     PlayerDialogue: At least my PHONE listens to me!
     RelationshipCheckRequired: 1
@@ -39,7 +39,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Are you sure? Because you\u2019re not making a good case for yourself
         by sneaking behind my back like this."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: c2360f7827c4e38498ba0e512f1c8260, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m not trying to sound ungrateful. I AM grateful but you\u2019re
       being UNFAIR right now!"
@@ -53,8 +53,15 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "I don\u2019t HAVE to take care of you, but a little RESPECT shouldn\u2019t
         be too much to ask for either."
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+    CombinedDialogue:
+    - Dialogue: "I don\u2019t HAVE to take care of you, but a little RESPECT shouldn\u2019t
+        be too much to ask for either."
       Portrait: {fileID: 0}
-    CombinedDialogue: []
+    - Dialogue: Go to your room!
+      Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
+    - Dialogue: NOW!
+      Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
     PlayerDialogue: " A tragedy. It\u2019s almost like you\u2019re A MOTHER who is
       supposed to CARE ABOUT HER KID."
     RelationshipCheckRequired: 1
@@ -105,8 +112,14 @@ MonoBehaviour:
   Charming_Question:
     NpcReactionText:
     - Dialogue: ..!
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+    CombinedDialogue:
+    - Dialogue: ..!
       Portrait: {fileID: 0}
-    CombinedDialogue: []
+    - Dialogue: Go to your room!
+      Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
+    - Dialogue: NOW!
+      Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
     PlayerDialogue: "If you work more, does that mean I\u2019ll have to see you less?"
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 0, y: 30}
@@ -118,7 +131,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Like what? Because I\u2019m tired of you thinking you can walk all
         over me."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: c2360f7827c4e38498ba0e512f1c8260, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "Can\u2019t we talk about this? There has to be something else
       you can take besides my phone."
@@ -131,14 +144,14 @@ MonoBehaviour:
   Sappy_Question:
     NpcReactionText:
     - Dialogue: "Is it MY fault that you didn\u2019t study?!"
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: c2360f7827c4e38498ba0e512f1c8260, type: 3}
     - Dialogue: "Is it MY fault that you\u2019ve been clothed and fed with a roof
         over your head?"
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
     - Dialogue: No,
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: c2360f7827c4e38498ba0e512f1c8260, type: 3}
     - Dialogue: The only FAULT I made is GIVING you that damn phone to begin with!
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Do you understand that you working so much leaves you with no
       time to pay attention to me?
@@ -151,7 +164,7 @@ MonoBehaviour:
   Silent:
     NpcReactionText:
     - Dialogue: Did you hear me?
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

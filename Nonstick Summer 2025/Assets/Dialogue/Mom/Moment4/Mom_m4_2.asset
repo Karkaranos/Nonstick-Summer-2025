@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: Does the idea of being grounded mean nothing to you?
-    Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
+    Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "Don\u2019t be smart with me."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Ah yes... no fun, no phone, no time in the sunlight, wither away
       in remorse in my room. Grounded. Yeah, I get it.
@@ -31,7 +31,7 @@ MonoBehaviour:
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: "Don\u2019t be smart with me."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: c2360f7827c4e38498ba0e512f1c8260, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "You don\u2019t understand! This doesn\u2019t mean I was going
       to take my phone and use it full-time again."
@@ -44,7 +44,7 @@ MonoBehaviour:
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: "It doesn\u2019t matter. Grounded means grounded."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "I get it.. it\u2019s just that it\u2019s been a while."
     RelationshipCheckRequired: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
   Charming_Question:
     NpcReactionText:
     - Dialogue: "Don\u2019t be smart with me."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Oh... Could you explain it again to me?
     RelationshipCheckRequired: 0
@@ -105,9 +105,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -15
   Assertive_Question:
     NpcReactionText:
+    - Dialogue: Don't be smart with me.
+      Portrait: {fileID: 21300000, guid: c2360f7827c4e38498ba0e512f1c8260, type: 3}
+    CombinedDialogue:
     - Dialogue: "Don\u2019t be smart with me."
       Portrait: {fileID: 0}
-    CombinedDialogue: []
+    - Dialogue: Oh, because surely, a phone will fix your grades.
+      Portrait: {fileID: 21300000, guid: c2360f7827c4e38498ba0e512f1c8260, type: 3}
     PlayerDialogue: Are you being serious right now?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -118,7 +122,7 @@ MonoBehaviour:
   Sappy_Question:
     NpcReactionText:
     - Dialogue: "You clearly don\u2019t understand what being grounded means!"
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "Why do you think I don\u2019t understand?"
     RelationshipCheckRequired: 0
@@ -130,7 +134,7 @@ MonoBehaviour:
   Silent:
     NpcReactionText:
     - Dialogue: WELL?!
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

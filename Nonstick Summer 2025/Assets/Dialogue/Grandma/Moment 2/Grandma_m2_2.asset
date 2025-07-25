@@ -13,45 +13,50 @@ MonoBehaviour:
   m_Name: Grandma_m2_2
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Now, have you come to help your Nanna clean the kitchen?
-    Portrait: {fileID: 0}
+  - Dialogue: And you better be good... Otherwise no extra cake for you!
+    Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: Nooo!! Not the kitchen! Your mother is going to end us!
-      Portrait: {fileID: 0}
+    - Dialogue: Wow, there you go again shocking your Nanna. Maybe I should bring
+        it home with me for Grandpa to try, or give it to your cousin instead...
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: "I\u2019m going to destroy the kitchen...!"
+    PlayerDialogue: "You don\u2019t have to worry about me Nanna, your pumpkin has
+      already had their fill of sugar for the foreseeable future."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
-  Assertive_Expression:
-    NpcReactionText:
-    - Dialogue: "Oh, a little help can go a long ways. Even if it\u2019s not much
-        you\u2019re doing!"
-      Portrait: {fileID: 0}
-    CombinedDialogue: []
-    PlayerDialogue: "No, you don\u2019t even need my help."
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
-  Sappy_Expression:
-    NpcReactionText:
-    - Dialogue: "That\u2019s the spirit! It\u2019s more fun with help, anyways."
-      Portrait: {fileID: 0}
-    CombinedDialogue: []
-    PlayerDialogue: Yeah... I always like helping!
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: Wow, there you go again shocking your Nanna. Maybe I should bring
+        it home with me for Grandpa to try, or give it to your cousin instead...
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "I\u2019m full Nanna, I couldn\u2019t eat another bite"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "Now now, don\u2019t go pulling those tricks to prey on your dear
+        old Nanna\u2019s kindness..."
+      Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
+    - Dialogue: ' You can get another slice later if you are good.'
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: Aww... I wanted another one.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "I suppose so... It\u2019s still nice to help your Nanna though!"
@@ -98,8 +103,9 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
-    - Dialogue: Oh.. just cleaning. Gotta tidy up some of the fun!
-      Portrait: {fileID: 0}
+    - Dialogue: "Don\u2019t take from your sweet Nanna, silly! Hands away, we need
+        to put it in the fridge to keep it good."
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
     CombinedDialogue:
     - Dialogue: Oh.. just cleaning. Gotta tidy up some of the fun!
       Portrait: {fileID: 0}
@@ -107,45 +113,47 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: Otherwise, no extra cake for you!
       Portrait: {fileID: 0}
-    PlayerDialogue: Yeah, but what can Nanna not handle on her own?
+    PlayerDialogue: Haha, what if I take it first?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: 10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: Oh.. just cleaning. Gotta tidy up some of the fun!
-      Portrait: {fileID: 0}
+    - Dialogue: "Watch yourself now, your Nanna is sweet as a plum but she doesn\u2019t
+        have to be. Maybe you can help you Nanna finish it later."
+      Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: What're you even doing?
+    PlayerDialogue: Are you going to eat it all yourself?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: Yeah, your Nanna has most of it handled. You can still help a little
-        though.
-      Portrait: {fileID: 0}
+    - Dialogue: "That isn\u2019t going to work on me pumpkin. You know better than
+        to try and take advantage of your sweet old Nanna."
+      Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: Sure, but what would I even be able to help with..?
+    PlayerDialogue: "But Nanna, please can I get another slice? It\u2019s my birthday
+      after all."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -15
   Silent:
     NpcReactionText: []
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5

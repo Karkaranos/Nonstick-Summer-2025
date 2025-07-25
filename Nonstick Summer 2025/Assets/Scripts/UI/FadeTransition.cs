@@ -27,10 +27,13 @@ public class FadeTransition : MonoBehaviour
     {
         float alpha = image.color.a;
         Color color = image.color;
+        float timeStarted = Time.time;
+        float timeElapsed = Time.time - timeStarted;
 
-        while (image.color.a < 1)
+        while (alpha < 1)
         {
-            float t = Time.time / lengthOfFade;
+            float t = timeElapsed / lengthOfFade;
+            timeElapsed += Time.deltaTime;
             alpha = Mathf.Lerp(0, 1, t);
             color.a = alpha;
             image.color = color;
@@ -45,7 +48,6 @@ public class FadeTransition : MonoBehaviour
 
     public void StartFadeIn(Image image)
     {
-        Debug.Log("here");
         if (fadeCoroutine == null)
         {
             image.enabled = true;
@@ -63,9 +65,14 @@ public class FadeTransition : MonoBehaviour
         float alpha = image.color.a;
         Color color = image.color;
 
+        float timeStarted = Time.time;
+        float timeElapsed = Time.time - timeStarted;
+
         while (alpha > 0)
         {
-            float t = Time.time / lengthOfFade;
+            float t = timeElapsed / lengthOfFade;
+            timeElapsed += Time.deltaTime;
+
             alpha = Mathf.Lerp(1, 0, t);
             color.a = alpha;
             image.color = color;

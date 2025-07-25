@@ -6512,8 +6512,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.1054926, y: 1.4761922, z: 2.417952}
-  m_Center: {x: 0.038761616, y: 0.7003342, z: -0.014692068}
+  m_Size: {x: 3.4310303, y: 1.4761922, z: 2.417952}
+  m_Center: {x: -0.29846954, y: 0.7003342, z: -0.014692068}
 --- !u!43 &229444985
 Mesh:
   m_ObjectHideFlags: 0
@@ -9956,8 +9956,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.6106093, y: 1.8382189, z: 1.5234361}
-  m_Center: {x: 0.34129655, y: -0.4191097, z: -1.1131029}
+  m_Size: {x: 2.6106093, y: 0.8236625, z: 1.5234361}
+  m_Center: {x: 0.34129655, y: -0.9263879, z: -1.1131029}
 --- !u!43 &328910424
 Mesh:
   m_ObjectHideFlags: 0
@@ -27037,8 +27037,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.2553272, y: 2.7923505, z: 10.385724}
-  m_Center: {x: 2.980322, y: -0.89617527, z: 1.5883441}
+  m_Size: {x: 1.2553272, y: 1.2639465, z: 10.385724}
+  m_Center: {x: 2.980322, y: -1.6603773, z: 1.5883441}
 --- !u!43 &733121759
 Mesh:
   m_ObjectHideFlags: 0
@@ -35390,7 +35390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1708879188632933898, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 35.656124
       objectReference: {fileID: 0}
     - target: {fileID: 1708879188632933898, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -35422,7 +35422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4067548123240273524, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 10.885375
       objectReference: {fileID: 0}
     - target: {fileID: 4067548123240273524, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -35454,7 +35454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5520967587660388783, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 60.426876
       objectReference: {fileID: 0}
     - target: {fileID: 5520967587660388783, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -49369,6 +49369,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanvasToOpen: {fileID: 8553161507268041164, guid: 8a396213697e3d24f944fe34be909bbe, type: 3}
+  applyShaders: 1
+  applyObjectiveShaders: 0
+  applyInteractableShaders: 1
+  applyIfActiveObjective: 1
+  objectiveShader: {fileID: 0}
+  interactableShader: {fileID: 2100000, guid: b294047e68dd4224c81a9b1f3a855124, type: 2}
+  affectedMeshes:
+  - {fileID: 2530490033515003334}
+  - {fileID: 6213787648250021765}
+  - {fileID: 292785911379093444}
+  - {fileID: 6238895759830564222}
+  - {fileID: 8574430699912693248}
+  - {fileID: 7450599968158007979}
+  - {fileID: 6593457025451928205}
+  - {fileID: 3007342586894594726}
   _statement: It's your phone.
   _question: How much time did you spend with your family?
   _options:
@@ -77609,6 +77624,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
   m_PrefabInstance: {fileID: 2012015547}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2012015549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8068073526183931155, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+  m_PrefabInstance: {fileID: 2012015547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &2012015550
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -77648,6 +77668,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e3eef7fb0d58814db237c7f5897caf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  applyLevelEndShader: 1
+  levelEndShader: {fileID: 2100000, guid: 587ac99705018de4581cd8b0f79fbf2b, type: 2}
+  affectedMeshes:
+  - {fileID: 2012015548}
+  - {fileID: 2012015549}
   InteractSuccessful: 0
   BossDefeated: 0
   NextSceneIndex: 0
@@ -83353,8 +83378,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.2553272, y: 2.7923505, z: 6.403784}
-  m_Center: {x: 2.980322, y: -0.89617527, z: 2.2089052}
+  m_Size: {x: 1.2553272, y: 1.2435949, z: 6.403784}
+  m_Center: {x: 2.980322, y: -1.6705531, z: 2.2089052}
 --- !u!1001 &2128451448
 PrefabInstance:
   m_ObjectHideFlags: 0

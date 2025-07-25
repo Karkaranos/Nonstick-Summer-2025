@@ -19,6 +19,7 @@ using UnityEngine;
 using NaughtyAttributes;
 using System;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 
 public class CardPickupInteractable : MonoBehaviour, IInteractable
 {
@@ -59,7 +60,18 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
 
         Hash = GetCardHashCode();
         CardPickupManager.Instance.InitializePickup(this);
+
+        SceneManager.activeSceneChanged += OnSceneChange;
     }
+
+    private void OnSceneChange(Scene arg0, Scene arg1)
+    {
+        if(arg1.name.Contains("Main"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
     /// <summary>
     /// Triggered when player interacts with this gameobject

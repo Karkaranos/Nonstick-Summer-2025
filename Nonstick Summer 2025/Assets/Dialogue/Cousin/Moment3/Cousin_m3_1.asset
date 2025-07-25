@@ -13,15 +13,19 @@ MonoBehaviour:
   m_Name: Cousin_m3_1
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Hey cousin, hope you are ready for the big game. How are you feeling?
-    Portrait: {fileID: 21300000, guid: 56fb52eb6f26be6429532fcc44dd7cad, type: 3}
+  - Dialogue: Hey! Hope you are ready for the big game.
+    Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+  - Dialogue: How are you feeling?
+    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "That\u2019s awesome, I\u2019ll be sure to take notes for when I
-        go out there and try to get a trophy of my own!"
-      Portrait: {fileID: 0}
+    - Dialogue: Awesome!
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+    - Dialogue: " I\u2019ll be sure to take notes for when I go out there and try
+        to get a trophy of my own!"
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: "Feeling great! I\u2019m ready to go out there and get this trophy!"
+    PlayerDialogue: "Great! I\u2019m ready to go out there and get this trophy!"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 877cded020acf444d81fa7c4eac91068, type: 2}
@@ -30,8 +34,10 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "Oh no worries, I didn\u2019t mean to be a burden on you."
-      Portrait: {fileID: 0}
+    - Dialogue: It's okay!
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+    - Dialogue: "I didn\u2019t mean to be a burden on you."
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m a bit busy, sorry."
     RelationshipCheckRequired: 0
@@ -42,8 +48,10 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "I\u2019m glad, I am sure he would have loved to see you play."
-      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019m glad!"
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+    - Dialogue: I am sure he would have loved to see you play.
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "Feeling good. I\u2019m going out there for Grandpa today."
     RelationshipCheckRequired: 0
@@ -96,9 +104,10 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Charming_Question:
     NpcReactionText:
-    - Dialogue: You look great, composed as you always do. I can tell you are going
-        to go out there and smash the other team.
-      Portrait: {fileID: 0}
+    - Dialogue: Not really?
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    - Dialogue: Sorry...
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "I feel like I look. Can\u2019t you tell?"
     RelationshipCheckRequired: 0
@@ -109,10 +118,12 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: Haha, I guess that was a stupid question. Sorry.
-      Portrait: {fileID: 0}
+    - Dialogue: Haha, I guess that was a stupid question.
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    - Dialogue: Sorry.
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: I dunno...how are you feeling right before your big game?
+    PlayerDialogue: How are you feeling right before your big game?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 877cded020acf444d81fa7c4eac91068, type: 2}
@@ -121,11 +132,12 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -15
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: You look great, composed as you always do. I can tell you are going
-        to go out there and smash the other team.
-      Portrait: {fileID: 0}
+    - Dialogue: You look great!
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+    - Dialogue: I can tell you are going to go out there and smash the other team.
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: Be honest, do I look nervous?
+    PlayerDialogue: Be honest. Do I look nervous?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 877cded020acf444d81fa7c4eac91068, type: 2}
@@ -135,7 +147,7 @@ MonoBehaviour:
   Silent:
     NpcReactionText:
     - Dialogue: ...that bad, huh?
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
@@ -143,5 +155,5 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 877cded020acf444d81fa7c4eac91068, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: -5
   End: 0

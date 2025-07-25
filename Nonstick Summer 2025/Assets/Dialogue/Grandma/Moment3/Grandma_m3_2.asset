@@ -14,34 +14,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: Has your mom been treating you well?
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "That\u2019s great to hear, I\u2019m glad everything seems to be
-        smooth sailing."
-      Portrait: {fileID: 0}
-    - Dialogue: "I was worried that Grandpa\u2019s passing would throw everything
-        for a loop."
-      Portrait: {fileID: 0}
+    - Dialogue: "You don\u2019t have to lie to me Pumpkin."
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    - Dialogue: "I know what happened has been hard on us all, but you don\u2019t
+        need to hide it from me."
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    - Dialogue: Your Nanna is strong you know, she can handle it.
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: "We\u2019re right as rain just like we always are!"
+    PlayerDialogue: You know us, right as rain just like we always are!
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b98f0011ea366da459066c9cc7eed3f8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -15
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "I\u2019m sorry to hear that, just give your mother some time."
-      Portrait: {fileID: 0}
-    - Dialogue: "Your grandfather\u2019s passing is still fresh in her mind, I\u2019m
-        sure..."
-      Portrait: {fileID: 0}
-    - Dialogue: but things will go back to normal eventually.
-      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019m sorry to hear that."
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    - Dialogue: I appreciate you being honest with me.
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    - Dialogue: Ever since your Grandpa passed, everyone has been a bit on edge.
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    - Dialogue: Just give your mother some time and I am sure things will go back
+        to normal eventually...
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: "We\u2019ve been fighting a lot lately."
+    PlayerDialogue: "To be honest, we\u2019ve been fighting a lot lately."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b98f0011ea366da459066c9cc7eed3f8, type: 2}
@@ -50,21 +53,20 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "That\u2019s good. I\u2019ll talk to her to make sure she makes time
+    - Dialogue: "I\u2019ll talk to her to make sure she makes time for you."
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    - Dialogue: "I know she has two jobs, but that\u2019s no excuse not to have time
         for you."
-      Portrait: {fileID: 0}
-    - Dialogue: I know she has two jobs, but...
-      Portrait: {fileID: 0}
-    - Dialogue: "That\u2019s no excuse not to have time for you."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: Yep, but I wish we were able to spend more time with each other.
+    PlayerDialogue: "We haven\u2019t really had the time to spend it with each other
+      recently."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b98f0011ea366da459066c9cc7eed3f8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: -5
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "That\u2019s great to hear, I\u2019m glad everything seems to be
@@ -116,43 +118,49 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "I was worried that Grandpa\u2019s passing might have thrown everyone
-        off balance."
-      Portrait: {fileID: 0}
-    - Dialogue: "It\u2019s good to see and hear that's not the case."
-      Portrait: {fileID: 0}
+    - Dialogue: "You don\u2019t have to walk on eggshells around me sweet pea, I\u2019d
+        rather you just talk with me and be honest with me."
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    - Dialogue: Make some time for your Nanna okay?
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: Things have been going great, what makes you bring that up?
+    PlayerDialogue: Things have never been better, what makes you bring that up though?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b98f0011ea366da459066c9cc7eed3f8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: -10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: "Sorry, you\u2019re right, I guess I was just in my head a bit."
-      Portrait: {fileID: 0}
-    - Dialogue: You have to be focused if you want to help win that trophy.
-      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019m doing fine now, thanks for asking."
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    - Dialogue: "I\u2019ve just been a bit out of it ever since your Grandfather
+        passed."
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    - Dialogue: "Don\u2019t worry about me though, I\u2019m sure your super Nanna
+        will be back to her usual self before you know it!"
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: Why do you ask?
+    PlayerDialogue: Are you alright Nanna?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b98f0011ea366da459066c9cc7eed3f8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: 10
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: "I was worried that Grandpa\u2019s passing might have thrown everyone
-        off balance."
-      Portrait: {fileID: 0}
-    - Dialogue: "It\u2019s good to see and hear that\u2019s is not the case."
-      Portrait: {fileID: 0}
+    - Dialogue: I was worried that might be the case...
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    - Dialogue: "I\u2019m doing alright, just a bit out of it lately."
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    - Dialogue: "I\u2019m glad I get to watch my amazing Pumpkin perform in the big
+        game, hopefully it can take my mind off things for even just a moment."
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: Yeah, I just wish we could spend more time together. Is there
-      a reason you brought that up?
+    PlayerDialogue: "Yeah, we\u2019ve been alright, just a bit busy lately. More
+      importantly, how are you Nanna?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b98f0011ea366da459066c9cc7eed3f8, type: 2}
@@ -162,8 +170,13 @@ MonoBehaviour:
   Silent:
     NpcReactionText:
     - Dialogue: ...
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    CombinedDialogue:
+    - Dialogue: ...
       Portrait: {fileID: 0}
-    CombinedDialogue: []
+    - Dialogue: Do you remember that soccer game a couple years ago that grandpa
+        and I made it to?
+      Portrait: {fileID: 0}
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}

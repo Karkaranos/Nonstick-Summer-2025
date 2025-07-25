@@ -14,31 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: Did you know your mom and I played soccer when were were kids?
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "You\u2019re definitely better than me."
-      Portrait: {fileID: 0}
-    - Dialogue: I kicked my ball over the fence and big foot stole it, but your mom...
-      Portrait: {fileID: 0}
-    - Dialogue: Your mom was the best player on the playground.
-      Portrait: {fileID: 0}
+    - Dialogue: Yeah, Mom made that for her when we were kids, and Dad...
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    - Dialogue: Grandpa loved playing with us.
+      Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: "So you\u2019re saying you can help me warm up."
+    PlayerDialogue: "So that\u2019s why she has a soccer quilt...she never struck
+      me as a sports person."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "You\u2019re definitely better than me."
-      Portrait: {fileID: 0}
-    - Dialogue: I kicked my ball over the fence and big foot stole it, but your mom...
-      Portrait: {fileID: 0}
+    - Dialogue: "Oh, you\u2019re definitely better than me."
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    - Dialogue: I kicked my ball over the fence on the regular, but your mom...
+      Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
     - Dialogue: Your mom was the best player on the playground.
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+    - Dialogue: "It\u2019s in your blood, for sure."
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m sure I\u2019m better than both of you."
     RelationshipCheckRequired: 0
@@ -46,25 +47,25 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: 15
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: Well your mom was the best soccer player on the playground. But she
-        never went for the school team.
-      Portrait: {fileID: 0}
-    - Dialogue: I on the other hand, kicked my ball over the fence and big foot stole
-        it...
-      Portrait: {fileID: 0}
-    - Dialogue: "We\u2019re so proud of you for making the school team."
-      Portrait: {fileID: 0}
+    - Dialogue: Well, your mom was the best soccer player on the playground, but
+        she never tried out for the school team.
+      Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+    - Dialogue: Me?
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    - Dialogue: "Let\u2019s just say I kicked enough soccer balls over the fence
+        for them to give me a WIDE berth."
+      Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: "I didn\u2019t know that."
+    PlayerDialogue: Mom never told me she was on a soccer team.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -5
   Charming_Observation:
     NpcReactionText:
     - Dialogue: Yeah, Mom and Dad made that for her when we were kids....
@@ -116,28 +117,44 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Charming_Question:
     NpcReactionText:
-    - Dialogue: Well your mom was the best soccer player on the playground. But she
-        never went for the school team.
+    - Dialogue: Well, your mom was the best soccer player on the playground, but
+        she never tried out for the school team.
+      Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+    - Dialogue: Me?
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    - Dialogue: "Let\u2019s just say I kicked enough soccer balls over the fence
+        for them to give me a WIDE berth."
+      Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+    CombinedDialogue:
+    - Dialogue: Well, your mom was the best soccer player on the playground, but
+        she never tried out for the school team.
       Portrait: {fileID: 0}
-    - Dialogue: I on the other hand, kicked my ball over the fence and big foot stole
-        it...
+    - Dialogue: Me?
       Portrait: {fileID: 0}
-    - Dialogue: "We\u2019re so proud of you for making the school team."
+    - Dialogue: "Let\u2019s just say I kicked enough soccer balls over the fence
+        for them to give me a WIDE berth."
       Portrait: {fileID: 0}
-    CombinedDialogue: []
+    - Dialogue: "You know, I\u2019m sure if you asked your mom, she\u2019d love to
+        play with you!"
+      Portrait: {fileID: 0}
+    - Dialogue: "Call it practice, but I\u2019m sure she\u2019s itching to score
+        a goal after all these years."
+      Portrait: {fileID: 0}
     PlayerDialogue: And how often did you beat her?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: -5
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: "Wow. I\u2019m sorry that we love you."
-      Portrait: {fileID: 0}
-    - Dialogue: "I guess I\u2019ll just cheer loud enough for me."
-      Portrait: {fileID: 0}
+    - Dialogue: Wow.
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    - Dialogue: "I\u2019m sorry that we love you."
+      Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
+    - Dialogue: "I guess I\u2019ll just cheer for myself, then."
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Did you know that your cheering is embarrassing?
     RelationshipCheckRequired: 0
@@ -145,17 +162,17 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -15
+    ChangeInRelationshipStatus: 5
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: Well your mom was the best soccer player on the playground. But she
-        never went for the school team.
-      Portrait: {fileID: 0}
-    - Dialogue: I on the other hand, kicked my ball over the fence and big foot stole
-        it...
-      Portrait: {fileID: 0}
-    - Dialogue: "We\u2019re so proud of you for making the school team."
-      Portrait: {fileID: 0}
+    - Dialogue: Well, your mom was the best soccer player on the playground, but
+        she never tried out for the school team.
+      Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+    - Dialogue: Me?
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    - Dialogue: "Let\u2019s just say I kicked enough soccer balls over the fence
+        for them to give me a WIDE berth."
+      Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "Why didn\u2019t she tell me that?"
     RelationshipCheckRequired: 0
@@ -163,11 +180,11 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: e63a3ab206057954c87a23c16be23a06, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -5
   Silent:
     NpcReactionText:
     - Dialogue: ...
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

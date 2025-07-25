@@ -27,32 +27,36 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: bfbf295814978d742af67627b5083931, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: Hey, no need for the tone.
+    - Dialogue: "Well, don\u2019t be late, and don\u2019t leave last minute."
+      Portrait: {fileID: 0}
+    - Dialogue: "Traffic\u2019s been backed up all day."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "Not yet. It\u2019s hot as hell outside."
+    PlayerDialogue: No.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: bfbf295814978d742af67627b5083931, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "Well, don\u2019t be late, and don\u2019t leave last minute. Traffic\u2019s
-        been backed up all day."
+    - Dialogue: "You know I want to, but they needed me to pick up someone\u2019s
+        shift for the day."
+      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019m sorry."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Hi Mom! No, not yet.
+    PlayerDialogue: I wish you would be there.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: bfbf295814978d742af67627b5083931, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: 15
   Charming_Observation:
     NpcReactionText:
     - Dialogue: Hey, no need for the tone.

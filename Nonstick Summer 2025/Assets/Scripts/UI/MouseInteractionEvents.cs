@@ -20,10 +20,17 @@ public class MouseInteractionEvents : MonoBehaviour, IPointerClickHandler, IPoin
     public bool mouseOver { get; private set; }
     public static MouseInteractionEvents CurrentHoverObject;
 
-    public UnityEvent OnMouseDown, OnMouseHoverStart, OnMouseHoverEnd;
+    public UnityEvent OnMouseDown, OnMouseHoverStart, OnMouseHoverEnd, OnMouseHoverStay;
     private const float deselectCurrentlyHoveringDelay = 0.1f;
 
     private Coroutine _deselctCurrentlyHoveringCoroutine;
+
+    // maybe not be the best use of update. this may be a moment of weakness.
+    private void Update()
+    {
+        if(mouseOver)
+            OnMouseHoverStay.Invoke();
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {

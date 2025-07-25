@@ -27334,6 +27334,30 @@ PrefabInstance:
       propertyPath: NextSceneIndex
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2220723637272701023, guid: efc71e78a8f97834b8ac5b019da6bcfd, type: 3}
+      propertyPath: affectedMeshes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2220723637272701023, guid: efc71e78a8f97834b8ac5b019da6bcfd, type: 3}
+      propertyPath: 'affectedMeshes.Array.data[0]'
+      value: 
+      objectReference: {fileID: 662534205}
+    - target: {fileID: 2220723637272701023, guid: efc71e78a8f97834b8ac5b019da6bcfd, type: 3}
+      propertyPath: 'affectedMeshes.Array.data[1]'
+      value: 
+      objectReference: {fileID: 662534204}
+    - target: {fileID: 2220723637272701023, guid: efc71e78a8f97834b8ac5b019da6bcfd, type: 3}
+      propertyPath: 'affectedMeshes.Array.data[2]'
+      value: 
+      objectReference: {fileID: 662534203}
+    - target: {fileID: 2220723637272701023, guid: efc71e78a8f97834b8ac5b019da6bcfd, type: 3}
+      propertyPath: 'affectedMeshes.Array.data[3]'
+      value: 
+      objectReference: {fileID: 662534202}
+    - target: {fileID: 2220723637272701023, guid: efc71e78a8f97834b8ac5b019da6bcfd, type: 3}
+      propertyPath: 'affectedMeshes.Array.data[4]'
+      value: 
+      objectReference: {fileID: 662534201}
     - target: {fileID: 3611048302514567292, guid: efc71e78a8f97834b8ac5b019da6bcfd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.662
@@ -27386,6 +27410,31 @@ PrefabInstance:
 --- !u!4 &662534200 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3611048302514567292, guid: efc71e78a8f97834b8ac5b019da6bcfd, type: 3}
+  m_PrefabInstance: {fileID: 662534199}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &662534201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 487822902314107463, guid: efc71e78a8f97834b8ac5b019da6bcfd, type: 3}
+  m_PrefabInstance: {fileID: 662534199}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &662534202 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5055296913110951988, guid: efc71e78a8f97834b8ac5b019da6bcfd, type: 3}
+  m_PrefabInstance: {fileID: 662534199}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &662534203 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4699101107510686492, guid: efc71e78a8f97834b8ac5b019da6bcfd, type: 3}
+  m_PrefabInstance: {fileID: 662534199}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &662534204 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4281203059155677161, guid: efc71e78a8f97834b8ac5b019da6bcfd, type: 3}
+  m_PrefabInstance: {fileID: 662534199}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &662534205 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8505221356395168742, guid: efc71e78a8f97834b8ac5b019da6bcfd, type: 3}
   m_PrefabInstance: {fileID: 662534199}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &663947890
@@ -86774,6 +86823,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanvasToOpen: {fileID: 8553161507268041164, guid: 8a396213697e3d24f944fe34be909bbe, type: 3}
+  applyShaders: 1
+  applyObjectiveShaders: 1
+  applyInteractableShaders: 0
+  applyIfActiveObjective: 1
+  objectiveShader: {fileID: 2100000, guid: 1bb105ae33119f74891f612f10e89840, type: 2}
+  interactableShader: {fileID: 0}
+  affectedMeshes:
+  - {fileID: 2530490032973874705}
+  - {fileID: 6213787648791149650}
+  - {fileID: 292785911911783443}
+  - {fileID: 6238895758215792297}
+  - {fileID: 8574430699380080087}
+  - {fileID: 7450599968699103612}
+  - {fileID: 6593457025984581978}
+  - {fileID: 3007342587427244401}
   _statement: It's your phone.
   _question: How do you think Mom will feel if she finds out you have it?
   _options:

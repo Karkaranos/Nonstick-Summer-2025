@@ -19,6 +19,7 @@ using UnityEngine;
 using NaughtyAttributes;
 using System;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 
 public class CardPickupInteractable : MonoBehaviour, IInteractable
 {
@@ -40,6 +41,7 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
     const float height = 1.5f;
 
     const float goToPlayerSeconds = 1;
+    private bool interacted = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -58,31 +60,48 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
 
         Hash = GetCardHashCode();
         CardPickupManager.Instance.InitializePickup(this);
+
+        SceneManager.activeSceneChanged += OnSceneChange;
     }
+
+    private void OnSceneChange(Scene arg0, Scene arg1)
+    {
+        if(arg1.name.Contains("Main"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
     /// <summary>
     /// Triggered when player interacts with this gameobject
     /// </summary>
     public void Interact(GameObject player)
     {
-        // TODO: add some kind of popup / confirmation
-
-        RemoveCollider();
-        StaticUtilities.PlayAndDestroyParticle(collectedParticlesPrefab, rectTransform.WorldPosition());
-        CardPickupManager.Instance.UpdatePickupCollected(this);
-
-        if (dialogueCardDisplay != null)
+        if (!interacted)
         {
-            DeckManager.AddCardCopy(dialogueCardDisplay.cardData);
-            Debug.Log($"Added dialogue card: {dialogueCardDisplay.cardData.name} to deck");
-        }
-        if (modifierCardDisplay != null)
-        {
-            ModifierManager.AddCard(modifierCardDisplay.modifierData);
-            Debug.Log($"Added modifier card: {modifierCardDisplay.modifierData.name} to deck");
-        }
+            interacted = true;
+            // TODO: add some kind of popup / confirmation
 
-        StartCoroutine(CollectAnimation());
+            RemoveCollider();
+            StaticUtilities.PlayAndDestroyParticle(collectedParticlesPrefab, rectTransform.WorldPosition());
+            CardPickupManager.Instance.UpdatePickupCollected(this);
+
+            if (dialogueCardDisplay != null)
+            {
+                print("Call 1 from " + gameObject.name);
+                DeckManager.AddCardCopy(dialogueCardDisplay.cardData);
+                Debug.Log($"Added dialogue card: {dialogueCardDisplay.cardData.name} to deck");
+            }
+            if (modifierCardDisplay != null)
+            {
+                print("Call 2 from " + gameObject.name);
+                ModifierManager.AddCard(modifierCardDisplay.modifierData);
+                Debug.Log($"Added modifier card: {modifierCardDisplay.modifierData.name} to deck");
+            }
+
+            StartCoroutine(CollectAnimation());
+        }
     }
 
     private void RemoveCollider()
@@ -129,6 +148,12 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
         // Go to her...
         timeStarted = Time.time;
         t = 0;
+
+        if (GameManager.playerTransformRef == null)
+        {
+            GameManager.playerTransformRef = FindFirstObjectByType<PlayerCamera>().transform;   
+        }
+
         startPos = rectTransform.position;
         var startRotation = rectTransform.rotation; 
         while (t < 1)

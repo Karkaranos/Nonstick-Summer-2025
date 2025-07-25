@@ -14,50 +14,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: I still can't seem to understand that rule that you told me about.
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
   - Dialogue: What was it?
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
   - Dialogue: Oh right, offsides I think it was.
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
   - Dialogue: Could you explain it to me again just one more time?
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: Thank you pumpkin! Thanks for bearing with me.
-      Portrait: {fileID: 0}
-    - Dialogue: I love you!
-      Portrait: {fileID: 0}
+    - Dialogue: "Oh alright, I\u2019ll be sure to pay extra close attention tonight
+        then."
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    - Dialogue: Maybe your little cousin will catch me up to speed if I ever get
+        confused during the game.
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: Of course, I will explain it as many times as you want!
+    PlayerDialogue: "I\u2019ll show you tonight! My performance will leave no questions
+      left unanswered."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: -15
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "Oh yeah, that\u2019s right haha."
-      Portrait: {fileID: 0}
-    - Dialogue: Silly me...
-      Portrait: {fileID: 0}
+    - Dialogue: Thank you so much sweet pea.
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    - Dialogue: I really appreciate you taking the time for me when you are so busy.
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: I've already explained it to you at least a million times.
+    PlayerDialogue: "I think I can. I\u2019ll have to make it quick since I don\u2019t
+      have much time though."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: It really has, sorry that I keep making you explain them to me.
-      Portrait: {fileID: 0}
+    - Dialogue: It really has, he was really good about that kind of stuff.
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    - Dialogue: Sorry that I keep making you explain the rules to me all the time.
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
     - Dialogue: One of these days I am sure I will get the hang of them.
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "Sure, I bet it\u2019s been tough to keep up with all the rules
-      now that Grandpa is gone."
+      lately now that Grandpa\u2019s not here to remind you."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
@@ -111,57 +117,64 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
-    - Dialogue: That would be great!
-      Portrait: {fileID: 0}
-    - Dialogue: I feel bad for making you explain it to me all the time.
-      Portrait: {fileID: 0}
-    - Dialogue: "This time I promise I won\u2019t forget!"
-      Portrait: {fileID: 0}
+    - Dialogue: "Oh alright, I\u2019ll be sure to pay extra close attention tonight
+        then."
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    - Dialogue: Maybe your little cousin will catch me up to speed if I ever get
+        confused during the game.
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: Of course, do you need me to write it down for you this time?
+    PlayerDialogue: How about I just show you with my performance tonight?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: -10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: Sorry, my memory has really been getting worse lately.
-      Portrait: {fileID: 0}
-    - Dialogue: Ever since your Grandfather passed away,
-      Portrait: {fileID: 0}
-    - Dialogue: "there\u2019s been a lot on my mind."
-      Portrait: {fileID: 0}
+    - Dialogue: That would be great!
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    - Dialogue: I feel bad for making you explain it to me all the time.
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    - Dialogue: This way there is no way that I can ever forget it again.
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    - Dialogue: It has been rough without your Grandpa here to help me out with these
+        things, so I really appreciate you doing this for me.
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: Really? How do you keep forgetting?
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -15
-  Sappy_Question:
-    NpcReactionText:
-    - Dialogue: Sorry, my memory has really been getting worse lately.
-      Portrait: {fileID: 0}
-    - Dialogue: Ever since your Grandfather passed away,
-      Portrait: {fileID: 0}
-    - Dialogue: "there\u2019s been a lot on my mind."
-      Portrait: {fileID: 0}
-    CombinedDialogue: []
-    PlayerDialogue: Yeah, I can explain it to you again. How has your memory been
-      lately?
+    PlayerDialogue: "How about I write it down for you so you won\u2019t ever forget
+      again?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: That would be great!
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    - Dialogue: I feel bad for making you explain it to me all the time.
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    - Dialogue: This way there is no way that I can ever forget it again.
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    - Dialogue: It has been rough without your Grandpa here to help me out with these
+        things, so I really appreciate you doing this for me.
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: Of course, I can explain it to you as many times as you need.
+      Would you like me to write it down?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
   Silent:
     NpcReactionText:
     - Dialogue: ...
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
@@ -169,5 +182,5 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: edd78d73a3d228b48b282aa06f6c97c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -5
   End: 0

@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8473936720708913233}
-  - component: {fileID: 7287008436763146129}
   - component: {fileID: 1903305841387346248}
   - component: {fileID: 9092100403283801934}
   - component: {fileID: 6548987443636036780}
+  - component: {fileID: 193449290552569855}
   m_Layer: 0
   m_Name: Interaction Object
   m_TagString: Untagged
@@ -35,20 +35,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7287008436763146129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8263027944320005954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39efb718f49966749b43bf99a2c99f34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: 8a396213697e3d24f944fe34be909bbe, type: 3}
-  cameraAnchor: {fileID: 0}
 --- !u!33 &1903305841387346248
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -117,9 +103,44 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &193449290552569855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8263027944320005954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb0bedf46451034e8d6cf12e3474c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanvasToOpen: {fileID: 8553161507268041164, guid: 8a396213697e3d24f944fe34be909bbe, type: 3}
+  _statement: You are looking at an object
+  _question: Question not set.
+  _options:
+  - ButtonText: not set
+    ButtonColor: {r: 1, g: 1, b: 1, a: 1}
+    ModifiersToGive:
+    - {fileID: 11400000, guid: ee82f2ab5548cd54b9229a935295297c, type: 2}
+    - {fileID: 11400000, guid: ee82f2ab5548cd54b9229a935295297c, type: 2}
+    - {fileID: 11400000, guid: ee82f2ab5548cd54b9229a935295297c, type: 2}
+  - ButtonText: not set
+    ButtonColor: {r: 1, g: 1, b: 1, a: 1}
+    ModifiersToGive:
+    - {fileID: 11400000, guid: 2388c5239da79564292dc953a127cbbb, type: 2}
+    - {fileID: 11400000, guid: 2388c5239da79564292dc953a127cbbb, type: 2}
+    - {fileID: 11400000, guid: 2388c5239da79564292dc953a127cbbb, type: 2}
+  - ButtonText: not set
+    ButtonColor: {r: 1, g: 1, b: 1, a: 1}
+    ModifiersToGive:
+    - {fileID: 11400000, guid: 4236df83ca6b76d48b35473ec9993a0e, type: 2}
+    - {fileID: 11400000, guid: 4236df83ca6b76d48b35473ec9993a0e, type: 2}
+    - {fileID: 11400000, guid: 4236df83ca6b76d48b35473ec9993a0e, type: 2}
+  InteractSuccessful: 0

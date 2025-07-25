@@ -87,6 +87,7 @@ public class Objectives : MonoBehaviour
                         }
                     }
                 }*/
+                Debug.LogWarning("Condition Met");
                 _conditions[i].ConditionBeenMet = true;
                 if (_displayText != null)
                     _displayText.text = _conditions[i].DisplayText;

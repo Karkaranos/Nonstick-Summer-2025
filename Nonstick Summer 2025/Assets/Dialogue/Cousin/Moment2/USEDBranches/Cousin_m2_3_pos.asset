@@ -14,13 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: The point is that we match!
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
   - Dialogue: You'll play with me, right?
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
   Charming_Expression:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: Aw. But I wanna play now!
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: I can play later for sure! I wanna see my other presents.
+    PlayerDialogue: I can play later! I wanna see my other presents.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 6c05a1b900e54cc4db026e9e3ac109bc, type: 2}
@@ -28,9 +30,12 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: "Ack... You\u2019re so mean! I\u2019ll tell Dad that you\u2019re
+        being mean to me!"
+      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: Leave me ALONE!
+    PlayerDialogue: "No! You\u2019re annoying!"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 6c05a1b900e54cc4db026e9e3ac109bc, type: 2}
@@ -38,15 +43,23 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Expression:
-    NpcReactionText: []
-    CombinedDialogue: []
-    PlayerDialogue: "I\u2019m tired. We can play later."
+    NpcReactionText:
+    - Dialogue: Grandma can wait! Grandma can wait!
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+    CombinedDialogue:
+    - Dialogue: Grandma can wait! Grandma can wait!
+      Portrait: {fileID: 0}
+    - Dialogue: Please? Please? Please?
+      Portrait: {fileID: 0}
+    - Dialogue: You can even use the cards that my Dad got you...
+      Portrait: {fileID: 0}
+    PlayerDialogue: Grandma wants to talk with me, I think.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 6c05a1b900e54cc4db026e9e3ac109bc, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -10
   Charming_Observation:
     NpcReactionText: []
     CombinedDialogue: []
@@ -69,7 +82,11 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -15
   Sappy_Observation:
     NpcReactionText: []
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: Please? Please? Please?
+      Portrait: {fileID: 0}
+    - Dialogue: You can even use the cards that my Dad got you...
+      Portrait: {fileID: 0}
     PlayerDialogue: Grandma wants to talk with me, I think.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -78,7 +95,9 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Charming_Question:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: Um... Since forever ago! yeah!
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Hey, since when have you been into cards, anyhow?
     RelationshipCheckRequired: 0
@@ -86,9 +105,11 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 6c05a1b900e54cc4db026e9e3ac109bc, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: 10
   Assertive_Question:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: Uh. No. I think.
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "Don\u2019t you have anything better to be doing?"
     RelationshipCheckRequired: 0
@@ -98,7 +119,9 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Sappy_Question:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: Um... Obviously! Yeah! You just... Um...
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Do you even know how to play with them?
     RelationshipCheckRequired: 0
@@ -106,7 +129,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 6c05a1b900e54cc4db026e9e3ac109bc, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: 10
   Silent:
     NpcReactionText: []
     CombinedDialogue: []

@@ -57,6 +57,21 @@ public class OpenBossInteractable : MonoBehaviour
     /// </summary>
     public void OpenCanvas()
     {
+        float whichBoss = 0;
+        if (character == characters.Grandma)
+        {
+            whichBoss = 3;
+        }
+        else if (character == characters.Mom)
+        {
+            whichBoss = 1;
+        }
+        else if (character == characters.Cousin)
+        {
+            whichBoss = 2;
+        }
+        MusicManager.instance.StartCombat(whichBoss);
+
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor);
         var dialogueController = menu.GetComponentInChildren<DialogueUIController>();
         GameManager.ObjectiveReference.SetObjectiveVisibility(false);

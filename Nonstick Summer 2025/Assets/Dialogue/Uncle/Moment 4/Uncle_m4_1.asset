@@ -14,16 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: "Whoa, kiddo! Didn\u2019t expect to see you today."
-    Portrait: {fileID: 21300000, guid: 5b80e3e4b9e4ae24282ce0ed426c2aaa, type: 3}
+    Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
   - Dialogue: How have you been?
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "Fantastic! That\u2019s good to hear. You haven\u2019t been looking
-        too good lately, y\u2019know?"
-      Portrait: {fileID: 0}
+    - Dialogue: "You really did, huh? You\u2019ve gotta start paying attention to
+        the world around you."
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    - Dialogue: Get your nose out of that phone before it gets stuck there.
+      Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: "Good! I\u2019ve, uh, been good."
+    PlayerDialogue: Decent. I forgot that there was a gathering today...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
@@ -32,9 +34,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "C\u2019mon. Don\u2019t be like that. I just wanna be in your life,
-        alright?"
-      Portrait: {fileID: 0}
+    - Dialogue: "I mean, you\u2019re in your room twenty-three hours of the day,
+        kiddo!"
+      Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
+    - Dialogue: "Otherwise, you\u2019re out with your friends and whatnot..."
+      Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+    - Dialogue: When else am I gonna talk to you?
+      Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Not now.
     RelationshipCheckRequired: 0
@@ -42,20 +48,24 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: Oh, man... That sucks. Sorry, buddy. Um, let me know if you need
-        anything, okay?
-      Portrait: {fileID: 0}
+    - Dialogue: "I mean, you\u2019re in your room twenty-three hours of the day,
+        kiddo!"
+      Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
+    - Dialogue: "Otherwise, you\u2019re out with your friends and whatnot..."
+      Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+    - Dialogue: When else am I gonna talk to you?
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: "Um, bad. But I\u2019m working on it."
+    PlayerDialogue: Huh. You seem surprised to see me.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -15
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "You really did, huh? You\u2019ve gotta start paying attention to
@@ -108,8 +118,10 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "Me? Well, I\u2019m doing just peachy! Hunky-dory even!"
-      Portrait: {fileID: 0}
+    - Dialogue: Me? I thought I asked you first.
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    - Dialogue: "It\u2019s rude to ignore people like that, you know."
+      Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Erm... How about YOU?
     RelationshipCheckRequired: 0
@@ -117,12 +129,14 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: -5
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: "C\u2019mon. Don\u2019t be like that. I just wanna be in your life,
-        alright?"
-      Portrait: {fileID: 0}
+    - Dialogue: "C\u2019mon, don\u2019t be like that. I\u2019m cool! I\u2019m hip!
+        I\u2019m..."
+      Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+    - Dialogue: "What\u2019s another word for \u201Ccool\u201D..?"
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "Don\u2019t you have someone your own age to talk to?"
     RelationshipCheckRequired: 0
@@ -130,12 +144,16 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -15
+    ChangeInRelationshipStatus: 15
   Sappy_Question:
     NpcReactionText:
     - Dialogue: "I mean, you\u2019re in your room twenty-three hours of the day,
-        kid! Otherwise, you\u2019re out with your friends and whatnot..."
-      Portrait: {fileID: 0}
+        kiddo!"
+      Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
+    - Dialogue: "Otherwise, you\u2019re out with your friends and whatnot..."
+      Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+    - Dialogue: When else am I gonna talk to you?
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "You didn\u2019t? I feel as though I see you all the time..."
     RelationshipCheckRequired: 0

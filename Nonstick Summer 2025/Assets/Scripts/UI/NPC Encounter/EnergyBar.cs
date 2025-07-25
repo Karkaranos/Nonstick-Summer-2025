@@ -37,12 +37,16 @@ public class EnergyBar : MonoBehaviour
         while (!Mathf.Approximately(slider.value, value))
         {
             slider.value = Mathf.MoveTowards(slider.value, value, Time.deltaTime * animationSpeed);
+
+            energyNumber.text = value.ToString();
+
             yield return new WaitForEndOfFrame();
         }
 
         slider.value = value;
 
         energyNumber.text = value.ToString();
+
     }
 
     public void SetValueNoAnimation(float value)

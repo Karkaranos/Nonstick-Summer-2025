@@ -3,12 +3,14 @@ using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
 using static UnityEngine.Rendering.DebugUI;
+using UnityEngine.SceneManagement;
 
 public class MusicManager : MonoBehaviour
 {
     private EventInstance HouseBGM;
     private EventInstance CombatBGM;
     private EventInstance ReflectionBGM;
+    private EventInstance TitleBGM;
 
     public static MusicManager instance { get; private set; }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,14 +25,25 @@ public class MusicManager : MonoBehaviour
         HouseBGM = AudioManager.instance.CreateEventInstance(FMODEvents.instance.HouseBGM);
         CombatBGM = AudioManager.instance.CreateEventInstance(FMODEvents.instance.CombatBGM);
         ReflectionBGM = AudioManager.instance.CreateEventInstance(FMODEvents.instance.ReflectionBGM);
+        TitleBGM = AudioManager.instance.CreateEventInstance(FMODEvents.instance.TitleBGM);
 
-        HouseBGM.start();
+        if (SceneManager.GetActiveScene().name.Equals("MainMenu"))
+        {
+            StartTitle();
+        }
+        else
+        {
+            StartReflection();
+        }
     }
 
-    public void StartCombat(int val)
+    public void StartCombat(float val)
     {
         StopAll();
-        CombatBGM.setParameterByName("Combat", val);
+        CombatBGM.setParameterByName("WhichBoss", val);
+        float isItWorkingChat;
+        CombatBGM.getParameterByName("WhichBoss", out isItWorkingChat);
+        Debug.Log(isItWorkingChat);
         CombatBGM.start();
     }
 
@@ -38,6 +51,12 @@ public class MusicManager : MonoBehaviour
     {
         StopAll();
         ReflectionBGM.start();
+    }
+
+    public void StartTitle()
+    {
+        StopAll();
+        TitleBGM.start();
     }
 
     public void StartHouse()
@@ -51,6 +70,7 @@ public class MusicManager : MonoBehaviour
         HouseBGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         CombatBGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         ReflectionBGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        TitleBGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     private void OnDisable()
@@ -58,6 +78,7 @@ public class MusicManager : MonoBehaviour
         HouseBGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         CombatBGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         ReflectionBGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        TitleBGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     /*IEnumerator MusicToBattle(float val)

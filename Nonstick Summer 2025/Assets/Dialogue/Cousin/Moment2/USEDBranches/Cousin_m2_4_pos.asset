@@ -14,31 +14,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: Please? Please? Please?
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
   - Dialogue: You can even use the cards that my Dad got you...
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
   Charming_Expression:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: "I wasn\u2019t?! But I was just so excited..."
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: Your dad got me cards?!
+    PlayerDialogue: "...I don\u2019t think that you were supposed to tell me that."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 03b73ede6000711468aa973f6e85d4ce, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: -10
   Assertive_Expression:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: You were?! But I was just so excited...
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: ...Out of the way! I need those cards!
+    PlayerDialogue: "C\u2019mon, man. I was supposed to find that out on my own!"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 03b73ede6000711468aa973f6e85d4ce, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: -10
   Sappy_Expression:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: "Ehehe! Of course he did! Psst... They\u2019re from me, too!"
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     CombinedDialogue: []
     PlayerDialogue: I got cards?! He really DID read my wish list!
     RelationshipCheckRequired: 0
@@ -46,7 +52,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 03b73ede6000711468aa973f6e85d4ce, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: 15
   Charming_Observation:
     NpcReactionText: []
     CombinedDialogue: []
@@ -78,7 +84,9 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Charming_Question:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: "You didn\u2019t hear me? YOU! GOT! CARDS!"
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     CombinedDialogue: []
     PlayerDialogue: What?
     RelationshipCheckRequired: 0
@@ -86,9 +94,11 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 03b73ede6000711468aa973f6e85d4ce, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: 10
   Assertive_Question:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: "Hehe! Yep! They\u2019re so cool."
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     CombinedDialogue: []
     PlayerDialogue: WHAT?!
     RelationshipCheckRequired: 0
@@ -98,7 +108,9 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Sappy_Question:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: "Hehe! Surprised, aren\u2019t you?"
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     CombinedDialogue: []
     PlayerDialogue: ...What?
     RelationshipCheckRequired: 0

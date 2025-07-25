@@ -13,18 +13,25 @@ MonoBehaviour:
   m_Name: Grandma_m4_3
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: 'Listen, dear, I just wanted to tell you that I love you very, very
+  - Dialogue: 'Listen, sweetie, I just wanted to tell you that I love you so very
       much. '
     Portrait: {fileID: 0}
   - Dialogue: "I know it must feel like there\u2019s a lot going on right now at
-      your age, but you\u2019ll never be too old for your Nanna, okay?"
+      your age,"
+    Portrait: {fileID: 0}
+  - Dialogue: "but I just hope you\u2019ll never be too old for your Nanna, okay?"
     Portrait: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: Just you wait; life only gets better the longer it gets. Trust me.
+    - Dialogue: "I\u2019m sure you will. Just you wait; life only gets better the
+        longer it goes."
+      Portrait: {fileID: 0}
+    - Dialogue: "Trust me. With how awesome my Pumpkin is right now, I can only imagine
+        how bright you\u2019ll shine when you\u2019re my age."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "I\u2019d be lucky if I\u2019m as cool as you when I\u2019m older."
+    PlayerDialogue: "I\u2019d be lucky if I\u2019m as cool as you when I\u2019m older
+      Nanna."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 2378fbf8c2fae8f4497d4c3014a229f8, type: 2}
@@ -33,29 +40,41 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "...Sorry to be a bother, then. Don\u2019t let me keep you."
+    - Dialogue: Just hang in there Pumpkin, everything will work out in the end.
+      Portrait: {fileID: 0}
+    - Dialogue: Your Nanna will make sure of it!
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: 'It has been a lot. A LOT. '
+    PlayerDialogue: "You\u2019re right, it has been a lot recently."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 2378fbf8c2fae8f4497d4c3014a229f8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: That crazy daughter of mine, what has she been doing to my little
+        pumpkin?
+      Portrait: {fileID: 0}
+    - Dialogue: "Don\u2019t hate her alright? I know she can be a bit much sometimes,
+        but trust me when I tell you this,"
+      Portrait: {fileID: 0}
+    - Dialogue: "she\u2019s only as hard as she is on you because she wants the best
+        for you."
+      Portrait: {fileID: 0}
+    - Dialogue: "She loves you with all of her heart, she just doesn\u2019t always
+        show it."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: I just hope Mom lets up a little bit. It has been really hard
+      lately.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 2378fbf8c2fae8f4497d4c3014a229f8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
-  Sappy_Expression:
-    NpcReactionText:
-    - Dialogue: "And I couldn\u2019t have asked for a better grandkid. You deserve
-        the world and more."
-      Portrait: {fileID: 0}
-    CombinedDialogue: []
-    PlayerDialogue: "I\u2019m really glad you\u2019re my Grandma."
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 2378fbf8c2fae8f4497d4c3014a229f8, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "Don\u2019t worry, I\u2019ll love you even then."
@@ -97,42 +116,53 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "Don\u2019t worry, I\u2019ll love you even then."
+    - Dialogue: "All those things, no matter what, I\u2019ll always love my little
+        pumpkin!"
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Would you still love me if I was a snail?
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 2378fbf8c2fae8f4497d4c3014a229f8, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
-  Assertive_Question:
-    NpcReactionText:
-    - Dialogue: "...Sorry to be a bother, then. Don\u2019t let me keep you."
-      Portrait: {fileID: 0}
-    CombinedDialogue: []
-    PlayerDialogue: Yeah, you too. Can I go now?
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 2378fbf8c2fae8f4497d4c3014a229f8, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -15
-  Sappy_Question:
-    NpcReactionText:
-    - Dialogue: Just you wait; life only gets better the longer it gets. Trust me.
-      Portrait: {fileID: 0}
-    CombinedDialogue: []
-    PlayerDialogue: It is a lot...how do you handle it as an adult?
+    PlayerDialogue: Would you still love me if I was a dog, or a snail, or what about
+      a puddle?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 2378fbf8c2fae8f4497d4c3014a229f8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: "Oh, right... Of course... Don\u2019t let your old Nanna keep you
+        up. "
+      Portrait: {fileID: 0}
+    - Dialogue: "You start looking, I\u2019ll be there in just a minute."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Yeah, I love you too. Can you help me look for my phone now?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 2378fbf8c2fae8f4497d4c3014a229f8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "You\u2019ve got the wrong idea... I\u2019m fine."
+      Portrait: {fileID: 0}
+    - Dialogue: "Please don\u2019t worry about your Nanna, you\u2019ve got plenty
+        on your plate to worry about already with that mother of yours."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: That sounds like a goodbye. Are you really sure you are alright
+      Nanna?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 2378fbf8c2fae8f4497d4c3014a229f8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
   Silent:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: "..I\u2019ll leave you to it, then."
+      Portrait: {fileID: 0}
     CombinedDialogue:
     - Dialogue: Look, honey...I know your mom can sometimes make you angry, but it
         comes from a good place.

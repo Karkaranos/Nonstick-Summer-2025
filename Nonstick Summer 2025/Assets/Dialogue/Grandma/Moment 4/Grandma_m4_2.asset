@@ -13,49 +13,57 @@ MonoBehaviour:
   m_Name: Grandma_m4_2
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: My, where has the time gone...
+  - Dialogue: My, where has the time gone...?
     Portrait: {fileID: 0}
-  - Dialogue: Who knew that my little Pumpkin could grow so tall?
+  - Dialogue: Who knew that my little Pumpkin could grow so big right under my nose?
     Portrait: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "Oh, I\u2019m sure she has."
       Portrait: {fileID: 0}
+    - Dialogue: That Mom of yours sure must have some mysterious ways to produce
+        a kid as amazing as you!
+      Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "Well, Mom\u2019s made sure to keep me on a balanced diet of
-      milk, meat and radioactive materials to enhance my height."
+    PlayerDialogue: "Well, Mom\u2019s made sure to keep me on a balanced diet, tons
+      of meat, milk, and a bit of radioactivity here and there for me to grow big
+      and strong!"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: c11402c7f70323846925ef4c2eb20a4c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "I guess you are right, maybe I\u2019ll have to call you my big pumpkin
+        instead."
+      Portrait: {fileID: 0}
+    - Dialogue: "Although that one doesn\u2019t have the same ring to it."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "I\u2019ve grown a lot, you can\u2019t really consider me your
+      \u201Clittle\u201D pumpkin anymore."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: c11402c7f70323846925ef4c2eb20a4c, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
-  Assertive_Expression:
-    NpcReactionText:
-    - Dialogue: ..Right. Sorry, I must have forgotten.
-      Portrait: {fileID: 0}
-    CombinedDialogue: []
-    PlayerDialogue: "I said not to call me that anymore. I\u2019m not a kid."
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: c11402c7f70323846925ef4c2eb20a4c, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "You remember that? You were so young, and always trying to stand
-        on your toes when you thought I wasn\u2019t looking."
+    - Dialogue: Yeah I know, I just wish you could stay my pumpkin for just a bit
+        longer.
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: I miss when you used to measure me on the doorway back at the
-      old house.
+    PlayerDialogue: "I\u2019ve grown up. I wasn\u2019t going to stay a kid forever,
+      you know."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: c11402c7f70323846925ef4c2eb20a4c, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -5
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "Now, there\u2019s no need for harsh words."
@@ -95,8 +103,10 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "I know, it just went by so fast. It\u2019s like you were just a
-        baby yesterday, and a blink and a half later, here we are."
+    - Dialogue: Haha Yeah... It just went by so fast. It feels like you were just
+        my little sunshine yesterday, and a blink and a half later, here we are.
+      Portrait: {fileID: 0}
+    - Dialogue: "You\u2019ve gone and grown up on your Nanna."
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Have you considered puberty?
@@ -105,13 +115,16 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: c11402c7f70323846925ef4c2eb20a4c, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: 10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: "Now, there\u2019s no need for harsh words."
+    - Dialogue: Sorry pum--... I mean sweetie.
+      Portrait: {fileID: 0}
+    - Dialogue: I guess I just forgot for a second that you are all grown up now.
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: When did you care how tall I was?
+    PlayerDialogue: "When are you going to stop calling me that nickname? I\u2019m
+      not a kid anymore."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: c11402c7f70323846925ef4c2eb20a4c, type: 2}
@@ -120,24 +133,29 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: "That\u2019s...of course I am. "
+    - Dialogue: "That\u2019s... Well... Of course I am,"
+      Portrait: {fileID: 0}
+    - Dialogue: "but you don\u2019t have to worry your little heart about that one
+        bit."
       Portrait: {fileID: 0}
     - Dialogue: "There\u2019s a lot to be afraid of, sure, but there\u2019s a whole
-        lot more to be excited for, don\u2019t you think?"
+        lot more to be excited about, don\u2019t you think?"
       Portrait: {fileID: 0}
-    - Dialogue: "What\u2019s behind us has already happened, and what\u2019s next
-        is just around the corner."
+    - Dialogue: The past is the past, all we can do is focus on what we can control
+        and the future will be ever brighter for us.
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Grandma...are you afraid of getting older?
+    PlayerDialogue: Nanna... Are you afraid of getting older?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: c11402c7f70323846925ef4c2eb20a4c, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: -15
   Silent:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: Sorry, dear.
+      Portrait: {fileID: 0}
     CombinedDialogue:
     - Dialogue: 'Listen, dear, I just wanted to tell you that I love you very, very
         much. '

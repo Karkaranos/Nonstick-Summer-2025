@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Grandma_m4_1
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Oh... hello, dear.
+  - Dialogue: Oh... hello Pumpkin.
     Portrait: {fileID: 21300000, guid: 7869ad9eba8e60e4dab075f9d8bc6428, type: 3}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
-        you."
+    - Dialogue: Good to see you Pumpkin! I can always count on you to make your old
+        Nanna to feel just a little bit younger.
       Portrait: {fileID: 0}
     CombinedDialogue:
     - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
@@ -28,19 +28,23 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
     - Dialogue: Who knew that my little Pumpkin could grow so tall?
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
-    PlayerDialogue: You seem excited to see me.
+    PlayerDialogue: "There\u2019s my super Nanna, glad you could come over to visit
+      us!"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: "No hug, then? I suppose you\u2019re too old for that now..."
       Portrait: {fileID: 0}
+    - Dialogue: "I haven\u2019t seen it, maybe I could help you look around for it."
+      Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Hey.
+    PlayerDialogue: "Hey Nanna, I didn\u2019t know you were here. I\u2019m looking
+      for my phone."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
@@ -49,17 +53,17 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "I just wanted to stop by while I had the time. It\u2019s good to
-        see you!"
+    - Dialogue: "You know that trick won\u2019t work on me anymore. You are way too
+        old now to pull that one over on me my little sunshine."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Hi, Grandma!
+    PlayerDialogue: Hi Grandma! Please save me from evil Momma.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: -5
   Charming_Observation:
     NpcReactionText:
     - Dialogue: Oh...is that suppose to be a joke?
@@ -101,44 +105,52 @@ MonoBehaviour:
   Charming_Question:
     NpcReactionText:
     - Dialogue: "No, I only realized I hadn\u2019t visited in a while and just wanted
-        to say hello. It\u2019s good to see you."
+        to stop by and see how you all were doing."
+      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019m glad I was able to catch you."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Have you been waiting here the whole time?
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
-  Assertive_Question:
-    NpcReactionText:
-    - Dialogue: "No, I only realized I hadn\u2019t visited in a while and just wanted
-        to say hello. It\u2019s good to see you."
-      Portrait: {fileID: 0}
-    CombinedDialogue: []
-    PlayerDialogue: Do you need something?
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
-  Sappy_Question:
-    NpcReactionText:
-    - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
-        you."
-      Portrait: {fileID: 0}
-    CombinedDialogue: []
-    PlayerDialogue: Is there something wrong?
+    PlayerDialogue: Hey Nanna, good to see you again, have you been here a while?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: "No, I only realized I hadn\u2019t visited in a while and just wanted
+        to stop by and see how you all were doing."
+      Portrait: {fileID: 0}
+    - Dialogue: "I\u2019m glad I was able to catch you."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "What\u2019s up Nanna? Do you need something?"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "I\u2019m doing just fine. Just getting a bit older is all."
+      Portrait: {fileID: 0}
+    - Dialogue: "Just a little bit though. You don\u2019t have to worry about your
+        Nanna at all."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: You are looking pretty tired. Are you feeling alright?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
   Silent:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: "There\u2019s need for hellos. I understand."
+      Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
@@ -146,5 +158,5 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: 0
   End: 0

@@ -23,33 +23,37 @@ MonoBehaviour:
     Portrait: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "Oh! Really? Okay! I\u2019ll be waiting, then!"
+    - Dialogue: "Oh, really? That\u2019s, um... That\u2019s a little crazy."
+      Portrait: {fileID: 0}
+    - Dialogue: But hey, we can still try later, right?
+      Portrait: {fileID: 0}
+    - Dialogue: Right...
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "Oh, wow! Uh, later. I\u2019ve got something to do first."
+    PlayerDialogue: "Oh, man. I\u2019d kinda forgotten about these things..."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 8374d955cfa518c49b157a30bbbb88dc, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: -10
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "Right. Right... Can\u2019t believe I bothered..."
+    - Dialogue: 'Right. Right... '
+      Portrait: {fileID: 0}
+    - Dialogue: "Can\u2019t believe I bothered..."
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "I didn\u2019t want to play then and I don\u2019t want to play
-      now."
+    PlayerDialogue: "You\u2019re trying way, WAY too hard."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: dac4ae234837d7b4d86d19d9b2e91671, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 8374d955cfa518c49b157a30bbbb88dc, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "Oh, really? That\u2019s, um... That\u2019s a little crazy. But hey,
-        we can still try later, right? Right..."
+    - Dialogue: You really think so? Haha! How time flies...
       Portrait: {fileID: 0}
     CombinedDialogue:
     - Dialogue: "Oh, really? That\u2019s, um... That\u2019s a little crazy. But hey,
@@ -63,13 +67,14 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: They got a little mixed up, though
       Portrait: {fileID: 0}
-    PlayerDialogue: "I, um, haven\u2019t really played in a long time, either."
+    PlayerDialogue: Heh. You probably remember how the game works better than I do
+      nowadays.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 8374d955cfa518c49b157a30bbbb88dc, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: 10
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "Oh, really? That\u2019s, um... That\u2019s a little crazy. But hey,
@@ -110,8 +115,9 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "Of course I do! They meant a lot to me, you know! Uh... Let me know
-        when, alright? I\u2019m free whenever, I guess."
+    - Dialogue: Of course I do! They meant a lot to me, you know!
+      Portrait: {fileID: 0}
+    - Dialogue: "Uh... Let me know when, alright? I\u2019m free whenever, I guess."
       Portrait: {fileID: 0}
     CombinedDialogue:
     - Dialogue: "Of course I do! They meant a lot to me, you know! Uh... Let me know
@@ -134,11 +140,17 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: ...Ugh. Was it really so wrong that I wanted to be close to you?!
       Portrait: {fileID: 0}
+    - Dialogue: Is it so hard for you to think of me as a person?!
+      Portrait: {fileID: 0}
+    - Dialogue: Whatever.
+      Portrait: {fileID: 0}
+    - Dialogue: Leave me alone.
+      Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "You still don\u2019t have an identity of your own, huh?"
+    PlayerDialogue: "Don\u2019t you have anything that you like doing on your own?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: dac4ae234837d7b4d86d19d9b2e91671, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 8374d955cfa518c49b157a30bbbb88dc, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15

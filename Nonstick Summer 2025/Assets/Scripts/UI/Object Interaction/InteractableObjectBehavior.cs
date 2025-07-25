@@ -76,7 +76,7 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
     public void ClearBlocker()
     {
         canBeInteractedWith = true;
-        if (applyShaders && applyIfActiveObjective)
+        if (applyShaders && applyIfActiveObjective && !hasGivenCard)
         {
             SetShader();
         }

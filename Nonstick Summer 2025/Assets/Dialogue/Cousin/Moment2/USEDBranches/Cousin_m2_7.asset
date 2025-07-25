@@ -19,38 +19,39 @@ MonoBehaviour:
     Portrait: {fileID: 0}
   - Dialogue: And here are your cards, probably...
     Portrait: {fileID: 0}
-  - Dialogue: They got a little mixed up, though
+  - Dialogue: They got a little mixed up, though.
     Portrait: {fileID: 0}
   Charming_Expression:
-    NpcReactionText:
-    - Dialogue: Ehehe!
-      Portrait: {fileID: 0}
-    CombinedDialogue: []
-    PlayerDialogue: Hey, thanks!
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: ae9bcb8d5edaa2b429fc5d497b937f5b, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
-  Assertive_Expression:
     NpcReactionText:
     - Dialogue: Ehehe...
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Whatever. Sure.
+    PlayerDialogue: "Oh, they\u2019re definitely still mixed up."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: ae9bcb8d5edaa2b429fc5d497b937f5b, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: -10
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "They aren\u2019t! I swear! I bet I wash my hands WAY more than you
+        do!"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "They\u2019re so greasy..."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: ae9bcb8d5edaa2b429fc5d497b937f5b, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: Ehehe!
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "...That\u2019s fine. It\u2019s fine. It\u2019s fine... Uh, thanks!"
+    PlayerDialogue: See you later!
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: ae9bcb8d5edaa2b429fc5d497b937f5b, type: 2}
@@ -105,10 +106,10 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: ae9bcb8d5edaa2b429fc5d497b937f5b, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: -10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: Give me a moment! Geez.
+    - Dialogue: Give me a second! Geez.
       Portrait: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: ...Why are you still here?

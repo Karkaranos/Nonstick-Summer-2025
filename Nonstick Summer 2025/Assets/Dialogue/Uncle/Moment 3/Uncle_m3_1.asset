@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: "There\u2019s our all star player!"
-    Portrait: {fileID: 21300000, guid: 5b80e3e4b9e4ae24282ce0ed426c2aaa, type: 3}
+    Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
   - Dialogue: "Don\u2019t worry, I\u2019m going to cheer loud enough for me and your
       mom."
-    Portrait: {fileID: 21300000, guid: 5b80e3e4b9e4ae24282ce0ed426c2aaa, type: 3}
+    Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "We\u2019re just going to have to cheer your way to victory."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "Don\u2019t be too loud, I have to hear my coach."
     RelationshipCheckRequired: 0
@@ -33,7 +33,7 @@ MonoBehaviour:
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: "Fair enough, but I\u2019m pretty sure it\u2019ll help you win."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "Cheering isn\u2019t going to help me get there on time."
     RelationshipCheckRequired: 0
@@ -46,9 +46,9 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Hey now, you know she wants to be there, but she couldn\u2019t get
         off work in time."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
     - Dialogue: The rest of us will be there cheering you on though.
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     CombinedDialogue: []
     PlayerDialogue: 'Thanks, but I still wish she could be there. '
     RelationshipCheckRequired: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Oh, it\u2019ll be a challenge for sure, but I\u2019m prepared to
         be your ultimate cheerleader."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "Mom\u2019s pretty loud... Do you really think you can cheer
       loud enough?"
@@ -111,9 +111,9 @@ MonoBehaviour:
   Assertive_Question:
     NpcReactionText:
     - Dialogue: This is a soccer family.
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     - Dialogue: Of course I know the rules!
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Do you even know how soccer works?
     RelationshipCheckRequired: 0
@@ -126,9 +126,9 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Hey now, you know she wants to be there, but she couldn\u2019t get
         off work in time."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
     - Dialogue: The rest of us will be there cheering you on though.
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Can you convince her to come?
     RelationshipCheckRequired: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
   Silent:
     NpcReactionText:
     - Dialogue: ...
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

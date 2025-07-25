@@ -14,22 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: Oh! Listen!
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
   - Dialogue: "I got some more cards the other day, and I\u2019ve been itchin to
       try them out."
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
   - Dialogue: Wanna play a round or two?
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Right!
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     - Dialogue: Yeah.
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     - Dialogue: Of course.
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     - Dialogue: Maybe some other time, then.
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m a bit busy... I\u2019m not sure if I have the time."
     RelationshipCheckRequired: 0
@@ -41,12 +41,12 @@ MonoBehaviour:
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: Oh yeah?
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     - Dialogue: "You haven\u2019t played in forever! Meanwhile, I\u2019ve been slowly
         honing my skills, hehe..."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
     - Dialogue: "I definitely won\u2019t go down easy!"
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "Careful what you wish for! You know I\u2019d destroy you again
       if I had to."
@@ -59,10 +59,10 @@ MonoBehaviour:
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: I can give you a refresher!
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     - Dialogue: "I know you don\u2019t have a lot of time for this sort of thing
         anymore, but it could be fun!"
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     CombinedDialogue:
     - Dialogue: I can give you a refresher!
       Portrait: {fileID: 0}
@@ -132,11 +132,11 @@ MonoBehaviour:
   Charming_Question:
     NpcReactionText:
     - Dialogue: Yeah!
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     - Dialogue: "I\u2019ll be sure to catch you up to speed."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     - Dialogue: "I\u2019m looking forward to it already!"
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Would you be okay with teaching me how to play again?
     RelationshipCheckRequired: 0
@@ -148,9 +148,9 @@ MonoBehaviour:
   Assertive_Question:
     NpcReactionText:
     - Dialogue: No way am I losing!
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     - Dialogue: "You have no idea how much better I\u2019ve gotten!"
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Depends. Are you ready to lose?
     RelationshipCheckRequired: 0
@@ -162,15 +162,15 @@ MonoBehaviour:
   Sappy_Question:
     NpcReactionText:
     - Dialogue: Oh...
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     - Dialogue: I guess so.
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     - Dialogue: Maybe.
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     - Dialogue: "You\u2019re right."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     - Dialogue: Sorry.
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "Aren\u2019t we getting a bit too old to be playing with cards?"
     RelationshipCheckRequired: 0
@@ -182,7 +182,7 @@ MonoBehaviour:
   Silent:
     NpcReactionText:
     - Dialogue: ...
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     CombinedDialogue: []
     PlayerDialogue: ..
     RelationshipCheckRequired: 0

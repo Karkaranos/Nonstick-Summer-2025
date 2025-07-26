@@ -97,6 +97,7 @@ public class Objectives : MonoBehaviour
                     foreach(GameObject g in _conditions[i+1].RequiredObjects)
                     {
                         g.GetComponent<IInteractableObjective>()?.ClearBlocker();
+                        g.GetComponent<IInteractableObjective>()?.ClearAllShaders();
                     }
                 }
                 else

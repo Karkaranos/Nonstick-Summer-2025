@@ -38,23 +38,23 @@ public class DialogueOption
     [Tooltip("Set a range! Read each tooltip to figure out what score leads to which branch.")]
     public Vector2 RelationshipRange;
 
-    [Required]
+    [AllowNesting]
     [Tooltip("The player has exceeded the range required to at least progress through the conversation OR a relationship check was not required.")]
-    public DialogueBranch BranchingDialogueHigh;
+    [Required] public DialogueBranch BranchingDialogueHigh;
 
     private bool showBranchingDialogueNeutral => RelationshipRange.y < 100 && RelationshipCheckRequired;
 
     [AllowNesting]
     [ShowIf("showBranchingDialogueNeutral")]
     [Tooltip("The player is within the range to at least continue the conversation, but not to get the best branch.")]
-    public DialogueBranch BranchingDialogueNeutral;
+    [Required] public DialogueBranch BranchingDialogueNeutral;
 
     private bool showBranchingDialogueLow => RelationshipRange.x > 0 && RelationshipCheckRequired;
 
     [AllowNesting]
     [ShowIf("showBranchingDialogueLow")]
     [Tooltip("The player has not met the range required to further converse with this NPC.")]
-    public DialogueBranch BranchingDialogueLow;
+    [Required] public DialogueBranch BranchingDialogueLow;
 
     [Tooltip("How much this dialogue option changes the character's relationship value.")]
     public float ChangeInRelationshipStatus;

@@ -14,13 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: Ok, well, get this!
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
   - Dialogue: I've got my own cards! Isn't that cool?
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
   Charming_Expression:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: They ARE new! Pretty cool, huh?
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: "Yeah! That\u2019s really cool!"
+    PlayerDialogue: Huh! Those look new.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
@@ -28,7 +30,9 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: Oh. Um... Ooh! But get this!
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Not really.
     RelationshipCheckRequired: 0
@@ -36,9 +40,11 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: -10
   Sappy_Expression:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: "Hmph. You don\u2019t sound excited. But! Whatever!"
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue: []
     PlayerDialogue: I guess.
     RelationshipCheckRequired: 0
@@ -46,7 +52,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: -10
   Charming_Observation:
     NpcReactionText: []
     CombinedDialogue: []
@@ -78,7 +84,9 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Charming_Question:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: Dad got them for me awhile ago! Awesome, right?
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Woah. When did you get those?
     RelationshipCheckRequired: 0
@@ -86,9 +94,11 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: cfdb5c7a971f7ab4e8fe1a922e429f6c, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: 10
   Assertive_Question:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: Yes? It is? Anyway!
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "Hey, isn\u2019t this supposed to be MY birthday?"
     RelationshipCheckRequired: 0
@@ -98,7 +108,9 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   Sappy_Question:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: Yep! I love them! I love cards!
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     CombinedDialogue: []
     PlayerDialogue: You collect them, too?
     RelationshipCheckRequired: 0

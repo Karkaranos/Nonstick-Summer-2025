@@ -59,6 +59,8 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
 
     public void StartSideCombat()
     {
+        MusicManager.instance.StartCombat(0);
+
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor);
         var dialogueController = menu.GetComponentInChildren<DialogueUIController>();
         GameManager.ObjectiveReference.SetObjectiveVisibility(false);

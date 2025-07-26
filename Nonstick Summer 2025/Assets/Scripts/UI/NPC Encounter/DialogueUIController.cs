@@ -69,7 +69,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     {
         DialogueManager.OnOpenCombatUI(startBranch, character);
 
-        MusicManager.instance.StartCombat(0);
+        //MusicManager.instance.StartCombat(0);
 
         Instance.isBoss = isBoss;
         inWorldCharacter = objRef;
@@ -90,9 +90,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         if(dialogueTree != null)
         {
-
             dialogueTree.Initialize(startBranch);
-
         }
 
         yield return ToggleUIForDialogueProgression(false);
@@ -113,7 +111,9 @@ public class DialogueUIController : Singleton<DialogueUIController>
     {
         // card is null, it hides the text bubble
         playerDialogueBubble.WriteText(card);
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.CardHoverSFX);
+
+        if(card!=null)
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.CardHoverSFX);
     }
 
     // TODO move a lot of this to play button script
@@ -252,12 +252,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
         {
             playCardButtonText.text = EndDialogueText;
             MusicManager.instance.StartHouse();
-
-            if (isBoss)
-            {
-                var bed = FindFirstObjectByType<OpenConfirmationInteractable>();
-                if (bed != null) bed.ClearBlocker();
-            }
         }
     }
 

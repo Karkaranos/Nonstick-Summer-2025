@@ -15,30 +15,30 @@ MonoBehaviour:
   dialogue:
   - Dialogue: "You know, I\u2019ve been getting pretty good at that new shooter game
       that came out."
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
   - Dialogue: Maybe we could play it sometime?
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "That\u2019s what I like to hear, looks like I\u2019ll have to step
-        it up as well."
-      Portrait: {fileID: 0}
+    - Dialogue: "That won\u2019t be an issue. I\u2019ll make sure to ask her to bump
+        it up to at least two this time."
+      Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: "Sure! I\u2019ve gotten a lot better since the last time we played."
+    PlayerDialogue: "Really? I hope Mama let\u2019s me play longer this time."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "Oho, looks like that energy hasn\u2019t gone anywhere. It might
-        not be as easy as last time, I\u2019ve been practicing just about every day
-        since the last time we played."
-      Portrait: {fileID: 0}
+    - Dialogue: "That\u2019s what I like to hear. Looks like I\u2019ll have to step
+        it up as well."
+      Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: "Sure, you\u2019re not gonna get better than me though."
+    PlayerDialogue: "I don\u2019t know...you might have to get better if I\u2019m
+      gonna play with you. I beat you last time."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
@@ -47,17 +47,19 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "Come on, where is that energy from last time, don\u2019t worry about
-        how well you do, just have fun!"
-      Portrait: {fileID: 0}
+    - Dialogue: "Come on, where's the excitement from last time? Don\u2019t worry
+        about how well you do, just have fun!"
+      Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: Sure, I know I am not all that good, but I will try my best.
+    PlayerDialogue: "That sounds great, but I\u2019ve been really busy with school,
+      so I haven\u2019t had much time to play. Hopefully I won\u2019t hold you back
+      too much."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: -5
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "That won\u2019t be an issue, I\u2019ll be sure to convince her to
@@ -103,47 +105,46 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "Oho, looks like that energy hasn\u2019t gone anywhere. It might
-        not be as easy as last time, I\u2019ve been practicing just about every day
-        since the last time we played."
-      Portrait: {fileID: 0}
+    - Dialogue: "Oho, looks like that energy hasn\u2019t gone anywhere. Fair warning,
+        it might not be as easy as last time...I\u2019ve been practicing just about
+        every day since the last time we played."
+      Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: Yeah, I had a lot of fun last time. Are you sure you are okay
-      with being carried by me again?
+    PlayerDialogue: "Yeah, I had a lot of fun last time. Are you sure you\u2019re
+      okay with being carried by me again?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: 15
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: Oh alright no worries, I guess I will just have to practice in the
-        meantime.
-      Portrait: {fileID: 0}
+    - Dialogue: Oh, no worries. Just gives me more time to practice.
+      Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t know, I might be playing it with my friends instead
-      if that's alright?"
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
-  Sappy_Question:
-    NpcReactionText:
-    - Dialogue: "Come on, where is that energy from last time, don\u2019t worry about
-        how well you do, just have fun!"
-      Portrait: {fileID: 0}
-    CombinedDialogue: []
-    PlayerDialogue: "Yeah I\u2019d really like to, you sure I won\u2019t be holding
-      you back?"
+      if that is alright?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "Come on, where's the excitement from last time? Don\u2019t worry
+        about how well you do, just have fun!"
+      Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "I\u2019d really like to. You sure I won\u2019t be holding you
+      back?"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
   Silent:
     NpcReactionText: []
     CombinedDialogue: []

@@ -48,6 +48,7 @@ public partial class CardDisplay : MonoBehaviour
         {
             mouseInteraction.OnMouseHoverStart.AddListener(OnMouseHoverStart);
             mouseInteraction.OnMouseHoverEnd.AddListener(OnMouseHoverEnd);
+            mouseInteraction.OnMouseHoverStay.AddListener(OnMouseHoverStart);
             mouseInteraction.OnMouseDown.AddListener(OnMouseDownStart);
         }
 

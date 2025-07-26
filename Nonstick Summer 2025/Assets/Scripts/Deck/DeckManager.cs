@@ -80,6 +80,12 @@ public class DeckManager
     /// <param name="d">The deck to add to. Leave blank for Player's Deck</param>
     public static void AddCardCopy(CardData c, Deck d = null)
     {
+        if (c == null)
+        {
+            Debug.LogWarning("Null card!");
+            return;
+        }
+
         var copy = c.CopyCard();
         CheckDeck(ref d);
         d.Add(copy);

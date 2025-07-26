@@ -5,7 +5,7 @@ Date Modified :         July 8, 2025
 Brief Description :     Creates a child interface to more readily support in-world 
                         objects the player interacts with that contain objectives
 ***************************************************/
-
+using UnityEngine;
 public interface  IInteractableObjective : IInteractable
 {
     /// <summary>
@@ -20,4 +20,12 @@ public interface  IInteractableObjective : IInteractable
     /// If this object relates to objectives, it sets whether this can or cannot be interacted with
     /// </summary>
     void ClearBlocker();
+
+    /// <summary>
+    /// Adds a shader on to the specified object
+    /// </summary>
+    void SetShader();
+
+    void ClearAllShaders();
+
 }

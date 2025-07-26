@@ -12,6 +12,7 @@ using TMPro;
 using NaughtyAttributes;
 using System.Collections;
 using System.Text.RegularExpressions;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(MouseInteractionEvents))]
 public abstract class HoverTooltip : MonoBehaviour
@@ -49,17 +50,30 @@ public abstract class HoverTooltip : MonoBehaviour
 
     public void Close()
     {
-        tooltipGroup.gameObject.gameObject.SetActive(false);
-        StaticUtilities.DisableCanvasGroup(tooltipGroup);
+        tooltipGroup.gameObject.SetActive(false);
+        //StaticUtilities.DisableCanvasGroup(tooltipGroup);
     }
 
     public void RefreshTooltipText()
     {
-        if (tooltipText != null)
-            tooltipText.text = GetText();
+        tooltipGroup.gameObject.SetActive(true);
+        //StaticUtilities.EnableCanvasGroup(tooltipGroup);
 
-        tooltipGroup.gameObject.gameObject.SetActive(true);
-        StaticUtilities.EnableCanvasGroup(tooltipGroup);
+        var newText = GetText();
+        if (tooltipText != null && newText != tooltipText.text)
+            tooltipText.text = newText;
+
+        StartCoroutine(DelayedLayoutUpdate());
+    }
+
+    /// <summary>
+    /// this is fucking bullshit. it HAS to be the next frame.
+    /// </summary>
+    private IEnumerator DelayedLayoutUpdate()
+    {
+        yield return null; 
+
+        LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)tooltipGroup.transform);
     }
 
     protected virtual void OnPlayerClickComponent()

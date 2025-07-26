@@ -30,7 +30,14 @@ public class CardPickupManager : Singleton<CardPickupManager>
     // Start is only called ONCE with DontDestroyOnLoad
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.Contains("Main"))
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
     }
 
     /// <summary>

@@ -260,6 +260,8 @@ public class DeckDisplayer : MonoBehaviour
 
         //TODO sort cards somehow
 
+        _visualDisplays = _visualDisplays.OrderBy(v=> (int) v.cardData.Emotion).ToList();
+
         for (int i = startIndex.Value; i <= endIndex.Value; i++)
         {
             var card = _visualDisplays[i];
@@ -272,6 +274,8 @@ public class DeckDisplayer : MonoBehaviour
 
             float x = Mathf.Lerp(left, right, t);
             card.SetPositionAndOffset(position: new Vector2(x, 0), offset: Vector2.zero, speed: 5000);
+
+            card.transform.SetSiblingIndex(i);
         }
 
         // Assign the first position to the left side of the display area

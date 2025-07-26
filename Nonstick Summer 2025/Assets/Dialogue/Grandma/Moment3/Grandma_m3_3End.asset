@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: "Alright, I\u2019ll leave you to it then."
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Right? Who could ever forget such an amazing game. I was so proud
@@ -23,11 +23,13 @@ MonoBehaviour:
     - Dialogue: "I know you\u2019ll make us feel the exact same way tonight. I just
         know it!"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Of course! I could never forget that game.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Expression:
     NpcReactionText:
@@ -37,11 +39,13 @@ MonoBehaviour:
     - Dialogue: "I know you\u2019ll make us feel the exact same way tonight. I just
         know it!"
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Yep! How could I? I was incredible in that game.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
@@ -50,11 +54,13 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: I could never forget that for the rest of my life.
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: I remember it like it was yesterday.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Charming_Observation:
     NpcReactionText:
@@ -63,12 +69,14 @@ MonoBehaviour:
     - Dialogue: To think that my little pumpkin could do something as awesome as
         that!
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: I remember I scored the game winning goal. The looks on your
       faces afterwards were just incredible.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Observation:
     NpcReactionText:
@@ -77,11 +85,13 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: All of us.
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t have time to talk about that right now Grandma."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Observation:
     NpcReactionText:
@@ -90,12 +100,14 @@ MonoBehaviour:
     - Dialogue: To think that my little pumpkin could do something as awesome as
         that!
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: I still remember the faces you guys made right after I scored
       that game winning goal.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
@@ -104,11 +116,13 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: "I know you\u2019ll make us proud like that again."
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: I could never forget it, what makes you bring it up now?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Assertive_Question:
     NpcReactionText:
@@ -117,11 +131,13 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: All of us.
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Yeah, what about it?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Question:
     NpcReactionText:
@@ -132,21 +148,25 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: I know he would be just as shocked.
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "Yeah, do you still remember the look on Grandpa\u2019s face
       when I sent that final ball into the back of the net?"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Silent:
     NpcReactionText:
     - Dialogue: ...
       Portrait: {fileID: 0}
-    BranchingDialogue: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: ...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   End: 1

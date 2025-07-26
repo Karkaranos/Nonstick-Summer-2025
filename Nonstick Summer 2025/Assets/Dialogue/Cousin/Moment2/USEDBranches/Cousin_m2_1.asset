@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: Hey! Hey! Hey!
-    Portrait: {fileID: 21300000, guid: 56fb52eb6f26be6429532fcc44dd7cad, type: 3}
+    Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
   - Dialogue: Guess what?
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
   - Dialogue: ...C'mon! Guess!
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Teehee!
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Um. Okay! What?
     RelationshipCheckRequired: 0
@@ -35,7 +35,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "I\u2019m not stupid! I\u2019m not! Just you wait and see what I\u2019ve
         got!"
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "I can\u2019t guess if I don\u2019t know what this is about,
       stupid."
@@ -49,7 +49,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Oh, right... Hey! Hey, wait! I\u2019ll, uh... I\u2019ll make it
         up to you! Wait just one sec!"
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "You haven\u2019t even wished me a happy birthday yet..."
     RelationshipCheckRequired: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   Charming_Question:
     NpcReactionText:
     - Dialogue: "C\u2019MON! Don\u2019t ask that! That defeats the point! Hmph!"
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
     CombinedDialogue: []
     PlayerDialogue: What am I supposed to be guessing?
     RelationshipCheckRequired: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   Assertive_Question:
     NpcReactionText:
     - Dialogue: Um... I guess not. Hmph...
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Do I have to?
     RelationshipCheckRequired: 0
@@ -121,8 +121,10 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: "Oh. With my mom, but, um... Well! I\u2019m here now! Listen up!"
-      Portrait: {fileID: 0}
+    - Dialogue: Oh. With my mom, but, um...
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+    - Dialogue: "Well! I\u2019m here now! Listen up!"
+      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Where have you been lately?
     RelationshipCheckRequired: 0

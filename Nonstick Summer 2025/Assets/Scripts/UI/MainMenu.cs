@@ -27,6 +27,12 @@ public class MainMenu : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
+        var toDelete = FindObjectsByType<CardPickupManager>(sortMode: FindObjectsSortMode.None);
+        foreach(CardPickupManager deleteMe in toDelete)
+        {
+            Destroy(deleteMe.gameObject);
+        }
     }
 
     public void StartGame()

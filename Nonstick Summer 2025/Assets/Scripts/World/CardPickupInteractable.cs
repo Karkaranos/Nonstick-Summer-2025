@@ -61,12 +61,7 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
         Hash = GetCardHashCode();
         CardPickupManager.Instance.InitializePickup(this);
 
-        SceneManager.activeSceneChanged += OnSceneChange;
-    }
-
-    private void OnSceneChange(Scene arg0, Scene arg1)
-    {
-        if(arg1.name.Contains("Main"))
+        if (SceneManager.GetActiveScene().name.Contains("Main"))
         {
             Destroy(gameObject);
         }

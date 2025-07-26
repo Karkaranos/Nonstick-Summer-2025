@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: Mom_m3_3
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: "Well, I\u2019m sure you\u2019re going to do-             goddammit."
+  - Dialogue: "Well, I\u2019m sure you\u2019re going to do--"
     Portrait: {fileID: 0}
-  - Dialogue: Sorry honey, I have to go. Call me when you get back, okay?
+  - Dialogue: Goddammit.
+    Portrait: {fileID: 0}
+  - Dialogue: Sorry honey, I have to go.
+    Portrait: {fileID: 0}
+  - Dialogue: Call me when you get back, okay?
     Portrait: {fileID: 0}
   - Dialogue: Love you.
     Portrait: {fileID: 0}
@@ -24,37 +28,37 @@ MonoBehaviour:
     - Dialogue: '*Before you can finish your response, Mom hangs up*'
       Portrait: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: -Love you. Jinx, you owe me pizza.
+    PlayerDialogue: Have fun!
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 272a1e19d7313134a82b8bd3d21d9a18, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: '*Before you can finish your response, Mom hangs up*'
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Sure.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 272a1e19d7313134a82b8bd3d21d9a18, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: '*Before you can finish your response, Mom hangs up*'
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Love you. Hope work goes well!
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 272a1e19d7313134a82b8bd3d21d9a18, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
-  Assertive_Expression:
-    NpcReactionText:
-    - Dialogue: '*Before you can finish your response, Mom hangs up*'
-      Portrait: {fileID: 0}
-    CombinedDialogue: []
-    PlayerDialogue: '*Hang up*'
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 272a1e19d7313134a82b8bd3d21d9a18, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -15
-  Sappy_Expression:
-    NpcReactionText:
-    - Dialogue: '*Before you can finish your response, Mom hangs up*'
-      Portrait: {fileID: 0}
-    CombinedDialogue: []
-    PlayerDialogue: Bye Mom. Love you too.
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 272a1e19d7313134a82b8bd3d21d9a18, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
   Charming_Observation:
     NpcReactionText:
     - Dialogue: '*Before you can finish your response, Mom hangs up*'
@@ -102,7 +106,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 272a1e19d7313134a82b8bd3d21d9a18, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: -10
   Assertive_Question:
     NpcReactionText:
     - Dialogue: '*Before you can finish your response, Mom hangs up*'
@@ -114,12 +118,14 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 272a1e19d7313134a82b8bd3d21d9a18, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -15
   Sappy_Question:
     NpcReactionText:
     - Dialogue: '*Before you can finish your response, Mom hangs up*'
       Portrait: {fileID: 0}
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: '*Before you can finish your response, Mom hangs up*'
+      Portrait: {fileID: 0}
     PlayerDialogue: 'Is everything okay? '
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -138,5 +144,5 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 272a1e19d7313134a82b8bd3d21d9a18, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 0
+    ChangeInRelationshipStatus: -5
   End: 0

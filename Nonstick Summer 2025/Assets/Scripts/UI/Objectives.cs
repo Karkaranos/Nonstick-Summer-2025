@@ -99,6 +99,11 @@ public class Objectives : MonoBehaviour
                         g.GetComponent<IInteractableObjective>()?.ClearBlocker();
                     }
                 }
+                else
+                {
+                    var bed = FindFirstObjectByType<OpenConfirmationInteractable>();
+                    if (bed != null) bed.ClearBlocker();
+                }
             }
         }
     }

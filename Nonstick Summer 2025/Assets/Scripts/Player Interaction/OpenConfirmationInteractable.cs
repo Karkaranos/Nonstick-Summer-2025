@@ -21,7 +21,7 @@ public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
 
     [Header("Scene Transition")]
     [HideInInspector] public bool InteractSuccessful = false;
-    [HideInInspector] public bool BossDefeated = false;
+    [HideInInspector] public bool PlayerCanLeave = false;
     [SerializeField, Scene] public int NextSceneIndex;
     [SerializeField, Tooltip("Which object moves you between scenes.")] BedInteractionPopupCanvas.EndType sceneTransitionType;
 
@@ -37,7 +37,7 @@ public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
     {
         if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.Contains('5'))
         {
-            BossDefeated = true;
+            PlayerCanLeave = true;
             if (applyLevelEndShader)
             {
                 SetShader();
@@ -54,7 +54,7 @@ public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
 
     public void ClearBlocker()
     {
-        BossDefeated = true;
+        PlayerCanLeave = true;
         if(applyLevelEndShader)
         {
             SetShader();

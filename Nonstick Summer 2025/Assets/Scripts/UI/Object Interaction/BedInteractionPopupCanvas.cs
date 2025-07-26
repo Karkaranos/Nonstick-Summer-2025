@@ -29,20 +29,20 @@ public class BedInteractionPopupCanvas : MonoBehaviour
         if (SceneTransitionType == EndType.BED)
         {
             statement.text = "It's your bed.";
-            message.text = (Bed.BossDefeated ? "Would you like to sleep?\n(This will end the moment.)" : "You cannot sleep yet");
+            message.text = (Bed.PlayerCanLeave ? "Would you like to sleep?\n(This will end the moment.)" : "You cannot sleep yet");
         }
         else
         {
             statement.text = "It's your front door.";
-            message.text = (Bed.BossDefeated ? "Would you like to leave?\n(This will end the moment.)" : "You cannot leave yet");
+            message.text = (Bed.PlayerCanLeave ? "Would you like to leave?\n(This will end the moment.)" : "You cannot leave yet");
         }
-        canSleepButtons.SetActive(Bed.BossDefeated);
-        cannotSleepButtons.SetActive(!Bed.BossDefeated);
+        canSleepButtons.SetActive(Bed.PlayerCanLeave);
+        cannotSleepButtons.SetActive(!Bed.PlayerCanLeave);
     }
 
     public void OnYesPressed()
     {
-        if (Bed.BossDefeated)
+        if (Bed.PlayerCanLeave)
         {
             Bed.InteractSuccessful = true;
             UnityEngine.SceneManagement.SceneManager.LoadScene(Bed.NextSceneIndex);

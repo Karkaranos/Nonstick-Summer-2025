@@ -252,12 +252,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
         {
             playCardButtonText.text = EndDialogueText;
             MusicManager.instance.StartHouse();
-
-            if (isBoss)
-            {
-                var bed = FindFirstObjectByType<OpenConfirmationInteractable>();
-                if (bed != null) bed.ClearBlocker();
-            }
         }
     }
 

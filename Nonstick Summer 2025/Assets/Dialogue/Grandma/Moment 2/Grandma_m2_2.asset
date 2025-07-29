@@ -25,7 +25,7 @@ MonoBehaviour:
       already had their fill of sugar for the foreseeable future."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
@@ -38,7 +38,7 @@ MonoBehaviour:
     PlayerDialogue: "I\u2019m full Nanna, I couldn\u2019t eat another bite"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
@@ -49,11 +49,18 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
     - Dialogue: ' You can get another slice later if you are good.'
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: "Now now, don\u2019t go pulling those tricks to prey on your dear
+        old Nanna\u2019s kindness..."
+      Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
+    - Dialogue: ' You can get another slice later if you are good.'
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    - Dialogue: Would you mind helping your Nanna clean up around the kitchen?
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
     PlayerDialogue: Aww... I wanted another one.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
@@ -116,7 +123,7 @@ MonoBehaviour:
     PlayerDialogue: Haha, what if I take it first?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
@@ -129,7 +136,7 @@ MonoBehaviour:
     PlayerDialogue: Are you going to eat it all yourself?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
@@ -143,7 +150,7 @@ MonoBehaviour:
       after all."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
@@ -153,7 +160,7 @@ MonoBehaviour:
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
+    BranchingDialogueHigh: {fileID: 0}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5

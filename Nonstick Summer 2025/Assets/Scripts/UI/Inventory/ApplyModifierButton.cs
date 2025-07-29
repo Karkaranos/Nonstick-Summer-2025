@@ -38,7 +38,6 @@ public class ApplyModifierButton : MonoBehaviour
     /// </summary>
     private void OnAnyCardSelectedChanged()
     {
-        Debug.Log("any selected changed");
         var canPlay = CanPlayModifier();
         //button.enabled = canPlay;
         button.SetColors(normalColor: canPlay? Color.green: Color.gray);
@@ -66,13 +65,13 @@ public class ApplyModifierButton : MonoBehaviour
 
         var carddatas = deckDisplay.selectedCards.Select(display => display.cardData).ToArray();
 
-        return modifierDisplay.selectedCard.modifierData.CanApplyModifier(carddatas);
 
-        /*
+        
         // if player is biting off more than they can chew
         if (deckDisplay.selectedCards.Count > modifierDisplay.selectedCard.modifierData.MaxCardsApplied)
             return false;
-
+        return modifierDisplay.selectedCard.modifierData.CanApplyModifier(carddatas);
+        /*        return modifierDisplay.selectedCard.modifierData.CanApplyModifier(carddatas);
         // if player is biting off less than they should chew
         if (deckDisplay.selectedCards.Count < modifierDisplay.selectedCard.modifierData.MinCardsApplied)
             return false;*/

@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Uncle_m4_4
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: Hey, I know it's not my place to say, but...
+    Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+  - Dialogue: Have you talked with your mom today? She seems pretty upset.
+    Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+  - Dialogue: My advice? Don't add more fuel(highlight this yellow) to the fire,
+      but be honest.
+    Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: "Fantastic! That\u2019s good to hear. You haven\u2019t been looking
+        too good lately, y\u2019know?"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Good! I\u2019ve, uh, been good."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "C\u2019mon. Don\u2019t be like that. I just wanna be in your life,
+        alright?"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Not now.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: Me too kiddo, once my Dad gets better we can spend time all together
+        again just like the good old days.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Yeah, I\u2019m glad we got to spend time together as a family."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: "You don\u2019t have to worry about that kiddo, seeing you smile
+        is all that matters to me."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Yeah! I can\u2019t believe you got me that card set! It must
+      have cost a fortune! "
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: Oops, sorry about that kiddo. I even asked my Son about which cards
+        to get you.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Well... It would be better if you had gotten me the right card
+      set.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: Me too kiddo, once my Dad gets better we can spend time all together
+        again just like the good old days.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Yeah. I just wish Grandpa could be here. Mom said he is too sick.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: "You don\u2019t have to worry about that kiddo, seeing you smile
+        is all that matters to me."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Of course, these cards that you got me are the real deal! How
+      in the world did you get these!?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: "You know I can\u2019t do that. I wish I could but your mother would
+        be in my ear for the rest of the day."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Almost perfect... If only you could tell me what grandma gifted
+      me? I know you saw her wrap it.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Question:
+    NpcReactionText: []
+    CombinedDialogue: []
+    PlayerDialogue: Of course!!! It was the best ever. What were your birthdays like
+      when you were my age, Uncle?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Silent:
+    NpcReactionText:
+    - Dialogue: I was just like you when I was your age, always ready to prove to
+        my friends that I was the best in whichever game we found fun at the time.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  End: 1

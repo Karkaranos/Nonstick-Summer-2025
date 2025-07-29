@@ -1,0 +1,173 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Grandma_m4_2
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: My, where has the time gone...?
+    Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+  - Dialogue: Who knew that my little Pumpkin could grow so big right under my nose?
+    Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: "Oh, I\u2019m sure she has."
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    - Dialogue: That Mom of yours sure must have some mysterious ways to produce
+        a kid as amazing as you!
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "Well, Mom\u2019s made sure to keep me on a balanced diet, tons
+      of meat, milk, and a bit of radioactivity here and there for me to grow big
+      and strong!"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: c11402c7f70323846925ef4c2eb20a4c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "I guess you are right, maybe I\u2019ll have to call you my big pumpkin
+        instead."
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    - Dialogue: "Although that one doesn\u2019t have the same ring to it."
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "I\u2019ve grown a lot, you can\u2019t really consider me your
+      \u201Clittle\u201D pumpkin anymore."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: c11402c7f70323846925ef4c2eb20a4c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: Yeah I know, I just wish you could stay my pumpkin for just a bit
+        longer.
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "I\u2019ve grown up. I wasn\u2019t going to stay a kid forever,
+      you know."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: c11402c7f70323846925ef4c2eb20a4c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: "Now, there\u2019s no need for harsh words."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Well, it seems like you\u2019ve only grown shorter."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: c11402c7f70323846925ef4c2eb20a4c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: "Now, there\u2019s no need for harsh words."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: It was going to happen with or without you.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: c11402c7f70323846925ef4c2eb20a4c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: "I know, it just went by so fast. It\u2019s like you were just a
+        baby yesterday, and a blink and a half later, here we are."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Well, I wasn\u2019t going to stay a kid forever, you know."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: c11402c7f70323846925ef4c2eb20a4c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: Haha Yeah... It just went by so fast. It feels like you were just
+        my little sunshine yesterday, and a blink and a half later, here we are.
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    - Dialogue: "You\u2019ve gone and grown up on your Nanna."
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: Have you considered puberty?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: c11402c7f70323846925ef4c2eb20a4c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: Sorry pum--... I mean sweetie.
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    - Dialogue: I guess I just forgot for a second that you are all grown up now.
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "When are you going to stop calling me that nickname? I\u2019m
+      not a kid anymore."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: c11402c7f70323846925ef4c2eb20a4c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "That\u2019s... Well... Of course I am,"
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    - Dialogue: "but you don\u2019t have to worry your little heart about that one
+        bit."
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    - Dialogue: "There\u2019s a lot to be afraid of, sure, but there\u2019s a whole
+        lot more to be excited about, don\u2019t you think?"
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    - Dialogue: The past is the past, all we can do is focus on what we can control
+        and the future will be ever brighter for us.
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: Nanna... Are you afraid of getting older?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: c11402c7f70323846925ef4c2eb20a4c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Silent:
+    NpcReactionText:
+    - Dialogue: Sorry, dear.
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    CombinedDialogue:
+    - Dialogue: 'Listen, dear, I just wanted to tell you that I love you very, very
+        much. '
+      Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+    - Dialogue: "I know it must feel like there\u2019s a lot going on right now at
+        your age, but you\u2019ll never be too old for your Nanna, okay?"
+      Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+    PlayerDialogue: ...
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: c11402c7f70323846925ef4c2eb20a4c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  End: 0

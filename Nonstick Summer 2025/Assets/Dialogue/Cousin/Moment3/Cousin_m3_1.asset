@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Cousin_m3_1
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: Hey! Hope you are ready for the big game.
+    Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+  - Dialogue: How are you feeling?
+    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: Awesome!
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+    - Dialogue: " I\u2019ll be sure to take notes for when I go out there and try
+        to get a trophy of my own!"
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "Great! I\u2019m ready to go out there and get this trophy!"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 877cded020acf444d81fa7c4eac91068, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: It's okay!
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+    - Dialogue: "I didn\u2019t mean to be a burden on you."
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "I\u2019m a bit busy, sorry."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 877cded020acf444d81fa7c4eac91068, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "I\u2019m glad!"
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+    - Dialogue: I am sure he would have loved to see you play.
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "Feeling good. I\u2019m going out there for Grandpa today."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 877cded020acf444d81fa7c4eac91068, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: "That\u2019s awesome, I\u2019ll be sure to take notes for when I
+        go out there and try to get a trophy of my own!"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Never better, looks like the weather is going to be perfect today
+      for my performance.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 877cded020acf444d81fa7c4eac91068, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: Sorry to hear that, I know that despite that you will still put on
+        a great performance for all of us!
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Alright, I woke up with a crick in my neck so I\u2019m already
+      not 100%."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 877cded020acf444d81fa7c4eac91068, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: Sorry to hear that, I know that despite that you will still put on
+        a great performance for all of us!
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: A bit nervous. I was tossing and turning all night just thinking
+      about the game.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 877cded020acf444d81fa7c4eac91068, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: Not really?
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    - Dialogue: Sorry...
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "I feel like I look. Can\u2019t you tell?"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 877cded020acf444d81fa7c4eac91068, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: Haha, I guess that was a stupid question.
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    - Dialogue: Sorry.
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: How are you feeling right before your big game?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 877cded020acf444d81fa7c4eac91068, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: You look great!
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+    - Dialogue: I can tell you are going to go out there and smash the other team.
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: Be honest. Do I look nervous?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 877cded020acf444d81fa7c4eac91068, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Silent:
+    NpcReactionText:
+    - Dialogue: ...that bad, huh?
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 877cded020acf444d81fa7c4eac91068, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  End: 0

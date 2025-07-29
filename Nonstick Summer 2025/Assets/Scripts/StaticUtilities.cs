@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -25,7 +26,51 @@ public static class StaticUtilities
 
     #endregion
 
+    #region VFX
+
+    /// <summary>
+    /// Instiates a particle system, and destroys it after its done playing.
+    /// If a particle is set to loop, it will play forever
+    /// </summary>
+    public static void PlayAndDestroyParticle(GameObject particleSystemPrefab, Vector3 position, Vector3? scale=null, Quaternion? rotation=null)
+    {
+        if(particleSystemPrefab == null) return;
+        scale = scale ?? Vector3.one;
+        rotation = rotation ?? Quaternion.identity;
+
+        // Destroy
+        var ps = particleSystemPrefab.GetComponentInChildren<ParticleSystem>();
+        if (ps == null)
+        {
+            Debug.LogWarning("Tried to spawn a particle, but no ParticleSystem was attached");
+            return;
+        }
+
+        // Build
+        var particleGameObject = GameObject.Instantiate(particleSystemPrefab, position, rotation.Value);
+        if(!ps.main.playOnAwake)
+            ps.Play();
+
+        // Destroy
+        if (!ps.main.loop)
+        {
+            float time = ps.main.startLifetime.constantMax;
+            GameObject.Destroy(particleGameObject, ps.main.duration);
+        }
+           
+    }
+
+    #endregion
+
     #region UI
+
+    public static void ToggleCanvasGroup(CanvasGroup canvasgroup, bool enabled)
+    {
+        if (enabled)
+            EnableCanvasGroup(canvasgroup);
+        else
+            DisableCanvasGroup(canvasgroup);
+    }
     public static void EnableCanvasGroup(CanvasGroup canvasgroup, float alpha = 1, bool interactable = true, bool blocksRaycasts=true)
     {
         canvasgroup.alpha = alpha;
@@ -70,10 +115,27 @@ public static class StaticUtilities
         uiComponent.colors = colors;
     }
 
+    public static Vector3 WorldPosition(this RectTransform rt)
+    {
+        Vector3[] corners = new Vector3[4];
+        rt.GetWorldCorners(corners);
+        return corners.Average();
+    }
+
     #endregion
 
     #region Math
     
+    public static Vector3 Average(this Vector3[] vectors)
+    {
+        Vector3 total = Vector3.zero;
+        foreach (var v in vectors)
+        {
+            total += v;
+        }
+        return total / vectors.Length;
+    }
+
     #endregion
 
     #region Lists
@@ -136,6 +198,15 @@ public static class StaticUtilities
 
     #endregion
 
+    #region Color
+
+    public static string ToHex(this Color color)
+    {
+        return ColorUtility.ToHtmlStringRGB(color);
+    }
+
+    #endregion
+
     #region Debug
 
     /// <summary>
@@ -148,8 +219,23 @@ public static class StaticUtilities
 #if UNITY_EDITOR
 
         var selected = UnityEditor.Selection.activeTransform;
-        return UnityEditor.Selection.activeTransform != null &&
-            (selected == parent || selected.IsChildOf(parent));
+        return selected != null && (selected == parent || selected.IsChildOf(parent));
+#else
+        return false;
+#endif
+    }
+
+    /// <summary>
+    /// (Editor only) Returns true if the user is selecting parent, or any of its children
+    /// </summary>
+    /// <param name="parent"></param>
+    /// <returns></returns>
+    public static bool Editor_SelectingTransform(Transform transform)
+    {
+#if UNITY_EDITOR
+
+        var selected = UnityEditor.Selection.activeTransform;
+        return selected != null && selected == transform;
 #else
         return false;
 #endif

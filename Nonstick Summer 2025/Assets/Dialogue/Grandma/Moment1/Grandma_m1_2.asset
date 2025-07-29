@@ -13,66 +13,134 @@ MonoBehaviour:
   m_Name: Grandma_m1_2
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Are these your toys? Do you want Nanna to help you?
-    Portrait: {fileID: 0}
+  - Dialogue: Are these your blocks? Do you want Nanna to help you? Maybe we could
+      build a house.
+    Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
   Charming_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
-    PlayerDialogue: Sure Nanna, please help
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    NpcReactionText:
+    - Dialogue: Of course sweety, just tell me where to put stuff.
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    CombinedDialogue:
+    - Dialogue: Of course sweety, just tell me where to put stuff.
+      Portrait: {fileID: 0}
+    - Dialogue: Are you excited for your first day of school?
+      Portrait: {fileID: 0}
+    PlayerDialogue: Sure Nanna, help your little pumpkin please!
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
-    PlayerDialogue: No, I can do it.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -5
-  Sappy_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
-    PlayerDialogue: I want to do it on my own.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    NpcReactionText:
+    - Dialogue: Alright, just let me know if you ever need anything.
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: I want to do it myself.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "I\u2019m sorry pumpkin, I got a bit ahead of myself. I\u2019d love
+        to see the creation that you can make all on your own now that you\u2019ve
+        grown so much!"
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: I never get to do it on my own...
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
   Charming_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    NpcReactionText:
+    - Dialogue: "You\u2019re right silly me, I must have just forgotten."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: These are kids toys Nanna.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Assertive_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    NpcReactionText:
+    - Dialogue: "You\u2019re right silly me, I must have just forgotten."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "You\u2019re too old, these are kids toys."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Sappy_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    NpcReactionText:
+    - Dialogue: "That\u2019s right, I almost forgot, I can try handing you some of
+        the blocks at least."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: Your hands shake too much.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Charming_Question:
-    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
-    PlayerDialogue: Sure, can you get those blocks over there?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    NpcReactionText:
+    - Dialogue: Of course sweety, just tell me where to put stuff.
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: Yeah! Can you brings those blocks to me please?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Assertive_Question:
-    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
-    PlayerDialogue: "Aren\u2019t you too old?"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    NpcReactionText:
+    - Dialogue: "I\u2019m getting up there, but I\u2019ll never be too old to make
+        a mansion of blocks for my pumpkin!"
+      Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "Aren\u2019t you a bit too old Nanna?"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
   Sappy_Question:
-    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
-    PlayerDialogue: Have you built one before?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    NpcReactionText:
+    - Dialogue: "That\u2019s right, I almost forgot. I guess my age hasn\u2019t caught
+        up to me yet. Maybe I can try handing you some of the blocks at least."
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "Don\u2019t your hands shake too much?"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
   Silent:
-    BranchingDialogue: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    NpcReactionText: []
+    CombinedDialogue: []
     PlayerDialogue: ...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd1563d01e5711f4db087ce3fd8bab65, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   End: 0

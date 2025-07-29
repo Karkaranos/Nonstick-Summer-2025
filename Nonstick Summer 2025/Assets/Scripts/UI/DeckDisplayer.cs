@@ -165,7 +165,10 @@ public class DeckDisplayer : MonoBehaviour
         }
 
         while(displayedData.Count < DefaultHandSize)
+        {
             displayedData.Add(DeckManager.RemainingDeck.Pop(), false);
+        }
+            
 
         DisplayAllCards();
     }
@@ -182,7 +185,10 @@ public class DeckDisplayer : MonoBehaviour
         }
 
         while (displayedData.Count < MaxHandSize)
-            displayedData.Add(DeckManager.RemainingDeck.Pop(),false);
+        {
+            var card = DeckManager.RemainingDeck.Pop();
+            AddCardToHand(card);
+        }
 
         DisplayAllCards();
     }
@@ -209,16 +215,22 @@ public class DeckDisplayer : MonoBehaviour
             throw new ArgumentNullException("No deck to draw from");
         }
 
-        if (DeckManager.RemainingDeck.Count < MaxHandSize && DeckManager.RemainingDeck.Count > 0)
+        if (DeckManager.PlayerHand.Count < MaxHandSize && DeckManager.RemainingDeck.Count > 0)
         {
-            displayedData.Add(DeckManager.RemainingDeck.Pop(), false);
-            DisplayAllCards();
+            var card = DeckManager.RemainingDeck.Pop();
+            AddCardToHand(card);
         }
         else
         {
             throw new System.Exception("Maximum hand size reached");
         }
 
+    }
+
+    public void AddCardToHand(CardData card)
+    {
+        displayedData.Add(card, false);
+        DisplayAllCards();
     }
 
     public void DiscardCard(CardData card)
@@ -248,6 +260,8 @@ public class DeckDisplayer : MonoBehaviour
 
         //TODO sort cards somehow
 
+        _visualDisplays = _visualDisplays.OrderBy(v=> (int) v.cardData.Emotion).ToList();
+
         for (int i = startIndex.Value; i <= endIndex.Value; i++)
         {
             var card = _visualDisplays[i];
@@ -260,6 +274,8 @@ public class DeckDisplayer : MonoBehaviour
 
             float x = Mathf.Lerp(left, right, t);
             card.SetPositionAndOffset(position: new Vector2(x, 0), offset: Vector2.zero, speed: 5000);
+
+            card.transform.SetSiblingIndex(i);
         }
 
         // Assign the first position to the left side of the display area

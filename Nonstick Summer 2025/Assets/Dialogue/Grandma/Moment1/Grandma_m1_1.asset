@@ -15,67 +15,147 @@ MonoBehaviour:
   dialogue:
   - Dialogue: "There\u2019s my little sunshine, has Mommy been treating you alright
       recently?"
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
   Charming_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    NpcReactionText:
+    - Dialogue: Hehehe, well... I taught your Mommy how to be fun, so you will love
+        playing with me!
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    CombinedDialogue:
+    - Dialogue: Hehehe, well... I taught your Mommy how to be fun, so you will love
+        playing with me!
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    - Dialogue: Are these your blocks? Do you want Nanna to help you? Maybe we could
+        build a house.
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
     PlayerDialogue: Nanna, Mommy and I have been having so much fun!
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 10
-  Assertive_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
-    PlayerDialogue: Nanna! Thanks for saving me from evil mommy!
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 10
-  Sappy_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
-    PlayerDialogue: Nanna, I am so glad to see you!
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "Don\u2019t you worry your little heart my little pumpkin, Nanna
+        is here now to save you from evil Momma!"
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    CombinedDialogue:
+    - Dialogue: "Don\u2019t you worry your little heart my little pumpkin, Nanna
+        is here now to save you from evil Momma!"
+      Portrait: {fileID: 0}
+    - Dialogue: Are these your blocks? Do you want Nanna to help you? Maybe we could
+        build a house.
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    PlayerDialogue: Nanna! Save me from evil Momma!
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "And Nanna is so happy to see you! Come now, let\u2019s play."
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "Momma is always tired. We don\u2019t get to play much anymore."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
   Charming_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    NpcReactionText:
+    - Dialogue: "It\u2019s called perfume, honey....... a perfume called Classic
+        Rose...."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: Grandma... you smell like an old person...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Assertive_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    NpcReactionText:
+    - Dialogue: "Well, Nanna is here..... let\u2019s show Nanna your room. Come here."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: I thought Mommy was going to play with me.... I only play games
       with her....
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Sappy_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    NpcReactionText:
+    - Dialogue: "Well, Nanna is here..... let\u2019s show Nanna your room. Come here."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
     PlayerDialogue: "Mommy\u2019s been real busy recently."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
   Charming_Question:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
-    PlayerDialogue: "Mommy has been so mean, you wouldn\u2019t be mean to me right
+    NpcReactionText:
+    - Dialogue: You know what we say about lying my little pumpkin, and if she learned
+        anything from me I already know you guys have been having a blast!
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "Momma has been sooo mean, you wouldn\u2019t be mean to me right
       Nanna?"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 15
-  Assertive_Question:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
-    PlayerDialogue: "\u201CNanna, why can\u2019t I play at your house instead?\u201D"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: "Ouch! That\u2019s a bit hurtful pumpkin. Come on, let Nanna help
+        you do something fun to make up for it."
+      Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: Why are you here Nanna?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
   Sappy_Question:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
-    PlayerDialogue: Hey Nanna, are you going to stay around for a while?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    NpcReactionText:
+    - Dialogue: "I\u2019m sorry to hear that pumpkin. I\u2019ll make sure to have
+        a long chat with her just for you alright? Now let\u2019s play whatever you
+        like all day!"
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: Nanna, Momma has be so mean. Can you tell her to be nice please?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
   Silent:
-    BranchingDialogue: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    NpcReactionText:
+    - Dialogue: "\u201CIt\u2019s okay sweetie, you don\u2019t have to use your words
+        unless you want..\u201D"
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    CombinedDialogue: []
     PlayerDialogue: ...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   End: 0

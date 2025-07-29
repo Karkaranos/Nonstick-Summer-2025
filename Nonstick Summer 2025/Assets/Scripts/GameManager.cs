@@ -16,6 +16,7 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     public static Transform playerTransformRef;
+    public static Camera PlayerCameraRef => playerCameraRef ?? Instance.RefreshPlayerCamera();
     public static Camera playerCameraRef;
 
     // these variables mostly just exist to keep each sub-manager in memory
@@ -32,17 +33,19 @@ public class GameManager : Singleton<GameManager>
 
     [Foldout("Card Styles")] [SerializeField] private CardValueStyle 
         Card_CharmingStyle, Card_AssertiveStyle, Card_SappyStyle,
-        Card_ExpressionStyle, Card_ObservationStyle, Card_QuestionStyle = new CardValueStyle(Color.white,"");
+        Card_StatementStyle, Card_QuestionStyle = new CardValueStyle(Color.white,"");
+    //TODO: move these to different script probably
+    [Foldout("Card Styles"), ShowAssetPreview(16,16), SerializeField]
+    private Sprite BlankCard, YellowCardBack, RedCardBack, BlueCardBack;
+    [Foldout("Card Styles")] public Color StampTooltipColor = new Color(1, 0.8f, 0.1f);
+    [Foldout("Card Styles")] public Color PositiveEnergyColor = Color.green;
+    [Foldout("Card Styles")] public Color NegativeEnergyColor = Color.red;
+    [Foldout("Card Styles")] public Color NeutralEnergyColor = Color.gray;
 
     [Tooltip("The initial cards in the players hand at the very beginning of the game")]
     [Foldout("Card Values"), SerializeField] private CardData[] startingCards;
     [Tooltip("The initial modifiers in the players hand at the very beginning of the game")]
     [Foldout("Card Values"), SerializeField] private ModifierData[] startingModifiers;
-
-    [Header("Intention Sprites")]
-    [Foldout("Card Styles")] [SerializeField] private Sprite Card_ExpressionSprite;
-    [Foldout("Card Styles")] [SerializeField] private Sprite Card_ObservationSprite;
-    [Foldout("Card Styles")] [SerializeField] private Sprite Card_QuestionSprite;
 
     [Header("Social Battery")]
     [Foldout("Combat"),SerializeField] private int _defaultEnergy=5;
@@ -69,13 +72,9 @@ public class GameManager : Singleton<GameManager>
     {
         DontDestroyOnLoad(this.gameObject);
 
-        playerTransformRef = FindFirstObjectByType<PlayerMovement>()?.transform;
-        playerCameraRef = FindFirstObjectByType<PlayerCamera>()?.playerCamera;
-
         UITransitionManagerReference = UITransitionManagerReference ?? new UITransitionManager();
         CardStyleManagerReference = CardStyleManagerReference ?? new CardStyleManager(Card_CharmingStyle, Card_AssertiveStyle, Card_SappyStyle,
-            Card_ExpressionStyle, Card_ObservationStyle, Card_QuestionStyle,
-            Card_ExpressionSprite, Card_ObservationSprite, Card_QuestionSprite);
+            Card_StatementStyle, Card_QuestionStyle, BlankCard, YellowCardBack, RedCardBack, BlueCardBack);
         DeckManagerReference = DeckManagerReference ?? new DeckManager(startingCards);
         DialogueManagerReference = DialogueManagerReference ?? new DialogueManager(_defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent, 
             _maxEnergy, DefaultCardsInHand, _cardsDrawnPerRound, _drawButtonEnergyCost, _energyGainedPerDiscard);
@@ -83,6 +82,26 @@ public class GameManager : Singleton<GameManager>
         ModifierManagerReference = ModifierManagerReference ?? new ModifierManager(startingModifiers);
         ObjectiveReference = FindFirstObjectByType<Objectives>();
         PlayerDataManagerReference = PlayerDataManagerReference ?? new PlayerDataManager();
+
+    }
+
+    private Camera RefreshPlayerCamera()
+    {
+        if(playerCameraRef != null)
+            return playerCameraRef;
+
+        playerCameraRef = FindFirstObjectByType<PlayerCamera>().playerCamera;
+        return playerCameraRef;
+    }
+
+    /// <summary>
+    /// Runs after the first scene has finished loading
+    /// </summary>
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private static void AfterSceneLoad()
+    {
+        playerTransformRef = FindFirstObjectByType<PlayerMovement>()?.transform;
+        playerCameraRef = FindFirstObjectByType<PlayerCamera>()?.playerCamera;
 
     }
 }

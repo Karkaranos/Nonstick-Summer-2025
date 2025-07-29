@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Mom_m4_3
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: Oh, because surely, a phone will fix your grades.
+    Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: Are you serious with me right now? Do I look stupid to you?
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: Statistically, high schoolers with phones recieve higher grades
+      than their phoneless peers....
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 24d53d9459110bc42a2fb5f560628ce8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "Then tell me what you\u2019re saying, because you never seem to
+        unless you\u2019re in trouble."
+      Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "That\u2019s not what I\u2019m saying!"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 24d53d9459110bc42a2fb5f560628ce8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "Then talk with them at school! You don\u2019t need your phone to
+        do that!"
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: I just want to talk to my friends.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 24d53d9459110bc42a2fb5f560628ce8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: Are you serious with me right now? Do I look stupid to you?
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Statistically, high schoolers with phones recieve higher grades
+      than their phoneless peers....
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 24d53d9459110bc42a2fb5f560628ce8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: "Then tell me what you\u2019re saying, because you never seem to
+        unless you\u2019re in trouble."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "You\u2019re not listening to me!"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 24d53d9459110bc42a2fb5f560628ce8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: "Then talk with them at school! You don\u2019t need your phone to
+        do that!"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: I just want to talk to my friends.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 24d53d9459110bc42a2fb5f560628ce8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: "You\u2019re not SUPPOSED to CHEAT to begin with!"
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+    CombinedDialogue:
+    - Dialogue: "You\u2019re not SUPPOSED to CHEAT to begin with!"
+      Portrait: {fileID: 0}
+    - Dialogue: I work day and night for this family, but all I ever see you care
+        about is your phone!
+      Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
+    - Dialogue: You are grounded, do you understand that?!
+      Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
+    PlayerDialogue: How am I supposed to cheat without my phone?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 24d53d9459110bc42a2fb5f560628ce8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: "You don\u2019t think I care? I\u2019m doing the best I can!"
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: I use my phone to do homework with my friends! Are you going
+      to help me?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 24d53d9459110bc42a2fb5f560628ce8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "You don\u2019t think I care? I\u2019m doing the best I can!"
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+    CombinedDialogue:
+    - Dialogue: "You don\u2019t think I care? I\u2019m doing the best I can!"
+      Portrait: {fileID: 0}
+    - Dialogue: I work day and night for this family, but all I ever see you care
+        about is your phone!
+      Portrait: {fileID: 21300000, guid: c2360f7827c4e38498ba0e512f1c8260, type: 3}
+    - Dialogue: You are grounded, do you understand that?!
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+    PlayerDialogue: "Why do you only care about my grades when they\u2019re low?"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 24d53d9459110bc42a2fb5f560628ce8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Silent:
+    NpcReactionText:
+    - Dialogue: Say somthing!
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 24d53d9459110bc42a2fb5f560628ce8, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  End: 0

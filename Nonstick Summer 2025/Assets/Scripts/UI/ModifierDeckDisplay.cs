@@ -70,7 +70,9 @@ public class ModifierDeckDisplay : MonoBehaviour
         ClearRemovedCards();
 
         if (playerModifiers.Count == 0)
-        return;
+            return;
+
+        SpawnNewCards();
 
         // TODO: sort a little better? like, a different type of sort
         // Sort by name, and then by type. Mid solution, imo (especially because it does two sorts),
@@ -79,8 +81,6 @@ public class ModifierDeckDisplay : MonoBehaviour
             .OrderBy(d => d.modifierData.name)
             .OrderBy(d => d.modifierData.GetType().ToSafeString())
             .ToList();
-
-        SpawnNewCards();
 
         // Generates spawn positions
         GenerateAndSetPositions();
@@ -132,6 +132,9 @@ public class ModifierDeckDisplay : MonoBehaviour
 
         foreach(var newCard in newCards)
         {
+            if (newCard == null)
+                continue;
+
             var newCardGameObj = Instantiate(modifierCardPrefab, this.transform);
             var display = newCardGameObj.GetComponent<ModifierCardDisplay>();
             //display.OnMouseDown.AddListener(OnCardClicked); // TODO why does this not work D:
@@ -171,12 +174,8 @@ public class ModifierDeckDisplay : MonoBehaviour
             float x = Mathf.Lerp(left, right, t);
             modifier.SetPositionAndOffset(position:new Vector2(x,0), offset:Vector2.zero, speed:5000);
 
-            //modifier.OnMouseDown.AddListener(OnCardClicked);
+            modifier.transform.SetSiblingIndex(i);
         }
-
-        // Assigns the last position to the right side of the display area, as a percaution
-        // also yeah the numbers are weird. I will fix it later. i'm a lil tired tbh
-        //positions[end] = new Vector2(rectTransformCenter.x + .5f * _dimensions.x + .3f * _cardWidth - _bufferFromEdgeOfRegion, 150);
     }
 
     #endregion
@@ -220,7 +219,7 @@ public class ModifierDeckDisplay : MonoBehaviour
         if (selectedCard == cardDisplay)
             return;
 
-        Debug.Log("selecting card");
+        //Debug.Log("selecting card");
 
         // swap cards 
         DeselectCard();

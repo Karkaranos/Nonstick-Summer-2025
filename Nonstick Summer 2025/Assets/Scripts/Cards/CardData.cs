@@ -15,9 +15,12 @@ using NaughtyAttributes;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using static Unity.VisualScripting.StickyNote;
+using static UnityEngine.Rendering.DebugUI;
 
-[CreateAssetMenu(fileName = "CardData", menuName = "Scriptable Objects/CardData")]
+[CreateAssetMenu(fileName = "CardData", menuName = "Dialogue Card/CardData")]
 public partial class CardData : ScriptableObject
 {
     [HideInInspector] public Action OnCardValueChanged;
@@ -69,19 +72,24 @@ public partial class CardData : ScriptableObject
     public float GetEnergyCost() 
     {
         float newCost;
-        if(Application.isEditor)
+        if(!Application.isPlaying)
             newCost = _energyCost;
         else
-            newCost = _energyCost + MoodManager.emotions[_emotion].baseEnergyCost;
+        {
+            if (MoodManager.emotions.ContainsKey(_emotion))
+                newCost = _energyCost + MoodManager.emotions[_emotion].energyCostOffset;
+            else
+                newCost = _energyCost;
+        }
 
-        if(_stamps.Count > 0)
+        /*if(_stamps.Count > 0)
         {
             foreach (ModifierStamp stamp in _stamps)
             {
-                if (stamp.type == typeof(CardStatAffectorStamp))
-                    ((CardStatAffectorStamp)stamp).ModifyEnergyCost(ref newCost);
+                if (stamp.type == typeof(RelationshipAffectorStamp))
+                    ((RelationshipAffectorStamp)stamp).ModifyEnergyCost(ref newCost);
             }
-        }
+        }*/
         return newCost; 
     }
     public CardIntention GetIntention() { return _intention; }
@@ -94,8 +102,8 @@ public partial class CardData : ScriptableObject
 
         foreach (ModifierStamp stamp in _stamps)
         {
-            if (stamp.type == typeof(CardStatAffectorStamp))
-                ((CardStatAffectorStamp)stamp).ModifyEnergyCost(ref newRelationshipChange);
+            if (stamp.type == typeof(RelationshipAffectorStamp))
+                ((RelationshipAffectorStamp)stamp).ModifyRelationshipValue(ref newRelationshipChange);
         }
         return newRelationshipChange;
     }
@@ -121,6 +129,10 @@ public partial class CardData : ScriptableObject
         OnCardValueChanged.Invoke();
     }
 
+    public int GetHashCodeByProperties()
+    {
+        return HashCode.Combine(_energyCost, _emotion, _intention, this.name, Stamps);
+    }
 
     #endregion
 
@@ -139,7 +151,7 @@ public partial class CardData : ScriptableObject
     #region debug
     private void Debug_InvokeOnCardValueChanged()
     {
-        OnCardValueChanged.Invoke();
+        OnCardValueChanged?.Invoke();
     }
 
     public static CardData NewCard (int EnergyCost, CardEmotion Emotion, CardIntention Intention)
@@ -161,7 +173,7 @@ public enum CardIntention
     NotSelected, // Error case
     Expression,
     Observation,
-    Question, // Will update these later when Intentions are finalized
+    Question, 
 }
 
 public enum CardEmotion
@@ -169,5 +181,5 @@ public enum CardEmotion
     NotSelected, // Error case
     Charming,
     Assertive,
-    Sappy, // Will update these later when Emotions are finalized
+    Sappy, 
 }

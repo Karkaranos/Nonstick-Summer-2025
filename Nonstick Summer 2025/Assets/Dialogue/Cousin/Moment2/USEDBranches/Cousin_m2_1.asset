@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Cousin_m2_1
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: Hey! Hey! Hey!
+    Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+  - Dialogue: Guess what?
+    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+  - Dialogue: ...C'mon! Guess!
+    Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: Teehee!
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: Um. Okay! What?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "I\u2019m not stupid! I\u2019m not! Just you wait and see what I\u2019ve
+        got!"
+      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "I can\u2019t guess if I don\u2019t know what this is about,
+      stupid."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "Oh, right... Hey! Hey, wait! I\u2019ll, uh... I\u2019ll make it
+        up to you! Wait just one sec!"
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "You haven\u2019t even wished me a happy birthday yet..."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: "Uh... Well! I\u2019m here now! Listen up!"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: Oh! I didn't know you'd be here.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: "C\u2019MON! That defeats the point! Hmph!"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: I can't guess if I don't know what this is about, stupid.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: "Hey! Hey, wait! I\u2019ll, uh... I\u2019ll make it up to you! Wait
+        just one sec!"
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "You haven\u2019t even wished me a happy birthday yet..."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: "C\u2019MON! Don\u2019t ask that! That defeats the point! Hmph!"
+      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: What am I supposed to be guessing?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: Um... I guess not. Hmph...
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: Do I have to?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: Oh. With my mom, but, um...
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+    - Dialogue: "Well! I\u2019m here now! Listen up!"
+      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: Where have you been lately?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Silent:
+    NpcReactionText: []
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 9dae55cb4a39d374e8e1b0da28b414c1, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  End: 0

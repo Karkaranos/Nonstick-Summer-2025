@@ -10,70 +10,54 @@ public class CardStyleManager
 {
     public static CardStyleManager Instance => GameManager.CardStyleManagerReference;
 
-    private static CardValueStyle YellowStyle, RedStyle, BlueStyle, 
-        ExpressionStyle, ObservationStyle, QuestionStyle; // names subject to change
-    private static Sprite ExpressionSprite, ObservationSprite, QuestionSprite;
+    public static CardValueStyle YellowStyle, RedStyle, BlueStyle, 
+        StatementStyle, QuestionStyle; // names subject to change
 
-    private static CardValueStyle _errorStyle;
+    public static CardValueStyle ObservationStyle => StatementStyle;
+
+    public static Sprite DefaultCardBack, YellowCardBack, RedCardBack, BlueCardBack;
+
+    public static CardValueStyle ErrorStyle;
     
     public CardStyleManager(
         CardValueStyle yellowStyle, CardValueStyle redStyle, CardValueStyle blueStyle, 
-        CardValueStyle expressionStyle, CardValueStyle observationStyle, CardValueStyle questionStyle,
-        Sprite expressionSprite, Sprite observationSprite, Sprite questionSprite) 
+        CardValueStyle expressionStyle, CardValueStyle questionStyle, 
+        Sprite blankCardBack, Sprite yellowCardBack, Sprite redCardBack, Sprite blueCardBack) 
     { 
         YellowStyle = yellowStyle;
         RedStyle = redStyle;
         BlueStyle = blueStyle;
-        ExpressionStyle = expressionStyle;
-        ObservationStyle = observationStyle;
+        StatementStyle = expressionStyle;
         QuestionStyle = questionStyle;
-        ExpressionSprite = expressionSprite;
-        ObservationSprite = observationSprite;
-        QuestionSprite = questionSprite;
 
-        _errorStyle = new CardValueStyle(Color.red, "ERROR");
+        DefaultCardBack = blankCardBack;
+        YellowCardBack = yellowCardBack;
+        RedCardBack = redCardBack;
+        BlueCardBack = blueCardBack;
+
+        ErrorStyle = new CardValueStyle(Color.red, "ERROR");
     }
 
     public static Sprite GetIntentionSprite(CardData card)
     {
-        // there might be individual sprites for each emotion,
-        // in that case i will be making a dictionary with [tuple<Emotion, CardIntention>] keys
+        return GetIntentionSprite(card.Intention);
+    }
 
-        switch (card.Intention)
+    public static Sprite GetIntentionSprite(CardIntention intention)
+    {
+        switch (intention)
         {
             case CardIntention.Expression:
-                return ExpressionSprite;
+                return StatementStyle.sprite;
             case CardIntention.Observation:
-                return ObservationSprite;
+                return ObservationStyle.sprite;
             case CardIntention.Question:
-                return QuestionSprite;
+                return QuestionStyle.sprite;
             default:
                 Debug.LogWarning("Card has no intention set!");
                 return null;
         }
     }
-
-    public static Color GetEmotionColor(CardData card)
-    {
-        return GetEmotionStyle(card).color;
-    }
-
-    public static CardValueStyle GetEmotionStyle(CardData card)
-    {
-        switch (card.Emotion)
-        {
-            case CardEmotion.Charming:
-                return YellowStyle;
-            case CardEmotion.Assertive:
-                return RedStyle;
-            case CardEmotion.Sappy:
-                return BlueStyle;
-            default:
-                Debug.LogWarning("Card has no emotion set!");
-                return _errorStyle;
-        }
-    }
-
     public static Color GetIntentionColor(CardData card)
     {
         return GetIntentionStyle(card).color;
@@ -84,14 +68,66 @@ public class CardStyleManager
         switch (card.Intention)
         {
             case CardIntention.Expression:
-                return ExpressionStyle;
+                return StatementStyle;
             case CardIntention.Observation:
                 return ObservationStyle;
             case CardIntention.Question:
                 return QuestionStyle;
             default:
                 Debug.LogWarning("Card has no intention set!");
-                return _errorStyle;
+                return ErrorStyle;
+        }
+    }
+
+    public static CardValueStyle GetEmotionStyle(CardData card)
+    {
+        return GetEmotionStyle(card.GetEmotion());
+    }
+
+    public static CardValueStyle GetEmotionStyle(CardEmotion emotion)
+    {
+        switch (emotion)
+        {
+            case CardEmotion.Charming:
+                return YellowStyle;
+            case CardEmotion.Assertive:
+                return RedStyle;
+            case CardEmotion.Sappy:
+                return BlueStyle;
+            default:
+                Debug.LogWarning("Card has no emotion set!");
+                return ErrorStyle;
+        }
+    }
+
+    public static Color GetEmotionColor(CardData card)
+    {
+        return GetEmotionStyle(card).color;
+    }
+
+    public static Sprite GetEmotionSprite(CardData card)
+    {
+       return GetEmotionStyle(card).sprite;
+    }
+
+    public static Sprite GetEmotionSprite(CardEmotion emotion)
+    {
+        return GetEmotionStyle(emotion).sprite;
+    }
+
+    public static Sprite GetCardBack(CardData card)
+    {
+        switch (card.Emotion)
+        {
+            case CardEmotion.Charming:
+                return YellowCardBack;
+            case CardEmotion.Assertive:
+                return RedCardBack;
+            case CardEmotion.Sappy:
+                return BlueCardBack;
+            default:
+                Debug.LogWarning("Card has no emotion set!");
+                return DefaultCardBack;
         }
     }
 }

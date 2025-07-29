@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Uncle_m5_1
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: Well, would you look at that...all packed and ready to leave the nest?
+    Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: "If you\u2019re ever back in town, I can show you how to squeeze
+        a tent inside a backpack."
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    - Dialogue: Not exactly a house, but it gets the job done.
+      Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+    CombinedDialogue:
+    - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
+        you."
+      Portrait: {fileID: 0}
+    - Dialogue: My, where has the time gone...
+      Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+    - Dialogue: Who knew that my little Pumpkin could grow so tall?
+      Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+    PlayerDialogue: "I meant to pack the whole house, but didn\u2019t have time."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1fb30350f01bdfa489b5e7e7f169ce01, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: A little bit of optimism never hurt anyone, you know.
+      Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+    - Dialogue: "But hey, maybe I\u2019m not the one to talk."
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: 'About time. '
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1fb30350f01bdfa489b5e7e7f169ce01, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "No you won\u2019t, or at least not for long."
+      Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
+    - Dialogue: "Don\u2019t worry; I\u2019m fine with that even if it means you forget
+        about your weird uncle back home."
+      Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "I\u2019m gonna miss you."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1fb30350f01bdfa489b5e7e7f169ce01, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: "Really? In that case, you\u2019d better find a train to catch, and
+        quick."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "I meant to pack the whole house, but didn\u2019t have time."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1fb30350f01bdfa489b5e7e7f169ce01, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: A little bit of optimism never hurt anyone, you know. At least, until
+        it did.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: 'About time. '
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1fb30350f01bdfa489b5e7e7f169ce01, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: "Trick question, kiddo: no one\u2019s ever ready."
+      Portrait: {fileID: 0}
+    - Dialogue: All we can do is hope for the best and prepare for everything else.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Looks like it, though I wouldn\u2019t call myself ready."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1fb30350f01bdfa489b5e7e7f169ce01, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: Yeah, your Mom paid me to get you out of here as fast as possible.
+      Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
+    - Dialogue: "I\u2019ve been timing you this whole time...Nah, I\u2019m just joking."
+      Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: Why, are you here to push me out?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1fb30350f01bdfa489b5e7e7f169ce01, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: "What, a proud relative can\u2019t even say goodbye?"
+      Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: What do you want?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1fb30350f01bdfa489b5e7e7f169ce01, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "No one\u2019s ever ready, kiddo."
+      Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+    - Dialogue: All we can do is hope for the best and prepare for everything else.
+      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: Do I have to be ready?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1fb30350f01bdfa489b5e7e7f169ce01, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Silent:
+    NpcReactionText: []
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1fb30350f01bdfa489b5e7e7f169ce01, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  End: 0

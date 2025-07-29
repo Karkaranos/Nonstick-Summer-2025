@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Grandma_m5_1
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: There you are. Did you need help packing?
+    Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: "Of course! I\u2019m be more than willing to help my Pumpkin out.
+        ith me and you on the case nothing will be able to stop us."
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    - Dialogue: "I'm sure we can get this all unpacked before you can say, \u201CI
+        love you Nanna!\u201D"
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    CombinedDialogue:
+    - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
+        you."
+      Portrait: {fileID: 0}
+    - Dialogue: My, where has the time gone...
+      Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+    - Dialogue: Who knew that my little Pumpkin could grow so tall?
+      Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+    PlayerDialogue: "Not anymore, but I\u2019ll definitely need some help unpacking
+      all of this if you\u2019d be willing to help."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1aba6adb79996f9458d3d60f30b902f4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: Wow, you guys work really fast!
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    - Dialogue: And your poor old Nanna here thought that you might not be ready
+        to move out on your own.
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "We\u2019re already done, you don\u2019t have to worry about
+      it anymore."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1aba6adb79996f9458d3d60f30b902f4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "You should learn to rely on others sometimes. It\u2019s not good
+        to try and do everything yourself you know."
+      Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
+    - Dialogue: We are all here for that exact reason, to help you.
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "Don\u2019t worry, I got it all."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1aba6adb79996f9458d3d60f30b902f4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: "Really? In that case, you\u2019d better find a train to catch, and
+        quick."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Oh, I\u2019m not packing much; just a stick with a cloth tied
+      around the end."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1aba6adb79996f9458d3d60f30b902f4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: "Oh, I hadn\u2019t noticed. Sorry, dear."
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: I thought the packed suitcases were obvious.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1aba6adb79996f9458d3d60f30b902f4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: Of course.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Don\u2019t worry, I got it all."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1aba6adb79996f9458d3d60f30b902f4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: I sure hope not. Where would your Mom live?
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: What else is there to pack, the whole house?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1aba6adb79996f9458d3d60f30b902f4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: "Oh, I hadn\u2019t noticed. Silly me, I must have missed all the
+        boxes lying around."
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    - Dialogue: Sorry, dear.
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "We\u2019ve already taken care of it. Can\u2019t you see?"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1aba6adb79996f9458d3d60f30b902f4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: Oh alright...
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    - Dialogue: I guess I will just sit back then and give you guys some moral support
+        from the sidelines, just like I always do...
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: The rest of us can handle this. Unless you are going to turn
+      down an open invitation to sit and relax?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1aba6adb79996f9458d3d60f30b902f4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Silent:
+    NpcReactionText: []
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 1aba6adb79996f9458d3d60f30b902f4, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  End: 0

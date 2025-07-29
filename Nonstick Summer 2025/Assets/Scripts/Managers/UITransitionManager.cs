@@ -12,7 +12,7 @@ public class UITransitionManager
     private static Quaternion oldCameraLocalRotation;
 
     private static MeshRenderer playerMesh;
-    private static Transform playerCamTransform => GameManager.playerCameraRef.transform;
+    private static Transform playerCamTransform;
 
 
     public static GameObject CurrentCanvasReference { get; private set; }
@@ -53,13 +53,25 @@ public class UITransitionManager
         // hide player model
         if(playerMesh != null) playerMesh.enabled = false;
 
+        if (playerCamTransform == null)
+        {
+            playerCamTransform = GetPlayerCam();
+        }
+
+        //two null checks...
+        if (playerCamTransform == null)
+        {
+            return null;
+        }
+
         // move camera
         oldCameraAnchorPoint = playerCamTransform.parent; // these still need to be set, even if there is no camera anchor
         oldCameraLocalPosition = playerCamTransform.localPosition;
         oldCameraLocalRotation = playerCamTransform.localRotation;
+
         if (cameraAnchor != null)
         {
-            GameManager.playerCameraRef.transform.SetParent(cameraAnchor);
+            playerCamTransform.SetParent(cameraAnchor);
             playerCamTransform.localPosition = Vector3.zero;
             playerCamTransform.localRotation = Quaternion.identity;
         }
@@ -97,7 +109,7 @@ public class UITransitionManager
         // move camera back
         if(changeCam)
         {
-            GameManager.playerCameraRef.transform.SetParent(oldCameraAnchorPoint);
+            playerCamTransform.SetParent(oldCameraAnchorPoint);
             playerCamTransform.localPosition = oldCameraLocalPosition;
             playerCamTransform.localRotation = oldCameraLocalRotation;
             oldCameraAnchorPoint = null;
@@ -109,11 +121,18 @@ public class UITransitionManager
             CurrentCanvasReference = null;
         }
 
+        GameManager.DeckManagerReference.RefreshDeck();
+
     }
 
     public static void NullWorldReference()
     {
         WorldObjectReference = null;
+    }
+
+    private static Transform GetPlayerCam()
+    {
+        return GameManager.PlayerCameraRef == null ? GameObject.FindFirstObjectByType<PlayerCamera>()?.transform : GameManager.PlayerCameraRef?.transform;
     }
 
     

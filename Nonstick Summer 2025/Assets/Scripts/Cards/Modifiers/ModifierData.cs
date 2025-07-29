@@ -16,17 +16,27 @@ using NaughtyAttributes;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 //[CreateAssetMenu(fileName = "ModifierData", menuName = "Scriptable Objects/ModifierData")]
 public abstract class ModifierData : ScriptableObject
 {
-    [Tooltip("How many cards this modifier can apply to")] [Min(1)]
+    [Tooltip("How many cards this modifier can apply to")][Min(1)]
     public int MaxCardsApplied = 1;
 
-    [ShowIf("_showMinCardsApplied")] [Min(1)]
+    [ShowIf(nameof(_showMinCardsApplied)), Min(1)]
     public int MinCardsApplied = 1;
 
+    [SerializeField, ResizableTextArea]
+    protected string _tooltipDescription;
+
+    [SerializeField, ShowAssetPreview(32, 32), HideIf(nameof(_showIcon))]
+    protected Sprite icon;
+
+    #region Debug
     private bool _showMinCardsApplied => MaxCardsApplied > 1;
+    private bool _showIcon => new Type[] {typeof(EmotionChangeModifier), typeof(IntentionChangeModifier), typeof(StampModifierData)}.Contains(this.GetType());
+    #endregion
 
     /// <summary>
     /// Returns if modifier was successfully used
@@ -48,5 +58,19 @@ public abstract class ModifierData : ScriptableObject
     }
     protected abstract void ApplyModifier(CardData[] cards);
 
-    public abstract Sprite GetIcon();
+    public virtual Sprite GetIcon()
+    {
+        return icon;
+    }
+
+    public virtual string GetTooltipDescription()
+    {
+        return _tooltipDescription;
+    }
+
+    public virtual int GetHashCodeByProperties()
+    {
+        // Modifiers dont have that much to differentiate them :/
+        return HashCode.Combine(this.name); // <- this.name is single and ready to mingle
+    }
 }

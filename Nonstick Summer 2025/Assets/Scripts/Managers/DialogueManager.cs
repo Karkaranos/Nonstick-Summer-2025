@@ -42,6 +42,8 @@ public class DialogueManager
     }
     private static float _currentEnergy;
 
+    private static bool continueCardProcessing = false;
+
     // parameters
     private static float _defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent;
     public static float MaxEnergy, DrawButtonEnergyCost, EnergyGainedPerDiscard;
@@ -85,6 +87,13 @@ public class DialogueManager
 
         RelationshipManager.characterRelationships[currentCharacter].currentValue = relationshipScore;
 
+        if(relationshipScore < 0)
+        {
+
+            relationshipScore = 0;
+
+        }
+
         if(DialogueUIController.Instance != null)
         {
             yield return DialogueUIController.Instance.UpdateRelationship(relationshipScore, currentCharacter);
@@ -127,11 +136,22 @@ public class DialogueManager
         // ok i did it
     }
 
+    public static void StopCardProcessing()
+    {
+        continueCardProcessing = true;
+
+        //hardcoded for now; fix so any string works later
+        DialogueUIController.Instance.MuffleText();
+
+        OnCardPlayedFinished.Invoke();
+    }
+
     /// <summary>
     /// The big function that ties together everything. updates ui and processes a card
     /// </summary>
     public static IEnumerator ProcessPlayCard(CardData playedCard)
     {
+        continueCardProcessing = false;
         playedCardSinceOpeningCombat = true;
         ReadUserInput = false;
         OnCardPlayedStarted.Invoke();
@@ -146,8 +166,14 @@ public class DialogueManager
 
         //TODO wait for potential _modifier animations to finish
 
+
         if (playedCard != null)
             DialogueUIController.Instance.DeckDisplay.DiscardCard(playedCard);
+
+        if (continueCardProcessing)
+        {
+            yield break;
+        }
 
         yield return DialogueUIController.Instance.ToggleUIForDialogueProgression(false);
 
@@ -167,19 +193,35 @@ public class DialogueManager
         //yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange);
         GameManager.Instance.StartCoroutine(SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange));
 
-        // progress dialogue:
-        if (RelationshipManager.characterRelationships[currentCharacter].currentValue >= dialogueOption.RelationshipRequirement)
+        if((CurrentRelationshipScore + relationshipChange) < 0)
         {
-            Debug.Log("Player has enough RP for good branch");
-            CurrentDialogueBranch = dialogueOption.BranchingDialogue; 
-        }
-        else 
-        {
-            Debug.Log("Player has not met RP requirement");
-            CurrentDialogueBranch = dialogueOption.AlternateBranch; 
+
+            RelationshipManager.characterRelationships[currentCharacter].currentValue = 0;
+
         }
 
-        yield return DialogueUIController.Instance.ResetNPCDialogue();
+        // progress dialogue:
+        if (dialogueOption.RelationshipCheckRequired == false || RelationshipManager.characterRelationships[currentCharacter].currentValue > dialogueOption.RelationshipRange.y)
+        {
+            Debug.Log("Player has enough RP for good branch");
+            CurrentDialogueBranch = dialogueOption.BranchingDialogueHigh; 
+        }
+        else if(dialogueOption.RelationshipCheckRequired = true && RelationshipManager.characterRelationships[currentCharacter].currentValue <= dialogueOption.RelationshipRange.y && RelationshipManager.characterRelationships[currentCharacter].currentValue >= dialogueOption.RelationshipRange.x)
+        {
+            Debug.Log("Player has met RP requirement");
+            CurrentDialogueBranch = dialogueOption.BranchingDialogueNeutral; 
+        }
+        else if(dialogueOption.RelationshipCheckRequired = true && RelationshipManager.characterRelationships[currentCharacter].currentValue < dialogueOption.RelationshipRange.x)
+        {
+
+            Debug.Log("Player has not met RP requirement");
+            CurrentDialogueBranch = dialogueOption.BranchingDialogueLow;
+
+        }
+
+        DialogueUIController.Instance.UpdateDialogueTreeVisual(CurrentDialogueBranch);
+
+        yield return DialogueUIController.Instance.ResetNPCDialogue(dialogueOption);
 
         // TODO: move this to AFTER player reads all text, and can play cards again
         GameManager.Instance.StopCoroutine(SetCurrentEnergy(_currentEnergy));
@@ -193,8 +235,8 @@ public class DialogueManager
         // only keep reading user input if theres more
         ReadUserInput = true;//!CurrentDialogueBranch.End; 
 
-        if(playedCard != null)
-            MoodManager.UpdateMood(playedCard.Emotion);
+        //if(playedCard != null)
+            //MoodManager.UpdateMood(playedCard.Emotion);
 
         OnCardPlayedFinished.Invoke();
     }
@@ -204,6 +246,7 @@ public class DialogueManager
     /// </summary>
     public static void FinishReadingDialogue()
     {
+        DialogueUIController.Instance.UpdateHoveringCard(null);
         DialogueUIController.Instance.StartCoroutine(DialogueUIController.Instance.ToggleUIForDialogueProgression(true));
         ReadUserInput = true;
         DrawCards();

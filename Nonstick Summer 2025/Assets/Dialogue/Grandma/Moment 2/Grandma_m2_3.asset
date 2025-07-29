@@ -13,69 +13,157 @@ MonoBehaviour:
   m_Name: Grandma_m2_3
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Did you like your cake, honey?
-    Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+  - Dialogue: Would you mind helping your Nanna clean up around the kitchen?
+    Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
   Charming_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    PlayerDialogue: Yes!! It was sooooooo good....
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    NpcReactionText:
+    - Dialogue: "Don\u2019t go getting too cocky grandkid, you may have forgotten
+        that I am the originator of keeping things spotless."
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    - Dialogue: Make sure to take some notes, you might learn a thing or two!
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    CombinedDialogue:
+    - Dialogue: "Well.. no cake for those who don\u2019t want more! Early striker
+        gets the sugar, hehe. Maybe I should bring it home with me instead, or give
+        it to your cousin...."
+      Portrait: {fileID: 0}
+    - Dialogue: Have you said hi to your Cousin yet?
+      Portrait: {fileID: 0}
+    - Dialogue: It's always so nice to see the two of you playing...
+      Portrait: {fileID: 0}
+    - Dialogue: I don't think I've ever heard him laugh as much as he does with you.
+      Portrait: {fileID: 0}
+    PlayerDialogue: "Don\u2019t you worry Nanna, you\u2019re cleaning extraordinaire
+      grandkid is here to help out wherever you need!"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
   Assertive_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    PlayerDialogue: "It was fine... I liked it because you\u2019re the one who made
-      it."
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    NpcReactionText:
+    - Dialogue: "Oh, a little help can go a long ways. Even if it\u2019s not much
+        you\u2019re doing!"
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "I would, but there doesn\u2019t look like much left to help
+      with."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
   Sappy_Expression:
-    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    PlayerDialogue: It was so sweet and special.. and just like I imagined...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    NpcReactionText:
+    - Dialogue: "Oh, cheer up! It\u2019s more fun with help, anyways."
+      Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "I guess I can, but there isn\u2019t much left to help with."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
   Charming_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    PlayerDialogue: Yes.. the left overs better be for me!
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 10
-  Assertive_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    PlayerDialogue: It tasted like cardboard.
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -15
-  Sappy_Observation:
-    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    PlayerDialogue: "It was good, but Cousin ate so much of it that there\u2019s
-      not much left....Ugh"
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -5
-  Charming_Question:
-    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    PlayerDialogue: Could you bake for me again next year, Nanna? It was so good!
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: 15
-  Assertive_Question:
-    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    PlayerDialogue: Yeah, but why did I have to share it with everyone?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
-    ChangeInRelationshipStatus: -5
-  Sappy_Question:
-    BranchingDialogue: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    PlayerDialogue: I was sad it was so small.... could be bigger for more people,
-      no?
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+    NpcReactionText:
+    - Dialogue: Well, your Nanna has had enough for now. Maybe you can finish it
+        later yourself.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: I bet I will be able to find it in the fridge later.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
-  Silent:
-    BranchingDialogue: {fileID: 11400000}
-    PlayerDialogue: ...
-    RelationshipRequirement: 0
-    AlternateBranch: {fileID: 0}
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: 3 slices .. and lots of baking made with love!
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "There\u2019s only 3 slices left anyways."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: Mmmm, I suppose Nanna can make an exception... you can have some
+        later if you keep being good, kiddo.
+      Portrait: {fileID: 0}
+    CombinedDialogue: []
+    PlayerDialogue: "Oh.. I suppose that\u2019s okay, if you don\u2019t want to share..."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: If you could grab all of the candles from the cake and put them over
+        by the sink that would be great!
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    CombinedDialogue:
+    - Dialogue: "Don\u2019t take from your sweet Nanna, silly! Hands away, we need
+        to put it in the fridge to keep it good."
+      Portrait: {fileID: 0}
+    - Dialogue: Have you said hi to your Cousin yet?
+      Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+    - Dialogue: It's always so nice to see the two of you playing...
+      Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+    - Dialogue: I don't think I've ever heard him laugh as much as he does with you.
+      Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+    PlayerDialogue: Of course, what does Nanna need help with?
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: "I suppose so... It\u2019s still nice to help your Nanna though!"
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: Why do you need my help? Looks like you got it covered Nanna.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "I guess you're right, silly me. Why don\u2019t you send your cousin
+        in here to help me out instead."
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    - Dialogue: That does mean you're going to have to help me out when it is his
+        birthday though.
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "I\u2019d rather not on my birthday. Why don\u2019t you ask someone
+      else to help you?"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Silent:
+    NpcReactionText: []
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
   End: 0

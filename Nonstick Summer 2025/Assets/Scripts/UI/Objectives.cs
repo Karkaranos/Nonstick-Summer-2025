@@ -63,6 +63,7 @@ public class Objectives : MonoBehaviour
                     foreach(GameObject g in _conditions[j].RequiredObjects)
                     {
                         if(g!=null) g.GetComponent<IInteractableObjective>()?.ClearBlocker();
+                        if (g != null) g.GetComponent<IInteractableObjective>()?.ClearAllShaders();
                     }
                 }
                 /*if (_conditions[i].HideNextObjectiveIfClear)
@@ -98,6 +99,11 @@ public class Objectives : MonoBehaviour
                     {
                         g.GetComponent<IInteractableObjective>()?.ClearBlocker();
                     }
+                }
+                else
+                {
+                    var bed = FindFirstObjectByType<OpenConfirmationInteractable>();
+                    if (bed != null) bed.ClearBlocker();
                 }
             }
         }

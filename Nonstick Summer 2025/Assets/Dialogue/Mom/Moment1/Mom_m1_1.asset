@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: There you are! Did you clean up all your toys?
-    Portrait: {fileID: 21300000, guid: e75a4353cbdb2e348bd3e228fb6af449, type: 3}
+    Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "Is that so? I\u2019ll believe it when I see it."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
     CombinedDialogue: []
     PlayerDialogue: I did, and really fast too!
     RelationshipCheckRequired: 0
@@ -30,7 +30,7 @@ MonoBehaviour:
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: "Well, I told you to, didn\u2019t I? You had plenty of time."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
     CombinedDialogue: []
     PlayerDialogue: "I\u2019ll do it later"
     RelationshipCheckRequired: 0
@@ -43,7 +43,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "I will come look at it in a bit , but then we\u2019ll put it away
         together, okay?"
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
     CombinedDialogue: []
     PlayerDialogue: No...I wanted to show you what you built
     RelationshipCheckRequired: 0
@@ -93,7 +93,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "I don\u2019t see any, but if I trip over another one, you\u2019re
         going to be in trouble."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
     CombinedDialogue: []
     PlayerDialogue: I dunno...diiid I?
     RelationshipCheckRequired: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   Assertive_Question:
     NpcReactionText:
     - Dialogue: "Well, I told you to, didn\u2019t I? You had plenty of time."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Why?
     RelationshipCheckRequired: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "I will come look at it in a bit , but then we\u2019ll put it away
         together, okay?"
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
     CombinedDialogue: []
     PlayerDialogue: Can you help me?
     RelationshipCheckRequired: 0
@@ -129,8 +129,8 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Silent:
     NpcReactionText:
-    - Dialogue: "\u201CWell...\u201D"
-      Portrait: {fileID: 0}
+    - Dialogue: Well...
+      Portrait: {fileID: 21300000, guid: 032b2ac25e695414a96b9f1f4f473521, type: 3}
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

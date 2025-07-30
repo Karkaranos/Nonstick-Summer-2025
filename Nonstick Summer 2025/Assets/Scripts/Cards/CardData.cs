@@ -75,7 +75,12 @@ public partial class CardData : ScriptableObject
         if(!Application.isPlaying)
             newCost = _energyCost;
         else
-            newCost = _energyCost + MoodManager.emotions[_emotion].energyCostOffset;
+        {
+            if (MoodManager.emotions.ContainsKey(_emotion))
+                newCost = _energyCost + MoodManager.emotions[_emotion].energyCostOffset;
+            else
+                newCost = _energyCost;
+        }
 
         /*if(_stamps.Count > 0)
         {

@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: Grandma_m2_3
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: You better be good...
-    Portrait: {fileID: 0}
-  - Dialogue: Otherwise, no extra cake for you!
-    Portrait: {fileID: 0}
+  - Dialogue: Would you mind helping your Nanna clean up around the kitchen?
+    Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "Well.. no cake for those who don\u2019t want more! Early striker
-        gets the sugar, hehe. Maybe I should bring it home with me instead, or give
-        it to your cousin...."
-      Portrait: {fileID: 0}
+    - Dialogue: "Don\u2019t go getting too cocky grandkid, you may have forgotten
+        that I am the originator of keeping things spotless."
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    - Dialogue: Make sure to take some notes, you might learn a thing or two!
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
     CombinedDialogue:
     - Dialogue: "Well.. no cake for those who don\u2019t want more! Early striker
         gets the sugar, hehe. Maybe I should bring it home with me instead, or give
@@ -34,40 +33,40 @@ MonoBehaviour:
       Portrait: {fileID: 0}
     - Dialogue: I don't think I've ever heard him laugh as much as he does with you.
       Portrait: {fileID: 0}
-    PlayerDialogue: Maybe I already had all the cake I wanted before!
+    PlayerDialogue: "Don\u2019t you worry Nanna, you\u2019re cleaning extraordinaire
+      grandkid is here to help out wherever you need!"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "Well.. no cake for those who don\u2019t want more! Early striker
-        gets the sugar, hehe. Maybe I should bring it home with me instead, or give
-        it to your cousin...."
-      Portrait: {fileID: 0}
+    - Dialogue: "Oh, a little help can go a long ways. Even if it\u2019s not much
+        you\u2019re doing!"
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: I already had cake earlier.
+    PlayerDialogue: "I would, but there doesn\u2019t look like much left to help
+      with."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "Oh, cheer up! It\u2019s more fun with help, anyways."
+      Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "I guess I can, but there isn\u2019t much left to help with."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
-  Sappy_Expression:
-    NpcReactionText:
-    - Dialogue: "You\u2019ve had enough sugar for now! Maybe if you are good, you
-        can ask your Mama later."
-      Portrait: {fileID: 0}
-    CombinedDialogue: []
-    PlayerDialogue: Aww.. I wanted another one.
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
   Charming_Observation:
     NpcReactionText:
     - Dialogue: Well, your Nanna has had enough for now. Maybe you can finish it
@@ -108,9 +107,9 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "Don\u2019t take from your sweet Nanna, silly! Hands away, we need
-        to put it in the fridge to keep it good."
-      Portrait: {fileID: 0}
+    - Dialogue: If you could grab all of the candles from the cake and put them over
+        by the sink that would be great!
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
     CombinedDialogue:
     - Dialogue: "Don\u2019t take from your sweet Nanna, silly! Hands away, we need
         to put it in the fridge to keep it good."
@@ -121,7 +120,7 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
     - Dialogue: I don't think I've ever heard him laugh as much as he does with you.
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
-    PlayerDialogue: Haha, what if I take it first?
+    PlayerDialogue: Of course, what does Nanna need help with?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
@@ -130,30 +129,33 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: Well, your Nanna has had enough for now. Maybe you can finish it
-        later yourself.
-      Portrait: {fileID: 0}
+    - Dialogue: "I suppose so... It\u2019s still nice to help your Nanna though!"
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
     CombinedDialogue: []
-    PlayerDialogue: Are you going to eat it all yourself?
+    PlayerDialogue: Why do you need my help? Looks like you got it covered Nanna.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "I guess you're right, silly me. Why don\u2019t you send your cousin
+        in here to help me out instead."
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    - Dialogue: That does mean you're going to have to help me out when it is his
+        birthday though.
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    CombinedDialogue: []
+    PlayerDialogue: "I\u2019d rather not on my birthday. Why don\u2019t you ask someone
+      else to help you?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
-  Sappy_Question:
-    NpcReactionText:
-    - Dialogue: Mmmm, I suppose Nanna can make an exception... you can have some
-        later if you keep being good, kiddo.
-      Portrait: {fileID: 0}
-    CombinedDialogue: []
-    PlayerDialogue: But Nanna, can I have any more..?
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: b5bc14ec6a06abf44b04978d3f74d9f0, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
   Silent:
     NpcReactionText: []
     CombinedDialogue: []

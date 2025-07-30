@@ -38,6 +38,8 @@ public partial class CardDisplay : MonoBehaviour
 
     public UnityEvent<CardDisplay> OnMouseDown = new UnityEvent<CardDisplay> ();
 
+    bool canPlayHover = true;
+
     private void Start()
     {
         if (card != null) SetCard(card); // mostly for debugging
@@ -48,6 +50,7 @@ public partial class CardDisplay : MonoBehaviour
         {
             mouseInteraction.OnMouseHoverStart.AddListener(OnMouseHoverStart);
             mouseInteraction.OnMouseHoverEnd.AddListener(OnMouseHoverEnd);
+            mouseInteraction.OnMouseHoverStay.AddListener(OnMouseHoverStart);
             mouseInteraction.OnMouseDown.AddListener(OnMouseDownStart);
         }
 
@@ -91,6 +94,11 @@ public partial class CardDisplay : MonoBehaviour
         if (DialogueUIController.Instance != null && DialogueUIController.Instance.DeckDisplay.FirstSelectedCard == null 
             && DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput)
            DialogueUIController.Instance.UpdateHoveringCard(card);
+        if (canPlayHover)
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.CardHoverSFX);
+            canPlayHover = false;
+        }
     }
 
     private void OnMouseHoverEnd() // TODO this should be moved to another script
@@ -98,6 +106,7 @@ public partial class CardDisplay : MonoBehaviour
         if (DialogueUIController.Instance != null && DialogueUIController.Instance.DeckDisplay.FirstSelectedCard == null
             && DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput)
             DialogueUIController.Instance.UpdateHoveringCard(null);
+        canPlayHover = true;
     }
 
     private void OnMouseDownStart()

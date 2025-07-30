@@ -1,4 +1,5 @@
 using NaughtyAttributes;
+using System.Collections.Generic;
 using UnityEngine;
 
 /*****************************************************************************
@@ -12,8 +13,15 @@ using UnityEngine;
 *****************************************************************************/
 public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
 {
+
+    [Header("Shaders")]
+    [SerializeField, Tooltip("Indicates this object is used in Objectives")] private bool applyLevelEndShader;
+    [ShowIf("applyLevelEndShader"), SerializeField] private Material levelEndShader;
+    [ShowIf("applyLevelEndShader"), SerializeField, Tooltip("GameObjects to affect")] private GameObject[] affectedMeshes;
+
+    [Header("Scene Transition")]
     [HideInInspector] public bool InteractSuccessful = false;
-    [HideInInspector] public bool BossDefeated = false;
+    [HideInInspector] public bool PlayerCanLeave = false;
     [SerializeField, Scene] public int NextSceneIndex;
     [SerializeField, Tooltip("Which object moves you between scenes.")] BedInteractionPopupCanvas.EndType sceneTransitionType;
 
@@ -29,7 +37,11 @@ public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
     {
         if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.Contains('5'))
         {
-            BossDefeated = true;
+            PlayerCanLeave = true;
+            if (applyLevelEndShader)
+            {
+                SetShader();
+            }
         }
     }
 
@@ -38,6 +50,31 @@ public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor, gameObject);
         menu.GetComponent<BedInteractionPopupCanvas>().Bed = this;
         menu.GetComponent<BedInteractionPopupCanvas>().SceneTransitionType = sceneTransitionType;
+    }
+
+    public void ClearBlocker()
+    {
+        PlayerCanLeave = true;
+        if(applyLevelEndShader)
+        {
+            SetShader();
+        }
+    }
+
+    public void SetShader()
+    {
+        foreach (GameObject g in affectedMeshes)
+        {
+            Renderer mr = g.GetComponent<Renderer>();
+            List<Material> allMats = new List<Material>();
+            foreach (Material m in mr.materials)
+            {
+                allMats.Add(m);
+            }
+            if (applyLevelEndShader && levelEndShader != null)
+                allMats.Add(levelEndShader);
+            mr.SetMaterials(allMats);
+        }
     }
 
 #if UNITY_EDITOR
@@ -54,8 +91,4 @@ public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
         Gizmos.DrawWireSphere(cameraAnchor.position, 0.25f);
     }
 #endif
-    public void ClearBlocker()
-    {
-        BossDefeated = true;
-    }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
 
-public class AudioManager : Singleton<AudioManager>
+public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance { get; private set; }
 
@@ -19,9 +19,8 @@ public class AudioManager : Singleton<AudioManager>
     [Range(0, 1)]
     public float musicVolume;
 
-    private void Start()
+    private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
         if (instance != null)
         {
             Debug.Log("There is more than one AudioManager in the scene");
@@ -32,6 +31,12 @@ public class AudioManager : Singleton<AudioManager>
         sfxBus = RuntimeManager.GetBus("bus:/SFX");
         bgmBus = RuntimeManager.GetBus("bus:/BGM");
 
+        //UpdateVolume();
+    }
+
+    private void Start()
+    {
+        
     }
 
     public void PlayOneShot(EventReference sound)

@@ -223,44 +223,31 @@ public partial class CardDisplay : MonoBehaviour
 
     private void UpdateStampIcons()
     {
-        int i;
-        for (i = 0; i<card.Stamps.Count && i<StampImages.Length; i++)
+        string[] names =
         {
-            var stamp = card.Stamps.ElementAt(i);
+            "Overthinking", "Repetition", "Mumble", "Confidence", "Energy Bonus"
+        };
 
-            if (stamp == null)
-                continue;
-
-            StampImages[SetStampActive(stamp.StampName)].SetStamp(stamp);
-        }
-
-        for(;i<StampImages.Length; i++)
+        for(int i=0; i<names.Length && i < StampImages.Length; i++)
         {
-            StampImages[i].SetStamp(null);
-        }
+            int index = HasCard(names[i]);
+            if (index > -1 && index < StampImages.Length)
+            {
+                StampImages[i].SetStamp(card.Stamps.ElementAt(index));
+            }
 
-        if (card.Stamps.Count > StampImages.Length)
-        {
-            Debug.LogError("not enough stamp icons for the number of stamps");
         }
+        
     }
 
-    private int SetStampActive(string name)
+    private int HasCard(string test)
     {
-        switch(name)
+        for(int i=0; i<card.Stamps.Count; i++)
         {
-            case "Overthinking":
-                return 0;
-            case "Repetition":
-                return 1;
-            case "Mumble":
-                return 2;
-            case "Confidence":
-                return 3;
-            case "Energy Bonus":
-                return 4;
-            default:
-                return -1;
+            if (card.Stamps.ElementAt(i).StampName == test)
+                return i;
         }
+        return -1;
     }
+
 }

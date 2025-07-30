@@ -231,7 +231,7 @@ public partial class CardDisplay : MonoBehaviour
             if (stamp == null)
                 continue;
 
-            StampImages[i].SetStamp(stamp);
+            StampImages[SetStampActive(stamp.StampName)].SetStamp(stamp);
         }
 
         for(;i<StampImages.Length; i++)
@@ -242,6 +242,25 @@ public partial class CardDisplay : MonoBehaviour
         if (card.Stamps.Count > StampImages.Length)
         {
             Debug.LogError("not enough stamp icons for the number of stamps");
+        }
+    }
+
+    private int SetStampActive(string name)
+    {
+        switch(name)
+        {
+            case "Overthinking":
+                return 0;
+            case "Repetition":
+                return 1;
+            case "Mumble":
+                return 2;
+            case "Confidence":
+                return 3;
+            case "Energy Bonus":
+                return 4;
+            default:
+                return -1;
         }
     }
 }

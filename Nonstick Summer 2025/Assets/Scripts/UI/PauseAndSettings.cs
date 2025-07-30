@@ -1,16 +1,37 @@
 /*************************************************
 Author Names :          Cade, Naylor
 Date Created :          June 20, 2025
-Date Modified :         June 20, 2025
+Date Modified :         July 29, 2025
 Brief Description :     Handles UI functionality for pause and settings menu
 ***************************************************/
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseAndSettings : MonoBehaviour
 {
     [SerializeField] private GameObject _settings;
     [HideInInspector] public bool OpenedFromPause;  // Reopens the pause menu if the setting menu is closed and it had been opened from pause
     private static OpenPause _openPauseReference;
+
+    [SerializeField] private Slider _mouseSensitivitySlider;
+    [SerializeField] private Slider _sfxVolume;
+    [SerializeField] private Slider _musicVolume;
+
+    private AudioManager am;
+
+    private void Start()
+    {
+        am = FindFirstObjectByType<AudioManager>();
+
+        if (_mouseSensitivitySlider != null)
+            _mouseSensitivitySlider.value = FindFirstObjectByType<PlayerCamera>().Sensitivity;
+
+        if (_sfxVolume != null)
+            _sfxVolume.value = am.sfxVolume;
+
+        if (_musicVolume != null)
+            _musicVolume.value = am.musicVolume;
+    }
 
     /// <summary>
     /// Resume normal gameplay and close the pause menu
@@ -63,6 +84,23 @@ public class PauseAndSettings : MonoBehaviour
         {
             UITransitionManager.CloseMenu();
         }
+    }
+
+    public void UpdateMouseSensitivity(float val)
+    {
+        FindFirstObjectByType<PlayerCamera>().UpdateSensitivity(val);
+    }
+
+    public void UpdateSFXVolume(float val)
+    {
+        am.sfxVolume = val;
+        am.UpdateVolume();
+    }
+
+    public void UpdateMusicVolume(float val)
+    {
+        am.musicVolume = val;
+        am.UpdateVolume();
     }
 
 

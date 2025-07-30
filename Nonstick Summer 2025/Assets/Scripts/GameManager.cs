@@ -63,6 +63,8 @@ public class GameManager : Singleton<GameManager>
     [Foldout("Relationship Manager")] [SerializeField] private RelationshipStats cousinStartingValue;
     [Foldout("Relationship Manager")] [SerializeField] private RelationshipStats momStartingValue;
 
+    public static float Sensitivity = .4f;
+
 
 
 

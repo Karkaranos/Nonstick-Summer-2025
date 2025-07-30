@@ -19,7 +19,6 @@ using UnityEngine.UI;
 public class DialogueNPCPortraitDisplay : MonoBehaviour
 {
     [SerializeField, Required] private Image NPCImage;
-    [SerializeField, Required] private Image NPCReation;
 
     private Coroutine portraitAnimation;
 

@@ -1,5 +1,6 @@
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*****************************************************************************
 * File Name :         GameManager.cs
@@ -63,6 +64,8 @@ public class GameManager : Singleton<GameManager>
     [Foldout("Relationship Manager")] [SerializeField] private RelationshipStats cousinStartingValue;
     [Foldout("Relationship Manager")] [SerializeField] private RelationshipStats momStartingValue;
 
+    public static float Sensitivity = .4f;
+
 
 
 
@@ -80,6 +83,27 @@ public class GameManager : Singleton<GameManager>
         RelationshipManagerReference = RelationshipManagerReference ?? new RelationshipManager(grandmaStartingValue, uncleStartingValue, cousinStartingValue, momStartingValue);
         ModifierManagerReference = ModifierManagerReference ?? new ModifierManager(startingModifiers);
         ObjectiveReference = FindFirstObjectByType<Objectives>();
+
+    }
+
+    void OnEnable()
+    {
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
+    }
+
+    void OnDisable()
+    {
+
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+
+        DialogueManager.CurrentEnergy = _defaultEnergy;
 
     }
 

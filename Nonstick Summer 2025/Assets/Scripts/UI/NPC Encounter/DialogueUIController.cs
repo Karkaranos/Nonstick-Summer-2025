@@ -97,7 +97,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         //yield return OpenCombatUI_Coroutine();
 
-        yield return dialogueBox.Initialize(startBranch);
+        yield return dialogueBox.Initialize(startBranch, character);
     }
 
     public IEnumerator OpenCombatUI_Coroutine()

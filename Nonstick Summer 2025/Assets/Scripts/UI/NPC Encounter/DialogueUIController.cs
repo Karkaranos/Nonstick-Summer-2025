@@ -112,8 +112,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
         // card is null, it hides the text bubble
         playerDialogueBubble.WriteText(card);
 
-        if(card!=null)
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.CardHoverSFX);
+        /*if(card!=null)
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.CardHoverSFX);*/
     }
 
     // TODO move a lot of this to play button script

@@ -28201,7 +28201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 693395867}
   m_Layer: 0
-  m_Name: NewStuff
+  m_Name: NewKitchen&Furniture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37112,8 +37112,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1938504644}
+  m_Children: []
   m_Father: {fileID: 1122486656}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &952431558
@@ -78288,11 +78287,11 @@ Transform:
   m_GameObject: {fileID: 1938504643}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.75, y: 2, z: 11}
+  m_LocalPosition: {x: -12.310694, y: 0.6280054, z: 33.304554}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 947304619}
+  m_Father: {fileID: 1945103601}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1938504645
 MeshCollider:
@@ -78863,6 +78862,7 @@ Transform:
   - {fileID: 1946590844}
   - {fileID: 2087944903}
   - {fileID: 70370443}
+  - {fileID: 1938504644}
   m_Father: {fileID: 693395867}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1945355054

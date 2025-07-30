@@ -154,6 +154,15 @@ public class DialogueUIController : Singleton<DialogueUIController>
     //TODO move to play button script
     public void PlayCardPressed()
     {
+
+        if(selectedCardData != null && Mathf.Abs(selectedCardData.EnergyCost) > DialogueManager.CurrentEnergy)
+        {
+
+            //there should be a sound effect that plays here i think
+            return;
+
+        }
+
         if(IfCloseCombat)
         {
             // TODO open a new menu?

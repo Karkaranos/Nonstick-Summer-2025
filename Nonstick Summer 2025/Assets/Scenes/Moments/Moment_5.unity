@@ -34817,6 +34817,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: CanvasToOpenPrefab
+      value: 
+      objectReference: {fileID: 8553161507268041164, guid: 5c2062952a7ac4c498cb33cfe6bd02ae, type: 3}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: StartingDialogueBranch
       value: 
       objectReference: {fileID: 11400000, guid: 495e03d710bb2684aaceb1f7cb73bf6f, type: 2}
@@ -37570,7 +37574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1708879188632933898, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 35.656124
       objectReference: {fileID: 0}
     - target: {fileID: 1708879188632933898, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -37630,7 +37634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4067548123240273524, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 10.885375
       objectReference: {fileID: 0}
     - target: {fileID: 4067548123240273524, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -37670,7 +37674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5520967587660388783, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 60.426876
       objectReference: {fileID: 0}
     - target: {fileID: 5520967587660388783, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -50236,11 +50240,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8412335191130524943, guid: 1b5ab685e734f574c9d1e7815a237b25, type: 3}
       propertyPath: _maxEnergy
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8412335191130524943, guid: 1b5ab685e734f574c9d1e7815a237b25, type: 3}
       propertyPath: _defaultEnergy
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8412335191130524943, guid: 1b5ab685e734f574c9d1e7815a237b25, type: 3}
       propertyPath: _energyGainedPerRound
@@ -64457,6 +64461,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: CanvasToOpenPrefab
+      value: 
+      objectReference: {fileID: 8553161507268041164, guid: 5c2062952a7ac4c498cb33cfe6bd02ae, type: 3}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: StartingDialogueBranch
       value: 
       objectReference: {fileID: 11400000, guid: 8afa266c34ebe5945ada717f8bc4c586, type: 2}
@@ -71967,12 +71975,13 @@ MonoBehaviour:
   preCombatLine: '*AHEM*, what''s up?'
   postCombatLine: Can't believe I'm next...
   characterSprite: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
-  CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: f8dd72b5a21b9b341ae4f2b2aa00a8c3, type: 3}
+  CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: 5c2062952a7ac4c498cb33cfe6bd02ae, type: 3}
   StartingDialogueBranch: {fileID: 11400000, guid: b492e64e92945854c8aca5e140c0a930, type: 2}
   cameraAnchor: {fileID: 0}
   character: 2
   PossibleModifiers:
   - {fileID: 11400000, guid: f2ca2cad2d5f3834187f980423098bc9, type: 2}
+  ModifierObtainCanvas: {fileID: 8553161507268041164, guid: 092413676022d3a49bd218b9bc1ce83b, type: 3}
 --- !u!4 &1643650103 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 621988117311664097, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
@@ -88368,12 +88377,13 @@ MonoBehaviour:
   preCombatLine: Can we talk?
   postCombatLine: I'm proud of you, Kid. So proud...
   characterSprite: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
-  CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: f8dd72b5a21b9b341ae4f2b2aa00a8c3, type: 3}
+  CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: 5c2062952a7ac4c498cb33cfe6bd02ae, type: 3}
   StartingDialogueBranch: {fileID: 11400000, guid: 13d0923af67bf7742898f02c129c5461, type: 2}
   cameraAnchor: {fileID: 0}
   character: 3
   PossibleModifiers:
   - {fileID: 11400000, guid: c195a113035d86c458c41d0c875da62f, type: 2}
+  ModifierObtainCanvas: {fileID: 8553161507268041164, guid: 092413676022d3a49bd218b9bc1ce83b, type: 3}
 --- !u!4 &2128451451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 621988117311664097, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}

@@ -179,14 +179,15 @@ public class DialogueUIController : Singleton<DialogueUIController>
         {
             // TODO open a new menu?
             Debug.Log("Close combat!");
-            UITransitionManager.CloseMenu();
             if(isBoss)
             {
+                UITransitionManager.CloseMenu();
                 GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.FINISH_COMBAT);
                 GameManager.ObjectiveReference.SetObjectiveVisibility(true);
             }
             else
             {
+                UITransitionManager.CloseMenu(false, false);
                 GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.TALK_TO_SIDE_CHARACTER, inWorldCharacter);
                 GameManager.ObjectiveReference.SetObjectiveVisibility(true);
                 inWorldCharacter.GetComponent<SideCharacterInteractable>().FinishSideCombat();

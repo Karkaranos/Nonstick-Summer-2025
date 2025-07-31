@@ -23,19 +23,29 @@ public class ItemObtainPopupCanvas : MonoBehaviour
     [SerializeField, Tooltip("Displays before a Card's description")] private string modifierMessage = "Stamp Description: ";
     [SerializeField, Tooltip("Displays before a Card's name")] private string cardStatement = "You found a";
     [SerializeField, Tooltip("Displays when a card is picked up")] private string cardMessage = "Would you like to pick it up?";
-    [SerializeField] private Image displayImage;
+    [SerializeField] private Image modifierDisplay;
+    [SerializeField] private CardDisplay cardDisplay;
+    [SerializeField] private Button takeCard;
+    [SerializeField] private Button leaveCard;
 
     [SerializeField] private Color charming;
     [SerializeField] private Color assertive;
     [SerializeField] private Color sappy;
 
     private Color defaultCol;
-    public void Initialize(ModifierData? modifier = null, CardData? card = null)
+    private CardPickupInteractable cardPickupScript;
+    public void Initialize(ModifierData? modifier = null, CardData? card = null, CardPickupInteractable? origin = null)
     {
         defaultCol = statement.color;
         if(modifier == null && card == null)
         {
             return;
+        }
+
+        if(origin!=null)
+        {
+            cardPickupScript = origin;
+            takeCard.onClick.AddListener(() => origin.TakeCard());
         }
 
         if(modifier != null)
@@ -44,7 +54,7 @@ public class ItemObtainPopupCanvas : MonoBehaviour
             cardPickup.SetActive(false);
             modifierPickup.SetActive(true);
 
-            displayImage.sprite = modifier.GetIcon();
+            modifierDisplay.sprite = modifier.GetIcon();
             if (modifier.name.Contains("Change"))
             {
                 statement.text = TextUtilities.FilterText(modifierStatement + ColorStamp(modifier.name) + "Stamp!");
@@ -67,9 +77,12 @@ public class ItemObtainPopupCanvas : MonoBehaviour
             cardPickup.SetActive(true);
             modifierPickup.SetActive(false);
             cardStatement += (card.GetEmotion() == CardEmotion.Assertive ? "n " :  " ");
-            statement.text = cardStatement + ColorCard(card.GetEmotion()) + card.GetIntention() + " card!";
+            statement.text = TextUtilities.FilterText(cardStatement + ColorCard(card.GetEmotion()) + card.GetIntention() + " card!");
 
             message.text = cardMessage;
+
+
+            cardDisplay.SetCard(card);
         }
     }
 

@@ -79,25 +79,33 @@ public class PauseAndSettings : MonoBehaviour
     /// </summary>
     public void CloseSettings()
     {
-        //If the line in else is not in an else, the cursor is hidden when returning to the pause menu
-        if (OpenedFromPause)
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != 0)
         {
-            UITransitionManager.CloseMenu(false, false);
-            print("sjhhlgfdshgjfdsjhgshgjs");
-            //i know static would help but it would set off a chain of making things static
-            //and you couldn't assign pauseMenu in the inspector when i tried. if people have thoughts of a better way
-            //please let me know!
 
-            if(_openPauseReference == null)
+            //If the line in else is not in an else, the cursor is hidden when returning to the pause menu
+            if (OpenedFromPause)
             {
-                _openPauseReference = FindFirstObjectByType<OpenPause>();
-            }
+                UITransitionManager.CloseMenu(false, false);
+                print("sjhhlgfdshgjfdsjhgshgjs");
+                //i know static would help but it would set off a chain of making things static
+                //and you couldn't assign pauseMenu in the inspector when i tried. if people have thoughts of a better way
+                //please let me know!
 
-            _openPauseReference.PausePressed();
+                if (_openPauseReference == null)
+                {
+                    _openPauseReference = FindFirstObjectByType<OpenPause>();
+                }
+
+                _openPauseReference.PausePressed();
+            }
+            else
+            {
+                UITransitionManager.CloseMenu();
+            }
         }
         else
         {
-            UITransitionManager.CloseMenu();
+            FindFirstObjectByType<MainMenu>().CloseMenu();
         }
     }
 

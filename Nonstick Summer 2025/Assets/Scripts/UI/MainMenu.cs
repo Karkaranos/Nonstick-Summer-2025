@@ -15,6 +15,10 @@ using NaughtyAttributes;
 public class MainMenu : MonoBehaviour
 {
     [Scene] [SerializeField] private int MainGameplayScene=1;
+    [SerializeField] private GameObject controls;
+    [SerializeField] private GameObject credits;
+
+    private GameObject openMenu;
 
     //maybe put cursor shenanigans here
     private void Start()
@@ -33,6 +37,26 @@ public class MainMenu : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(MainGameplayScene);
         //Cursor.visible = false; CALEB CALEB CALEB CALEB CALEB CALB
+    }
+
+    public void OpenControls()
+    {
+        CloseMenu();
+        openMenu = Instantiate(controls);
+    }
+
+    public void OpenCredits()
+    {
+        CloseMenu();
+        openMenu = Instantiate(credits);
+    }
+
+    public void CloseMenu()
+    {
+        if(openMenu != null)
+        {
+            Destroy(openMenu);
+        }
     }
 
 

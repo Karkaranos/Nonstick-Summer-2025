@@ -28,7 +28,10 @@ public class DreamSequence : MonoBehaviour
     [SerializeField] private PersonalityOption redOption;
     [SerializeField] private PersonalityOption blueOption;
 
+    [SerializeField] private GameObject confirmation;
+
     private CardEmotion selectedEmotion = CardEmotion.NotSelected;
+    private Material currentMat;
 
     public void Initialize()
     {
@@ -108,9 +111,12 @@ public class DreamSequence : MonoBehaviour
     private void OnConfirmPressed()
     {
         MoodManager.SetDreamSequenceCost(selectedEmotion);
-        UITransitionManager.CloseMenu(changeCam: false);
+        UITransitionManager.CloseMenu(false, false);
 
-        MusicManager.instance.StartHouse();
+        var newMenu = UITransitionManager.OpenMenu(confirmation).GetComponent<SocialBatteryNotifCanvas>();
+        newMenu.Initialize(selectedEmotion, Background.material);
+
+
     }    
 
     /*************************************************

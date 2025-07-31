@@ -117,6 +117,8 @@ public class DialogueManager
         _currentEnergy = defaultEnergy;
     }
 
+    //so apparently this only gets called in the very first scene??
+    //anyhow BOOYAH LET'S GO BUG FIXING
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     private static void OnMomentStarted()
     {
@@ -169,6 +171,7 @@ public class DialogueManager
 
         if (playedCard != null)
             DialogueUIController.Instance.DeckDisplay.DiscardCard(playedCard);
+
 
         if (continueCardProcessing)
         {

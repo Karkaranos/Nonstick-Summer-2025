@@ -10,6 +10,8 @@ using UnityEngine.UI;
 public class PauseAndSettings : MonoBehaviour
 {
     [SerializeField] private GameObject _settings;
+    [SerializeField] private GameObject _controls;
+    [SerializeField] private GameObject _pause;
     [HideInInspector] public bool OpenedFromPause;  // Reopens the pause menu if the setting menu is closed and it had been opened from pause
     private static OpenPause _openPauseReference;
 
@@ -61,14 +63,27 @@ public class PauseAndSettings : MonoBehaviour
 
     }
 
+    public void OpenControlsFromPause()
+    {
+        GameObject controlRef = UITransitionManager.OpenMenu(_controls);
+        controlRef.GetComponent<PauseAndSettings>().OpenedFromPause = true;
+    }
+
+    public void OpenControls()
+    {
+        GameObject controlRef = UITransitionManager.OpenMenu(_controls);
+    }
+
     /// <summary>
     /// Closes the settings and handles cases depending on whether this was opened from pause or not
     /// </summary>
     public void CloseSettings()
     {
         //If the line in else is not in an else, the cursor is hidden when returning to the pause menu
-        if(OpenedFromPause)
+        if (OpenedFromPause)
         {
+            UITransitionManager.CloseMenu(false, false);
+            print("sjhhlgfdshgjfdsjhgshgjs");
             //i know static would help but it would set off a chain of making things static
             //and you couldn't assign pauseMenu in the inspector when i tried. if people have thoughts of a better way
             //please let me know!

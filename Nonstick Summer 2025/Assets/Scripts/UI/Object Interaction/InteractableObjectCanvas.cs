@@ -34,6 +34,8 @@ public class InteractableObjectCanvas : MonoBehaviour
     [SerializeField] [Required] private TMP_Text statementField;
     [SerializeField] [Required] private TMP_Text questionField;
 
+    [SerializeField] [Required] private GameObject ModifierObtainCanvas;
+
     public void Initialize(string statement, string question, PersonalityOption[] options)
     {
         Button1.onClick.AddListener(() => OnClickInteractableObject(options[0]));
@@ -67,8 +69,15 @@ public class InteractableObjectCanvas : MonoBehaviour
     {
         foreach (ModifierData md in PO.ModifiersToGive)
         {
+            var iopc = UITransitionManager.OpenMenu(ModifierObtainCanvas, cameraAnchor).GetComponent<ItemObtainPopupCanvas>();
+            iopc.Initialize(md);
             ModifierManager.AddCard(md, true);
         }
+    }
+
+    public void OpenModifierCanvas()
+    {
+
     }
 
 

@@ -40,6 +40,8 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
 
     private bool conversationComplete = false;
 
+    [SerializeField, Required] private GameObject ModifierObtainCanvas;
+
 
 
     /// <summary>
@@ -72,6 +74,10 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
     {
         conversationComplete = true;
         int i = PossibleModifiers.Length;
-        ModifierManager.AddCard(PossibleModifiers[(int)Random.Range(int.MinValue, int.MaxValue) % i]);
+        var modifier = PossibleModifiers[(int)Random.Range(int.MinValue, int.MaxValue) % i];
+        ModifierManager.AddCard(modifier);
+        var iopc = UITransitionManager.OpenMenu(ModifierObtainCanvas, cameraAnchor, null).GetComponent<ItemObtainPopupCanvas>();
+        iopc.Initialize(modifier);
+
     }
 }

@@ -21,6 +21,8 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
     [Header("UI Text")]
     [SerializeField, Tooltip("Text that always appears when this object is selected")] private string _statement = "You are looking at an object";
     [SerializeField] private string _question = "Question not set.";
+    [SerializeField, Tooltip("Displays after interacting with this object before the response the player chose")] private string _response = "Response not set";
+    [SerializeField, Tooltip("Displays if object cannot be interacted with")] private string _cannotInteract = "You cannot interact with this yet.";
     [SerializeField] private PersonalityOption[] _options = new PersonalityOption[3];
 
     private bool hasGivenCard = false;
@@ -31,6 +33,8 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
 
     private OpenBossInteractable obi;
     [HideInInspector] public bool InteractSuccessful = false;
+
+    [HideInInspector] public string chosenOption;
 
     private void Start()
     {
@@ -46,7 +50,8 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
 
     public void Interact(GameObject player)
     {
-        if((!isObjective || (isObjective && canBeInteractedWith)) && !hasGivenCard)
+        var canvas = UITransitionManager.OpenMenu(CanvasToOpen).GetComponent<InteractableObjectCanvas>();
+        if ((!isObjective || (isObjective && canBeInteractedWith)) && !hasGivenCard)
         {
             if (!GameManager.ObjectiveReference)
             {
@@ -54,8 +59,7 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
             }
             GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.INTERACT_WITH_OBJECT, gameObject);
 
-            var canvas = UITransitionManager.OpenMenu(CanvasToOpen).GetComponent<InteractableObjectCanvas>();
-            canvas.Initialize(_statement, _question, _options);
+            canvas.Initialize(_statement, _question, _options, gameObject);
 
             InteractSuccessful = true;
             TryBoss();
@@ -66,6 +70,15 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
 
             if(applyShaders)
                 ClearAllShaders();
+        }
+        else if (!hasGivenCard)
+        {
+            canvas.InitializeWithBlocker(_statement, _cannotInteract);
+
+        }
+        else
+        {
+            canvas.InitializeAfterModifier(_statement, _response, chosenOption);
         }
     }
 

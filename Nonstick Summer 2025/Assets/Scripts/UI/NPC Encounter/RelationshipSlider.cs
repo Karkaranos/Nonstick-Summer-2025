@@ -31,8 +31,6 @@ public class RelationshipSlider : MonoBehaviour
         slider.minValue = 0;
         slider.maxValue = maxValue;
         SetValueNoAnimation(currentValue);
-
-        InputEvents.ToggleStarted.AddListener(TogglePressed);
     }
 
     /// <summary>
@@ -79,24 +77,4 @@ public class RelationshipSlider : MonoBehaviour
         yield return SetValue(RelationshipManager.characterRelationships[character].currentValue);
     }
 
-    bool toggledOff = true;
-    private void TogglePressed()
-    {
-
-        if(toggledOff == true)
-        {
-
-            this.gameObject.SetActive(false);
-            toggledOff = false;
-
-        }
-        else
-        {
-
-            this.gameObject.SetActive(true);
-            toggledOff = true;
-
-        }
-
-    }
 }

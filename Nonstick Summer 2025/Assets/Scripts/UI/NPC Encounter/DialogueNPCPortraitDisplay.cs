@@ -38,7 +38,12 @@ public class DialogueNPCPortraitDisplay : MonoBehaviour
 
         //instantiates animation
         //making a new function to prevent clutter
-        PlayReaction(dialogue, character);
+        if(dialogue.AnimatedReaction != null)
+        {
+
+            PlayReaction(dialogue, character);
+
+        }
 
         portraitAnimation = StartCoroutine(UpdateSpriteCoroutine(dialogue.Portrait));
     }

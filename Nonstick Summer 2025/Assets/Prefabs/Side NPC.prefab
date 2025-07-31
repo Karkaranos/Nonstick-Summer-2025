@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 368249545651296241}
   - component: {fileID: 6140443048461262060}
+  - component: {fileID: 6932529799056026667}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -87,6 +88,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6932529799056026667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2201941223782920062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd3aa63ec586f043bc84e9622dcc1c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3224534275704968111
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,8 +205,10 @@ MonoBehaviour:
   combatPrompt: Talk with Grandma?
   preCombatLine: Hi honey! It's been a while since I heard from you. How has school
     been?
+  postCombatLine: 
   characterSprite: {fileID: 1760810401, guid: 91ce67e45f0fe424a9920e2c3763bd9f, type: 3}
   CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: f8dd72b5a21b9b341ae4f2b2aa00a8c3, type: 3}
   StartingDialogueBranch: {fileID: 11400000, guid: a30f23876f7fcfe4180258c3133ef9fa, type: 2}
   cameraAnchor: {fileID: 0}
   character: 0
+  PossibleModifiers: []

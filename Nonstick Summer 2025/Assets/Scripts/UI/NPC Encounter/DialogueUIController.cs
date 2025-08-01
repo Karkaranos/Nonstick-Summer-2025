@@ -176,7 +176,12 @@ public class DialogueUIController : Singleton<DialogueUIController>
             return;
         }
 
-        Destroy(activeReaction);
+        if(activeReaction != null)
+        {
+
+            Destroy(activeReaction);
+
+        }
 
         // should this be playing EVERY time the button is pressed?
         AudioManager.instance.PlayOneShot(FMODEvents.instance.CardPlaySFX);

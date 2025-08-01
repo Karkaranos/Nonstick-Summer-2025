@@ -7803,6 +7803,8 @@ MonoBehaviour:
   - {fileID: 199985722}
   _statement: It's your soccer bag.
   _question: Today's the State Championship game.
+  _response: 
+  _cannotInteract: You cannot interact with this yet.
   _options:
   - ButtonText: I hope I don't embarass myself.
     ButtonColor: {r: 1, g: 1, b: 1, a: 1}
@@ -7817,6 +7819,7 @@ MonoBehaviour:
     ModifiersToGive:
     - {fileID: 11400000, guid: ee82f2ab5548cd54b9229a935295297c, type: 2}
   InteractSuccessful: 0
+  chosenOption: 
 --- !u!1 &200790591
 GameObject:
   m_ObjectHideFlags: 0
@@ -15122,6 +15125,8 @@ MonoBehaviour:
   - {fileID: 1848108593}
   _statement: Your freshly cleaned water bottle.
   _question: Who cleaned it?
+  _response: 
+  _cannotInteract: You cannot interact with this yet.
   _options:
   - ButtonText: Mom wouldn't have time...
     ButtonColor: {r: 1, g: 1, b: 1, a: 1}
@@ -15136,6 +15141,7 @@ MonoBehaviour:
     ModifiersToGive:
     - {fileID: 11400000, guid: 4236df83ca6b76d48b35473ec9993a0e, type: 2}
   InteractSuccessful: 0
+  chosenOption: 
 --- !u!1 &398605457
 GameObject:
   m_ObjectHideFlags: 0
@@ -30760,11 +30766,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454548493651250203, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_Height
-      value: 3.6607347
+      value: 8.22
       objectReference: {fileID: 0}
     - target: {fileID: 454548493651250203, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_Radius
-      value: 4.11
+      value: 3.3112855
       objectReference: {fileID: 0}
     - target: {fileID: 454548493651250203, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_Center.x
@@ -30772,7 +30778,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454548493651250203, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_Center.z
-      value: 0
+      value: 0.79871416
       objectReference: {fileID: 0}
     - target: {fileID: 621988117311664097, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30891,6 +30897,8 @@ MonoBehaviour:
   affectedMeshes: []
   _statement: It's your soccer bag.
   _question: Today's the State Championship game.
+  _response: 'Response not set '
+  _cannotInteract: You cannot interact with this yet.
   _options:
   - ButtonText: I hope I don't embarass myself.
     ButtonColor: {r: 1, g: 1, b: 1, a: 1}
@@ -30905,6 +30913,7 @@ MonoBehaviour:
     ModifiersToGive:
     - {fileID: 11400000, guid: ee82f2ab5548cd54b9229a935295297c, type: 2}
   InteractSuccessful: 0
+  chosenOption: 
 --- !u!1 &733603563
 GameObject:
   m_ObjectHideFlags: 0
@@ -82917,10 +82926,10 @@ PrefabInstance:
       addedObject: {fileID: 1939707487}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1939707486}
+      addedObject: {fileID: 1939707485}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1939707485}
+      addedObject: {fileID: 1939707488}
   m_SourcePrefab: {fileID: 100100000, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
 --- !u!4 &1939707483 stripped
 Transform:
@@ -82953,18 +82962,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.7867084, y: 2.6942868, z: 0.3581024}
   m_Center: {x: -1.9646527e-16, y: 1.3471434, z: 0.076325}
---- !u!114 &1939707486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!1 &1939707486 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8068073526183931155, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+  m_PrefabInstance: {fileID: 1939707482}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939707484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bd087649bb24bf4d9eca4a98ffe6100, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1939707487
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -82987,6 +82989,29 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2209396696226742259, guid: a4b86f490c6a58346894489c71a0835d, type: 3}
+--- !u!114 &1939707488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939707484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3eef7fb0d58814db237c7f5897caf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  applyLevelEndShader: 1
+  levelEndShader: {fileID: 2100000, guid: 587ac99705018de4581cd8b0f79fbf2b, type: 2}
+  affectedMeshes:
+  - {fileID: 1939707484}
+  - {fileID: 1939707486}
+  InteractSuccessful: 0
+  PlayerCanLeave: 0
+  NextSceneIndex: 4
+  sceneTransitionType: 0
+  CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: a0b11ab76fce26041b8530122b7cabe2, type: 3}
+  cameraAnchor: {fileID: 0}
 --- !u!43 &1942073690
 Mesh:
   m_ObjectHideFlags: 0

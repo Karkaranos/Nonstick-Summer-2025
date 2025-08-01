@@ -62,6 +62,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
                 || ( DialogueManager.CurrentDialogueBranch.End && PlayerReadAllNPCText); } }
     private bool _ui_interactable = true;
 
+    [HideInInspector] public bool gainEnergy = false;
+
     private bool isBoss;
     private GameObject inWorldCharacter;
 
@@ -202,6 +204,14 @@ public class DialogueUIController : Singleton<DialogueUIController>
         {
 
             Destroy(activeReaction);
+
+        }
+
+        if(gainEnergy)
+        {
+
+            DialogueManager.GainEnergyAfterTurn();
+            gainEnergy = false;
 
         }
 

@@ -55,7 +55,7 @@ public class GameManager : Singleton<GameManager>
     [Foldout("Combat"),SerializeField] private int _drawButtonEnergyCost = 2;
     [Foldout("Combat"),SerializeField] private float _energyGainedPerDiscard = 1;
     [Header("Cards")]
-    [Foldout("Combat"),SerializeField] private int _cardsDrawnPerRound=2;
+    [Foldout("Combat"),SerializeField] private int _cardsDrawnPerRound=1;
     [Foldout("Combat"),SerializeField] public static int DefaultCardsInHand=4; // why is this hardcoded?
 
     [Header("Relationship Manager")]

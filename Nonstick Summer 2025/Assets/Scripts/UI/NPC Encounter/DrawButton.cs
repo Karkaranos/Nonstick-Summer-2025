@@ -18,8 +18,8 @@ public class DrawButton : MonoBehaviour
     private DeckDisplayer handDisplay => DialogueUIController.Instance.DeckDisplay;
     [ReadOnly]
     public bool CantDrawAnymore = false;
-    private int DrawCounter = 0;
-    public int MaxDrawTimes = 2;
+    private int drawCounter = 0;
+    public int MaxDrawTimes = 1; //lets design change draws per turn if needed.
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -54,8 +54,8 @@ public class DrawButton : MonoBehaviour
 
     public void OnButtonPressed()
     {
-        DrawCounter++;
-        if(DrawCounter >= MaxDrawTimes)
+        drawCounter++;
+        if(drawCounter >= MaxDrawTimes)
         {
             CantDrawAnymore = true;
         }
@@ -70,7 +70,7 @@ public class DrawButton : MonoBehaviour
     {
         Debug.Log("PLayer played card finished");
         CantDrawAnymore = false;
-        DrawCounter = 0;
+        drawCounter = 0;
         UpdateButtonEnabled();
     }
 }

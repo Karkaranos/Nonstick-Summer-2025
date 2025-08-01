@@ -37,6 +37,7 @@ Material:
   disabledShaderPasses:
   - DepthOnly
   - MOTIONVECTORS
+  - SHADOWCASTER
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -55,22 +56,23 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.3
+    - _Alpha: 0.56
     - _AlphaClip: 1
     - _AlphaToMask: 0
     - _Blend: 2
-    - _CastShadows: 1
+    - _CastShadows: 0
     - _Cull: 0
     - _DstBlend: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Spiral_Strength: 5
+    - _Speed: 1.05
+    - _Spiral_Strength: 1.63
     - _SrcBlend: 5
     - _Surface: 1
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 1, g: 0.74734, b: 0, a: 0}
+    - _Color: {r: 1, g: 0.95686275, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

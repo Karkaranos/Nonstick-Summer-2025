@@ -20,15 +20,30 @@ public class DialogueNPCPortraitDisplay : MonoBehaviour
 {
     [SerializeField, Required] private Image NPCImage;
 
+    [Header("Animated Reaction Anchors")]
+    [SerializeField] Vector2 momAnchor;
+    [SerializeField] Vector2 grandmaAnchor;
+    [SerializeField] Vector2 cousinAnchor;
+    [SerializeField] Vector2 uncleAnchor;
+
     private Coroutine portraitAnimation;
 
-    public void SetPortraitSprite(DialogueNPC dialogue)
+    public void SetPortraitSprite(DialogueNPC dialogue, characters character)
     {
         if (dialogue == null || dialogue.Portrait == null)
             return;
 
         if(portraitAnimation != null)
             StopCoroutine(portraitAnimation);
+
+        //instantiates animation
+        //making a new function to prevent clutter
+        if(dialogue.AnimatedReaction != null)
+        {
+
+            PlayReaction(dialogue, character);
+
+        }
 
         portraitAnimation = StartCoroutine(UpdateSpriteCoroutine(dialogue.Portrait));
     }
@@ -39,5 +54,40 @@ public class DialogueNPCPortraitDisplay : MonoBehaviour
         NPCImage.sprite = portrait;
         yield return null;
         portraitAnimation = null;
+    }
+
+    void PlayReaction(DialogueNPC dialogue, characters character)
+    {
+
+        GameObject reaction = Instantiate(dialogue.AnimatedReaction);
+        reaction.transform.SetParent(this.transform.GetComponentInParent<Transform>());
+
+        DialogueUIController.Instance.activeReaction = reaction;
+
+        if(character == characters.Mom)
+        {
+
+            reaction.transform.position = momAnchor;
+            
+        }
+        if (character == characters.Grandma)
+        {
+
+            reaction.transform.position = grandmaAnchor;
+
+        }
+        if (character == characters.Cousin)
+        {
+
+            reaction.transform.position = cousinAnchor;
+
+        }
+        if (character == characters.Uncle)
+        {
+
+            reaction.transform.position = uncleAnchor;
+
+        }
+
     }
 }

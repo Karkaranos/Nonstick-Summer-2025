@@ -65,6 +65,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
     private bool isBoss;
     private GameObject inWorldCharacter;
 
+    [HideInInspector] public GameObject activeReaction;
+
     public IEnumerator Initialize(DialogueBranch startBranch, characters character, bool isBoss = true, GameObject objRef = null)
     {
         DialogueManager.OnOpenCombatUI(startBranch, character);
@@ -173,6 +175,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
             return;
         }
+
+        Destroy(activeReaction);
 
         // should this be playing EVERY time the button is pressed?
         AudioManager.instance.PlayOneShot(FMODEvents.instance.CardPlaySFX);

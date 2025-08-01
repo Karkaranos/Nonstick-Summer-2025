@@ -62,6 +62,8 @@ public class DialogueNPCPortraitDisplay : MonoBehaviour
         GameObject reaction = Instantiate(dialogue.AnimatedReaction);
         reaction.transform.SetParent(this.transform.GetComponentInParent<Transform>());
 
+        DialogueUIController.Instance.activeReaction = reaction;
+
         if(character == characters.Mom)
         {
 

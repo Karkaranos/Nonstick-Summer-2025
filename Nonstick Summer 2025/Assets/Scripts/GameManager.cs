@@ -50,13 +50,13 @@ public class GameManager : Singleton<GameManager>
     [Header("Social Battery")]
     [Foldout("Combat"),SerializeField] private int _defaultEnergy=5;
     [Foldout("Combat"),SerializeField] private int _energyGainedPerRound=1;
-    [Foldout("Combat"),SerializeField] private int _energyGainedIfSilent = 2;
+    [Foldout("Combat"),SerializeField] private int _energyGainedIfSilent = 3;
     [Foldout("Combat"),SerializeField] private int _maxEnergy=10;
     [Foldout("Combat"),SerializeField] private int _drawButtonEnergyCost = 2;
     [Foldout("Combat"),SerializeField] private float _energyGainedPerDiscard = 1;
     [Header("Cards")]
-    [Foldout("Combat"),SerializeField] private int _cardsDrawnPerRound=1;
-    [Foldout("Combat"),SerializeField] public static int DefaultCardsInHand=5; // why is this hardcoded?
+    [Foldout("Combat"),SerializeField] private int _cardsDrawnPerRound=2;
+    [Foldout("Combat"),SerializeField] public static int DefaultCardsInHand=4; // why is this hardcoded?
 
     [Header("Relationship Manager")]
     [Foldout("Relationship Manager")] [SerializeField] private RelationshipStats grandmaStartingValue;

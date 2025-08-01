@@ -65,6 +65,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
     private bool isBoss;
     private GameObject inWorldCharacter;
 
+    [HideInInspector] public GameObject activeReaction;
+
     public IEnumerator Initialize(DialogueBranch startBranch, characters character, bool isBoss = true, GameObject objRef = null)
     {
         DialogueManager.OnOpenCombatUI(startBranch, character);
@@ -97,7 +99,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         //yield return OpenCombatUI_Coroutine();
 
-        yield return dialogueBox.Initialize(startBranch);
+        yield return dialogueBox.Initialize(startBranch, character);
     }
 
     public IEnumerator OpenCombatUI_Coroutine()
@@ -194,6 +196,13 @@ public class DialogueUIController : Singleton<DialogueUIController>
             }
 
             return;
+        }
+
+        if(activeReaction != null)
+        {
+
+            Destroy(activeReaction);
+
         }
 
         // should this be playing EVERY time the button is pressed?

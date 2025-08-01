@@ -135,8 +135,20 @@ public class DialogueUIController : Singleton<DialogueUIController>
         {
             playCardButtonText.text = CardSelectedText;
 
-            var buttonColor = CardStyleManager.GetEmotionColor(selectedCardData);
-            playCardButton.SetColors(normalColor: buttonColor, highlightedColor: buttonColor, selectedColor: buttonColor, pressedColor: buttonColor);
+            if(Mathf.Abs(selectedCardData.EnergyCost) > DialogueManager.CurrentEnergy)
+            {
+
+                var buttonColor = Color.gray;
+                playCardButton.SetColors(normalColor: buttonColor, highlightedColor: buttonColor, selectedColor: buttonColor, pressedColor: buttonColor);
+
+            }
+            else
+            {
+
+                var buttonColor = CardStyleManager.GetEmotionColor(selectedCardData);
+                playCardButton.SetColors(normalColor: buttonColor, highlightedColor: buttonColor, selectedColor: buttonColor, pressedColor: buttonColor);
+
+            }
 
             playerDialogueBubble.WriteText(selectedCardData);
         }
@@ -156,18 +168,28 @@ public class DialogueUIController : Singleton<DialogueUIController>
     //TODO move to play button script
     public void PlayCardPressed()
     {
+
+        if(selectedCardData != null && Mathf.Abs(selectedCardData.EnergyCost) > DialogueManager.CurrentEnergy)
+        {
+
+            //there should be a sound effect that plays here i think
+            return;
+
+        }
+
         if(IfCloseCombat)
         {
             // TODO open a new menu?
             Debug.Log("Close combat!");
-            UITransitionManager.CloseMenu();
             if(isBoss)
             {
+                UITransitionManager.CloseMenu();
                 GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.FINISH_COMBAT);
                 GameManager.ObjectiveReference.SetObjectiveVisibility(true);
             }
             else
             {
+                UITransitionManager.CloseMenu(false, false);
                 GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.TALK_TO_SIDE_CHARACTER, inWorldCharacter);
                 GameManager.ObjectiveReference.SetObjectiveVisibility(true);
                 inWorldCharacter.GetComponent<SideCharacterInteractable>().FinishSideCombat();

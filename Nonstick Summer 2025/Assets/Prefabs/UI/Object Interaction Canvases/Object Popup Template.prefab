@@ -259,7 +259,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3520667051158493986}
         m_TargetAssemblyTypeName: UIUtilityFunctions, Assembly-CSharp
-        m_MethodName: CloseCurrentPopup
+        m_MethodName: CloseCurrentPopupKeepMouse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -540,7 +540,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3520667051158493986}
         m_TargetAssemblyTypeName: UIUtilityFunctions, Assembly-CSharp
-        m_MethodName: CloseCurrentPopup
+        m_MethodName: CloseCurrentPopupKeepMouse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -800,7 +800,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3520667051158493986}
         m_TargetAssemblyTypeName: UIUtilityFunctions, Assembly-CSharp
-        m_MethodName: CloseCurrentPopup
+        m_MethodName: CloseCurrentPopupKeepMouse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1359,25 +1359,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39efb718f49966749b43bf99a2c99f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractSuccessful: 0
   cameraAnchor: {fileID: 0}
   Button1: {fileID: 2841265330771236776}
   Button2: {fileID: 8854227053318529582}
   Button3: {fileID: 4753267857950354706}
   statementField: {fileID: 5238269115187140648}
   questionField: {fileID: 2230261468592391674}
-  _statement: You are looking at an object
-  _question: 
-  _options:
-  - ButtonText: Charming
-    ButtonColor: {r: 1, g: 1, b: 1, a: 1}
-    ModifiersToGive:
-    - {fileID: 11400000, guid: ee82f2ab5548cd54b9229a935295297c, type: 2}
-  - ButtonText: Sappy
-    ButtonColor: {r: 1, g: 1, b: 1, a: 1}
-    ModifiersToGive:
-    - {fileID: 11400000, guid: 4236df83ca6b76d48b35473ec9993a0e, type: 2}
-  - ButtonText: Assertive
-    ButtonColor: {r: 1, g: 1, b: 1, a: 1}
-    ModifiersToGive:
-    - {fileID: 11400000, guid: 2388c5239da79564292dc953a127cbbb, type: 2}
+  ModifierObtainCanvas: {fileID: 8553161507268041164, guid: 092413676022d3a49bd218b9bc1ce83b, type: 3}

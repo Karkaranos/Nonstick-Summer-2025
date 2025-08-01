@@ -15,11 +15,13 @@ MonoBehaviour:
   dialogue:
   - Dialogue: Are you excited for your first day of school?
     Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    AnimatedReaction: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "That\u2019s great pumpkin! If you are anything like your Nanna,
         I\u2019m sure you\u2019ll have a ton of fun and make loads of friends!"
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m super excited!! I hope to make a ton of new friends!"
     RelationshipCheckRequired: 0
@@ -34,6 +36,7 @@ MonoBehaviour:
         of friends that you\u2019ll have tons of fun with every single day! Your
         Nanna guarantees it!"
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: No, I never want to go to school! School is STUPID.
     RelationshipCheckRequired: 0
@@ -47,6 +50,7 @@ MonoBehaviour:
     - Dialogue: "It\u2019s okay to be nervous, sunshine. But I\u2019m sure you\u2019ll
         have lots of fun once you get there!"
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "Maybe... I\u2019m a little nervous.."
     RelationshipCheckRequired: 0
@@ -60,6 +64,7 @@ MonoBehaviour:
     - Dialogue: "That\u2019s great sweetie, I\u2019m sure you\u2019ll have a ton
         of fun and make loads of friends."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: I hope to make a ton of new friends
     RelationshipCheckRequired: 0
@@ -73,6 +78,7 @@ MonoBehaviour:
     - Dialogue: "Oh, don\u2019t be like that honey. You\u2019re going to love all
         your classmates once you meet them!"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "No! I don\u2019t wanna make new friends. Ugh."
     RelationshipCheckRequired: 0
@@ -86,6 +92,7 @@ MonoBehaviour:
     - Dialogue: "I\u2019m sure you\u2019ll be just fine, there isn\u2019t a thing
         about you that they can dislike."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "I hope everyone likes me... Mom said there\u2019s going to be
       20 kids....."
@@ -100,6 +107,7 @@ MonoBehaviour:
     - Dialogue: "I may be young at heart, but I\u2019m not that young pumpkin. With
         that kind of charm I just know you are going to make loads of new friends!"
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m suuuper excited! Want to come with me?"
     RelationshipCheckRequired: 0
@@ -113,6 +121,7 @@ MonoBehaviour:
     - Dialogue: "Making new friends is a good thing pumpkin. You\u2019ll be able
         to play a ton of really fun games all day with people just as sweet as you!"
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t wanna go. Do I really have to make new friends?"
     RelationshipCheckRequired: 0
@@ -126,9 +135,11 @@ MonoBehaviour:
     - Dialogue: "You\u2019re your Nanna\u2019s little pumpkin aren\u2019t you. Everyone
         will want to be your friend, I am sure of it."
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+      AnimatedReaction: {fileID: 0}
     - Dialogue: And if anyone gives you some trouble you just let your Nanna know
         and she will take care of it, haha!
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: I dunno. Will anyone wanna be friends with me?
     RelationshipCheckRequired: 0
@@ -139,9 +150,10 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Silent:
     NpcReactionText:
-    - Dialogue: "\u201CYou\u2019re going to have to learn to use your words for school,
-        honey.\u201D"
+    - Dialogue: "You\u2019re going to have to learn to use your words for school,
+        honey."
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

@@ -13,14 +13,18 @@ MonoBehaviour:
   m_Name: Cousin_m2_3_pos
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: The point is that we match!
+  - Dialogue: The point is that we match! I saw yours when I came over last time,
+      which means we can play together!
     Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
-  - Dialogue: You'll play with me, right?
+    AnimatedReaction: {fileID: 0}
+  - Dialogue: You... WANNA play with me, right?
     Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    AnimatedReaction: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Aw. But I wanna play now!
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: I can play later! I wanna see my other presents.
     RelationshipCheckRequired: 0
@@ -34,6 +38,7 @@ MonoBehaviour:
     - Dialogue: "Ack... You\u2019re so mean! I\u2019ll tell Dad that you\u2019re
         being mean to me!"
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "No! You\u2019re annoying!"
     RelationshipCheckRequired: 0
@@ -46,13 +51,17 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Grandma can wait! Grandma can wait!
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue:
     - Dialogue: Grandma can wait! Grandma can wait!
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     - Dialogue: Please? Please? Please?
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     - Dialogue: You can even use the cards that my Dad got you...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     PlayerDialogue: Grandma wants to talk with me, I think.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -85,8 +94,10 @@ MonoBehaviour:
     CombinedDialogue:
     - Dialogue: Please? Please? Please?
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     - Dialogue: You can even use the cards that my Dad got you...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     PlayerDialogue: Grandma wants to talk with me, I think.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -96,8 +107,9 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Charming_Question:
     NpcReactionText:
-    - Dialogue: Um... Since forever ago! yeah!
+    - Dialogue: Um... Since forever ago! Yeah!
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Hey, since when have you been into cards, anyhow?
     RelationshipCheckRequired: 0
@@ -108,8 +120,10 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: Uh. No. I think.
-      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    - Dialogue: "Uhm, no. Dad\u2019s over there, and Grandma\u2019s... somewhere,
+        but I don\u2019t wanna talk with them!"
+      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "Don\u2019t you have anything better to be doing?"
     RelationshipCheckRequired: 0
@@ -120,8 +134,9 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: Um... Obviously! Yeah! You just... Um...
+    - Dialogue: Um... Obviously! Yeah! You just, um...
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Do you even know how to play with them?
     RelationshipCheckRequired: 0

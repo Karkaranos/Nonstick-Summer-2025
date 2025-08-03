@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638890848338539713
+  lastModified: 638898359159354660
   FileSizes:
   - Name: Desktop
     Value: 1520
@@ -144,7 +144,7 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638890848338539713
+  lastModified: 638898359159360883
   FileSizes:
   - Name: Desktop
     Value: 1752
@@ -254,7 +254,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 118796
+  Length: 113684
 --- !u!114 &-2182227563652261044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,35 +305,10 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters:
-  - {fileID: -1329992665944036232}
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
---- !u!114 &-1329992665944036232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/House/Room
-  m_EditorClassIdentifier: 
-  Name: Room
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 505407376
-    data2: 273506273
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
+  Length: 120000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,7 +348,7 @@ MonoBehaviour:
   - {fileID: -7676539690225878646}
   StringsBanks:
   - {fileID: -5259588466323316940}
-  cacheTime: 638894164174301424
+  cacheTime: 638898359159360883
   cacheVersion: 131624
 --- !u!114 &34564258425666311
 MonoBehaviour:
@@ -390,10 +365,10 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/BGM.bank
   Name: BGM
   StudioPath: bank:/BGM
-  lastModified: 638894164174301424
+  lastModified: 638898358666393185
   FileSizes:
   - Name: Desktop
-    Value: 10381280
+    Value: 14196480
   Exists: 1
 --- !u!114 &1634051811715559137
 MonoBehaviour:
@@ -410,10 +385,10 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638890848338559856
+  lastModified: 638898358667730671
   FileSizes:
   - Name: Desktop
-    Value: 329152
+    Value: 329120
   Exists: 1
 --- !u!114 &2696384017540158741
 MonoBehaviour:
@@ -605,7 +580,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 72048
+  Length: 154285
 --- !u!114 &8228910156832545245
 MonoBehaviour:
   m_ObjectHideFlags: 0

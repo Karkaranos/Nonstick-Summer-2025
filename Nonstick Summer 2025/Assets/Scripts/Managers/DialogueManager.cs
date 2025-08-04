@@ -188,6 +188,8 @@ public class DialogueManager
             (playedCard == null ? _energyGainedIfSilent: playedCard.GetEnergyCost()))); // this could have been an if statement but noooooo i just had to be special
         Debug.Log("after set");
 
+        DialogueUIController.Instance.gainEnergy = true;
+
         // progress dialogue:
         var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
 
@@ -227,8 +229,8 @@ public class DialogueManager
         yield return DialogueUIController.Instance.ResetNPCDialogue(dialogueOption);
 
         // TODO: move this to AFTER player reads all text, and can play cards again
-        GameManager.Instance.StopCoroutine(SetCurrentEnergy(_currentEnergy));
-        GameManager.Instance.StartCoroutine(SetCurrentEnergy(_currentEnergy + _energyGainedPerRound));
+        //GameManager.Instance.StopCoroutine(SetCurrentEnergy(_currentEnergy));
+        //GameManager.Instance.StartCoroutine(SetCurrentEnergy(_currentEnergy + _energyGainedPerRound));
 
         if(playedCard != null)
             playedCard.TryTriggerStampEffect(StampTriggerConditions.AfterCardPlayed);
@@ -242,6 +244,13 @@ public class DialogueManager
             //MoodManager.UpdateMood(playedCard.Emotion);
 
         OnCardPlayedFinished.Invoke();
+    }
+
+    public static void GainEnergyAfterTurn()
+    {
+
+        GameManager.Instance.StartCoroutine(SetCurrentEnergy(_currentEnergy + _energyGainedPerRound));
+
     }
 
     /// <summary>

@@ -1,5 +1,6 @@
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*****************************************************************************
 * File Name :         GameManager.cs
@@ -50,19 +51,21 @@ public class GameManager : Singleton<GameManager>
     [Header("Social Battery")]
     [Foldout("Combat"),SerializeField] private int _defaultEnergy=5;
     [Foldout("Combat"),SerializeField] private int _energyGainedPerRound=1;
-    [Foldout("Combat"),SerializeField] private int _energyGainedIfSilent = 2;
+    [Foldout("Combat"),SerializeField] private int _energyGainedIfSilent = 3;
     [Foldout("Combat"),SerializeField] private int _maxEnergy=10;
     [Foldout("Combat"),SerializeField] private int _drawButtonEnergyCost = 2;
     [Foldout("Combat"),SerializeField] private float _energyGainedPerDiscard = 1;
     [Header("Cards")]
     [Foldout("Combat"),SerializeField] private int _cardsDrawnPerRound=1;
-    [Foldout("Combat"),SerializeField] public static int DefaultCardsInHand=5; // why is this hardcoded?
+    [Foldout("Combat"),SerializeField] public static int DefaultCardsInHand=4; // why is this hardcoded?
 
     [Header("Relationship Manager")]
     [Foldout("Relationship Manager")] [SerializeField] private RelationshipStats grandmaStartingValue;
     [Foldout("Relationship Manager")] [SerializeField] private RelationshipStats uncleStartingValue;
     [Foldout("Relationship Manager")] [SerializeField] private RelationshipStats cousinStartingValue;
     [Foldout("Relationship Manager")] [SerializeField] private RelationshipStats momStartingValue;
+
+    public static float Sensitivity = .4f;
 
 
 
@@ -82,6 +85,27 @@ public class GameManager : Singleton<GameManager>
         ModifierManagerReference = ModifierManagerReference ?? new ModifierManager(startingModifiers);
         ObjectiveReference = FindFirstObjectByType<Objectives>();
         PlayerDataManagerReference = PlayerDataManagerReference ?? new PlayerDataManager();
+
+    }
+
+    void OnEnable()
+    {
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
+    }
+
+    void OnDisable()
+    {
+
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+
+        DialogueManager.CurrentEnergy = _defaultEnergy;
 
     }
 

@@ -30,6 +30,11 @@ public class UIUtilityFunctions : MonoBehaviour
         UITransitionManager.CloseMenu();
     }
 
+    public static void CloseCurrentPopupKeepMouse()
+    {
+        UITransitionManager.CloseMenu(false, false);
+    }
+
     public static void SetObjectiveVis(bool visibility)
     {
 

@@ -38,6 +38,8 @@ public partial class CardDisplay : MonoBehaviour
 
     public UnityEvent<CardDisplay> OnMouseDown = new UnityEvent<CardDisplay> ();
 
+    bool canPlayHover = true;
+
     private void Start()
     {
         if (card != null) SetCard(card); // mostly for debugging
@@ -92,6 +94,11 @@ public partial class CardDisplay : MonoBehaviour
         if (DialogueUIController.Instance != null && DialogueUIController.Instance.DeckDisplay.FirstSelectedCard == null 
             && DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput)
            DialogueUIController.Instance.UpdateHoveringCard(card);
+        if (canPlayHover)
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.CardHoverSFX);
+            canPlayHover = false;
+        }
     }
 
     private void OnMouseHoverEnd() // TODO this should be moved to another script
@@ -99,6 +106,7 @@ public partial class CardDisplay : MonoBehaviour
         if (DialogueUIController.Instance != null && DialogueUIController.Instance.DeckDisplay.FirstSelectedCard == null
             && DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput)
             DialogueUIController.Instance.UpdateHoveringCard(null);
+        canPlayHover = true;
     }
 
     private void OnMouseDownStart()
@@ -215,25 +223,31 @@ public partial class CardDisplay : MonoBehaviour
 
     private void UpdateStampIcons()
     {
-        int i;
-        for (i = 0; i<card.Stamps.Count && i<StampImages.Length; i++)
+        string[] names =
         {
-            var stamp = card.Stamps.ElementAt(i);
+            "Overthinking", "Repetition", "Mumble", "Confidence", "Energy Bonus"
+        };
 
-            if (stamp == null)
-                continue;
-
-            StampImages[i].SetStamp(stamp);
-        }
-
-        for(;i<StampImages.Length; i++)
+        for(int i=0; i<names.Length && i < StampImages.Length; i++)
         {
-            StampImages[i].SetStamp(null);
-        }
+            int index = HasCard(names[i]);
+            if (index > -1 && index < StampImages.Length)
+            {
+                StampImages[i].SetStamp(card.Stamps.ElementAt(index));
+            }
 
-        if (card.Stamps.Count > StampImages.Length)
-        {
-            Debug.LogError("not enough stamp icons for the number of stamps");
         }
+        
     }
+
+    private int HasCard(string test)
+    {
+        for(int i=0; i<card.Stamps.Count; i++)
+        {
+            if (card.Stamps.ElementAt(i).StampName == test)
+                return i;
+        }
+        return -1;
+    }
+
 }

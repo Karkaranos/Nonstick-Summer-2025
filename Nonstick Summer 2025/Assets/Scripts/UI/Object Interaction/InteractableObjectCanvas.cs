@@ -34,8 +34,20 @@ public class InteractableObjectCanvas : MonoBehaviour
     [SerializeField] [Required] private TMP_Text statementField;
     [SerializeField] [Required] private TMP_Text questionField;
 
-    public void Initialize(string statement, string question, PersonalityOption[] options)
+    [SerializeField] [Required] private GameObject ModifierObtainCanvas;
+
+    private GameObject objectRef;
+    private PersonalityOption[] options;
+
+    [SerializeField] private GameObject interactionButtons;
+    [SerializeField] private GameObject otherButtons;
+
+    public void Initialize(string statement, string question, PersonalityOption[] options, GameObject g = null)
     {
+        otherButtons.SetActive(false);
+        interactionButtons.SetActive(true);
+
+        this.options = options;
         Button1.onClick.AddListener(() => OnClickInteractableObject(options[0]));
         Button2.onClick.AddListener(() => OnClickInteractableObject(options[1]));
         Button3.onClick.AddListener(() => OnClickInteractableObject(options[2]));
@@ -46,6 +58,9 @@ public class InteractableObjectCanvas : MonoBehaviour
         Button1.image.color = options[0].ButtonColor;
         Button2.image.color = options[1].ButtonColor;
         Button3.image.color = options[2].ButtonColor;
+
+        if (g != null)
+            objectRef = g;
 
         TMP_Text button1Text = Button1.GetComponentInChildren<TMP_Text>();
         button1Text.text = options[0].ButtonText;
@@ -59,6 +74,24 @@ public class InteractableObjectCanvas : MonoBehaviour
     }
 
 
+    public void InitializeWithBlocker(string statement, string response)
+    {
+        otherButtons.SetActive(true);
+        interactionButtons.SetActive(false);
+
+        statementField.text = statement;
+        questionField.text = response;
+    }
+
+    public void InitializeAfterModifier(string statement, string response, string choice)
+    {
+        otherButtons.SetActive(true);
+        interactionButtons.SetActive(false);
+
+        statementField.text = statement;
+        questionField.text = response + choice;
+    }
+
     /// <summary>
     /// Gives player modifier cards based on their emotion choice
     /// </summary>
@@ -67,7 +100,19 @@ public class InteractableObjectCanvas : MonoBehaviour
     {
         foreach (ModifierData md in PO.ModifiersToGive)
         {
+            var iopc = UITransitionManager.OpenMenu(ModifierObtainCanvas, cameraAnchor).GetComponent<ItemObtainPopupCanvas>();
+            iopc.Initialize(md);
             ModifierManager.AddCard(md, true);
+        }
+        if (objectRef != null)
+        {
+            foreach(PersonalityOption po in options)
+            {
+                if(po == PO)
+                {
+                    objectRef.GetComponent<InteractableObjectBehavior>().chosenOption = po.ButtonText;
+                }
+            }
         }
     }
 

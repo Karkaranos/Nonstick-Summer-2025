@@ -9,6 +9,7 @@
 
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class BedInteractionPopupCanvas : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class BedInteractionPopupCanvas : MonoBehaviour
     [SerializeField] private TMP_Text statement;
     [SerializeField] private GameObject canSleepButtons;
     [SerializeField] private GameObject cannotSleepButtons;
+    [Tooltip("Fade to black prefab")]
+    [SerializeField] private GameObject fadeToBlack;
     public EndType SceneTransitionType;
 
     public enum EndType
@@ -45,8 +48,11 @@ public class BedInteractionPopupCanvas : MonoBehaviour
         if (Bed.PlayerCanLeave)
         {
             Bed.InteractSuccessful = true;
-            UnityEngine.SceneManagement.SceneManager.LoadScene(Bed.NextSceneIndex);
-            UITransitionManager.CloseMenu();
+
+            DoFadeOut();
+
+            //UnityEngine.SceneManagement.SceneManager.LoadScene(Bed.NextSceneIndex);
+            //UITransitionManager.CloseMenu();
         }
         else
         {
@@ -57,5 +63,19 @@ public class BedInteractionPopupCanvas : MonoBehaviour
     public void OnNoPressed()
     {
         UITransitionManager.CloseMenu();
+    }
+
+    public void DoFadeOut()
+    {
+        UITransitionManager.CloseMenu(changeCam:false);
+        var canvas = Instantiate(fadeToBlack);
+        canvas.SetActive(true);
+        var fade = canvas.GetComponent<FadeTransition>();
+        var image = canvas.GetComponentInChildren<Image>();
+
+        if (fade != null)
+        {
+            fade.StartFadeOut(image, Bed.NextSceneIndex);
+        }
     }
 }

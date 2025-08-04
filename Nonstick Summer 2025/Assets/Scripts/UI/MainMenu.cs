@@ -17,6 +17,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [Header("Main Menu")]
     [Scene] [SerializeField] private int MainGameplayScene=1;
     [SerializeField] private GameObject controls;
     [SerializeField] private GameObject creditParent;
@@ -34,6 +35,7 @@ public class MainMenu : MonoBehaviour
     private Coroutine credits;
     
     [Header("Fade Transition Visuals")]
+    [Tooltip ("Fade to black prefab in scene")]
     [SerializeField][Required] private GameObject fadeToBlack;
     
 
@@ -122,6 +124,7 @@ public class MainMenu : MonoBehaviour
 
         if (fade != null)
         {
+            fadeToBlack.SetActive(true);
             fade.StartFadeOut(image, MainGameplayScene);
         }
     }

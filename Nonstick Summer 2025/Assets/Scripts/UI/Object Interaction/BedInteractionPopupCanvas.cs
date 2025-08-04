@@ -19,6 +19,7 @@ public class BedInteractionPopupCanvas : MonoBehaviour
     [SerializeField] private TMP_Text statement;
     [SerializeField] private GameObject canSleepButtons;
     [SerializeField] private GameObject cannotSleepButtons;
+    [Tooltip("Fade to black prefab")]
     [SerializeField] private GameObject fadeToBlack;
     public EndType SceneTransitionType;
 
@@ -50,8 +51,8 @@ public class BedInteractionPopupCanvas : MonoBehaviour
 
             DoFadeOut();
 
-            UnityEngine.SceneManagement.SceneManager.LoadScene(Bed.NextSceneIndex);
-            UITransitionManager.CloseMenu();
+            //UnityEngine.SceneManagement.SceneManager.LoadScene(Bed.NextSceneIndex);
+            //UITransitionManager.CloseMenu();
         }
         else
         {
@@ -66,9 +67,11 @@ public class BedInteractionPopupCanvas : MonoBehaviour
 
     public void DoFadeOut()
     {
-        var canvas = UITransitionManager.OpenMenu(fadeToBlack);
+        UITransitionManager.CloseMenu(changeCam:false);
+        var canvas = Instantiate(fadeToBlack);
+        canvas.SetActive(true);
         var fade = canvas.GetComponent<FadeTransition>();
-        var image = canvas.GetComponent<Image>();
+        var image = canvas.GetComponentInChildren<Image>();
 
         if (fade != null)
         {

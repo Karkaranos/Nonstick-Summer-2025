@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public class FadeTransition : MonoBehaviour
 {
     private Coroutine fadeCoroutine;
+    [Tooltip("How long the fade lasts")]
     [SerializeField] private float lengthOfFade = 3;
+    [Tooltip("How long fade from black is delayed before starting the fade")]
+    [SerializeField] private float delayLength = 2;
 
     public void StartFadeOut(Image image, int nextScene)
     {
@@ -27,8 +30,7 @@ public class FadeTransition : MonoBehaviour
     {
         float alpha = image.color.a;
         Color color = image.color;
-        float timeStarted = Time.time;
-        float timeElapsed = Time.time - timeStarted;
+        float timeElapsed = 0;
 
         while (alpha < 1)
         {
@@ -67,7 +69,8 @@ public class FadeTransition : MonoBehaviour
 
         float timeStarted = Time.time;
         float timeElapsed = Time.time - timeStarted;
-
+        
+        yield return new WaitForSeconds(delayLength);
         while (alpha > 0)
         {
             float t = timeElapsed / lengthOfFade;
@@ -76,7 +79,6 @@ public class FadeTransition : MonoBehaviour
             alpha = Mathf.Lerp(1, 0, t);
             color.a = alpha;
             image.color = color;
-            Debug.Log(alpha);
             yield return new WaitForEndOfFrame();
         }
 

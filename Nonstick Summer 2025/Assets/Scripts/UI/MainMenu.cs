@@ -12,9 +12,12 @@
 using UnityEngine;
 using NaughtyAttributes;
 using System.Collections;
+using UnityEngine.UI;
+
 public class MainMenu : MonoBehaviour
 {
     [Scene] [SerializeField] private int MainGameplayScene=1;
+    [SerializeField] private Button continueButton;
     [SerializeField] private GameObject controls;
     [SerializeField] private GameObject creditParent;
     [SerializeField] private GameObject creditScroll;
@@ -42,6 +45,11 @@ public class MainMenu : MonoBehaviour
         foreach(CardPickupManager deleteMe in toDelete)
         {
             Destroy(deleteMe.gameObject);
+        }
+
+        if (!PlayerDataManager.DoesFileExist())
+        {
+            continueButton.interactable = false;
         }
     }
 

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 [System.Serializable]
@@ -18,4 +19,5 @@ public class PlayerData
     public float MomRelationshipValue;
     public float CousinRelationshipValue;
     public float UncleRelationshipValue;
+    public List<CardData> ListOfCards;
 }

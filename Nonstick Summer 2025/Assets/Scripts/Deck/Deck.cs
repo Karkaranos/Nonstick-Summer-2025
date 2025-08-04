@@ -34,6 +34,16 @@ public class Deck
 
     #region Functions
 
+    public Deck()
+    {
+        _cards = new List<CardData>();
+    }
+
+    public Deck(List<CardData> cards)
+    {
+        _cards = cards;
+    }
+
     /// <summary>
     /// Adds a reference to a card into the deck
     /// </summary>

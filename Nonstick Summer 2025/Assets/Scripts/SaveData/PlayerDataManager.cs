@@ -13,9 +13,19 @@ using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 *   TODO: when to save, why to save, who to save, how to save, where to save
 *   
 ***************************************************/
-public class PlayerDataManager : MonoBehaviour 
+public class PlayerDataManager : Singleton<PlayerDataManager>
 {
     static string path = "Assets/Saves/PlayerData.json";
+
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public static bool DoesFileExist()
+    {
+        return (File.Exists(path));
+    }
 
     /// <summary>
     /// Writes PlayerData variables to JSON file 
@@ -31,6 +41,7 @@ public class PlayerDataManager : MonoBehaviour
         playerData.GrandmaRelationshipValue = RelationshipManager.characterRelationships[characters.Grandma].currentValue;
         playerData.MomRelationshipValue = RelationshipManager.characterRelationships[characters.Mom].currentValue;
         playerData.UncleRelationshipValue = RelationshipManager.characterRelationships[characters.Uncle].currentValue;
+        playerData.ListOfCards = DeckManager.PlayerFullDeck.Cards;
 
         string json = JsonUtility.ToJson(playerData);
         
@@ -43,7 +54,7 @@ public class PlayerDataManager : MonoBehaviour
     [Button]
     public static void LoadGame()
     {
-        if (File.Exists(path))
+        if (DoesFileExist())
         {
             string json = System.IO.File.ReadAllText(path);
             PlayerData loadedData = JsonUtility.FromJson<PlayerData>(json);
@@ -56,15 +67,22 @@ public class PlayerDataManager : MonoBehaviour
             RelationshipManager.characterRelationships[characters.Mom].currentValue = loadedData.MomRelationshipValue;
             RelationshipManager.characterRelationships[characters.Uncle].currentValue = loadedData.UncleRelationshipValue;
             RelationshipManager.characterRelationships[characters.Grandma].currentValue = loadedData.GrandmaRelationshipValue;
-            Debug.Log(loadedData.CousinRelationshipValue + "cousin");
-            Debug.Log(loadedData.MomRelationshipValue + "mom");
-            Debug.Log(loadedData.UncleRelationshipValue + "uncle");
-            Debug.Log(loadedData.GrandmaRelationshipValue + "grandma");
-            Debug.Log("hallo");
+            DeckManager.PlayerFullDeck = new Deck(loadedData.ListOfCards);
         }
         else
         {
             Debug.LogWarning("No File Found.");
+        }
+    }
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private static void AfterSceneLoad()
+    {
+        //not saving in main menu
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            print("hi");
+            SaveGame();
         }
     }
 }

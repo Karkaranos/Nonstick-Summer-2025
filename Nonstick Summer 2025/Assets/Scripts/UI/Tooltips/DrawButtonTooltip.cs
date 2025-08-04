@@ -29,7 +29,7 @@ public class DrawButtonTooltip : HoverTooltip
     {
         if(DeckManager.RemainingDeck.Count <= 0) return deckHasNoCards;
 
-        if (drawButton.DrewCardThisTurn) return alreadyDrew;
+        if (drawButton.CantDrawAnymore) return alreadyDrew;
 
         if (DialogueManager.CurrentEnergy < DialogueManager.DrawButtonEnergyCost) return noEnergy;
 

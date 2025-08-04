@@ -21,17 +21,20 @@ public class DialogueBox : MonoBehaviour
     [ReadOnly] public bool PlayerReadAllDialogue;
 
     private DialogueNPC[] dialogueStored;
+    private characters currentCharacter;
 
 
     /// <summary>
     /// displays dialogue according to where the player is in a dialogue branch
     /// </summary>
     /// <param name="branch">the current dialogue branch that the player is on</param>
-    public IEnumerator Initialize(DialogueBranch branch)
+    public IEnumerator Initialize(DialogueBranch branch, characters character)
     {
         npcText = npcText != null ? npcText : GetComponentInChildren<TMP_Text>();
 
         NumberInList = 0;
+
+        currentCharacter = character;
 
         yield return SetDialogueIndex(NumberInList, branch); 
         //npcText.text = branch.dialogue[0].Dialogue; text initialized 
@@ -96,7 +99,7 @@ public class DialogueBox : MonoBehaviour
 
             NumberInList = numberInList % dialogue.Length;
 
-            DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(dialogue[NumberInList]);
+            DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(dialogue[NumberInList], currentCharacter);
 
             npcText.text = dialogue[NumberInList].Dialogue;
 
@@ -108,7 +111,7 @@ public class DialogueBox : MonoBehaviour
 
             NumberInList = numberInList % branch.dialogue.Length;
 
-            DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(branch.dialogue[NumberInList]);
+            DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(branch.dialogue[NumberInList], currentCharacter);
 
             npcText.text = branch.dialogue[NumberInList].Dialogue;
 

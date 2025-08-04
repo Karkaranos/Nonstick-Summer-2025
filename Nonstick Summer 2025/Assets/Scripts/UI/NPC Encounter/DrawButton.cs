@@ -17,14 +17,16 @@ public class DrawButton : MonoBehaviour
     [SerializeField, Required] private Button button;
     private DeckDisplayer handDisplay => DialogueUIController.Instance.DeckDisplay;
     [ReadOnly]
-    public bool DrewCardThisTurn = false;
+    public bool CantDrawAnymore = false;
+    private int drawCounter = 0;
+    public int MaxDrawTimes = 1; //lets design change draws per turn if needed.
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Initialize()
     {
         button.onClick.AddListener(OnButtonPressed);
-        DrewCardThisTurn = false;
+        CantDrawAnymore = false;
         UpdateButtonEnabled();
 
         DialogueManager.OnCardPlayedStarted.AddListener(UpdateButtonEnabled);
@@ -46,13 +48,17 @@ public class DrawButton : MonoBehaviour
             DialogueManager.ReadUserInput && 
             DialogueManager.UserCanPlayCard &&
             DialogueManager.CurrentEnergy >= DialogueManager.DrawButtonEnergyCost && 
-            !DrewCardThisTurn; // maybe add a bool in gamemanager/dialogueManager to toggle this.
+            !CantDrawAnymore; // maybe add a bool in gamemanager/dialogueManager to toggle this.
         button.interactable = enabled;
     }
 
     public void OnButtonPressed()
     {
-        DrewCardThisTurn = true;
+        drawCounter++;
+        if(drawCounter >= MaxDrawTimes)
+        {
+            CantDrawAnymore = true;
+        }
         DialogueManager.DrawCards(N: 1, forceDraw: true);
         DialogueManager.CurrentEnergy = DialogueManager.CurrentEnergy - DialogueManager.DrawButtonEnergyCost;
         UpdateButtonEnabled();
@@ -63,7 +69,8 @@ public class DrawButton : MonoBehaviour
     public void OnPlayerPlayedCardFinish()
     {
         Debug.Log("PLayer played card finished");
-        DrewCardThisTurn = false;
+        CantDrawAnymore = false;
+        drawCounter = 0;
         UpdateButtonEnabled();
     }
 }

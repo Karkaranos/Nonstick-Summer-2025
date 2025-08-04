@@ -30,7 +30,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: 0.0001
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: "Oh... Really? Well, we\u2019ll all miss you. You know that, right?"
@@ -42,19 +42,31 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -0.0001
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: "Oh. Oh! Um... I\u2019m sorry. I wasn\u2019t, uh, prepared for that."
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: "Oh. Oh! Um... I\u2019m sorry. I wasn\u2019t, uh, prepared for that."
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+    - Dialogue: "It\u2019s... It\u2019s a lot, isn\u2019t it?  I mean, I\u2019d imagine!
+        It is for me, at least."
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    - Dialogue: "I\u2019m not too far behind you... That\u2019s scary!"
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+    - Dialogue: "But that\u2019s besides the point! I\u2019ll get there when I get
+        there. For now..."
+      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+    - Dialogue: Well, are you ready?
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     PlayerDialogue: Like I wish I had gotten to know you some more.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: 0.0001
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "Haha. C\u2019mon! That\u2019s so corny. I guess that I\u2019m happy
@@ -105,7 +117,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: -0.0001
   Assertive_Question:
     NpcReactionText:
     - Dialogue: "Hey, I\u2019m trying here."
@@ -119,7 +131,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -15
+    ChangeInRelationshipStatus: -0.0001
   Sappy_Question:
     NpcReactionText:
     - Dialogue: Huh? Well, I dunno.
@@ -134,15 +146,25 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
+    ChangeInRelationshipStatus: 0.0001
   Silent:
     NpcReactionText: []
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: "It\u2019s... It\u2019s a lot, isn\u2019t it?  I mean, I\u2019d imagine!
+        It is for me, at least."
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    - Dialogue: "I\u2019m not too far behind you... That\u2019s scary!"
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+    - Dialogue: "But that\u2019s besides the point! I\u2019ll get there when I get
+        there. For now..."
+      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+    - Dialogue: Well, are you ready?
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
+    ChangeInRelationshipStatus: -0.0001
   End: 0

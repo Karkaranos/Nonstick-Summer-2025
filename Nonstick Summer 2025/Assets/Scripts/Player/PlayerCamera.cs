@@ -29,6 +29,15 @@ public class PlayerCamera : MonoBehaviour
         Vector3 startRotation = camTransform.localRotation.eulerAngles;
         xLook = startRotation.x;
         yLook = startRotation.y;
+
+        if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.Contains("1"))
+        {
+            GameManager.Sensitivity = Sensitivity;
+        }
+        else
+        {
+            Sensitivity = GameManager.Sensitivity;
+        }
     }
 
     private void Update()
@@ -48,5 +57,11 @@ public class PlayerCamera : MonoBehaviour
         var target = Quaternion.Euler(xLook, yLook, 0);
         var smoothed = Quaternion.Slerp(camTransform.localRotation, target, Time.fixedDeltaTime * Slippiness);
         camTransform.localRotation = smoothed;
+    }
+
+    public void UpdateSensitivity(float val)
+    {
+        Sensitivity = val;
+        GameManager.Sensitivity = Sensitivity;
     }
 }

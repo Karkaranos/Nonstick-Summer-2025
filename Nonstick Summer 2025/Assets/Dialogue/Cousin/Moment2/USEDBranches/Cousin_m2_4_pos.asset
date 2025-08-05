@@ -15,12 +15,15 @@ MonoBehaviour:
   dialogue:
   - Dialogue: Please? Please? Please?
     Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
-  - Dialogue: You can even use the cards that my Dad got you...
+    AnimatedReaction: {fileID: 0}
+  - Dialogue: If you want, you can even use the cards that my dad got for you!
     Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    AnimatedReaction: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "I wasn\u2019t?! But I was just so excited..."
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "...I don\u2019t think that you were supposed to tell me that."
     RelationshipCheckRequired: 0
@@ -33,6 +36,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: You were?! But I was just so excited...
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "C\u2019mon, man. I was supposed to find that out on my own!"
     RelationshipCheckRequired: 0
@@ -43,8 +47,9 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "Ehehe! Of course he did! Psst... They\u2019re from me, too!"
+    - Dialogue: "Hehe! Of course he did! Psst... they\u2019re from me, too!"
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: I got cards?! He really DID read my wish list!
     RelationshipCheckRequired: 0
@@ -87,6 +92,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "You didn\u2019t hear me? YOU! GOT! CARDS!"
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: What?
     RelationshipCheckRequired: 0
@@ -99,6 +105,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Hehe! Yep! They\u2019re so cool."
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: WHAT?!
     RelationshipCheckRequired: 0
@@ -111,6 +118,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Hehe! Surprised, aren\u2019t you?"
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: ...What?
     RelationshipCheckRequired: 0

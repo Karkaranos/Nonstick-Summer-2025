@@ -23,11 +23,11 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 0}
     CombinedDialogue:
-    - Dialogue: Of course sweety, just tell me where to put stuff.
-      Portrait: {fileID: 0}
+    - Dialogue: Of course sweetie, just tell me where to put stuff.
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 0}
     - Dialogue: Are you excited for your first day of school?
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
       AnimatedReaction: {fileID: 0}
     PlayerDialogue: Sure Nanna, help your little pumpkin please!
     RelationshipCheckRequired: 0
@@ -51,9 +51,11 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "I\u2019m sorry pumpkin, I got a bit ahead of myself. I\u2019d love
-        to see the creation that you can make all on your own now that you\u2019ve
-        grown so much!"
+    - Dialogue: "I\u2019m sorry, pumpkin, I got a bit ahead of myself."
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+      AnimatedReaction: {fileID: 0}
+    - Dialogue: "I\u2019d love to see the creation that you can make all on your
+        own now that you\u2019ve grown so much!"
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
       AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
@@ -106,7 +108,7 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Charming_Question:
     NpcReactionText:
-    - Dialogue: Of course sweety, just tell me where to put stuff.
+    - Dialogue: Of course, sweetie, just tell me where to put the blocks.
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
@@ -147,7 +149,10 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -15
   Silent:
     NpcReactionText: []
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: Are you excited for your first day of school?
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 0}
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}

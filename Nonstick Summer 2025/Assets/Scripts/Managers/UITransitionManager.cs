@@ -134,6 +134,4 @@ public class UITransitionManager
     {
         return GameManager.PlayerCameraRef == null ? GameObject.FindFirstObjectByType<PlayerCamera>()?.transform : GameManager.PlayerCameraRef?.transform;
     }
-
-    
 }

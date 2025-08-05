@@ -114,13 +114,13 @@ public class InputEvents : Singleton<InputEvents>
 
     private void OnDisable()
     {
-        Move.RemoveAllBindingOverrides();
-        LeftClick.RemoveAllBindingOverrides();
-        RightClick.RemoveAllBindingOverrides();
-        Pause.RemoveAllBindingOverrides();
-        Interact.RemoveAllBindingOverrides();
-        Inventory.RemoveAllBindingOverrides();
-        barToggle.RemoveAllBindingOverrides();
+        Move?.RemoveAllBindingOverrides();
+        LeftClick?.RemoveAllBindingOverrides();
+        RightClick?.RemoveAllBindingOverrides();
+        Pause?.RemoveAllBindingOverrides();
+        Interact?.RemoveAllBindingOverrides();
+        Inventory?.RemoveAllBindingOverrides();
+        barToggle?.RemoveAllBindingOverrides();
 
         /*Move.started -= ctx => ActionStarted(ref MovePressed, MoveStarted);
         //Jump.started -= ctx => ActionStarted(ref JumpPressed, JumpStarted);

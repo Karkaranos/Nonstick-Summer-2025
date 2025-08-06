@@ -1,32 +1,32 @@
 /*****************************************************************************
-* File Name :         DiscardButton.cs
+* File Name :         PlayCardButton.cs
 * Author :            Toby
-* Creation Date :     July 5, 2025
+* Creation Date :     8/5/2025 (day before code freeze)
 *
-* Brief Description : The Discard button during NPC combat. Gives the player a card
-* when pressed.
+* Brief Description : Plays the selected card
 * 
 *****************************************************************************/
 
 using NaughtyAttributes;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DiscardButton : MonoBehaviour
+public class PlayCardButton : MonoBehaviour
 {
     [SerializeField, Required] private Button button;
-
+    [SerializeField, Required] private CanvasGroup group;
     private DeckDisplayer hand => DialogueUIController.Instance.DeckDisplay;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Initialize()
     {
-        UpdateButtonEnabled();
         button.onClick.AddListener(OnButtonPressed);
+        UpdateButtonEnabled();
 
-        hand.OnCardsSelectedChanged.AddListener(UpdateButtonEnabled);
         DialogueManager.OnCardPlayedStarted.AddListener(UpdateButtonEnabled);
+        DialogueManager.OnPlayerFinishReadingDialogue.AddListener(UpdateButtonEnabled);
+        DialogueManager.OnCardPlayedFinished.AddListener(UpdateButtonEnabled);
+        hand.OnCardsSelectedChanged.AddListener(UpdateButtonEnabled);
     }
 
     /// <summary>
@@ -34,25 +34,15 @@ public class DiscardButton : MonoBehaviour
     /// </summary>
     public void UpdateButtonEnabled()
     {
-        bool enabled = (hand.HasCardsSelected && DialogueManager.ReadUserInput);
+        bool enabled = hand.HasCardsSelected;
         button.interactable = enabled;
+
+        StaticUtilities.ToggleCanvasGroup(group, DialogueManager.ReadUserInput && DialogueManager.UserCanPlayCard);
     }
 
-    /// <summary>
-    /// can only be pressed if button is interactable
-    /// </summary>
     public void OnButtonPressed()
     {
-
-        // foreach in case player somehow has multiple cards selected
-        foreach(var card in hand.selectedCards.ToArray()) //ToArray so we can safely remove items from the original collection
-        {
-            hand.DiscardCard(card.cardData);
-
-            
-        }
-        DialogueManager.CurrentEnergy += DialogueManager.EnergyGainedPerDiscard;
-
+        DialogueManager.ProcessPlayCard(hand.FirstSelectedCard);
         UpdateButtonEnabled();
     }
 }

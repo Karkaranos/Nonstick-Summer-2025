@@ -26,6 +26,7 @@ public static class TextUtilities
             // specific variables
             .Replace("[DrawButtonEnergy]", (-DialogueManager.DrawButtonEnergyCost).AddSignToString(additonalText: " energy"))
             .Replace("[DiscardEnergy]", DialogueManager.EnergyGainedPerDiscard.AddSignToString(additonalText: " energy"))
+            .Replace("[SilentEnergy]", DialogueManager.EnergyGainedIfSilent.AddSignToString(additonalText: " energy"))
             .Replace("[PlayerEnergy]", DialogueManager.CurrentEnergy.ToString())
             // Text "functions"
             .ReplaceTagColor("Stamp", GameManager.Instance.StampTooltipColor.ToHex())

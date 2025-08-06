@@ -43,11 +43,9 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Required, SerializeField] public  DialogueNPCPortraitDisplay portraitDisplay;
     [Required, SerializeField] private DrawButton drawButton;
     [Required, SerializeField] private DiscardButton discardButton;
-
-    //i can make this a whole 'nother script if necessary but idk
-    // TODO: ^
-    [SerializeField] public Button playCardButton;
-    [SerializeField] private TMP_Text playCardButtonText;
+    [Required, SerializeField] private SilentButton silentButton;
+    [Required, SerializeField] private PlayCardButton playCardButton;
+    [Required, SerializeField] private NextDialogueButton nextDialogueButton;
 
     public DeckDisplayer DeckDisplay { get { return deckDisplay; } }
 
@@ -89,6 +87,9 @@ public class DialogueUIController : Singleton<DialogueUIController>
         DeckDisplay.DrawToDefaultHand();
         drawButton.Initialize();
         discardButton.Initialize();
+        silentButton.Initialize();
+        playCardButton.Initialize();
+        nextDialogueButton.Initialize();
 
         deckDisplay.OnCardsSelectedChanged.AddListener(OnSelectionUpdated);
 
@@ -124,61 +125,14 @@ public class DialogueUIController : Singleton<DialogueUIController>
     private void OnSelectionUpdated()
     {
         // Card movement animation is handled in DeckDisplayer / CardDisplay_PositionAnimator
+
         AudioManager.instance.PlayOneShot(FMODEvents.instance.CardSelectSFX);
-
-        if (selectedCardData == null)
-        {
-            // TODO move to play card button script
-            playCardButtonText.text = CardNotSelectedText;
-
-            playCardButton.SetColors(normalColor: Color.white, highlightedColor: Color.gray, selectedColor: Color.white, pressedColor: Color.gray);
-        }
-        else
-        {
-            playCardButtonText.text = CardSelectedText;
-
-            if(Mathf.Abs(selectedCardData.EnergyCost) > DialogueManager.CurrentEnergy)
-            {
-
-                var buttonColor = Color.gray;
-                playCardButton.SetColors(normalColor: buttonColor, highlightedColor: buttonColor, selectedColor: buttonColor, pressedColor: buttonColor);
-
-            }
-            else
-            {
-
-                var buttonColor = CardStyleManager.GetEmotionColor(selectedCardData);
-                playCardButton.SetColors(normalColor: buttonColor, highlightedColor: buttonColor, selectedColor: buttonColor, pressedColor: buttonColor);
-
-            }
-
-            playerDialogueBubble.WriteText(selectedCardData);
-        }
-
-        if (!DialogueManager.UserCanPlayCard)
-        {
-            // TODO dont hardcode this
-            // TODO move to playcard button script
-            playCardButtonText.text = "->";
-            playCardButton.SetColors(normalColor: Color.white, highlightedColor: Color.gray, selectedColor: Color.white, pressedColor: Color.gray);
-
-            return;
-        }
     }
 
     //i can move this to a different script later if necessary but for now the play card button is tied to this
     //TODO move to play button script
-    public void PlayCardPressed()
+    public void NextTextPressed()
     {
-
-        if(selectedCardData != null && Mathf.Abs(selectedCardData.EnergyCost) > DialogueManager.CurrentEnergy)
-        {
-
-            //there should be a sound effect that plays here i think
-            return;
-
-        }
-
         if(IfCloseCombat)
         {
             // TODO open a new menu?
@@ -264,7 +218,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
         {
             if (DialogueManager.CurrentDialogueBranch.End)
             {
-                playCardButtonText.text = EndDialogueText;
                 yield return ToggleUIForDialogueProgression(false);
             }
             else
@@ -279,6 +232,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         // hardcoded for now will fix so it can take a thing later
         dialogueBox.DisplayOneLine("What was that?");
     }
+
     public void UpdateDialogueTreeVisual(DialogueBranch branch)
     {
 
@@ -291,8 +245,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     {
         if (DialogueManager.CurrentDialogueBranch.End)
         {
-            playCardButtonText.text = EndDialogueText;
-            MusicManager.instance.StartHouse();
+            MusicManager.instance.StartHouse(); // house md???
         }
     }
 
@@ -302,11 +255,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
             yield break;
 
         _ui_interactable = interactable;
-
-        // TODO dont hardcode that text
-        // TODO move to dedicated card play button script
-        playCardButtonText.text = interactable ? CardNotSelectedText : "->";
-        playCardButton.SetColors(normalColor: Color.white, highlightedColor: Color.gray, selectedColor: Color.white, pressedColor:Color.gray);
 
         //deckDisplay?.gameObject.SetActive(interactable);
         if (interactable)
@@ -326,8 +274,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     // Coroutine to handle animation (in the future)
     public IEnumerator UpdateRelationship(float? value, characters character)
-
-
     {
         yield return relationshipSlider?.SetValue(value ?? RelationshipManager.characterRelationships[character].currentValue);
     }

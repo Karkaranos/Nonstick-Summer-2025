@@ -45,8 +45,8 @@ public class DialogueManager
     private static bool continueCardProcessing = false;
 
     // parameters
-    private static float _defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent;
-    public static float MaxEnergy, DrawButtonEnergyCost, EnergyGainedPerDiscard;
+    private static float _defaultEnergy, _energyGainedPerRound;
+    public static float MaxEnergy, DrawButtonEnergyCost, EnergyGainedPerDiscard, EnergyGainedIfSilent;
     public static int DefaultCardsInHand, CardsDrawnPerRound;
 
     #region calculation variables
@@ -107,7 +107,7 @@ public class DialogueManager
     {
         _defaultEnergy = defaultEnergy;
         _energyGainedPerRound = energyGainedPerRound;
-        _energyGainedIfSilent = energyGainedIfSilent;
+        EnergyGainedIfSilent = energyGainedIfSilent;
         MaxEnergy = maxEnergy;
         DefaultCardsInHand = defaultCardsInHand;
         CardsDrawnPerRound = cardsDrawnPerRound;
@@ -185,7 +185,7 @@ public class DialogueManager
 
         Debug.Log("before set");
         GameManager.Instance.StartCoroutine(SetCurrentEnergy(_currentEnergy + 
-            (playedCard == null ? _energyGainedIfSilent: playedCard.GetEnergyCost()))); // this could have been an if statement but noooooo i just had to be special
+            (playedCard == null ? EnergyGainedIfSilent: playedCard.GetEnergyCost()))); // this could have been an if statement but noooooo i just had to be special
         Debug.Log("after set");
 
         DialogueUIController.Instance.gainEnergy = true;

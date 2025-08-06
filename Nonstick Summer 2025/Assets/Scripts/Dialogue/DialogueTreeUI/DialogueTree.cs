@@ -27,7 +27,7 @@ public class DialogueTree : MonoBehaviour
     Material defaultMaterial;
     [SerializeField][Required][Tooltip("Insert the material for a highlighted node here!")] Material highlightedNodeMaterial;
 
-    [SerializeField][BoxGroup("Line Renderers")] LineRenderer lr1, lr2, lr3;
+    [SerializeField][BoxGroup("Line Renderers")] LineRenderer[] lines;
 
     [Header("Offsets")]
 
@@ -55,8 +55,16 @@ public class DialogueTree : MonoBehaviour
     /// continuously spawns nodes until the end of a tree is reached
     /// </summary>
     /// <param name="branch">the current dialogue branch that the player is on</param>
-    public void GenerateNodes (DialogueBranch branch)
+    public void GenerateNodes (DialogueBranch branch, HashSet<DialogueBranch> visitedNodes = null)
     {
+        visitedNodes = visitedNodes ?? new HashSet<DialogueBranch>();
+
+        if (visitedNodes.Contains(branch))
+        {
+            Debug.LogError("Dialogue Branch loops into itself?");
+            return;
+        }
+        visitedNodes.Add(branch);
 
         //ik we're changing this soon but i can get there when we get there
 
@@ -104,7 +112,6 @@ public class DialogueTree : MonoBehaviour
 
         }
 
-
         //instantiating nodes at certain positions based on # of nodes so that the tree can look relatively neat i think
 
         if(nodes.Count == 1)
@@ -114,8 +121,8 @@ public class DialogueTree : MonoBehaviour
             newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
             newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y, this.transform.position.z);
 
-            lr1.SetPosition(0, this.transform.position);
-            lr1.SetPosition(1, newNode.transform.position);
+            lines[0].SetPosition(0, this.transform.position);
+            lines[0].SetPosition(1, newNode.transform.position);
 
             nodeVisuals.Add(newNode);
 
@@ -123,71 +130,50 @@ public class DialogueTree : MonoBehaviour
         else if (nodes.Count == 2)
         {
             //node 1
-            GameObject newNode = Instantiate(node);
-            newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
-            newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y + yOffset, this.transform.position.z);
+            GameObject newNode;
+            for(int y = 1; y >= -1; y--)
+            {
+                if (y == 0)
+                    continue; // fuck it
 
-            lr1.SetPosition(0, this.transform.position);
-            lr1.SetPosition(1, newNode.transform.position);
+                newNode = Instantiate(node);
+                newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
+                newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y + (yOffset * y), this.transform.position.z);
 
-            nodeVisuals.Add(newNode);
+                lines[y + 1].SetPosition(0, this.transform.position);
+                lines[y + 1].SetPosition(1, newNode.transform.position);
 
-            //node 2
-            newNode = Instantiate(node);
-            newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
-            newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y - yOffset, this.transform.position.z);
-
-            lr2.SetPosition(0, this.transform.position);
-            lr2.SetPosition(1, newNode.transform.position);
-
-            nodeVisuals.Add(newNode);
+                nodeVisuals.Add(newNode);
+            }
 
         }
         else if (nodes.Count == 3)
         {
-
             //node 1
-            GameObject newNode = Instantiate(node);
-            newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
-            newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y + yOffset, this.transform.position.z);
+            GameObject newNode;
+            for (int y = 1; y >= -1; y--)
+            {
+                newNode = Instantiate(node);
+                newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
+                newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y + (yOffset * y), this.transform.position.z);
 
-            lr1.SetPosition(0, this.transform.position);
-            lr1.SetPosition(1, newNode.transform.position);
+                lines[y+1].SetPosition(0, this.transform.position);
+                lines[y+1].SetPosition(1, newNode.transform.position);
 
-            nodeVisuals.Add(newNode);
-
-            //node 2
-            newNode = Instantiate(node);
-            newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
-            newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y, this.transform.position.z);
-
-            lr2.SetPosition(0, this.transform.position);
-            lr2.SetPosition(1, newNode.transform.position);
-
-            nodeVisuals.Add(newNode);
-
-            //node 3
-            newNode = Instantiate(node);
-            newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
-            newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y - yOffset, this.transform.position.z);
-
-            lr3.SetPosition(0, this.transform.position);
-            lr3.SetPosition(1, newNode.transform.position);
-
-            nodeVisuals.Add(newNode);
-
+                nodeVisuals.Add(newNode);
+            }
         }
 
         for(int i = 0; i < nodes.Count; i++)
         {
-
-            if (!nodes[i].End)
+            if (nodes[i] != null && !nodes[i].End)
             {
-
-                nodeVisuals[i].GetComponent<DialogueTree>().GenerateNodes(nodes[i]);
-
+                var dt = nodeVisuals[i].GetComponent<DialogueTree>();
+                if(dt!= null)
+                {
+                    dt.GenerateNodes(nodes[i],visitedNodes);
+                }
             }
-
         }
 
     }

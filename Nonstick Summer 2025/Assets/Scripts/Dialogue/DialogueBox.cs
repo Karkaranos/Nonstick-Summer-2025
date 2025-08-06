@@ -101,6 +101,32 @@ public class DialogueBox : MonoBehaviour
 
             DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(dialogue[NumberInList], currentCharacter);
 
+            //TODO: fmod here!!
+            if(dialogue[NumberInList].AudioResponse == "Happy")
+            {
+
+
+
+            }
+            if (dialogue[NumberInList].AudioResponse == "Sad")
+            {
+
+
+
+            }
+            if (dialogue[NumberInList].AudioResponse == "Angry")
+            {
+
+
+
+            }
+            if (dialogue[NumberInList].AudioResponse == "Neutral")
+            {
+
+
+
+            }
+
             npcText.text = dialogue[NumberInList].Dialogue;
 
             Debug.Log($"({NumberInList + 1}/{dialogue.Length}): {dialogue[NumberInList].Dialogue}");
@@ -112,6 +138,32 @@ public class DialogueBox : MonoBehaviour
             NumberInList = numberInList % branch.dialogue.Length;
 
             DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(branch.dialogue[NumberInList], currentCharacter);
+
+            //TODO: fmod here!!
+            if (branch.dialogue[NumberInList].AudioResponse == "Happy")
+            {
+
+
+
+            }
+            if (branch.dialogue[NumberInList].AudioResponse == "Sad")
+            {
+
+
+
+            }
+            if (branch.dialogue[NumberInList].AudioResponse == "Angry")
+            {
+
+
+
+            }
+            if (branch.dialogue[NumberInList].AudioResponse == "Neutral")
+            {
+
+
+
+            }
 
             npcText.text = branch.dialogue[NumberInList].Dialogue;
 

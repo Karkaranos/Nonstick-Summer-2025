@@ -13,15 +13,16 @@ MonoBehaviour:
   m_Name: Grandma_m1_1
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: "There\u2019s my little sunshine, has Mommy been treating you alright
+  - Dialogue: "There\u2019s my little sunshine, has Momma been treating you alright
       recently?"
     Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
     AnimatedReaction: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: I'm happy to hear that, dear.
+    - Dialogue: Hehehe, well... I taught your Momma how to be fun, so you will love
+        playing with me!
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
-      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue:
     - Dialogue: Hehehe, well... I taught your Mommy how to be fun, so you will love
         playing with me!
@@ -43,11 +44,11 @@ MonoBehaviour:
     - Dialogue: "Don\u2019t you worry your little heart my little pumpkin, Nanna
         is here now to save you from evil Momma!"
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
-      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue:
     - Dialogue: "Don\u2019t you worry your little heart my little pumpkin, Nanna
         is here now to save you from evil Momma!"
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 0}
     - Dialogue: Are these your blocks? Do you want Nanna to help you? Maybe we could
         build a house.
@@ -62,9 +63,10 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "...Well, Nanna is happy to see you! Come now, let\u2019s play."
-      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
-      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+    - Dialogue: "I\u2019m sorry to hear that, my little pumpkin. I\u2019m here now,
+        so we can play as much as you want!"
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "Momma is always tired. We don\u2019t get to play much anymore."
     RelationshipCheckRequired: 0
@@ -75,9 +77,10 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Charming_Observation:
     NpcReactionText:
-    - Dialogue: "It\u2019s called perfume, honey...a perfume called Classic Rose...."
+    - Dialogue: "It\u2019s called perfume, honey....... a perfume called Classic
+        Rose...."
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Grandma... you smell like an old person...
     RelationshipCheckRequired: 0
@@ -88,9 +91,9 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -15
   Assertive_Observation:
     NpcReactionText:
-    - Dialogue: Well, Nanna is here. Maybe you can teach me how to play.
+    - Dialogue: "Well, Nanna is here..... let\u2019s show Nanna your room. Come here."
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: I thought Mommy was going to play with me.... I only play games
       with her....
@@ -102,9 +105,9 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -15
   Sappy_Observation:
     NpcReactionText:
-    - Dialogue: Well, Nanna is here.
+    - Dialogue: "Well, Nanna is here..... let\u2019s show Nanna your room. Come here."
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "Mommy\u2019s been real busy recently."
     RelationshipCheckRequired: 0
@@ -115,12 +118,12 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Charming_Question:
     NpcReactionText:
-    - Dialogue: You know what we say about lying my little pumpkin, and if she learned
-        anything from me I already know you guys have been having a blast!
+    - Dialogue: You know what we say about lying, my little pumpkin... If she learned
+        anything from me, I already know you guys have been having a blast!
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
-      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "Momma has been sooo mean, you wouldn\u2019t be mean to me right
+    PlayerDialogue: "Momma has been sooo mean, you wouldn\u2019t be mean to me right,
       Nanna?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -130,12 +133,12 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: "Ouch! That\u2019s a bit hurtful pumpkin. Come on, let Nanna help
+    - Dialogue: "Ouch! That\u2019s a bit hurtful, pumpkin. Come on, let Nanna help
         you do something fun to make up for it."
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
-      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Why are you here Nanna?
+    PlayerDialogue: Why are you here, Nanna?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
@@ -144,13 +147,22 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: "I\u2019m sorry to hear that, Pumpkin. I\u2019ll make sure to have
+    - Dialogue: "I\u2019m sorry to hear that, pumpkin. I\u2019ll make sure to have
+        a long chat with her just for you, alright? Now let\u2019s play whatever
+        you like all day!"
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+      AnimatedReaction: {fileID: 0}
+    CombinedDialogue:
+    - Dialogue: "I\u2019m sorry to hear that pumpkin. I\u2019ll make sure to have
         a long chat with her just for you alright? Now let\u2019s play whatever you
         like all day!"
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
-      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
-    CombinedDialogue: []
-    PlayerDialogue: Nanna, Momma has be so mean. Can you tell her to be nice please?
+      AnimatedReaction: {fileID: 0}
+    - Dialogue: Are these your blocks? Do you want Nanna to help you? Maybe we could
+        build a house.
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 0}
+    PlayerDialogue: Nanna, Momma has been so mean. Can you tell her to be nice, please?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 84564766d880e7e49ab172adf96cf104, type: 2}
@@ -162,7 +174,7 @@ MonoBehaviour:
     - Dialogue: "It\u2019s okay sweetie, you don\u2019t have to use your words unless
         you want.."
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
-      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

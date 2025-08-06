@@ -13,33 +13,46 @@ MonoBehaviour:
   m_Name: GOODUncle_m5_3
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: ..Look, kid, I uh...
+  - Dialogue: ...Look, kid, I uh...
     Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
-  - Dialogue: I wanted to apologize. I know how embarrassing I must be to talk to.
+    AnimatedReaction: {fileID: 0}
+  - Dialogue: I wanted to apologize. I know how embarrassing it must be to talk to
+      someone like me.
     Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
-  - Dialogue: I get that a lot of my views can be...jarring...
+    AnimatedReaction: {fileID: 0}
+  - Dialogue: 'I get that a lot of my views can be... jarring, but it was never my
+      intention to convince you of anything. '
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    AnimatedReaction: {fileID: 0}
   - Dialogue: 'But it was never my intention to convince you of anything. '
     Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+    AnimatedReaction: {fileID: 0}
   - Dialogue: "It\u2019s important to stay informed, but even more so to develop
       your own beliefs."
     Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
+    AnimatedReaction: {fileID: 0}
   - Dialogue: Sorry if I was straying towards the former.
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    AnimatedReaction: {fileID: 0}
   - Dialogue: Best of luck to ya, champ. Good luck out there.
     Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+    AnimatedReaction: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "See? That\u2019s the spirit!"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue:
     - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
         you."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     - Dialogue: My, where has the time gone...
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+      AnimatedReaction: {fileID: 0}
     - Dialogue: Who knew that my little Pumpkin could grow so tall?
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+      AnimatedReaction: {fileID: 0}
     PlayerDialogue: "I definitely wouldn\u2019t call it \u201Cexcited\u201D. More
       like \u201Cexistentially apprehensive\u201D."
     RelationshipCheckRequired: 1
@@ -53,6 +66,7 @@ MonoBehaviour:
     - Dialogue: "Aww, please don\u2019t look at it like that. It\u2019s what you
         make of it that matters."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m so glad to finally be on my own. It\u2019s about time
       I got to get away from all of you."
@@ -67,6 +81,7 @@ MonoBehaviour:
     - Dialogue: "Aww, please don\u2019t look at it like that. It\u2019s what you
         make of it that matters."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "To be honest, I\u2019m a little nervous. "
     RelationshipCheckRequired: 1
@@ -79,6 +94,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "See? That\u2019s the spirit!"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "Yeah! I can\u2019t wait for all the vacuuming and laundry and
       dirty dishes..."
@@ -93,9 +109,11 @@ MonoBehaviour:
     - Dialogue: "I\u2019m sure she\u2019s worried for you. Believe me, it can be
         a lot on a parent when their kid moves out."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     - Dialogue: "You never know how empty a house can feel until you\u2019re the
         only one living in it."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "We weren\u2019t expecting you to visit."
     RelationshipCheckRequired: 1
@@ -109,9 +127,11 @@ MonoBehaviour:
     - Dialogue: "That\u2019s called growing up. Our childhoods might make us who
         we are now..."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     - Dialogue: "But that doesn\u2019t mean we\u2019re ever done growing. Remember
         that."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t feel like I\u2019m ready. It\u2019s like I was
       only a kid four days ago."
@@ -126,6 +146,7 @@ MonoBehaviour:
     - Dialogue: "Trust me, better to have what you don\u2019t need than need what
         you don\u2019t have. Better safe than sorry!"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Do you think I really need this many boxes?
     RelationshipCheckRequired: 1
@@ -139,6 +160,7 @@ MonoBehaviour:
     - Dialogue: "Aww, please don\u2019t look at it like that. It\u2019s what you
         make of it that matters."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Does this look exciting to you?
     RelationshipCheckRequired: 1
@@ -152,8 +174,10 @@ MonoBehaviour:
     - Dialogue: I did! Before me and your grandfather moved in together shortly after
         uni, I shared a flat with some roommates for some odd years.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     - Dialogue: Those were the times...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Did you move out when you were my age?
     RelationshipCheckRequired: 1

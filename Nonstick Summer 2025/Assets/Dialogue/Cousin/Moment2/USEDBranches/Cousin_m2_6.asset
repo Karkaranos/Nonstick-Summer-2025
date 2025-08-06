@@ -13,14 +13,17 @@ MonoBehaviour:
   m_Name: Cousin_m2_6
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Well. Um. We can still play!
+  - Dialogue: But hey, we can play now!
     Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
-  - Dialogue: ...We CAN still play, right?
+    AnimatedReaction: {fileID: 0}
+  - Dialogue: ...You WANT to play with me, right?
     Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+    AnimatedReaction: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "Oh... I mean, oh! Okay. That\u2019s, um, okay! i will!"
+    - Dialogue: "Oh, uhm, okay! That\u2019s... that\u2019s fine!"
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: I know you wanna hang out, but give me some time.
     RelationshipCheckRequired: 0
@@ -33,6 +36,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Oh... I mean, oh! Okay. That\u2019s, um, okay!"
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: No! You got your grubby little fingerprints all over my NEW cards!
     RelationshipCheckRequired: 0
@@ -46,6 +50,7 @@ MonoBehaviour:
     - Dialogue: "I am?! I mean, of course I am! Ehehe. You\u2019re pretty cool, too.
         You\u2019re awesome!"
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "We can after the party. You\u2019re still my favorite cousin,
       you know."
@@ -59,6 +64,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Yes! Yes! I can do that!
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: I know you wanna hang out, but give me some time.
     RelationshipCheckRequired: 0
@@ -71,6 +77,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "THEY AREN\u2019T GRUBBY! You\u2019re so mean!"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: No! You got your grubby little fingerprints all over my NEW cards!
     RelationshipCheckRequired: 0
@@ -84,6 +91,7 @@ MonoBehaviour:
     - Dialogue: "I am?! I mean, of course I am! Ehehe. You\u2019re pretty cool, too.
         You\u2019re awesome!"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "We can after the party. You\u2019re still my favorite cousin,
       you know."
@@ -97,6 +105,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Yes! Yes! I can do that!
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: If I PROMISE to play later, will you let me open up all of my
       other gifts first?
@@ -108,10 +117,11 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: ...Yeah! I can, uh. I can go. Now. I can go now.
+    - Dialogue: ...Yeah, I can, uh. I can go. Now. I can go now.
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: "WE\u2019LL. SEE. Can you go now?"
+    PlayerDialogue: We'll see. Can you go now?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
@@ -122,9 +132,10 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Um... Oh. Oh! I get it now. I\u2019m sorry."
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: Will you apologize for opening one of my presents AND the pack
-      of cards?
+    PlayerDialogue: "I don\u2019t know... will you apologize for opening one of my
+      presents AND the pack of cards?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}

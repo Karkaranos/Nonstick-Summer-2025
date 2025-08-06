@@ -102,8 +102,16 @@ public class GameManager : Singleton<GameManager>
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-
         DialogueManager.CurrentEnergy = _defaultEnergy;
+        if(scene.name.Contains("1"))
+        {
+            if(DeckManagerReference!=null)
+                DeckManagerReference = null;
+            if (RelationshipManagerReference != null)
+                RelationshipManagerReference = null;
+            DeckManagerReference = new DeckManager(startingCards);
+            RelationshipManagerReference = new RelationshipManager(grandmaStartingValue, uncleStartingValue, cousinStartingValue, momStartingValue);
+        }
 
     }
 

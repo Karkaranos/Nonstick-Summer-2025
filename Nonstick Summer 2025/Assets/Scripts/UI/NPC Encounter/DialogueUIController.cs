@@ -35,6 +35,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     [Required][SerializeField] private EnergyBar energyBar;
     [Required][SerializeField] private DisplayPlayerCardDialogue playerDialogueBubble;
+    [Required][SerializeField] private TMP_Text npcName;
     [Required][SerializeField] private DeckDisplayer deckDisplay;
     [Tooltip("Relationship slider UI element")]
     [Required][SerializeField] private RelationshipSlider relationshipSlider;
@@ -49,13 +50,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     public DeckDisplayer DeckDisplay { get { return deckDisplay; } }
 
-    [Header("Progress Button Text")] 
-    public string CardSelectedText;
-    public string CardNotSelectedText;
-    public string EndDialogueText;
-
     public CardData selectedCardData=> deckDisplay.FirstSelectedCard;
-    private bool IfCloseCombat { get { return 
+    public bool IfCloseCombat { get { return 
                 DialogueManager.CurrentDialogueBranch == null
                 || ( DialogueManager.CurrentDialogueBranch.End && PlayerReadAllNPCText); } }
     private bool _ui_interactable = true;
@@ -67,7 +63,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     [HideInInspector] public GameObject activeReaction;
 
-    public IEnumerator Initialize(DialogueBranch startBranch, characters character, bool isBoss = true, GameObject objRef = null)
+    public IEnumerator Initialize(DialogueBranch startBranch, Character character, bool isBoss = true, GameObject objRef = null)
     {
         DialogueManager.OnOpenCombatUI(startBranch, character);
 
@@ -84,7 +80,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
         energyBar.Initalize();
         relationshipSlider.Initialize(RelationshipManager.characterRelationships[character].maxValue, RelationshipManager.characterRelationships[character].currentValue);
         deckDisplay.SetDisplayDeck(ref DeckManager.PlayerHand);
-        DeckDisplay.DrawToDefaultHand();
+        deckDisplay.DrawToDefaultHand();
+        deckDisplay.UpdateGroupEnabled(false);
         drawButton.Initialize();
         discardButton.Initialize();
         silentButton.Initialize();
@@ -92,6 +89,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
         nextDialogueButton.Initialize();
 
         deckDisplay.OnCardsSelectedChanged.AddListener(OnSelectionUpdated);
+
+        npcName.text = character.ToString(); // none of the Character have spaces in their names, right?
 
         if(dialogueTree != null)
         {
@@ -121,12 +120,23 @@ public class DialogueUIController : Singleton<DialogueUIController>
             AudioManager.instance.PlayOneShot(FMODEvents.instance.CardHoverSFX);*/
     }
 
-    // TODO move a lot of this to play button script
     private void OnSelectionUpdated()
     {
         // Card movement animation is handled in DeckDisplayer / CardDisplay_PositionAnimator
 
         AudioManager.instance.PlayOneShot(FMODEvents.instance.CardSelectSFX);
+
+        // REALLY dont like putting this function here, since playCardButton should be autonomous but fuck it atp
+        playCardButton.UpdateButtonEnabled();
+
+        if(selectedCardData == null)
+        {
+            // nothing i think
+        }
+        else
+        {
+            playerDialogueBubble.WriteText(selectedCardData);
+        }
     }
 
     //i can move this to a different script later if necessary but for now the play card button is tied to this
@@ -240,7 +250,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     }
 
-    //TODO move to play button script
     public void ClosingOutCombat()
     {
         if (DialogueManager.CurrentDialogueBranch.End)
@@ -256,11 +265,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         _ui_interactable = interactable;
 
-        //deckDisplay?.gameObject.SetActive(interactable);
-        if (interactable)
-            StaticUtilities.EnableCanvasGroup(deckDisplay.canvasGroup);
-        else
-            StaticUtilities.DisableCanvasGroup(deckDisplay.canvasGroup, alpha:0.2f);
+        deckDisplay.UpdateGroupEnabled(interactable);
 
         yield return null;
 
@@ -273,7 +278,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     }
 
     // Coroutine to handle animation (in the future)
-    public IEnumerator UpdateRelationship(float? value, characters character)
+    public IEnumerator UpdateRelationship(float? value, Character character)
     {
         yield return relationshipSlider?.SetValue(value ?? RelationshipManager.characterRelationships[character].currentValue);
     }

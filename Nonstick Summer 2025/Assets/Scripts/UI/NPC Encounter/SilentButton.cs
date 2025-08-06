@@ -8,16 +8,25 @@
 *****************************************************************************/
 
 using NaughtyAttributes;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(MouseInteractionEvents))]
 public class SilentButton : MonoBehaviour
 {
     [SerializeField, Required] private Button button;
+    [SerializeField, Required] private TMP_Text energyCostDisplay;
+    private MouseInteractionEvents mouseInteractionEvents;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Initialize()
     {
+        energyCostDisplay.text = "+" + DialogueManager.EnergyGainedIfSilent;
+
+        mouseInteractionEvents = GetComponent<MouseInteractionEvents>();
+        mouseInteractionEvents.OnMouseHoverStart.AddListener(OnButtonHover);
+
         button.onClick.AddListener(OnButtonPressed);
         UpdateButtonEnabled();
 
@@ -39,7 +48,12 @@ public class SilentButton : MonoBehaviour
 
     public void OnButtonPressed()
     {
-        DialogueManager.ProcessPlayCard(null);
+        StartCoroutine(DialogueManager.ProcessPlayCard(null));
         UpdateButtonEnabled();
+    }
+
+    public void OnButtonHover()
+    {
+        DialogueUIController.Instance.UpdateHoveringCard(null);
     }
 }

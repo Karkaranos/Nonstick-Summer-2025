@@ -23,6 +23,7 @@ public static class TextUtilities
             .Replace("[Expression]", $"<color=#{CardStyleManager.StatementStyle.color.ToHex()}>{CardStyleManager.StatementStyle.DisplayName}</color>")
             .Replace("[Observation]", $"<color=#{CardStyleManager.ObservationStyle.color.ToHex()}>{CardStyleManager.ObservationStyle.DisplayName}</color>")
             .Replace("[Question]", $"<color=#{CardStyleManager.QuestionStyle.color.ToHex()}>{CardStyleManager.QuestionStyle.DisplayName}</color>")
+            .Replace("[Statement]", $"<color=#{CardStyleManager.StatementStyle.color.ToHex()}>{CardStyleManager.StatementStyle.DisplayName}</color>")
             // specific variables
             .Replace("[DrawButtonEnergy]", (-DialogueManager.DrawButtonEnergyCost).AddSignToString(additonalText: " energy"))
             .Replace("[DiscardEnergy]", DialogueManager.EnergyGainedPerDiscard.AddSignToString(additonalText: " energy"))

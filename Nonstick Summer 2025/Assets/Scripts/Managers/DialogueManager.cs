@@ -34,7 +34,7 @@ public class DialogueManager
     public static DialogueBranch CurrentDialogueBranch { get; private set; }
     public static bool PlayerInCombat => DialogueUIController.Instance != null;
 
-    private static characters currentCharacter;
+    private static Character currentCharacter;
     public static float CurrentRelationshipScore => RelationshipManager.characterRelationships[currentCharacter].currentValue;
     public static float CurrentEnergy { 
         get { return _currentEnergy; }
@@ -127,7 +127,7 @@ public class DialogueManager
         CurrentEnergy = _defaultEnergy;
     }
 
-    public static void OnOpenCombatUI(DialogueBranch startDialogueBranch, characters character)
+    public static void OnOpenCombatUI(DialogueBranch startDialogueBranch, Character character)
     {
         ReadUserInput = false;
         CurrentDialogueBranch = startDialogueBranch;
@@ -153,6 +153,8 @@ public class DialogueManager
     /// </summary>
     public static IEnumerator ProcessPlayCard(CardData playedCard)
     {
+        DialogueUIController.Instance.UpdateHoveringCard(playedCard);
+
         continueCardProcessing = false;
         playedCardSinceOpeningCombat = true;
         ReadUserInput = false;

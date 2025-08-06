@@ -29,7 +29,7 @@ public class OpenBossInteractable : MonoBehaviour
 
     [Tooltip("Current character you're interacting with.")]
     [SerializeField]
-    private characters character;
+    private Character character;
 
     private void Start()
     {
@@ -58,15 +58,15 @@ public class OpenBossInteractable : MonoBehaviour
     public void OpenCanvas()
     {
         float whichBoss = 0;
-        if (character == characters.Grandma)
+        if (character == Character.Grandma)
         {
             whichBoss = 3;
         }
-        else if (character == characters.Mom)
+        else if (character == Character.Mom)
         {
             whichBoss = 1;
         }
-        else if (character == characters.Cousin)
+        else if (character == Character.Cousin)
         {
             whichBoss = 2;
         }

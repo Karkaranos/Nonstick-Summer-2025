@@ -72,7 +72,7 @@ public class RelationshipSlider : MonoBehaviour
     /// </summary>
     /// <param name="character"></param>
     /// <returns></returns>
-    public IEnumerator Refresh(characters character)
+    public IEnumerator Refresh(Character character)
     {
         yield return SetValue(RelationshipManager.characterRelationships[character].currentValue);
     }

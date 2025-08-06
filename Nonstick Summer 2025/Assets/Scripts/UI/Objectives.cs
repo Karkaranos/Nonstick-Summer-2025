@@ -5,7 +5,7 @@ Date Modified :         June 20, 2025
 Brief Description :     Stores all objectives for the level
                         Updates the display when the condition is met
 
-TODO :                  Link up Side Characters when they exist
+TODO :                  Link up Side Character when they exist
 ***************************************************/
 using UnityEngine;
 using NaughtyAttributes;

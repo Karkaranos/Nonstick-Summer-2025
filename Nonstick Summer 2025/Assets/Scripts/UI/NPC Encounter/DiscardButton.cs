@@ -10,18 +10,22 @@
 
 using NaughtyAttributes;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DiscardButton : MonoBehaviour
 {
     [SerializeField, Required] private Button button;
+    [SerializeField, Required] private TMP_Text energyCostDisplay;
 
     private DeckDisplayer hand => DialogueUIController.Instance.DeckDisplay;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Initialize()
     {
+        energyCostDisplay.text = "+" + DialogueManager.EnergyGainedPerDiscard;
+
         UpdateButtonEnabled();
         button.onClick.AddListener(OnButtonPressed);
 

@@ -15,6 +15,7 @@ public class PlayCardButton : MonoBehaviour
 {
     [SerializeField, Required] private Button button;
     [SerializeField, Required] private CanvasGroup group;
+    [SerializeField, Required] private CanvasGroup parentGroup;
     private DeckDisplayer hand => DialogueUIController.Instance.DeckDisplay;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -34,15 +35,16 @@ public class PlayCardButton : MonoBehaviour
     /// </summary>
     public void UpdateButtonEnabled()
     {
-        bool enabled = hand.HasCardsSelected;
-        button.interactable = enabled;
+        bool enabled = DialogueUIController.Instance.selectedCardData != null;
+        button.interactable = true;
 
-        StaticUtilities.ToggleCanvasGroup(group, DialogueManager.ReadUserInput && DialogueManager.UserCanPlayCard);
+        StaticUtilities.ToggleCanvasGroup(group, DialogueManager.ReadUserInput && DialogueManager.UserCanPlayCard, alpha:parentGroup.alpha,ignoreParentGroups:true);
     }
 
     public void OnButtonPressed()
     {
-        DialogueManager.ProcessPlayCard(hand.FirstSelectedCard);
+        Debug.Log("Play card button pressed");
+        StartCoroutine(DialogueManager.ProcessPlayCard(DialogueUIController.Instance.selectedCardData));
         UpdateButtonEnabled();
     }
 }

@@ -13,11 +13,11 @@
 *****************************************************************************/
 
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using NaughtyAttributes;
+using System.Linq;
 
 public class DialogueTree : MonoBehaviour
     
@@ -40,8 +40,14 @@ public class DialogueTree : MonoBehaviour
     List<DialogueBranch> nodes = new List<DialogueBranch>();
     List<GameObject> nodeVisuals = new List<GameObject>();
 
+    // steal the camera from the head node to use it in every node
+    [SerializeField] private Camera _nodeCamera;
+    private static Camera NodeCamera; // scrapped my thing i wanted to do with this bc it didnt work.
+
     public void Initialize(DialogueBranch branch)
     {
+        if(_nodeCamera != null)
+            NodeCamera = Camera.main;
 
         defaultMaterial = GetComponentInChildren<MeshRenderer>().material;
         GenerateNodes(branch);
@@ -74,40 +80,40 @@ public class DialogueTree : MonoBehaviour
         optionsList[3] = branch.Assertive_Expression; optionsList[4] = branch.Assertive_Observation; optionsList[5] = branch.Assertive_Question;
         optionsList[6] = branch.Sappy_Expression; optionsList[7] = branch.Sappy_Observation; optionsList[8] = branch.Sappy_Question;
 
+        // remove duplicates
         foreach (DialogueOption option in optionsList)
         {
-
             //there's for sure a better way to do this but i'm not even sure if we're bringing dialogue tree visualization back after recent meetings
+
+            // look into sets bro it will fix u
 
             if(option.BranchingDialogueHigh != null)
             {
                 newBranch = option.BranchingDialogueHigh;
-            }
-            if (!nodes.Contains(newBranch))
-            {
 
-                nodes.Add(newBranch);
-
+                if (!nodes.Contains(newBranch))
+                {
+                    nodes.Add(newBranch);
+                }
             }
             if (option.BranchingDialogueNeutral != null)
             {
                 newBranch = option.BranchingDialogueNeutral;
-            }
-            if (!nodes.Contains(newBranch))
-            {
 
-                nodes.Add(newBranch);
-
+                if (!nodes.Contains(newBranch))
+                {
+                    nodes.Add(newBranch);
+                }
             }
+            
             if (option.BranchingDialogueLow != null)
             {
                 newBranch = option.BranchingDialogueLow;
-            }
-            if (!nodes.Contains(newBranch))
-            {
 
-                nodes.Add(newBranch);
-
+                if (!nodes.Contains(newBranch))
+                {
+                    nodes.Add(newBranch);
+                }
             }
 
         }
@@ -198,7 +204,7 @@ public class DialogueTree : MonoBehaviour
             = highlightedNodeMaterial;
 
         currentlyHighlightedNode = currentlyHighlightedNode.GetComponent<DialogueTree>().nodeVisuals
-            [currentlyHighlightedNode.GetComponent<DialogueTree>().nodes.IndexOf(branch)];
+            [currentlyHighlightedNode.GetComponent<DialogueTree>().nodes.IndexOf(branch)];         // could this be a dictionary?
 
     }
 

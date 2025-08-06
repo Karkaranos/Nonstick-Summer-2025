@@ -24,25 +24,40 @@ public class SpecialInteractBehavior : MonoBehaviour
     {
         if(specialBehavior == specialBehaviorType.FILL_TOYBOX)
         {
+            foreach(Transform g in affectedObject.transform.GetComponentInChildren<Transform>())
+            {
+                g.gameObject.SetActive(false);
+            }
             affectedObject.SetActive(false);
         }
     }
 
     public void CallSpecialInteraction()
     {
-        // Removes all null objects from requiredInteractions
-        requiredInteractions.RemoveAll(item => item == null);
-
-        if (requiredInteractions.Count <= 0)
+        switch (specialBehavior)
         {
-            switch (specialBehavior)
-            {
-                case specialBehaviorType.FILL_TOYBOX:
-                        affectedObject.SetActive(true);
-                    break;
-                default:
-                    break;
-            }
+            case specialBehaviorType.FILL_TOYBOX:
+                affectedObject.SetActive(true);
+                if(requiredInteractions.Count > 0)
+                {
+                    for (int i = 0; i < requiredInteractions.Count; i++)
+                    {
+                        if(requiredInteractions[i]==null)
+                        {
+                            affectedObject.transform.GetChild(i).gameObject.SetActive(true);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (GameObject g in affectedObject.transform.GetComponentInChildren<Transform>())
+                    {
+                        g.SetActive(true);
+                    }
+                }
+                break;
+            default:
+                break;
         }
     }
 }

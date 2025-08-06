@@ -21,7 +21,8 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
     [Header("UI Text")]
     [SerializeField, Tooltip("Text that always appears when this object is selected")] private string _statement = "You are looking at an object";
     [SerializeField] private string _question = "Question not set.";
-    [SerializeField, Tooltip("Displays after interacting with this object before the response the player chose")] private string _response = "Response not set ";
+    [SerializeField, Tooltip("Displays after interacting with this object before the response the player chose")] private string _response1 = "";
+    [SerializeField, Tooltip("Displays after interacting with this object before the response the player chose")] private string _response2 = "";
     [SerializeField, Tooltip("Displays if object cannot be interacted with")] private string _cannotInteract = "You cannot interact with this yet.";
     [SerializeField] private PersonalityOption[] _options = new PersonalityOption[3];
 
@@ -34,7 +35,7 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
     private OpenBossInteractable obi;
     [HideInInspector] public bool InteractSuccessful = false;
 
-    [HideInInspector] public string chosenOption;
+     public string chosenOption;
 
     private void Start()
     {
@@ -78,7 +79,7 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
         }
         else
         {
-            canvas.InitializeAfterModifier(_statement, _response, chosenOption);
+            canvas.InitializeAfterModifier(_statement, _response1, _response2, chosenOption);
         }
 
         GetComponent<SpecialInteractBehavior>()?.CallSpecialInteraction();

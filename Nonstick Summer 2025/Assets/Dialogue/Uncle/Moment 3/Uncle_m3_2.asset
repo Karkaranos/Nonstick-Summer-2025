@@ -15,12 +15,18 @@ MonoBehaviour:
   dialogue:
   - Dialogue: Did you know your mom and I played soccer when were were kids?
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    AnimatedReaction: {fileID: 0}
+    AudioResponse: Neutral
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Yeah, Mom made that for her when we were kids, and Dad...
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
     - Dialogue: Grandpa loved playing with us.
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: "So that\u2019s why she has a soccer quilt...she never struck
       me as a sports person."
@@ -34,12 +40,20 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Oh, you\u2019re definitely better than me."
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Neutral
     - Dialogue: I kicked my ball over the fence on the regular, but your mom...
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     - Dialogue: Your mom was the best player on the playground.
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     - Dialogue: "It\u2019s in your blood, for sure."
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m sure I\u2019m better than both of you."
     RelationshipCheckRequired: 0
@@ -53,11 +67,17 @@ MonoBehaviour:
     - Dialogue: Well, your mom was the best soccer player on the playground, but
         she never tried out for the school team.
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     - Dialogue: Me?
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Neutral
     - Dialogue: "Let\u2019s just say I kicked enough soccer balls over the fence
         for them to give me a WIDE berth."
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: Mom never told me she was on a soccer team.
     RelationshipCheckRequired: 0
@@ -70,6 +90,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Yeah, Mom and Dad made that for her when we were kids....
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "So that\u2019s why she has a soccer quilt...she never struck
       me as a sports person."
@@ -84,11 +106,17 @@ MonoBehaviour:
     - Dialogue: Well your mom was the best soccer player on the playground. But she
         never went for the school team.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: I on the other hand, kicked my ball over the fence and big foot stole
         it...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "We\u2019re so proud of you for making the school team."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: No one told me that.
     RelationshipCheckRequired: 0
@@ -102,11 +130,17 @@ MonoBehaviour:
     - Dialogue: Well your mom was the best soccer player on the playground. But she
         never went for the school team.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: I on the other hand, kicked my ball over the fence and big foot stole
         it...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "We\u2019re so proud of you for making the school team."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Mom never told me she was on a soccer team.
     RelationshipCheckRequired: 0
@@ -120,26 +154,42 @@ MonoBehaviour:
     - Dialogue: Well, your mom was the best soccer player on the playground, but
         she never tried out for the school team.
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     - Dialogue: Me?
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Neutral
     - Dialogue: "Let\u2019s just say I kicked enough soccer balls over the fence
         for them to give me a WIDE berth."
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue:
     - Dialogue: Well, your mom was the best soccer player on the playground, but
         she never tried out for the school team.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Me?
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "Let\u2019s just say I kicked enough soccer balls over the fence
         for them to give me a WIDE berth."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "You know, I\u2019m sure if you asked your mom, she\u2019d love to
         play with you!"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "Call it practice, but I\u2019m sure she\u2019s itching to score
         a goal after all these years."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     PlayerDialogue: And how often did you beat her?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -151,10 +201,16 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Wow.
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Neutral
     - Dialogue: "I\u2019m sorry that we love you."
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     - Dialogue: "I guess I\u2019ll just cheer for myself, then."
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: Did you know that your cheering is embarrassing?
     RelationshipCheckRequired: 0
@@ -168,11 +224,17 @@ MonoBehaviour:
     - Dialogue: Well, your mom was the best soccer player on the playground, but
         she never tried out for the school team.
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     - Dialogue: Me?
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Neutral
     - Dialogue: "Let\u2019s just say I kicked enough soccer balls over the fence
         for them to give me a WIDE berth."
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: "Why didn\u2019t she tell me that?"
     RelationshipCheckRequired: 0
@@ -185,6 +247,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: ...
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

@@ -15,20 +15,32 @@ MonoBehaviour:
   dialogue:
   - Dialogue: I still can't seem to understand that rule that you told me about.
     Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+    AudioResponse: Neutral
   - Dialogue: What was it?
     Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    AnimatedReaction: {fileID: 0}
+    AudioResponse: Neutral
   - Dialogue: Oh right, offsides I think it was.
     Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+    AudioResponse: Happy
   - Dialogue: Could you explain it to me again just one more time?
     Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+    AudioResponse: Neutral
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "Oh alright, I\u2019ll be sure to pay extra close attention tonight
         then."
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     - Dialogue: Maybe your little cousin will catch me up to speed if I ever get
         confused during the game.
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: "I\u2019ll show you tonight! My performance will leave no questions
       left unanswered."
@@ -42,8 +54,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Thank you so much sweet pea.
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     - Dialogue: I really appreciate you taking the time for me when you are so busy.
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: "I think I can. I\u2019ll have to make it quick since I don\u2019t
       have much time though."
@@ -57,10 +73,16 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: It really has, he was really good about that kind of stuff.
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     - Dialogue: Sorry that I keep making you explain the rules to me all the time.
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Sad
     - Dialogue: One of these days I am sure I will get the hang of them.
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: "Sure, I bet it\u2019s been tough to keep up with all the rules
       lately now that Grandpa\u2019s not here to remind you."
@@ -74,8 +96,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Thank you pumpkin! Thanks for bearing with me.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: I love you!
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Of course, I've got all the time in the world for you Grandma!
     RelationshipCheckRequired: 0
@@ -88,8 +114,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Oh, alright...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Sorry for bothering you.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: I don't have time to explain it again, I just need to get my
       water
@@ -103,10 +133,16 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: That would be great!
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: I feel bad for making you explain it to me all the time.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "This time I promise I won\u2019t forget!"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Yeah, I think I have just enough time to explain it again.
     RelationshipCheckRequired: 0
@@ -120,9 +156,13 @@ MonoBehaviour:
     - Dialogue: "Oh alright, I\u2019ll be sure to pay extra close attention tonight
         then."
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     - Dialogue: Maybe your little cousin will catch me up to speed if I ever get
         confused during the game.
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: How about I just show you with my performance tonight?
     RelationshipCheckRequired: 0
@@ -135,13 +175,21 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: That would be great!
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     - Dialogue: I feel bad for making you explain it to me all the time.
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Neutral
     - Dialogue: This way there is no way that I can ever forget it again.
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
     - Dialogue: It has been rough without your Grandpa here to help me out with these
         things, so I really appreciate you doing this for me.
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: "How about I write it down for you so you won\u2019t ever forget
       again?"
@@ -155,13 +203,21 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: That would be great!
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     - Dialogue: I feel bad for making you explain it to me all the time.
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Neutral
     - Dialogue: This way there is no way that I can ever forget it again.
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
     - Dialogue: It has been rough without your Grandpa here to help me out with these
         things, so I really appreciate you doing this for me.
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: Of course, I can explain it to you as many times as you need.
       Would you like me to write it down?
@@ -175,6 +231,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: ...
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

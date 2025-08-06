@@ -16,13 +16,19 @@ MonoBehaviour:
   - Dialogue: "You know, I\u2019m sure if you asked your mom, she\u2019d love to
       play with you!"
     Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+    AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+    AudioResponse: Happy
   - Dialogue: "Call it practice, but I\u2019m sure she\u2019s itching to score a
       goal after all these years."
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+    AudioResponse: Neutral
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "You\u2019re pretty good, but my money is still on your mom."
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: "So you\u2019re saying if I beat her, I\u2019m officially the
       best player in the family."
@@ -36,19 +42,31 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Your mom is trying her best.
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     - Dialogue: "I think she\u2019d much rather be playing with you than at work."
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue:
     - Dialogue: Your mom is trying her best.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "I think she\u2019d much rather be playing with you than at work."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "Look, I know you wish Mom could be here, but please don\u2019t take
         it out on your grandma. We need to be there for her right now, so don\u2019t
         be defensive with her. "
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "She\u2019s so proud of you. Your mom too."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     PlayerDialogue: "She\u2019s too busy to help me practice."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -60,8 +78,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: ...He loved watching you play, kiddo.
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     - Dialogue: "I\u2019m sure he would\u2019ve loved to play with you."
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: "I wish I could\u2019ve played with Grandpa."
     RelationshipCheckRequired: 0
@@ -74,6 +96,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "You\u2019re pretty good, but my money is still on your mom."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "So you\u2019re saying if I beat mom I\u2019m officially the
       best player in the family."
@@ -87,8 +111,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Your mom is trying her best.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "I think she\u2019d much rather be playing with you than at work."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "I\u2019ve been playing for years and she\u2019s never played
       with me."
@@ -103,10 +131,16 @@ MonoBehaviour:
     - Dialogue: Dad and your mom used to go to all the school games when we were
         in high school.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: With grandpa gone,
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "I\u2019m sure she\u2019d love share soccer with you."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "I\u2019d like that."
     RelationshipCheckRequired: 0
@@ -120,8 +154,12 @@ MonoBehaviour:
     - Dialogue: She enjoys watching it more these days, but when I was a kid, she
         could definitely give me a run for my money.
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     - Dialogue: Quite the trash talker too.
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: Did Nanna play soccer?
     RelationshipCheckRequired: 0
@@ -134,8 +172,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Your mom is trying her best.
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     - Dialogue: "I think she\u2019d much rather be playing with you than at work."
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: Oh, so your parents had the time to play with you?
     RelationshipCheckRequired: 0
@@ -149,8 +191,12 @@ MonoBehaviour:
     - Dialogue: "With Grandpa gone, I\u2019m sure she\u2019d love to share soccer
         with you, but don\u2019t feel bad if she says no."
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     - Dialogue: Watching can be just as exciting as being on the field.
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: Do you think asking Nanna to play too will help her feel better?
     RelationshipCheckRequired: 0
@@ -163,6 +209,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: ...Maybe?
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

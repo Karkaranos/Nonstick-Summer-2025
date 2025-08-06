@@ -15,16 +15,26 @@ MonoBehaviour:
   dialogue:
   - Dialogue: Did you pack enough water?
     Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+    AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+    AudioResponse: Neutral
   - Dialogue: Sunscreen?
     Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+    AnimatedReaction: {fileID: 0}
+    AudioResponse: Neutral
   - Dialogue: "I\u2019m sure Grandma can help you put together some snacks."
     Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+    AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+    AudioResponse: Happy
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Good thing your Grandma made her famous granola balls for the team!
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     - Dialogue: "She\u2019d never let you go hungry."
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: "Grandma ate everything! I guess we\u2019ll to have to buy more
       of the good snacks."
@@ -38,8 +48,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Well, you\u2019re still MY kid."
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     - Dialogue: Mind the attitude.
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m not a kid anymore. I can pack my own snacks."
     RelationshipCheckRequired: 0
@@ -52,30 +66,52 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: ...
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Silent
     - Dialogue: "Look, I\u2019ve already tried to talk my supervisor into letting
         me drive over during my lunch break, but it\u2019s too far of a drive."
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Sad
     - Dialogue: "I\u2019ll make it up to you, I promise."
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     CombinedDialogue:
     - Dialogue: ...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "Look, I\u2019ve already tried to talk my supervisor into letting
         me drive over during my lunch break, but it\u2019s too far of a drive."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "I\u2019ll make it up to you, I promise."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "Well, I\u2019m sure you\u2019re going to do--"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Goddammit.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Sorry honey, I have to go.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Call me when you get back, okay?
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Love you.
       Portrait: {fileID: 0}
-    PlayerDialogue: I did...I also asked Grandma to save you a seat, just in case.
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
+    PlayerDialogue: I did... I also asked Grandma to save you a seat, just in case.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 8cb10061bd303d442bc4c7567918db15, type: 2}
@@ -86,6 +122,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Mhm.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "But Mom, Grandma ate everything! There\u2019s nothing left!"
     RelationshipCheckRequired: 0
@@ -98,6 +136,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Well, you\u2019re still MY kid, so mind the attitude."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m not a kid anymore."
     RelationshipCheckRequired: 0
@@ -110,11 +150,17 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: ...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "Look, I\u2019ve already tried to talk my supervisor into letting
         me drive over during my lunch break, but it\u2019s too far of a drive."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "I\u2019ll make it up to you, I promise."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: I did...I also asked Grandma to save you a seat, just in case.
     RelationshipCheckRequired: 0
@@ -127,6 +173,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Don\u2019t even think about it."
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: "What if I used all of it now? That way, there\u2019s no need
       to bring any of it."
@@ -140,8 +188,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: If you want to be on your A-game, you do.
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
     - Dialogue: "Don\u2019t want you catching heatstroke out there."
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: Do I really need all of that?
     RelationshipCheckRequired: 0
@@ -154,11 +206,17 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: ...
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Silent
     - Dialogue: "Look, I\u2019ve already tried to talk my supervisor into letting
         me drive over during my lunch break, but it\u2019s too far of a drive."
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Sad
     - Dialogue: "I\u2019ll make it up to you, I promise."
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: "Are you sure you can\u2019t make it..?"
     RelationshipCheckRequired: 0
@@ -171,11 +229,17 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: ...Look,
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     - Dialogue: "I\u2019ve already tried to talk my supervisor into letting me drive
         over during my lunch break, but it\u2019s too far of a drive."
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "I\u2019ll make it up to you, I promise."
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

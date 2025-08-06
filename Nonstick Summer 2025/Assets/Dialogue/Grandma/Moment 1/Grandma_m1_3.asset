@@ -15,13 +15,15 @@ MonoBehaviour:
   dialogue:
   - Dialogue: Are you excited for your first day of school?
     Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
-    AnimatedReaction: {fileID: 0}
+    AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+    AudioResponse: Neutral
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "That\u2019s great pumpkin! If you are anything like your Nanna,
         I\u2019m sure you\u2019ll have a ton of fun and make loads of friends!"
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m super excited!! I hope to make a ton of new friends!"
     RelationshipCheckRequired: 0
@@ -36,7 +38,8 @@ MonoBehaviour:
         lots of friends that you\u2019ll have tons of fun with every single day!
         Your Nanna guarantees it!"
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: No, I never want to go to school! School is STUPID.
     RelationshipCheckRequired: 0
@@ -50,7 +53,8 @@ MonoBehaviour:
     - Dialogue: "It\u2019s okay to be nervous, sunshine. But I\u2019m sure you\u2019ll
         have lots of fun once you get there!"
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: "Maybe... I\u2019m a little nervous.."
     RelationshipCheckRequired: 0
@@ -65,6 +69,7 @@ MonoBehaviour:
         I\u2019m sure you\u2019ll have a ton of fun and make loads of friends!"
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m super excited! I hope to make a ton of new friends!"
     RelationshipCheckRequired: 0
@@ -79,6 +84,7 @@ MonoBehaviour:
         your classmates once you meet them!"
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "No! I don\u2019t wanna make new friends. Ugh."
     RelationshipCheckRequired: 0
@@ -93,6 +99,7 @@ MonoBehaviour:
         about you that they can dislike."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "I hope everyone likes me... Mom said there\u2019s going to be
       20 kids....."
@@ -107,15 +114,18 @@ MonoBehaviour:
     - Dialogue: "I may be young at heart, but I\u2019m not that young pumpkin. With
         that kind of charm I just know you are going to make loads of new friends!"
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     CombinedDialogue:
     - Dialogue: "I may be young at heart, but I\u2019m not that young pumpkin. With
         that kind of charm I just know you are going to make loads of new friends!"
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Alright, best you get some rest. The early bird gets the worm!
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     PlayerDialogue: "I\u2019m suuuper excited! Want to come with me?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -128,7 +138,8 @@ MonoBehaviour:
     - Dialogue: "Making new friends is a good thing, pumpkin. You\u2019ll be able
         to play a ton of really fun games all day with people just as sweet as you!"
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t wanna go. Do I really have to make new friends?"
     RelationshipCheckRequired: 0
@@ -142,11 +153,13 @@ MonoBehaviour:
     - Dialogue: "You\u2019re your Nanna\u2019s little pumpkin, aren\u2019t you? Everyone
         will want to be your friend, I am sure of it."
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Sad
     - Dialogue: And if anyone gives you some trouble, you just let your Nanna know
         and she will take care of it, haha!
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: I dunno. Will anyone wanna be friends with me?
     RelationshipCheckRequired: 0
@@ -160,15 +173,18 @@ MonoBehaviour:
     - Dialogue: "You\u2019re going to have to learn to use your words for school,
         honey."
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue:
     - Dialogue: "You\u2019re going to have to learn to use your words for school,
         honey."
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Alright, best you get some rest. The early bird gets the worm!
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}

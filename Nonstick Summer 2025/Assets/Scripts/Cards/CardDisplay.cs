@@ -144,7 +144,10 @@ public partial class CardDisplay : MonoBehaviour
 
         if(animate)
         {
-            StartCoroutine(RefreshDisplayAnimation(animate));
+            if(this!=null)
+            {
+                StartCoroutine(RefreshDisplayAnimation(true));
+            }
             return;
         }
         RefreshDisplayPrivate();
@@ -159,6 +162,7 @@ public partial class CardDisplay : MonoBehaviour
         float halfAnimationLength = RefreshCardTime / 2;
         float time, t, y, timeStarted;
 
+
         // 0 degrees to 180
         timeStarted = Time.time;
         do
@@ -169,7 +173,7 @@ public partial class CardDisplay : MonoBehaviour
             rectTransform.localEulerAngles = startRotation + new Vector3(0, y, 0);
             yield return null;
         }
-        while (time < halfAnimationLength);
+        while (time < halfAnimationLength && this!=null);
 
         // this is where the magic happens
         RefreshDisplayPrivate();
@@ -184,7 +188,7 @@ public partial class CardDisplay : MonoBehaviour
             rectTransform.localEulerAngles = startRotation + new Vector3(0, y, 0);
             yield return null;
         }
-        while (time < halfAnimationLength);
+        while (time < halfAnimationLength && this!=null);
 
         rectTransform.localEulerAngles = startRotation;
     }

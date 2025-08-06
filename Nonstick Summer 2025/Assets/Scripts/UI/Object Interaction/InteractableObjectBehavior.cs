@@ -80,6 +80,8 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
         {
             canvas.InitializeAfterModifier(_statement, _response, chosenOption);
         }
+
+        GetComponent<SpecialInteractBehavior>()?.CallSpecialInteraction();
     }
 
 

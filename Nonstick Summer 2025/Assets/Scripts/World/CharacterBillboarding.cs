@@ -16,7 +16,8 @@ public class CharacterBillboarding : MonoBehaviour
     void Update()
     {
 
-        transform.LookAt(Camera.main.transform.position, Vector3.up);
+        Vector3 rotation = new Vector3(Camera.main.transform.position.x, transform.position.y, Camera.main.transform.position.z);
+        transform.LookAt(rotation);
 
     }
 

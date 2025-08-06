@@ -8,9 +8,13 @@
 *****************************************************************************/
 
 using NaughtyAttributes;
+using NUnit.Framework;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 
 [System.Serializable]
 
@@ -23,5 +27,9 @@ public class DialogueNPC
 
     [Tooltip("Create a prefab for your sprite/animation and then put it here.")]
     public GameObject AnimatedReaction;
+
+    List<string> options = new List<string> { "Null", "Happy", "Sad", "Angry", "Neutral" };
+
+    [Dropdown("options")] public string AudioResponse;
 
 }

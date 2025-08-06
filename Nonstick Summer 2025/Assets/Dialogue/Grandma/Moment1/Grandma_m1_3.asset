@@ -32,9 +32,9 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "Don\u2019t say that sweetie. Someone as sweet as you will have lots
-        of friends that you\u2019ll have tons of fun with every single day! Your
-        Nanna guarantees it!"
+    - Dialogue: "Don\u2019t say that, sweetie. Someone as sweet as you will have
+        lots of friends that you\u2019ll have tons of fun with every single day!
+        Your Nanna guarantees it!"
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
@@ -61,12 +61,12 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Charming_Observation:
     NpcReactionText:
-    - Dialogue: "That\u2019s great sweetie, I\u2019m sure you\u2019ll have a ton
-        of fun and make loads of friends."
+    - Dialogue: "That\u2019s great, pumpkin! If you are anything like your Nanna,
+        I\u2019m sure you\u2019ll have a ton of fun and make loads of friends!"
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
-    PlayerDialogue: I hope to make a ton of new friends
+    PlayerDialogue: "I\u2019m super excited! I hope to make a ton of new friends!"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 05693c730dc917046b1ea64852734d1f, type: 2}
@@ -108,7 +108,14 @@ MonoBehaviour:
         that kind of charm I just know you are going to make loads of new friends!"
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 0}
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: "I may be young at heart, but I\u2019m not that young pumpkin. With
+        that kind of charm I just know you are going to make loads of new friends!"
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+      AnimatedReaction: {fileID: 0}
+    - Dialogue: Alright, best you get some rest. The early bird gets the worm!
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 0}
     PlayerDialogue: "I\u2019m suuuper excited! Want to come with me?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -118,7 +125,7 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: "Making new friends is a good thing pumpkin. You\u2019ll be able
+    - Dialogue: "Making new friends is a good thing, pumpkin. You\u2019ll be able
         to play a ton of really fun games all day with people just as sweet as you!"
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
       AnimatedReaction: {fileID: 0}
@@ -132,11 +139,11 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: "You\u2019re your Nanna\u2019s little pumpkin aren\u2019t you. Everyone
+    - Dialogue: "You\u2019re your Nanna\u2019s little pumpkin, aren\u2019t you? Everyone
         will want to be your friend, I am sure of it."
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
       AnimatedReaction: {fileID: 0}
-    - Dialogue: And if anyone gives you some trouble you just let your Nanna know
+    - Dialogue: And if anyone gives you some trouble, you just let your Nanna know
         and she will take care of it, haha!
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 0}
@@ -154,7 +161,14 @@ MonoBehaviour:
         honey."
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
       AnimatedReaction: {fileID: 0}
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: "You\u2019re going to have to learn to use your words for school,
+        honey."
+      Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
+      AnimatedReaction: {fileID: 0}
+    - Dialogue: Alright, best you get some rest. The early bird gets the worm!
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 0}
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}

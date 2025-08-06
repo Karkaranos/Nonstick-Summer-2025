@@ -15,14 +15,18 @@ MonoBehaviour:
   dialogue:
   - Dialogue: "Heya! Bet you\u2019re just SO relieved that I\u2019m here, huh?"
     Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+    AnimatedReaction: {fileID: 0}
   - Dialogue: "...I\u2019m joking, mostly. But I\u2019m glad that I made it."
     Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    AnimatedReaction: {fileID: 0}
   - Dialogue: "This is really it, huh? What\u2019s it feel like?"
     Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    AnimatedReaction: {fileID: 0}
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "That\u2019s, um, good! In a good way..."
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "Like I\u2019m going to explode, in a good way."
     RelationshipCheckRequired: 0
@@ -30,11 +34,12 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 0.0001
+    ChangeInRelationshipStatus: 0
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: "Oh... Really? Well, we\u2019ll all miss you. You know that, right?"
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "Like I\u2019m happy to finally be getting out of here."
     RelationshipCheckRequired: 0
@@ -42,36 +47,43 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -0.0001
+    ChangeInRelationshipStatus: 0
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: "Oh. Oh! Um... I\u2019m sorry. I wasn\u2019t, uh, prepared for that."
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue:
     - Dialogue: "Oh. Oh! Um... I\u2019m sorry. I wasn\u2019t, uh, prepared for that."
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 0}
     - Dialogue: "It\u2019s... It\u2019s a lot, isn\u2019t it?  I mean, I\u2019d imagine!
         It is for me, at least."
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 0}
     - Dialogue: "I\u2019m not too far behind you... That\u2019s scary!"
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 0}
     - Dialogue: "But that\u2019s besides the point! I\u2019ll get there when I get
         there. For now..."
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+      AnimatedReaction: {fileID: 0}
     - Dialogue: Well, are you ready?
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 0}
     PlayerDialogue: Like I wish I had gotten to know you some more.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 0.0001
+    ChangeInRelationshipStatus: 0
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "Haha. C\u2019mon! That\u2019s so corny. I guess that I\u2019m happy
         to hear it, though."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Like some things never change.
     RelationshipCheckRequired: 0
@@ -79,12 +91,13 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: 0
   Assertive_Observation:
     NpcReactionText:
     - Dialogue: "Hey, I\u2019m trying here. I really am. We only have so much time
         left, you know?"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "Like I\u2019m sick and tired of these sorts of questions."
     RelationshipCheckRequired: 0
@@ -97,12 +110,13 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Like I wish I had gotten to know you some more.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: "Oh. Oh! Um... I\u2019m sorry. I wasn\u2019t, uh, prepared for
       that."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
@@ -110,6 +124,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "C\u2019mon. How would I know?"
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: How do you think it feels?
     RelationshipCheckRequired: 0
@@ -117,13 +132,15 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -0.0001
+    ChangeInRelationshipStatus: 0
   Assertive_Question:
     NpcReactionText:
     - Dialogue: "Hey, I\u2019m trying here."
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+      AnimatedReaction: {fileID: 0}
     - Dialogue: I really am. We only have so much time left, you know?
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: Why do you care? We barely talk anymore.
     RelationshipCheckRequired: 0
@@ -131,14 +148,16 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -0.0001
+    ChangeInRelationshipStatus: 0
   Sappy_Question:
     NpcReactionText:
     - Dialogue: Huh? Well, I dunno.
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 0}
     - Dialogue: "I\u2019m happy for you, but I\u2019m sad to see you go. I\u2019m
         sure you\u2019ve heard it all before."
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 0}
     CombinedDialogue: []
     PlayerDialogue: What about you? How are you feeling?
     RelationshipCheckRequired: 0
@@ -146,25 +165,29 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 0.0001
+    ChangeInRelationshipStatus: 0
   Silent:
     NpcReactionText: []
     CombinedDialogue:
     - Dialogue: "It\u2019s... It\u2019s a lot, isn\u2019t it?  I mean, I\u2019d imagine!
         It is for me, at least."
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 0}
     - Dialogue: "I\u2019m not too far behind you... That\u2019s scary!"
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 0}
     - Dialogue: "But that\u2019s besides the point! I\u2019ll get there when I get
         there. For now..."
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+      AnimatedReaction: {fileID: 0}
     - Dialogue: Well, are you ready?
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 0}
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -0.0001
+    ChangeInRelationshipStatus: 0
   End: 0

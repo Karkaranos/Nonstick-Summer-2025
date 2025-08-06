@@ -28,7 +28,7 @@ public class DialogueNPC
     [Tooltip("Create a prefab for your sprite/animation and then put it here.")]
     public GameObject AnimatedReaction;
 
-    List<string> options = new List<string> { "Null", "Happy", "Sad", "Angry", "Neutral" };
+    List<string> options = new List<string> { "Silent", "Happy", "Sad", "Angry", "Neutral" };
 
     [Dropdown("options")] public string AudioResponse;
 

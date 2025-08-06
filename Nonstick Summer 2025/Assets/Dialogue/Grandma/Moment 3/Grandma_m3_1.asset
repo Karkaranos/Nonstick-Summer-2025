@@ -1,0 +1,200 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
+  m_Name: Grandma_m3_1
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Dialogue: Hello Pumpkin, you look like you're ready for the big game!
+    Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+    AudioResponse: Neutral
+  Charming_Expression:
+    NpcReactionText:
+    - Dialogue: "That\u2019s the spirit."
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
+    - Dialogue: "I know you\u2019ve put in a ton of hard work, I just wish everyone
+        could see just how amazing you\u2019ve become."
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Neutral
+    CombinedDialogue: []
+    PlayerDialogue: "You know it! Nanna\u2019s Pumpkin is going to put on a show
+      with their amazing skills!"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: d1cb0204a0d275243bb3974fa791ac7c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -15
+  Assertive_Expression:
+    NpcReactionText:
+    - Dialogue: "It\u2019s pretty obvious just looking at you, your hard work is
+        really paying off."
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
+    - Dialogue: I just know you are going to be great out there with confidence like
+        that.
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
+    CombinedDialogue: []
+    PlayerDialogue: "Thank you, I\u2019ve been training really hard for this."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: d1cb0204a0d275243bb3974fa791ac7c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Sappy_Expression:
+    NpcReactionText:
+    - Dialogue: "Come on, don\u2019t think like that, remember all the time and effort
+        you put into practicing for this game."
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
+    - Dialogue: You are more than ready!
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
+    CombinedDialogue: []
+    PlayerDialogue: "I know you\u2019re just saying that..."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: d1cb0204a0d275243bb3974fa791ac7c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Charming_Observation:
+    NpcReactionText:
+    - Dialogue: Thank you very much my little charmer!
+      Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
+    CombinedDialogue: []
+    PlayerDialogue: Right back at ya Grandma! You're looking good today!
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: d1cb0204a0d275243bb3974fa791ac7c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Assertive_Observation:
+    NpcReactionText:
+    - Dialogue: I know I do, but I am serious. I can already tell that you are going
+        to put on a great show!
+      Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
+    CombinedDialogue: []
+    PlayerDialogue: You always say that kind of stuff.
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: d1cb0204a0d275243bb3974fa791ac7c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 5
+  Sappy_Observation:
+    NpcReactionText:
+    - Dialogue: I really mean it, watching you play never fails to put a huge smile
+        on my face!
+      Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
+    CombinedDialogue: []
+    PlayerDialogue: "I know you\u2019re just saying that..."
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: d1cb0204a0d275243bb3974fa791ac7c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  Charming_Question:
+    NpcReactionText:
+    - Dialogue: "I\u2019m serious, you\u2019ve really put your game face on. I can
+        already tell that you are going to put on a show!"
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
+    - Dialogue: I just wish everyone was here to see it.
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
+    CombinedDialogue: []
+    PlayerDialogue: "I didn\u2019t know it was so obvious. Do you really mean it?!"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: d1cb0204a0d275243bb3974fa791ac7c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -10
+  Assertive_Question:
+    NpcReactionText:
+    - Dialogue: "It\u2019s pretty obvious just looking at you, your hard work is
+        really paying off."
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
+    - Dialogue: I just know you are going to be great out there with confidence like
+        that.
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
+    CombinedDialogue: []
+    PlayerDialogue: "I\u2019ve really been putting in the work. You can tell?"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: d1cb0204a0d275243bb3974fa791ac7c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 10
+  Sappy_Question:
+    NpcReactionText:
+    - Dialogue: "Yeah... It\u2019s clear you\u2019ve put a lot of work in to become
+        the best version of yourself for today."
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Neutral
+    - Dialogue: "I\u2019m very proud of you!"
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
+    - Dialogue: I just know you will put on a great show for Everyone to see.
+      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
+    CombinedDialogue: []
+    PlayerDialogue: "I really appreciate it, I\u2019ve been putting in a ton of work
+      for this day. I have to make everyone proud right?"
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: d1cb0204a0d275243bb3974fa791ac7c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: 15
+  Silent:
+    NpcReactionText:
+    - Dialogue: ...
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Neutral
+    CombinedDialogue: []
+    PlayerDialogue: ...
+    RelationshipCheckRequired: 0
+    RelationshipRange: {x: 0, y: 0}
+    BranchingDialogueHigh: {fileID: 11400000, guid: d1cb0204a0d275243bb3974fa791ac7c, type: 2}
+    BranchingDialogueNeutral: {fileID: 0}
+    BranchingDialogueLow: {fileID: 0}
+    ChangeInRelationshipStatus: -5
+  End: 0

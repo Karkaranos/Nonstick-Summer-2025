@@ -17,15 +17,18 @@ MonoBehaviour:
       be here before you know it."
     Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: Neutral
   - Dialogue: "If you\u2019re good for Grandma tonight, then she might remember that
       when she\u2019s out shopping for your present..."
     Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
-    AnimatedReaction: {fileID: 0}
+    AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+    AudioResponse: Happy
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "I\u2019m glad. She appreciates getting to spend time with you."
       Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: Grandma always gets me the best gifts!
     RelationshipCheckRequired: 1
@@ -38,7 +41,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Don\u2019t say that...we can go out for pizza, your favorite!"
       Portrait: {fileID: 21300000, guid: 032b2ac25e695414a96b9f1f4f473521, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: "Grandma doesn\u2019t understand the games I like."
     RelationshipCheckRequired: 1
@@ -52,15 +56,18 @@ MonoBehaviour:
     - Dialogue: "I\u2019m sure she\u2019d love to. We\u2019ll ask her about it tonight,
         okay?"
       Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     CombinedDialogue:
     - Dialogue: "I\u2019m sure she\u2019d love to. We\u2019ll ask her about it tonight,
         okay?"
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Now, are you ready for your first day of school tomorrow? Big day.
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     PlayerDialogue: I want Grandma to make my cake. She makes the best cake.
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 20, y: 20}
@@ -74,6 +81,7 @@ MonoBehaviour:
         took a bath..."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m gonna be as old and smelly as you!"
     RelationshipCheckRequired: 1
@@ -87,6 +95,7 @@ MonoBehaviour:
     - Dialogue: That's okay. At least put some thought into it soon, alright?
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t know yet."
     RelationshipCheckRequired: 1
@@ -100,6 +109,7 @@ MonoBehaviour:
     - Dialogue: "That\u2019s okay. At least put some thought into it soon, alright?"
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t feel older."
     RelationshipCheckRequired: 1
@@ -113,7 +123,8 @@ MonoBehaviour:
     - Dialogue: You should appreciate anything your Grandma gives you. She puts so
         much thought and care into it.
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: Do you think Grandma would buy me the really expensive game?
     RelationshipCheckRequired: 1
@@ -127,7 +138,8 @@ MonoBehaviour:
     - Dialogue: You should appreciate anything your Grandma gives you. She puts so
         much thought and care into it.
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: "She\u2019s just going to make me another blanket, why bother?"
     RelationshipCheckRequired: 1
@@ -140,7 +152,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Of course. We can talk about it tonight, okay?
       Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: No, I haven't thought about it... can you help me?
     RelationshipCheckRequired: 1
@@ -153,7 +166,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Well, think about it.
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 1

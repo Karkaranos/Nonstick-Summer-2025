@@ -15,21 +15,35 @@ MonoBehaviour:
   dialogue:
   - Dialogue: Oh! Listen!
     Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+    AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+    AudioResponse: Happy
   - Dialogue: "I got some more cards the other day, and I\u2019ve been itchin to
       try them out."
     Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+    AudioResponse: Neutral
   - Dialogue: Wanna play a round or two?
     Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+    AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+    AudioResponse: Happy
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Right!
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Happy
     - Dialogue: Yeah.
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Neutral
     - Dialogue: Of course.
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Neutral
     - Dialogue: Maybe some other time, then.
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m a bit busy... I\u2019m not sure if I have the time."
     RelationshipCheckRequired: 0
@@ -42,11 +56,17 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Oh yeah?
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Neutral
     - Dialogue: "You haven\u2019t played in forever! Meanwhile, I\u2019ve been slowly
         honing my skills, hehe..."
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     - Dialogue: "I definitely won\u2019t go down easy!"
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: "Careful what you wish for! You know I\u2019d destroy you again
       if I had to."
@@ -60,24 +80,40 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: I can give you a refresher!
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     - Dialogue: "I know you don\u2019t have a lot of time for this sort of thing
         anymore, but it could be fun!"
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue:
     - Dialogue: I can give you a refresher!
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "I know you don\u2019t have a lot of time for this sort of thing
         anymore, but it could be fun!"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: But, um, back to soccer...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: I was thinking about joining the soccer team next year.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Would you be willing to show me a thing or two to get a head start?
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: It would be great to start learning from someone as good at it as
         you!
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     PlayerDialogue: "I don\u2019t know. I haven\u2019t played in a long time."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -89,8 +125,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Right, yeah, of course...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Maybe some other time then.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Well, I am a bit busy lately so I am not sure if I will have
       the time.
@@ -104,8 +144,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Oh... I guess so.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Sorry for asking, that was a stupid question.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m good, I\u2019m sure I would just destroy you anyways.
       I always did."
@@ -119,8 +163,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Right, yeah, of course...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Maybe some other time then.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "Maybe some other time, I\u2019ve had a lot on my mind recently."
     RelationshipCheckRequired: 0
@@ -133,10 +181,16 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Yeah!
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Happy
     - Dialogue: "I\u2019ll be sure to catch you up to speed."
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
     - Dialogue: "I\u2019m looking forward to it already!"
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: Would you be okay with teaching me how to play again?
     RelationshipCheckRequired: 0
@@ -149,8 +203,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: No way am I losing!
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Happy
     - Dialogue: "You have no idea how much better I\u2019ve gotten!"
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: Depends. Are you ready to lose?
     RelationshipCheckRequired: 0
@@ -163,14 +221,24 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Oh...
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Sad
     - Dialogue: I guess so.
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     - Dialogue: Maybe.
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Sad
     - Dialogue: "You\u2019re right."
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     - Dialogue: Sorry.
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: "Aren\u2019t we getting a bit too old to be playing with cards?"
     RelationshipCheckRequired: 0
@@ -183,6 +251,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: ...
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: ..
     RelationshipCheckRequired: 0

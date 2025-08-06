@@ -191,6 +191,11 @@ public partial class CardDisplay : MonoBehaviour
 
     private void RefreshDisplayPrivate()
     {
+        if(this==null)
+        {
+            Debug.LogError("Null CardDisplay");
+            return;
+        }
         EmotionText.text = CardStyleManager.GetEmotionStyle(card).DisplayName;
         IntentionText.text = CardStyleManager.GetIntentionStyle(card).DisplayName;
         EnergyText.text = (card.EnergyCost < 0) ? "" : $"+{card.EnergyCost.ToString()}"; // the text is still there just in case the cost somehow ends up giving the player energy

@@ -30,21 +30,21 @@ public class ReactionManager : MonoBehaviour
         CharacterReactions.start();
     }
 
-    public void SetCharacter (characters thisChar)
+    public void SetCharacter (Character thisChar)
     {
-        if (thisChar == characters.Grandma)
+        if (thisChar == Character.Grandma)
         {
             CharacterReactions = AudioManager.instance.CreateEventInstance(FMODEvents.instance.GrandmaReact);
         }
-        else if (thisChar == characters.Mom)
+        else if (thisChar == Character.Mom)
         {
             CharacterReactions = AudioManager.instance.CreateEventInstance(FMODEvents.instance.MomReact);
         }
-        else if (thisChar == characters.Cousin)
+        else if (thisChar == Character.Cousin)
         {
             CharacterReactions = AudioManager.instance.CreateEventInstance(FMODEvents.instance.CousinReact);
         }
-        else if (thisChar == characters.Uncle)
+        else if (thisChar == Character.Uncle)
         {
             CharacterReactions = AudioManager.instance.CreateEventInstance(FMODEvents.instance.UncleReact);
         }

@@ -30,6 +30,7 @@ public class DialogueNPCPortraitDisplay : MonoBehaviour
 
     private Coroutine portraitAnimation;
     private Vector3 defaultSpritePosition;
+    private bool setAny = false;
 
     private void Start()
     {
@@ -43,7 +44,10 @@ public class DialogueNPCPortraitDisplay : MonoBehaviour
         if (dialogue == null || dialogue.Portrait == null)
             return;
 
-        
+        if(!setAny)
+        {
+            NPCImage.sprite = dialogue.Portrait;
+        }
 
         //instantiates animation
         //making a new function to prevent clutter
@@ -64,11 +68,23 @@ public class DialogueNPCPortraitDisplay : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
+        var targetPos = defaultSpritePosition + (Vector3.up * 100);
+        while (NPCImage.transform.position != targetPos)
+        {
+            NPCImage.transform.position = Vector3.MoveTowards(NPCImage.transform.position, targetPos, Time.deltaTime * bobSpeed);
+            yield return null;
+        }
         NPCImage.sprite = portrait;
+        while (NPCImage.transform.position != defaultSpritePosition)
+        {
+            NPCImage.transform.position = Vector3.MoveTowards(NPCImage.transform.position, defaultSpritePosition, Time.deltaTime * bobSpeed);
+            yield return null;
+        }
+
         float timeStarted = Time.time;
         while(true)
         {
-            NPCImage.transform.position = defaultSpritePosition + new Vector3(0, (Mathf.Sin(Time.time - timeStarted) * bobSpeed));
+            NPCImage.transform.position = defaultSpritePosition + new Vector3(0, ( -Mathf.Sin(Time.time - timeStarted) * bobSpeed));
             yield return null;
         }
     }

@@ -13,21 +13,33 @@ MonoBehaviour:
   m_Name: Uncle_m4_3
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: "Just...your mother\u2019s worried about you."
+  - Dialogue: "Just... your mother\u2019s worried about you."
     Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+    AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+    AudioResponse: Sad
   - Dialogue: "We\u2019re all worried about you!"
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+    AudioResponse: Neutral
   - Dialogue: "I\u2019ve been doing a lot more reading. Research."
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    AnimatedReaction: {fileID: 0}
+    AudioResponse: Neutral
   - Dialogue: "I don\u2019t want to get into specifics now, but if your friends ever
-      do or say anything that doesn\u2019t add up,"
+      do or say anything that doesn\u2019t add up..."
     Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
-  - Dialogue: you can tell me.
+    AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+    AudioResponse: Angry
+  - Dialogue: You can tell me.
     Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+    AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+    AudioResponse: Happy
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "That wasn\u2019t what I was thinking of, but if you\u2019re sure..."
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: "If you think my friends are government spies, they\u2019re not."
     RelationshipCheckRequired: 0
@@ -40,9 +52,13 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "This goes beyond you or me! It\u2019s deeper than that!"
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     - Dialogue: "So pardon me for making sure you\u2019re not getting swept up in
         it."
-      Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+      Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: "I know you\u2019re only bugging me because you\u2019re bored."
     RelationshipCheckRequired: 0
@@ -55,9 +71,13 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "This goes beyond you or me! It\u2019s deeper than that!"
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     - Dialogue: "So pardon me for making sure you\u2019re not getting swept up in
         it."
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: "If you want, we can probably hang out with you later, if you\u2019re
       lonely."
@@ -71,6 +91,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Okay! Of course. I\u2019ll be here."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: I appreciate the concern. Seriously. We can talk later.
     RelationshipCheckRequired: 0
@@ -83,6 +105,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: What, am I not allowed to check in with you anymore? Whatever, kid...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "Come on. I know you\u2019re only bugging me because you\u2019re
       bored."
@@ -96,6 +120,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Okay! Of course. I\u2019ll be here."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "I... I can probably hang out with you later, if you\u2019d like."
     RelationshipCheckRequired: 0
@@ -107,10 +133,14 @@ MonoBehaviour:
   Charming_Question:
     NpcReactionText:
     - Dialogue: "First off, the end of the world wouldn\u2019t benefit anyone, so
-        it\u2019s more likely to be some form of clandestine government-"
+        it\u2019s more likely to be some form of clandestine government--"
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     - Dialogue: ...nevermind.
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: "Can you give me the whole \u201Cthe end is near\u201D speech
       later? I have things to do."
@@ -124,8 +154,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: What, am I not allowed to check in with you anymore?
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
-    - Dialogue: Just...be careful out there.
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
+    - Dialogue: Just... be careful out there.
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: "You really don\u2019t have anything better to do, do you?"
     RelationshipCheckRequired: 0
@@ -139,9 +173,11 @@ MonoBehaviour:
     - Dialogue: "It doesn\u2019t matter what\u2019s \u201Cgood\u201D for me or not.
         It\u2019s about the truth."
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: "Look, are you sure all this \u201Cresearch\u201D is good for
-      you? You look like you haven\u2019t slept in days."
+      you? You look like you haven\u2019t slept for days."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: eb9b3756df137fd4eb3a315c1643decd, type: 2}
@@ -152,6 +188,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: ...
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

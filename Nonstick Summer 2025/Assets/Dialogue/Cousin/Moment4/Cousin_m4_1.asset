@@ -15,34 +15,60 @@ MonoBehaviour:
   dialogue:
   - Dialogue: Oh! Um... Hey!
     Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+    AudioResponse: Neutral
   - Dialogue: It's been awhile, huh?
     Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+    AudioResponse: Neutral
   - Dialogue: "I was starting to think that you weren\u2019t going to show up."
     Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    AnimatedReaction: {fileID: 0}
+    AudioResponse: Neutral
   - Dialogue: Haha...
     Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+    AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+    AudioResponse: Sad
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Yep. Uh-huh... Gah, this is so embarrassing for, like, NO reason.
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     - Dialogue: Sorry.
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue:
     - Dialogue: Yep. Uh-huh... Gah, this is so embarrassing for, like, NO reason.
         Sorry.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Ugh! This is so weird!
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: I mean.. I used to sort of idolize you. Did you know that?
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: We, uh, probably weren't as close as I thought, but...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: ...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: I don't know! I missed talking to you.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Sorry if that's, like, lame. Or whatever.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     PlayerDialogue: Uh... Yeah! I guess.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 31.53153, y: 56.756756}
@@ -54,6 +80,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Right! Sorry! Sorry...
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: "Geez... You don\u2019t have to try THIS hard."
     RelationshipCheckRequired: 0
@@ -66,8 +94,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: You have? I mean, of course you have!
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     - Dialogue: Ehehe...
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: "Yeah, yeah. I\u2019ve missed you, too."
     RelationshipCheckRequired: 0
@@ -80,6 +112,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Right! Sorry! Sorry...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "You don\u2019t have to be so nervous, y\u2019know."
     RelationshipCheckRequired: 0
@@ -92,6 +126,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Right! Sorry! Sorry...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "Geez... You don\u2019t have to try THIS hard."
     RelationshipCheckRequired: 0
@@ -104,6 +140,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: You have? I mean, of course you have! Ehehe...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "Yeah, yeah. I\u2019ve missed you, too."
     RelationshipCheckRequired: 0
@@ -116,10 +154,16 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Uh, good! I\u2019ve been good! Mostly."
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     - Dialogue: "Y\u2019know. Busy."
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Neutral
     - Dialogue: But good!
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: Yeah, man. How have you been?
     RelationshipCheckRequired: 0
@@ -132,24 +176,42 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: I dunno. You just, uh...
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Neutral
     - Dialogue: "You haven\u2019t been around, recently. Like, at all."
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue:
     - Dialogue: "I dunno. You just, uh... You haven\u2019t been around, recently.
         Like, at all."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Ugh! This is so weird!
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: I mean.. I used to sort of idolize you. Did you know that?
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: We, uh, probably weren't as close as I thought, but...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: ...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: I don't know! I missed talking to you.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Sorry if that's, like, lame. Or whatever.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     PlayerDialogue: "I mean, I live here. Why wouldn\u2019t I show up?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -161,10 +223,16 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: I dunno. Awhile. Haha.
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Neutral
     - Dialogue: Seriously, though? Uh, a year or two. At least.
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Neutral
     - Dialogue: Probably.
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: How long HAS it been, actually?
     RelationshipCheckRequired: 0
@@ -178,16 +246,28 @@ MonoBehaviour:
     CombinedDialogue:
     - Dialogue: Ugh! This is so weird!
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: I mean.. I used to sort of idolize you. Did you know that?
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: We, uh, probably weren't as close as I thought, but...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: ...
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: I don't know! I missed talking to you.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Sorry if that's, like, lame. Or whatever.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}

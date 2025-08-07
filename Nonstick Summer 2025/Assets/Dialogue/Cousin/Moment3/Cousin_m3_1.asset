@@ -15,15 +15,23 @@ MonoBehaviour:
   dialogue:
   - Dialogue: Hey! Hope you are ready for the big game.
     Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+    AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+    AudioResponse: Happy
   - Dialogue: How are you feeling?
     Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+    AudioResponse: Neutral
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Awesome!
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     - Dialogue: " I\u2019ll be sure to take notes for when I go out there and try
         to get a trophy of my own!"
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: "Great! I\u2019m ready to go out there and get this trophy!"
     RelationshipCheckRequired: 0
@@ -36,8 +44,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: It's okay!
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     - Dialogue: "I didn\u2019t mean to be a burden on you."
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m a bit busy, sorry."
     RelationshipCheckRequired: 0
@@ -50,8 +62,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "I\u2019m glad!"
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     - Dialogue: I am sure he would have loved to see you play.
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: "Feeling good. I\u2019m going out there for Grandpa today."
     RelationshipCheckRequired: 0
@@ -65,6 +81,8 @@ MonoBehaviour:
     - Dialogue: "That\u2019s awesome, I\u2019ll be sure to take notes for when I
         go out there and try to get a trophy of my own!"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Never better, looks like the weather is going to be perfect today
       for my performance.
@@ -79,6 +97,8 @@ MonoBehaviour:
     - Dialogue: Sorry to hear that, I know that despite that you will still put on
         a great performance for all of us!
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "Alright, I woke up with a crick in my neck so I\u2019m already
       not 100%."
@@ -93,6 +113,8 @@ MonoBehaviour:
     - Dialogue: Sorry to hear that, I know that despite that you will still put on
         a great performance for all of us!
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: A bit nervous. I was tossing and turning all night just thinking
       about the game.
@@ -106,8 +128,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Not really?
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Neutral
     - Dialogue: Sorry...
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: "I feel like I look. Can\u2019t you tell?"
     RelationshipCheckRequired: 0
@@ -120,8 +146,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Haha, I guess that was a stupid question.
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Neutral
     - Dialogue: Sorry.
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: How are you feeling right before your big game?
     RelationshipCheckRequired: 0
@@ -134,8 +164,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: You look great!
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     - Dialogue: I can tell you are going to go out there and smash the other team.
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: Be honest. Do I look nervous?
     RelationshipCheckRequired: 0
@@ -148,6 +182,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: ...that bad, huh?
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

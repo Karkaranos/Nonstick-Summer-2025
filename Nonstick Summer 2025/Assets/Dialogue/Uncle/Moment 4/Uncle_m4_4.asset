@@ -15,15 +15,23 @@ MonoBehaviour:
   dialogue:
   - Dialogue: Hey, I know it's not my place to say, but...
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    AnimatedReaction: {fileID: 0}
+    AudioResponse: Neutral
   - Dialogue: Have you talked with your mom today? She seems pretty upset.
     Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
-  - Dialogue: My advice? Don't add more fuel to the fire, but be honest.
+    AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+    AudioResponse: Sad
+  - Dialogue: My advice? Don't add more fuel to the fire, but be honest with her.
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+    AudioResponse: Neutral
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "Fantastic! That\u2019s good to hear. You haven\u2019t been looking
         too good lately, y\u2019know?"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "Good! I\u2019ve, uh, been good."
     RelationshipCheckRequired: 0
@@ -37,6 +45,8 @@ MonoBehaviour:
     - Dialogue: "C\u2019mon. Don\u2019t be like that. I just wanna be in your life,
         alright?"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Not now.
     RelationshipCheckRequired: 0
@@ -50,6 +60,8 @@ MonoBehaviour:
     - Dialogue: Me too kiddo, once my Dad gets better we can spend time all together
         again just like the good old days.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "Yeah, I\u2019m glad we got to spend time together as a family."
     RelationshipCheckRequired: 0
@@ -63,6 +75,8 @@ MonoBehaviour:
     - Dialogue: "You don\u2019t have to worry about that kiddo, seeing you smile
         is all that matters to me."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "Yeah! I can\u2019t believe you got me that card set! It must
       have cost a fortune! "
@@ -77,6 +91,8 @@ MonoBehaviour:
     - Dialogue: Oops, sorry about that kiddo. I even asked my Son about which cards
         to get you.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Well... It would be better if you had gotten me the right card
       set.
@@ -91,6 +107,8 @@ MonoBehaviour:
     - Dialogue: Me too kiddo, once my Dad gets better we can spend time all together
         again just like the good old days.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Yeah. I just wish Grandpa could be here. Mom said he is too sick.
     RelationshipCheckRequired: 0
@@ -104,6 +122,8 @@ MonoBehaviour:
     - Dialogue: "You don\u2019t have to worry about that kiddo, seeing you smile
         is all that matters to me."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Of course, these cards that you got me are the real deal! How
       in the world did you get these!?
@@ -118,6 +138,8 @@ MonoBehaviour:
     - Dialogue: "You know I can\u2019t do that. I wish I could but your mother would
         be in my ear for the rest of the day."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Almost perfect... If only you could tell me what grandma gifted
       me? I know you saw her wrap it.
@@ -143,6 +165,8 @@ MonoBehaviour:
     - Dialogue: I was just like you when I was your age, always ready to prove to
         my friends that I was the best in whichever game we found fun at the time.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

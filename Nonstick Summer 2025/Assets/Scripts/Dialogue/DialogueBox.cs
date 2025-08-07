@@ -104,6 +104,32 @@ public class DialogueBox : MonoBehaviour
 
             DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(dialogue[NumberInList], currentCharacter);
 
+            //TODO: fmod here!!
+            if(dialogue[NumberInList].AudioResponse == "Happy")
+            {
+
+                ReactionManager.instance.PlayReaction(1);
+
+            }
+            if (dialogue[NumberInList].AudioResponse == "Sad")
+            {
+
+                ReactionManager.instance.PlayReaction(2);
+
+            }
+            if (dialogue[NumberInList].AudioResponse == "Angry")
+            {
+
+                ReactionManager.instance.PlayReaction(3);
+
+            }
+            if (dialogue[NumberInList].AudioResponse == "Neutral")
+            {
+
+                ReactionManager.instance.PlayReaction(0);
+
+            }
+
             npcText.text = dialogue[NumberInList].Dialogue;
 
             Debug.Log($"({NumberInList + 1}/{dialogue.Length}): {dialogue[NumberInList].Dialogue}");
@@ -115,6 +141,32 @@ public class DialogueBox : MonoBehaviour
             NumberInList = numberInList % branch.dialogue.Length;
 
             DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(branch.dialogue[NumberInList], currentCharacter);
+
+            //TODO: fmod here!!
+            if (branch.dialogue[NumberInList].AudioResponse == "Happy")
+            {
+
+                ReactionManager.instance.PlayReaction(1);
+
+            }
+            if (branch.dialogue[NumberInList].AudioResponse == "Sad")
+            {
+
+                ReactionManager.instance.PlayReaction(2);
+
+            }
+            if (branch.dialogue[NumberInList].AudioResponse == "Angry")
+            {
+
+                ReactionManager.instance.PlayReaction(3);
+
+            }
+            if (branch.dialogue[NumberInList].AudioResponse == "Neutral")
+            {
+
+                ReactionManager.instance.PlayReaction(0);
+
+            }
 
             npcText.text = branch.dialogue[NumberInList].Dialogue;
 

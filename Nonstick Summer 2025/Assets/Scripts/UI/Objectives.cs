@@ -20,6 +20,7 @@ public class Objectives : MonoBehaviour
 
     private void Start()
     {
+        SetObjectiveVisibility(false);
         MetCondition(ObjectiveConditions.LEVEL_START);
         foreach(ObjectiveData od in _conditions)
         {

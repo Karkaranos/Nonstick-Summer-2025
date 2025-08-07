@@ -16,28 +16,48 @@ MonoBehaviour:
   - Dialogue: "Do you not think I\u2019m doing everything in my power to give you
       a good childhood? To show you how much I care about you as a mom?"
     Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+    AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+    AudioResponse: Angry
   - Dialogue: I could stay home every single day sat on that couch, not bothering
       to lift a finger to cook dinner,
     Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
+    AnimatedReaction: {fileID: 0}
+    AudioResponse: Neutral
   - Dialogue: drive you to school,
     Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
+    AnimatedReaction: {fileID: 0}
+    AudioResponse: Neutral
   - Dialogue: pay for your phone...
     Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
+    AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+    AudioResponse: Neutral
   - Dialogue: do you know how much EASIER that would make my life?
     Portrait: {fileID: 21300000, guid: 032b2ac25e695414a96b9f1f4f473521, type: 3}
+    AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+    AudioResponse: Sad
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Oh, that is IT.
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue:
     - Dialogue: Oh, that is IT.
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Just...
       Portrait: {fileID: 21300000, guid: c2360f7827c4e38498ba0e512f1c8260, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: go to your room.
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: I'm done arguing.
       Portrait: {fileID: 21300000, guid: 032b2ac25e695414a96b9f1f4f473521, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     PlayerDialogue: "With how much you work, I doubt you\u2019d be able to sit still
       for long."
     RelationshipCheckRequired: 0
@@ -50,11 +70,17 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "You\u2019re still MY kid, aren\u2019t you?"
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     - Dialogue: Even if you leave this house hating me,
       Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Neutral
     - Dialogue: "I\u2019m STILL going to be your mother and I\u2019m STILL going
         to love you."
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: "Well, I\u2019m not a CHILD anymore!"
     RelationshipCheckRequired: 0
@@ -67,8 +93,10 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "You shouldn\u2019t HAVE to."
       Portrait: {fileID: 21300000, guid: 032b2ac25e695414a96b9f1f4f473521, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
-    PlayerDialogue: "No, I...haven\u2019t really considered that before."
+    PlayerDialogue: "No, I... haven\u2019t really considered that before."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b19c8c28d10698b41a5822b790eeb36d, type: 2}
@@ -79,6 +107,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Oh, that is IT.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "As easy as it would be to let me have my phone back, I\u2019d
       imagine."
@@ -92,9 +122,13 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "You\u2019re still MY kid, aren\u2019t you?"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "Even if you leave this house hating me, I\u2019m STILL going to
         be your mother and I\u2019m STILL going to love you."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "It was fine. IWell, I\u2019m not a CHILD anymore!\u2019s just
       a birthday.  Like any other old day."
@@ -108,6 +142,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "You shouldn\u2019t HAVE to."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "No, I...haven\u2019t really considered that before."
     RelationshipCheckRequired: 0
@@ -120,6 +156,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Oh, that is IT.
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: "Wouldn\u2019t that be the life, huh?"
     RelationshipCheckRequired: 0
@@ -127,16 +165,22 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: b19c8c28d10698b41a5822b790eeb36d, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -20
+    ChangeInRelationshipStatus: -15
   Assertive_Question:
     NpcReactionText:
     - Dialogue: "You\u2019re still MY kid, aren\u2019t you?"
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     - Dialogue: Even if you leave this house hating me,
       Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Neutral
     - Dialogue: "I\u2019m STILL going to be your mother and I\u2019m STILL going
         to love you."
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: "That\u2019s not solving the problem! Can\u2019t you see I just
       want you to have time for me?"
@@ -150,6 +194,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "No, it\u2019s just..."
       Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: "Why can\u2019t you just ask for help?"
     RelationshipCheckRequired: 0
@@ -162,6 +208,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: ...
       Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

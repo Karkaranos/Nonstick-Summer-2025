@@ -47,6 +47,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Required, SerializeField] private SilentButton silentButton;
     [Required, SerializeField] private PlayCardButton playCardButton;
     [Required, SerializeField] private NextDialogueButton nextDialogueButton;
+    [Required, SerializeField] private TMP_Text objectiveText;
 
     public DeckDisplayer DeckDisplay { get { return deckDisplay; } }
 
@@ -96,6 +97,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
         {
             dialogueTree.Initialize(startBranch);
         }
+
+        objectiveText.text = GameManager.ObjectiveReference.GetObjective();
 
         yield return ToggleUIForDialogueProgression(false);
 

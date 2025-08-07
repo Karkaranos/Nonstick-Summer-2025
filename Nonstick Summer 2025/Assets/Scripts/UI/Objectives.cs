@@ -18,6 +18,8 @@ public class Objectives : MonoBehaviour
     [SerializeField, Required] private TMP_Text _displayText;
     //[SerializeField, Required] private GameObject _objectiveIndicator;
 
+    private int currentObjective = 0;
+
     private void Start()
     {
         SetObjectiveVisibility(false);
@@ -94,12 +96,17 @@ public class Objectives : MonoBehaviour
                 if (_displayText != null)
                     _displayText.text = _conditions[i].DisplayText;
 
-                if (i < _conditions.Length-1)
+
+                currentObjective = i;
+
+                if (i < _conditions.Length - 1)
                 {
-                    foreach(GameObject g in _conditions[i+1].RequiredObjects)
+                    foreach (GameObject g in _conditions[i + 1].RequiredObjects)
                     {
                         g.GetComponent<IInteractableObjective>()?.ClearBlocker();
                     }
+
+                    currentObjective = i;
                 }
                 else
                 {
@@ -120,6 +127,11 @@ public class Objectives : MonoBehaviour
             _objectiveCanvas?.SetActive(visibility);
         //else
             //Debug.LogError("No objective Canvas");
+    }
+
+    public string GetObjective()
+    {
+        return _conditions[currentObjective].DisplayText;
     }
 
 

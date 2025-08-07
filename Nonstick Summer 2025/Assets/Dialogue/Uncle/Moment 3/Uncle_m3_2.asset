@@ -90,8 +90,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Yeah, Mom and Dad made that for her when we were kids....
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
-      AudioResponse: Silent
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "So that\u2019s why she has a soccer quilt...she never struck
       me as a sports person."
@@ -103,11 +103,11 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Assertive_Observation:
     NpcReactionText:
-    - Dialogue: Well, your mom was the best soccer player on the playground. But
-        she never went for the school team.
+    - Dialogue: Well your mom was the best soccer player on the playground. But she
+        never went for the school team.
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
-      AudioResponse: Silent
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: I on the other hand, kicked my ball over the fence and big foot stole
         it...
       Portrait: {fileID: 0}
@@ -116,7 +116,7 @@ MonoBehaviour:
     - Dialogue: "We\u2019re so proud of you for making the school team."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
-      AudioResponse: Silent
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: No one told me that.
     RelationshipCheckRequired: 0
@@ -127,11 +127,11 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Sappy_Observation:
     NpcReactionText:
-    - Dialogue: Well, your mom was the best soccer player on the playground. But
-        she never went for the school team.
+    - Dialogue: Well your mom was the best soccer player on the playground. But she
+        never went for the school team.
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
-      AudioResponse: Silent
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: I on the other hand, kicked my ball over the fence and big foot stole
         it...
       Portrait: {fileID: 0}
@@ -140,7 +140,7 @@ MonoBehaviour:
     - Dialogue: "We\u2019re so proud of you for making the school team."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
-      AudioResponse: Silent
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Mom never told me she was on a soccer team.
     RelationshipCheckRequired: 0

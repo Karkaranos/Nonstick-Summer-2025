@@ -78,11 +78,11 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Charming_Observation:
     NpcReactionText:
-    - Dialogue: "That\u2019s awesome! I\u2019ll be sure to take notes for when I
-        try to get a trophy of my own!"
+    - Dialogue: "That\u2019s awesome, I\u2019ll be sure to take notes for when I
+        go out there and try to get a trophy of my own!"
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
-      AudioResponse: Silent
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Never better, looks like the weather is going to be perfect today
       for my performance.
@@ -94,13 +94,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Assertive_Observation:
     NpcReactionText:
-    - Dialogue: Oh...sorry to hear that. Still, I know that you gonna do great out
-        there!
+    - Dialogue: Sorry to hear that, I know that despite that you will still put on
+        a great performance for all of us!
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
-      AudioResponse: Silent
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
-    PlayerDialogue: "Alright, I woke up with a crick in my neck, so I\u2019m already
+    PlayerDialogue: "Alright, I woke up with a crick in my neck so I\u2019m already
       not 100%."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -110,10 +110,11 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Sappy_Observation:
     NpcReactionText:
-    - Dialogue: Sorry to hear that. Still, I know that you gonna do great out there!
+    - Dialogue: Sorry to hear that, I know that despite that you will still put on
+        a great performance for all of us!
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
-      AudioResponse: Silent
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: A bit nervous. I was tossing and turning all night just thinking
       about the game.

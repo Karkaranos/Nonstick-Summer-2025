@@ -78,10 +78,10 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Charming_Observation:
     NpcReactionText:
-    - Dialogue: Thank you very much, my little charmer!
+    - Dialogue: Thank you very much my little charmer!
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
-      AudioResponse: Silent
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Right back at ya Grandma! You're looking good today!
     RelationshipCheckRequired: 0
@@ -92,11 +92,11 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Assertive_Observation:
     NpcReactionText:
-    - Dialogue: I know I do, but I am serious. I can already tell that you're going
+    - Dialogue: I know I do, but I am serious. I can already tell that you are going
         to put on a great show!
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
-      AudioResponse: Silent
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: You always say that kind of stuff.
     RelationshipCheckRequired: 0
@@ -107,11 +107,11 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Sappy_Observation:
     NpcReactionText:
-    - Dialogue: I really mean it, watching you play never fails to put a smile on
-        my face!
+    - Dialogue: I really mean it, watching you play never fails to put a huge smile
+        on my face!
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
-      AudioResponse: Silent
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "I know you\u2019re just saying that..."
     RelationshipCheckRequired: 0
@@ -122,8 +122,8 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "Oh, I\u2019m certain. I can already tell that you are going to put
-        on a show!"
+    - Dialogue: "I\u2019m serious, you\u2019ve really put your game face on. I can
+        already tell that you are going to put on a show!"
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Neutral

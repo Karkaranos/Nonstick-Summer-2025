@@ -13,18 +13,26 @@ MonoBehaviour:
   m_Name: Grandma_m4_4
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Look, honey...I know your mom can sometimes make you angry, but it
+  - Dialogue: Look, honey... I know your mom can sometimes make you angry, but it
       comes from a good place.
     Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+    AudioResponse: Sad
   - Dialogue: If you try to talk with her, try to remember that, okay?
     Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+    AudioResponse: Neutral
   - Dialogue: And just be honest with both her and yourself.
     Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+    AudioResponse: Neutral
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "Haha, I\u2019m glad you liked it, honey. It was baked with lots
         of love."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Yes!! It was sooooooo good....
     RelationshipCheckRequired: 0
@@ -38,6 +46,8 @@ MonoBehaviour:
     - Dialogue: "Haha, I\u2019m glad you liked it, honey. It was baked with lots
         of love."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "It was fine... I liked it because you\u2019re the one who made
       it."
@@ -52,6 +62,8 @@ MonoBehaviour:
     - Dialogue: "Oh silly, don\u2019t gobble it all down! And make sure to ask your
         mom before you eat a bunch at once. Savor it!"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: It was so sweet and special.. and just like I imagined...
     RelationshipCheckRequired: 0
@@ -65,6 +77,8 @@ MonoBehaviour:
     - Dialogue: "Oh silly, don\u2019t gobble it all down! And make sure to ask your
         mom before you eat a bunch at once. Savor it!"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Yes.. the left overs better be for me!
     RelationshipCheckRequired: 0
@@ -78,6 +92,8 @@ MonoBehaviour:
     - Dialogue: "Well... I\u2019m sorry to hear that honey. I thought you\u2019d
         like it."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: It tasted like cardboard.
     RelationshipCheckRequired: 0
@@ -91,6 +107,8 @@ MonoBehaviour:
     - Dialogue: "Well, part of throwing a party is sharing.... you\u2019d want your
         Cousin to share his cake with you at his next birthday, right?"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "It was good, but Cousin ate so much of it that there\u2019s
       not much left....Ugh"
@@ -106,6 +124,8 @@ MonoBehaviour:
         Just tell me what you\u2019d like close to your birthday and I\u2019ll bake
         for you again."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Could you bake for me again next year, Nanna? It was so good!
     RelationshipCheckRequired: 0
@@ -119,6 +139,8 @@ MonoBehaviour:
     - Dialogue: "Well, part of throwing a party is sharing.... you\u2019d want your
         Cousin to share his cake with you at his next birthday, right?"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Yeah, but why did I have to share it with everyone?
     RelationshipCheckRequired: 0
@@ -132,6 +154,8 @@ MonoBehaviour:
     - Dialogue: Making a big cake is a lot of work... you should savor each bite,
         with how much love was baked into it!
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: I was sad it was so small.... could be bigger for more people,
       no?

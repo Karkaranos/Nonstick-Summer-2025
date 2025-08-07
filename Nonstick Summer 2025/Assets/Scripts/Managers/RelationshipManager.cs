@@ -28,10 +28,6 @@ public class RelationshipManager
     /// <param name="momStartingValue"></param>
     public RelationshipManager(RelationshipStats grandmaStartingValue, RelationshipStats uncleStartingValue, RelationshipStats cousinStartingValue, RelationshipStats momStartingValue)
     {
-        characterRelationships.Remove(characters.Grandma);
-        characterRelationships.Remove(characters.Uncle);
-        characterRelationships.Remove(characters.Cousin);
-        characterRelationships.Remove(characters.Mom);
         characterRelationships.Add(characters.Grandma, grandmaStartingValue);
         characterRelationships.Add(characters.Uncle, uncleStartingValue);
         characterRelationships.Add(characters.Cousin, cousinStartingValue);

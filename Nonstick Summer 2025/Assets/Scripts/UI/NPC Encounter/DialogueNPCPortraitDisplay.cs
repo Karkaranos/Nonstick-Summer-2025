@@ -30,8 +30,6 @@ public class DialogueNPCPortraitDisplay : MonoBehaviour
 
     public void SetPortraitSprite(DialogueNPC dialogue, characters character)
     {
-        ReactionManager.instance.SetCharacter(character);
-
         if (dialogue == null || dialogue.Portrait == null)
             return;
 

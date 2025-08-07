@@ -105,25 +105,25 @@ public class DialogueBox : MonoBehaviour
             if(dialogue[NumberInList].AudioResponse == "Happy")
             {
 
-                ReactionManager.instance.PlayReaction(1);
+
 
             }
             if (dialogue[NumberInList].AudioResponse == "Sad")
             {
 
-                ReactionManager.instance.PlayReaction(2);
+
 
             }
             if (dialogue[NumberInList].AudioResponse == "Angry")
             {
 
-                ReactionManager.instance.PlayReaction(3);
+
 
             }
             if (dialogue[NumberInList].AudioResponse == "Neutral")
             {
 
-                ReactionManager.instance.PlayReaction(0);
+
 
             }
 
@@ -143,25 +143,25 @@ public class DialogueBox : MonoBehaviour
             if (branch.dialogue[NumberInList].AudioResponse == "Happy")
             {
 
-                ReactionManager.instance.PlayReaction(1);
+
 
             }
             if (branch.dialogue[NumberInList].AudioResponse == "Sad")
             {
 
-                ReactionManager.instance.PlayReaction(2);
+
 
             }
             if (branch.dialogue[NumberInList].AudioResponse == "Angry")
             {
 
-                ReactionManager.instance.PlayReaction(3);
+
 
             }
             if (branch.dialogue[NumberInList].AudioResponse == "Neutral")
             {
 
-                ReactionManager.instance.PlayReaction(0);
+
 
             }
 

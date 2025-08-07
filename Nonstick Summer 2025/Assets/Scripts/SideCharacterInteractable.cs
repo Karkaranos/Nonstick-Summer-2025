@@ -8,7 +8,6 @@ using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class SideCharacterInteractable : MonoBehaviour, IInteractable
 {
@@ -62,14 +61,7 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
 
     public void StartSideCombat()
     {
-        if (SceneManager.GetActiveScene().name.Equals("Moment_5"))
-        {
-            MusicManager.instance.StartReflection();
-        }
-        else
-        {
-            MusicManager.instance.StartCombat(0);
-        }
+        MusicManager.instance.StartCombat(0);
 
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor);
         var dialogueController = menu.GetComponentInChildren<DialogueUIController>();

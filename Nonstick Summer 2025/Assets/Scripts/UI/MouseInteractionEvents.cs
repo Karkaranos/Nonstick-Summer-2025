@@ -34,7 +34,6 @@ public class MouseInteractionEvents : MonoBehaviour, IPointerClickHandler, IPoin
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.UIClickSFX);
         OnMouseDown.Invoke();
     }
 
@@ -48,8 +47,6 @@ public class MouseInteractionEvents : MonoBehaviour, IPointerClickHandler, IPoin
 
         CurrentHoverObject = this;
         mouseOver = true;
-
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.UIHoverSFX);
 
         OnMouseHoverStart.Invoke();
     }

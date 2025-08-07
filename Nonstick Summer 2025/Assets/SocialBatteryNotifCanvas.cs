@@ -48,7 +48,6 @@ public class SocialBatteryNotifCanvas : MonoBehaviour
     {
         UITransitionManager.CloseMenu(changeCam: false);
         MusicManager.instance.StartHouse();
-        FindFirstObjectByType<Objectives>()?.SetObjectiveVisibility(true);
     }
 
     private string ColorCard(CardEmotion emotion)

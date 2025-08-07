@@ -21,9 +21,6 @@ public class DeckManager
 
     public DeckManager(CardData[] defaultPlayerCards)
     {
-        PlayerFullDeck = new Deck();
-        PlayerHand = new Deck();
-        RemainingDeck = new Deck();
         foreach (CardData card in defaultPlayerCards)
         {
             //PlayerFullDeck.Add(card.CopyCard(),false);

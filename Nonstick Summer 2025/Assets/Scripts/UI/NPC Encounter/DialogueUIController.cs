@@ -35,6 +35,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     [Required][SerializeField] private EnergyBar energyBar;
     [Required][SerializeField] private DisplayPlayerCardDialogue playerDialogueBubble;
+    [Required][SerializeField] private TMP_Text npcName;
     [Required][SerializeField] private DeckDisplayer deckDisplay;
     [Tooltip("Relationship slider UI element")]
     [Required][SerializeField] private RelationshipSlider relationshipSlider;
@@ -43,21 +44,15 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Required, SerializeField] public  DialogueNPCPortraitDisplay portraitDisplay;
     [Required, SerializeField] private DrawButton drawButton;
     [Required, SerializeField] private DiscardButton discardButton;
-
-    //i can make this a whole 'nother script if necessary but idk
-    // TODO: ^
-    [SerializeField] public Button playCardButton;
-    [SerializeField] private TMP_Text playCardButtonText;
+    [Required, SerializeField] private SilentButton silentButton;
+    [Required, SerializeField] private PlayCardButton playCardButton;
+    [Required, SerializeField] private NextDialogueButton nextDialogueButton;
+    [Required, SerializeField] private TMP_Text objectiveText;
 
     public DeckDisplayer DeckDisplay { get { return deckDisplay; } }
 
-    [Header("Progress Button Text")] 
-    public string CardSelectedText;
-    public string CardNotSelectedText;
-    public string EndDialogueText;
-
     public CardData selectedCardData=> deckDisplay.FirstSelectedCard;
-    private bool IfCloseCombat { get { return 
+    public bool IfCloseCombat { get { return 
                 DialogueManager.CurrentDialogueBranch == null
                 || ( DialogueManager.CurrentDialogueBranch.End && PlayerReadAllNPCText); } }
     private bool _ui_interactable = true;
@@ -69,7 +64,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     [HideInInspector] public GameObject activeReaction;
 
-    public IEnumerator Initialize(DialogueBranch startBranch, characters character, bool isBoss = true, GameObject objRef = null)
+    public IEnumerator Initialize(DialogueBranch startBranch, Character character, bool isBoss = true, GameObject objRef = null)
     {
         DialogueManager.OnOpenCombatUI(startBranch, character);
 
@@ -86,16 +81,24 @@ public class DialogueUIController : Singleton<DialogueUIController>
         energyBar.Initalize();
         relationshipSlider.Initialize(RelationshipManager.characterRelationships[character].maxValue, RelationshipManager.characterRelationships[character].currentValue);
         deckDisplay.SetDisplayDeck(ref DeckManager.PlayerHand);
-        DeckDisplay.DrawToDefaultHand();
+        deckDisplay.DrawToDefaultHand();
+        deckDisplay.UpdateGroupEnabled(false);
         drawButton.Initialize();
         discardButton.Initialize();
+        silentButton.Initialize();
+        playCardButton.Initialize();
+        nextDialogueButton.Initialize();
 
         deckDisplay.OnCardsSelectedChanged.AddListener(OnSelectionUpdated);
+
+        npcName.text = character.ToString(); // none of the Character have spaces in their names, right?
 
         if(dialogueTree != null)
         {
             dialogueTree.Initialize(startBranch);
         }
+
+        objectiveText.text = GameManager.ObjectiveReference.GetObjective();
 
         yield return ToggleUIForDialogueProgression(false);
 
@@ -120,65 +123,29 @@ public class DialogueUIController : Singleton<DialogueUIController>
             AudioManager.instance.PlayOneShot(FMODEvents.instance.CardHoverSFX);*/
     }
 
-    // TODO move a lot of this to play button script
     private void OnSelectionUpdated()
     {
         // Card movement animation is handled in DeckDisplayer / CardDisplay_PositionAnimator
+
         AudioManager.instance.PlayOneShot(FMODEvents.instance.CardSelectSFX);
 
-        if (selectedCardData == null)
-        {
-            // TODO move to play card button script
-            playCardButtonText.text = CardNotSelectedText;
+        // REALLY dont like putting this function here, since playCardButton should be autonomous but fuck it atp
+        playCardButton.UpdateButtonEnabled();
 
-            playCardButton.SetColors(normalColor: Color.white, highlightedColor: Color.gray, selectedColor: Color.white, pressedColor: Color.gray);
+        if(selectedCardData == null)
+        {
+            // nothing i think
         }
         else
         {
-            playCardButtonText.text = CardSelectedText;
-
-            if(Mathf.Abs(selectedCardData.EnergyCost) > DialogueManager.CurrentEnergy)
-            {
-
-                var buttonColor = Color.gray;
-                playCardButton.SetColors(normalColor: buttonColor, highlightedColor: buttonColor, selectedColor: buttonColor, pressedColor: buttonColor);
-
-            }
-            else
-            {
-
-                var buttonColor = CardStyleManager.GetEmotionColor(selectedCardData);
-                playCardButton.SetColors(normalColor: buttonColor, highlightedColor: buttonColor, selectedColor: buttonColor, pressedColor: buttonColor);
-
-            }
-
             playerDialogueBubble.WriteText(selectedCardData);
-        }
-
-        if (!DialogueManager.UserCanPlayCard)
-        {
-            // TODO dont hardcode this
-            // TODO move to playcard button script
-            playCardButtonText.text = "->";
-            playCardButton.SetColors(normalColor: Color.white, highlightedColor: Color.gray, selectedColor: Color.white, pressedColor: Color.gray);
-
-            return;
         }
     }
 
     //i can move this to a different script later if necessary but for now the play card button is tied to this
     //TODO move to play button script
-    public void PlayCardPressed()
+    public void NextTextPressed()
     {
-
-        if(selectedCardData != null && Mathf.Abs(selectedCardData.EnergyCost) > DialogueManager.CurrentEnergy)
-        {
-
-            //there should be a sound effect that plays here i think
-            return;
-
-        }
-
         if(IfCloseCombat)
         {
             // TODO open a new menu?
@@ -264,7 +231,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
         {
             if (DialogueManager.CurrentDialogueBranch.End)
             {
-                playCardButtonText.text = EndDialogueText;
                 yield return ToggleUIForDialogueProgression(false);
             }
             else
@@ -279,6 +245,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         // hardcoded for now will fix so it can take a thing later
         dialogueBox.DisplayOneLine("What was that?");
     }
+
     public void UpdateDialogueTreeVisual(DialogueBranch branch)
     {
 
@@ -286,13 +253,11 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     }
 
-    //TODO move to play button script
     public void ClosingOutCombat()
     {
         if (DialogueManager.CurrentDialogueBranch.End)
         {
-            playCardButtonText.text = EndDialogueText;
-            MusicManager.instance.StartHouse();
+            MusicManager.instance.StartHouse(); // house md???
         }
     }
 
@@ -303,16 +268,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         _ui_interactable = interactable;
 
-        // TODO dont hardcode that text
-        // TODO move to dedicated card play button script
-        playCardButtonText.text = interactable ? CardNotSelectedText : "->";
-        playCardButton.SetColors(normalColor: Color.white, highlightedColor: Color.gray, selectedColor: Color.white, pressedColor:Color.gray);
-
-        //deckDisplay?.gameObject.SetActive(interactable);
-        if (interactable)
-            StaticUtilities.EnableCanvasGroup(deckDisplay.canvasGroup);
-        else
-            StaticUtilities.DisableCanvasGroup(deckDisplay.canvasGroup, alpha:0.2f);
+        deckDisplay.UpdateGroupEnabled(interactable);
 
         yield return null;
 
@@ -325,9 +281,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     }
 
     // Coroutine to handle animation (in the future)
-    public IEnumerator UpdateRelationship(float? value, characters character)
-
-
+    public IEnumerator UpdateRelationship(float? value, Character character)
     {
         yield return relationshipSlider?.SetValue(value ?? RelationshipManager.characterRelationships[character].currentValue);
     }

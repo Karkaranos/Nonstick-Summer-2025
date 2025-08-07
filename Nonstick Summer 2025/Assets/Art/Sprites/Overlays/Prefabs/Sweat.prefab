@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2648394007266318028}
   - component: {fileID: 6338254101809181954}
   - component: {fileID: 684237529301091901}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sweat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.553, y: 0, z: 0}
-  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
+  m_LocalScale: {x: 35, y: 35, z: 35}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_Sprite: {fileID: -1667213739, guid: a94543e8f463a7e4eb25b2f93061ef8e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,7 +98,7 @@ Animator:
   m_GameObject: {fileID: 3230480644210021281}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a6fb9752c9de4a64fba76ced45b19da3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 004e350eba756ec49986bb54a7592f1c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

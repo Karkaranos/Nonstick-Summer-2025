@@ -4,51 +4,45 @@ using UnityEngine.UI;
 
 public class FridgeMagnets : MonoBehaviour
 {
-    [SerializeField] private GameObject letterM;
-    [SerializeField] private GameObject letterO;
-    [SerializeField] private GameObject letterM2;
+    [SerializeField] private Transform letterM;
+    [SerializeField] private Transform letterO;
+    [SerializeField] private Transform letterM2;
 
     [SerializeField] private Transform firstLetterPosition;
     [SerializeField] private Transform secondLetterPosition;
     [SerializeField] private Transform thirdLetterPosition;
-
-    private void Start()
+    public void ChangeMagnetPosition(string letterOrder)
     {
-        InteractableObjectBehavior IOB = GetComponent<InteractableObjectBehavior>();
-        InteractableObjectCanvas IOC = IOB.CanvasToOpen.GetComponent<InteractableObjectCanvas>();
-        IOC.Button1.onClick.AddListener(() => ChangeMagnetPosition("MOM"));
-        IOC.Button2.onClick.AddListener(() => ChangeMagnetPosition("OWW"));
-        IOC.Button3.onClick.AddListener(() => ChangeMagnetPosition("WOW"));
-    }
-
-    private void ChangeMagnetPosition(string letterOrder)
-    {
-        Debug.Log("ugh");
         if (letterOrder == "MOM")
         {
             //it's already this way!
+            Debug.Log("MOM");
         }
 
         else if (letterOrder == "OWW")
         {
-            letterO.transform.position = firstLetterPosition.position;
+            letterO.position = firstLetterPosition.position;
 
-            letterM.transform.position = secondLetterPosition.position;
-            letterM.transform.Rotate(0, 0, 180);
+            letterM.position = secondLetterPosition.position;
+            letterM.Rotate(0, 0, 180);
 
-            letterM2.transform.position = thirdLetterPosition.position;
-            letterM2.transform.Rotate(0, 0, 90);
+            letterM2.position = thirdLetterPosition.position;
+            letterM2.Rotate(0, 0, 90);
+
+            Debug.Log("OWW");
         }
 
         else if (letterOrder == "WOW")
         {
-            letterM.transform.position = firstLetterPosition.position;
-            letterM.transform.Rotate(0, 0, 90);
+            letterM.position = firstLetterPosition.position;
+            letterM.Rotate(0, 0, 90);
 
-            letterO.transform.position = secondLetterPosition.position;
+            letterO.position = secondLetterPosition.position;
 
-            letterM2.transform.position = thirdLetterPosition.position;
-            letterM2.transform.Rotate(0, 0, 90);
+            letterM2.position = thirdLetterPosition.position;
+            letterM2.Rotate(0, 0, 90);
+
+            Debug.Log("WOW");
         }
     }
 

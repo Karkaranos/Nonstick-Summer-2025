@@ -5,7 +5,7 @@ Date Modified :         June 20, 2025
 Brief Description :     Stores all objectives for the level
                         Updates the display when the condition is met
 
-TODO :                  Link up Side Characters when they exist
+TODO :                  Link up Side Character when they exist
 ***************************************************/
 using UnityEngine;
 using NaughtyAttributes;
@@ -17,6 +17,8 @@ public class Objectives : MonoBehaviour
     [SerializeField, Required] private GameObject _objectiveCanvas;
     [SerializeField, Required] private TMP_Text _displayText;
     //[SerializeField, Required] private GameObject _objectiveIndicator;
+
+    private int currentObjective = 0;
 
     private void Start()
     {
@@ -94,12 +96,17 @@ public class Objectives : MonoBehaviour
                 if (_displayText != null)
                     _displayText.text = _conditions[i].DisplayText;
 
-                if (i < _conditions.Length-1)
+
+                currentObjective = i;
+
+                if (i < _conditions.Length - 1)
                 {
-                    foreach(GameObject g in _conditions[i+1].RequiredObjects)
+                    foreach (GameObject g in _conditions[i + 1].RequiredObjects)
                     {
                         g.GetComponent<IInteractableObjective>()?.ClearBlocker();
                     }
+
+                    currentObjective = i;
                 }
                 else
                 {
@@ -120,6 +127,11 @@ public class Objectives : MonoBehaviour
             _objectiveCanvas?.SetActive(visibility);
         //else
             //Debug.LogError("No objective Canvas");
+    }
+
+    public string GetObjective()
+    {
+        return _conditions[currentObjective].DisplayText;
     }
 
 

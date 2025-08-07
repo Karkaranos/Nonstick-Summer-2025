@@ -3,7 +3,7 @@
 * Author :            Jay
 * Creation Date :     July 31 2025
 *
-* Brief Description :  ensures that the characters' sprites will always face the camera
+* Brief Description :  ensures that the Character' sprites will always face the camera
 * this probably didn't need to be a whole script lmaooooo
 * 
 *****************************************************************************/

@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using NaughtyAttributes;
 
 [RequireComponent(typeof(Slider))]
 public class EnergyBar : MonoBehaviour
@@ -9,6 +10,7 @@ public class EnergyBar : MonoBehaviour
     [SerializeField] float animationSpeed = 3;
     private Slider slider;
 
+    [SerializeField, Required]
     private TMP_Text energyNumber;
 
     public void Initalize()
@@ -18,8 +20,7 @@ public class EnergyBar : MonoBehaviour
         slider.maxValue = DialogueManager.MaxEnergy;
         SetValueNoAnimation(DialogueManager.CurrentEnergy);
 
-        energyNumber = GetComponentInChildren<TMP_Text>();
-        energyNumber.text = DialogueManager.CurrentEnergy.ToString();
+        energyNumber.text = DialogueManager.CurrentEnergy.ToString()+" Energy";
 
     }
 

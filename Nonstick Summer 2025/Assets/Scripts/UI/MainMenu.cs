@@ -11,9 +11,13 @@
 
 using UnityEngine;
 using NaughtyAttributes;
+using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
+
 public class MainMenu : MonoBehaviour
 {
+    [Header("Main Menu")]
     [Scene] [SerializeField] private int MainGameplayScene=1;
     [SerializeField] private GameObject controls;
     [SerializeField] private GameObject creditParent;
@@ -29,6 +33,11 @@ public class MainMenu : MonoBehaviour
     private GameObject openMenu;
     [SerializeField, ReadOnly] Vector3 creditStart;
     private Coroutine credits;
+    
+    [Header("Fade Transition Visuals")]
+    [Tooltip ("Fade to black prefab in scene")]
+    [SerializeField][Required] private GameObject fadeToBlack;
+    
 
     //maybe put cursor shenanigans here
     private void Start()
@@ -47,8 +56,10 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(MainGameplayScene);
-        //Cursor.visible = false; CALEB CALEB CALEB CALEB CALEB CALB
+        FadeTransition fade = fadeToBlack.GetComponent<FadeTransition>();
+
+        DoFadeOut(fade);
+        //Cursor.visible = false; CALEB CALEB CALEB CALEB CALEB CALEB
     }
 
     public void OpenControls()
@@ -105,5 +116,16 @@ public class MainMenu : MonoBehaviour
     {
         //this quits the game
         Application.Quit();
+    }
+
+    public void DoFadeOut(FadeTransition fade)
+    {
+        Image image = fadeToBlack.GetComponentInChildren<Image>();
+
+        if (fade != null)
+        {
+            fadeToBlack.SetActive(true);
+            fade.StartFadeOut(image, MainGameplayScene);
+        }
     }
 }

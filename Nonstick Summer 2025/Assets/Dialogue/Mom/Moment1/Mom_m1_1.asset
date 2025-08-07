@@ -15,10 +15,14 @@ MonoBehaviour:
   dialogue:
   - Dialogue: There you are! Did you clean up all your toys?
     Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
+    AnimatedReaction: {fileID: 0}
+    AudioResponse: Neutral
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "Is that so? I\u2019ll believe it when I see it."
       Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: I did, and really fast too!
     RelationshipCheckRequired: 0
@@ -31,6 +35,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Well, I told you to, didn\u2019t I? You had plenty of time."
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: "I\u2019ll do it later"
     RelationshipCheckRequired: 0
@@ -41,11 +47,12 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "I will come look at it in a bit , but then we\u2019ll put it away
-        together, okay?"
+    - Dialogue: "In a bit, but then we\u2019ll put it away together, okay?"
       Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
-    PlayerDialogue: No...I wanted to show you what you built
+    PlayerDialogue: No...I wanted to show you what I built, Momma.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
@@ -57,6 +64,8 @@ MonoBehaviour:
     - Dialogue: "I don\u2019t see any, but if I trip over another one, you\u2019re
         going to be in trouble."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: 
     RelationshipCheckRequired: 0
@@ -69,6 +78,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Well, I told you to, didn\u2019t I? You had plenty of time."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: 
     RelationshipCheckRequired: 0
@@ -81,6 +92,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Thank you dear.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: 
     RelationshipCheckRequired: 0
@@ -94,6 +107,8 @@ MonoBehaviour:
     - Dialogue: "I don\u2019t see any, but if I trip over another one, you\u2019re
         going to be in trouble."
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: I dunno...diiid I?
     RelationshipCheckRequired: 0
@@ -106,6 +121,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Well, I told you to, didn\u2019t I? You had plenty of time."
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: Why?
     RelationshipCheckRequired: 0
@@ -116,11 +133,12 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -15
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: "I will come look at it in a bit , but then we\u2019ll put it away
-        together, okay?"
+    - Dialogue: "In a bit, but then we\u2019ll put it away together, okay?"
       Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
-    PlayerDialogue: Can you help me?
+    PlayerDialogue: Can you help me, Momma?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
@@ -131,6 +149,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Well...
       Portrait: {fileID: 21300000, guid: 032b2ac25e695414a96b9f1f4f473521, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

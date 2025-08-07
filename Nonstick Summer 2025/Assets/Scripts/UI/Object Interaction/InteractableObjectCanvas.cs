@@ -42,6 +42,8 @@ public class InteractableObjectCanvas : MonoBehaviour
     [SerializeField] private GameObject interactionButtons;
     [SerializeField] private GameObject otherButtons;
 
+    private char[] Punctuation = { '!', '.' };
+
     public void Initialize(string statement, string question, PersonalityOption[] options, GameObject g = null)
     {
         otherButtons.SetActive(false);
@@ -83,13 +85,21 @@ public class InteractableObjectCanvas : MonoBehaviour
         questionField.text = response;
     }
 
-    public void InitializeAfterModifier(string statement, string response, string choice)
+    public void InitializeAfterModifier(string statement, string response1, string response2, string choice)
     {
         otherButtons.SetActive(true);
         interactionButtons.SetActive(false);
 
         statementField.text = statement;
-        questionField.text = response + choice;
+
+        // The reason I'm using LastIndex here is because punctuation is pretty much only at the end of choices. 
+        // It does not scale, and I know that, but it should serve its purpose given how much time we have left in the project
+        if(choice.LastIndexOfAny(Punctuation)!=-1)
+        {
+            choice = choice.Remove(choice.LastIndexOfAny(Punctuation));
+        }
+
+        questionField.text = response1 + " " + choice + " " + response2;
     }
 
     /// <summary>
@@ -102,7 +112,6 @@ public class InteractableObjectCanvas : MonoBehaviour
         {
             var iopc = UITransitionManager.OpenMenu(ModifierObtainCanvas, cameraAnchor).GetComponent<ItemObtainPopupCanvas>();
             iopc.Initialize(md);
-            ModifierManager.AddCard(md, true);
         }
         if (objectRef != null)
         {

@@ -364,8 +364,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e3eef7fb0d58814db237c7f5897caf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  applyLevelEndShader: 0
+  levelEndShader: {fileID: 0}
+  affectedMeshes: []
   InteractSuccessful: 0
-  BossDefeated: 0
-  _nextSceneIndex: 0
+  PlayerCanLeave: 0
+  NextSceneIndex: 0
+  sceneTransitionType: 0
   CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: a0b11ab76fce26041b8530122b7cabe2, type: 3}
   cameraAnchor: {fileID: 0}

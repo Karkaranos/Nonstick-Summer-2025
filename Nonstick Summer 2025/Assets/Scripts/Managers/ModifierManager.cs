@@ -28,6 +28,7 @@ public class ModifierManager
 
     public ModifierManager(ModifierData[] defaultModifiers)
     {
+        _modifierCollection.Clear();
         foreach(var modifier in defaultModifiers)
         {
             AddCard(modifier, makeCopy: true);

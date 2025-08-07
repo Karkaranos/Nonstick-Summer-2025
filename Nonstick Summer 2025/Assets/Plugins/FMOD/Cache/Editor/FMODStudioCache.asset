@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638899858994814608
+  lastModified: 638899049321356183
   FileSizes:
   - Name: Desktop
     Value: 1520
@@ -144,11 +144,122 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638899858994814608
+  lastModified: 638901057781705608
   FileSizes:
   - Name: Desktop
-    Value: 1752
+    Value: 2042
   Exists: 1
+--- !u!114 &-5071178627958903902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/TV
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/TV
+  Guid:
+    Data1: 1839038091
+    Data2: 1219176787
+    Data3: 1176204948
+    Data4: -38595184
+  Banks:
+  - {fileID: 1634051811715559137}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4888217875575128617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/ReactUncle
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/ReactUncle
+  Guid:
+    Data1: -510398617
+    Data2: 1272716604
+    Data3: 2062159534
+    Data4: 1384989105
+  Banks:
+  - {fileID: 1634051811715559137}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -2375384717092888609}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4822545921931558208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/ReactGrandma
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/ReactGrandma
+  Guid:
+    Data1: -2105209144
+    Data2: 1303853854
+    Data3: -1712047457
+    Data4: 836842899
+  Banks:
+  - {fileID: 1634051811715559137}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 8589019724849484306}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3814741081584204498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/ReactCousin
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/ReactCousin
+  Guid:
+    Data1: 1567955740
+    Data2: 1100864834
+    Data3: 534491033
+    Data4: 72776563
+  Banks:
+  - {fileID: 1634051811715559137}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 2543392609150357710}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3369080826598713240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +288,34 @@ MonoBehaviour:
   - Cousin Boss
   - Grandma Boss
   Exists: 1
+--- !u!114 &-3080293570152182798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/ReactMom
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/ReactMom
+  Guid:
+    Data1: -1530983899
+    Data2: 1192870659
+    Data3: -387091032
+    Data4: -1647413893
+  Banks:
+  - {fileID: 1634051811715559137}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -566499313162206236}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2690066693674928131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +366,34 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Labels: []
+  Exists: 1
+--- !u!114 &-2375384717092888609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ReactUncle/Reactions
+  m_EditorClassIdentifier: 
+  Name: Reactions
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 784260026
+    data2: 2177942323
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Neutral
+  - Happy
+  - Sad
+  - Angry
   Exists: 1
 --- !u!114 &-2328247642026296479
 MonoBehaviour:
@@ -334,6 +501,34 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-566499313162206236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ReactMom/Reactions
+  m_EditorClassIdentifier: 
+  Name: Reactions
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 784260026
+    data2: 2177942323
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Neutral
+  - Happy
+  - Sad
+  - Angry
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,13 +562,20 @@ MonoBehaviour:
   - {fileID: -2690066693674928131}
   - {fileID: -6381407632917228147}
   - {fileID: -2328247642026296479}
+  - {fileID: -3814741081584204498}
+  - {fileID: -3080293570152182798}
+  - {fileID: 8735924397071561783}
+  - {fileID: -4888217875575128617}
+  - {fileID: -5071178627958903902}
+  - {fileID: 499562003547829560}
+  - {fileID: -4822545921931558208}
   EditorParameters:
   - {fileID: 5683601671587191834}
   MasterBanks:
   - {fileID: -7676539690225878646}
   StringsBanks:
   - {fileID: -5259588466323316940}
-  cacheTime: 638899858994814608
+  cacheTime: 638901057781996938
   cacheVersion: 131624
 --- !u!114 &34564258425666311
 MonoBehaviour:
@@ -390,11 +592,38 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/BGM.bank
   Name: BGM
   StudioPath: bank:/BGM
-  lastModified: 638899858994774198
+  lastModified: 638899049321178593
   FileSizes:
   - Name: Desktop
     Value: 10381280
   Exists: 1
+--- !u!114 &499562003547829560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Talking
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Talking
+  Guid:
+    Data1: 531374499
+    Data2: 1334503308
+    Data3: -1417863754
+    Data4: -772132669
+  Banks:
+  - {fileID: 1634051811715559137}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 72852
 --- !u!114 &1634051811715559137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,10 +639,38 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638899858994814608
+  lastModified: 638901057781996938
   FileSizes:
   - Name: Desktop
-    Value: 329152
+    Value: 3015744
+  Exists: 1
+--- !u!114 &2543392609150357710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ReactCousin/Reactions
+  m_EditorClassIdentifier: 
+  Name: Reactions
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 784260026
+    data2: 2177942323
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Neutral
+  - Happy
+  - Sad
+  - Angry
   Exists: 1
 --- !u!114 &2696384017540158741
 MonoBehaviour:
@@ -468,7 +725,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1236
+  Length: 460
 --- !u!114 &3589350382702972286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,7 +820,7 @@ MonoBehaviour:
   Name: Reactions
   StudioPath: 
   Min: 0
-  Max: 6
+  Max: 3
   Default: 0
   ID:
     data1: 784260026
@@ -571,13 +828,10 @@ MonoBehaviour:
   Type: 2
   IsGlobal: 0
   Labels:
-  - Agree
-  - Disgust
-  - Laugh
   - Neutral
+  - Happy
   - Sad
-  - Satisfaction
-  - Suprise
+  - Angry
   Exists: 1
 --- !u!114 &6261599350818975943
 MonoBehaviour:
@@ -631,6 +885,61 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: -2533828954921976497}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8589019724849484306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ReactGrandma/Reactions
+  m_EditorClassIdentifier: 
+  Name: Reactions
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 784260026
+    data2: 2177942323
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Neutral
+  - Happy
+  - Sad
+  - Angry
+  Exists: 1
+--- !u!114 &8735924397071561783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Stamp
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Stamp
+  Guid:
+    Data1: -1945570239
+    Data2: 1080996748
+    Data3: -489870713
+    Data4: -2032168505
+  Banks:
+  - {fileID: 1634051811715559137}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 0

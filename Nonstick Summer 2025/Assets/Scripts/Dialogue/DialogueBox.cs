@@ -15,20 +15,21 @@ using UnityEngine;
 public class DialogueBox : MonoBehaviour
 {
     [SerializeField] private TMP_Text npcText;
+    [SerializeField, Required] private CanvasGroup group;
 
     [HideInInspector] private int NumberInList = 0; // TODO move this to npc dialogue bubble?
 
     [ReadOnly] public bool PlayerReadAllDialogue;
 
     private DialogueNPC[] dialogueStored;
-    private characters currentCharacter;
+    private Character currentCharacter;
 
 
     /// <summary>
     /// displays dialogue according to where the player is in a dialogue branch
     /// </summary>
     /// <param name="branch">the current dialogue branch that the player is on</param>
-    public IEnumerator Initialize(DialogueBranch branch, characters character)
+    public IEnumerator Initialize(DialogueBranch branch, Character character)
     {
         npcText = npcText != null ? npcText : GetComponentInChildren<TMP_Text>();
 
@@ -72,6 +73,8 @@ public class DialogueBox : MonoBehaviour
 
     public IEnumerator SetDialogueIndex(int numberInList, DialogueBranch branch = null, DialogueNPC[] dialogue = null)
     {
+        group.transform.SetAsLastSibling(); // bring to front
+
         branch = branch ?? DialogueManager.CurrentDialogueBranch;
 
         if (branch == null)

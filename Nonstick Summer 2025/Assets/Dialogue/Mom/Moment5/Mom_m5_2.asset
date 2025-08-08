@@ -16,18 +16,18 @@ MonoBehaviour:
   - Dialogue: How can I help you?
     Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
     AnimatedReaction: {fileID: 0}
-    AudioResponse: 
+    AudioResponse: Silent
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "Well since you asked so nicely, I\u2019ll call off the construction
         guys."
       Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
-      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
     - Dialogue: "You\u2019ll always have a place here."
       Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
       AnimatedReaction: {fileID: 0}
-      AudioResponse: 
+      AudioResponse: Silent
     CombinedDialogue:
     - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
         you."
@@ -56,24 +56,24 @@ MonoBehaviour:
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
     CombinedDialogue: []
-    PlayerDialogue: "If you\u2019re going to stick around to chat, at least help
-      me pack. "
+    PlayerDialogue: "If you\u2019re going to stick around to chat at least help me
+      pack. "
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 34, y: 66}
     BranchingDialogueHigh: {fileID: 11400000, guid: 2b9f59df324641d42801382d059d2e46, type: 2}
     BranchingDialogueNeutral: {fileID: 11400000, guid: ba4e12e3f014fe744a00cbda084a20a1, type: 2}
     BranchingDialogueLow: {fileID: 11400000, guid: 9811cb0413a18314eb9cef281291266b, type: 2}
-    ChangeInRelationshipStatus: -15
+    ChangeInRelationshipStatus: 0
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: You got it! Watch me here and we can each fill a box.
       Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
-      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
     - Dialogue: Make sure you fold it 3 times to we can really pack the box!
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
       AnimatedReaction: {fileID: 0}
-      AudioResponse: Silent
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Teach me how to fold this the way you do so everything fits in
       the box.
@@ -82,17 +82,17 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 2b9f59df324641d42801382d059d2e46, type: 2}
     BranchingDialogueNeutral: {fileID: 11400000, guid: ba4e12e3f014fe744a00cbda084a20a1, type: 2}
     BranchingDialogueLow: {fileID: 11400000, guid: 9811cb0413a18314eb9cef281291266b, type: 2}
-    ChangeInRelationshipStatus: 5
+    ChangeInRelationshipStatus: 0
   Charming_Observation:
     NpcReactionText:
     - Dialogue: '...You got it. Watch me here and we can each fill a box. '
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
     - Dialogue: Make sure you fold it 3 times to we can really pack the box!
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
-      AudioResponse: 
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: Help me pack so I can get out of here faster.
     RelationshipCheckRequired: 1
@@ -100,7 +100,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: 2b9f59df324641d42801382d059d2e46, type: 2}
     BranchingDialogueNeutral: {fileID: 11400000, guid: ba4e12e3f014fe744a00cbda084a20a1, type: 2}
     BranchingDialogueLow: {fileID: 11400000, guid: 9811cb0413a18314eb9cef281291266b, type: 2}
-    ChangeInRelationshipStatus: 10
+    ChangeInRelationshipStatus: 0
   Assertive_Observation:
     NpcReactionText:
     - Dialogue: You got it. Watch me here and we can each fill a box.
@@ -110,10 +110,10 @@ MonoBehaviour:
     - Dialogue: Make sure you fold it 3 times to we can really pack the box!
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
-      AudioResponse: 
+      AudioResponse: Silent
     CombinedDialogue: []
-    PlayerDialogue: "If you\u2019re going to stick around to chat, at least help
-      me pack. "
+    PlayerDialogue: "If you\u2019re going to stick around to chat at least help me
+      pack. "
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 35, y: 75}
     BranchingDialogueHigh: {fileID: 11400000, guid: 2b9f59df324641d42801382d059d2e46, type: 2}
@@ -124,7 +124,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: You got it! Watch me here and we can each fill a box.
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
     - Dialogue: Make sure you fold it 3 times to we can really pack the box!
       Portrait: {fileID: 0}
@@ -141,15 +141,15 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "You\u2019ve still got to be here, but I think everyone will appreciate
-        getting to say goodbye a little while longer."
+    - Dialogue: "You\u2019ve still got to be there tomorrow but I think everyone
+        will appreciate getting to say goodbye a little while longer."
       Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
-      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
     - Dialogue: You always have a place here sweetie.
       Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
       AnimatedReaction: {fileID: 0}
-      AudioResponse: 
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: Can you go back in time and tell me not to procrastinate packing?
     RelationshipCheckRequired: 1
@@ -162,12 +162,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: We all want to say goodbye before you leave for your next adventure.
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
-      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
     - Dialogue: "It\u2019ll be awhile before we see you again."
       Portrait: {fileID: 21300000, guid: 032b2ac25e695414a96b9f1f4f473521, type: 3}
       AnimatedReaction: {fileID: 0}
-      AudioResponse: 
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: Can you get everyone to leave me alone so I can focus?
     RelationshipCheckRequired: 1
@@ -181,7 +181,7 @@ MonoBehaviour:
     - Dialogue: "Haha. You\u2019ve still got to be there tomorrow but I think everyone
         will appreciate getting to say goodbye a little while longer."
       Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
-      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
     - Dialogue: You always have a place here sweetie.
       Portrait: {fileID: 21300000, guid: 032b2ac25e695414a96b9f1f4f473521, type: 3}

@@ -39,6 +39,7 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
 
     public void WriteText(CardData card)
     {
+        group.transform.SetAsLastSibling(); // bring to front
         if (card == null)
         {
             Hide();

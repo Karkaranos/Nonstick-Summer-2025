@@ -218,13 +218,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanvasToOpen: {fileID: 8553161507268041164, guid: 8a396213697e3d24f944fe34be909bbe, type: 3}
-  applyShaders: 0
+  applyShaders: 1
   applyObjectiveShaders: 0
-  applyInteractableShaders: 0
+  applyInteractableShaders: 1
   applyIfActiveObjective: 1
   objectiveShader: {fileID: 0}
-  interactableShader: {fileID: 0}
-  affectedMeshes: []
+  interactableShader: {fileID: -876546973899608171, guid: 6bdf35da1294cad46a7cebe96243d56a, type: 3}
+  affectedMeshes:
+  - {fileID: 7214215364075738934}
+  - {fileID: 2493452230618130333}
+  - {fileID: 5300274156284962101}
   _statement: Fridge Magnets.
   _question: What should they spell?
   _response: 'Response not set '
@@ -244,6 +247,51 @@ MonoBehaviour:
     - {fileID: 11400000, guid: ee82f2ab5548cd54b9229a935295297c, type: 2}
   InteractSuccessful: 0
   chosenOption: 
+  OnClickEvent1:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 418752296827960898}
+        m_TargetAssemblyTypeName: FridgeMagnets, Assembly-CSharp
+        m_MethodName: ChangeMagnetPosition
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MOM
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnClickEvent2:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 418752296827960898}
+        m_TargetAssemblyTypeName: FridgeMagnets, Assembly-CSharp
+        m_MethodName: ChangeMagnetPosition
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: OWW
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnClickEvent3:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 418752296827960898}
+        m_TargetAssemblyTypeName: FridgeMagnets, Assembly-CSharp
+        m_MethodName: ChangeMagnetPosition
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: WOW
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &418752296827960898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,9 +304,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd6182ab7c82a7f4294296c714bbd9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letterM: {fileID: 7214215364075738934}
-  letterO: {fileID: 5300274156284962101}
-  letterM2: {fileID: 2493452230618130333}
+  letterM: {fileID: 1312541832885678104}
+  letterO: {fileID: 4003059267318073806}
+  letterM2: {fileID: 6886907901049763576}
   firstLetterPosition: {fileID: 9163405831992111673}
   secondLetterPosition: {fileID: 9123824816515535748}
   thirdLetterPosition: {fileID: 6187589043383440191}
@@ -385,9 +433,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40f22d56bec58bb48bb4ffc6b8c8e978, type: 3}
+--- !u!4 &1312541832885678104 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4020985309042891687, guid: 40f22d56bec58bb48bb4ffc6b8c8e978, type: 3}
+  m_PrefabInstance: {fileID: 6486734864028701761}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2493452230618130333 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8691673959255815132, guid: 40f22d56bec58bb48bb4ffc6b8c8e978, type: 3}
+  m_PrefabInstance: {fileID: 6486734864028701761}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4003059267318073806 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7892624095698148751, guid: 40f22d56bec58bb48bb4ffc6b8c8e978, type: 3}
   m_PrefabInstance: {fileID: 6486734864028701761}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &5300274156284962101 stripped
@@ -398,6 +456,11 @@ GameObject:
 --- !u!4 &6741672591967122346 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 40f22d56bec58bb48bb4ffc6b8c8e978, type: 3}
+  m_PrefabInstance: {fileID: 6486734864028701761}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6886907901049763576 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 402707966181270201, guid: 40f22d56bec58bb48bb4ffc6b8c8e978, type: 3}
   m_PrefabInstance: {fileID: 6486734864028701761}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7214215364075738934 stripped

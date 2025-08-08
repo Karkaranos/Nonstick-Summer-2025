@@ -16,7 +16,7 @@ public class FadeTransition : MonoBehaviour
         if (fadeCoroutine == null)
         {
 
-            GameObject player = FindFirstObjectByType<PlayerMovement>()?.gameObject;
+            GameObject player = GameManager.PlayerCameraRef?.gameObject;
 
             //no more bug
             if (player != null)

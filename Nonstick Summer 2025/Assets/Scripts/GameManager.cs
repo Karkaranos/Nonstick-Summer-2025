@@ -109,8 +109,10 @@ public class GameManager : Singleton<GameManager>
             RelationshipManagerReference = new RelationshipManager(grandmaStartingValue, uncleStartingValue, cousinStartingValue, momStartingValue);
             ModifierManagerReference = new ModifierManager(startingModifiers);
         }
+        ObjectiveReference = FindFirstObjectByType<Objectives>();
 
     }
+
 
     private Camera RefreshPlayerCamera()
     {

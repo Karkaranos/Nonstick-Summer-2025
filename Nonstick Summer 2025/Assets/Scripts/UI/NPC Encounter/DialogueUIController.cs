@@ -154,7 +154,12 @@ public class DialogueUIController : Singleton<DialogueUIController>
             {
                 UITransitionManager.CloseMenu();
                 GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.FINISH_COMBAT);
-                GameManager.ObjectiveReference.SetObjectiveVisibility(true);
+
+                //okay yes this is bad code but it was dereferencing again and this should fix it
+                if (GameManager.ObjectiveReference != null)
+                    GameManager.ObjectiveReference.SetObjectiveVisibility(true);
+                else
+                    FindFirstObjectByType<Objectives>(FindObjectsInactive.Include).SetObjectiveVisibility(true);
             }
             else
             {

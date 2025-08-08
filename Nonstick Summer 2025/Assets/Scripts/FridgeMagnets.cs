@@ -27,7 +27,7 @@ public class FridgeMagnets : MonoBehaviour
             letterM.Rotate(0, 0, 180);
 
             letterM2.position = thirdLetterPosition.position;
-            letterM2.Rotate(0, 0, 90);
+            letterM2.Rotate(0, 0, 180);
 
             Debug.Log("OWW");
         }
@@ -35,12 +35,12 @@ public class FridgeMagnets : MonoBehaviour
         else if (letterOrder == "WOW")
         {
             letterM.position = firstLetterPosition.position;
-            letterM.Rotate(0, 0, 90);
+            letterM.Rotate(0, 0, 180);
 
             letterO.position = secondLetterPosition.position;
 
             letterM2.position = thirdLetterPosition.position;
-            letterM2.Rotate(0, 0, 90);
+            letterM2.Rotate(0, 0, 180);
 
             Debug.Log("WOW");
         }

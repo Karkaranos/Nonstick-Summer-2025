@@ -16,23 +16,29 @@ MonoBehaviour:
   - Dialogue: ...You look mad right now. Are you mad at me?
     Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: 
   - Dialogue: Because I think you're the coolest! And, uh...
     Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: 
   - Dialogue: Well, uhm...
     Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: 
   - Dialogue: ...W-we're still friends, right?
     Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: 
   - Dialogue: Like, you think I'm cool?
     Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: 
   Charming_Expression:
     NpcReactionText:
     - Dialogue: You do?! I mean, of course you do!
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "Of course I like you. I just need my space, y\u2019know?"
     RelationshipCheckRequired: 0
@@ -46,7 +52,8 @@ MonoBehaviour:
     - Dialogue: "I am NOT! I am not! I\u2019ve been a fan for longer than you have!
         I mean it!"
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "I know you\u2019re a poser. You only like these cards because
       I do. Copycat!"
@@ -60,7 +67,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Haha, I AM the coolest! And, uh... oh, yeah! Yeah, I can do that!
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m not mad. You\u2019re cool. But leave opening my gifts
       to me next time. Please?"
@@ -73,8 +81,9 @@ MonoBehaviour:
   Charming_Observation:
     NpcReactionText:
     - Dialogue: ...I am? Oh...
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "I like you! You\u2019re just kinda annoying, sometimes."
     RelationshipCheckRequired: 0
@@ -87,8 +96,9 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "I am NOT! I am not! I\u2019ve been a fan for longer than you have!
         I mean it!"
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "I know you\u2019re a poser. You only like these cards because
       I do. Copycat!"
@@ -102,8 +112,9 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "I am NOT! I am not! I\u2019ve been a fan for longer than you have!
         I mean it!"
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "You\u2019re cool... I know you\u2019re lying about liking these
       cards, though."
@@ -118,7 +129,8 @@ MonoBehaviour:
     - Dialogue: "It\u2019s not that I think that, but I also don\u2019t NOT think
         that, or, um... whatever. Whatever! It\u2019s okay."
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "Do you think I don\u2019t like you?"
     RelationshipCheckRequired: 0
@@ -131,7 +143,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: ...Bad.
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: How would YOU feel if I stole your stuff and ruined your birthday?
     RelationshipCheckRequired: 0
@@ -144,7 +157,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: No! I meant that... I-I just meant... Whatever!
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "You think I\u2019m the coolest?"
     RelationshipCheckRequired: 0

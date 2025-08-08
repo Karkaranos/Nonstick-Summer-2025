@@ -2151,6 +2151,63 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1001 &29867209
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3431918511398685349, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.686913
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431918511398685349, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2352746
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431918511398685349, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.9226985
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431918511398685349, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431918511398685349, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431918511398685349, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431918511398685349, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431918511398685349, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431918511398685349, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3431918511398685349, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      propertyPath: m_Name
+      value: Star
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
 --- !u!1 &36675585 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3771023895894247035, guid: 702cb239d264c454ba27ebf46eccb99b, type: 3}
@@ -13911,7 +13968,8 @@ MonoBehaviour:
   - {fileID: 4643452416452694616}
   _statement: A new deck of cards for your birthday!
   _question: Who do you want to play a game with first?
-  _response: 'Response not set '
+  _response1: 
+  _response2: 
   _cannotInteract: You cannot interact with this yet.
   _options:
   - ButtonText: Your family.
@@ -26968,7 +27026,8 @@ MonoBehaviour:
   - {fileID: 3007342587427244401}
   _statement: It's your birthday present!
   _question: What do you hope it is?
-  _response: 
+  _response1: 
+  _response2: 
   _cannotInteract: You cannot interact with this yet.
   _options:
   - ButtonText: New cards!
@@ -69842,7 +69901,8 @@ MonoBehaviour:
   - {fileID: 5850910390363008896}
   _statement: It's your birthday cake!
   _question: How do you feel about getting older?
-  _response: 
+  _response1: 
+  _response2: 
   _cannotInteract: You cannot interact with this yet.
   _options:
   - ButtonText: Scared.
@@ -81889,3 +81949,4 @@ SceneRoots:
   - {fileID: 1653283010}
   - {fileID: 2056719229}
   - {fileID: 620824981}
+  - {fileID: 29867209}

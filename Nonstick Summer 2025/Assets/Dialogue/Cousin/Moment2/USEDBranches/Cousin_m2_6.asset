@@ -16,14 +16,17 @@ MonoBehaviour:
   - Dialogue: But hey, we can play now!
     Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: 
   - Dialogue: ...You WANT to play with me, right?
     Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: 
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "Oh, uhm, okay! That\u2019s... that\u2019s fine!"
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: I know you wanna hang out, but give me some time.
     RelationshipCheckRequired: 0
@@ -34,9 +37,14 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "Oh... I mean, oh! Okay. That\u2019s, um, okay!"
+    - Dialogue: Oh...
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Silent
+    - Dialogue: "I mean, oh! Okay. That\u2019s, um, okay."
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: No! You got your grubby little fingerprints all over my NEW cards!
     RelationshipCheckRequired: 0
@@ -50,7 +58,8 @@ MonoBehaviour:
     - Dialogue: "I am?! I mean, of course I am! Ehehe. You\u2019re pretty cool, too.
         You\u2019re awesome!"
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "We can after the party. You\u2019re still my favorite cousin,
       you know."
@@ -62,9 +71,10 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Charming_Observation:
     NpcReactionText:
-    - Dialogue: Yes! Yes! I can do that!
+    - Dialogue: Really?! Yes! I can do that!
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: I know you wanna hang out, but give me some time.
     RelationshipCheckRequired: 0
@@ -77,7 +87,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "THEY AREN\u2019T GRUBBY! You\u2019re so mean!"
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: No! You got your grubby little fingerprints all over my NEW cards!
     RelationshipCheckRequired: 0
@@ -88,10 +99,15 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -15
   Sappy_Observation:
     NpcReactionText:
-    - Dialogue: "I am?! I mean, of course I am! Ehehe. You\u2019re pretty cool, too.
-        You\u2019re awesome!"
+    - Dialogue: I am?!
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Silent
+    - Dialogue: "I mean, of course I am! Ehehe. You\u2019re pretty cool, too. You\u2019re
+        awesome!"
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "We can after the party. You\u2019re still my favorite cousin,
       you know."
@@ -105,7 +121,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Yes! Yes! I can do that!
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: If I PROMISE to play later, will you let me open up all of my
       other gifts first?
@@ -119,7 +136,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: ...Yeah, I can, uh. I can go. Now. I can go now.
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: We'll see. Can you go now?
     RelationshipCheckRequired: 0
@@ -132,7 +150,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Um... Oh. Oh! I get it now. I\u2019m sorry."
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t know... will you apologize for opening one of my
       presents AND the pack of cards?"

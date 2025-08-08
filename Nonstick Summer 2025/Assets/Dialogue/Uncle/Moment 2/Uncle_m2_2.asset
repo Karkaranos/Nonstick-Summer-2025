@@ -17,15 +17,18 @@ MonoBehaviour:
       that came out."
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: 
   - Dialogue: Maybe we could play it sometime?
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: 
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "That won\u2019t be an issue. I\u2019ll make sure to ask her to bump
         it up to at least two this time."
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "Really? I hope Momma let\u2019s me play longer this time."
     RelationshipCheckRequired: 0
@@ -39,7 +42,8 @@ MonoBehaviour:
     - Dialogue: "That\u2019s what I like to hear. Looks like I\u2019ll have to step
         it up as well."
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t know... you might have to get better if I\u2019m
       gonna play with you. I beat you last time."
@@ -54,7 +58,8 @@ MonoBehaviour:
     - Dialogue: "Come on, where\u2019s the excitement from last time? Don\u2019t
         worry about how well you do, just have fun!"
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "That sounds great, but I haven\u2019t had much time to play
       since I\u2019ve been really busy with school. Hopefully I won\u2019t hold you
@@ -67,10 +72,11 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Charming_Observation:
     NpcReactionText:
-    - Dialogue: "That won\u2019t be an issue, I\u2019ll be sure to convince her to
+    - Dialogue: "That won\u2019t be an issue. I\u2019ll be sure to convince her to
         bump it up to at least 2 hours this time."
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "Really? Hopefully my mom let\u2019s me play for longer than
       an hour this time."
@@ -82,10 +88,10 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Assertive_Observation:
     NpcReactionText:
-    - Dialogue: Oh alright no worries, I guess I will just have to practice in the
-        meantime.
+    - Dialogue: Oh, no worries. I guess I will just have to practice in the meantime.
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t know, you might have to step it up a little if
       I am going to play with you, I carried you last time."
@@ -100,7 +106,8 @@ MonoBehaviour:
     - Dialogue: "Don\u2019t you worry about that, being able to spend time with you
         is what really matters to me."
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "That sounds great, I\u2019ve been really busy with school work
       lately so I haven\u2019t had much time to play though. Hopefully I won\u2019t
@@ -117,7 +124,8 @@ MonoBehaviour:
         it might not be as easy as last time... I\u2019ve been practicing just about
         every day since the last time we played."
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "Yeah, I had a lot of fun last time. Are you sure you\u2019re
       okay with being carried by me again?"
@@ -131,7 +139,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Oh, no worries. Just gives me more time to practice.
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t know, I might be playing it with my friends instead
       if that is alright?"
@@ -146,7 +155,8 @@ MonoBehaviour:
     - Dialogue: "Come on, where's the excitement from last time? Don\u2019t worry
         about how well you do, just have fun!"
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "I\u2019d really like to. You sure I won\u2019t be holding you
       back?"

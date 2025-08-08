@@ -15,11 +15,14 @@ MonoBehaviour:
   dialogue:
   - Dialogue: Oh, hello, Pumpkin. Did you like your cake?
     Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    AnimatedReaction: {fileID: 0}
+    AudioResponse: 
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "Haha, I\u2019m glad you liked it, honey. It was baked with lots
-        of love."
+    - Dialogue: "I\u2019m glad you liked it, honey. It was baked with lots of love."
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: Yes!! It was sooooooo good....
     RelationshipCheckRequired: 0
@@ -30,13 +33,17 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "Well... That\u2019s sweet of you to say honey, but you can be honest
+    - Dialogue: "Well...that\u2019s sweet of you to say honey, but you can be honest
         with your Nanna. I\u2019m getting a bit older so I might not be as on top
         of it as I used to."
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Silent
     - Dialogue: "I\u2019ll be sure to make the best cake I\u2019ve ever made for
         you next time!"
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "It wasn\u2019t exactly as I remember... I liked it because you\u2019re
       the one who made it."
@@ -51,9 +58,13 @@ MonoBehaviour:
     - Dialogue: "Well, part of throwing a party is sharing... You\u2019d want your
         Cousin to share his cake with you at his next birthday, right?"
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Silent
     - Dialogue: So make sure to share as much as possible now so everyone else will
         share with you on their birthday.
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "It was good, but cousin ate so much of it that there\u2019s
       not much left... Ugh"
@@ -68,13 +79,19 @@ MonoBehaviour:
     - Dialogue: "Oh silly, don\u2019t gobble it all down! And make sure to ask your
         mom before you eat a bunch at once. Savor it!"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Silent
     CombinedDialogue:
     - Dialogue: "Oh silly, don\u2019t gobble it all down! And make sure to ask your
         mom before you eat a bunch at once. Savor it!"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Now, have you come to help your Nanna clean the kitchen?
       Portrait: {fileID: 0}
-    PlayerDialogue: Yes.. the left overs better be for me!
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
+    PlayerDialogue: Yes.. the leftovers better be for me!
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 84ad6ee3cd3e33145ac51fe5e47a2a25, type: 2}
@@ -86,6 +103,8 @@ MonoBehaviour:
     - Dialogue: "Well... I\u2019m sorry to hear that honey. I thought you\u2019d
         like it."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: It tasted like cardboard.
     RelationshipCheckRequired: 0
@@ -99,6 +118,8 @@ MonoBehaviour:
     - Dialogue: "Well, part of throwing a party is sharing.... you\u2019d want your
         Cousin to share his cake with you at his next birthday, right?"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "It was good, but Cousin ate so much of it that there\u2019s
       not much left....Ugh"
@@ -110,10 +131,12 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "Oh you sweat pea... Of course Nanna will bake for you next year.
-        Just tell me what you\u2019d like close to your birthday and I\u2019ll make
-        it for you."
+    - Dialogue: "Oh sweat pea, of course Nanna will bake for you next year. Just
+        tell me what you\u2019d like close to your birthday and I\u2019ll make it
+        for you."
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: Could you bake for me again next year, Nanna? It was so good!
     RelationshipCheckRequired: 0
@@ -127,9 +150,13 @@ MonoBehaviour:
     - Dialogue: "Well, part of throwing a party is sharing.... you\u2019d want your
         Cousin to share his cake with you at his next birthday, right?"
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Silent
     - Dialogue: So make sure to share as much as possible now so everyone else will
         share with you on their birthday.
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Yeah, but why did I have to share it with everyone?
     RelationshipCheckRequired: 0
@@ -144,8 +171,12 @@ MonoBehaviour:
         into you should savor each bite. Make sure to leave some for the rest of
         us though.
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Silent
     - Dialogue: " Next year I\u2019ll be sure to make an even bigger one for you."
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "I was a little sad that it was so small... Couldn\u2019t you
       have made it bigger for more people?"

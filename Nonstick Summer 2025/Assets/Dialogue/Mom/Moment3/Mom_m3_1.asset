@@ -15,10 +15,14 @@ MonoBehaviour:
   dialogue:
   - Dialogue: Hello? Have you left for the game yet?
     Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+    AnimatedReaction: {fileID: 0}
+    AudioResponse: Neutral
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Haha.
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m sorry, your call has been declined. Please leave your
       message at the beep. Beeeep."
@@ -32,8 +36,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Well, don\u2019t be late, and don\u2019t leave last minute."
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     - Dialogue: "Traffic\u2019s been backed up all day."
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: No.
     RelationshipCheckRequired: 0
@@ -47,8 +55,12 @@ MonoBehaviour:
     - Dialogue: "You know I want to, but they needed me to pick up someone\u2019s
         shift for the day."
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Sad
     - Dialogue: "I\u2019m sorry."
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: I wish you would be there.
     RelationshipCheckRequired: 0
@@ -61,6 +73,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Hey, no need for the tone.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: I answered the phone, so clearly not.
     RelationshipCheckRequired: 0
@@ -74,6 +88,8 @@ MonoBehaviour:
     - Dialogue: "Well, don\u2019t be late, and don\u2019t leave last minute. Traffic\u2019s
         been backed up all day."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: No.
     RelationshipCheckRequired: 0
@@ -87,8 +103,12 @@ MonoBehaviour:
     - Dialogue: "You know I want to, but they needed me to pick up someone\u2019s
         shift for the day."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "I\u2019m sorry."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: I wish you would be there.
     RelationshipCheckRequired: 0
@@ -101,6 +121,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Hey, no need for the tone.
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m answering from the home phone...what do you think?"
     RelationshipCheckRequired: 0
@@ -113,6 +135,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Hey, no need for the tone.
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: What do you want?
     RelationshipCheckRequired: 0
@@ -125,6 +149,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Busy, but I wanted to give you a call once I got on break.
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: "Not yet. How\u2019s work?"
     RelationshipCheckRequired: 0
@@ -137,6 +163,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Honey? Are you there?
       Portrait: {fileID: 21300000, guid: 985b9ad40b91e70409344b1e812bfabc, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

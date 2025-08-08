@@ -2,12 +2,13 @@
 Author Names :          Cade Naylor
 Date Created :          June 23, 2025
 Date Modified :         June 24, 2025
-Brief Description :     Opens shorter combat for Side Characters upon interaction
+Brief Description :     Opens shorter combat for Side Character upon interaction
 ***************************************************/
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SideCharacterInteractable : MonoBehaviour, IInteractable
 {
@@ -31,7 +32,7 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
 
     [Tooltip("Current character you're interacting with.")]
     [SerializeField]
-    private characters character;
+    private Character character;
 
     private GameObject openedCanvas;
 
@@ -61,7 +62,14 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
 
     public void StartSideCombat()
     {
-        MusicManager.instance.StartCombat(0);
+        if (SceneManager.GetActiveScene().name.Equals("Moment_5"))
+        {
+            MusicManager.instance.StartReflection();
+        }
+        else
+        {
+            MusicManager.instance.StartCombat(0);
+        }
 
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor);
         var dialogueController = menu.GetComponentInChildren<DialogueUIController>();

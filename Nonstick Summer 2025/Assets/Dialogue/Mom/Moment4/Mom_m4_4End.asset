@@ -15,17 +15,27 @@ MonoBehaviour:
   dialogue:
   - Dialogue: Go to your room!
     Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
+    AnimatedReaction: {fileID: 0}
+    AudioResponse: Neutral
   - Dialogue: NOW!
     Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+    AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+    AudioResponse: Angry
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "Is that really what you think of me? Do you think I\u2019m doing
         this because I HATE YOU?"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: " I don\u2019t want to be the bad guy,"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "but you\u2019re forcing my hand!"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: At least my PHONE listens to me!
     RelationshipCheckRequired: 0
@@ -39,6 +49,8 @@ MonoBehaviour:
     - Dialogue: "Are you sure? Because you\u2019re not making a good case for yourself
         by sneaking behind my back like this."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m not trying to sound ungrateful. I AM grateful but you\u2019re
       being UNFAIR right now!"
@@ -53,6 +65,8 @@ MonoBehaviour:
     - Dialogue: "I don\u2019t HAVE to take care of you, but a little RESPECT shouldn\u2019t
         be too much to ask for either."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: " A tragedy. It\u2019s almost like you\u2019re A MOTHER who is
       supposed to CARE ABOUT HER KID."
@@ -67,6 +81,8 @@ MonoBehaviour:
     - Dialogue: "Is that really what you think of me? Do you think I\u2019m doing
         this because I \"hate\" you?"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "At least my PHONE doesn\u2019t hate me!"
     RelationshipCheckRequired: 0
@@ -80,6 +96,8 @@ MonoBehaviour:
     - Dialogue: "Is it MY fault that you didn\u2019t study?! Is it MY fault that
         you\u2019ve been clothed and fed with a roof over your head?"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "No one asked you to do that! And it\u2019s not even my fault!"
     RelationshipCheckRequired: 0
@@ -93,6 +111,8 @@ MonoBehaviour:
     - Dialogue: "Are you sure? Because you\u2019re not making a good case for  yourself
         by sneaking behind my back like this."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m not trying to sound ungrateful. I AM grateful."
     RelationshipCheckRequired: 0
@@ -105,6 +125,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: ..!
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "If you work more, does that mean I\u2019ll have to see you less?"
     RelationshipCheckRequired: 0
@@ -118,6 +140,8 @@ MonoBehaviour:
     - Dialogue: "Like what? Because I\u2019m tired of you thinking you can walk all
         over me."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "Can\u2019t we talk about this? There has to be something else
       you can take besides my phone."
@@ -131,13 +155,21 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Is it MY fault that you didn\u2019t study?!"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "Is it MY fault that you\u2019ve been clothed and fed with a roof
         over your head?"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: No,
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: The only FAULT I made is GIVING you that damn phone to begin with!
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Do you understand that you working so much leaves you with no
       time to pay attention to me?
@@ -151,6 +183,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Did you hear me?
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

@@ -15,10 +15,14 @@ MonoBehaviour:
   dialogue:
   - Dialogue: Does the idea of being grounded mean nothing to you?
     Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+    AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+    AudioResponse: Angry
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "Don\u2019t be smart with me."
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: Ah yes... no fun, no phone, no time in the sunlight, wither away
       in remorse in my room. Grounded. Yeah, I get it.
@@ -32,6 +36,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Don\u2019t be smart with me."
       Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: "You don\u2019t understand! This doesn\u2019t mean I was going
       to take my phone and use it full-time again."
@@ -45,6 +51,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "It doesn\u2019t matter. Grounded means grounded."
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: "I get it.. it\u2019s just that it\u2019s been a while."
     RelationshipCheckRequired: 0
@@ -57,6 +65,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Don\u2019t be smart with me."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: I thought they outlawed cruel and unusual punishments, but you
       tell me....
@@ -71,6 +81,8 @@ MonoBehaviour:
     - Dialogue: Where did you get the idea that you could talk to me like that? I
         am your MOTHER!
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "It\u2019s not my fault you clearly have no sense of empathy."
     RelationshipCheckRequired: 0
@@ -83,6 +95,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "It doesn\u2019t matter. Grounded means grounded."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "I get it.. it\u2019s just that it\u2019s been a while."
     RelationshipCheckRequired: 0
@@ -95,6 +109,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Don\u2019t be smart with me."
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: Oh... Could you explain it again to me?
     RelationshipCheckRequired: 0
@@ -107,11 +123,17 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Don't be smart with me.
       Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue:
     - Dialogue: "Don\u2019t be smart with me."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Oh, because surely, a phone will fix your grades.
       Portrait: {fileID: 21300000, guid: c2360f7827c4e38498ba0e512f1c8260, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     PlayerDialogue: Are you being serious right now?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -123,6 +145,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "You clearly don\u2019t understand what being grounded means!"
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: "Why do you think I don\u2019t understand?"
     RelationshipCheckRequired: 0
@@ -135,6 +159,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: WELL?!
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

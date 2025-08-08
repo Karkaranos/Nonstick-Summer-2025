@@ -9,12 +9,14 @@
 *****************************************************************************/
 
 using NaughtyAttributes;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DrawButton : MonoBehaviour
 {
     [SerializeField, Required] private Button button;
+    [SerializeField, Required] private TMP_Text energyCostDisplay;
     private DeckDisplayer handDisplay => DialogueUIController.Instance.DeckDisplay;
     [ReadOnly]
     public bool CantDrawAnymore = false;
@@ -25,6 +27,8 @@ public class DrawButton : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Initialize()
     {
+        energyCostDisplay.text = "-" + DialogueManager.DrawButtonEnergyCost;
+
         button.onClick.AddListener(OnButtonPressed);
         CantDrawAnymore = false;
         UpdateButtonEnabled();

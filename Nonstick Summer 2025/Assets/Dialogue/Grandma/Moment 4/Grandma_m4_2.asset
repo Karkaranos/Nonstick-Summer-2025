@@ -15,19 +15,23 @@ MonoBehaviour:
   dialogue:
   - Dialogue: My, where has the time gone...?
     Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
-    AnimatedReaction: {fileID: 0}
+    AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+    AudioResponse: Neutral
   - Dialogue: Who knew that my little Pumpkin could grow so big right under my nose?
     Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
-    AnimatedReaction: {fileID: 0}
+    AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+    AudioResponse: Sad
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "Oh, I\u2019m sure she has."
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
-      AnimatedReaction: {fileID: 0}
-    - Dialogue: "Oh, I\u2019m sure she has. That Mom of yours must have some mysterious
-        ways to produce a kid as amazing as you!"
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
+    - Dialogue: That Mom of yours must have some mysterious ways to produce a kid
+        as amazing as you!
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: "Well, Mom\u2019s made sure to keep me on a balanced diet, tons
       of meat, milk, and a bit of radioactivity here and there for me to grow big
@@ -43,10 +47,12 @@ MonoBehaviour:
     - Dialogue: "I guess you\u2019re right, maybe I\u2019ll have to call you my big
         pumpkin instead."
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Neutral
     - Dialogue: "Although that one doesn\u2019t have the same ring to it."
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: "I\u2019ve grown a lot, you can\u2019t really consider me your
       \u201Clittle\u201D pumpkin anymore."
@@ -61,7 +67,8 @@ MonoBehaviour:
     - Dialogue: Yeah I know, I just wish you could stay my pumpkin for just a bit
         longer.
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: "I\u2019ve grown up. I wasn\u2019t going to stay a kid forever,
       you know."
@@ -76,6 +83,7 @@ MonoBehaviour:
     - Dialogue: "Now, there\u2019s no need for harsh words."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "Well, it seems like you\u2019ve only grown shorter."
     RelationshipCheckRequired: 0
@@ -89,6 +97,7 @@ MonoBehaviour:
     - Dialogue: "Now, there\u2019s no need for harsh words."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: It was going to happen with or without you.
     RelationshipCheckRequired: 0
@@ -103,6 +112,7 @@ MonoBehaviour:
         baby yesterday, and a blink and a half later, here we are."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "Well, I wasn\u2019t going to stay a kid forever, you know."
     RelationshipCheckRequired: 0
@@ -116,10 +126,12 @@ MonoBehaviour:
     - Dialogue: Haha Yeah... It just went by so fast. It feels like you were just
         my little sunshine yesterday, and a blink and a half later, here we are.
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     - Dialogue: "You\u2019ve gone and grown up on your Nanna."
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: Have you considered puberty?
     RelationshipCheckRequired: 0
@@ -132,10 +144,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Sorry Pum--... I mean sweetie.
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Neutral
     - Dialogue: I guess I just forgot for a second that you are all grown up now.
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: "When are you going to stop calling me that nickname? I\u2019m
       not a kid anymore."
@@ -149,19 +163,23 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "That\u2019s... Well... Of course I am,"
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     - Dialogue: "but you don\u2019t have to worry your little heart about that one
         bit."
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
     - Dialogue: "There\u2019s a lot to be afraid of, sure, but there\u2019s a whole
         lot more to be excited about, don\u2019t you think?"
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     - Dialogue: The past is the past, all we can do is focus on what we can control
         and the future will be ever brighter for us.
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: Nanna... Are you afraid of getting older?
     RelationshipCheckRequired: 0
@@ -174,16 +192,19 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Sorry, dear.
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue:
     - Dialogue: 'Listen, dear, I just wanted to tell you that I love you very, very
         much. '
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "I know it must feel like there\u2019s a lot going on right now at
         your age, but you\u2019ll never be too old for your Nanna, okay?"
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}

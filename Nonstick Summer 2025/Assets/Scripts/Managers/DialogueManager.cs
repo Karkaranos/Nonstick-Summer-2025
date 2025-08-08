@@ -34,7 +34,7 @@ public class DialogueManager
     public static DialogueBranch CurrentDialogueBranch { get; private set; }
     public static bool PlayerInCombat => DialogueUIController.Instance != null;
 
-    private static characters currentCharacter;
+    private static Character currentCharacter;
     public static float CurrentRelationshipScore => RelationshipManager.characterRelationships[currentCharacter].currentValue;
     public static float CurrentEnergy { 
         get { return _currentEnergy; }
@@ -45,8 +45,8 @@ public class DialogueManager
     private static bool continueCardProcessing = false;
 
     // parameters
-    private static float _defaultEnergy, _energyGainedPerRound, _energyGainedIfSilent;
-    public static float MaxEnergy, DrawButtonEnergyCost, EnergyGainedPerDiscard;
+    private static float _defaultEnergy, _energyGainedPerRound;
+    public static float MaxEnergy, DrawButtonEnergyCost, EnergyGainedPerDiscard, EnergyGainedIfSilent;
     public static int DefaultCardsInHand, CardsDrawnPerRound;
 
     #region calculation variables
@@ -107,7 +107,7 @@ public class DialogueManager
     {
         _defaultEnergy = defaultEnergy;
         _energyGainedPerRound = energyGainedPerRound;
-        _energyGainedIfSilent = energyGainedIfSilent;
+        EnergyGainedIfSilent = energyGainedIfSilent;
         MaxEnergy = maxEnergy;
         DefaultCardsInHand = defaultCardsInHand;
         CardsDrawnPerRound = cardsDrawnPerRound;
@@ -127,7 +127,7 @@ public class DialogueManager
         CurrentEnergy = _defaultEnergy;
     }
 
-    public static void OnOpenCombatUI(DialogueBranch startDialogueBranch, characters character)
+    public static void OnOpenCombatUI(DialogueBranch startDialogueBranch, Character character)
     {
         ReadUserInput = false;
         CurrentDialogueBranch = startDialogueBranch;
@@ -153,6 +153,8 @@ public class DialogueManager
     /// </summary>
     public static IEnumerator ProcessPlayCard(CardData playedCard)
     {
+        DialogueUIController.Instance.UpdateHoveringCard(playedCard);
+
         continueCardProcessing = false;
         playedCardSinceOpeningCombat = true;
         ReadUserInput = false;
@@ -185,7 +187,7 @@ public class DialogueManager
 
         Debug.Log("before set");
         GameManager.Instance.StartCoroutine(SetCurrentEnergy(_currentEnergy + 
-            (playedCard == null ? _energyGainedIfSilent: playedCard.GetEnergyCost()))); // this could have been an if statement but noooooo i just had to be special
+            (playedCard == null ? EnergyGainedIfSilent: playedCard.GetEnergyCost()))); // this could have been an if statement but noooooo i just had to be special
         Debug.Log("after set");
 
         DialogueUIController.Instance.gainEnergy = true;

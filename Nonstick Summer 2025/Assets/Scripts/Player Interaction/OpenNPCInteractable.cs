@@ -27,7 +27,7 @@ public class OpenNPCInteractable : MonoBehaviour, IInteractable
 
     [Tooltip("Current character you're interacting with.")]
     [SerializeField]
-    private characters character;
+    private Character character;
 
     public void Interact(GameObject player)
     {

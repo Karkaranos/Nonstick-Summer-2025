@@ -55,6 +55,8 @@ public class DeckDisplayer : MonoBehaviour
     private List<CardDisplay> _visualDisplays = new List<CardDisplay>();
     private Deck displayedData = new Deck();
 
+    private bool interactable = true;
+
     #endregion Variables
 
     #region Functions
@@ -91,13 +93,18 @@ public class DeckDisplayer : MonoBehaviour
     /// </summary>
     public void DisplayAllCards()
     {
+        StartCoroutine(DisplayAllCardsCoroutine());
+    }
+
+    public IEnumerator DisplayAllCardsCoroutine()
+    {
         if (_visualDisplays == null)
             _visualDisplays = new List<CardDisplay>();
 
-        ClearRemovedCards();
+        yield return ClearRemovedCards();
 
         if (displayedData.Count == 0)
-            return;
+            yield break;
 
         SpawnNewCards();
 
@@ -105,7 +112,7 @@ public class DeckDisplayer : MonoBehaviour
         GenerateAndSetPositions();
     }
 
-    private void ClearRemovedCards()
+    private IEnumerator ClearRemovedCards()
     {
         // clear modifiers that arent in hand anymore
         for (int i = _visualDisplays.Count() - 1; i >= 0; i--)
@@ -119,7 +126,8 @@ public class DeckDisplayer : MonoBehaviour
 
             if (!displayedData.Contains(display.cardData))
             {
-                Destroy(display.gameObject);
+                //Destroy(display.gameObject);
+                yield return display.UseCardAnimation(destroyAfter:true);
                 _visualDisplays.RemoveAt(i);
                 continue;
             }
@@ -273,39 +281,10 @@ public class DeckDisplayer : MonoBehaviour
                 t = (float)i / (_visualDisplays.Count - 1);
 
             float x = Mathf.Lerp(left, right, t);
-            card.SetPositionAndOffset(position: new Vector2(x, 0), offset: Vector2.zero, speed: 5000);
+            card.SetPositionAndOffset(position: new Vector2(x, 0), offset: interactable ? Vector2.zero : disabledCardOffset, speed: 5000);
 
             card.transform.SetSiblingIndex(i);
         }
-
-        // Assign the first position to the left side of the display area
-        //Vector2 nextPosition = new Vector2(_bufferFromEdgeOfRegion - (.5f * _dimensions.x) + rectTransformCenter.x, 0);
-        //Vector2 nextPosition = new Vector2(cardArea.rect.xMin + _bufferFromEdgeOfRegion, 0);
-
-        // Calculate the space needed
-        //float additiveValue = (_dimensions.x - (_bufferFromEdgeOfRegion*2)) / (_visualDisplays.Count);
-
-        // Assigns the last position to the right side of the display area, as a percaution
-        // also yeah the numbers are weird. I will fix it later. i'm a lil tired tbh
-        //positions[end] = new Vector2(rectTransformCenter.x + .5f * _dimensions.x + .3f * _cardWidth - _bufferFromEdgeOfRegion, 150);
-
-        /*
-        // Assign the first position to the left side of the display area
-        positions[start] =  new Vector2(_bufferFromEdgeOfRegion - .5f *_dimensions.x + rectTransformCenter.x,150);
-
-        // Calculate the space needed
-        float additiveValue = (_dimensions.x - _bufferFromEdgeOfRegion) / (end-start);
-
-        // Position generation
-        for(int i=start+1; i<end; i++)
-        {
-            positions[i] = positions[i - 1];
-            positions[i].x += additiveValue;
-        }
-
-        // Assigns the last position to the right side of the display area, as a percaution
-        // also yeah the numbers are weird. I will fix it later. i'm a lil tired tbh
-        positions[end] =    new Vector2(rectTransformCenter.x + .5f *_dimensions.x + .3f * _cardWidth -_bufferFromEdgeOfRegion, 150);*/
     }
 
     #region Obselete
@@ -408,6 +387,9 @@ public class DeckDisplayer : MonoBehaviour
     [Tooltip("Add this number to the cards position when a card is selected")]
     [SerializeField] private Vector2 selectedCardOffset = new Vector2(0, 50);
 
+    [Tooltip("Add this number to the cards position when cards cant be played")]
+    [SerializeField] private Vector2 disabledCardOffset = new Vector2(0, -150);
+
     [SerializeField, Min(1)]
     private int MaxSelectedCards = 1;
 
@@ -494,6 +476,36 @@ public class DeckDisplayer : MonoBehaviour
             DeselectCard(cardDisplay, false);
 
         OnCardsSelectedChanged.Invoke();
+    }
+    
+    public void UpdateGroupEnabled(bool enabled)
+    {
+        interactable = enabled;
+
+        if (canvasGroup == null)
+        {
+            UnityEngine.Debug.LogWarning("No canvas group???");
+            return;
+        }
+
+        if(enabled)
+        {
+            StaticUtilities.EnableCanvasGroup(canvasGroup, alpha: 1);
+
+            foreach (CardDisplay display in _visualDisplays)
+            {
+                display.SetPositionAndOffset(offset: Vector2.zero);
+            }
+        }
+        else
+        {
+            StaticUtilities.DisableCanvasGroup(canvasGroup, alpha: 0.5f);
+
+            foreach(CardDisplay display in _visualDisplays)
+            {
+                display.SetPositionAndOffset(offset: disabledCardOffset);
+            }
+        }
     }
 
     #endregion

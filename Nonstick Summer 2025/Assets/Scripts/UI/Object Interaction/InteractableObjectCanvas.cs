@@ -112,6 +112,7 @@ public class InteractableObjectCanvas : MonoBehaviour
         {
             var iopc = UITransitionManager.OpenMenu(ModifierObtainCanvas, cameraAnchor).GetComponent<ItemObtainPopupCanvas>();
             iopc.Initialize(md);
+            ModifierManager.AddCard(md, true);
         }
         if (objectRef != null)
         {

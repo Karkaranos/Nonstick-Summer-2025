@@ -21,7 +21,7 @@ public class MouseInteractionEvents : MonoBehaviour, IPointerClickHandler, IPoin
     public static MouseInteractionEvents CurrentHoverObject;
 
     public UnityEvent OnMouseDown, OnMouseHoverStart, OnMouseHoverEnd, OnMouseHoverStay;
-    private const float deselectCurrentlyHoveringDelay = 0.1f;
+    private const float deselectCurrentlyHoveringDelay = 0.25f;
 
     private Coroutine _deselctCurrentlyHoveringCoroutine;
 
@@ -34,6 +34,7 @@ public class MouseInteractionEvents : MonoBehaviour, IPointerClickHandler, IPoin
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.UIClickSFX);
         OnMouseDown.Invoke();
     }
 
@@ -47,6 +48,8 @@ public class MouseInteractionEvents : MonoBehaviour, IPointerClickHandler, IPoin
 
         CurrentHoverObject = this;
         mouseOver = true;
+
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.UIHoverSFX);
 
         OnMouseHoverStart.Invoke();
     }

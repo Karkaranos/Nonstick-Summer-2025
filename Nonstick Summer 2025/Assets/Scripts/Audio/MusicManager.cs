@@ -43,7 +43,7 @@ public class MusicManager : MonoBehaviour
         CombatBGM.setParameterByName("WhichBoss", val);
         float isItWorkingChat;
         CombatBGM.getParameterByName("WhichBoss", out isItWorkingChat);
-        Debug.Log(isItWorkingChat);
+        //Debug.Log(isItWorkingChat);
         CombatBGM.start();
     }
 

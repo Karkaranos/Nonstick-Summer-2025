@@ -75,14 +75,19 @@ public partial class CardDisplay : MonoBehaviour
         if(renderMode == RenderMode.WorldSpace)
         {
             // Math 
-            Vector3 toCamera = GameManager.PlayerCameraRef.transform.position - rectTransform.WorldPosition();
-            float dot = Vector3.Dot(transform.forward, toCamera.normalized);
-            facingFront = dot <= 0;
+            //Vector3 toCamera = GameManager.PlayerCameraRef.transform.position - rectTransform.WorldPosition();
+            //float dot = Vector3.Dot(transform.forward, toCamera.normalized);
+            //facingFront = dot <= 0;
+            Vector3 toCamera = (GameManager.PlayerCameraRef.transform.position - transform.position).normalized;
+            facingFront = Vector3.Dot(transform.forward, toCamera) > 0f;
         }
         else
         {
+            //float y = rectTransform.localEulerAngles.y;
+            //facingFront = ((-90 <= y && y <= 90) || (270 <= y && y <= 450));
             float y = rectTransform.localEulerAngles.y;
-            facingFront = ((-90 <= y && y <= 90) || (270 <= y && y <= 450));
+            if (y > 180) y -= 360;
+            facingFront = Mathf.Abs(y) <= 90;
         }
 
         StaticUtilities.ToggleCanvasGroup(CardFrontGroup, facingFront);

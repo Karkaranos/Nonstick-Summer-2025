@@ -462,7 +462,6 @@ GameObject:
   - component: {fileID: 5462319946366510063}
   - component: {fileID: 6246338759220135631}
   - component: {fileID: 8187481375812085929}
-  - component: {fileID: 1136472365417092305}
   m_Layer: 6
   m_Name: Node Visual
   m_TagString: Untagged
@@ -538,27 +537,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1136472365417092305
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6755382709581732306}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7082734256917575745
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +564,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 5, z: 1.5}
+  m_LocalScale: {x: 5, y: 5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5462319946366510063}
@@ -607,8 +585,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   node: {fileID: 7082734256917575745}
   highlightedNodeMaterial: {fileID: -9222479910337242331, guid: 29cf49e8ae8b4f044bb3a132dfbe1a9e, type: 3}
-  lr1: {fileID: 6981856444731892186}
-  lr2: {fileID: 3608055196982659664}
-  lr3: {fileID: 3394748795431022728}
-  xOffset: 3
+  lines:
+  - {fileID: 6981856444731892186}
+  - {fileID: 3608055196982659664}
+  - {fileID: 3394748795431022728}
+  xOffset: 10
   yOffset: 7

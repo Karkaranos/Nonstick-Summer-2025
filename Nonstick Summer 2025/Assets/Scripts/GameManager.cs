@@ -72,7 +72,7 @@ public class GameManager : Singleton<GameManager>
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(transform.parent == null ? this.gameObject : transform.parent.gameObject);
 
         UITransitionManagerReference = UITransitionManagerReference ?? new UITransitionManager();
         CardStyleManagerReference = CardStyleManagerReference ?? new CardStyleManager(Card_CharmingStyle, Card_AssertiveStyle, Card_SappyStyle,
@@ -102,10 +102,17 @@ public class GameManager : Singleton<GameManager>
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-
         DialogueManager.CurrentEnergy = _defaultEnergy;
+        if(scene.name.Contains("1"))
+        {
+            DeckManagerReference = new DeckManager(startingCards);
+            RelationshipManagerReference = new RelationshipManager(grandmaStartingValue, uncleStartingValue, cousinStartingValue, momStartingValue);
+            ModifierManagerReference = new ModifierManager(startingModifiers);
+        }
+        ObjectiveReference = FindFirstObjectByType<Objectives>();
 
     }
+
 
     private Camera RefreshPlayerCamera()
     {

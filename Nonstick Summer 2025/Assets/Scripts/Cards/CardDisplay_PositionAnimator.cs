@@ -17,6 +17,7 @@
 using UnityEngine;
 using NaughtyAttributes;
 using System.Collections;
+using Unity.VisualScripting;
 
 public partial class CardDisplay : MonoBehaviour
 {
@@ -136,4 +137,38 @@ public partial class CardDisplay : MonoBehaviour
     {
         StopAllCoroutines();
     }
+
+    #region Specific hardcoded animations
+
+    [Foldout("Destroy Card Animation"), SerializeField] float targetRotation = -135f;
+    [Foldout("Destroy Card Animation"), SerializeField] float destroyAnimationSeconds = 0.5f;
+    public IEnumerator UseCardAnimation(bool destroyAfter = true)
+    {
+        // some kind of dithering / burning shader would be sooooo cool here 
+
+        var startRotation = transform.eulerAngles;
+        var startScale = transform.localScale;
+
+        float timeStarted = Time.time;
+        float t;
+
+        do
+        {
+            t = (Time.time - timeStarted) / destroyAnimationSeconds;
+
+            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, t);
+            transform.eulerAngles = new Vector3(startRotation.x, startRotation.y, Mathf.Lerp(startRotation.z, targetRotation, t));
+
+            yield return null;
+        }
+        while(t < 1 && transform != null);
+
+
+        if(destroyAfter)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    #endregion
 }

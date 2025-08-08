@@ -11,13 +11,13 @@ using UnityEngine;
 * 
 *****************************************************************************/
 [Tooltip("Character bosses in the game.")]
-[HideInInspector] public enum characters { Grandma, Uncle, Cousin, Mom };
+[HideInInspector] public enum Character { Grandma, Uncle, Cousin, Mom };
 
 public class RelationshipManager
 {
     [Tooltip("Dictionary that holds character stats. Keys are characters (enum) and value are relationship" +
         "stats (references the class.")]
-    [HideInInspector] public static Dictionary<characters, RelationshipStats> characterRelationships = new Dictionary<characters, RelationshipStats>();
+    [HideInInspector] public static Dictionary<Character, RelationshipStats> characterRelationships = new Dictionary<Character, RelationshipStats>();
 
     /// <summary>
     /// Initializes dictionary
@@ -28,9 +28,13 @@ public class RelationshipManager
     /// <param name="momStartingValue"></param>
     public RelationshipManager(RelationshipStats grandmaStartingValue, RelationshipStats uncleStartingValue, RelationshipStats cousinStartingValue, RelationshipStats momStartingValue)
     {
-        characterRelationships.Add(characters.Grandma, grandmaStartingValue);
-        characterRelationships.Add(characters.Uncle, uncleStartingValue);
-        characterRelationships.Add(characters.Cousin, cousinStartingValue);
-        characterRelationships.Add(characters.Mom, momStartingValue);
+        characterRelationships.Remove(Character.Grandma);
+        characterRelationships.Remove(Character.Uncle);
+        characterRelationships.Remove(Character.Cousin);
+        characterRelationships.Remove(Character.Mom);
+        characterRelationships.Add(Character.Grandma, grandmaStartingValue);
+        characterRelationships.Add(Character.Uncle, uncleStartingValue);
+        characterRelationships.Add(Character.Cousin, cousinStartingValue);
+        characterRelationships.Add(Character.Mom, momStartingValue);
     }
 }

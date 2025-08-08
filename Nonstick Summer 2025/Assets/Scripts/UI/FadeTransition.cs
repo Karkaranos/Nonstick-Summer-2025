@@ -17,7 +17,7 @@ public class FadeTransition : MonoBehaviour
         {
             if (GameManager.Instance != null)
             {
-                GameObject player = GameManager.PlayerCameraRef?.gameObject;
+                GameObject player = GameManager.PlayerTransformRef?.gameObject;
 
                 //no more bug
                 if (player != null)

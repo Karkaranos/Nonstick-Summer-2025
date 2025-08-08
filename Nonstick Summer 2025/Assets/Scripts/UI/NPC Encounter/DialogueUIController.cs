@@ -156,15 +156,16 @@ public class DialogueUIController : Singleton<DialogueUIController>
                 GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.FINISH_COMBAT);
 
                 //okay yes this is bad code but it was dereferencing again and this should fix it
-                if (GameManager.ObjectiveReference != null)
-                    GameManager.ObjectiveReference.SetObjectiveVisibility(true);
-                else
-                    FindFirstObjectByType<Objectives>(FindObjectsInactive.Include).SetObjectiveVisibility(true);
+                if (!GameManager.ObjectiveReference)
+                    GameManager.ObjectiveReference = FindFirstObjectByType<Objectives>(FindObjectsInactive.Include);
+                GameManager.ObjectiveReference.SetObjectiveVisibility(true);
             }
             else
             {
                 UITransitionManager.CloseMenu(false, false);
                 GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.TALK_TO_SIDE_CHARACTER, inWorldCharacter);
+                if (!GameManager.ObjectiveReference)
+                    GameManager.ObjectiveReference = FindFirstObjectByType<Objectives>(FindObjectsInactive.Include);
                 GameManager.ObjectiveReference.SetObjectiveVisibility(true);
                 inWorldCharacter.GetComponent<SideCharacterInteractable>().FinishSideCombat();
             }

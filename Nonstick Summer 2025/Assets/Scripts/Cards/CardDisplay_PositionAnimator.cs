@@ -161,7 +161,7 @@ public partial class CardDisplay : MonoBehaviour
 
             yield return null;
         }
-        while(t < 1);
+        while(t < 1 && transform != null);
 
 
         if(destroyAfter)

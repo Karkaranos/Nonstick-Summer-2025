@@ -21,7 +21,7 @@ public class MouseInteractionEvents : MonoBehaviour, IPointerClickHandler, IPoin
     public static MouseInteractionEvents CurrentHoverObject;
 
     public UnityEvent OnMouseDown, OnMouseHoverStart, OnMouseHoverEnd, OnMouseHoverStay;
-    private const float deselectCurrentlyHoveringDelay = 0.1f;
+    private const float deselectCurrentlyHoveringDelay = 0.25f;
 
     private Coroutine _deselctCurrentlyHoveringCoroutine;
 

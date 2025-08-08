@@ -106,12 +106,13 @@ public abstract class HoverTooltip : MonoBehaviour
         if (Application.isPlaying)
             return;
 
+#if UNITY_EDITOR
         // If user is selecting this gameobject
         if (StaticUtilities.Editor_SelectingSelfOrChild(this.transform))
             Open();
-        else
+        else if(tooltipGroup!= null)
             StaticUtilities.DisableCanvasGroup(tooltipGroup);
-
+#endif
     }
 
     

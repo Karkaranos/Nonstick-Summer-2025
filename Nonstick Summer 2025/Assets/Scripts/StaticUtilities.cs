@@ -64,25 +64,27 @@ public static class StaticUtilities
 
     #region UI
 
-    public static void ToggleCanvasGroup(CanvasGroup canvasgroup, bool enabled)
+    public static void ToggleCanvasGroup(CanvasGroup canvasgroup, bool enabled, float? alpha = null, bool? ignoreParentGroups = null)
     {
         if (enabled)
-            EnableCanvasGroup(canvasgroup);
+            EnableCanvasGroup(canvasgroup, alpha:alpha, ignoreParentGroups: ignoreParentGroups);
         else
-            DisableCanvasGroup(canvasgroup);
+            DisableCanvasGroup(canvasgroup, ignoreParentGroups: ignoreParentGroups);
     }
-    public static void EnableCanvasGroup(CanvasGroup canvasgroup, float alpha = 1, bool interactable = true, bool blocksRaycasts=true)
+    public static void EnableCanvasGroup(CanvasGroup canvasgroup, float? alpha = null, bool interactable = true, bool blocksRaycasts=true, bool? ignoreParentGroups = null)
     {
-        canvasgroup.alpha = alpha;
+        canvasgroup.alpha = alpha ?? 1;
         canvasgroup.interactable = interactable;
         canvasgroup.blocksRaycasts = blocksRaycasts;
+        canvasgroup.ignoreParentGroups = ignoreParentGroups ?? canvasgroup.ignoreParentGroups;
     }
 
-    public static void DisableCanvasGroup(CanvasGroup canvasgroup, float alpha = 0)
+    public static void DisableCanvasGroup(CanvasGroup canvasgroup, float? alpha = null, bool? ignoreParentGroups = null)
     {
-        canvasgroup.alpha = alpha;
+        canvasgroup.alpha = alpha ?? 0;
         canvasgroup.interactable = false;
         canvasgroup.blocksRaycasts = false;
+        canvasgroup.ignoreParentGroups = ignoreParentGroups ?? canvasgroup.ignoreParentGroups;
     }
 
     public static void EnableCursor()

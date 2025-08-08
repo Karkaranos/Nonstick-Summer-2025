@@ -4,7 +4,7 @@ using UnityEngine;
 * Author :            Sky
 * Creation Date :     June 6, 2025
 *
-* Brief Description : Holds Stats for each characters' relationship status.
+* Brief Description : Holds Stats for each Character' relationship status.
 *
 * TODO:
 * 

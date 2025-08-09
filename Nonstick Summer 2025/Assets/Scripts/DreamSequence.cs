@@ -63,7 +63,7 @@ public class DreamSequence : MonoBehaviour
         redOption.button.onClick.AddListener(OnAssertiveChosen);
         blueOption.button.onClick.AddListener(OnSappyChosen);
 
-        confirmButton.enabled = false;
+        confirmButton.gameObject.SetActive(false);
         confirmButton.onClick.AddListener(OnConfirmPressed);
 
         SetShaderProperties(NeutralColors);
@@ -79,7 +79,7 @@ public class DreamSequence : MonoBehaviour
 
         transitionShaderCoroutine = StartCoroutine(TransitionShaderProperties(selectedEmotionShaderData, YellowEmotionColors));
         selectedEmotion = CardEmotion.Charming;
-        confirmButton.enabled = true;
+        confirmButton.gameObject.SetActive(true);
     }
 
     public void OnSappyChosen()
@@ -92,7 +92,7 @@ public class DreamSequence : MonoBehaviour
 
         transitionShaderCoroutine = StartCoroutine(TransitionShaderProperties(selectedEmotionShaderData, BlueEmotionColors));
         selectedEmotion = CardEmotion.Sappy;
-        confirmButton.enabled = true;
+        confirmButton.gameObject.SetActive(true);
     }
 
     public void OnAssertiveChosen()
@@ -105,7 +105,7 @@ public class DreamSequence : MonoBehaviour
 
         transitionShaderCoroutine = StartCoroutine(TransitionShaderProperties(selectedEmotionShaderData, RedEmotionColors));
         selectedEmotion = CardEmotion.Assertive;
-        confirmButton.enabled = true;
+         confirmButton.gameObject.SetActive(true);
     }
 
     private void OnConfirmPressed()

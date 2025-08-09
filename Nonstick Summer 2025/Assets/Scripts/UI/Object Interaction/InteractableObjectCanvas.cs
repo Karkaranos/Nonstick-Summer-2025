@@ -7,10 +7,11 @@ Brief Description :     Handles functionality for interactable objects
                         Yields cards once
 ***************************************************/
 using NaughtyAttributes;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using System.Collections.Generic;
+using static UnityEditor.PlayerSettings;
 
 public class InteractableObjectCanvas : MonoBehaviour
 {
@@ -19,17 +20,14 @@ public class InteractableObjectCanvas : MonoBehaviour
     [SerializeField]
     private Transform cameraAnchor;
 
-    [SerializeField]
     [Required]
-    private Button Button1;
+    public Button Button1;
 
-    [SerializeField]
     [Required]
-    private Button Button2;
+    public Button Button2;
 
-    [SerializeField]
     [Required]
-    private Button Button3;
+    public Button Button3;
 
     [SerializeField] [Required] private TMP_Text statementField;
     [SerializeField] [Required] private TMP_Text questionField;
@@ -108,6 +106,7 @@ public class InteractableObjectCanvas : MonoBehaviour
     /// <param name="emotion">The chosen emotion</param>
     public void OnClickInteractableObject(PersonalityOption PO)
     {
+        print("where is this happening");
         foreach (ModifierData md in PO.ModifiersToGive)
         {
             var iopc = UITransitionManager.OpenMenu(ModifierObtainCanvas, cameraAnchor).GetComponent<ItemObtainPopupCanvas>();

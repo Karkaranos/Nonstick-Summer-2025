@@ -16,9 +16,10 @@ using UnityEngine.SceneManagement;
 *****************************************************************************/
 public class GameManager : Singleton<GameManager>
 {
-    public static Transform playerTransformRef;
+    public static Transform PlayerTransformRef => playerTransformRef ?? Instance.RefreshPlayerTransform();
+    private static Transform playerTransformRef;
     public static Camera PlayerCameraRef => playerCameraRef ?? Instance.RefreshPlayerCamera();
-    public static Camera playerCameraRef;
+    private static Camera playerCameraRef;
 
     // these variables mostly just exist to keep each sub-manager in memory
     public static UITransitionManager UITransitionManagerReference;
@@ -121,6 +122,15 @@ public class GameManager : Singleton<GameManager>
 
         playerCameraRef = FindFirstObjectByType<PlayerCamera>().playerCamera;
         return playerCameraRef;
+    }
+
+    private Transform RefreshPlayerTransform()
+    {
+        if (playerTransformRef != null)
+            return playerTransformRef;
+
+        playerTransformRef = FindFirstObjectByType<PlayerMovement>()?.transform;
+        return playerTransformRef;
     }
 
     /// <summary>

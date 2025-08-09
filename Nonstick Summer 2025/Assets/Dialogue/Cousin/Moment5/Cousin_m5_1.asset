@@ -16,19 +16,23 @@ MonoBehaviour:
   - Dialogue: "Heya! Bet you\u2019re just SO relieved that I\u2019m here, huh?"
     Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: Silent
   - Dialogue: "...I\u2019m joking, mostly. But I\u2019m glad that I made it."
     Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: Silent
   - Dialogue: "This is really it, huh? What\u2019s it feel like?"
     Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: 
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "That\u2019s, um, good! In a good way..."
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
-    PlayerDialogue: "Like I\u2019m going to explode, in a good way."
+    PlayerDialogue: "Like I\u2019m going to explode, but in a good way."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
@@ -39,7 +43,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Oh... Really? Well, we\u2019ll all miss you. You know that, right?"
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "Like I\u2019m happy to finally be getting out of here."
     RelationshipCheckRequired: 0
@@ -52,25 +57,31 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Oh. Oh! Um... I\u2019m sorry. I wasn\u2019t, uh, prepared for that."
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Silent
     CombinedDialogue:
     - Dialogue: "Oh. Oh! Um... I\u2019m sorry. I wasn\u2019t, uh, prepared for that."
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "It\u2019s... It\u2019s a lot, isn\u2019t it?  I mean, I\u2019d imagine!
         It is for me, at least."
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "I\u2019m not too far behind you... That\u2019s scary!"
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "But that\u2019s besides the point! I\u2019ll get there when I get
         there. For now..."
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Well, are you ready?
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     PlayerDialogue: Like I wish I had gotten to know you some more.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -83,7 +94,8 @@ MonoBehaviour:
     - Dialogue: "Haha. C\u2019mon! That\u2019s so corny. I guess that I\u2019m happy
         to hear it, though."
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: Like some things never change.
     RelationshipCheckRequired: 0
@@ -97,7 +109,8 @@ MonoBehaviour:
     - Dialogue: "Hey, I\u2019m trying here. I really am. We only have so much time
         left, you know?"
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "Like I\u2019m sick and tired of these sorts of questions."
     RelationshipCheckRequired: 0
@@ -108,12 +121,16 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -15
   Sappy_Observation:
     NpcReactionText:
-    - Dialogue: Like I wish I had gotten to know you some more.
+    - Dialogue: 'Oh. Oh! Um... '
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Silent
+    - Dialogue: "I\u2019m sorry. I wasn\u2019t, uh, prepared for that. "
+      Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
-    PlayerDialogue: "Oh. Oh! Um... I\u2019m sorry. I wasn\u2019t, uh, prepared for
-      that."
+    PlayerDialogue: Like I wish I had gotten to know you some more.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 2a1d747ba0718ff44bff5918ad724fc8, type: 2}
@@ -124,7 +141,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "C\u2019mon. How would I know?"
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: How do you think it feels?
     RelationshipCheckRequired: 0
@@ -137,10 +155,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Hey, I\u2019m trying here."
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Silent
     - Dialogue: I really am. We only have so much time left, you know?
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Why do you care? We barely talk anymore.
     RelationshipCheckRequired: 0
@@ -154,10 +174,12 @@ MonoBehaviour:
     - Dialogue: Huh? Well, I dunno.
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     - Dialogue: "I\u2019m happy for you, but I\u2019m sad to see you go. I\u2019m
         sure you\u2019ve heard it all before."
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: What about you? How are you feeling?
     RelationshipCheckRequired: 0
@@ -173,16 +195,20 @@ MonoBehaviour:
         It is for me, at least."
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "I\u2019m not too far behind you... That\u2019s scary!"
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: "But that\u2019s besides the point! I\u2019ll get there when I get
         there. For now..."
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Well, are you ready?
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}

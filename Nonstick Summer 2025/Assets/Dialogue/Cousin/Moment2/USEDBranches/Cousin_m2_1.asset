@@ -15,18 +15,22 @@ MonoBehaviour:
   dialogue:
   - Dialogue: Hey! Hey!
     Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
-    AnimatedReaction: {fileID: 0}
+    AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+    AudioResponse: Happy
   - Dialogue: Guess what?
     Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: Neutral
   - Dialogue: ...C'mon! Guess!
     Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
-    AnimatedReaction: {fileID: 0}
+    AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+    AudioResponse: Angry
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Teehee!
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: Um. Okay! What?
     RelationshipCheckRequired: 0
@@ -40,7 +44,8 @@ MonoBehaviour:
     - Dialogue: "I\u2019m not stupid! I\u2019m not! Just you wait and see what I\u2019ve
         got!"
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: "I can\u2019t guess if I don\u2019t know what this is about,
       stupid."
@@ -55,7 +60,8 @@ MonoBehaviour:
     - Dialogue: "Oh, right... hey, wait! I\u2019ll, uh... I\u2019ll make it up to
         you! Just one sec!"
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: "You haven\u2019t even wished me a happy birthday yet..."
     RelationshipCheckRequired: 0
@@ -69,6 +75,7 @@ MonoBehaviour:
     - Dialogue: "Uh... Well! I\u2019m here now! Listen up!"
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: Oh! I didn't know you'd be here.
     RelationshipCheckRequired: 0
@@ -82,6 +89,7 @@ MonoBehaviour:
     - Dialogue: "C\u2019MON! That defeats the point! Hmph!"
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: I can't guess if I don't know what this is about, stupid.
     RelationshipCheckRequired: 0
@@ -96,6 +104,7 @@ MonoBehaviour:
         just one sec!"
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "You haven\u2019t even wished me a happy birthday yet..."
     RelationshipCheckRequired: 0
@@ -108,7 +117,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "C\u2019MON! Don\u2019t ask that! That defeats the point! Hmph!"
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: What am I supposed to be guessing?
     RelationshipCheckRequired: 0
@@ -121,7 +131,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Um... I guess not. Hmph...
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: Do I have to?
     RelationshipCheckRequired: 0
@@ -135,9 +146,11 @@ MonoBehaviour:
     - Dialogue: Oh, with my mom. But, um...
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Sad
     - Dialogue: Well, I'm here now!
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: Where have you been lately?
     RelationshipCheckRequired: 0

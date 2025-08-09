@@ -15,11 +15,15 @@ MonoBehaviour:
   dialogue:
   - Dialogue: Now, now. Go have some fun, and make sure to tell everyone thank you.
     Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
+    AnimatedReaction: {fileID: 0}
+    AudioResponse: Neutral
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "I\u2019m sure he\u2019ll appreciate that. He loves playing with
         you."
       Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: "I\u2019ll thank Little Cousin by going easy on him the next
       time we play cards"
@@ -34,6 +38,8 @@ MonoBehaviour:
     - Dialogue: "Just don\u2019t forget to. They came all this way and gave gifts
         to you for your birthday."
       Portrait: {fileID: 21300000, guid: 032b2ac25e695414a96b9f1f4f473521, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: "I\u2019ll thank them when they leave."
     RelationshipCheckRequired: 0
@@ -46,6 +52,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Thank you, dear. Your grandma worked hard on it for you.
       Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: "I\u2019ll be sure to thank everyone! Plus I have to thank Nanna
       for the cake!"
@@ -59,6 +67,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Yes, good. Don\u2019t get into too much trouble while you do."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "I\u2019ll be sure to thank everyone!"
     RelationshipCheckRequired: 0
@@ -73,6 +83,8 @@ MonoBehaviour:
         to spend time with you on your birthday. You can at least be thankful for
         that."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "\u201CLittle Cousin didn't even get me a gift. I don\u2019t
       want to thank him."
@@ -87,6 +99,8 @@ MonoBehaviour:
     - Dialogue: Well.. Grandma is in the dining room. Your Uncle and cousin are in
         the living room.
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "I\u2019ll make sure to..! Once I find everyone...."
     RelationshipCheckRequired: 0
@@ -99,11 +113,15 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "It\u2019s not always about gifts!"
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Angry
     - Dialogue: Your uncle drove him him here to spend time with you on your birthday.
         You can at least be thankful for that.
       Portrait: {fileID: 21300000, guid: 032b2ac25e695414a96b9f1f4f473521, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
-    PlayerDialogue: "Even Little Cousin? He  didn\u2019t even get me a gift."
+    PlayerDialogue: "Even Little Cousin? He didn\u2019t even get me a gift."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 7978eb1968e47ff44aabaf8739c0be06, type: 2}
@@ -115,6 +133,8 @@ MonoBehaviour:
     - Dialogue: They came all this way and gave gifts to you for your birthday. You
         should thank them!
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: What am I even thanking them for?
     RelationshipCheckRequired: 0
@@ -127,8 +147,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Well.. Grandma is in the dining room.
       Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Happy
     - Dialogue: And your Uncle and cousin are in the living room.
       Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: Where is everyone?
     RelationshipCheckRequired: 0

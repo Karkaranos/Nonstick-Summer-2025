@@ -15,16 +15,19 @@ MonoBehaviour:
   dialogue:
   - Dialogue: There's the birthday champ!
     Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
-    AnimatedReaction: {fileID: 0}
+    AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+    AudioResponse: Happy
   - Dialogue: Has this been the best birthday ever or what?
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: Neutral
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "You don\u2019t have to worry about that, kiddo. Seeing you smile
         is all that matters to me."
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: "I can\u2019t believe you really got me that card set! It must
       have cost a million dollars! "
@@ -40,6 +43,7 @@ MonoBehaviour:
         time with your family every once in a while.
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: "I wouldn\u2019t know, I haven\u2019t opened up all my presents
       yet."
@@ -54,7 +58,8 @@ MonoBehaviour:
     - Dialogue: Me too kiddo... but once Grandpa gets better, we can all spend time
         together. Maybe you can show him how to play!
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: Yeah, I just wish Grandpa could be here... Mom said he got sick.
     RelationshipCheckRequired: 0
@@ -69,6 +74,7 @@ MonoBehaviour:
         is all that matters to me."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "Yeah! I can\u2019t believe you got me that card set! It must
       have cost a fortune! "
@@ -84,6 +90,7 @@ MonoBehaviour:
         to get you.
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: Well... It would be better if you had gotten me the right card
       set.
@@ -99,6 +106,7 @@ MonoBehaviour:
         again just like the good old days.
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: Yeah. I just wish Grandpa could be here. Mom said he is too sick.
     RelationshipCheckRequired: 0
@@ -112,7 +120,8 @@ MonoBehaviour:
     - Dialogue: "You don\u2019t have to worry about that, kiddo. Seeing you smile
         is all that matters to me."
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: Of course, these cards that you got me are awesome! Where did
       you get them?
@@ -128,7 +137,8 @@ MonoBehaviour:
         be in my ear for the rest of the day. Just trust me when I say you\u2019re
         gonna like it."
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: What did Nanna gift me? I know you saw her wrap it.
     RelationshipCheckRequired: 0
@@ -143,6 +153,7 @@ MonoBehaviour:
         my friends that I was the best in whichever game we found fun at the time.
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: Of course! It was the best ever! What were your birthdays like,
       Uncle?
@@ -158,6 +169,7 @@ MonoBehaviour:
         my friends that I was the best in whichever game we found fun at the time.
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

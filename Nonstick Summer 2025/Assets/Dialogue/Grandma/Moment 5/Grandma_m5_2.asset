@@ -17,23 +17,28 @@ MonoBehaviour:
       time is no small thing."
     Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: 
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "That\u2019s the little pumpkin that I know. Seems like you\u2019ve
         still got that youthful spirit to you just like your Nanna."
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Silent
     CombinedDialogue:
     - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
         you."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: My, where has the time gone...
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Who knew that my little Pumpkin could grow so tall?
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     PlayerDialogue: "\u201CExcited\u201D might not be the right word. Let me think...
       \u201CExistential dread\u201D might be more apt."
     RelationshipCheckRequired: 1
@@ -47,11 +52,13 @@ MonoBehaviour:
     - Dialogue: "That\u2019s the spirit! Feeling nerves is a normal part of life,
         it just means that you care."
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Silent
     - Dialogue: Never back down when your nerves start to become too much, push through
         them like you always have and everything will turn out just fine!
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "I\u2019d be lying if I said I wasn\u2019t nervous, but despite
       that I am ready to take on anything this new phase of my life throws at me."
@@ -65,14 +72,17 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Of course you are ready Pumpkin.
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Silent
     - Dialogue: Everything that you have gone through and you are still as bright
         as they day that I first saw you.
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     - Dialogue: I promise, there is nothing that can stand in your way now.
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m a bit nervous, I\u2019m not sure that I am ready."
     RelationshipCheckRequired: 1
@@ -85,7 +95,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "See? That\u2019s the spirit!"
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "Yeah! I can\u2019t wait for all the vacuuming and laundry and
       dirty dishes..."
@@ -100,11 +111,13 @@ MonoBehaviour:
     - Dialogue: "I\u2019m sure she\u2019s worried for you. Believe me, it can be
         a lot on a parent when their kid moves out."
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Silent
     - Dialogue: "You never know how empty a house can feel until you\u2019re the
         only one living in it."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "We weren\u2019t expecting you to visit."
     RelationshipCheckRequired: 1
@@ -119,10 +132,12 @@ MonoBehaviour:
         we are now..."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     - Dialogue: "But that doesn\u2019t mean we\u2019re ever done growing. Remember
         that."
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t feel like I\u2019m ready. It\u2019s like I was
       only a kid four days ago."
@@ -138,6 +153,7 @@ MonoBehaviour:
         you don\u2019t have. Better safe than sorry!"
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "We\u2019ve got enough boxes to build a huge castle like we used
       to. Are you sure we need this many?"
@@ -152,7 +168,8 @@ MonoBehaviour:
     - Dialogue: "Aww, please don\u2019t look at it like that. It\u2019s what you
         make of it that matters."
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: Mom is probably the excited one now that I am moving out of the
       house, right?
@@ -166,11 +183,13 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "You know you can\u2019t do that Pumpkin."
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Silent
     - Dialogue: "You\u2019ll always be my little sunshine, but you have to go out
         on your own and show the rest of the world just how amazing you are!"
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m not ready Nanna, can\u2019t I just stay with you?"
     RelationshipCheckRequired: 1

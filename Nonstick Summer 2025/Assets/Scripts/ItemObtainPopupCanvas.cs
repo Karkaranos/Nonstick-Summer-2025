@@ -59,7 +59,7 @@ public class ItemObtainPopupCanvas : MonoBehaviour
             {
                 statement.text = TextUtilities.FilterText(modifierStatement + ColorStamp(modifier.name) + "Stamp!");
             }
-            else if (modifier.name.Contains("Applier"))
+            else if (modifier.name.ToLower().Contains("applier"))
             {
                 statement.text = modifierStatement + " " + GetNameFromApply(modifier.name) + "Stamp!";
                 message.text = modifierMessage + GetMessageFromApply(modifier.GetTooltipDescription());

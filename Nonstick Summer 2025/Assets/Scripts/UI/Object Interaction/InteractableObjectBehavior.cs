@@ -2,6 +2,7 @@ using NaughtyAttributes;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
@@ -37,6 +38,11 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
 
      public string chosenOption;
 
+    //hi fridge magnets
+    public UnityEvent OnClickEvent1;
+    public UnityEvent OnClickEvent2;
+    public UnityEvent OnClickEvent3;
+
     private void Start()
     {
         obi = FindFirstObjectByType<OpenBossInteractable>(FindObjectsInactive.Include);
@@ -61,6 +67,10 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
             GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.INTERACT_WITH_OBJECT, gameObject);
 
             canvas.Initialize(_statement, _question, _options, gameObject);
+
+            canvas.Button1.onClick.AddListener(() => OnClickEvent1.Invoke());
+            canvas.Button2.onClick.AddListener(() => OnClickEvent2.Invoke());
+            canvas.Button3.onClick.AddListener(() => OnClickEvent3.Invoke());
 
             InteractSuccessful = true;
             TryBoss();
@@ -181,5 +191,4 @@ public class PersonalityOption
     [Tooltip("Option text")]public string ButtonText = "not set";
     [Tooltip("An optional tint for the button. Leave white if not")]public Color ButtonColor = Color.white;
     [Tooltip("Insert all modifiers you want to give the player here based on certain emotions")] public List<ModifierData> ModifiersToGive;
-
 }

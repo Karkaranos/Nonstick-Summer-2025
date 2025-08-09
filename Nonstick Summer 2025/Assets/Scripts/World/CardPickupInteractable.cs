@@ -155,16 +155,11 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
             yield return null;
         }
 
-        Debug.Log("Confettii explosion goes here???"); //TODO:
+        Debug.Log("Confetti explosion goes here???"); //TODO:
 
         // Go to her...
         timeStarted = Time.time;
         t = 0;
-
-        if (GameManager.playerTransformRef == null)
-        {
-            GameManager.playerTransformRef = FindFirstObjectByType<PlayerCamera>().transform;   
-        }
 
         startPos = rectTransform.position;
         var startRotation = rectTransform.rotation; 
@@ -174,8 +169,8 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
 
             // if this code doesnt make sense to you then u shouldve paid more attention in ur trig class
 
-            var pos = Vector3.Lerp(startPos, GameManager.playerTransformRef.position, t * t); // t * t so it gets faster (plug x^2 into desmos and look at 0-1 to see the effect for yourself! it will be mind boggling!!!!!)
-            var directionToPlayer = (rectTransform.WorldPosition() - GameManager.playerTransformRef.position).normalized;
+            var pos = Vector3.Lerp(startPos, GameManager.PlayerTransformRef.position, t * t); // t * t so it gets faster (plug x^2 into desmos and look at 0-1 to see the effect for yourself! it will be mind boggling!!!!!)
+            var directionToPlayer = (rectTransform.WorldPosition() - GameManager.PlayerTransformRef.position).normalized;
             var targetRot = Quaternion.LookRotation(directionToPlayer + Vector3.down);
             var rot = Quaternion.Lerp(startRotation, targetRot, t * 3);
             var scale = Vector3.Lerp(startScale, Vector3.zero, t);

@@ -15,6 +15,19 @@ public class FadeTransition : MonoBehaviour
     {
         if (fadeCoroutine == null)
         {
+            if (GameManager.Instance != null)
+            {
+                GameObject player = GameManager.PlayerTransformRef?.gameObject;
+
+                //no more bug
+                if (player != null)
+                {
+                    Destroy(player.GetComponent<PlayerCamera>());
+                    Destroy(player.GetComponent<PlayerMovement>());
+                    Destroy(player.GetComponent<Interact>());
+                }
+            }
+
             image.enabled = true;
             fadeCoroutine = StartCoroutine(FadeOut(image, nextScene));
         }

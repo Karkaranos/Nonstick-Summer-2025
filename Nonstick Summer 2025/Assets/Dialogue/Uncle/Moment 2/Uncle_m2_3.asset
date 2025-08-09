@@ -16,21 +16,26 @@ MonoBehaviour:
   - Dialogue: "You know, I\u2019ve been reading the news lately."
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: Neutral
   - Dialogue: Did your mom tell you about those alien sightings?
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
-    AnimatedReaction: {fileID: 0}
+    AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+    AudioResponse: Neutral
   - Dialogue: Apparently, a UFO was spotted flying towards town...
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: Neutral
   - Dialogue: ... Could be the real deal this time.
     Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
-    AnimatedReaction: {fileID: 0}
+    AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+    AudioResponse: Angry
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "That\u2019s not that funny, you know. If they DO get abducted, who
         knows how long it\u2019ll be until they get brought back?"
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: "Yeah, my friends at school wanna see if they can beam up our
       teacher so we don\u2019t have homework."
@@ -45,7 +50,8 @@ MonoBehaviour:
     - Dialogue: "To be fair, they\u2019re some real crazies out there nowadays. That\u2019s
         why you gotta stay informed, y\u2019know?"
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: "I can\u2019t understand how people actually fall for all that
       stuff. Momma says it\u2019s all made up."
@@ -61,6 +67,7 @@ MonoBehaviour:
         important it is to stay informed?"
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: "I haven\u2019t really had the time to watch a lot of TV. Momma
       says I have to go to bed by 8. "
@@ -76,6 +83,7 @@ MonoBehaviour:
         definitely make it to the other side if it all hits the fan."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: Yeah, my friends and I have been preparing the fort in the back
       with food and defenses.
@@ -91,6 +99,7 @@ MonoBehaviour:
         the aliens they talk about all the time.
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "I saw some parts of it, I can\u2019t understand how people actually
       believe in all that stuff."
@@ -106,6 +115,7 @@ MonoBehaviour:
         you and your friends might have been talking about."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "I haven\u2019t really had the time to watch the news, been way
       to busy with school."
@@ -120,7 +130,8 @@ MonoBehaviour:
     - Dialogue: "Eh, don\u2019t read too much into it; could be another hoax, for
         all we know.  Either way, it doesn\u2019t hurt to be too careful nowadays."
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: Are you sure? You said the same thing about ghosts.
     RelationshipCheckRequired: 0
@@ -134,7 +145,8 @@ MonoBehaviour:
     - Dialogue: Course I do. Even got my basement packed with enough food to last
         a decade for when the worst of it comes. It always pays to be prepared.
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: Do you really believe all that stuff?
     RelationshipCheckRequired: 0
@@ -148,7 +160,8 @@ MonoBehaviour:
     - Dialogue: "Eh, don\u2019t read too much into it; could be another hoax, for
         all we know.  Either way, it doesn\u2019t hurt to be too careful nowadays."
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: "Do you think they\u2019re gonna come and get me?"
     RelationshipCheckRequired: 0

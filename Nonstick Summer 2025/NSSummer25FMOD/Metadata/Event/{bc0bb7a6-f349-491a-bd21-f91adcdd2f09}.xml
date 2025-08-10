@@ -63,10 +63,10 @@
 	<object class="MarkerTrack" id="{ee64604f-1594-4f18-b9d9-6390110ff415}" />
 	<object class="GroupTrack" id="{75bd242c-a064-4ed0-93f4-5439dd086bac}">
 		<relationship name="modules">
-			<destination>{9344e1fa-2b6e-4f20-97d0-2f97bc6df53f}</destination>
-			<destination>{3105a78a-5e72-4cd6-a464-7c282ce510e9}</destination>
-			<destination>{50f598c5-f4a6-4869-88a7-870cdb78990e}</destination>
-			<destination>{26fe29bf-242f-46bb-831c-e72f46b97123}</destination>
+			<destination>{63788b4f-b44d-4daf-9604-ca5c50476dfe}</destination>
+			<destination>{49a7f1ea-43b4-48dc-9449-8d76f4a440f4}</destination>
+			<destination>{ea3ada1c-51b9-46cb-8592-a92dd86ee679}</destination>
+			<destination>{84a7d058-6691-46d2-bb06-eda15853b60f}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{3dcec56b-ceab-4c2d-a414-a218d02f8579}</destination>
@@ -79,10 +79,10 @@
 	</object>
 	<object class="ParameterProxy" id="{d93ad0e4-fd7a-45d8-96c9-539de50f9e1d}">
 		<relationship name="modules">
-			<destination>{9344e1fa-2b6e-4f20-97d0-2f97bc6df53f}</destination>
-			<destination>{3105a78a-5e72-4cd6-a464-7c282ce510e9}</destination>
-			<destination>{50f598c5-f4a6-4869-88a7-870cdb78990e}</destination>
-			<destination>{26fe29bf-242f-46bb-831c-e72f46b97123}</destination>
+			<destination>{63788b4f-b44d-4daf-9604-ca5c50476dfe}</destination>
+			<destination>{49a7f1ea-43b4-48dc-9449-8d76f4a440f4}</destination>
+			<destination>{ea3ada1c-51b9-46cb-8592-a92dd86ee679}</destination>
+			<destination>{84a7d058-6691-46d2-bb06-eda15853b60f}</destination>
 		</relationship>
 		<relationship name="preset">
 			<destination>{bd31959a-7507-452e-82fb-d04cd0d381c8}</destination>
@@ -105,54 +105,33 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{a9e6369e-b1e2-4215-b7c2-3ed15e01fb04}" />
-	<object class="SingleSound" id="{9344e1fa-2b6e-4f20-97d0-2f97bc6df53f}">
-		<property name="isCutoff">
-			<value>true</value>
-		</property>
-		<property name="looping">
-			<value>true</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{19559fe1-c7d5-4471-9732-f1983886de34}</destination>
+	<object class="EventSound" id="{63788b4f-b44d-4daf-9604-ca5c50476dfe}">
+		<relationship name="event">
+			<destination>{8fadd748-7a66-4fba-bbbd-b38ef36d7c0c}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{3105a78a-5e72-4cd6-a464-7c282ce510e9}">
+	<object class="EventSound" id="{49a7f1ea-43b4-48dc-9449-8d76f4a440f4}">
 		<property name="start">
 			<value>1</value>
 		</property>
-		<property name="volume">
-			<value>3.5</value>
-		</property>
-		<property name="looping">
-			<value>true</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{39f6120a-9c85-4c0a-b4ae-334a41e713ec}</destination>
+		<relationship name="event">
+			<destination>{4e13ee51-7f59-4ac2-8b89-4e27645c9613}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{50f598c5-f4a6-4869-88a7-870cdb78990e}">
+	<object class="EventSound" id="{ea3ada1c-51b9-46cb-8592-a92dd86ee679}">
 		<property name="start">
 			<value>2</value>
 		</property>
-		<property name="volume">
-			<value>3.5</value>
-		</property>
-		<property name="looping">
-			<value>true</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{2a0f77ec-9543-45f8-a80b-a810db29ccbc}</destination>
+		<relationship name="event">
+			<destination>{21a1df7b-724e-4722-a8d8-bce4b9e52900}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{26fe29bf-242f-46bb-831c-e72f46b97123}">
+	<object class="EventSound" id="{84a7d058-6691-46d2-bb06-eda15853b60f}">
 		<property name="start">
 			<value>3</value>
 		</property>
-		<property name="looping">
-			<value>true</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{a4d808f7-ec7e-46d2-a688-b0b9951e8ef2}</destination>
+		<relationship name="event">
+			<destination>{0c5f9c00-e67b-4978-af84-9f6b6da22421}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{3dcec56b-ceab-4c2d-a414-a218d02f8579}">

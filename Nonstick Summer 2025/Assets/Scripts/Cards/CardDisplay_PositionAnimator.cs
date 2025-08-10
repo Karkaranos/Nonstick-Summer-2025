@@ -144,6 +144,9 @@ public partial class CardDisplay : MonoBehaviour
     [Foldout("Destroy Card Animation"), SerializeField] float destroyAnimationSeconds = 0.5f;
     public IEnumerator UseCardAnimation(bool destroyAfter = true)
     {
+        if (destroyAfter)
+            MarkedToBeDestroyed = true;
+
         // some kind of dithering / burning shader would be sooooo cool here 
 
         var startRotation = transform.eulerAngles;

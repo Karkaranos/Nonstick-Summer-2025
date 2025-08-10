@@ -38,6 +38,11 @@ public partial class CardDisplay : MonoBehaviour
 
     public UnityEvent<CardDisplay> OnMouseDown = new UnityEvent<CardDisplay> ();
 
+    [HideInInspector]
+    public int TargetSiblingIndex;
+    [HideInInspector]
+    public bool MarkedToBeDestroyed = false;
+
     bool canPlayHover = true;
 
     private void Start()
@@ -104,6 +109,13 @@ public partial class CardDisplay : MonoBehaviour
             AudioManager.instance.PlayOneShot(FMODEvents.instance.CardHoverSFX);
             canPlayHover = false;
         }
+
+        foreach(var display in DeckDisplayer.selectedCards)
+        {
+            if(display != null)
+                display.transform.SetAsFirstSibling();
+        }
+        transform.SetAsFirstSibling();
     }
 
     private void OnMouseHoverEnd() // TODO this should be moved to another script
@@ -112,6 +124,9 @@ public partial class CardDisplay : MonoBehaviour
             && DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput)
             DialogueUIController.Instance.UpdateHoveringCard(null);
         canPlayHover = true;
+
+        if(DeckDisplayer.selectedCards.Contains(this) == false)
+            transform.SetSiblingIndex(TargetSiblingIndex);
     }
 
     private void OnMouseDownStart()

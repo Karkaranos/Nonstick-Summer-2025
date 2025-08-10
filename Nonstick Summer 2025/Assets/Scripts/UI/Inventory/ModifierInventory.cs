@@ -1,5 +1,5 @@
 /*****************************************************************************
-* File Name :         ModifierInventoy.cs
+* File Name :         ModifierInventory.cs
 * Author :            Toby
 * Creation Date :     June 25, 2025
 *
@@ -9,11 +9,10 @@
 
 using UnityEngine;
 
-public class ModifierInventoy : MonoBehaviour
+public class ModifierInventory : MonoBehaviour
 {
     [SerializeField] private DeckDisplayer deckDisplay;
-    [SerializeField] private ModifierDeckDisplay stampModifierDisplay;
-    [SerializeField] private ModifierDeckDisplay stickerModifierDisplay; // bruh these dont even do anything
+    [SerializeField] public ModifierDeckDisplay[] modifierDisplays;
     [SerializeField] private ApplyModifierButton applyModifierButton;
 
     private void Start()

@@ -180,8 +180,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deckDisplay: {fileID: 624860085967478439}
-  stampModifierDisplay: {fileID: 0}
-  stickerModifierDisplay: {fileID: 0}
+  modifierDisplays:
+  - {fileID: 1368682918411228435}
+  - {fileID: 6849489217381376715}
   applyModifierButton: {fileID: 3436478278149742788}
 --- !u!114 &3879550270550463340
 MonoBehaviour:
@@ -699,6 +700,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 161823853588628689, guid: 93b8c88268dbc6a4b8c6b76d25781452, type: 3}
   m_PrefabInstance: {fileID: 4916568472785140601}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6849489217381376715 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1960595109210528178, guid: 93b8c88268dbc6a4b8c6b76d25781452, type: 3}
+  m_PrefabInstance: {fileID: 4916568472785140601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44fcecdab808604f98e23904eb26313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7942228468737670955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -791,6 +803,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4722205074857418735, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 6505587157005186199}
     - target: {fileID: 4722205074857418735, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}
       propertyPath: deckDisplay
       value: 

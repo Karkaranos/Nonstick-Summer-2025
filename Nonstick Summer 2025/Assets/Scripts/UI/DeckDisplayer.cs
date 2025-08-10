@@ -118,17 +118,24 @@ public class DeckDisplayer : MonoBehaviour
 
     private IEnumerator ClearRemovedCards()
     {
+        _visualDisplays = _visualDisplays.Where(d => d != null && d.gameObject != null).ToList();
+
         // clear modifiers that arent in hand anymore
         for (int i = _visualDisplays.Count() - 1; i >= 0; i--)
         {
             var display = _visualDisplays[i];
-            if (display == null || display.gameObject == null || display.cardData == null)
+
+            if (display.MarkedToBeDestroyed)
+                continue;
+
+            if (display == null || display.gameObject == null)
             {
                 _visualDisplays.RemoveAt(i);
+                i--;
                 continue;
             }
 
-            if (!displayedData.Contains(display.cardData))
+            if (display.cardData == null || !displayedData.Contains(display.cardData))
             {
                 if(animateCardsDestroying)
                     yield return display.UseCardAnimation(destroyAfter: true);
@@ -296,6 +303,7 @@ public class DeckDisplayer : MonoBehaviour
             card.SetPositionAndOffset(position: new Vector2(x, 0), offset: interactable ? Vector2.zero : disabledCardOffset, speed: 5000);
 
             card.transform.SetSiblingIndex(i);
+            card.TargetSiblingIndex = i;
         }
     }
 
@@ -428,7 +436,8 @@ public class DeckDisplayer : MonoBehaviour
 
     // tobys first HashSet in Unity! 6/21/2025
     [HideInInspector]
-    public HashSet<CardDisplay> selectedCards = new HashSet<CardDisplay>();
+    //public HashSet<CardDisplay> selectedCards = new HashSet<CardDisplay>();
+    public static HashSet<CardDisplay> selectedCards = new HashSet<CardDisplay>();
 
     #region Computational Variables
 
@@ -476,6 +485,8 @@ public class DeckDisplayer : MonoBehaviour
         cardDisplay.SetPositionAndOffset( offset: (Vector3)selectedCardOffset );
         cardDisplay.transform.SetAsLastSibling(); // bring to front so player can see it
 
+        selectedCards = selectedCards.Where(d => d != null || !d.MarkedToBeDestroyed).ToHashSet();
+
         OnCardsSelectedChanged.Invoke();
     }
     public void DeselectCard(CardDisplay cardDisplay, bool invokeOnCardsSelectChanged=true)
@@ -489,8 +500,14 @@ public class DeckDisplayer : MonoBehaviour
 
         cardDisplay.ResetOffset();
 
-        if(invokeOnCardsSelectChanged)
+        selectedCards = selectedCards.Where(d => d != null || !d.MarkedToBeDestroyed).ToHashSet();
+
+        if (invokeOnCardsSelectChanged)
            OnCardsSelectedChanged.Invoke();
+
+        // card display could have been null without errors up to this point isnt that crazy
+        if(cardDisplay != null)
+            cardDisplay.transform.SetSiblingIndex(cardDisplay.TargetSiblingIndex);
     }
 
     public void DeselectAllCards()

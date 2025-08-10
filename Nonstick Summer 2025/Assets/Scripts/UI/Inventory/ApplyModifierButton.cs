@@ -17,10 +17,11 @@ using System.Linq;
 public class ApplyModifierButton : MonoBehaviour
 {
     [SerializeField] private DeckDisplayer deckDisplay;
-    [SerializeField] private ModifierDeckDisplay modifierDisplay;
+    [SerializeField] private ModifierInventory inventory;
     [SerializeField, Required] private RectTransform inventoryScreen;
     [SerializeField] private CanvasGroup group;
 
+    private ModifierDeckDisplay[] modifierDisplays => inventory.modifierDisplays;
     private Button button;
     private RectTransform rectTransform;
 
@@ -33,7 +34,7 @@ public class ApplyModifierButton : MonoBehaviour
         button.onClick.AddListener(OnButtonPressed);
 
         deckDisplay.OnCardsSelectedChanged.AddListener(OnAnyCardSelectedChanged);
-        modifierDisplay.OnSelectedChanged.AddListener(OnAnyCardSelectedChanged);
+        ModifierDeckDisplay.OnSelectedChanged.AddListener(OnAnyCardSelectedChanged);
 
         OnAnyCardSelectedChanged();
     }
@@ -74,30 +75,32 @@ public class ApplyModifierButton : MonoBehaviour
         StaticUtilities.DisableCanvasGroup(group);
 
         // All of my work in the last week in one grand ass line of code...
-        ModifierDeckDisplay.selectedCard.modifierData.TryApplyModifier(deckDisplay.selectedCards.Select(display => display.cardData).ToArray());
+        ModifierDeckDisplay.selectedCard.modifierData.TryApplyModifier(DeckDisplayer.selectedCards.Select(display => display.cardData).ToArray());
         ModifierDeckDisplay.selectedCard.MarkedToBeDestroyed = true;
 
         ModifierManager.RemoveCard(ModifierDeckDisplay.selectedCard.modifierData);
-        modifierDisplay.DisplayAllCards();
-        deckDisplay.DeselectAllCards();
-
+        deckDisplay.DisplayAllCards();
+        foreach (var modifierDisplay in modifierDisplays)
+        {
+            modifierDisplay.DisplayAllCards();
+        }
         deckDisplay.DisplayAllCards();
     }
 
     private bool CanPlayModifier()
     {
+        DeckDisplayer.selectedCards = DeckDisplayer.selectedCards.Where(d => d != null || !d.MarkedToBeDestroyed).ToHashSet();
+
         // if the player is biting nothing 
         if (ModifierDeckDisplay.selectedCard == null || !deckDisplay.HasCardsSelected)
             return false;
 
-        var carddatas = deckDisplay.selectedCards.Select(display => display.cardData).ToArray();
-        
         // if player is biting off more than they can chew
-        if (deckDisplay.selectedCards.Count > ModifierDeckDisplay.selectedCard.modifierData.MaxCardsApplied)
+        if (DeckDisplayer.selectedCards.Count > ModifierDeckDisplay.selectedCard.modifierData.MaxCardsApplied)
             return false;
 
         // if player is biting off less than they can chew
-        if (deckDisplay.selectedCards.Count < ModifierDeckDisplay.selectedCard.modifierData.MinCardsApplied)
+        if (DeckDisplayer.selectedCards.Count < ModifierDeckDisplay.selectedCard.modifierData.MinCardsApplied)
             return false;
 
         // if player alreaty bit off
@@ -105,6 +108,7 @@ public class ApplyModifierButton : MonoBehaviour
             return false;
 
         // if the player is biting off enough that they should can chew
+        var carddatas = DeckDisplayer.selectedCards.Select(display => display.cardData).ToArray();
         return ModifierDeckDisplay.selectedCard.modifierData.CanApplyModifier(carddatas);
     }
 }

@@ -47,7 +47,7 @@ public class ModifierDeckDisplay : MonoBehaviour
     private bool animateCardsDestroying = true;
 
     [HideInInspector]
-    public UnityEvent OnSelectedChanged = new UnityEvent();
+    public static UnityEvent OnSelectedChanged = new UnityEvent();
 
     private IEnumerable<ModifierData> filteredPlayerModifiers =>
         ModifierManager.ModifierCollection.Where(m =>
@@ -115,13 +115,13 @@ public class ModifierDeckDisplay : MonoBehaviour
         for (int i = _visualDisplays.Count() - 1; i >= 0; i--)
         {
             var display = _visualDisplays[i];
-            if (display == null || display.gameObject == null || display.modifierData == null)
+            if (display == null || display.gameObject == null)
             {
                 _visualDisplays.RemoveAt(i);
                 continue;
             }
 
-            if (!filteredPlayerModifiers.Contains(display.modifierData))
+            if (!filteredPlayerModifiers.Contains(display.modifierData) || display.modifierData == null)
             {
                 if (animateCardsDestroying)
                     yield return display.UseCardAnimation(destroyAfter: true);

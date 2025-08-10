@@ -6648,25 +6648,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1035593447}
     m_Modifications:
-    - target: {fileID: 1938415223807731854, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 4209533969085454119, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
-      propertyPath: interactPrompt
-      value: 
-      objectReference: {fileID: 810981159}
     - target: {fileID: 4745131210623477644, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
       propertyPath: m_Name
       value: Crosshair Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745131210623477644, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 5548181459420835492, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8073021404243456830, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
       propertyPath: m_Pivot.x
@@ -6751,7 +6735,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1938415223807731854, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 6903912543441868908, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
 --- !u!43 &213865169
 Mesh:
@@ -31992,11 +31982,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!1 &810981159 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5548181459420835492, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
-  m_PrefabInstance: {fileID: 207605105}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &821759493
 GameObject:
   m_ObjectHideFlags: 0
@@ -79599,6 +79584,15 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 4236df83ca6b76d48b35473ec9993a0e, type: 2}
   InteractSuccessful: 0
   chosenOption: 
+  OnClickEvent1:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClickEvent2:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClickEvent3:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1069396810676624757
 GameObject:
   m_ObjectHideFlags: 0

@@ -100,6 +100,9 @@ MonoBehaviour:
   OnMouseHoverEnd:
     m_PersistentCalls:
       m_Calls: []
+  OnMouseHoverStay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5132127649861176772
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,8 +410,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: STAMP
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd12a51f06d65184ab389515977ffa3e, type: 2}
+  m_sharedMaterial: {fileID: -2050056228281819079, guid: bd12a51f06d65184ab389515977ffa3e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -581,6 +584,30 @@ PrefabInstance:
     - target: {fileID: 5917198537950354199, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6631526919339010300, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6631526919339010300, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6631526919339010300, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 6631526919339010300, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6631526919339010300, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6631526919339010300, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -62.435
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

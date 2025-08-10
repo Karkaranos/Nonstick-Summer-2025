@@ -101038,6 +101038,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 707064104867182951, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.3774981
+      objectReference: {fileID: 0}
+    - target: {fileID: 707064104867182951, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.915
+      objectReference: {fileID: 0}
     - target: {fileID: 2201941223782920062, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -101050,6 +101058,10 @@ PrefabInstance:
       propertyPath: character
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: cameraAnchor
+      value: 
+      objectReference: {fileID: 1456327994}
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: combatPrompt
       value: 'Incoming call from: Mom'
@@ -101099,6 +101111,11 @@ PrefabInstance:
 --- !u!4 &1456327993 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 621988117311664097, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+  m_PrefabInstance: {fileID: 1456327992}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1456327994 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 707064104867182951, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
   m_PrefabInstance: {fileID: 1456327992}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1461719198

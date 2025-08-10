@@ -88,4 +88,17 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
         iopc.Initialize(modifier);
 
     }
+
+    private void OnDrawGizmos()
+    {
+        if (cameraAnchor == null)
+            return;
+
+        if (!StaticUtilities.Editor_SelectingSelfOrChild(this.transform))
+            return;
+
+        Gizmos.color = Color.blue; // blue because the unity camera icon color is blue
+        Gizmos.DrawRay(cameraAnchor.position, cameraAnchor.forward);
+        Gizmos.DrawWireSphere(cameraAnchor.position, 0.25f);
+    }
 }

@@ -110,10 +110,10 @@ RectTransform:
   m_Children:
   - {fileID: 8894429188545859802}
   - {fileID: 5810632606915913822}
-  - {fileID: 6706268458904868154}
   - {fileID: 653861533807204788}
   - {fileID: 861611319604971632}
   - {fileID: 5045651257426706344}
+  - {fileID: 6706268458904868154}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -357,7 +357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 161823853588628689, guid: 93b8c88268dbc6a4b8c6b76d25781452, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 437
+      value: 396
       objectReference: {fileID: 0}
     - target: {fileID: 161823853588628689, guid: 93b8c88268dbc6a4b8c6b76d25781452, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -370,6 +370,10 @@ PrefabInstance:
     - target: {fileID: 161823853588628689, guid: 93b8c88268dbc6a4b8c6b76d25781452, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960595109210528178, guid: 93b8c88268dbc6a4b8c6b76d25781452, type: 3}
+      propertyPath: spacing
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1960595109210528178, guid: 93b8c88268dbc6a4b8c6b76d25781452, type: 3}
       propertyPath: spawnCardsPosition.x
@@ -654,6 +658,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1960595109210528178, guid: 93b8c88268dbc6a4b8c6b76d25781452, type: 3}
+      propertyPath: spacing
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960595109210528178, guid: 93b8c88268dbc6a4b8c6b76d25781452, type: 3}
       propertyPath: spawnCardsPosition.x
       value: 960
       objectReference: {fileID: 0}
@@ -765,7 +773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3686483369030593041, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 670
+      value: 1319
       objectReference: {fileID: 0}
     - target: {fileID: 3686483369030593041, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -787,6 +795,10 @@ PrefabInstance:
       propertyPath: deckDisplay
       value: 
       objectReference: {fileID: 624860085967478439}
+    - target: {fileID: 4722205074857418735, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}
+      propertyPath: inventoryScreen
+      value: 
+      objectReference: {fileID: 224890998513653434}
     - target: {fileID: 4722205074857418735, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}
       propertyPath: modifierDisplay
       value: 

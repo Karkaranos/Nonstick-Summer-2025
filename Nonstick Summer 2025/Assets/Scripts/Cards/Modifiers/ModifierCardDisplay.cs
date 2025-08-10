@@ -16,9 +16,10 @@ using UnityEngine.Events;
 //[RequireComponent(typeof(MouseInteractionEvents))]
 public partial class ModifierCardDisplay : MonoBehaviour
 {
-    [BoxGroup("UI Components")][SerializeField] Image IconImage;
-    [BoxGroup("UI Components")][SerializeField] RectTransform cardBackground;
+    [BoxGroup("UI Components"), SerializeField] Image IconImage;
+    [BoxGroup("UI Components"), SerializeField] RectTransform cardBackground;
     [BoxGroup("UI Components"), SerializeField, Required] TMP_Text modifierHeader;
+    [BoxGroup("UI Components"), Required] public RectTransform applyButtonAnchor;
 
     public ModifierData modifierData { get { return _modifier; } }
     public UnityEvent<ModifierCardDisplay> OnMouseDown = new UnityEvent<ModifierCardDisplay>(); 
@@ -29,6 +30,9 @@ public partial class ModifierCardDisplay : MonoBehaviour
 
     [HideInInspector]
     public MouseInteractionEvents mouseInteraction;
+
+    [HideInInspector]
+    public bool MarkedToBeDestroyed = false; // if the destruction animation is playing, pretty much.
 
     private RectTransform rectTransform;
 

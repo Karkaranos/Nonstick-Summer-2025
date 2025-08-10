@@ -16,6 +16,7 @@
 ***************************************************/
 using NaughtyAttributes;
 using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -34,14 +35,16 @@ public class ModifierDeckDisplay : MonoBehaviour
 
     [SerializeField, Required]
     private RectTransform cardArea;
-    [SerializeField, Tooltip("Adjusts horizontal space between cards and edge of display")]
-    private float _bufferFromEdgeOfRegion = 10;
     [SerializeField, Tooltip("A reference to the visual Card Prefab")]
     private GameObject modifierCardPrefab;
     [SerializeField, Tooltip("Point to spawn cards from")]
     private Vector2 spawnCardsPosition = new Vector2(2400, 1350); // screen dimensions * 1.25
+    [SerializeField, Tooltip("Space between cards, this gap is ignored if there are too many cards")]
+    private float spacing = 3.5f;
     [SerializeField]
     private ModifierType[] typeFilter;
+    [SerializeField]
+    private bool animateCardsDestroying = true;
 
     [HideInInspector]
     public UnityEvent OnSelectedChanged = new UnityEvent();
@@ -55,19 +58,29 @@ public class ModifierDeckDisplay : MonoBehaviour
 
     private List<ModifierCardDisplay> _visualDisplays = new List<ModifierCardDisplay>();
 
+    private float realCardWidth;
+    private float desiredWidth;
+
     #endregion
 
     #region Functions
 
     private void Start()
     {
+        realCardWidth = modifierCardPrefab.GetComponent<RectTransform>().rect.width;
         DisplayAllCards();
+        selectedCard = null; // clear from last time inventory was opened.
     }
 
     /// <summary>
     /// Displays all cards in the player's deck
     /// </summary>
-    public void DisplayAllCards(bool fullReset = false)
+    public void DisplayAllCards()
+    {
+        StartCoroutine(DisplayAllCardsCoroutine());
+    }
+
+    private IEnumerator DisplayAllCardsCoroutine(bool fullReset = false)
     {
         if(fullReset)
             ClearDisplay();
@@ -75,10 +88,10 @@ public class ModifierDeckDisplay : MonoBehaviour
         if (_visualDisplays == null)
             _visualDisplays = new List<ModifierCardDisplay>();
 
-        ClearRemovedCards();
+        yield return ClearRemovedCards();
 
         if (filteredPlayerModifiers.Count() == 0)
-            return;
+            yield break;
 
         SpawnNewCards();
 
@@ -96,7 +109,7 @@ public class ModifierDeckDisplay : MonoBehaviour
         Debug.Log($"{_visualDisplays.Count} modifier displays, {filteredPlayerModifiers.Count()} modifiers in player inventory");
     }
 
-    private void ClearRemovedCards()
+    private IEnumerator ClearRemovedCards()
     {
         // clear modifiers that arent in hand anymore
         for (int i = _visualDisplays.Count() - 1; i >= 0; i--)
@@ -110,7 +123,11 @@ public class ModifierDeckDisplay : MonoBehaviour
 
             if (!filteredPlayerModifiers.Contains(display.modifierData))
             {
-                Destroy(display.gameObject);
+                if (animateCardsDestroying)
+                    yield return display.UseCardAnimation(destroyAfter: true);
+                else
+                    Destroy(display.gameObject);
+
                 _visualDisplays.RemoveAt(i);
                 continue;
             }
@@ -162,8 +179,10 @@ public class ModifierDeckDisplay : MonoBehaviour
     /// <param name="end">The ending index</param>
     private void GenerateAndSetPositions()
     {
-        float left = cardArea.rect.xMin + _bufferFromEdgeOfRegion;
-        float right = cardArea.rect.xMax - _bufferFromEdgeOfRegion;
+        GetDesiredWidth();
+
+        float left = cardArea.rect.center.x - (desiredWidth/2);
+        float right = cardArea.rect.center.x + (desiredWidth/2);
 
         Debug.Log($"left {left}, right {right}");
 
@@ -177,13 +196,25 @@ public class ModifierDeckDisplay : MonoBehaviour
             if (_visualDisplays.Count <= 1)
                 t = 0.5f; // halfway through to avoid dividing by 0
             else
-                t = (float)(i) / (_visualDisplays.Count - 1); // not simplifying to prove a point. you can see my mathematical genuis here.
+                t = (float)(i) / (_visualDisplays.Count - 1); 
 
             float x = Mathf.Lerp(left, right, t);
             modifier.SetPositionAndOffset(position:new Vector2(x,0), offset:Vector2.zero, speed:5000);
 
             modifier.transform.SetSiblingIndex(i);
         }
+    }
+
+    private float GetDesiredWidth()
+    {
+        if (_visualDisplays.Count == 1)
+            desiredWidth = realCardWidth;
+        else
+            desiredWidth = ((realCardWidth + spacing) * _visualDisplays.Count) - spacing;
+
+        desiredWidth = Mathf.Min(desiredWidth, cardArea.rect.width);
+
+        return desiredWidth;
     }
 
     #endregion

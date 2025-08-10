@@ -132,4 +132,43 @@ public partial class ModifierCardDisplay : MonoBehaviour
     {
         StopAllCoroutines();
     }
+
+    #region Specific hardcoded animations
+
+    // guys im really sorry for not using inheritence with these scripts. this was a fumble from my end for sure.
+
+    [Foldout("Destroy Card Animation"), SerializeField] float targetRotation = -135f;
+    [Foldout("Destroy Card Animation"), SerializeField] float destroyAnimationSeconds = 0.5f;
+    public IEnumerator UseCardAnimation(bool destroyAfter = true)
+    {
+        if (destroyAfter)
+            MarkedToBeDestroyed = true;
+
+        // some kind of dithering / burning shader would be sooooo cool here 
+
+        var startRotation = transform.eulerAngles;
+        var startScale = transform.localScale;
+
+        float timeStarted = Time.time;
+        float t;
+
+        do
+        {
+            t = (Time.time - timeStarted) / destroyAnimationSeconds;
+
+            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, t);
+            transform.eulerAngles = new Vector3(startRotation.x, startRotation.y, Mathf.Lerp(startRotation.z, targetRotation, t));
+
+            yield return null;
+        }
+        while (t < 1 && transform != null);
+
+
+        if (destroyAfter)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    #endregion
 }

@@ -49,9 +49,9 @@ public class ApplyModifierButton : MonoBehaviour
             return;
 
         // All of my work in the last week in one grand ass line of code...
-        modifierDisplay.selectedCard.modifierData.TryApplyModifier(deckDisplay.selectedCards.Select(display=>display.cardData).ToArray());
+        ModifierDeckDisplay.selectedCard.modifierData.TryApplyModifier(deckDisplay.selectedCards.Select(display=>display.cardData).ToArray());
 
-        ModifierManager.RemoveCard(modifierDisplay.selectedCard.modifierData);
+        ModifierManager.RemoveCard(ModifierDeckDisplay.selectedCard.modifierData);
         modifierDisplay.DisplayAllCards();
         deckDisplay.DeselectAllCards();
         deckDisplay.DisplayAllCards();
@@ -60,7 +60,7 @@ public class ApplyModifierButton : MonoBehaviour
     private bool CanPlayModifier()
     {
         // if the player is biting nothing
-        if (modifierDisplay.selectedCard == null || !deckDisplay.HasCardsSelected)
+        if (ModifierDeckDisplay.selectedCard == null || !deckDisplay.HasCardsSelected)
             return false;
 
         var carddatas = deckDisplay.selectedCards.Select(display => display.cardData).ToArray();
@@ -68,9 +68,9 @@ public class ApplyModifierButton : MonoBehaviour
 
         
         // if player is biting off more than they can chew
-        if (deckDisplay.selectedCards.Count > modifierDisplay.selectedCard.modifierData.MaxCardsApplied)
+        if (deckDisplay.selectedCards.Count > ModifierDeckDisplay.selectedCard.modifierData.MaxCardsApplied)
             return false;
-        return modifierDisplay.selectedCard.modifierData.CanApplyModifier(carddatas);
+        return ModifierDeckDisplay.selectedCard.modifierData.CanApplyModifier(carddatas);
         /*        return modifierDisplay.selectedCard.modifierData.CanApplyModifier(carddatas);
         // if player is biting off less than they should chew
         if (deckDisplay.selectedCards.Count < modifierDisplay.selectedCard.modifierData.MinCardsApplied)

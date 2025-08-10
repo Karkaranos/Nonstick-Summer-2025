@@ -12,7 +12,8 @@ using UnityEngine;
 public class ModifierInventoy : MonoBehaviour
 {
     [SerializeField] private DeckDisplayer deckDisplay;
-    [SerializeField] private ModifierDeckDisplay modifierDisplay;
+    [SerializeField] private ModifierDeckDisplay stampModifierDisplay;
+    [SerializeField] private ModifierDeckDisplay stickerModifierDisplay; // bruh these dont even do anything
     [SerializeField] private ApplyModifierButton applyModifierButton;
 
     private void Start()

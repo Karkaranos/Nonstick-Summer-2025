@@ -49,7 +49,7 @@ public class DiscardButton : MonoBehaviour
     {
 
         // foreach in case player somehow has multiple cards selected
-        foreach(var card in hand.selectedCards.ToArray()) //ToArray so we can safely remove items from the original collection
+        foreach(var card in DeckDisplayer.selectedCards.ToArray()) //ToArray so we can safely remove items from the original collection
         {
             hand.DiscardCard(card.cardData);
 

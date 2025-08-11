@@ -63,6 +63,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     private GameObject inWorldCharacter;
 
     [HideInInspector] public GameObject activeReaction;
+    public GameObject EnabledButton;
 
     public IEnumerator Initialize(DialogueBranch startBranch, Character character, bool isBoss = true, GameObject objRef = null)
     {
@@ -139,6 +140,19 @@ public class DialogueUIController : Singleton<DialogueUIController>
         else
         {
             playerDialogueBubble.WriteText(selectedCardData);
+
+            if (Mathf.Abs(selectedCardData.EnergyCost) > DialogueManager.CurrentEnergy)
+            {
+
+                EnabledButton.SetActive(false);
+
+            }
+            else
+            {
+
+                EnabledButton.SetActive(true);
+
+            }
         }
     }
 

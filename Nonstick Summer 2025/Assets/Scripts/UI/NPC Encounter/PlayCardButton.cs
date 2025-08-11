@@ -38,12 +38,23 @@ public class PlayCardButton : MonoBehaviour
         bool enabled = DialogueUIController.Instance.selectedCardData != null;
         button.interactable = true;
 
-        StaticUtilities.ToggleCanvasGroup(group, DialogueManager.ReadUserInput && DialogueManager.UserCanPlayCard, alpha:parentGroup.alpha,ignoreParentGroups:true);
+        StaticUtilities.ToggleCanvasGroup(group, enabled, alpha:parentGroup.alpha,ignoreParentGroups:true);
     }
 
     public void OnButtonPressed()
     {
         Debug.Log("Play card button pressed");
+        if(DialogueUIController.Instance.selectedCardData != null)
+        {
+
+            if(Mathf.Abs(DialogueUIController.Instance.selectedCardData.EnergyCost) > DialogueManager.CurrentEnergy)
+            {
+
+                return;
+
+            }
+
+        }
         StartCoroutine(DialogueManager.ProcessPlayCard(DialogueUIController.Instance.selectedCardData));
         UpdateButtonEnabled();
     }

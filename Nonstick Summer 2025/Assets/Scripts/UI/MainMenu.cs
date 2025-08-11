@@ -26,7 +26,7 @@ public class MainMenu : MonoBehaviour
 
     [Header("Credit Controls")]
     [SerializeField] private float creditSpeed;
-    [SerializeField] private float heightToReach;
+    /*[SerializeField]*/ private float heightToReach=7200;
     [SerializeField] private float pauseBeforeStartEnd = 1.5f;
 
 
@@ -37,12 +37,14 @@ public class MainMenu : MonoBehaviour
     [Header("Fade Transition Visuals")]
     [Tooltip ("Fade to black prefab in scene")]
     [SerializeField][Required] private GameObject fadeToBlack;
+    [SerializeField][Required] private Image creditsFadeToBlack;
     
 
     //maybe put cursor shenanigans here
     private void Start()
     {
         creditStart = creditScroll.transform.localPosition;
+        heightToReach = creditScroll.GetComponent<RectTransform>().rect.height;
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -83,6 +85,8 @@ public class MainMenu : MonoBehaviour
 
     private IEnumerator ScrollCredits()
     {
+        creditsFadeToBlack.color = Color.clear;
+
         yield return new WaitForSeconds(pauseBeforeStartEnd);
         Vector3 pos = creditScroll.transform.position;
         while(pos.y < heightToReach)
@@ -91,7 +95,19 @@ public class MainMenu : MonoBehaviour
             pos.y += creditSpeed * Time.deltaTime * Mathf.Clamp(Screen.height/1280, 1, 3);
             creditScroll.transform.position = pos;
         }
-        yield return new WaitForSeconds(pauseBeforeStartEnd*2);
+        yield return new WaitForSeconds(pauseBeforeStartEnd);
+
+        float timeElapsed = 0;
+        while(timeElapsed < 2)
+        {
+            timeElapsed += Time.deltaTime;
+            float t = timeElapsed / 2;
+            creditsFadeToBlack.color = new Color(0, 0, 0, t);
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(pauseBeforeStartEnd * 2);
+
         CloseCredits();
 
     }

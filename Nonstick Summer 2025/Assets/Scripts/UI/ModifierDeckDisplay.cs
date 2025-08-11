@@ -14,15 +14,17 @@
 *       Combine with DeckDisplay thru inheritence? maaaaybeee????
 *   
 ***************************************************/
-using UnityEngine;
+using NaughtyAttributes;
+using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using NaughtyAttributes;
-using UnityEngine.Events;
+using System.Reflection;
 using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UIElements;
 using static Unity.Cinemachine.CinemachineFreeLookModifier;
-using NUnit.Framework;
 
 // This script needed to be a Monobehavior to get some of the references needed
 public class ModifierDeckDisplay : MonoBehaviour
@@ -33,19 +35,31 @@ public class ModifierDeckDisplay : MonoBehaviour
 
     [SerializeField, Required]
     private RectTransform cardArea;
-    [SerializeField, Tooltip("Adjusts horizontal space between cards and edge of display")]
-    private float _bufferFromEdgeOfRegion = 10;
-    [SerializeField, Tooltip("A reference to the visual Card Prefab")] 
+    [SerializeField, Tooltip("A reference to the visual Card Prefab")]
     private GameObject modifierCardPrefab;
     [SerializeField, Tooltip("Point to spawn cards from")]
     private Vector2 spawnCardsPosition = new Vector2(2400, 1350); // screen dimensions * 1.25
+    [SerializeField, Tooltip("Space between cards, this gap is ignored if there are too many cards")]
+    private float spacing = 3.5f;
+    [SerializeField]
+    private ModifierType[] typeFilter;
+    [SerializeField]
+    private bool animateCardsDestroying = true;
 
     [HideInInspector]
-    public UnityEvent OnSelectedChanged = new UnityEvent();
+    public static UnityEvent OnSelectedChanged = new UnityEvent();
 
-    private IReadOnlyCollection<ModifierData> playerModifiers => ModifierManager.ModifierCollection; // changed to be generalized, because deck will not always be the players.
+    private IEnumerable<ModifierData> filteredPlayerModifiers =>
+        ModifierManager.ModifierCollection.Where(m =>
+            typeFilter.Contains(m.ModifierType) ||
+            typeFilter.Count() == 0 || 
+            m.ModifierType == ModifierType.None)
+        .ToArray();
 
     private List<ModifierCardDisplay> _visualDisplays = new List<ModifierCardDisplay>();
+
+    private float realCardWidth;
+    private float desiredWidth;
 
     #endregion
 
@@ -53,13 +67,20 @@ public class ModifierDeckDisplay : MonoBehaviour
 
     private void Start()
     {
+        realCardWidth = modifierCardPrefab.GetComponent<RectTransform>().rect.width;
         DisplayAllCards();
+        selectedCard = null; // clear from last time inventory was opened.
     }
 
     /// <summary>
     /// Displays all cards in the player's deck
     /// </summary>
-    public void DisplayAllCards(bool fullReset = false)
+    public void DisplayAllCards()
+    {
+        StartCoroutine(DisplayAllCardsCoroutine());
+    }
+
+    private IEnumerator DisplayAllCardsCoroutine(bool fullReset = false)
     {
         if(fullReset)
             ClearDisplay();
@@ -67,10 +88,10 @@ public class ModifierDeckDisplay : MonoBehaviour
         if (_visualDisplays == null)
             _visualDisplays = new List<ModifierCardDisplay>();
 
-        ClearRemovedCards();
+        yield return ClearRemovedCards();
 
-        if (playerModifiers.Count == 0)
-            return;
+        if (filteredPlayerModifiers.Count() == 0)
+            yield break;
 
         SpawnNewCards();
 
@@ -85,24 +106,28 @@ public class ModifierDeckDisplay : MonoBehaviour
         // Generates spawn positions
         GenerateAndSetPositions();
 
-        Debug.Log($"{_visualDisplays.Count} modifier displays, {playerModifiers.Count} modifiers in player inventory");
+        Debug.Log($"{_visualDisplays.Count} modifier displays, {filteredPlayerModifiers.Count()} modifiers in player inventory");
     }
 
-    private void ClearRemovedCards()
+    private IEnumerator ClearRemovedCards()
     {
         // clear modifiers that arent in hand anymore
         for (int i = _visualDisplays.Count() - 1; i >= 0; i--)
         {
             var display = _visualDisplays[i];
-            if (display == null || display.gameObject == null || display.modifierData == null)
+            if (display == null || display.gameObject == null)
             {
                 _visualDisplays.RemoveAt(i);
                 continue;
             }
 
-            if (!playerModifiers.Contains(display.modifierData))
+            if (!filteredPlayerModifiers.Contains(display.modifierData) || display.modifierData == null)
             {
-                Destroy(display.gameObject);
+                if (animateCardsDestroying)
+                    yield return display.UseCardAnimation(destroyAfter: true);
+                else
+                    Destroy(display.gameObject);
+
                 _visualDisplays.RemoveAt(i);
                 continue;
             }
@@ -124,7 +149,7 @@ public class ModifierDeckDisplay : MonoBehaviour
     private void SpawnNewCards()
     {
         // Cards that havent been instantiated yet
-        var newCards = playerModifiers.
+        var newCards = filteredPlayerModifiers.
             Where(mod => 
                 _visualDisplays.Select(display=>display.modifierData) // what the lambda
                 .Contains(mod) == false); 
@@ -154,8 +179,10 @@ public class ModifierDeckDisplay : MonoBehaviour
     /// <param name="end">The ending index</param>
     private void GenerateAndSetPositions()
     {
-        float left = cardArea.rect.xMin + _bufferFromEdgeOfRegion;
-        float right = cardArea.rect.xMax - _bufferFromEdgeOfRegion;
+        GetDesiredWidth();
+
+        float left = cardArea.rect.center.x - (desiredWidth/2);
+        float right = cardArea.rect.center.x + (desiredWidth/2);
 
         Debug.Log($"left {left}, right {right}");
 
@@ -169,13 +196,25 @@ public class ModifierDeckDisplay : MonoBehaviour
             if (_visualDisplays.Count <= 1)
                 t = 0.5f; // halfway through to avoid dividing by 0
             else
-                t = (float)i / (_visualDisplays.Count - 1);
+                t = (float)(i) / (_visualDisplays.Count - 1); 
 
             float x = Mathf.Lerp(left, right, t);
             modifier.SetPositionAndOffset(position:new Vector2(x,0), offset:Vector2.zero, speed:5000);
 
             modifier.transform.SetSiblingIndex(i);
         }
+    }
+
+    private float GetDesiredWidth()
+    {
+        if (_visualDisplays.Count == 1)
+            desiredWidth = realCardWidth;
+        else
+            desiredWidth = ((realCardWidth + spacing) * _visualDisplays.Count) - spacing;
+
+        desiredWidth = Mathf.Min(desiredWidth, cardArea.rect.width);
+
+        return desiredWidth;
     }
 
     #endregion
@@ -192,8 +231,9 @@ public class ModifierDeckDisplay : MonoBehaviour
     [SerializeField] private Vector2 selectedCardOffset = new Vector2(0, 50);
 
     // tobys first HashSet in Unity! 6/21/2025
+    // ???? where????? dumbass
     [HideInInspector]
-    public ModifierCardDisplay selectedCard { get; private set; }
+    public static ModifierCardDisplay selectedCard { get; private set; }
 
     #endregion
 
@@ -202,6 +242,12 @@ public class ModifierDeckDisplay : MonoBehaviour
     // See SpawnCards
     public void OnCardClicked(ModifierCardDisplay cardDisplay)
     {
+        if(! filteredPlayerModifiers.Contains(cardDisplay.modifierData))
+        {
+            //Debug.LogError($"{cardDisplay.modifierData.name} is not in {gameObject.name}!"); 
+            return;
+        }
+
         Debug.Log("selected changed");
         if (selectedCard == cardDisplay)
             DeselectCard();

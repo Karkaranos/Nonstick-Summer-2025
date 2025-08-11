@@ -25,7 +25,6 @@ public class StampModifierData : ModifierData
 
         foreach(CardData card in cards) 
         {
-            // TODO: get rid of this because of modifier upgrading.
             // TODO: this doesnt consider relationship / social battery mods are the same type
             if(card.HasStampOfType(StampToApply.type))
             {

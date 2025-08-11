@@ -51,13 +51,15 @@ public abstract class HoverTooltip : MonoBehaviour
     public void Close()
     {
         tooltipGroup.gameObject.SetActive(false);
-        //StaticUtilities.DisableCanvasGroup(tooltipGroup);
+        if(tooltipGroup != null)
+            StaticUtilities.DisableCanvasGroup(tooltipGroup);
     }
 
     public void RefreshTooltipText()
     {
         tooltipGroup.gameObject.SetActive(true);
-        //StaticUtilities.EnableCanvasGroup(tooltipGroup);
+        if (tooltipGroup != null)
+            StaticUtilities.EnableCanvasGroup(tooltipGroup);
 
         var newText = GetText();
         if (tooltipText != null && newText != tooltipText.text)

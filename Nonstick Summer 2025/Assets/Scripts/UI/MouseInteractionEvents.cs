@@ -29,7 +29,7 @@ public class MouseInteractionEvents : MonoBehaviour, IPointerClickHandler, IPoin
     private void Update()
     {
         if(mouseOver)
-            OnMouseHoverStay?.Invoke();
+            OnMouseHoverStay.Invoke();
     }
 
     public void OnPointerClick(PointerEventData eventData)

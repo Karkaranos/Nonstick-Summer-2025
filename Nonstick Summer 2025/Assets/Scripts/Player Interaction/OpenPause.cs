@@ -34,7 +34,7 @@ public class OpenPause : MonoBehaviour
         {
             // close pause or inventory menu if those are open.
             var currentMenu = UITransitionManager.CurrentCanvasReference;
-            if (currentMenu!=null && (currentMenu.GetComponent<PauseAndSettings>() || currentMenu.GetComponent<ModifierInventory>()))
+            if (currentMenu!=null && (currentMenu.GetComponent<PauseAndSettings>() || currentMenu.GetComponent<ModifierInventoy>()))
                 UITransitionManager.CloseMenu();
 
             return;
@@ -60,7 +60,7 @@ public class OpenPause : MonoBehaviour
     private void InventoryPressed()
     {
         if (UITransitionManager.PlayerInMenu &&
-            UITransitionManager.CurrentCanvasReference.GetComponent<ModifierInventory>() != null)
+            UITransitionManager.CurrentCanvasReference.GetComponent<ModifierInventoy>() != null)
         {
             UITransitionManager.CloseMenu();
             return;

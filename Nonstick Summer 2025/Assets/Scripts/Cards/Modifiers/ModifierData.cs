@@ -18,14 +18,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 
-public enum ModifierType
-{
-    None,
-    Stamp,
-    Sticker,
-    Tool
-}
-
 //[CreateAssetMenu(fileName = "ModifierData", menuName = "Scriptable Objects/ModifierData")]
 public abstract class ModifierData : ScriptableObject
 {
@@ -40,8 +32,6 @@ public abstract class ModifierData : ScriptableObject
 
     [SerializeField, ShowAssetPreview(32, 32), HideIf(nameof(_showIcon))]
     protected Sprite icon;
-
-    public ModifierType ModifierType;
 
     #region Debug
     private bool _showMinCardsApplied => MaxCardsApplied > 1;

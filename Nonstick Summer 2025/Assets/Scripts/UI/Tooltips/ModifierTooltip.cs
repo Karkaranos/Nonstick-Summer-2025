@@ -11,7 +11,7 @@ using UnityEngine;
 public class ModifierTooltip : HoverTooltip
 {
     private ModifierCardDisplay cardDisplay;
-    private ModifierData modifierData => cardDisplay?.modifierData;
+    private ModifierData modifierData => cardDisplay.modifierData;
 
     protected override void Start()
     {

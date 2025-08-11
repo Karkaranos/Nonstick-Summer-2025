@@ -26,9 +26,6 @@ public partial class CardDisplay : MonoBehaviour
     [Tooltip("Canvas units/sec")]
     [SerializeField] private float MovementSpeed = 1500;
     [SerializeField] private float RefreshCardTime = 0.4f;
-    [SerializeField] private bool animateWaves = true;
-    [ShowIf(nameof(animateWaves)), SerializeField] float waveHeight = 3;
-    [ShowIf(nameof(animateWaves)), SerializeField] float waveSpeed = 1;
 
     private Vector2 basePosition, positionOffset=default;
     private Coroutine translatePositionCoroutine;
@@ -119,16 +116,13 @@ public partial class CardDisplay : MonoBehaviour
         var currentBasePosition = rectTransform.anchoredPosition;
         var currentOffset = cardBackground.anchoredPosition;
 
-        while (currentBasePosition != basePosition || currentOffset != positionOffset || animateWaves) // just learned using == on vectors actually does an approximate equals. so thats good thats what we want.
+        while (currentBasePosition != basePosition || currentOffset != positionOffset) // just learned using == on vectors actually does an approximate equals. so thats good thats what we want.
         {
             currentBasePosition = rectTransform.anchoredPosition;
             currentOffset = cardBackground.anchoredPosition;
 
             rectTransform.anchoredPosition = Vector2.MoveTowards(currentBasePosition, basePosition, speed.Value * Time.deltaTime);
-            if (animateWaves)
-                cardBackground.anchoredPosition = Vector2.MoveTowards(currentOffset, positionOffset + new Vector2(0, Mathf.Sin((Time.time * waveSpeed) + TargetSiblingIndex) * waveHeight), speed.Value * Time.deltaTime);
-            else
-                cardBackground.anchoredPosition = Vector2.MoveTowards(currentOffset, positionOffset, speed.Value * Time.deltaTime);
+            cardBackground.anchoredPosition = Vector2.MoveTowards(currentOffset, positionOffset, speed.Value * Time.deltaTime);
             yield return null;
         }
 
@@ -150,12 +144,6 @@ public partial class CardDisplay : MonoBehaviour
     [Foldout("Destroy Card Animation"), SerializeField] float destroyAnimationSeconds = 0.5f;
     public IEnumerator UseCardAnimation(bool destroyAfter = true)
     {
-        if (destroyAfter)
-            MarkedToBeDestroyed = true;
-
-        if (translatePositionCoroutine != null)
-            StopCoroutine(translatePositionCoroutine);
-
         // some kind of dithering / burning shader would be sooooo cool here 
 
         var startRotation = transform.eulerAngles;

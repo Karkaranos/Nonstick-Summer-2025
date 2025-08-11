@@ -169,15 +169,8 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
 
             // if this code doesnt make sense to you then u shouldve paid more attention in ur trig class
 
-            Vector3 playerPos = (GameManager.PlayerTransformRef == null ? FindFirstObjectByType<PlayerMovement>().transform : GameManager.PlayerTransformRef).position;
-
-            if(startPos==null || playerPos == null)
-            {
-                break;
-            }
-
-            var pos = Vector3.Lerp(startPos, playerPos, t * t); // t * t so it gets faster (plug x^2 into desmos and look at 0-1 to see the effect for yourself! it will be mind boggling!!!!!)
-            var directionToPlayer = (rectTransform.WorldPosition() - playerPos).normalized;
+            var pos = Vector3.Lerp(startPos, GameManager.PlayerTransformRef.position, t * t); // t * t so it gets faster (plug x^2 into desmos and look at 0-1 to see the effect for yourself! it will be mind boggling!!!!!)
+            var directionToPlayer = (rectTransform.WorldPosition() - GameManager.PlayerTransformRef.position).normalized;
             var targetRot = Quaternion.LookRotation(directionToPlayer + Vector3.down);
             var rot = Quaternion.Lerp(startRotation, targetRot, t * 3);
             var scale = Vector3.Lerp(startScale, Vector3.zero, t);

@@ -60,10 +60,8 @@ public class ModifierManager
     /// </summary>
     public static void RemoveCard(ModifierData modifier)
     {
-        if (_modifierCollection.Contains(modifier))
+        if(_modifierCollection.Contains(modifier))
             _modifierCollection.Remove(modifier);
-        else
-            Debug.LogError($"Trying to remove modifier '{modifier.name}' from deck, but deck does not contain it. ");
     }
 
     /// <summary>

@@ -49,6 +49,8 @@ public class DeckDisplayer : MonoBehaviour
     private float spacing = 3.5f;
     [SerializeField]
     private bool animateCardsDestroying = true;
+    [SerializeField]
+    private bool bringToFrontOnSelected = false;
 
     private Vector2 _dimensions;    // Dimensions of the rectTransform cards will spawn in
     private Vector3 rectTransformCenter;    // Position of the rectTransform, in screen space
@@ -60,6 +62,7 @@ public class DeckDisplayer : MonoBehaviour
 
     private float realCardWidth;
     private float desiredWidth;
+    public static UnityEvent OnAnyCardHoverStart = new UnityEvent();
 
     #endregion Variables
 
@@ -73,6 +76,7 @@ public class DeckDisplayer : MonoBehaviour
         _dimensions = GetComponent<RectTransform>().sizeDelta;
         realCardWidth = _cardPrefab.GetComponent<RectTransform>().rect.width;
         canvasGroup = GetComponent<CanvasGroup>();
+        OnAnyCardHoverStart.AddListener(OnAnyCardHovered);
         rectTransformCenter = transform.localPosition;
     }
 
@@ -547,6 +551,16 @@ public class DeckDisplayer : MonoBehaviour
                 display.SetPositionAndOffset(offset: disabledCardOffset);
             }
         }
+    }
+
+    public void OnAnyCardHovered()
+    {
+        if (!bringToFrontOnSelected)
+            return;
+
+        // so modifier tooltips can be afront
+        var sibbys = transform.parent.childCount;
+        transform.SetSiblingIndex(sibbys - 1);
     }
 
     #endregion

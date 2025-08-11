@@ -44,6 +44,17 @@ public class PlayCardButton : MonoBehaviour
     public void OnButtonPressed()
     {
         Debug.Log("Play card button pressed");
+        if(DialogueUIController.Instance.selectedCardData != null)
+        {
+
+            if(Mathf.Abs(DialogueUIController.Instance.selectedCardData.EnergyCost) > DialogueManager.CurrentEnergy)
+            {
+
+                return;
+
+            }
+
+        }
         StartCoroutine(DialogueManager.ProcessPlayCard(DialogueUIController.Instance.selectedCardData));
         UpdateButtonEnabled();
     }

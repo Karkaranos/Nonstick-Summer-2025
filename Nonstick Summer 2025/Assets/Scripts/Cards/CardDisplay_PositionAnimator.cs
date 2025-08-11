@@ -204,7 +204,7 @@ public partial class CardDisplay : MonoBehaviour
         do
         {
             t = (Time.time - timeStarted) / (hoverCardAnimationSeconds/2);
-            transform.eulerAngles = new Vector3(startRotation.x, startRotation.y, Mathf.Lerp(startRotation.z, hoverTargetRotation, t));
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Mathf.Lerp(startRotation.z, hoverTargetRotation, t));
 
             yield return null;
         }
@@ -215,7 +215,7 @@ public partial class CardDisplay : MonoBehaviour
         do
         {
             t = (Time.time - timeStarted) / (hoverCardAnimationSeconds / 2);
-            transform.eulerAngles = new Vector3(startRotation.x, startRotation.y, Mathf.Lerp(startRotation.z, 0, t));
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Mathf.Lerp(startRotation.z, 0, t));
 
             yield return null;
         }

@@ -121,7 +121,7 @@ public partial class ModifierCardDisplay : MonoBehaviour
 
             rectTransform.anchoredPosition = Vector2.MoveTowards(currentBasePosition, basePosition, speed.Value * Time.deltaTime);
             if(animateWaves)
-                cardBackground.anchoredPosition = Vector2.MoveTowards(currentOffset, positionOffset + new Vector2(0,Mathf.Sin((Time.time * waveSpeed) + transform.GetSiblingIndex())*waveHeight), speed.Value * Time.deltaTime);
+                cardBackground.anchoredPosition = Vector2.MoveTowards(currentOffset, positionOffset + new Vector2(0,Mathf.Sin((Time.time * waveSpeed) + TargetSiblingIndex)*waveHeight), speed.Value * Time.deltaTime);
             else
                 cardBackground.anchoredPosition = Vector2.MoveTowards(currentOffset, positionOffset, speed.Value * Time.deltaTime);
             yield return null;
@@ -178,6 +178,49 @@ public partial class ModifierCardDisplay : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    [Foldout("Hover Card Animation"), SerializeField] float hoverTargetRotation = -2f;
+    [Foldout("Hover Card Animation"), SerializeField] float hoverCardAnimationSeconds = 0.2f;
+    private bool hoverAnimationPlayed = false;
+    private bool hoverAnimationRunning = false;
+    public IEnumerator HoverOverCardAnimation()
+    {
+        if (hoverAnimationRunning || hoverAnimationPlayed)
+            yield break;
+
+        hoverAnimationRunning = true;
+        hoverAnimationPlayed = true;
+
+        // some kind of dithering / burning shader would be sooooo cool here 
+
+        var startRotation = transform.eulerAngles;
+
+        float timeStarted = Time.time;
+        float t;
+
+        do
+        {
+            t = (Time.time - timeStarted) / (hoverCardAnimationSeconds / 2);
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Mathf.Lerp(startRotation.z, hoverTargetRotation, t));
+
+            yield return null;
+        }
+        while (t < 1 && transform != null);
+
+        timeStarted = Time.time;
+
+        do
+        {
+            t = (Time.time - timeStarted) / (hoverCardAnimationSeconds / 2);
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Mathf.Lerp(startRotation.z, 0, t));
+
+            yield return null;
+        }
+        while (t < 1 && transform != null);
+
+        hoverAnimationRunning = false;
+    }
+
 
     #endregion
 }

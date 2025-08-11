@@ -43,7 +43,7 @@ public partial class CardDisplay : MonoBehaviour
     [HideInInspector]
     public bool MarkedToBeDestroyed = false;
 
-    bool canPlayHover = true;
+    bool canPlayHoverSound = true;
 
     private void Start()
     {
@@ -104,18 +104,24 @@ public partial class CardDisplay : MonoBehaviour
         if (DialogueUIController.Instance != null && DialogueUIController.Instance.DeckDisplay.FirstSelectedCard == null 
             && DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput)
            DialogueUIController.Instance.UpdateHoveringCard(card);
-        if (canPlayHover)
+        if (canPlayHoverSound)
         {
             AudioManager.instance.PlayOneShot(FMODEvents.instance.CardHoverSFX);
-            canPlayHover = false;
+            canPlayHoverSound = false;
         }
+
+        DeckDisplayer.OnAnyCardHoverStart.Invoke();
 
         foreach(var display in DeckDisplayer.selectedCards)
         {
             if(display != null)
-                display.transform.SetAsFirstSibling();
+                display.transform.SetAsLastSibling();
         }
-        transform.SetAsFirstSibling();
+        transform.SetAsLastSibling();
+        if( !DeckDisplayer.selectedCards.Contains(this))
+        {
+            StartCoroutine(HoverOverCardAnimation());
+        }
     }
 
     private void OnMouseHoverEnd() // TODO this should be moved to another script
@@ -123,10 +129,12 @@ public partial class CardDisplay : MonoBehaviour
         if (DialogueUIController.Instance != null && DialogueUIController.Instance.DeckDisplay.FirstSelectedCard == null
             && DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput)
             DialogueUIController.Instance.UpdateHoveringCard(null);
-        canPlayHover = true;
 
         if(DeckDisplayer.selectedCards.Contains(this) == false)
             transform.SetSiblingIndex(TargetSiblingIndex);
+
+        hoverAnimationPlayed = false;
+        canPlayHoverSound = true;
     }
 
     private void OnMouseDownStart()

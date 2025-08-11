@@ -12,6 +12,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using System.Linq;
 
 //[RequireComponent(typeof(MouseInteractionEvents))]
 public partial class ModifierCardDisplay : MonoBehaviour
@@ -32,11 +33,15 @@ public partial class ModifierCardDisplay : MonoBehaviour
     public MouseInteractionEvents mouseInteraction;
 
     [HideInInspector]
+    public int TargetSiblingIndex;
+    [HideInInspector]
     public bool MarkedToBeDestroyed = false; // if the destruction animation is playing, pretty much.
 
+    bool canPlayHover = true;
     private RectTransform rectTransform;
 
     private float randomSpriteRotation; // polish...
+
 
     private void Start()
     {
@@ -47,6 +52,7 @@ public partial class ModifierCardDisplay : MonoBehaviour
 
         mouseInteraction = GetComponent<MouseInteractionEvents>();
         mouseInteraction.OnMouseHoverStart.AddListener(OnMouseHoverStart);
+        mouseInteraction.OnMouseHoverEnd.AddListener(OnMouseHoverEnd);
         rectTransform = GetComponent<RectTransform>();
 
         if (mouseInteraction != null)
@@ -72,14 +78,51 @@ public partial class ModifierCardDisplay : MonoBehaviour
 
     private void OnMouseHoverStart()
     {
+        if (canPlayHover)
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.CardHoverSFX);
+            canPlayHover = false;
+        }
+
+        // TODO: repent
+        // if you know me as a person at all, then you should know that i would only be writing
+        // code like this as a very last resort.
+        var decks = FindObjectsByType<ModifierDeckDisplay>(FindObjectsSortMode.None);
+        foreach (var deck in decks)
+        {
+            if(deck.filteredPlayerModifiers.Contains(this.modifierData))
+            {
+                deck.OnAnyCardHovered();
+            }
+        }
+
+        // bring to front
         if (ModifierDeckDisplay.selectedCard != null)
         {
             // bring to (sploiler warning) 2nd to front
             ModifierDeckDisplay.selectedCard.transform.SetAsLastSibling();
         }
+        transform.SetAsLastSibling();
+
+        if (ModifierDeckDisplay.selectedCard != this)
+        {
+            StartCoroutine(HoverOverCardAnimation());
+        }
+
+    }
+
+    private void OnMouseHoverEnd()
+    {
+        if (ModifierDeckDisplay.selectedCard == this)
+        {
+            return;
+        }
 
         // bring to front
-        transform.SetAsLastSibling();
+        transform.SetSiblingIndex(TargetSiblingIndex);
+
+        hoverAnimationPlayed = false;
+        canPlayHover = true;
     }
 
     public void SetCard(ModifierData newModifier)

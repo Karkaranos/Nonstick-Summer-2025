@@ -49,7 +49,7 @@ public class ModifierDeckDisplay : MonoBehaviour
     [HideInInspector]
     public static UnityEvent OnSelectedChanged = new UnityEvent();
 
-    private IEnumerable<ModifierData> filteredPlayerModifiers =>
+    public IEnumerable<ModifierData> filteredPlayerModifiers =>
         ModifierManager.ModifierCollection.Where(m =>
             typeFilter.Contains(m.ModifierType) ||
             typeFilter.Count() == 0 || 
@@ -202,6 +202,7 @@ public class ModifierDeckDisplay : MonoBehaviour
             modifier.SetPositionAndOffset(position:new Vector2(x,0), offset:Vector2.zero, speed:5000);
 
             modifier.transform.SetSiblingIndex(i);
+            modifier.TargetSiblingIndex = i;
         }
     }
 
@@ -281,8 +282,16 @@ public class ModifierDeckDisplay : MonoBehaviour
         if (selectedCard == null)
             return;
 
+        selectedCard.transform.SetSiblingIndex(selectedCard.TargetSiblingIndex);
         selectedCard.ResetOffset();
         selectedCard = null;
+    }
+
+    public void OnAnyCardHovered()
+    {
+        // so modifier tooltips can be afront
+        var sibbys = transform.parent.childCount;
+        transform.SetSiblingIndex(sibbys-1);
     }
 
     #endregion

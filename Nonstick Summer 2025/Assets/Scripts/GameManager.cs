@@ -129,7 +129,7 @@ public class GameManager : Singleton<GameManager>
         if (playerTransformRef != null)
             return playerTransformRef;
 
-        playerTransformRef = FindFirstObjectByType<PlayerMovement>()?.transform;
+        playerTransformRef = FindFirstObjectByType<PlayerMovement>().transform;
         return playerTransformRef;
     }
 

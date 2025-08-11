@@ -42,20 +42,24 @@ public class DeckDisplayer : MonoBehaviour
 
     public List<CardDisplay> VisualDisplays { get => _visualDisplays; private set => _visualDisplays = value; }
 
-    [SerializeField, Tooltip("Adjusts horizontal space between cards and edge of display")]
-    private float _bufferFromEdgeOfRegion = 10;
     [SerializeField, Tooltip("A reference to the visual Card Prefab")] private GameObject _cardPrefab;
     [SerializeField, Tooltip("Point to spawn cards from")]
     private Vector2 spawnCardsPosition = new Vector2(2400, 1350); // screen dimensions * 1.25
+    [SerializeField, Tooltip("Space between cards, this gap is ignored if there are too many cards")]
+    private float spacing = 3.5f;
+    [SerializeField]
+    private bool animateCardsDestroying = true;
 
     private Vector2 _dimensions;    // Dimensions of the rectTransform cards will spawn in
     private Vector3 rectTransformCenter;    // Position of the rectTransform, in screen space
-    private float _cardWidth;
 
     private List<CardDisplay> _visualDisplays = new List<CardDisplay>();
     private Deck displayedData = new Deck();
 
     private bool interactable = true;
+
+    private float realCardWidth;
+    private float desiredWidth;
 
     #endregion Variables
 
@@ -67,7 +71,7 @@ public class DeckDisplayer : MonoBehaviour
     private void Awake()
     {
         _dimensions = GetComponent<RectTransform>().sizeDelta;
-        _cardWidth = _cardPrefab.transform.GetComponent<RectTransform>().sizeDelta.x;
+        realCardWidth = _cardPrefab.GetComponent<RectTransform>().rect.width;
         canvasGroup = GetComponent<CanvasGroup>();
         rectTransformCenter = transform.localPosition;
     }
@@ -114,20 +118,30 @@ public class DeckDisplayer : MonoBehaviour
 
     private IEnumerator ClearRemovedCards()
     {
+        _visualDisplays = _visualDisplays.Where(d => d != null && d.gameObject != null).ToList();
+
         // clear modifiers that arent in hand anymore
         for (int i = _visualDisplays.Count() - 1; i >= 0; i--)
         {
             var display = _visualDisplays[i];
-            if (display == null || display.gameObject == null || display.cardData == null)
+
+            if (display.MarkedToBeDestroyed)
+                continue;
+
+            if (display == null || display.gameObject == null)
             {
                 _visualDisplays.RemoveAt(i);
+                i--;
                 continue;
             }
 
-            if (!displayedData.Contains(display.cardData))
+            if (display.cardData == null || !displayedData.Contains(display.cardData))
             {
-                //Destroy(display.gameObject);
-                yield return display.UseCardAnimation(destroyAfter:true);
+                if(animateCardsDestroying)
+                    yield return display.UseCardAnimation(destroyAfter: true);
+                else
+                    Destroy(display.gameObject);
+
                 _visualDisplays.RemoveAt(i);
                 continue;
             }
@@ -208,7 +222,10 @@ public class DeckDisplayer : MonoBehaviour
     {
         for(int i=0; i<_visualDisplays.Count; i++)
         {
-            Destroy(_visualDisplays[i]);
+            if (animateCardsDestroying)
+                StartCoroutine(_visualDisplays[i].UseCardAnimation(destroyAfter: true));
+            else
+                Destroy(_visualDisplays[i].gameObject);
         }
         _visualDisplays.Clear();
     }
@@ -261,8 +278,10 @@ public class DeckDisplayer : MonoBehaviour
         startIndex = startIndex ?? 0;
         endIndex = endIndex ?? _visualDisplays.Count-1;
 
-        float left = cardArea.rect.xMin + _bufferFromEdgeOfRegion;
-        float right = cardArea.rect.xMax - _bufferFromEdgeOfRegion;
+        GetDesiredWidth();
+
+        float left = cardArea.rect.center.x - (desiredWidth / 2);
+        float right = cardArea.rect.center.x + (desiredWidth / 2);
 
         //Debug.Log($"left {left}, right {right}");
 
@@ -284,7 +303,20 @@ public class DeckDisplayer : MonoBehaviour
             card.SetPositionAndOffset(position: new Vector2(x, 0), offset: interactable ? Vector2.zero : disabledCardOffset, speed: 5000);
 
             card.transform.SetSiblingIndex(i);
+            card.TargetSiblingIndex = i;
         }
+    }
+
+    private float GetDesiredWidth()
+    {
+        if (_visualDisplays.Count == 1)
+            desiredWidth = realCardWidth;
+        else
+            desiredWidth = ((realCardWidth + spacing) * _visualDisplays.Count) - spacing;
+
+        desiredWidth = Mathf.Min(desiredWidth, cardArea.rect.width);
+
+        return desiredWidth;
     }
 
     #region Obselete
@@ -404,7 +436,8 @@ public class DeckDisplayer : MonoBehaviour
 
     // tobys first HashSet in Unity! 6/21/2025
     [HideInInspector]
-    public HashSet<CardDisplay> selectedCards = new HashSet<CardDisplay>();
+    //public HashSet<CardDisplay> selectedCards = new HashSet<CardDisplay>();
+    public static HashSet<CardDisplay> selectedCards = new HashSet<CardDisplay>();
 
     #region Computational Variables
 
@@ -452,6 +485,8 @@ public class DeckDisplayer : MonoBehaviour
         cardDisplay.SetPositionAndOffset( offset: (Vector3)selectedCardOffset );
         cardDisplay.transform.SetAsLastSibling(); // bring to front so player can see it
 
+        selectedCards = selectedCards.Where(d => d != null || !d.MarkedToBeDestroyed).ToHashSet();
+
         OnCardsSelectedChanged.Invoke();
     }
     public void DeselectCard(CardDisplay cardDisplay, bool invokeOnCardsSelectChanged=true)
@@ -465,8 +500,14 @@ public class DeckDisplayer : MonoBehaviour
 
         cardDisplay.ResetOffset();
 
-        if(invokeOnCardsSelectChanged)
+        selectedCards = selectedCards.Where(d => d != null || !d.MarkedToBeDestroyed).ToHashSet();
+
+        if (invokeOnCardsSelectChanged)
            OnCardsSelectedChanged.Invoke();
+
+        // card display could have been null without errors up to this point isnt that crazy
+        if(cardDisplay != null)
+            cardDisplay.transform.SetSiblingIndex(cardDisplay.TargetSiblingIndex);
     }
 
     public void DeselectAllCards()

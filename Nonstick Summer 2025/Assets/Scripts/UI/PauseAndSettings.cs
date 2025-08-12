@@ -4,6 +4,7 @@ Date Created :          June 20, 2025
 Date Modified :         July 29, 2025
 Brief Description :     Handles UI functionality for pause and settings menu
 ***************************************************/
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,7 @@ public class PauseAndSettings : MonoBehaviour
     [SerializeField] private Slider _mouseSensitivitySlider;
     [SerializeField] private Slider _sfxVolume;
     [SerializeField] private Slider _musicVolume;
+    [SerializeField, Required] private Button settingsBackButton;
 
     private AudioManager am;
 
@@ -26,13 +28,24 @@ public class PauseAndSettings : MonoBehaviour
         am = FindFirstObjectByType<AudioManager>();
 
         if (_mouseSensitivitySlider != null)
+        {
             _mouseSensitivitySlider.value = FindFirstObjectByType<PlayerCamera>().Sensitivity;
+            _mouseSensitivitySlider.onValueChanged.AddListener(UpdateMouseSensitivity);
+        }
 
         if (_sfxVolume != null)
+        {
             _sfxVolume.value = am.sfxVolume;
+            _sfxVolume.onValueChanged.AddListener(UpdateSFXVolume);
+        }
 
         if (_musicVolume != null)
+        {
             _musicVolume.value = am.musicVolume;
+            _sfxVolume.onValueChanged.AddListener(UpdateMusicVolume);
+        }
+
+        settingsBackButton.onClick.AddListener(CloseSettings);
     }
 
     /// <summary>

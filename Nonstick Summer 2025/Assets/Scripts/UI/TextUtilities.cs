@@ -29,6 +29,10 @@ public static class TextUtilities
             .Replace("[DiscardEnergy]", DialogueManager.EnergyGainedPerDiscard.AddSignToString(additonalText: " energy"))
             .Replace("[SilentEnergy]", DialogueManager.EnergyGainedIfSilent.AddSignToString(additonalText: " energy"))
             .Replace("[PlayerEnergy]", DialogueManager.CurrentEnergy.ToString())
+
+            // okay i know its pretty bad to hardcode this but lowkey with such little time left its not worth it to generalize it
+            .Replace("[Energy]", $"<color=#{GameManager.Instance.PositiveEnergyColor.ToHex()}>+3 Energy</color>")
+
             // Text "functions"
             .ReplaceTagColor("Stamp", GameManager.Instance.StampTooltipColor.ToHex())
             .ReplaceTagColor("Gray", Color.gray.ToHex())

@@ -14,15 +14,13 @@ I might've gone really overboard with the animations, sorry cader :,(
 TODO :                  Create functions for easier updating
                         _visualDisplays and displayedData are basically storing the same thing. figure out how to clean that up
 ***************************************************/
+using NaughtyAttributes;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
-using System.Collections.Generic;
-using System.Collections;
-using System.Linq;
-using System;
-using NaughtyAttributes;
-using static Unity.Cinemachine.CinemachineFreeLookModifier;
-using FMOD;
 
 // This script needed to be a Monobehavior to get some of the references needed
 [RequireComponent(typeof(CanvasGroup))]
@@ -52,7 +50,7 @@ public class DeckDisplayer : MonoBehaviour
     [SerializeField]
     private bool bringToFrontOnSelected = false;
 
-    private Vector2 _dimensions;    // Dimensions of the rectTransform cards will spawn in
+    [ReadOnly, SerializeField] private Vector2 _dimensions;    // Dimensions of the rectTransform cards will spawn in
     private Vector3 rectTransformCenter;    // Position of the rectTransform, in screen space
 
     private List<CardDisplay> _visualDisplays = new List<CardDisplay>();
@@ -74,7 +72,9 @@ public class DeckDisplayer : MonoBehaviour
     private void Awake()
     {
         _dimensions = GetComponent<RectTransform>().sizeDelta;
+        _dimensions.x *= (_dimensions.x < 0 ? -1 : 1);
         realCardWidth = _cardPrefab.GetComponent<RectTransform>().rect.width;
+        _dimensions.x -= realCardWidth - spacing;
         canvasGroup = GetComponent<CanvasGroup>();
         OnAnyCardHoverStart.AddListener(OnAnyCardHovered);
         rectTransformCenter = transform.localPosition;
@@ -316,7 +316,7 @@ public class DeckDisplayer : MonoBehaviour
         if (_visualDisplays.Count == 1)
             desiredWidth = realCardWidth;
         else
-            desiredWidth = ((realCardWidth + spacing) * _visualDisplays.Count) - spacing;
+            desiredWidth = ((realCardWidth + spacing) * _visualDisplays.Count) - 2*spacing;
 
         desiredWidth = Mathf.Min(desiredWidth, _dimensions.x);
 

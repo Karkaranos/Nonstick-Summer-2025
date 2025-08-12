@@ -318,7 +318,7 @@ public class DeckDisplayer : MonoBehaviour
         else
             desiredWidth = ((realCardWidth + spacing) * _visualDisplays.Count) - spacing;
 
-        desiredWidth = Mathf.Min(desiredWidth, cardArea.rect.width);
+        desiredWidth = Mathf.Min(desiredWidth, _dimensions.x);
 
         return desiredWidth;
     }

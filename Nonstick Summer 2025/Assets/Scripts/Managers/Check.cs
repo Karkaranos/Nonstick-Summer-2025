@@ -7,7 +7,7 @@ public class Check : MonoBehaviour
     {
         if(FindObjectsByType<Check>(FindObjectsSortMode.None).Length > 1)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
         else
         {

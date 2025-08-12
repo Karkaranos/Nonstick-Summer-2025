@@ -54,12 +54,9 @@ public class DialogueNPCPortraitDisplay : MonoBehaviour
         //making a new function to prevent clutter
         if (dialogue.AnimatedReaction != null)
         {
-            if (portraitAnimation != null)
-                StopCoroutine(portraitAnimation);
-
             PlayReaction(dialogue, character);
         }
-        else if (portraitAnimation == null)
+        if (portraitAnimation == null)
         {
             portraitAnimation = StartCoroutine(UpdateSpriteCoroutine(dialogue.Portrait, character));
         }
@@ -106,6 +103,9 @@ public class DialogueNPCPortraitDisplay : MonoBehaviour
 
         reaction.transform.position = GetAnchor(character);
 
-        StartCoroutine(UpdateSpriteCoroutine(dialogue.Portrait, character, 0.5f));
+        if (portraitAnimation != null)
+            StopCoroutine(portraitAnimation);
+
+        portraitAnimation = StartCoroutine(UpdateSpriteCoroutine(dialogue.Portrait, character, 0.5f));
     }
 }

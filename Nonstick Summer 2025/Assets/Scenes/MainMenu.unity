@@ -935,6 +935,7 @@ MonoBehaviour:
   creditStart: {x: 0, y: 0, z: 0}
   fadeToBlack: {fileID: 1967574086}
   creditsFadeToBlack: {fileID: 112486503}
+  creditsEndingFrame: {fileID: 700873860}
 --- !u!1 &377312104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,6 +1493,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699268702}
   m_CullTransparentMesh: 1
+--- !u!114 &700873860 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4410052015559933056, guid: ff04447c58cb12640bf376f7f14b878d, type: 3}
+  m_PrefabInstance: {fileID: 1791620229}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &738667644
 GameObject:
   m_ObjectHideFlags: 0

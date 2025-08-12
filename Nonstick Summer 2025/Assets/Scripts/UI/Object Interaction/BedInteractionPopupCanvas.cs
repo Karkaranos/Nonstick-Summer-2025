@@ -10,6 +10,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BedInteractionPopupCanvas : MonoBehaviour
 {
@@ -77,5 +78,6 @@ public class BedInteractionPopupCanvas : MonoBehaviour
         {
             fade.StartFadeOut(image, Bed.NextSceneIndex);
         }
+        FindFirstObjectByType<Check>().gameCompleted = true;
     }
 }

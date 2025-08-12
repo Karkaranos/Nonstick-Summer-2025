@@ -175,6 +175,7 @@ MonoBehaviour:
   _mouseSensitivitySlider: {fileID: 0}
   _sfxVolume: {fileID: 0}
   _musicVolume: {fileID: 0}
+  settingsBackButton: {fileID: 6894718102366699253}
 --- !u!1 &6209981119054209491
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +429,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfbbec703031db94ea679be52fe4bd78, type: 3}
+--- !u!114 &6894718102366699253 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8066425416076227958, guid: dfbbec703031db94ea679be52fe4bd78, type: 3}
+  m_PrefabInstance: {fileID: 3485582392870194051}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8081400989214293007 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4645922448216815500, guid: dfbbec703031db94ea679be52fe4bd78, type: 3}

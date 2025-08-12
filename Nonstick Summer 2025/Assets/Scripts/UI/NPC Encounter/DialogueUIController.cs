@@ -190,7 +190,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         if(activeReaction != null)
         {
 
-            Destroy(activeReaction);
+            DestroyImmediate(activeReaction);
 
         }
 

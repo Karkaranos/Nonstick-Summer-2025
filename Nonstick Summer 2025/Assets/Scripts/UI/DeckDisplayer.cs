@@ -72,6 +72,7 @@ public class DeckDisplayer : MonoBehaviour
     private void Awake()
     {
         _dimensions = GetComponent<RectTransform>().sizeDelta;
+        _dimensions.x *= (_dimensions.x < 0 ? -1 : 1);
         realCardWidth = _cardPrefab.GetComponent<RectTransform>().rect.width;
         _dimensions.x -= realCardWidth - spacing;
         canvasGroup = GetComponent<CanvasGroup>();

@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
   m_Name: Mom_m3_3End
   m_EditorClassIdentifier: 
-  dialogue: []
+  dialogue:
+  - Dialogue: <i>Before you can finish your response, Mom hangs up<i/>
+    Portrait: {fileID: 0}
+    AnimatedReaction: {fileID: 0}
+    AudioResponse: Silent
   Charming_Expression:
     NpcReactionText: []
     CombinedDialogue: []

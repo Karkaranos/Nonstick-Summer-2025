@@ -42,7 +42,7 @@ public class PauseAndSettings : MonoBehaviour
         if (_musicVolume != null)
         {
             _musicVolume.value = am.musicVolume;
-            _sfxVolume.onValueChanged.AddListener(UpdateMusicVolume);
+            _musicVolume.onValueChanged.AddListener(UpdateMusicVolume);
         }
 
         settingsBackButton.onClick.AddListener(CloseSettings);

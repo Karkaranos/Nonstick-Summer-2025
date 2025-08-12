@@ -38,6 +38,7 @@ public class MainMenu : MonoBehaviour
     [Tooltip ("Fade to black prefab in scene")]
     [SerializeField][Required] private GameObject fadeToBlack;
     [SerializeField][Required] private Image creditsFadeToBlack;
+    [SerializeField][Required] private RectTransform creditsEndingFrame;
     
 
     //maybe put cursor shenanigans here
@@ -89,11 +90,16 @@ public class MainMenu : MonoBehaviour
 
         yield return new WaitForSeconds(pauseBeforeStartEnd);
         Vector3 pos = creditScroll.transform.position;
-        while(pos.y < heightToReach)
+        Debug.Log(creditsEndingFrame.position);
+        while (creditsEndingFrame.position.y < Screen.height/2)
         {
-            yield return null;
-            pos.y += creditSpeed * Time.deltaTime * Mathf.Clamp(Screen.height/1280, 1, 3);
+            Debug.Log(creditsEndingFrame.position);
+            // old input system lol
+            float speedUp = (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space)) ? 8 : 1;
+
+            pos.y += creditSpeed * Time.deltaTime * Mathf.Clamp(Screen.height/1280, 1, 3) * speedUp;
             creditScroll.transform.position = pos;
+            yield return null;
         }
         yield return new WaitForSeconds(pauseBeforeStartEnd);
 

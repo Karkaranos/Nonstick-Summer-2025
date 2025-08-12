@@ -65,11 +65,15 @@ public class DialogueTree : MonoBehaviour
     {
         visitedNodes = visitedNodes ?? new HashSet<DialogueBranch>();
 
-        if (visitedNodes.Contains(branch))
-        {
-            Debug.LogError("Dialogue Branch loops into itself?");
-            return;
-        }
+        //the problem with this was that it was keeping from two routes leading back into one branch
+        //and so it was preventing the player from finishing dialogue
+
+        //if (visitedNodes.Contains(branch))
+        //{
+        //    //Debug.LogError("Dialogue Branch loops into itself?");
+        //    return;
+        //}
+
         visitedNodes.Add(branch);
 
         //ik we're changing this soon but i can get there when we get there

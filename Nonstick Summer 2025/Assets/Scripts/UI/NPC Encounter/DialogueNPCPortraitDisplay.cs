@@ -69,25 +69,12 @@ public class DialogueNPCPortraitDisplay : MonoBehaviour
     private IEnumerator UpdateSpriteCoroutine(Sprite portrait, Character character, float delay = 0)
     {
         yield return new WaitForSeconds(delay);
-
-        var targetPos = defaultSpritePosition + (Vector3.up * 100);
-        while (NPCImage.transform.position != targetPos)
-        {
-            NPCImage.transform.position = Vector3.MoveTowards(NPCImage.transform.position, targetPos, Time.deltaTime * bobSpeed);
-            yield return null;
-        }
         NPCImage.sprite = portrait;
-        while (NPCImage.transform.position != defaultSpritePosition)
-        {
-            NPCImage.transform.position = Vector3.MoveTowards(NPCImage.transform.position, defaultSpritePosition, Time.deltaTime * bobSpeed);
-            yield return null;
-        }
 
-        float timeStarted = Time.time;
         while(true)
         {
             sinTime += Time.deltaTime;  
-            NPCImage.transform.position = defaultSpritePosition + new Vector3(0,  -Mathf.Sin(sinTime * bobSpeed) * bobHeight);
+            NPCImage.transform.position = defaultSpritePosition + new Vector3(0, -Mathf.Sin(sinTime * bobSpeed) * bobHeight);
             yield return null;
         }
     }

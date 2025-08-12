@@ -35,6 +35,7 @@ public partial class CardDisplay : MonoBehaviour
     private MouseInteractionEvents mouseInteraction;
     private RectTransform rectTransform;
     private RenderMode renderMode;
+    private static Camera playerCamera;
 
     public UnityEvent<CardDisplay> OnMouseDown = new UnityEvent<CardDisplay> ();
 
@@ -70,9 +71,15 @@ public partial class CardDisplay : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if(GameManager.PlayerCameraRef == null || rectTransform == null)
+        if(rectTransform == null)
         { 
             rectTransform = GetComponent<RectTransform>();
+            return;
+        }
+
+        if (playerCamera == null)
+        {
+            playerCamera = FindAnyObjectByType<PlayerCamera>().playerCamera;
             return;
         }
 
@@ -83,7 +90,7 @@ public partial class CardDisplay : MonoBehaviour
             //Vector3 toCamera = GameManager.PlayerCameraRef.transform.position - rectTransform.WorldPosition();
             //float dot = Vector3.Dot(transform.forward, toCamera.normalized);
             //facingFront = dot <= 0;
-            Vector3 toCamera = (GameManager.PlayerCameraRef.transform.position - transform.position).normalized;
+            Vector3 toCamera = (playerCamera.transform.position - transform.position).normalized;
             facingFront = Vector3.Dot(transform.forward, toCamera) > 0f;
         }
         else

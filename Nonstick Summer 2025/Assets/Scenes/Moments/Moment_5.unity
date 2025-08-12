@@ -38849,7 +38849,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &695317459
 Transform:
@@ -139349,6 +139349,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 388878597}
     m_Modifications:
+    - target: {fileID: 3216093029526474184, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+      propertyPath: StartingDialogueBranch
+      value: 
+      objectReference: {fileID: 11400000, guid: e1f697b59736dda4aa7322a91beb598a, type: 2}
     - target: {fileID: 368249545651296241, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -139471,7 +139475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: combatPrompt
-      value: Wanna chat with Cousin?
+      value: Talk with cousin?
       objectReference: {fileID: 0}
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: preCombatLine
@@ -139513,10 +139517,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    - target: {fileID: 3216093029526474184, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
-      propertyPath: StartingDialogueBranch
-      value: 
-      objectReference: {fileID: 11400000, guid: e1f697b59736dda4aa7322a91beb598a, type: 2}
     m_RemovedComponents:
     - {fileID: 3216093029526474184, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
     m_RemovedGameObjects: []
@@ -167512,9 +167512,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1421048117}
     m_Modifications:
+    - target: {fileID: 7179332883183739400, guid: 91c8aa2c929542c4eb09cbf2b6da00de, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8363980947026969177, guid: 91c8aa2c929542c4eb09cbf2b6da00de, type: 3}
       propertyPath: m_Name
       value: Counter_Sink
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363980947026969177, guid: 91c8aa2c929542c4eb09cbf2b6da00de, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9176371178894121187, guid: 91c8aa2c929542c4eb09cbf2b6da00de, type: 3}
       propertyPath: m_LocalPosition.x

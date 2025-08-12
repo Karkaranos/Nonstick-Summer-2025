@@ -38,7 +38,8 @@ public class DialogueManager
     public static float CurrentRelationshipScore => RelationshipManager.characterRelationships[currentCharacter].currentValue;
     public static float CurrentEnergy { 
         get { return _currentEnergy; }
-        set { GameManager.Instance.StartCoroutine(SetCurrentEnergy(value)); }
+        set { if (GameManager.Instance == null) return;
+            GameManager.Instance.StartCoroutine(SetCurrentEnergy(value)); }
     }
     private static float _currentEnergy;
 

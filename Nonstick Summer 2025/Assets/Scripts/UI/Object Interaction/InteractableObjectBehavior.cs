@@ -26,6 +26,7 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
     [SerializeField, Tooltip("Displays after interacting with this object before the response the player chose")] private string _response2 = "";
     [SerializeField, Tooltip("Displays if object cannot be interacted with")] private string _cannotInteract = "You cannot interact with this yet.";
     [SerializeField] private PersonalityOption[] _options = new PersonalityOption[3];
+    [SerializeField] private bool HideObjectAfterInteraction = false;
 
     private bool hasGivenCard = false;
     private bool canBeInteractedWith = false;
@@ -175,7 +176,18 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
                 baseMat.Add(m);
             }
             mr.SetMaterials(baseMat);
+
+            // hide object
+            if (HideObjectAfterInteraction)
+            {
+                /*var filter = g.GetComponent<MeshFilter>();
+                if (filter != null)
+                    filter.mesh = null;*/
+                mr.enabled = false;
+            }
         }
+
+        
     }
 }
 

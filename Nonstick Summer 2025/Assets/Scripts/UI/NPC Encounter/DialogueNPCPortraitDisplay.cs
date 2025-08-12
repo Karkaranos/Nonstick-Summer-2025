@@ -20,7 +20,8 @@ public class DialogueNPCPortraitDisplay : MonoBehaviour
 {
     [SerializeField, Required] private Image NPCImage;
 
-    [SerializeField] float bobSpeed = 30;
+    [SerializeField] float bobSpeed = 15;
+    [SerializeField] float bobHeight = 5;
 
     [Header("Animated Reaction Anchors")]
     [SerializeField] Vector2 momAnchor;
@@ -64,6 +65,7 @@ public class DialogueNPCPortraitDisplay : MonoBehaviour
         }
     }
 
+    private float sinTime = 0;
     private IEnumerator UpdateSpriteCoroutine(Sprite portrait, Character character, float delay = 0)
     {
         yield return new WaitForSeconds(delay);
@@ -84,7 +86,8 @@ public class DialogueNPCPortraitDisplay : MonoBehaviour
         float timeStarted = Time.time;
         while(true)
         {
-            NPCImage.transform.position = defaultSpritePosition + new Vector3(0, ( -Mathf.Sin(Time.time - timeStarted) * bobSpeed));
+            sinTime += Time.deltaTime;  
+            NPCImage.transform.position = defaultSpritePosition + new Vector3(0,  -Mathf.Sin(sinTime * bobSpeed) * bobHeight);
             yield return null;
         }
     }

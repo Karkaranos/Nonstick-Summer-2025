@@ -45,7 +45,8 @@ public class PauseAndSettings : MonoBehaviour
             _musicVolume.onValueChanged.AddListener(UpdateMusicVolume);
         }
 
-        settingsBackButton.onClick.AddListener(CloseSettings);
+        if(settingsBackButton != null)
+            settingsBackButton.onClick.AddListener(CloseSettings);
     }
 
     /// <summary>

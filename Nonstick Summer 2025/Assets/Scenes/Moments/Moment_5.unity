@@ -29316,10 +29316,10 @@ MonoBehaviour:
   - {x: -46.90064, y: 38.3344, z: 2.5670989}
   - {x: -46.90064, y: -38.3344, z: 2.5670989}
   m_Textures0:
-  - {x: 0.02959773, y: 0.2182833}
-  - {x: 0.029458344, y: 0.9849713}
-  - {x: 0.9674712, y: 0.9851419}
-  - {x: 0.96761054, y: 0.21845388}
+  - {x: 0.02959773, y: 0.23837256}
+  - {x: 0.029458344, y: 1.0050606}
+  - {x: 0.9674712, y: 1.0052311}
+  - {x: 0.96761054, y: 0.23854315}
   m_Textures2: []
   m_Textures3: []
   m_Tangents:
@@ -29336,11 +29336,19 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 1232719218}
-  m_VersionIndex: 34
+  m_VersionIndex: 40
   m_IsSelectable: 1
-  m_SelectedFaces: 
-  m_SelectedEdges: []
-  m_SelectedVertices: 
+  m_SelectedFaces: 00000000
+  m_SelectedEdges:
+  - a: 0
+    b: 1
+  - a: 1
+    b: 2
+  - a: 2
+    b: 3
+  - a: 3
+    b: 0
+  m_SelectedVertices: 00000000010000000200000003000000
 --- !u!1 &476706247
 GameObject:
   m_ObjectHideFlags: 0
@@ -41633,7 +41641,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 224
-    _typelessdata: 419a3b426d5619c2594b244000000000000000000000803f000080bf93a93eb900000000000080bfb076f23ce023fa3d19467b3f0bd7a33c419a3b426d561942594b244000000000000000000000803f000080bf0ba13eb900000000000080bf6052f13c278a633f1b467b3f8c504e3f419a3bc26d561942594b244000000000000000000000803f000080bf93a93eb900000000000080bf2fac773f5495633f44d7a33c8e504e3f419a3bc26d5619c2594b244000000000000000000000803f000080bf19b23eb900000000000080bf51b5773f507dfa3d0bd7a33c4fd7a33c
+    _typelessdata: 419a3b426d5619c2594b244000000000000000000000803f000080bf93a93eb900000000000080bfb076f23ca87f483e19467b3f0bd7a33c419a3b426d561942594b244000000000000000000000803f000080bf0ba13eb900000000000080bf6052f13c9565763f1b467b3f8c504e3f419a3bc26d561942594b244000000000000000000000803f000080bf93a93eb900000000000080bf2fac773fc270763f44d7a33c8e504e3f419a3bc26d5619c2594b244000000000000000000000803f000080bf19b23eb900000000000080bf51b5773f60ac483e0bd7a33c4fd7a33c
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -45450,7 +45458,7 @@ PrefabInstance:
     - target: {fileID: -6864858730025412571, guid: 50ca2b45350fd3342b39d83824ce7135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 24d6dec9b4d586048afb058c88212817, type: 2}
+      objectReference: {fileID: 2100000, guid: 70bcb76256f7acc49a541b5867d3dc49, type: 2}
     - target: {fileID: -6268267163159655397, guid: 50ca2b45350fd3342b39d83824ce7135, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -61741,23 +61749,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1708879188632933898, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1708879188632933898, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1708879188632933898, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 21.77075
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1708879188632933898, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 35.656124
       objectReference: {fileID: 0}
     - target: {fileID: 1708879188632933898, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 1830049853470792543, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_Name
@@ -61801,23 +61809,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4067548123240273524, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4067548123240273524, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4067548123240273524, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 21.77075
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4067548123240273524, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 10.885375
       objectReference: {fileID: 0}
     - target: {fileID: 4067548123240273524, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 4838425317918606827, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_Sprite
@@ -61845,23 +61853,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5520967587660388783, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5520967587660388783, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5520967587660388783, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 21.77075
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5520967587660388783, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 60.426876
       objectReference: {fileID: 0}
     - target: {fileID: 5520967587660388783, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 5578615919102558987, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -86958,7 +86966,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 224
-    _typelessdata: 419a3b426d5619c2594b244000000000000000000000803f000080bf19b23eb900000000000080bff076f23ca8855f3e19467b3f0bd7a33c419a3b426d561942594b244000000000000000000000803f000080bf19b23eb900000000000080bfa052f13c14277c3f1b467b3f8c504e3f419a3bc26d561942594b244000000000000000000000803f000080bf19b23eb900000000000080bf31ac773f42327c3f44d7a33c8e504e3f419a3bc26d5619c2594b244000000000000000000000803f000080bf19b23eb900000000000080bf53b5773f60b25f3e0bd7a33c4fd7a33c
+    _typelessdata: 419a3b426d5619c2594b244000000000000000000000803f000080bf19b23eb900000000000080bff076f23cf017743e19467b3f0bd7a33c419a3b426d561942594b244000000000000000000000803f000080bf19b23eb900000000000080bfa052f13cd3a5803f1b467b3f8c504e3f419a3bc26d561942594b244000000000000000000000803f000080bf19b23eb900000000000080bf31ac773f6aab803f44d7a33c8e504e3f419a3bc26d5619c2594b244000000000000000000000803f000080bf19b23eb900000000000080bf53b5773fa844743e0bd7a33c4fd7a33c
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -104348,7 +104356,7 @@ PrefabInstance:
     - target: {fileID: -6864858730025412571, guid: 50ca2b45350fd3342b39d83824ce7135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 251fdd73f051d3e44a7c7629f02b6019, type: 2}
+      objectReference: {fileID: 2100000, guid: 3216bd0a47e274641811e8b03b3aaffb, type: 2}
     - target: {fileID: -4914652883635772883, guid: 50ca2b45350fd3342b39d83824ce7135, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -104454,10 +104462,10 @@ MonoBehaviour:
   - {x: -46.90064, y: 38.3344, z: 2.5670989}
   - {x: -46.90064, y: -38.3344, z: 2.5670989}
   m_Textures0:
-  - {x: 0.02959761, y: 0.12213874}
-  - {x: 0.029458225, y: 0.8888268}
-  - {x: 0.96747106, y: 0.8889973}
-  - {x: 0.9676104, y: 0.12230933}
+  - {x: 0.02959761, y: 0.19579947}
+  - {x: 0.029458225, y: 0.9624875}
+  - {x: 0.96747106, y: 0.96265805}
+  - {x: 0.9676104, y: 0.19597006}
   m_Textures2: []
   m_Textures3: []
   m_Tangents:
@@ -104474,7 +104482,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 762812178}
-  m_VersionIndex: 10
+  m_VersionIndex: 28
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

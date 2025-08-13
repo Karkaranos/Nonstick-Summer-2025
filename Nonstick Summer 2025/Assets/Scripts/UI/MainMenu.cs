@@ -23,6 +23,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject creditParent;
     [SerializeField] private GameObject creditScroll;
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] private CreditBehavior creditObj;
 
     [Header("Credit Controls")]
     [SerializeField] private float creditSpeed;
@@ -37,15 +38,12 @@ public class MainMenu : MonoBehaviour
     [Header("Fade Transition Visuals")]
     [Tooltip ("Fade to black prefab in scene")]
     [SerializeField][Required] private GameObject fadeToBlack;
-    [SerializeField][Required] private Image creditsFadeToBlack;
     [SerializeField][Required] private RectTransform creditsEndingFrame;
     
 
     //maybe put cursor shenanigans here
     private void Start()
     {
-        creditStart = creditScroll.transform.localPosition;
-        heightToReach = creditScroll.GetComponent<RectTransform>().rect.height;
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -55,12 +53,18 @@ public class MainMenu : MonoBehaviour
         {
             Destroy(deleteMe.gameObject);
         }
+
+        if(FindFirstObjectByType<Check>().gameCompleted)
+        {
+            OpenCredits(false);
+        }
     }
 
     public void StartGame()
     {
         FadeTransition fade = fadeToBlack.GetComponent<FadeTransition>();
 
+        FindFirstObjectByType<Check>().gameCompleted = false;
         DoFadeOut(fade);
         //Cursor.visible = false; CALEB CALEB CALEB CALEB CALEB CALEB
     }
@@ -71,60 +75,22 @@ public class MainMenu : MonoBehaviour
         openMenu = Instantiate(controls);
     }
 
-    public void OpenCredits()
-    {
-        mainMenu.SetActive(false);
-        creditParent.SetActive(true);
-        credits = StartCoroutine(ScrollCredits());
-    }
 
-    private void ResetCredits()
+    public void OpenCredits(bool buttonActive)
     {
-        StopCoroutine(credits);
-        creditScroll.transform.localPosition = creditStart;
-    }
-
-    private IEnumerator ScrollCredits()
-    {
-        creditsFadeToBlack.color = Color.clear;
-
-        yield return new WaitForSeconds(pauseBeforeStartEnd);
-        Vector3 pos = creditScroll.transform.position;
-        Debug.Log(creditsEndingFrame.position);
-        while (creditsEndingFrame.position.y < Screen.height/2)
+        if(creditObj!=null)
         {
-            Debug.Log(creditsEndingFrame.position);
-            // old input system lol
-            float speedUp = (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space)) ? 8 : 1;
-
-            pos.y += creditSpeed * Time.deltaTime * Mathf.Clamp(Screen.height/1280, 1, 3) * speedUp;
-            creditScroll.transform.position = pos;
-            yield return null;
+            mainMenu.SetActive(false);
+            creditObj.OpenCredits(buttonActive);
         }
-        yield return new WaitForSeconds(pauseBeforeStartEnd);
-
-        float timeElapsed = 0;
-        while(timeElapsed < 2)
-        {
-            timeElapsed += Time.deltaTime;
-            float t = timeElapsed / 2;
-            creditsFadeToBlack.color = new Color(0, 0, 0, t);
-            yield return null;
-        }
-
-        yield return new WaitForSeconds(pauseBeforeStartEnd * 2);
-
-        CloseCredits();
-
     }
 
     public void CloseCredits()
     {
         creditParent.SetActive(false);
         mainMenu.SetActive(true);
-        ResetCredits();
+        creditObj.ResetCredits();
     }
-
     public void CloseMenu()
     {
         if(openMenu != null)

@@ -11,6 +11,8 @@ public class FadeTransition : MonoBehaviour
     [Tooltip("How long fade from black is delayed before starting the fade")]
     [SerializeField] private float delayLength = 2;
 
+    [SerializeField] private GameObject credits;
+
     public void StartFadeOut(Image image, int nextScene)
     {
         if (fadeCoroutine == null)
@@ -53,6 +55,11 @@ public class FadeTransition : MonoBehaviour
 
         Destroy(image);
         SceneManager.LoadScene(nextScene);
+        if (nextScene == 0)
+        {
+            Instantiate(credits);
+        }
+
         yield return null;
     }
 

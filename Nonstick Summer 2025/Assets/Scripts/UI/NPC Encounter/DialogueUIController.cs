@@ -28,6 +28,7 @@ using TMPro;
 using UnityEngine.TextCore.Text;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class DialogueUIController : Singleton<DialogueUIController>
 {
@@ -65,6 +66,9 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [HideInInspector] public GameObject activeReaction;
     public GameObject EnabledButton;
 
+    private Scene currentScene;
+    [HideInInspector] public bool inSceneFive = false;
+
     public IEnumerator Initialize(DialogueBranch startBranch, Character character, bool isBoss = true, GameObject objRef = null)
     {
         DialogueManager.OnOpenCombatUI(startBranch, character);
@@ -101,11 +105,21 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         objectiveText.text = GameManager.ObjectiveReference.GetObjective();
 
-        yield return ToggleUIForDialogueProgression(false);
+        currentScene = SceneManager.GetActiveScene();
+        if (currentScene.name == "Moment_5")
+        {
+
+            inSceneFive = true;
+
+        }
+        else { inSceneFive = false; }
+
+            yield return ToggleUIForDialogueProgression(false);
 
         //yield return OpenCombatUI_Coroutine();
 
         yield return dialogueBox.Initialize(startBranch, character);
+
     }
 
     public IEnumerator OpenCombatUI_Coroutine()
@@ -141,7 +155,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         {
             playerDialogueBubble.WriteText(selectedCardData);
 
-            if (Mathf.Abs(selectedCardData.EnergyCost) > DialogueManager.CurrentEnergy)
+            if (Mathf.Abs(selectedCardData.EnergyCost) > DialogueManager.CurrentEnergy && inSceneFive == false)
             {
 
                 EnabledButton.SetActive(false);

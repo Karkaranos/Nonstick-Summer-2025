@@ -36677,6 +36677,7 @@ MonoBehaviour:
     ButtonColor: {r: 1, g: 1, b: 1, a: 1}
     ModifiersToGive:
     - {fileID: 11400000, guid: 2388c5239da79564292dc953a127cbbb, type: 2}
+  HideObjectAfterInteraction: 0
   InteractSuccessful: 0
   chosenOption: 
   OnClickEvent1:
@@ -73042,6 +73043,7 @@ MonoBehaviour:
     ButtonColor: {r: 1, g: 1, b: 1, a: 1}
     ModifiersToGive:
     - {fileID: 11400000, guid: 4236df83ca6b76d48b35473ec9993a0e, type: 2}
+  HideObjectAfterInteraction: 0
   InteractSuccessful: 0
   chosenOption: 
   OnClickEvent1:
@@ -98598,6 +98600,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1097094381}
     m_Modifications:
+    - target: {fileID: 4208574725587807151, guid: a49d124127c0d8a45a0cf0371debc150, type: 3}
+      propertyPath: m_Height
+      value: 0.49010754
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208574725587807151, guid: a49d124127c0d8a45a0cf0371debc150, type: 3}
+      propertyPath: m_Radius
+      value: 0.2569461
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208574725587807151, guid: a49d124127c0d8a45a0cf0371debc150, type: 3}
+      propertyPath: m_Center.x
+      value: 0.014751911
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208574725587807151, guid: a49d124127c0d8a45a0cf0371debc150, type: 3}
+      propertyPath: m_Center.y
+      value: 0.054946292
+      objectReference: {fileID: 0}
     - target: {fileID: 4986901033322174148, guid: a49d124127c0d8a45a0cf0371debc150, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.25314522
@@ -173776,6 +173794,7 @@ MonoBehaviour:
     ButtonColor: {r: 1, g: 1, b: 1, a: 1}
     ModifiersToGive:
     - {fileID: 11400000, guid: ee82f2ab5548cd54b9229a935295297c, type: 2}
+  HideObjectAfterInteraction: 0
   InteractSuccessful: 0
   chosenOption: 
   OnClickEvent1:

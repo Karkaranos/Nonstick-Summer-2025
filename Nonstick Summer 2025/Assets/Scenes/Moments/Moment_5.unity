@@ -45221,7 +45221,7 @@ PrefabInstance:
       objectReference: {fileID: 1609752021}
     - target: {fileID: -7031968841837983189, guid: 50ca2b45350fd3342b39d83824ce7135, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6864858730025412571, guid: 50ca2b45350fd3342b39d83824ce7135, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -45233,7 +45233,7 @@ PrefabInstance:
       objectReference: {fileID: 898407052}
     - target: {fileID: -4914652883635772883, guid: 50ca2b45350fd3342b39d83824ce7135, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4203205446690920902, guid: 50ca2b45350fd3342b39d83824ce7135, type: 3}
       propertyPath: m_Mesh
@@ -45241,11 +45241,11 @@ PrefabInstance:
       objectReference: {fileID: 166600830}
     - target: {fileID: -4087232582433580524, guid: 50ca2b45350fd3342b39d83824ce7135, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2962773855165385726, guid: 50ca2b45350fd3342b39d83824ce7135, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -1107313830479559421, guid: 50ca2b45350fd3342b39d83824ce7135, type: 3}
       propertyPath: m_Mesh
@@ -45257,11 +45257,11 @@ PrefabInstance:
       objectReference: {fileID: 1483184388}
     - target: {fileID: 261208806725699688, guid: 50ca2b45350fd3342b39d83824ce7135, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 463464288700075851, guid: 50ca2b45350fd3342b39d83824ce7135, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 50ca2b45350fd3342b39d83824ce7135, type: 3}
       propertyPath: m_Name
@@ -45269,11 +45269,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 50ca2b45350fd3342b39d83824ce7135, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3183018425182998758, guid: 50ca2b45350fd3342b39d83824ce7135, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3761782797815093057, guid: 50ca2b45350fd3342b39d83824ce7135, type: 3}
       propertyPath: m_Mesh
@@ -45281,7 +45281,7 @@ PrefabInstance:
       objectReference: {fileID: 1232719218}
     - target: {fileID: 7128921046689818489, guid: 50ca2b45350fd3342b39d83824ce7135, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -66292,11 +66292,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5983532798112357502, guid: b639a62f0f6d6c7459381fe7e545a9ac, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4194220464564197117, guid: b639a62f0f6d6c7459381fe7e545a9ac, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b639a62f0f6d6c7459381fe7e545a9ac, type: 3}
       propertyPath: m_Name
@@ -66304,7 +66304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b639a62f0f6d6c7459381fe7e545a9ac, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -99497,7 +99497,7 @@ MonoBehaviour:
   applyInteractableShaders: 1
   applyIfActiveObjective: 1
   objectiveShader: {fileID: 0}
-  interactableShader: {fileID: 2100000, guid: b294047e68dd4224c81a9b1f3a855124, type: 2}
+  interactableShader: {fileID: -876546973899608171, guid: 6bdf35da1294cad46a7cebe96243d56a, type: 3}
   affectedMeshes:
   - {fileID: 1203210954}
   _statement: It's your phone.
@@ -99518,6 +99518,7 @@ MonoBehaviour:
     ButtonColor: {r: 1, g: 1, b: 1, a: 1}
     ModifiersToGive:
     - {fileID: 11400000, guid: 4236df83ca6b76d48b35473ec9993a0e, type: 2}
+  HideObjectAfterInteraction: 0
   InteractSuccessful: 0
   chosenOption: 
   OnClickEvent1:

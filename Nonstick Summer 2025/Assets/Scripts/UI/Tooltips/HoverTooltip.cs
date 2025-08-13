@@ -47,7 +47,7 @@ public abstract class HoverTooltip : MonoBehaviour
 
         RefreshTooltipText();
 
-        Refresh();
+        RefreshLayout();
     }
 
     public void Close()
@@ -57,10 +57,10 @@ public abstract class HoverTooltip : MonoBehaviour
             StaticUtilities.DisableCanvasGroup(tooltipGroup);
     }
 
-    private void Refresh()
+    private void RefreshLayout()
     {
         var rectTransform = tooltipGroup.GetComponent<RectTransform>();
-        if(rectTransform != null )
+        if(rectTransform == null )
         {
             Debug.LogError("How is this null bruh");
             return;
@@ -70,6 +70,13 @@ public abstract class HoverTooltip : MonoBehaviour
         if(rectTransform.parent!=null)
         {
             LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform.parent as RectTransform);
+
+            // for card tooltips [if i could put the sob emoji in a code comment i would put it here]
+            if (rectTransform.parent.parent != null)
+            {
+                if(rectTransform.parent.parent is RectTransform)
+                    LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform.parent.parent as RectTransform);
+            }
         }
     }
 

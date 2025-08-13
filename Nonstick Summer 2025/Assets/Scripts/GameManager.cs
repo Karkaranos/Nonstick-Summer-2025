@@ -106,13 +106,20 @@ public class GameManager : Singleton<GameManager>
     {
 
         DialogueManager.CurrentEnergy = _defaultEnergy;
+
         if (scene.name.Contains("1"))
         {
             DeckManagerReference = null;
             RelationshipManagerReference = null;
             ModifierManagerReference = null;
             DeckManagerReference = new DeckManager(startingCards);
+
+            grandmaStartingValue.currentValue = 25;
+            uncleStartingValue.currentValue = 25;
+            cousinStartingValue.currentValue = 25;
+            momStartingValue.currentValue = 25;
             RelationshipManagerReference = new RelationshipManager(grandmaStartingValue, uncleStartingValue, cousinStartingValue, momStartingValue);
+
             ModifierManagerReference = new ModifierManager(startingModifiers);
         }
 

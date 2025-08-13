@@ -14,33 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: Okay. Um, how about this?
-    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    Portrait: {fileID: 21300000, guid: 2071a3956799eac499fe06278e1f69e1, type: 3}
     AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
     AudioResponse: Neutral
   - Dialogue: I've brought my cards with me! From way back when!
-    Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+    Portrait: {fileID: 21300000, guid: bf08644dbaefc5a4ba15ddce9653347b, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Happy
   - Dialogue: Maybe we could play a round? Like we used to?
-    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    Portrait: {fileID: 21300000, guid: 2071a3956799eac499fe06278e1f69e1, type: 3}
     AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
     AudioResponse: Neutral
   - Dialogue: I'll warn you that I'm probably, like, REALLY rusty.
-    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    Portrait: {fileID: 21300000, guid: 2071a3956799eac499fe06278e1f69e1, type: 3}
     AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
     AudioResponse: Neutral
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "Oh, really? That\u2019s, um... That\u2019s a little crazy."
-      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      Portrait: {fileID: 21300000, guid: 6506522cd75f2404d91e8fb4738abf28, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
     - Dialogue: But hey, we can still try later, right?
-      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      Portrait: {fileID: 21300000, guid: 2071a3956799eac499fe06278e1f69e1, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Neutral
     - Dialogue: Or not... that's fine too.
-      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      Portrait: {fileID: 21300000, guid: 6506522cd75f2404d91e8fb4738abf28, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
     CombinedDialogue: []
@@ -54,11 +54,11 @@ MonoBehaviour:
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: 'Right. Right... '
-      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      Portrait: {fileID: 21300000, guid: 6506522cd75f2404d91e8fb4738abf28, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
     - Dialogue: "Can\u2019t believe I bothered..."
-      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+      Portrait: {fileID: 21300000, guid: 9291a82ed0f216746b4c5f0064e64c27, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
     CombinedDialogue: []
@@ -72,7 +72,7 @@ MonoBehaviour:
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: You really think so? Haha! How time flies...
-      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      Portrait: {fileID: 21300000, guid: bf08644dbaefc5a4ba15ddce9653347b, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Happy
     CombinedDialogue:
@@ -152,11 +152,11 @@ MonoBehaviour:
   Charming_Question:
     NpcReactionText:
     - Dialogue: Of course I do! They meant a lot to me, you know?
-      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      Portrait: {fileID: 21300000, guid: bf08644dbaefc5a4ba15ddce9653347b, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Happy
     - Dialogue: "Uh... Let me know when, alright? I\u2019m free whenever, I guess."
-      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      Portrait: {fileID: 21300000, guid: 2071a3956799eac499fe06278e1f69e1, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Neutral
     CombinedDialogue:
@@ -187,7 +187,7 @@ MonoBehaviour:
   Assertive_Question:
     NpcReactionText:
     - Dialogue: ...Ugh. Was it really so wrong that I wanted to be close to you?
-      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+      Portrait: {fileID: 21300000, guid: 9291a82ed0f216746b4c5f0064e64c27, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
     CombinedDialogue: []
@@ -201,7 +201,7 @@ MonoBehaviour:
   Sappy_Question:
     NpcReactionText:
     - Dialogue: "Oh! Really? Okay! I\u2019ll be waiting, then!"
-      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      Portrait: {fileID: 21300000, guid: bf08644dbaefc5a4ba15ddce9653347b, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Happy
     CombinedDialogue: []

@@ -14,19 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Dialogue: 'Is it so hard for you to think of me as a person?! '
-    Portrait: {fileID: 0}
-    AnimatedReaction: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 9291a82ed0f216746b4c5f0064e64c27, type: 3}
+    AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+    AudioResponse: Angry
   - Dialogue: ...Whatever.
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 9291a82ed0f216746b4c5f0064e64c27, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: Silent
   - Dialogue: Leave me alone.
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: 9291a82ed0f216746b4c5f0064e64c27, type: 3}
     AnimatedReaction: {fileID: 0}
+    AudioResponse: Angry
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Ehehe!
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Hey, thanks!
     RelationshipCheckRequired: 0
@@ -40,6 +44,7 @@ MonoBehaviour:
     - Dialogue: Ehehe...
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Whatever. Sure.
     RelationshipCheckRequired: 0
@@ -53,6 +58,7 @@ MonoBehaviour:
     - Dialogue: Ehehe!
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "...That\u2019s fine. It\u2019s fine. It\u2019s fine... Uh, thanks!"
     RelationshipCheckRequired: 0
@@ -66,6 +72,7 @@ MonoBehaviour:
     - Dialogue: "Um. I\u2019m not sure what they\u2019re supposed to look like..."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "Oh, they\u2019re definitely still mixed up."
     RelationshipCheckRequired: 0
@@ -80,6 +87,7 @@ MonoBehaviour:
         do!"
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "They\u2019re so greasy..."
     RelationshipCheckRequired: 0
@@ -93,6 +101,7 @@ MonoBehaviour:
     - Dialogue: Ehehe!
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: See you later!
     RelationshipCheckRequired: 0
@@ -106,6 +115,7 @@ MonoBehaviour:
     - Dialogue: "Um. I\u2019m not sure what they\u2019re supposed to look like..."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Are you SURE these are all of them?
     RelationshipCheckRequired: 0
@@ -119,6 +129,7 @@ MonoBehaviour:
     - Dialogue: Give me a moment! Geez.
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: ...Why are you still here?
     RelationshipCheckRequired: 0
@@ -132,6 +143,7 @@ MonoBehaviour:
     - Dialogue: I promise! I swear!
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Will you really leave me alone this time?
     RelationshipCheckRequired: 0

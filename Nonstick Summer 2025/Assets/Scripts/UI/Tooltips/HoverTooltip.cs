@@ -46,6 +46,8 @@ public abstract class HoverTooltip : MonoBehaviour
         }
 
         RefreshTooltipText();
+
+        Refresh();
     }
 
     public void Close()
@@ -53,6 +55,22 @@ public abstract class HoverTooltip : MonoBehaviour
         tooltipGroup.gameObject.SetActive(false);
         if(tooltipGroup != null)
             StaticUtilities.DisableCanvasGroup(tooltipGroup);
+    }
+
+    private void Refresh()
+    {
+        var rectTransform = tooltipGroup.GetComponent<RectTransform>();
+        if(rectTransform != null )
+        {
+            Debug.LogError("How is this null bruh");
+            return;
+        }
+        LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
+
+        if(rectTransform.parent!=null)
+        {
+            LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform.parent as RectTransform);
+        }
     }
 
     public void RefreshTooltipText()
@@ -81,6 +99,7 @@ public abstract class HoverTooltip : MonoBehaviour
     protected virtual void OnPlayerClickComponent()
     {
         // Crickets...
+        // why didnt i make this abstract bruhh
     }
 
     /// <summary>

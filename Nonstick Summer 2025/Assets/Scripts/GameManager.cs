@@ -112,13 +112,6 @@ public class GameManager : Singleton<GameManager>
             ModifierManagerReference = new ModifierManager(startingModifiers);
         }
 
-        if(scene.name.Contains("5"))
-        {
-
-            DialogueUIController.Instance.inSceneFive = true;
-
-        }
-
         ObjectiveReference = FindFirstObjectByType<Objectives>();
 
     }

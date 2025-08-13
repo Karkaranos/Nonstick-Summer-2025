@@ -154,13 +154,14 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
             for(int i=0; i<mr.materials.Length; i++)
             {
                 // not sure if applyObjectiveShader or applyInteractableShader should b used here
-                var shaderToUse = interactableShader ?? objectiveShader;
+                var shaderToUse = interactableShader == null ? objectiveShader : interactableShader;
                 var newMaterial = new Material(shaderToUse);
-                newMaterial.SetTexture("_MainTex", originalMaterials[g][i].mainTexture);
-                newMaterial.SetColor("_BaseColor", originalMaterials[g][i].color);
-                //newMaterial.SetTexture("_MainTex", originalMaterials[g][i].GetTexture("_BaseMap"));
-                //newMaterial.SetColor("_BaseMap", originalMaterials[g][i].GetColor("_BaseMap"));
-                //newMaterial.mainTexture = mr.materials[i].mainTexture;
+                var originalMaterial = originalMaterials[g][i];
+
+                newMaterial.SetTexture("_MainTex", originalMaterial.mainTexture);
+                newMaterial.SetColor("_BaseColor", originalMaterial.color);
+                newMaterial.SetInt("_Cull", originalMaterial.GetInt("_Cull")); // face mode
+
                 materials.Add(newMaterial);
             }
             mr.SetMaterials(materials);

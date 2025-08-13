@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using System.Linq;
 
 public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
 {
@@ -26,6 +27,7 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
     [SerializeField, Tooltip("Displays after interacting with this object before the response the player chose")] private string _response2 = "";
     [SerializeField, Tooltip("Displays if object cannot be interacted with")] private string _cannotInteract = "You cannot interact with this yet.";
     [SerializeField] private PersonalityOption[] _options = new PersonalityOption[3];
+    [SerializeField] private bool HideObjectAfterInteraction = false;
 
     private bool hasGivenCard = false;
     private bool canBeInteractedWith = false;
@@ -42,6 +44,8 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
     public UnityEvent OnClickEvent1;
     public UnityEvent OnClickEvent2;
     public UnityEvent OnClickEvent3;
+
+    private Dictionary<GameObject, Material[]> originalMaterials = new();
 
     private void Start()
     {
@@ -142,8 +146,27 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
         foreach(GameObject g in affectedMeshes)
         {
             Renderer mr = g.GetComponent<Renderer>();
-            List<Material> allMats = new List<Material>();
-            foreach (Material m in mr.materials)
+            List<Material> materials = new List<Material>();
+
+            if(!originalMaterials.ContainsKey(g))
+                originalMaterials.Add(g, mr.materials);
+
+            for(int i=0; i<mr.materials.Length; i++)
+            {
+                // not sure if applyObjectiveShader or applyInteractableShader should b used here
+                var shaderToUse = interactableShader == null ? objectiveShader : interactableShader;
+                var newMaterial = new Material(shaderToUse);
+                var originalMaterial = originalMaterials[g][i];
+
+                newMaterial.SetTexture("_MainTex", originalMaterial.mainTexture);
+                newMaterial.SetColor("_BaseColor", originalMaterial.color);
+                newMaterial.SetInt("_Cull", originalMaterial.GetInt("_Cull")); // face mode
+
+                materials.Add(newMaterial);
+            }
+            mr.SetMaterials(materials);
+
+            /*foreach (Material m in mr.materials)
             {
                 allMats.Add(m);
             }
@@ -151,7 +174,7 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
                 allMats.Add(objectiveShader);
             if (applyInteractableShaders && interactableShader != null)
                 allMats.Add(interactableShader);
-            mr.SetMaterials(allMats);
+            mr.SetMaterials(allMats);*/
         }
     }
 
@@ -160,7 +183,9 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
         foreach (GameObject g in affectedMeshes)
         {
             Renderer mr = g.GetComponent<Renderer>();
-            List<Material> baseMat = new List<Material>();
+            mr.SetMaterials(originalMaterials[g].ToList());
+
+            /*List<Material> baseMat = new List<Material>();
             foreach (Material m in mr.materials)
             {
                 print(m.name);
@@ -174,8 +199,19 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
                 }
                 baseMat.Add(m);
             }
-            mr.SetMaterials(baseMat);
+            mr.SetMaterials(baseMat);*/
+
+            // hide object
+            if (HideObjectAfterInteraction)
+            {
+                /*var filter = g.GetComponent<MeshFilter>();
+                if (filter != null)
+                    filter.mesh = null;*/
+                mr.enabled = false;
+            }
         }
+
+        
     }
 }
 

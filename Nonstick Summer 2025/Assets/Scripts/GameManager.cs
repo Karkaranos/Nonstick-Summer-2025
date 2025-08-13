@@ -115,11 +115,9 @@ public class GameManager : Singleton<GameManager>
         if(scene.name.Contains("5"))
         {
 
-            DialogueManager.CurrentEnergy = 1000;
-            _maxEnergy = 1000;
+            DialogueUIController.Instance.inSceneFive = true;
 
         }
-        else { _maxEnergy = 7; }
 
         ObjectiveReference = FindFirstObjectByType<Objectives>();
 

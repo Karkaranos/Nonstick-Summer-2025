@@ -86,6 +86,10 @@ public class DialogueManager
             AudioManager.instance.PlayOneShot(FMODEvents.instance.PosRelationSFX);
         }
 
+        if(relationshipScore > RelationshipManager.characterRelationships[currentCharacter].maxValue)
+        {
+            relationshipScore = RelationshipManager.characterRelationships[currentCharacter].maxValue;
+        }
         RelationshipManager.characterRelationships[currentCharacter].currentValue = relationshipScore;
 
         if(relationshipScore < 0)

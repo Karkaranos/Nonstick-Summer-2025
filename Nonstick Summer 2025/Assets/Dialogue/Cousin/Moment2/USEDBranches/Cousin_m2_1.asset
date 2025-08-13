@@ -21,7 +21,7 @@ MonoBehaviour:
     Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Neutral
-  - Dialogue: ...C'mon! Guess!
+  - Dialogue: C'mon! Guess!
     Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
     AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
     AudioResponse: Angry
@@ -29,7 +29,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Teehee!
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
-      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: Um. Okay! What?
@@ -57,11 +57,14 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -15
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "Oh, right... hey, wait! I\u2019ll, uh... I\u2019ll make it up to
-        you! Just one sec!"
+    - Dialogue: Oh, right...Hey, wait!
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
       AudioResponse: Sad
+    - Dialogue: " I\u2019ll, uh... I\u2019ll make it up to you! Just one sec!"
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "You haven\u2019t even wished me a happy birthday yet..."
     RelationshipCheckRequired: 0
@@ -72,10 +75,14 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Charming_Observation:
     NpcReactionText:
-    - Dialogue: "Uh... Well! I\u2019m here now! Listen up!"
+    - Dialogue: Uh...
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+    - Dialogue: "Well I\u2019m here now! Listen up!"
+      Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: Oh! I didn't know you'd be here.
     RelationshipCheckRequired: 0
@@ -86,7 +93,11 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Assertive_Observation:
     NpcReactionText:
-    - Dialogue: "C\u2019MON! That defeats the point! Hmph!"
+    - Dialogue: "C\u2019MON! That defeats the point! "
+      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
+    - Dialogue: Hmph!
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
@@ -103,7 +114,7 @@ MonoBehaviour:
     - Dialogue: "Hey! Hey, wait! I\u2019ll, uh... I\u2019ll make it up to you! Wait
         just one sec!"
       Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "You haven\u2019t even wished me a happy birthday yet..."
@@ -115,10 +126,14 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "C\u2019MON! Don\u2019t ask that! That defeats the point! Hmph!"
+    - Dialogue: "C\u2019MON! Don\u2019t ask that! That defeats the point!"
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Angry
+    - Dialogue: Hmph!
+      Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: What am I supposed to be guessing?
     RelationshipCheckRequired: 0
@@ -129,9 +144,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: Um... I guess not. Hmph...
+    - Dialogue: Um...I guess not.
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
+    - Dialogue: Hmph...
+      Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
       AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: Do I have to?
@@ -145,12 +164,12 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Oh, with my mom. But, um...
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
-      AnimatedReaction: {fileID: 0}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
     - Dialogue: Well, I'm here now!
-      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
-      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
-      AudioResponse: Angry
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: Where have you been lately?
     RelationshipCheckRequired: 0

@@ -7,6 +7,7 @@ Brief Description :     Handles functionality for interactable objects that are 
 using UnityEngine;
 using NaughtyAttributes;
 using System.Collections.Generic;
+using System.Linq;
 
 public class DestroyOnInteract : MonoBehaviour, IInteractableObjective
 {
@@ -22,6 +23,8 @@ public class DestroyOnInteract : MonoBehaviour, IInteractableObjective
     [ShowIf("applyObjectiveShaders"), SerializeField] private Material objectiveShader;
     [ShowIf("applyInteractableShaders"), SerializeField] private Material interactableShader;
     [ShowIf("applyShaders"), SerializeField] private GameObject[] affectedMeshes;
+
+    private Dictionary<GameObject, Material[]> originalMaterials = new();
 
     private void Start()
     {
@@ -74,19 +77,34 @@ public class DestroyOnInteract : MonoBehaviour, IInteractableObjective
 
     public void SetShader()
     {
+        var shaderToUse = interactableShader == null ? objectiveShader : interactableShader;
+
+        if(shaderToUse == null)
+        {
+            Debug.LogError("No shader on " + gameObject.name);
+        }
+
         foreach (GameObject g in affectedMeshes)
         {
             Renderer mr = g.GetComponent<Renderer>();
-            List<Material> allMats = new List<Material>();
-            foreach (Material m in mr.materials)
+            List<Material> materials = new List<Material>();
+
+            if (!originalMaterials.ContainsKey(g))
+                originalMaterials.Add(g, mr.materials);
+
+            for (int i = 0; i < mr.materials.Length; i++)
             {
-                allMats.Add(m);
+                // not sure if applyObjectiveShader or applyInteractableShader should b used here
+                var newMaterial = new Material(shaderToUse);
+                var originalMaterial = originalMaterials[g][i];
+
+                newMaterial.SetTexture("_MainTex", originalMaterial.mainTexture);
+                newMaterial.SetColor("_BaseColor", originalMaterial.color);
+                newMaterial.SetInt("_Cull", originalMaterial.GetInt("_Cull")); // face mode
+
+                materials.Add(newMaterial);
             }
-            if (applyObjectiveShaders && objectiveShader != null)
-                allMats.Add(objectiveShader);
-            if (applyInteractableShaders && interactableShader != null)
-                allMats.Add(interactableShader);
-            mr.SetMaterials(allMats);
+            mr.SetMaterials(materials);
         }
     }
 
@@ -95,21 +113,7 @@ public class DestroyOnInteract : MonoBehaviour, IInteractableObjective
         foreach (GameObject g in affectedMeshes)
         {
             Renderer mr = g.GetComponent<Renderer>();
-            List<Material> baseMat = new List<Material>();
-            foreach (Material m in mr.materials)
-            {
-                print(m.name);
-                if (applyObjectiveShaders && (objectiveShader == null || m.name.Contains(objectiveShader.name)))
-                {
-                    continue;
-                }
-                if (applyInteractableShaders && (interactableShader == null || m.name.Contains(interactableShader.name)))
-                {
-                    continue;
-                }
-                baseMat.Add(m);
-            }
-            mr.SetMaterials(baseMat);
+            mr.SetMaterials(originalMaterials[g].ToList());
         }
     }
 }

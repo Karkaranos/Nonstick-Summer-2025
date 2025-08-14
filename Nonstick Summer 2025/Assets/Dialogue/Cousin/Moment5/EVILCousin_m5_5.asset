@@ -13,14 +13,26 @@ MonoBehaviour:
   m_Name: EVILCousin_m5_5
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Anyways...
-    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
-  - Dialogue: "Um... I\u2019m sorry. I should go. This was stupid... "
-    Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
-  - Dialogue: Have a good time at college, alright?
-    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+  - Dialogue: Anyways, um...
+    Portrait: {fileID: 21300000, guid: 2071a3956799eac499fe06278e1f69e1, type: 3}
+    AnimatedReaction: {fileID: 0}
+    AudioResponse: Neutral
+  - Dialogue: ...
+    Portrait: {fileID: 21300000, guid: 6506522cd75f2404d91e8fb4738abf28, type: 3}
+    AnimatedReaction: {fileID: 0}
+    AudioResponse: Silent
+  - Dialogue: "...Nevermind. I\u2019m sorry, this was stupid... "
+    Portrait: {fileID: 21300000, guid: 9291a82ed0f216746b4c5f0064e64c27, type: 3}
+    AnimatedReaction: {fileID: 0}
+    AudioResponse: Angry
+  - Dialogue: Good luck out there, alright?
+    Portrait: {fileID: 21300000, guid: 2071a3956799eac499fe06278e1f69e1, type: 3}
+    AnimatedReaction: {fileID: 0}
+    AudioResponse: Silent
   - Dialogue: "I\u2019m sure I\u2019ll see you around."
-    Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+    Portrait: {fileID: 0}
+    AnimatedReaction: {fileID: 0}
+    AudioResponse: Silent
   Charming_Expression:
     NpcReactionText: []
     CombinedDialogue: []

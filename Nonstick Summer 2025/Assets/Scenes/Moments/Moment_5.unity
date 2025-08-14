@@ -139947,17 +139947,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 388878597}
     m_Modifications:
+    - target: {fileID: 3216093029526474184, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+      propertyPath: StartingDialogueBranch
+      value: 
+      objectReference: {fileID: 11400000, guid: e1f697b59736dda4aa7322a91beb598a, type: 2}
     - target: {fileID: 368249545651296241, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 368249545651296241, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 368249545651296241, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 368249545651296241, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -139965,7 +139969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 368249545651296241, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.616
+      value: -0.12
       objectReference: {fileID: 0}
     - target: {fileID: 368249545651296241, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -139993,7 +139997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 368249545651296241, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 454548493651250203, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_Height
@@ -140082,7 +140086,7 @@ PrefabInstance:
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: characterSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      objectReference: {fileID: 21300000, guid: 2071a3956799eac499fe06278e1f69e1, type: 3}
     - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: CanvasToOpenPrefab
       value: 
@@ -140102,7 +140106,7 @@ PrefabInstance:
     - target: {fileID: 6140443048461262060, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      objectReference: {fileID: 21300000, guid: 2071a3956799eac499fe06278e1f69e1, type: 3}
     - target: {fileID: 7010602745331249561, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_Name
       value: Cousin
@@ -140111,10 +140115,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    - target: {fileID: 3216093029526474184, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
-      propertyPath: StartingDialogueBranch
-      value: 
-      objectReference: {fileID: 11400000, guid: e1f697b59736dda4aa7322a91beb598a, type: 2}
     m_RemovedComponents:
     - {fileID: 3216093029526474184, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
     m_RemovedGameObjects: []

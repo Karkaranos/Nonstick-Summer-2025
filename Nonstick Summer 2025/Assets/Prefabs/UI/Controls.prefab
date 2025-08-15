@@ -427,14 +427,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4978185835280613747, guid: dfbbec703031db94ea679be52fe4bd78, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 632221183481959379}
   m_SourcePrefab: {fileID: 100100000, guid: dfbbec703031db94ea679be52fe4bd78, type: 3}
 --- !u!114 &6894718102366699253 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8066425416076227958, guid: dfbbec703031db94ea679be52fe4bd78, type: 3}
   m_PrefabInstance: {fileID: 3485582392870194051}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8451381954777582320}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -445,3 +448,44 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4645922448216815500, guid: dfbbec703031db94ea679be52fe4bd78, type: 3}
   m_PrefabInstance: {fileID: 3485582392870194051}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8451381954777582320 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4978185835280613747, guid: dfbbec703031db94ea679be52fe4bd78, type: 3}
+  m_PrefabInstance: {fileID: 3485582392870194051}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &632221183481959379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8451381954777582320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379932104462e0442ab96002867f67cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnMouseDown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMouseHoverStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8970712704328029775, guid: 34d86d7f8aacb514fa5737ed7d199393, type: 2}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnMouseHoverEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMouseHoverStay:
+    m_PersistentCalls:
+      m_Calls: []

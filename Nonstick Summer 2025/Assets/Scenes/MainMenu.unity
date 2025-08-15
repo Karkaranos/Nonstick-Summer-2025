@@ -550,6 +550,7 @@ GameObject:
   - component: {fileID: 293478456}
   - component: {fileID: 293478455}
   - component: {fileID: 293478458}
+  - component: {fileID: 293478459}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -686,6 +687,30 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.79607844}
   m_EffectDistance: {x: 0, y: -4.15}
   m_UseGraphicAlpha: 1
+--- !u!114 &293478459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293478453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379932104462e0442ab96002867f67cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnMouseDown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMouseHoverStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMouseHoverEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMouseHoverStay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &335847578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,6 +1235,7 @@ GameObject:
   - component: {fileID: 645212907}
   - component: {fileID: 645212906}
   - component: {fileID: 645212905}
+  - component: {fileID: 645212908}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -1331,6 +1357,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645212903}
   m_CullTransparentMesh: 1
+--- !u!114 &645212908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645212903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379932104462e0442ab96002867f67cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnMouseDown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMouseHoverStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMouseHoverEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMouseHoverStay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &647704122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,6 +1725,7 @@ GameObject:
   - component: {fileID: 1270170324}
   - component: {fileID: 1270170323}
   - component: {fileID: 1270170322}
+  - component: {fileID: 1270170325}
   m_Layer: 5
   m_Name: Controls
   m_TagString: Untagged
@@ -1796,6 +1847,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1270170320}
   m_CullTransparentMesh: 1
+--- !u!114 &1270170325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270170320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379932104462e0442ab96002867f67cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnMouseDown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMouseHoverStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMouseHoverEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMouseHoverStay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1350576233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1946,6 +2021,7 @@ GameObject:
   - component: {fileID: 1372884766}
   - component: {fileID: 1372884765}
   - component: {fileID: 1372884764}
+  - component: {fileID: 1372884767}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -2067,6 +2143,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372884762}
   m_CullTransparentMesh: 1
+--- !u!114 &1372884767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372884762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379932104462e0442ab96002867f67cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnMouseDown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMouseHoverStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMouseHoverEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMouseHoverStay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1459062089 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4923099807383700207, guid: ff04447c58cb12640bf376f7f14b878d, type: 3}

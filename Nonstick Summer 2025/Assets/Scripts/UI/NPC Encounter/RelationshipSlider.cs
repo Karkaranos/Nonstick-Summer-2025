@@ -41,6 +41,10 @@ public class RelationshipSlider : MonoBehaviour
     public IEnumerator SetValue(float value)
     {
         slider = slider ?? GetComponent<Slider>();
+        if (value > slider.maxValue)
+        {
+            value = slider.maxValue;
+        }
         //if (slider.value == value)
         if (Mathf.Approximately(slider.value, value))
             yield break;
@@ -63,6 +67,10 @@ public class RelationshipSlider : MonoBehaviour
         if (Mathf.Approximately(slider.value, value))
             return;
 
+        if (value > slider.maxValue)
+        {
+            value = slider.maxValue;
+        }
         slider.value = value;
     }
 

@@ -15,6 +15,7 @@ using NaughtyAttributes;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 // didnt know what to name this script so i just put 3 keywords together
 public class DisplayPlayerCardDialogue : MonoBehaviour
@@ -55,6 +56,31 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
         StaticUtilities.EnableCanvasGroup(group, interactable:false);
         var cardtext = DialogueManager.CurrentDialogueBranch.ReturnDialogueOption(card).PlayerDialogue;
         text.text = cardtext;
+
+        RefreshLayout();
+    }
+
+    private void RefreshLayout()
+    {
+        var rectTransform = group.GetComponent<RectTransform>();
+        if (rectTransform == null)
+        {
+            Debug.LogError("How is this null bruh");
+            return;
+        }
+        LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
+
+        if (rectTransform.parent != null)
+        {
+            LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform.parent as RectTransform);
+
+            // juuuuuust in case
+            if (rectTransform.parent.parent != null)
+            {
+                if (rectTransform.parent.parent is RectTransform)
+                    LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform.parent.parent as RectTransform);
+            }
+        }
     }
 
     public IEnumerator WriteTextTypewriter(CardData card)

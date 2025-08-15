@@ -248,6 +248,15 @@ public partial class CardDisplay : MonoBehaviour
     private void UpdateEnergyDisplay()
     {
         int i;
+        if (card.EnergyCost > 0)
+        {
+            for (i=0; i < energyCostIcons.Length; i++)
+            {
+                energyCostIcons.ElementAt(i).enabled = false;
+            }
+            return;
+        }
+
         for(i = 0; i< Mathf.Abs(card.EnergyCost); i++)
         {
             if(energyCostIcons.Length <= i)
@@ -267,31 +276,17 @@ public partial class CardDisplay : MonoBehaviour
 
     private void UpdateStampIcons()
     {
-        string[] names =
-        {
-            "Overthinking", "Repetition", "Mumble", "Confidence", "Energy Bonus"
+        Type[] types = { 
+            typeof(DrawExtraCardStamp), typeof(EnergyBonusStamp), typeof(RelationshipAffectorStamp), typeof(ReturnToHandStamp), typeof(MumbleStamp)
         };
 
-        for(int i=0; i<names.Length && i < StampImages.Length; i++)
+        for(int i=0; i<types.Length && i < StampImages.Length; i++)
         {
-            int index = HasCard(names[i]);
-            if (index > -1 && index < StampImages.Length)
-            {
-                StampImages[i].SetStamp(card.Stamps.ElementAt(index));
-            }
+            // GetStampOfType returns null sometimes but SetStamp likes null values and it eats them up yum yum so we're all good
+            StampImages[i].SetStamp(card.GetStampOfType(types[i]));
 
         }
         
-    }
-
-    private int HasCard(string test)
-    {
-        for(int i=0; i<card.Stamps.Count; i++)
-        {
-            if (card.Stamps.ElementAt(i).StampName == test)
-                return i;
-        }
-        return -1;
     }
 
 }

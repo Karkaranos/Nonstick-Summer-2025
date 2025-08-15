@@ -7,10 +7,11 @@
 * 
 *****************************************************************************/
 
+using NaughtyAttributes;
 using System.Collections;
 using TMPro;
-using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueBox : MonoBehaviour
 {
@@ -69,6 +70,7 @@ public class DialogueBox : MonoBehaviour
     public void DisplayOneLine(string line)
     {
         npcText.text = line;
+        RefreshLayout();
     }
 
     public IEnumerator SetDialogueIndex(int numberInList, DialogueBranch branch = null, DialogueNPC[] dialogue = null)
@@ -182,7 +184,33 @@ public class DialogueBox : MonoBehaviour
         }
 
         yield return null;
+        RefreshLayout();
     }
 
+
+
     #endregion
+
+    private void RefreshLayout()
+    {
+        var rectTransform = group.GetComponent<RectTransform>();
+        if (rectTransform == null)
+        {
+            Debug.LogError("How is this null bruh");
+            return;
+        }
+        LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
+
+        if (rectTransform.parent != null)
+        {
+            LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform.parent as RectTransform);
+
+            // just in case bruj
+            if (rectTransform.parent.parent != null)
+            {
+                if (rectTransform.parent.parent is RectTransform)
+                    LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform.parent.parent as RectTransform);
+            }
+        }
+    }
 }

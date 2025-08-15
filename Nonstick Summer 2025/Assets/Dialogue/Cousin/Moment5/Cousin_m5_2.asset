@@ -15,29 +15,29 @@ MonoBehaviour:
   dialogue:
   - Dialogue: "It\u2019s... It\u2019s a lot, isn\u2019t it? I mean, I\u2019d imagine!
       It is for me, at least."
-    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    Portrait: {fileID: 21300000, guid: 6506522cd75f2404d91e8fb4738abf28, type: 3}
     AnimatedReaction: {fileID: 0}
-    AudioResponse: 
+    AudioResponse: Silent
   - Dialogue: "I\u2019m not too far behind you... preeetty scary."
-    Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+    Portrait: {fileID: 21300000, guid: 2071a3956799eac499fe06278e1f69e1, type: 3}
     AnimatedReaction: {fileID: 0}
-    AudioResponse: 
+    AudioResponse: Silent
   - Dialogue: "But that\u2019s besides the point! I\u2019ll get there when I get
       there. For now..."
-    Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+    Portrait: {fileID: 21300000, guid: bf08644dbaefc5a4ba15ddce9653347b, type: 3}
     AnimatedReaction: {fileID: 0}
-    AudioResponse: 
-  - Dialogue: Well, are you ready?
-    Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+    AudioResponse: Silent
+  - Dialogue: Well? Are you ready?
+    Portrait: {fileID: 21300000, guid: 2071a3956799eac499fe06278e1f69e1, type: 3}
     AnimatedReaction: {fileID: 0}
-    AudioResponse: 
+    AudioResponse: Silent
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "I just knew you\u2019d be! That\u2019s great. That\u2019s a little
         assuring, too..."
-      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      Portrait: {fileID: 21300000, guid: bf08644dbaefc5a4ba15ddce9653347b, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
-      AudioResponse: Silent
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: "As ready as I\u2019ll ever be."
     RelationshipCheckRequired: 1
@@ -49,14 +49,14 @@ MonoBehaviour:
   Assertive_Expression:
     NpcReactionText:
     - Dialogue: "Ah...Well, for what it\u2019s worth, that\u2019s nice to hear."
-      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      Portrait: {fileID: 21300000, guid: bf08644dbaefc5a4ba15ddce9653347b, type: 3}
       AnimatedReaction: {fileID: 0}
-      AudioResponse: Silent
+      AudioResponse: Neutral
     - Dialogue: "That means that I\u2019ll be okay when it\u2019s my turn, even if
         I\u2019m not ready, either."
-      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      Portrait: {fileID: 21300000, guid: bf08644dbaefc5a4ba15ddce9653347b, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
-      AudioResponse: Silent
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t think that I could ever be ready..."
     RelationshipCheckRequired: 1
@@ -68,7 +68,7 @@ MonoBehaviour:
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: ...Thank you. That means a lot to me. Really.
-      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      Portrait: {fileID: 21300000, guid: bf08644dbaefc5a4ba15ddce9653347b, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Silent
     CombinedDialogue: []
@@ -84,9 +84,9 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "I just knew you\u2019d be! That\u2019s great. That\u2019s a little
         assuring, too..."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: bf08644dbaefc5a4ba15ddce9653347b, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
-      AudioResponse: Silent
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: "It is scary, but it\u2019s not so bad. I\u2019m ready enough."
     RelationshipCheckRequired: 1
@@ -99,9 +99,9 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "I just knew you\u2019d be! That\u2019s great. That\u2019s a little
         assuring, too..."
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: bf08644dbaefc5a4ba15ddce9653347b, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
-      AudioResponse: Silent
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: "Don\u2019t be so presumptuous. I\u2019m doing fine, and I\u2019m
       ready."
@@ -114,7 +114,7 @@ MonoBehaviour:
   Sappy_Observation:
     NpcReactionText:
     - Dialogue: ...Thank you. That means a lot to me. Really.
-      Portrait: {fileID: 0}
+      Portrait: {fileID: 21300000, guid: bf08644dbaefc5a4ba15ddce9653347b, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Silent
     CombinedDialogue: []
@@ -130,9 +130,9 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Right? The few years that you have on me feel so much more significant
         when we were younger than they do now, don\u2019t they?"
-      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      Portrait: {fileID: 21300000, guid: bf08644dbaefc5a4ba15ddce9653347b, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
-      AudioResponse: Silent
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: "Oh, wow. I guess you really aren\u2019t that much younger than
       I am, are you?"
@@ -146,14 +146,14 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "No? I mean, I guess not, but that\u2019s a sad way of describing
         this, isn\u2019t it?"
-      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+      Portrait: {fileID: 21300000, guid: 9291a82ed0f216746b4c5f0064e64c27, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
-      AudioResponse: Silent
+      AudioResponse: Sad
     - Dialogue: "I\u2019d think that a part of me would be happy to go out there
         and thrive..."
-      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      Portrait: {fileID: 21300000, guid: 2071a3956799eac499fe06278e1f69e1, type: 3}
       AnimatedReaction: {fileID: 0}
-      AudioResponse: 
+      AudioResponse: Neutral
     CombinedDialogue: []
     PlayerDialogue: Would you be ready to leave your entire life behind?
     RelationshipCheckRequired: 1
@@ -164,9 +164,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 0
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: "Don\u2019t say that! That\u2019s SO embarrassing. Haha..."
-      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+    - Dialogue: "Don\u2019t say that! That\u2019s SO embarrassing."
+      Portrait: {fileID: 21300000, guid: 2071a3956799eac499fe06278e1f69e1, type: 3}
       AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Happy
+    - Dialogue: Heh...
+      Portrait: {fileID: 21300000, guid: bf08644dbaefc5a4ba15ddce9653347b, type: 3}
+      AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "It\u2019s weird to imagine you heading off to college so soon.

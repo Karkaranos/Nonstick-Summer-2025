@@ -145,6 +145,7 @@ MonoBehaviour:
       m_Calls: []
   _modifier: {fileID: 11400000, guid: 7ea86a966298e524e81d7076ef263b99, type: 2}
   mouseInteraction: {fileID: 0}
+  TargetSiblingIndex: 0
   MarkedToBeDestroyed: 0
   MovementSpeed: 1000
   animateWaves: 1
@@ -152,6 +153,8 @@ MonoBehaviour:
   waveSpeed: 1
   targetRotation: -135
   destroyAnimationSeconds: 0.5
+  hoverTargetRotation: -2
+  hoverCardAnimationSeconds: 0.2
 --- !u!114 &8568256758202846978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,7 +645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6631526919339010300, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -90.725
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8240772508428721124, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
       propertyPath: m_Sprite

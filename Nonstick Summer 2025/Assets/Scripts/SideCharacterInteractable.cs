@@ -43,7 +43,18 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
 
     [SerializeField, Required] private GameObject ModifierObtainCanvas;
 
+    void Start()
+    {
 
+        if(SceneManager.GetActiveScene().name.Equals("Moment_5") &&
+            RelationshipManager.characterRelationships[character].relationshipQuota > RelationshipManager.characterRelationships[character].currentValue)
+        {
+
+            Destroy(this.gameObject);
+
+        }
+
+    }
 
     /// <summary>
     /// Opens prompt canvas and loads desired data

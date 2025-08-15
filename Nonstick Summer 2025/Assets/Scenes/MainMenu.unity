@@ -2310,6 +2310,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3803164632060803876, guid: ff04447c58cb12640bf376f7f14b878d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 025caa0c91724a749b1e36c3e7beaaa3, type: 3}
+    - target: {fileID: 3803164632060803876, guid: ff04447c58cb12640bf376f7f14b878d, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4627899212980936470, guid: ff04447c58cb12640bf376f7f14b878d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2393,6 +2401,10 @@ PrefabInstance:
     - target: {fileID: 4923099807383700207, guid: ff04447c58cb12640bf376f7f14b878d, type: 3}
       propertyPath: m_Name
       value: Credits
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154746573392424144, guid: ff04447c58cb12640bf376f7f14b878d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8984568910673385258, guid: ff04447c58cb12640bf376f7f14b878d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

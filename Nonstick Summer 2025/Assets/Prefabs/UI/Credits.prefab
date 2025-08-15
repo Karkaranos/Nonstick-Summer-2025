@@ -1666,6 +1666,7 @@ GameObject:
   - component: {fileID: 5813000469262905959}
   - component: {fileID: 3639678777465944179}
   - component: {fileID: 8984568910673385258}
+  - component: {fileID: 5063942858870464957}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -1787,6 +1788,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5063942858870464957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4963957667841953589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379932104462e0442ab96002867f67cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnMouseDown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMouseHoverStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8970712704328029775, guid: 34d86d7f8aacb514fa5737ed7d199393, type: 2}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnMouseHoverEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMouseHoverStay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5414086136456441627
 GameObject:
   m_ObjectHideFlags: 0

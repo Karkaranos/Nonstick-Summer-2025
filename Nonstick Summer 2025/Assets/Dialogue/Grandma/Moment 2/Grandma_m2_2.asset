@@ -102,7 +102,7 @@ MonoBehaviour:
     PlayerDialogue: Looks like you have most of it handled, Nanna!
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
+    BranchingDialogueHigh: {fileID: 0}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
@@ -117,7 +117,7 @@ MonoBehaviour:
       to."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
+    BranchingDialogueHigh: {fileID: 0}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
@@ -132,7 +132,7 @@ MonoBehaviour:
     PlayerDialogue: "Sure, but there isn\u2019t much left to help with..."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
+    BranchingDialogueHigh: {fileID: 0}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
@@ -195,8 +195,16 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Silent:
-    NpcReactionText: []
-    CombinedDialogue: []
+    NpcReactionText:
+    - Dialogue: ...
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
+    CombinedDialogue:
+    - Dialogue: Would you mind helping your Nanna clean up around the kitchen?
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}

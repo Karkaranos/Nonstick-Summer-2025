@@ -32,7 +32,7 @@ MonoBehaviour:
     PlayerDialogue: I love Grandma! She smells funny.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
@@ -57,7 +57,21 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: "I\u2019m glad to hear that, honey."
+      Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
+    - Dialogue: "Have you thought about what you want for your birthday yet? It\u2019ll
+        be here before you know it."
+      Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Neutral
+    - Dialogue: "If you\u2019re good for Grandma tonight, then she might remember
+        that when she\u2019s out shopping for your present..."
+      Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     PlayerDialogue: Really? Grandma is the best!
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -76,7 +90,7 @@ MonoBehaviour:
     PlayerDialogue: "She\u2019s wrinkly. Like a raisin with arms."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
@@ -91,7 +105,7 @@ MonoBehaviour:
     PlayerDialogue: "I don\u2019t WANT Grandma to come over!"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
@@ -105,7 +119,7 @@ MonoBehaviour:
     PlayerDialogue: Really? Grandma is the best!
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 8e3d5ccbf08c4a843a37ca4236ea51f5, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10

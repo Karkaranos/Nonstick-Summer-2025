@@ -150,8 +150,32 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
   Silent:
-    NpcReactionText: []
-    CombinedDialogue: []
+    NpcReactionText:
+    - Dialogue: ...
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
+    CombinedDialogue:
+    - Dialogue: ...You look mad right now. Are you mad at me?
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
+    - Dialogue: Because I think you're the coolest! And, uh...
+      Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Angry
+    - Dialogue: Well, uhm...
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Sad
+    - Dialogue: ...W-we're still friends, right?
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Sad
+    - Dialogue: Like, you think I'm cool?
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     PlayerDialogue: ...
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 0, y: 40}

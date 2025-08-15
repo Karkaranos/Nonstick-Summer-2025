@@ -188,8 +188,16 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   Silent:
-    NpcReactionText: []
-    CombinedDialogue: []
+    NpcReactionText:
+    - Dialogue: ...
+      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
+    CombinedDialogue:
+    - Dialogue: And you better be good... Otherwise no extra cake for you!
+      Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}

@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1591bc9a912d7846bf962e3b5a67809, type: 3}
-  m_Name: Duplicate Card
+  m_Script: {fileID: 11500000, guid: 305ed51a54b892448a18e85c1f8ba3a0, type: 3}
+  m_Name: Overthinking Applier
   m_EditorClassIdentifier: 
   MaxCardsApplied: 1
   MinCardsApplied: 1
-  _tooltipDescription: Adds a copy of a selected card and adds it to your deck
-  icon: {fileID: 21300000, guid: 16868660343415a4db2c3f4ae7412e22, type: 3}
-  ModifierType: 3
-  CopiesToMake: 1
+  _tooltipDescription: Applies [StampName] stamp to a selected card
+  icon: {fileID: 0}
+  ModifierType: 1
+  StampToApply: {fileID: 11400000, guid: 886e40570aef3084a8f0d0cc42fb6dd1, type: 2}

@@ -33,6 +33,7 @@ public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
     [SerializeField]
     private Transform cameraAnchor;
 
+
     private void Start()
     {
         if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.Contains('5'))

@@ -1533,13 +1533,14 @@ GameObject:
   - component: {fileID: 193821786440800716}
   - component: {fileID: 4598673156218568503}
   - component: {fileID: 7818708595931119919}
+  - component: {fileID: 2788683925794407086}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4627899212980936470
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1633,6 +1634,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4923099807383700207}
   m_CullTransparentMesh: 1
+--- !u!114 &2788683925794407086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4923099807383700207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92aa66b2cacdf914db1eae8ceac4d09a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creditParent: {fileID: 4923099807383700207}
+  creditScroll: {fileID: 5935674025164842257}
+  creditSpeed: 80
+  pauseBeforeStartEnd: 1.5
+  creditsFadeToBlack: {fileID: 5479542434821866921}
+  creditStart: {x: 0, y: 0, z: 0}
+  creditsEndingFrame: {fileID: 959236747040550449}
+  button: {fileID: 4963957667841953589}
 --- !u!1 &4963957667841953589
 GameObject:
   m_ObjectHideFlags: 0

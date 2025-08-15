@@ -32,6 +32,7 @@ public class RelationshipManager
         characterRelationships.Remove(Character.Uncle);
         characterRelationships.Remove(Character.Cousin);
         characterRelationships.Remove(Character.Mom);
+        characterRelationships = new Dictionary<Character, RelationshipStats>();
         characterRelationships.Add(Character.Grandma, grandmaStartingValue);
         characterRelationships.Add(Character.Uncle, uncleStartingValue);
         characterRelationships.Add(Character.Cousin, cousinStartingValue);

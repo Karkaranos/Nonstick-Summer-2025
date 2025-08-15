@@ -18,7 +18,7 @@ MonoBehaviour:
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
     AudioResponse: Neutral
-  - Dialogue: "It\u2019s just... I\u2019m worried about you."
+  - Dialogue: "It\u2019s just...I\u2019m worried about you."
     Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Sad
@@ -26,10 +26,10 @@ MonoBehaviour:
       without us checking up on you."
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     AnimatedReaction: {fileID: 0}
-    AudioResponse: Neutral
+    AudioResponse: Silent
   - Dialogue: "It\u2019s a crazy world out there, you know?"
-    Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
-    AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+    Portrait: {fileID: 0}
+    AnimatedReaction: {fileID: 0}
     AudioResponse: Silent
   Charming_Expression:
     NpcReactionText:
@@ -65,7 +65,7 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "I\u2019m fine, kiddo. But this isn\u2019t about me right now."
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
-      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Angry
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m more worried about you, frankly..."
@@ -78,10 +78,14 @@ MonoBehaviour:
   Charming_Observation:
     NpcReactionText:
     - Dialogue: "Ha! You haven\u2019t seen the sorts of things that I\u2019ve seen,
-        kiddo! You have no idea!"
+        kiddo! "
+      Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Angry
+    - Dialogue: You have no idea!
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
-      AudioResponse: 
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: Sure I do, although you might be exaggerating...
     RelationshipCheckRequired: 0
@@ -94,9 +98,9 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "Hey, hey! Come on! I don\u2019t mean it like that. I\u2019m just
         trying to help, yeah?"
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
+      Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
     CombinedDialogue: []
     PlayerDialogue: "You aren\u2019t my mom. Back off."
     RelationshipCheckRequired: 0
@@ -108,9 +112,9 @@ MonoBehaviour:
   Sappy_Observation:
     NpcReactionText:
     - Dialogue: "I\u2019m fine, kid! Really! This isn\u2019t about me, anyhow!"
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
+      Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m more worried about you, frankly..."
     RelationshipCheckRequired: 0
@@ -141,8 +145,8 @@ MonoBehaviour:
       AudioResponse: Happy
     - Dialogue: "I\u2019m doing my best here."
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
-      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
-      AudioResponse: Neutral
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: What makes you think that YOU can protect me?
     RelationshipCheckRequired: 0

@@ -75,6 +75,7 @@ public class GameManager : Singleton<GameManager>
     {
         DontDestroyOnLoad(transform.parent == null ? this.gameObject : transform.parent.gameObject);
 
+
         UITransitionManagerReference = UITransitionManagerReference ?? new UITransitionManager();
         CardStyleManagerReference = CardStyleManagerReference ?? new CardStyleManager(Card_CharmingStyle, Card_AssertiveStyle, Card_SappyStyle,
             Card_StatementStyle, Card_QuestionStyle, BlankCard, YellowCardBack, RedCardBack, BlueCardBack);
@@ -105,10 +106,22 @@ public class GameManager : Singleton<GameManager>
     {
 
         DialogueManager.CurrentEnergy = _defaultEnergy;
+
+        if(scene.name.Contains("MainMenu"))
+        {
+
+            Destroy(transform.parent.gameObject);
+
+        }
+
         if (scene.name.Contains("1"))
         {
+            DeckManagerReference = null;
+            RelationshipManagerReference = null;
+            ModifierManagerReference = null;
             DeckManagerReference = new DeckManager(startingCards);
             RelationshipManagerReference = new RelationshipManager(grandmaStartingValue, uncleStartingValue, cousinStartingValue, momStartingValue);
+
             ModifierManagerReference = new ModifierManager(startingModifiers);
         }
 

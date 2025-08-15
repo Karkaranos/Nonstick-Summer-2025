@@ -80,6 +80,7 @@ public class ApplyModifierButton : MonoBehaviour
 
         ModifierManager.RemoveCard(ModifierDeckDisplay.selectedCard.modifierData);
         deckDisplay.DisplayAllCards();
+        deckDisplay.DeselectAllCards();
         foreach (var modifierDisplay in modifierDisplays)
         {
             modifierDisplay.DisplayAllCards();

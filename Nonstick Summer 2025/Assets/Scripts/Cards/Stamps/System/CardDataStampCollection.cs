@@ -86,6 +86,17 @@ public partial class CardData
         return false;
     }
 
+    public ModifierStamp GetStampOfType(Type stampType)
+    {
+        foreach (var stamp in _stamps)
+        {
+            if (stamp.GetType() == stampType)
+                return stamp;
+        }
+
+        return null;
+    }
+
     /// <summary>
     /// TODO use this function with the _modifier that puts a copy of a card into the players hand (but not into permanent deck)
     /// </summary>

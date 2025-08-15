@@ -277,7 +277,7 @@ public partial class CardDisplay : MonoBehaviour
     private void UpdateStampIcons()
     {
         Type[] types = { 
-            typeof(DrawExtraCardStamp), typeof(EnergyBonusStamp), typeof(RelationshipAffectorStamp), typeof(ReturnToHandStamp), typeof(MumbleStamp)
+            typeof(DrawExtraCardStamp), typeof(ReturnToHandStamp),typeof(MumbleStamp), typeof(RelationshipAffectorStamp), typeof(EnergyBonusStamp)
         };
 
         for(int i=0; i<types.Length && i < StampImages.Length; i++)

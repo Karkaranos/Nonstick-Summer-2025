@@ -46,6 +46,8 @@ public abstract class HoverTooltip : MonoBehaviour
         }
 
         RefreshTooltipText();
+
+        RefreshLayout();
     }
 
     public void Close()
@@ -53,6 +55,29 @@ public abstract class HoverTooltip : MonoBehaviour
         tooltipGroup.gameObject.SetActive(false);
         if(tooltipGroup != null)
             StaticUtilities.DisableCanvasGroup(tooltipGroup);
+    }
+
+    private void RefreshLayout()
+    {
+        var rectTransform = tooltipGroup.GetComponent<RectTransform>();
+        if(rectTransform == null )
+        {
+            Debug.LogError("How is this null bruh");
+            return;
+        }
+        LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
+
+        if(rectTransform.parent!=null)
+        {
+            LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform.parent as RectTransform);
+
+            // for card tooltips [if i could put the sob emoji in a code comment i would put it here]
+            if (rectTransform.parent.parent != null)
+            {
+                if(rectTransform.parent.parent is RectTransform)
+                    LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform.parent.parent as RectTransform);
+            }
+        }
     }
 
     public void RefreshTooltipText()
@@ -81,6 +106,7 @@ public abstract class HoverTooltip : MonoBehaviour
     protected virtual void OnPlayerClickComponent()
     {
         // Crickets...
+        // why didnt i make this abstract bruhh
     }
 
     /// <summary>

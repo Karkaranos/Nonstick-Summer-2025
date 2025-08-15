@@ -114,7 +114,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         }
         else { inSceneFive = false; }
 
-            yield return ToggleUIForDialogueProgression(false);
+        yield return ToggleUIForDialogueProgression(false);
 
         //yield return OpenCombatUI_Coroutine();
 

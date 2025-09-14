@@ -25,6 +25,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private CreditBehavior creditObj;
     [SerializeField, Required] private Button quitButton;
+    [SerializeField, Required] private RectTransform webglWarning;
 
     [Header("Credit Controls")]
     [SerializeField] private float creditSpeed;
@@ -40,7 +41,6 @@ public class MainMenu : MonoBehaviour
     [Tooltip ("Fade to black prefab in scene")]
     [SerializeField][Required] private GameObject fadeToBlack;
     [SerializeField][Required] private RectTransform creditsEndingFrame;
-    
 
     //maybe put cursor shenanigans here
     private void Start()
@@ -55,7 +55,8 @@ public class MainMenu : MonoBehaviour
             Destroy(deleteMe.gameObject);
         }
 
-        if(FindFirstObjectByType<Check>().gameCompleted)
+        var gameCompleted = FindFirstObjectByType<Check>().gameCompleted;
+        if (gameCompleted)
         {
             OpenCredits(false);
         }
@@ -63,6 +64,15 @@ public class MainMenu : MonoBehaviour
         if (Application.platform == RuntimePlatform.WebGLPlayer)
         {
             Destroy(quitButton.gameObject);
+        }
+
+        if(!IsWebGLAndWindows() || gameCompleted)
+        {
+            Destroy(webglWarning.gameObject);
+        }
+        else if(!gameCompleted)
+        {
+            webglWarning.gameObject.SetActive(true);
         }
     }
 
@@ -121,5 +131,19 @@ public class MainMenu : MonoBehaviour
             fadeToBlack.SetActive(true);
             fade.StartFadeOut(image, MainGameplayScene);
         }
+    }
+
+#if !UNITY_EDITOR && UNITY_WEBGL
+    [DllImport("__Internal")]
+    private static extern bool IsWindowsDesktop();
+#endif
+
+    public bool IsWebGLAndWindows()
+    {
+#if !UNITY_EDITOR && UNITY_WEBGL
+        return IsWindowsDesktop();
+#else
+        return false; // Not a WebGL build or running in Unity Editor
+#endif
     }
 }

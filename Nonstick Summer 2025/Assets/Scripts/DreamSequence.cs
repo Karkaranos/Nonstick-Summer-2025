@@ -139,6 +139,7 @@ public class DreamSequence : MonoBehaviour
     [SerializeField, Required] private Image Background;
     [SerializeField, Required] private Material NeutralMaterial, YellowMaterial, RedMaterial, BlueMaterial;
     [SerializeField] private float transitionColorSeconds = 0.3f;
+    [SerializeField] private float transitionBlobSizeSeconds = 10f;
 
     private Material DreamMaterial;
     private DreamShaderDataCollection NeutralColors, YellowEmotionColors, RedEmotionColors, BlueEmotionColors;
@@ -156,27 +157,36 @@ public class DreamSequence : MonoBehaviour
             float t = timeElapsed / transitionColorSeconds;
 
             // nightmare code nightmare code nightmare code
-            // all these if statements are here bc i cant imagine setting the materials is super efficient
-            if (from.Layer1.color != to.Layer1.color) DreamMaterial.SetColor("_Color_1", Color.Lerp(from.Layer1.color, to.Layer1.color, t));
-            if (from.Layer1.Speed != to.Layer1.Speed) DreamMaterial.SetFloat("_Speed_1", Mathf.Lerp(from.Layer1.Speed, to.Layer1.Speed, t));
-            if (from.Layer1.BlobSize != to.Layer1.BlobSize) DreamMaterial.SetFloat("_Blob_Size_1", Mathf.Lerp(from.Layer1.BlobSize, to.Layer1.BlobSize, t));
-            if (from.Layer1.MinMaxOpacity != to.Layer1.MinMaxOpacity) DreamMaterial.SetVector("_Min_Max_Opacity_1", Vector2.Lerp(from.Layer1.MinMaxOpacity, to.Layer1.MinMaxOpacity, t));
-    
-            if (from.Layer2.color != to.Layer2.color) DreamMaterial.SetColor("_Color_2", Color.Lerp(from.Layer2.color, to.Layer2.color, t));
-            if (from.Layer2.Speed != to.Layer2.Speed) DreamMaterial.SetFloat("_Speed_2", Mathf.Lerp(from.Layer2.Speed, to.Layer2.Speed, t));
-            if (from.Layer2.BlobSize != to.Layer2.BlobSize) DreamMaterial.SetFloat("_Blob_Size_2", Mathf.Lerp(from.Layer2.BlobSize, to.Layer2.BlobSize, t));
-            if (from.Layer2.MinMaxOpacity != to.Layer2.MinMaxOpacity) DreamMaterial.SetVector("_Min_Max_Opacity_2", Vector2.Lerp(from.Layer2.MinMaxOpacity, to.Layer2.MinMaxOpacity, t));
 
-            if (from.Layer3.color != to.Layer3.color) DreamMaterial.SetColor("_Color_3", Color.Lerp(from.Layer3.color, to.Layer3.color, t));
-            if (from.Layer3.Speed != to.Layer3.Speed) DreamMaterial.SetFloat("_Speed_3", Mathf.Lerp(from.Layer3.Speed, to.Layer3.Speed, t));
-            if (from.Layer3.BlobSize != to.Layer3.BlobSize) DreamMaterial.SetFloat("_Blob_Size_3", Mathf.Lerp(from.Layer3.BlobSize, to.Layer3.BlobSize, t));
-            if (from.Layer3.MinMaxOpacity != to.Layer3.MinMaxOpacity) DreamMaterial.SetVector("_Min_Max_Opacity_3", Vector2.Lerp(from.Layer3.MinMaxOpacity, to.Layer3.MinMaxOpacity, t));
+            if(timeElapsed < transitionColorSeconds)
+            {
+                // all these if statements are here bc i cant imagine setting the materials is super efficient
 
-            if (from.BackgroundColor != to.BackgroundColor) DreamMaterial.SetColor("_Background_Color", Color.Lerp(from.BackgroundColor, to.BackgroundColor, t));
+                if (from.Layer1.color != to.Layer1.color) DreamMaterial.SetColor("_Color_1", Color.Lerp(from.Layer1.color, to.Layer1.color, t));
+                if (from.Layer1.Speed != to.Layer1.Speed) DreamMaterial.SetFloat("_Speed_1", Mathf.Lerp(from.Layer1.Speed, to.Layer1.Speed, t));
+                if (from.Layer1.MinMaxOpacity != to.Layer1.MinMaxOpacity) DreamMaterial.SetVector("_Min_Max_Opacity_1", Vector2.Lerp(from.Layer1.MinMaxOpacity, to.Layer1.MinMaxOpacity, t));
+
+                if (from.Layer2.color != to.Layer2.color) DreamMaterial.SetColor("_Color_2", Color.Lerp(from.Layer2.color, to.Layer2.color, t));
+                if (from.Layer2.Speed != to.Layer2.Speed) DreamMaterial.SetFloat("_Speed_2", Mathf.Lerp(from.Layer2.Speed, to.Layer2.Speed, t));
+                if (from.Layer2.MinMaxOpacity != to.Layer2.MinMaxOpacity) DreamMaterial.SetVector("_Min_Max_Opacity_2", Vector2.Lerp(from.Layer2.MinMaxOpacity, to.Layer2.MinMaxOpacity, t));
+
+                if (from.Layer3.color != to.Layer3.color) DreamMaterial.SetColor("_Color_3", Color.Lerp(from.Layer3.color, to.Layer3.color, t));
+                if (from.Layer3.Speed != to.Layer3.Speed) DreamMaterial.SetFloat("_Speed_3", Mathf.Lerp(from.Layer3.Speed, to.Layer3.Speed, t));
+                if (from.Layer3.MinMaxOpacity != to.Layer3.MinMaxOpacity) DreamMaterial.SetVector("_Min_Max_Opacity_3", Vector2.Lerp(from.Layer3.MinMaxOpacity, to.Layer3.MinMaxOpacity, t));
+
+                if (from.BackgroundColor != to.BackgroundColor) DreamMaterial.SetColor("_Background_Color", Color.Lerp(from.BackgroundColor, to.BackgroundColor, t));
+            }
+
+            // properties that take longer to transition
+            if (from.Layer1.BlobSize != to.Layer1.BlobSize) DreamMaterial.SetFloat("_Blob_Size_1", Mathf.Lerp(from.Layer1.BlobSize, to.Layer1.BlobSize, timeElapsed / transitionBlobSizeSeconds));
+            if (from.Layer2.BlobSize != to.Layer2.BlobSize) DreamMaterial.SetFloat("_Blob_Size_2", Mathf.Lerp(from.Layer2.BlobSize, to.Layer2.BlobSize, timeElapsed / transitionBlobSizeSeconds));
+            if (from.Layer3.BlobSize != to.Layer3.BlobSize) DreamMaterial.SetFloat("_Blob_Size_3", Mathf.Lerp(from.Layer3.BlobSize, to.Layer3.BlobSize, timeElapsed / transitionBlobSizeSeconds));
+            Debug.Log(timeElapsed);
+
 
             yield return null;
         }
-        while (timeElapsed < transitionColorSeconds);
+        while (timeElapsed < transitionColorSeconds || timeElapsed < transitionBlobSizeSeconds);
 
         selectedEmotionShaderData = to;
         transitionShaderCoroutine = null;

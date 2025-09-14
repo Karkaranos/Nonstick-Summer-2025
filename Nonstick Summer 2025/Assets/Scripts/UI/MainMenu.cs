@@ -24,6 +24,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject creditScroll;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private CreditBehavior creditObj;
+    [SerializeField, Required] private Button quitButton;
 
     [Header("Credit Controls")]
     [SerializeField] private float creditSpeed;
@@ -57,6 +58,11 @@ public class MainMenu : MonoBehaviour
         if(FindFirstObjectByType<Check>().gameCompleted)
         {
             OpenCredits(false);
+        }
+
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            Destroy(quitButton.gameObject);
         }
     }
 

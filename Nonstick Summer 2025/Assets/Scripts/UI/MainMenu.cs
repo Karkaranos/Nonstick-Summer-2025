@@ -14,6 +14,8 @@ using NaughtyAttributes;
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Runtime.InteropServices;
+
 
 public class MainMenu : MonoBehaviour
 {
@@ -64,15 +66,12 @@ public class MainMenu : MonoBehaviour
         if (Application.platform == RuntimePlatform.WebGLPlayer)
         {
             Destroy(quitButton.gameObject);
+            webglWarning.gameObject.SetActive(true);
         }
 
-        if(!IsWebGLAndWindows() || gameCompleted)
+        if (gameCompleted || Application.platform != RuntimePlatform.WebGLPlayer)
         {
             Destroy(webglWarning.gameObject);
-        }
-        else if(!gameCompleted)
-        {
-            webglWarning.gameObject.SetActive(true);
         }
     }
 
@@ -131,19 +130,5 @@ public class MainMenu : MonoBehaviour
             fadeToBlack.SetActive(true);
             fade.StartFadeOut(image, MainGameplayScene);
         }
-    }
-
-#if !UNITY_EDITOR && UNITY_WEBGL
-    [DllImport("__Internal")]
-    private static extern bool IsWindowsDesktop();
-#endif
-
-    public bool IsWebGLAndWindows()
-    {
-#if !UNITY_EDITOR && UNITY_WEBGL
-        return IsWindowsDesktop();
-#else
-        return false; // Not a WebGL build or running in Unity Editor
-#endif
     }
 }

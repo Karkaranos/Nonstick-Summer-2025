@@ -26,7 +26,9 @@ public class DialogueNPCPortraitDisplay : MonoBehaviour
     [Header("Animated Reaction Anchors")]
     [SerializeField] Vector2 momAnchor;
     [SerializeField] Vector2 grandmaAnchor;
-    [SerializeField] Vector2 cousinAnchor;
+    [SerializeField] Vector2 cousinAnchor1;
+    [SerializeField] Vector2 cousinAnchor2;
+    [SerializeField] Vector2 cousinAnchor3;
     [SerializeField] Vector2 uncleAnchor;
 
     private Coroutine portraitAnimation;
@@ -86,12 +88,32 @@ public class DialogueNPCPortraitDisplay : MonoBehaviour
             case (Character.Grandma):
                 return grandmaAnchor;
             case (Character.Cousin):
-                return cousinAnchor;
-            case(Character.Uncle):
-                return uncleAnchor;
-            default:
-                return Vector2.zero;
-        }
+
+                if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 2)
+                {
+
+                    return cousinAnchor1;
+
+                }
+                else if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 3)
+                {
+
+                    return cousinAnchor2;
+
+                }
+                else if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex >= 4)
+                {
+
+                    return cousinAnchor3;
+
+                }
+                else { return Vector2.zero; }
+
+            case (Character.Uncle):
+                        return uncleAnchor;
+                    default:
+                        return Vector2.zero;
+                    }
     }
 
     void PlayReaction(DialogueNPC dialogue, Character character)

@@ -73,6 +73,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
     {
         DialogueManager.OnOpenCombatUI(startBranch, character);
 
+        if(playCardButton == null) playCardButton = transform.GetComponentInChildren< PlayCardButton>();    
+
         //MusicManager.instance.StartCombat(0);
 
         Instance.isBoss = isBoss;

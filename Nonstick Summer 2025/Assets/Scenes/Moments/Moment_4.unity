@@ -70306,6 +70306,79 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &763489368
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a39d19595c78da84da285518b54ed882, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a39d19595c78da84da285518b54ed882, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a39d19595c78da84da285518b54ed882, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a39d19595c78da84da285518b54ed882, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.75
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a39d19595c78da84da285518b54ed882, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.1267
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a39d19595c78da84da285518b54ed882, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a39d19595c78da84da285518b54ed882, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071078
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a39d19595c78da84da285518b54ed882, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a39d19595c78da84da285518b54ed882, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071058
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a39d19595c78da84da285518b54ed882, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a39d19595c78da84da285518b54ed882, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a39d19595c78da84da285518b54ed882, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a39d19595c78da84da285518b54ed882, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a39d19595c78da84da285518b54ed882, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a39d19595c78da84da285518b54ed882, type: 3}
+      propertyPath: m_Name
+      value: Thicker_Doorframe
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a39d19595c78da84da285518b54ed882, type: 3}
 --- !u!43 &764543436
 Mesh:
   m_ObjectHideFlags: 0
@@ -86780,7 +86853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2252056202500681410, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 35.656124
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2252056202500681410, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -86820,7 +86893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3496223543107628732, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 10.885375
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3496223543107628732, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -86844,7 +86917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4929659812980187495, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 60.426876
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4929659812980187495, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -147166,10 +147239,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 138231849}
     m_Modifications:
-    - target: {fileID: 3216093029526474184, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
-      propertyPath: StartingDialogueBranch
-      value: 
-      objectReference: {fileID: 11400000, guid: e1f697b59736dda4aa7322a91beb598a, type: 2}
     - target: {fileID: 368249545651296241, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.125
@@ -147322,6 +147391,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 3216093029526474184, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+      propertyPath: StartingDialogueBranch
+      value: 
+      objectReference: {fileID: 11400000, guid: e1f697b59736dda4aa7322a91beb598a, type: 2}
     m_RemovedComponents:
     - {fileID: 3216093029526474184, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
     m_RemovedGameObjects: []
@@ -156994,7 +157067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1708879188632933898, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 35.656124
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1708879188632933898, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -157058,7 +157131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4067548123240273524, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 10.885375
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4067548123240273524, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -157102,7 +157175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5520967587660388783, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 60.426876
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5520967587660388783, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -173113,6 +173186,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 138231849}
     m_Modifications:
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: character
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: combatPrompt
+      value: Talk with Mom?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: preCombatLine
+      value: Everything's going just as scheduled
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: characterSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: StartingDialogueBranch
+      value: 
+      objectReference: {fileID: 11400000, guid: 87f8b6b59cf17c348b5151515ad3e407, type: 2}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: PossibleModifiers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: 'PossibleModifiers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7ea86a966298e524e81d7076ef263b99, type: 2}
     - target: {fileID: 368249545651296241, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -173237,34 +173338,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
-      propertyPath: character
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
-      propertyPath: combatPrompt
-      value: Talk with Mom?
-      objectReference: {fileID: 0}
-    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
-      propertyPath: preCombatLine
-      value: Everything's going just as scheduled
-      objectReference: {fileID: 0}
-    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
-      propertyPath: characterSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
-    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
-      propertyPath: StartingDialogueBranch
-      value: 
-      objectReference: {fileID: 11400000, guid: 87f8b6b59cf17c348b5151515ad3e407, type: 2}
-    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
-      propertyPath: PossibleModifiers.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
-      propertyPath: 'PossibleModifiers.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 7ea86a966298e524e81d7076ef263b99, type: 2}
     m_RemovedComponents:
     - {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
     m_RemovedGameObjects: []
@@ -175622,3 +175695,4 @@ SceneRoots:
   - {fileID: 60487693}
   - {fileID: 1210471979}
   - {fileID: 1623601103}
+  - {fileID: 763489368}

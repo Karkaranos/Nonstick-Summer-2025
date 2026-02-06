@@ -16,7 +16,7 @@ using UnityEngine.UI;
 public class DialogueBox : MonoBehaviour
 {
     [SerializeField] private TMP_Text npcText;
-    [SerializeField, Required] private CanvasGroup group;
+    //[SerializeField, Required] private CanvasGroup group;
 
     [HideInInspector] private int NumberInList = 0; // TODO move this to npc dialogue bubble?
 
@@ -38,7 +38,9 @@ public class DialogueBox : MonoBehaviour
 
         currentCharacter = character;
 
-        yield return SetDialogueIndex(NumberInList, branch); 
+        yield return SetDialogueIndex(NumberInList, branch);
+
+        LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
         //npcText.text = branch.dialogue[0].Dialogue; text initialized 
     }
 
@@ -70,12 +72,12 @@ public class DialogueBox : MonoBehaviour
     public void DisplayOneLine(string line)
     {
         npcText.text = line;
-        RefreshLayout();
+        //RefreshLayout();
     }
 
     public IEnumerator SetDialogueIndex(int numberInList, DialogueBranch branch = null, DialogueNPC[] dialogue = null)
     {
-        group.transform.SetAsLastSibling(); // bring to front
+        //group.transform.SetAsLastSibling(); // bring to front
 
         branch = branch ?? DialogueManager.CurrentDialogueBranch;
 
@@ -184,33 +186,9 @@ public class DialogueBox : MonoBehaviour
         }
 
         yield return null;
-        RefreshLayout();
+        //RefreshLayout();
     }
-
 
 
     #endregion
-
-    private void RefreshLayout()
-    {
-        var rectTransform = group.GetComponent<RectTransform>();
-        if (rectTransform == null)
-        {
-            Debug.LogError("How is this null bruh");
-            return;
-        }
-        LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
-
-        if (rectTransform.parent != null)
-        {
-            LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform.parent as RectTransform);
-
-            // just in case bruj
-            if (rectTransform.parent.parent != null)
-            {
-                if (rectTransform.parent.parent is RectTransform)
-                    LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform.parent.parent as RectTransform);
-            }
-        }
-    }
 }

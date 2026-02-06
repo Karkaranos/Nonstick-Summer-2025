@@ -213,8 +213,10 @@ public class Deck
         Deck deckCopy = new Deck();
         foreach(CardData c in _cards)
         {
+            c.BeforeCardDrawnFromDeck();
             deckCopy.Add(c, false);
         }
+
         return deckCopy;
     }
 

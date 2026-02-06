@@ -198,7 +198,7 @@ public class DialogueManager
         DialogueUIController.Instance.gainEnergy = true;
 
         // progress dialogue:
-        var dialogueOption = CurrentDialogueBranch.ReturnDialogueOption(playedCard);
+        var dialogueOption = CurrentDialogueBranch.GetDialogueOption(playedCard);
 
         float relationshipChange = dialogueOption.ChangeInRelationshipStatus;
         //float relationshipChange = playedCardSinceOpeningCombat.GetRelationshipChange(dialogueOption);

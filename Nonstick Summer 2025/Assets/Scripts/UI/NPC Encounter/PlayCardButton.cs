@@ -49,9 +49,7 @@ public class PlayCardButton : MonoBehaviour
 
             if(Mathf.Abs(DialogueUIController.Instance.selectedCardData.EnergyCost) > DialogueManager.CurrentEnergy && DialogueUIController.Instance.inSceneFive == false)
             {
-
                 return;
-
             }
 
         }

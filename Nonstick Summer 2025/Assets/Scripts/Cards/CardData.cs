@@ -143,9 +143,17 @@ public partial class CardData : ScriptableObject
         copy._intention = _intention;
         copy._energyCost = _energyCost;
 
-        copy._stamps = new List<ModifierStamp>(_stamps);
+        foreach(var stamp in _stamps)
+        {
+            copy.AddStamp(stamp.GetCopy());
+        }
 
         return copy;
+    }
+
+    public void BeforeCardDrawnFromDeck()
+    {
+        _stamps.ForEach(s => s.BeforeCardDrawnFromDeck(this));
     }
 
     #region debug

@@ -15,6 +15,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 [System.Serializable]
 public class Deck
@@ -229,12 +230,15 @@ public class Deck
     /// <returns></returns>
     public CardData Pop()
     {
+        _cards = _cards.Where(c => c!=null).ToList();
         if (_cards.Count >= 0)
         {
             CardData toReturn = _cards[0];
             _cards.RemoveAt(0);
             //Debug.Log(Cards.Count + " cards left");
-            OnDeckChanged.Invoke();
+            if(OnDeckChanged!= null)
+                OnDeckChanged.Invoke();
+
             return toReturn;
         }
         throw new System.Exception("No cards in Deck");

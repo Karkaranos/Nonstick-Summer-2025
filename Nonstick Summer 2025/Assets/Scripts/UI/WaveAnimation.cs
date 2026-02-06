@@ -18,6 +18,7 @@ public class WaveAnimation : MonoBehaviour
 
     [SerializeField] float height=5;
     [SerializeField] float speed=0.75f;
+    [SerializeField] float width = 1;
 
     RectTransform[] children;
     Dictionary<RectTransform, Vector3> originalPositions = new Dictionary<RectTransform, Vector3>();
@@ -35,7 +36,7 @@ public class WaveAnimation : MonoBehaviour
         for (int i = 0; i < children.Length; i++)
         {
             var child = children[i];
-            child.localPosition = originalPositions[child] + new Vector3(0, Mathf.Sin((Time.time + i) * speed) * height);
+            child.localPosition = originalPositions[child] + new Vector3(0, Mathf.Sin((Time.time + (i* width)) * speed) * height);
         }
     }
 }

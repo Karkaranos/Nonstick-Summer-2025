@@ -69,9 +69,23 @@ public class DialogueBox : MonoBehaviour
         yield return SetDialogueIndex(NumberInList+1, null, dialogueStored); // mods it in this function dw
     }
 
-    public void DisplayOneLine(string line)
+    public void MuffleTextPlayed(string line)
     {
-        npcText.text = line;
+
+        StartCoroutine(DisplayOneLine(line));
+
+    }
+
+    IEnumerator DisplayOneLine(string line)
+    {
+        for (int i = 0; i < line.Length; i++)
+        {
+
+            npcText.text += line[i];
+
+            yield return new WaitForSeconds(0.02f);
+
+        }
         //RefreshLayout();
     }
 
@@ -134,7 +148,16 @@ public class DialogueBox : MonoBehaviour
 
             }
 
-            npcText.text = dialogue[NumberInList].Dialogue;
+            npcText.text = string.Empty;
+
+            for(int i = 0; i < dialogue[NumberInList].Dialogue.Length; i++)
+            {
+
+                npcText.text += dialogue[NumberInList].Dialogue[i];
+
+                yield return new WaitForSeconds(0.02f);
+
+            }
 
             Debug.Log($"({NumberInList + 1}/{dialogue.Length}): {dialogue[NumberInList].Dialogue}");
 
@@ -172,13 +195,20 @@ public class DialogueBox : MonoBehaviour
 
             }
 
-            npcText.text = branch.dialogue[NumberInList].Dialogue;
+            npcText.text = string.Empty;
+
+            for (int i = 0; i < branch.dialogue[NumberInList].Dialogue.Length; i++)
+            {
+
+                npcText.text += branch.dialogue[NumberInList].Dialogue[i];
+
+                yield return new WaitForSeconds(0.02f);
+
+            }
 
             Debug.Log($"({NumberInList + 1}/{branch.dialogue.Length}): {branch.dialogue[NumberInList].Dialogue}");
 
         }
-
-        //TODO typewriter text goes here
 
         if (PlayerReadAllDialogue)
         {

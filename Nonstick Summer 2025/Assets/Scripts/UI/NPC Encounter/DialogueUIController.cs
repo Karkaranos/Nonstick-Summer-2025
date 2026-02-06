@@ -279,7 +279,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     public void MuffleText()
     {
         // hardcoded for now will fix so it can take a thing later
-        dialogueBox.DisplayOneLine("What was that?");
+        dialogueBox.MuffleTextPlayed("What was that?");
     }
 
     public void UpdateDialogueTreeVisual(DialogueBranch branch)

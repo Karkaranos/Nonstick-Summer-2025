@@ -121,7 +121,10 @@ public class UITransitionManager
             CurrentCanvasReference = null;
         }
 
-        GameManager.DeckManagerReference.RefreshDeck();
+        if (GameManager.DeckManagerReference != null)
+            GameManager.DeckManagerReference.RefreshDeck();
+        else
+            Debug.LogWarning("Deck manager is null");
 
     }
 

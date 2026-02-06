@@ -13,9 +13,13 @@ using NaughtyAttributes;
 [CreateAssetMenu(fileName = "MumbleStamp", menuName = "Modifier Card/Mumble Card")]
 public class MumbleStamp : ModifierStamp
 {
+    public override void BeforeCardDrawnFromDeck(CardData affectedCard)
+    {
+    }
+
     protected override void EffectTriggered(CardData affectedCard)
     {
-        var dialogueOption = DialogueManager.CurrentDialogueBranch.ReturnDialogueOption(affectedCard);
+        var dialogueOption = DialogueManager.CurrentDialogueBranch.GetDialogueOption(affectedCard);
         float relationshipChange = dialogueOption.ChangeInRelationshipStatus;
 
         if(relationshipChange < 0)

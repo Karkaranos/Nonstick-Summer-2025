@@ -118,6 +118,9 @@ public class DeckDisplayer : MonoBehaviour
 
         // Generates spawn positions
         GenerateAndSetPositions();
+
+        // Refresh all sprites because i guess you can modify cards during dialogue now
+        RefreshCardSprites(animate: false);
     }
 
     private IEnumerator ClearRemovedCards()
@@ -256,10 +259,11 @@ public class DeckDisplayer : MonoBehaviour
 
     }
 
-    public void AddCardToHand(CardData card)
+    public CardData AddCardToHand(CardData card)
     {
         displayedData.Add(card, false);
         DisplayAllCards();
+        return card;
     }
 
     public void DiscardCard(CardData card)
@@ -308,6 +312,14 @@ public class DeckDisplayer : MonoBehaviour
 
             card.transform.SetSiblingIndex(i);
             card.TargetSiblingIndex = i;
+        }
+    }
+
+    private void RefreshCardSprites(bool animate)
+    {
+        foreach(CardDisplay c in _visualDisplays)
+        {
+            c.RefreshDisplay(animate);
         }
     }
 

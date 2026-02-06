@@ -13,11 +13,19 @@ using static RelationshipAffectorStamp;
 public class EnergyBonusStamp : ModifierStamp
 {
     public float BonusEnergy = 1;
+
+    
+
     protected override void EffectTriggered(CardData affectedCard)
     {
         if (!DialogueManager.PlayerInCombat)
             return;
 
         DialogueManager.CurrentEnergy += BonusEnergy;
+    }
+
+    public override void BeforeCardDrawnFromDeck(CardData affectedCard)
+    {
+
     }
 }

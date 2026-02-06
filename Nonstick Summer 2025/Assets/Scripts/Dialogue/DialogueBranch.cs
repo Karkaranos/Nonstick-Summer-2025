@@ -26,7 +26,7 @@ public class DialogueBranch : ScriptableObject
 
     private static DialogueOption blank;
 
-    public DialogueOption ReturnDialogueOption(CardData card)
+    public DialogueOption GetDialogueOption(CardData card)
     {
         if (card == null)
         {

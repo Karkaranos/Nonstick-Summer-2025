@@ -148,14 +148,19 @@ public class DialogueBox : MonoBehaviour
 
             }
 
-            npcText.text = string.Empty;
-
-            for(int i = 0; i < dialogue[NumberInList].Dialogue.Length; i++)
+            if (npcText.text != dialogue[NumberInList].Dialogue)
             {
 
-                npcText.text += dialogue[NumberInList].Dialogue[i];
+                npcText.text = string.Empty;
 
-                yield return new WaitForSeconds(0.02f);
+                for (int i = 0; i < dialogue[NumberInList].Dialogue.Length; i++)
+                {
+
+                    npcText.text += dialogue[NumberInList].Dialogue[i];
+
+                    yield return new WaitForSeconds(0.01f);
+
+                }
 
             }
 
@@ -195,14 +200,19 @@ public class DialogueBox : MonoBehaviour
 
             }
 
-            npcText.text = string.Empty;
-
-            for (int i = 0; i < branch.dialogue[NumberInList].Dialogue.Length; i++)
+            if (npcText.text != branch.dialogue[NumberInList].Dialogue)
             {
 
-                npcText.text += branch.dialogue[NumberInList].Dialogue[i];
+                npcText.text = string.Empty;
 
-                yield return new WaitForSeconds(0.02f);
+                for (int i = 0; i < branch.dialogue[NumberInList].Dialogue.Length; i++)
+                {
+
+                    npcText.text += branch.dialogue[NumberInList].Dialogue[i];
+
+                    yield return new WaitForSeconds(0.01f);
+
+                }
 
             }
 

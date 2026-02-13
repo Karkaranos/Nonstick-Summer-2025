@@ -9,34 +9,49 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System;
+using System.Collections.Generic;
+using NaughtyAttributes;
+using System.Collections;
 
 public class ItemObtainPopupCanvas : MonoBehaviour
 {
     [HideInInspector] public ModifierData modifier;
     [HideInInspector] public CardData card;
+
     [SerializeField] private TMP_Text message;
     [SerializeField] private TMP_Text statement;
     [SerializeField] private GameObject cardPickup;
     [SerializeField] private GameObject modifierPickup;
+
+    [Header("Text")]
     [SerializeField, Tooltip("Displays before a Stamp's name")] private string modifierStatement = "You obtained a";
     [SerializeField, Tooltip("Displays before a Card's description")] private string modifierMessage = "Stamp Description: ";
     [SerializeField, Tooltip("Displays before a Card's name")] private string cardStatement = "You found a";
     [SerializeField, Tooltip("Displays when a card is picked up")] private string cardMessage = "Would you like to pick it up?";
-    [SerializeField] private Image modifierDisplay;
+
+    [Header("Card Components")]
     [SerializeField] private CardDisplay cardDisplay;
     [SerializeField] private Button takeCard;
     [SerializeField] private Button leaveCard;
 
-    [SerializeField] private Color charming;
-    [SerializeField] private Color assertive;
-    [SerializeField] private Color sappy;
+    [Header("Modifier Components")]
+    [SerializeField] private ModifierCardDisplay modifierDisplay;
+    [SerializeField] private Button confirmModifier;
 
-    private Color defaultCol;
+    [Header("Other components")]
+    [SerializeField, Required] private CanvasGroup backgroundGroup;
+    [SerializeField, Required] private List<CanvasGroup> collectableGroups;
+
     private CardPickupInteractable cardPickupScript;
+
     public void Initialize(ModifierData? modifier = null, CardData? card = null, CardPickupInteractable? origin = null)
     {
-        defaultCol = statement.color;
+        // it doesnt matter if its a card or modifier. assign all the buttons
+        leaveCard.onClick.AddListener(() => { UIUtilityFunctions.CloseCurrentPopup(); });
+        takeCard.onClick.AddListener(CollectCardAnimation);
+        confirmModifier.onClick.AddListener(CollectCardAnimation);
+
+
         if(modifier == null && card == null)
         {
             return;
@@ -54,7 +69,7 @@ public class ItemObtainPopupCanvas : MonoBehaviour
             cardPickup.SetActive(false);
             modifierPickup.SetActive(true);
 
-            modifierDisplay.sprite = modifier.GetIcon();
+            modifierDisplay.SetCard(modifier);
             if (modifier.name.Contains("Change"))
             {
                 statement.text = TextUtilities.FilterText(modifierStatement + ColorStamp(modifier.name) + "Stamp!");
@@ -130,4 +145,27 @@ public class ItemObtainPopupCanvas : MonoBehaviour
         return desc.Substring(splitMe, desc.Length - splitMe);
 
     }
+
+    #region Collect animation
+
+    private void CollectCardAnimation()
+    {
+        StartCoroutine(CollectCardAnimationCoroutine(modifierDisplay.GetComponent<RectTransform>()));
+        StartCoroutine(CollectCardAnimationCoroutine(cardDisplay.GetComponent<RectTransform>()));
+    }
+
+    private IEnumerator CollectCardAnimationCoroutine(RectTransform display)
+    {
+                                                               // fuck canvas groups bro
+        yield return StaticUtilities.FadeOpacity(backgroundGroup, 0.001f, seconds: 0.5f);
+
+        // move to top left
+
+                     StaticUtilities.AnimateUIPosition(display, TabIconButton.Instance.rectTransform.position, seconds: 1f);
+        yield return StaticUtilities.AnimateScale     (display, new Vector3(0, 0, 0), seconds: 1f);
+
+        UIUtilityFunctions.CloseCurrentPopup();
+    }
+
+    #endregion
 }

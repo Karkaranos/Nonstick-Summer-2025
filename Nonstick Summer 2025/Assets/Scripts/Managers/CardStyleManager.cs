@@ -105,6 +105,11 @@ public class CardStyleManager
         return GetEmotionStyle(card).color;
     }
 
+    public static Color GetEmotionColor(CardEmotion emotion)
+    {
+        return GetEmotionStyle(emotion).color;
+    }
+
     public static Sprite GetEmotionSprite(CardData card)
     {
        return GetEmotionStyle(card).sprite;

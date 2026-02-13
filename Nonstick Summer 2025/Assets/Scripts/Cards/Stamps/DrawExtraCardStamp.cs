@@ -12,6 +12,9 @@ using UnityEngine;
 public class DrawExtraCardStamp : ModifierStamp
 {
     [SerializeField, Min(1)] private int NumCardsToDraw = 1;
+
+    
+
     protected override void EffectTriggered(CardData affectedCard)
     {
         if (DialogueUIController.Instance != null)
@@ -21,5 +24,9 @@ public class DrawExtraCardStamp : ModifierStamp
                 DialogueUIController.Instance.DeckDisplay.DrawOneCard();
             }
         }
+    }
+    
+    public override void BeforeCardDrawnFromDeck(CardData affectedCard)
+    {
     }
 }

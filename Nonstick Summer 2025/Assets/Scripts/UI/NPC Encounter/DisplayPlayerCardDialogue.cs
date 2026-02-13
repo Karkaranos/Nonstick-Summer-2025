@@ -54,7 +54,7 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
         }
 
         StaticUtilities.EnableCanvasGroup(group, interactable:false);
-        var cardtext = DialogueManager.CurrentDialogueBranch.ReturnDialogueOption(card).PlayerDialogue;
+        var cardtext = DialogueManager.CurrentDialogueBranch.GetDialogueOption(card).PlayerDialogue;
         text.text = cardtext;
 
         RefreshLayout();
@@ -92,7 +92,7 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
         }
 
         StaticUtilities.EnableCanvasGroup(group, interactable: false);
-        text.text = DialogueManager.CurrentDialogueBranch.ReturnDialogueOption(card).PlayerDialogue;
+        text.text = DialogueManager.CurrentDialogueBranch.GetDialogueOption(card).PlayerDialogue;
         Debug.LogWarning("Implement typewriter later");
         yield return null;
     }

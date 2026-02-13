@@ -38,4 +38,8 @@ public class RelationshipAffectorStamp : ModifierStamp
         // nothing needs to happen, actually.
         return;
     }
+
+    public override void BeforeCardDrawnFromDeck(CardData affectedCard)
+    {
+    }
 }

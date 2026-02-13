@@ -181,7 +181,7 @@ public class DialogueBox : MonoBehaviour
 
                     dialogueText.text += dialogue[NumberInList].Dialogue[i];
 
-                    yield return new WaitForSeconds(0.01f);
+                    yield return new WaitForSeconds(FindFirstObjectByType<GameManager>().TextScrollSpeed);
 
                 }
 
@@ -237,7 +237,7 @@ public class DialogueBox : MonoBehaviour
 
                     dialogueText.text += branch.dialogue[NumberInList].Dialogue[i];
 
-                    yield return new WaitForSeconds(0.01f);
+                    yield return new WaitForSeconds(FindFirstObjectByType<GameManager>().TextScrollSpeed);
 
                 }
 

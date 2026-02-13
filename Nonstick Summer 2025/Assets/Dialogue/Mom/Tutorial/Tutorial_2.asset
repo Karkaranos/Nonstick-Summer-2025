@@ -10,80 +10,65 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ee689b52b074234399a9d86f8ee0df8, type: 3}
-  m_Name: Tutorial_1
+  m_Name: Tutorial_2
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Hey, You!
+  - Dialogue: 'Allow me to explain this whole thing a little more... In a few moments,
+      your life is about to begin! '
     Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Neutral
-  - Dialogue: "Yeah, I\u2019m talking to YOU!"
+  - Dialogue: "As you talk with your family, you\u2019ll have the option of playing
+      6 different types of cards, with each card being a different \u201Cdialogue\u201D
+      option."
     Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Neutral
-  - Dialogue: Welcome to Midwest Goodbye!
-    Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
-    AnimatedReaction: {fileID: 0}
-    AudioResponse: Neutral
-  - Dialogue: How are you doing today?
+  - Dialogue: All dialogue cards have both a TONE (Witty, Sappy, Defensive), and
+      an INTENT (Statement, Question). People react differently based on their personalities
+      or situations.
     Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Neutral
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "Well someone\u2019s confident!"
-      Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
-      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
-      AudioResponse: Happy
-    - Dialogue: "If I appreciated that witty tone, our relationship definitely would\u2019ve
-        increased."
+    - Dialogue: "You\u2019ll be able to try it out soon!"
       Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
     CombinedDialogue: []
-    PlayerDialogue: "I\u2019m always doing awesome!"
+    PlayerDialogue: Whoah, I can't wait to try this out!
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 8d77c0c4cac80ba44bb9e5b6e78b418f, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b7b869429a499444c9b40b2815eee6c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 0
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "Just fine? Well, we\u2019ll see how you feel by the end of this
-        tutorial!"
-      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
-      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
-      AudioResponse: Angry
-    - Dialogue: "If I appreciated that defensive tone, our relationship definitely
-        would\u2019ve increased."
+    - Dialogue: "Haha, you\u2019ll get the hang of it, I promise."
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
     CombinedDialogue: []
-    PlayerDialogue: "I\u2019m fine."
+    PlayerDialogue: This is sounding like a lot to remember...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 8d77c0c4cac80ba44bb9e5b6e78b418f, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b7b869429a499444c9b40b2815eee6c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 0
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: What a thoughtful response...
-      Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
-      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
-      AudioResponse: Happy
-    - Dialogue: "If I appreciated that sappy tone, our relationship definitely would\u2019ve
-        increased."
+    - Dialogue: "Don\u2019t worry, I\u2019m sure you\u2019ll do great!"
       Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
     CombinedDialogue: []
-    PlayerDialogue: "I\u2019m alright, thank you for asking."
+    PlayerDialogue: I hope I play my cards right.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 8d77c0c4cac80ba44bb9e5b6e78b418f, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b7b869429a499444c9b40b2815eee6c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 0

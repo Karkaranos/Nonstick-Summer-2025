@@ -76,7 +76,6 @@ public class UITransitionManager
             playerCamTransform.localRotation = Quaternion.identity;
         }
 
-
         StaticUtilities.EnableCursor();
 
         if(objectRef != null)

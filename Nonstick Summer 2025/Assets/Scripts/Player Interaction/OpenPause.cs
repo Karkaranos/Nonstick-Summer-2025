@@ -2,7 +2,7 @@
 * File Name :         OpenPause.cs
 * Author :            Cade, Toby
 * Creation Date :     June ?, 2025
-* Updated :           June 26, 2025
+* Updated :           Feb 6, 2026
 *
 * Brief Description : adds listeners to open the pause menu, and the inventory menu.
 * 

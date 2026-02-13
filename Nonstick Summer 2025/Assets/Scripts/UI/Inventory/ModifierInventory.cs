@@ -18,6 +18,7 @@ public class ModifierInventory : MonoBehaviour
     private void Start()
     {
         deckDisplay.SetDisplayDeck(ref DeckManager.PlayerFullDeck);
+        applyModifierButton.Initialize();
         // modifier deck is already set B)
     }
 }

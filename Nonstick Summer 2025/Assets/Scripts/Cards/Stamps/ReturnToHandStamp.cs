@@ -12,15 +12,36 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using System;
+using System.Linq;
 
 [CreateAssetMenu(fileName = "StatChange", menuName = "Scriptable Objects/Stamp/Return To Hand")]
 public class ReturnToHandStamp : ModifierStamp
 {
+    // If stamp has been used this combat
+    [HideInInspector] public bool Expended = false;
     protected override void EffectTriggered(CardData affectedCard)
     {
-        if(DialogueUIController.Instance != null )
+        if(DialogueUIController.Instance != null && Expended == false)
         {
-            DialogueUIController.Instance.DeckDisplay.AddCardToHand(affectedCard.CopyCardWithoutStampType(this.type));
+            Debug.Log("Using Return to Hand Stamp");
+            Expended = true;
+            var copyCard = DialogueUIController.Instance.DeckDisplay.AddCardToHand(affectedCard); // add this card to deck lol
+            var thisStamp = affectedCard.Stamps.Where(s => s.type == typeof(ReturnToHandStamp)).First();
+            ((ReturnToHandStamp)thisStamp).Expended = true;
+            //DialogueUIController.Instance.DeckDisplay.AddCardToHand(affectedCard.CopyCardWithoutStampType(this.type));
         }
+        DialogueUIController.Instance.DeckDisplay.DisplayAllCards();
+    }
+
+    public override void OnStampAdded(CardData affectedCard)
+    {
+        base.OnStampAdded(affectedCard);
+
+        Expended = false;
+    }
+
+    public override void BeforeCardDrawnFromDeck(CardData affectedCard)
+    {
+        Expended = false;
     }
 }

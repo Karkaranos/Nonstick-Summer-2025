@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
@@ -196,6 +197,20 @@ public static class StaticUtilities
             result[i] = list.ElementAt(i);
         }
         return result;
+    }
+
+    #endregion
+
+    #region Linq
+
+    public static void ForEach<T>(this IEnumerable<T> source, UnityAction<T> action)
+    {
+        //source.ThrowIfNull("source");
+        //action.ThrowIfNull("action");
+        foreach (T element in source)
+        {
+            action(element);
+        }
     }
 
     #endregion

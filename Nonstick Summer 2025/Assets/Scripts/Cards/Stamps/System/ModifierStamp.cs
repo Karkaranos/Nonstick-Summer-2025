@@ -49,9 +49,17 @@ public abstract class ModifierStamp : ScriptableObject
 
     }
 
+    public abstract void BeforeCardDrawnFromDeck(CardData affectedCard);
+
     /// <summary>
     /// Performs a cards effect with absolute blind confidence that all of its conditions to activate have been met.
     /// </summary>
     /// <param name="affectedCard"></param>
     protected abstract void EffectTriggered(CardData affectedCard);
+
+    public ModifierStamp GetCopy()
+    {
+        return Instantiate(this) as ModifierStamp;
+    }
+
 }

@@ -42,9 +42,12 @@ public partial class CardData
 
     public void AddStamp(ModifierStamp stamp)
     {
-        _stamps.Add(Instantiate(stamp));
-        stamp.OnStampAdded(this);
-        OnCardValueChanged.Invoke();
+        var stampCopy = Instantiate(stamp);
+        _stamps.Add(stampCopy);
+        stampCopy.OnStampAdded(this);
+
+        if(OnCardValueChanged != null)
+            OnCardValueChanged.Invoke();
     }
 
     public void RemoveStamp(ModifierStamp stamp)

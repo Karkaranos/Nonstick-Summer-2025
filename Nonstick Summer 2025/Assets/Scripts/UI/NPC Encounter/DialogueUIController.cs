@@ -32,8 +32,7 @@ using UnityEngine.SceneManagement;
 
 public class DialogueUIController : Singleton<DialogueUIController>
 {
-    public bool PlayerReadAllNPCText => dialogueBox.PlayerReadAllDialogue;
-
+    [Header("Components")]
     [Required][SerializeField] private EnergyBar energyBar;
     [Required][SerializeField] private DisplayPlayerCardDialogue playerDialogueBubble;
     [Required][SerializeField] private TMP_Text npcName;
@@ -68,6 +67,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     private Scene currentScene;
     [HideInInspector] public bool inSceneFive = false;
+    public bool PlayerReadAllNPCText => dialogueBox.PlayerReadAllDialogue;
 
     public IEnumerator Initialize(DialogueBranch startBranch, Character character, bool isBoss = true, GameObject objRef = null)
     {

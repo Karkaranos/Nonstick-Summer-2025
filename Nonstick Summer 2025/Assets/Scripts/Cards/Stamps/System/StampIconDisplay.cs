@@ -33,7 +33,16 @@ public class StampIconDisplay : MonoBehaviour
     public void RefreshDisplay()
     {
         // hide if no stamp
-        icon.color = modifierStamp == null ? Color.clear : Color.white;
+
+        if (modifierStamp == null)
+            icon.color = Color.clear;
+        else if (modifierStamp.type == typeof(ReturnToHandStamp) && ((ReturnToHandStamp)modifierStamp).Expended)
+        {
+            Debug.Log("USED RETURN STAMP!");
+            icon.color = Color.gray;
+        }
+        else
+            icon.color = Color.white;
 
         if(modifierStamp != null)
             icon.sprite = modifierStamp.Icon;

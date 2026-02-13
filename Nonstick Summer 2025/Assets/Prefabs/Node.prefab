@@ -90,7 +90,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: a47ca3a3408a316468f971ed3c7f10d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -229,7 +229,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: a47ca3a3408a316468f971ed3c7f10d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -368,7 +368,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: a47ca3a3408a316468f971ed3c7f10d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -515,7 +515,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: 90022f80c45b5cf4084b9cea9a20a723, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -584,10 +584,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   node: {fileID: 7082734256917575745}
-  highlightedNodeMaterial: {fileID: -9222479910337242331, guid: 29cf49e8ae8b4f044bb3a132dfbe1a9e, type: 3}
+  highlightedNodeMaterial: {fileID: 2100000, guid: cd095e6a8ceea09428871199d023309f, type: 2}
   lines:
   - {fileID: 6981856444731892186}
   - {fileID: 3608055196982659664}
   - {fileID: 3394748795431022728}
   xOffset: 10
   yOffset: 7
+  _nodeCamera: {fileID: 0}

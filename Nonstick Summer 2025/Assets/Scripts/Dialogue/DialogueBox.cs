@@ -15,12 +15,14 @@ using UnityEngine.UI;
 
 public class DialogueBox : MonoBehaviour
 {
-    [SerializeField] private TMP_Text npcText;
+    [SerializeField] private TMP_Text dialogueText;
     //[SerializeField, Required] private CanvasGroup group;
 
     [HideInInspector] private int NumberInList = 0; // TODO move this to npc dialogue bubble?
 
     [ReadOnly] public bool PlayerReadAllDialogue;
+
+    bool dialogueScrolling = false;
 
     private DialogueNPC[] dialogueStored;
     private Character currentCharacter;
@@ -32,7 +34,7 @@ public class DialogueBox : MonoBehaviour
     /// <param name="branch">the current dialogue branch that the player is on</param>
     public IEnumerator Initialize(DialogueBranch branch, Character character)
     {
-        npcText = npcText != null ? npcText : GetComponentInChildren<TMP_Text>();
+        dialogueText = dialogueText != null ? dialogueText : GetComponentInChildren<TMP_Text>();
 
         NumberInList = 0;
 
@@ -66,7 +68,20 @@ public class DialogueBox : MonoBehaviour
     /// <param name="numberInList">the current line of dialogue that the player is on</param>
     public IEnumerator ProgressNPCDialogue(DialogueBranch branch=null)
     {
+
+        if(dialogueScrolling)
+        {
+
+            dialogueText.text = DialogueManager.CurrentDialogueBranch.dialogue[NumberInList].Dialogue;
+
+            dialogueScrolling = false;
+
+            StopAllCoroutines();
+
+        }
+
         yield return SetDialogueIndex(NumberInList+1, null, dialogueStored); // mods it in this function dw
+
     }
 
     public void MuffleTextPlayed(string line)
@@ -78,14 +93,20 @@ public class DialogueBox : MonoBehaviour
 
     IEnumerator DisplayOneLine(string line)
     {
+
+        dialogueScrolling = true;
+
         for (int i = 0; i < line.Length; i++)
         {
 
-            npcText.text += line[i];
+            dialogueText.text += line[i];
 
             yield return new WaitForSeconds(0.02f);
 
         }
+
+        dialogueScrolling = false;
+
         //RefreshLayout();
     }
 
@@ -148,19 +169,23 @@ public class DialogueBox : MonoBehaviour
 
             }
 
-            if (npcText.text != dialogue[NumberInList].Dialogue)
+            if (dialogueText.text != dialogue[NumberInList].Dialogue)
             {
 
-                npcText.text = string.Empty;
+                dialogueScrolling = true;
+
+                dialogueText.text = string.Empty;
 
                 for (int i = 0; i < dialogue[NumberInList].Dialogue.Length; i++)
                 {
 
-                    npcText.text += dialogue[NumberInList].Dialogue[i];
+                    dialogueText.text += dialogue[NumberInList].Dialogue[i];
 
                     yield return new WaitForSeconds(0.01f);
 
                 }
+
+                dialogueScrolling = false;
 
             }
 
@@ -200,19 +225,23 @@ public class DialogueBox : MonoBehaviour
 
             }
 
-            if (npcText.text != branch.dialogue[NumberInList].Dialogue)
+            if (dialogueText.text != branch.dialogue[NumberInList].Dialogue)
             {
 
-                npcText.text = string.Empty;
+                dialogueScrolling = true;
+
+                dialogueText.text = string.Empty;
 
                 for (int i = 0; i < branch.dialogue[NumberInList].Dialogue.Length; i++)
                 {
 
-                    npcText.text += branch.dialogue[NumberInList].Dialogue[i];
+                    dialogueText.text += branch.dialogue[NumberInList].Dialogue[i];
 
                     yield return new WaitForSeconds(0.01f);
 
                 }
+
+                dialogueScrolling = false;
 
             }
 

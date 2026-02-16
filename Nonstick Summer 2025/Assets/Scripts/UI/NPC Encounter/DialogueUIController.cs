@@ -105,7 +105,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
             dialogueTree.Initialize(startBranch);
         }
 
-        objectiveText.text = GameManager.ObjectiveReference.GetObjective();
+        Debug.Log(TextUtilities.FilterText(GameManager.ObjectiveReference.GetObjective()));
+        objectiveText.text = TextUtilities.FilterText( GameManager.ObjectiveReference.GetObjective());
 
         currentScene = SceneManager.GetActiveScene();
         if (currentScene.name == "Moment_5")

@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &-5137848757002552919
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Assertive Material
+  m_Shader: {fileID: 4800000, guid: cf81c85f95fe47e1a27f6ae460cf182c, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: d2327af3ac5b834498656002112122c0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _CullMode: 0
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a92b25f83d49b9bc132d206b370281, type: 3}
+  m_Name: _Midwest Goodbye Sprites
+  m_EditorClassIdentifier: 
+  m_Version: 1.1.0
+  m_FaceInfo:
+    m_FaceIndex: 0
+    m_FamilyName: 
+    m_StyleName: 
+    m_PointSize: 0
+    m_Scale: 0
+    m_UnitsPerEM: 0
+    m_LineHeight: 0
+    m_AscentLine: 0
+    m_CapLine: 0
+    m_MeanLine: 0
+    m_Baseline: 0
+    m_DescentLine: 0
+    m_SuperscriptOffset: 0
+    m_SuperscriptSize: 0
+    m_SubscriptOffset: 0
+    m_SubscriptSize: 0
+    m_UnderlineOffset: 0
+    m_UnderlineThickness: 0
+    m_StrikethroughOffset: 0
+    m_StrikethroughThickness: 0
+    m_TabWidth: 0
+  m_Material: {fileID: -5137848757002552919}
+  spriteSheet: {fileID: 2800000, guid: d2327af3ac5b834498656002112122c0, type: 3}
+  m_SpriteCharacterTable:
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 0
+    m_Scale: 1
+    m_Name: Assertive
+  m_GlyphTable:
+  - m_Index: 0
+    m_Metrics:
+      m_Width: 700
+      m_Height: 700
+      m_HorizontalBearingX: 100
+      m_HorizontalBearingY: 500
+      m_HorizontalAdvance: 798
+    m_GlyphRect:
+      m_X: 0
+      m_Y: 0
+      m_Width: 798
+      m_Height: 771
+    m_Scale: 1.5
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: 21300000, guid: d2327af3ac5b834498656002112122c0, type: 3}
+  spriteInfoList: []
+  fallbackSpriteAssets:
+  - {fileID: 11400000, guid: e94149c78ddb04a44b3f0103ee3a6f11, type: 2}
+  - {fileID: 11400000, guid: 7cc47bfba9bdb554c854e15dfab7fa2f, type: 2}
+  - {fileID: 11400000, guid: 80e4d99fdade20540b9c6046e088ba9d, type: 2}
+  - {fileID: 11400000, guid: 3a3eafd6ec5d6654d94e0d09a5f9ce80, type: 2}
+  - {fileID: 11400000, guid: 0be56246752bc184bb84d5c394cf72cc, type: 2}
+  - {fileID: 11400000, guid: 685b8ffc5e946bf43b095ea0cbb43d8a, type: 2}
+  - {fileID: 11400000, guid: df1a3eca7f5d9af4ca8ec0f46406a77f, type: 2}
+  - {fileID: 11400000, guid: 5d90d8322a95bbf47a1daa4da41b5d11, type: 2}
+  - {fileID: 11400000, guid: 6cd7bbef4dcd6754ca74515a441d1325, type: 2}
+  - {fileID: 11400000, guid: ad7737c101f9ff746b12db393089a525, type: 2}
+  - {fileID: 11400000, guid: 0858b25c470d23d498c0c0e59c1b07ba, type: 2}
+  - {fileID: 11400000, guid: b548d598f28b5f640a69b782942a5e43, type: 2}
+  - {fileID: 11400000, guid: 2786f1f1515fe4c41bb31a0ec976add8, type: 2}
+  - {fileID: 11400000, guid: d09909b93a8616644a7f5bf575500fe4, type: 2}
+  - {fileID: 11400000, guid: 736791817fdcda74bb6c5bfc4bfa74f3, type: 2}
+  - {fileID: 11400000, guid: 37badc8ed8e6cc04cb9d9bd07659d13f, type: 2}
+  - {fileID: 11400000, guid: 9e5bf5ce6a71866418d839c63e56f6da, type: 2}

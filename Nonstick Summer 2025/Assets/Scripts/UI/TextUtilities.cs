@@ -16,22 +16,39 @@ public static class TextUtilities
         // i hope this is not extremely slow
         return rawText
             // emotions
-            .Replace("[Assertive]", $"<color=#{CardStyleManager.RedStyle.color.ToHex()}>{CardStyleManager.RedStyle.DisplayName}</color>")
-            .Replace("[Charming]", $"<color=#{CardStyleManager.YellowStyle.color.ToHex()}>{CardStyleManager.YellowStyle.DisplayName}</color>")
-            .Replace("[Sappy]", $"<color=#{CardStyleManager.BlueStyle.color.ToHex()}>{CardStyleManager.BlueStyle.DisplayName}</color>")
+            .Replace("[Assertive]", $"<sprite name=\"Assertive\"><color=#{CardStyleManager.RedStyle.color.ToHex()}>{CardStyleManager.RedStyle.DisplayName}</color>")
+            .Replace("[Charming]", $"<sprite name=\"Charming\"><color=#{CardStyleManager.YellowStyle.color.ToHex()}>{CardStyleManager.YellowStyle.DisplayName}</color>")
+            .Replace("[Sappy]", $"<sprite name=\"Sappy\"><color=#{CardStyleManager.BlueStyle.color.ToHex()}>{CardStyleManager.BlueStyle.DisplayName}</color>")
             // intentions
-            .Replace("[Expression]", $"<color=#{CardStyleManager.StatementStyle.color.ToHex()}>{CardStyleManager.StatementStyle.DisplayName}</color>")
-            .Replace("[Observation]", $"<color=#{CardStyleManager.ObservationStyle.color.ToHex()}>{CardStyleManager.ObservationStyle.DisplayName}</color>")
-            .Replace("[Question]", $"<color=#{CardStyleManager.QuestionStyle.color.ToHex()}>{CardStyleManager.QuestionStyle.DisplayName}</color>")
-            .Replace("[Statement]", $"<color=#{CardStyleManager.StatementStyle.color.ToHex()}>{CardStyleManager.StatementStyle.DisplayName}</color>")
+            .Replace("[Expression]", $"<sprite name=\"Statement\"><color=#{CardStyleManager.StatementStyle.color.ToHex()}>{CardStyleManager.StatementStyle.DisplayName}</color>")
+            .Replace("[Observation]", $"<sprite name=\"Statement\"><color=#{CardStyleManager.ObservationStyle.color.ToHex()}>{CardStyleManager.StatementStyle.DisplayName}</color>")
+            .Replace("[Question]", $"<sprite name=\"Question\"><color=#{CardStyleManager.QuestionStyle.color.ToHex()}>{CardStyleManager.QuestionStyle.DisplayName}</color>")
+            .Replace("[Statement]", $"<sprite name=\"Statement\"><color=#{CardStyleManager.StatementStyle.color.ToHex()}>{CardStyleManager.StatementStyle.DisplayName}</color>")
             // specific variables
-            .Replace("[DrawButtonEnergy]", (-DialogueManager.DrawButtonEnergyCost).AddSignToString(additonalText: " energy"))
-            .Replace("[DiscardEnergy]", DialogueManager.EnergyGainedPerDiscard.AddSignToString(additonalText: " energy"))
-            .Replace("[SilentEnergy]", DialogueManager.EnergyGainedIfSilent.AddSignToString(additonalText: " energy"))
+            .Replace("[DrawButtonEnergy]", (-DialogueManager.DrawButtonEnergyCost).AddSignToString(additonalText: " <sprite name=\"Energy\">energy"))
+            .Replace("[DiscardEnergy]", DialogueManager.EnergyGainedPerDiscard.AddSignToString(additonalText: "+<sprite name=\"Energy\">energy"))
+            .Replace("[SilentEnergy]", DialogueManager.EnergyGainedIfSilent.AddSignToString(additonalText: "+<sprite name=\"Energy\">energy"))
             .Replace("[PlayerEnergy]", DialogueManager.CurrentEnergy.ToString())
+            // stamps
+            .Replace("[Mumble]", $"<sprite name=\"Mumble\"><color=#{GameManager.Instance.StampTooltipColor.ToHex()}>Mumble</color>")
+            .Replace("[Repetition]", $"<sprite name=\"Repetition\"><color=#{GameManager.Instance.StampTooltipColor.ToHex()}>Repetition</color>")
+            .Replace("[Overthinking]", $"<sprite name=\"Overthinking\"><color=#{GameManager.Instance.StampTooltipColor.ToHex()}>Overthinking</color>")
+            .Replace("[Extrovert]", $"<sprite name=\"Extrovert\"><color=#{GameManager.Instance.StampTooltipColor.ToHex()}>Extrovert</color>")
+            .Replace("[Confidence]", $"<sprite name=\"Confidence\"><color=#{GameManager.Instance.StampTooltipColor.ToHex()}>Confidence</color>")
+            .Replace("[Duplicate Card]", $"<sprite name=\"Duplicate\"><color=#{GameManager.Instance.StampTooltipColor.ToHex()}>Duplicate Card</color>")
+            .Replace("[Duplicate]", $"<sprite name=\"Duplicate\"><color=#{GameManager.Instance.StampTooltipColor.ToHex()}>Duplicate</color>")
+            .Replace("[Scissors]", $"<sprite name=\"Scissors\"><color=#{GameManager.Instance.StampTooltipColor.ToHex()}>Scissors</color>")
+            // people
+            .Replace("[Mom]", $"<sprite name=\"Mom Icon\"><color=#{GameManager.Instance.CharactersColor.ToHex()}>Mom</color>")
+            .Replace("[Cousin]", $"<sprite name=\"Cousin Icon\"><color=#{GameManager.Instance.CharactersColor.ToHex()}>Cousin</color>")
+            .Replace("[Grandma]", $"<sprite name=\"Grandma Icon\"><color=#{GameManager.Instance.CharactersColor.ToHex()}>Grandma</color>")
+            .Replace("[Uncle]", $"<sprite name=\"Uncle Icon\"><color=#{GameManager.Instance.CharactersColor.ToHex()}>Uncle</color>")
+            // other
+            .Replace("[phone]", $"<sprite name=\"Phone\"><color=#{GameManager.Instance.CharactersColor.ToHex()}>phone</color>")
+            .Replace("[Social Battery]", $"<sprite name=\"Energy\"><color=#{GameManager.Instance.PositiveEnergyColor.ToHex()}>Social Battery</color>")
 
             // okay i know its pretty bad to hardcode this but lowkey with such little time left its not worth it to generalize it
-            .Replace("[Energy]", $"<color=#{GameManager.Instance.PositiveEnergyColor.ToHex()}>+3 Energy</color>")
+            .Replace("[Energy]", $"<color=#{GameManager.Instance.PositiveEnergyColor.ToHex()}>+3 <sprite name=\"Energy\">Energy</color>")
 
             // Text "functions"
             .ReplaceTagColor("Stamp", GameManager.Instance.StampTooltipColor.ToHex())

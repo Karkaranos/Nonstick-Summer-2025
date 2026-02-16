@@ -160,9 +160,11 @@ public class ItemObtainPopupCanvas : MonoBehaviour
         yield return StaticUtilities.FadeOpacity(backgroundGroup, 0.001f, seconds: 0.5f);
 
         // move to top left
-
                      StaticUtilities.AnimateUIPosition(display, TabIconButton.Instance.rectTransform.position, seconds: 1f);
         yield return StaticUtilities.AnimateScale     (display, new Vector3(0, 0, 0), seconds: 1f);
+
+        // shake ur little icon buddy!
+        yield return TabIconButton.Instance.CollectedCardShakeAnimation();
 
         UIUtilityFunctions.CloseCurrentPopup();
     }

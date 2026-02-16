@@ -17,25 +17,25 @@ MonoBehaviour:
       your life is about to begin! '
     Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
     AnimatedReaction: {fileID: 0}
-    AudioResponse: Neutral
+    AudioResponse: Silent
   - Dialogue: "As you talk with your family, you\u2019ll have the option of playing
       6 different types of cards, with each card being a different \u201Cdialogue\u201D
       option."
     Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
     AnimatedReaction: {fileID: 0}
-    AudioResponse: Neutral
+    AudioResponse: Silent
   - Dialogue: All dialogue cards have both a TONE (Witty, Sappy, Defensive), and
       an INTENT (Statement, Question). People react differently based on their personalities
       or situations.
     Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
     AnimatedReaction: {fileID: 0}
-    AudioResponse: Neutral
+    AudioResponse: Silent
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "You\u2019ll be able to try it out soon!"
       Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
-      AudioResponse: Happy
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: Whoah, I can't wait to try this out!
     RelationshipCheckRequired: 0
@@ -49,8 +49,27 @@ MonoBehaviour:
     - Dialogue: "Haha, you\u2019ll get the hang of it, I promise."
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
-      AudioResponse: Angry
-    CombinedDialogue: []
+      AudioResponse: Silent
+    CombinedDialogue:
+    - Dialogue: "Haha, you\u2019ll get the hang of it, I promise."
+      Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Silent
+    - Dialogue: "Now, it\u2019s important for you to keep your SOCIAL BATTERY in
+        mind as you talk to everyone."
+      Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
+    - Dialogue: 'Your SOCIAL BATTERY carries over to your conversation and is what
+        allows you to play cards.  '
+      Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
+    - Dialogue: Different cards have different SOCIAL BATTERY costs, depending on
+        your PERSONALITY or the STAMPS you put on your card.
+      Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Silent
     PlayerDialogue: This is sounding like a lot to remember...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -63,7 +82,7 @@ MonoBehaviour:
     - Dialogue: "Don\u2019t worry, I\u2019m sure you\u2019ll do great!"
       Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
-      AudioResponse: Happy
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: I hope I play my cards right.
     RelationshipCheckRequired: 0
@@ -78,12 +97,12 @@ MonoBehaviour:
         going to be in trouble."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
-      AudioResponse: 
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: 
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b7b869429a499444c9b40b2815eee6c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
@@ -92,12 +111,12 @@ MonoBehaviour:
     - Dialogue: "Well, I told you to, didn\u2019t I? You had plenty of time."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
-      AudioResponse: 
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: 
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b7b869429a499444c9b40b2815eee6c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
@@ -106,12 +125,12 @@ MonoBehaviour:
     - Dialogue: Thank you dear.
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
-      AudioResponse: 
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: 
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b7b869429a499444c9b40b2815eee6c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
@@ -126,7 +145,7 @@ MonoBehaviour:
     PlayerDialogue: I dunno...diiid I?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b7b869429a499444c9b40b2815eee6c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
@@ -140,7 +159,7 @@ MonoBehaviour:
     PlayerDialogue: Why?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b7b869429a499444c9b40b2815eee6c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
@@ -154,7 +173,7 @@ MonoBehaviour:
     PlayerDialogue: Can you help me, Momma?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b7b869429a499444c9b40b2815eee6c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
@@ -164,7 +183,7 @@ MonoBehaviour:
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 5d7ea5697bce1cb43869a5f2bb5fcf39, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: b7b869429a499444c9b40b2815eee6c8, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10

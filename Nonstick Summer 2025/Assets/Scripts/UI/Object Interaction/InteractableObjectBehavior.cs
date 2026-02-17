@@ -208,6 +208,8 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
                 if (filter != null)
                     filter.mesh = null;*/
                 mr.enabled = false;
+                Destroy(mr.gameObject);
+                Destroy(gameObject);
             }
         }
 

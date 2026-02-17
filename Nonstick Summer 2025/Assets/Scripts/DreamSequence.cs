@@ -116,6 +116,8 @@ public class DreamSequence : MonoBehaviour
         var newMenu = UITransitionManager.OpenMenu(confirmation).GetComponent<SocialBatteryNotifCanvas>();
         newMenu.Initialize(selectedEmotion, Background.material);
 
+        FindFirstObjectByType<MaterialSwapOnEmotion>()?.SetColor(selectedEmotion);
+
 
     }    
 

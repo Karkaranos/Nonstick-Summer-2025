@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -42,6 +43,7 @@ public class GameManager : Singleton<GameManager>
     [Foldout("Card Styles")] public Color PositiveEnergyColor = Color.green;
     [Foldout("Card Styles")] public Color NegativeEnergyColor = Color.red;
     [Foldout("Card Styles")] public Color NeutralEnergyColor = Color.gray;
+    [Foldout("Card Styles")] public Color CharactersColor = Color.yellow;
 
     [Tooltip("The initial cards in the players hand at the very beginning of the game")]
     [Foldout("Card Values"), SerializeField] private CardData[] startingCards;
@@ -58,6 +60,8 @@ public class GameManager : Singleton<GameManager>
     [Header("Cards")]
     [Foldout("Combat"),SerializeField] private int _cardsDrawnPerRound=1;
     [Foldout("Combat"),SerializeField] public static int DefaultCardsInHand=4; // why is this hardcoded?
+    [Header("Dialogue Display")]
+    [Foldout("Combat"), Range(0.001f, .01f)] public float TextScrollSpeed = .01f;
 
     [Header("Relationship Manager")]
     [Foldout("Relationship Manager")] [SerializeField] private RelationshipStats grandmaStartingValue;

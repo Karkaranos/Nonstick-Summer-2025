@@ -19,6 +19,7 @@ public class PauseAndSettings : MonoBehaviour
     [SerializeField] private Slider _mouseSensitivitySlider;
     [SerializeField] private Slider _sfxVolume;
     [SerializeField] private Slider _musicVolume;
+    [SerializeField] private Slider _textScrollSpeed;
     [SerializeField, Required] private Button settingsBackButton;
 
     private AudioManager am;
@@ -43,6 +44,12 @@ public class PauseAndSettings : MonoBehaviour
         {
             _musicVolume.value = am.musicVolume;
             _musicVolume.onValueChanged.AddListener(UpdateMusicVolume);
+        }
+
+        if(_textScrollSpeed != null)
+        {
+            _textScrollSpeed.value = FindFirstObjectByType<GameManager>().TextScrollSpeed * -1;
+            _textScrollSpeed.onValueChanged.AddListener(UpdateTextScrollSpeed);
         }
 
         if(settingsBackButton != null)
@@ -138,6 +145,14 @@ public class PauseAndSettings : MonoBehaviour
     {
         am.musicVolume = val;
         am.UpdateVolume();
+    }
+
+    public void UpdateTextScrollSpeed(float val)
+    {
+
+        FindFirstObjectByType<GameManager>().TextScrollSpeed = val * -1;
+        Debug.Log(val * -1);
+
     }
 
 

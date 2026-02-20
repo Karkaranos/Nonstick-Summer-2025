@@ -1,7 +1,7 @@
 /*************************************************
-Author Names :          Cade, Naylor
+Author Names :          Cade, Naylor, Toby
 Date Created :          June 20, 2025
-Date Modified :         June 20, 2025
+Date Modified :         Feb  15, 2026
 Brief Description :     Stores all objectives for the level
                         Updates the display when the condition is met
 
@@ -94,7 +94,7 @@ public class Objectives : MonoBehaviour
                 Debug.LogWarning("Condition Met");
                 _conditions[i].ConditionBeenMet = true;
                 if (_displayText != null)
-                    _displayText.text = _conditions[i].DisplayText;
+                    _displayText.text = TextUtilities.FilterText( _conditions[i].DisplayText );
 
 
                 currentObjective = i;

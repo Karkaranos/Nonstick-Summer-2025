@@ -10,20 +10,25 @@
 using NaughtyAttributes;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogueBox : MonoBehaviour
 {
-    [SerializeField] private TMP_Text npcText;
+    [SerializeField] private TMP_Text dialogueText;
     //[SerializeField, Required] private CanvasGroup group;
 
     [HideInInspector] private int NumberInList = 0; // TODO move this to npc dialogue bubble?
 
     [ReadOnly] public bool PlayerReadAllDialogue;
 
+    bool dialogueScrolling = false;
+
     private DialogueNPC[] dialogueStored;
     private Character currentCharacter;
+
+    float scrollSpeed;
 
 
     /// <summary>
@@ -32,16 +37,19 @@ public class DialogueBox : MonoBehaviour
     /// <param name="branch">the current dialogue branch that the player is on</param>
     public IEnumerator Initialize(DialogueBranch branch, Character character)
     {
-        npcText = npcText != null ? npcText : GetComponentInChildren<TMP_Text>();
+        dialogueText = dialogueText != null ? dialogueText : GetComponentInChildren<TMP_Text>();
 
         NumberInList = 0;
 
         currentCharacter = character;
 
+        scrollSpeed = FindFirstObjectByType<GameManager>().TextScrollSpeed;
+
         yield return SetDialogueIndex(NumberInList, branch);
 
         LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
         //npcText.text = branch.dialogue[0].Dialogue; text initialized 
+
     }
 
     #region Dialogue Iteration
@@ -66,12 +74,47 @@ public class DialogueBox : MonoBehaviour
     /// <param name="numberInList">the current line of dialogue that the player is on</param>
     public IEnumerator ProgressNPCDialogue(DialogueBranch branch=null)
     {
-        yield return SetDialogueIndex(NumberInList+1, null, dialogueStored); // mods it in this function dw
+
+        if(dialogueScrolling)
+        {
+
+            //i'll figure out something more graceful later but the text boxes will fuck up otherwise
+            yield return null;
+
+        }
+        else
+        {
+
+            scrollSpeed = FindFirstObjectByType<GameManager>().TextScrollSpeed;
+            yield return SetDialogueIndex(NumberInList + 1, null, dialogueStored);
+
+        }
+
     }
 
-    public void DisplayOneLine(string line)
+    public void MuffleTextPlayed(string line)
     {
-        npcText.text = line;
+
+        StartCoroutine(DisplayOneLine(line));
+
+    }
+
+    IEnumerator DisplayOneLine(string line)
+    {
+
+        dialogueScrolling = true;
+
+        for (int i = 0; i < line.Length; i++)
+        {
+
+            dialogueText.text += line[i];
+
+            yield return new WaitForSeconds(scrollSpeed);
+
+        }
+
+        dialogueScrolling = false;
+
         //RefreshLayout();
     }
 
@@ -134,7 +177,25 @@ public class DialogueBox : MonoBehaviour
 
             }
 
-            npcText.text = dialogue[NumberInList].Dialogue;
+            if (dialogueText.text != dialogue[NumberInList].Dialogue)
+            {
+
+                dialogueScrolling = true;
+
+                dialogueText.text = string.Empty;
+
+                for (int i = 0; i < dialogue[NumberInList].Dialogue.Length; i++)
+                {
+
+                    dialogueText.text += dialogue[NumberInList].Dialogue[i];
+
+                    yield return new WaitForSeconds(scrollSpeed);
+
+                }
+
+                dialogueScrolling = false;
+
+            }
 
             Debug.Log($"({NumberInList + 1}/{dialogue.Length}): {dialogue[NumberInList].Dialogue}");
 
@@ -172,13 +233,29 @@ public class DialogueBox : MonoBehaviour
 
             }
 
-            npcText.text = branch.dialogue[NumberInList].Dialogue;
+            if (dialogueText.text != branch.dialogue[NumberInList].Dialogue)
+            {
+
+                dialogueScrolling = true;
+
+                dialogueText.text = string.Empty;
+
+                for (int i = 0; i < branch.dialogue[NumberInList].Dialogue.Length; i++)
+                {
+
+                    dialogueText.text += branch.dialogue[NumberInList].Dialogue[i];
+
+                    yield return new WaitForSeconds(scrollSpeed);
+
+                }
+
+                dialogueScrolling = false;
+
+            }
 
             Debug.Log($"({NumberInList + 1}/{branch.dialogue.Length}): {branch.dialogue[NumberInList].Dialogue}");
 
         }
-
-        //TODO typewriter text goes here
 
         if (PlayerReadAllDialogue)
         {

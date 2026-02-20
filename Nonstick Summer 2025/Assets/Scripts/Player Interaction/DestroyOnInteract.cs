@@ -45,13 +45,19 @@ public class DestroyOnInteract : MonoBehaviour, IInteractableObjective
             player.GetComponent<Objectives>().MetCondition(ObjectiveConditions.INTERACT_WITH_OBJECT, gameObject);
             InteractSuccessful = true;
             TryBoss();
-            Destroy(gameObject);
+            StartCoroutine(DestroyAnimation());
 
         }
     }
     public IEnumerator DestroyAnimation()
     {
+        GetComponentsInChildren<Collider>().ForEach(x=> x.enabled = false);
 
+        yield return StaticUtilities.AnimateScale(transform, Vector3.one * 1.25f, 0.3f, unscaledTime: true, lockBottomToYPosition: true, tExponent:0.25f);
+        yield return StaticUtilities.AnimateScale(transform, Vector3.zero,        0.5f, unscaledTime: true, lockBottomToYPosition: true, tExponent:0.9f);
+        yield return new WaitForEndOfFrame();
+
+        Destroy(this.gameObject);
     }
 
     /// <summary>

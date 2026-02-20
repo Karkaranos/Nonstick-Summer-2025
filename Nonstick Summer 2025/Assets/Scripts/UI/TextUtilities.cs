@@ -26,9 +26,9 @@ public static class TextUtilities
             .Replace("[Question]", $"<sprite name=\"Question\"><color=#{CardStyleManager.QuestionStyle.color.ToHex()}>{CardStyleManager.QuestionStyle.DisplayName}</color>")
             .Replace("[Statement]", $"<sprite name=\"Statement\"><color=#{CardStyleManager.StatementStyle.color.ToHex()}>{CardStyleManager.StatementStyle.DisplayName}</color>")
             // specific variables
-            .Replace("[DrawButtonEnergy]", (-DialogueManager.DrawButtonEnergyCost).AddSignToString(additonalText: " <sprite name=\"Energy\">energy"))
-            .Replace("[DiscardEnergy]", DialogueManager.EnergyGainedPerDiscard.AddSignToString(additonalText: "+<sprite name=\"Energy\">energy"))
-            .Replace("[SilentEnergy]", DialogueManager.EnergyGainedIfSilent.AddSignToString(additonalText: "+<sprite name=\"Energy\">energy"))
+            .Replace("[DrawButtonEnergy]", $"<color=#{GameManager.Instance.NegativeEnergyColor.ToHex()}>{DialogueManager.DrawButtonEnergyCost}<sprite name=\"Energy\">energy")
+            .Replace("[DiscardEnergy]", $"<color=#{GameManager.Instance.PositiveEnergyColor.ToHex()}>+{DialogueManager.EnergyGainedPerDiscard}<sprite name=\"Energy\">energy")
+            .Replace("[SilentEnergy]", $"<color=#{GameManager.Instance.PositiveEnergyColor.ToHex()}>{DialogueManager.EnergyGainedIfSilent}<sprite name=\"Energy\">energy")
             .Replace("[PlayerEnergy]", DialogueManager.CurrentEnergy.ToString())
             // stamps
             .Replace("[Mumble]", $"<sprite name=\"Mumble\"><color=#{GameManager.Instance.StampTooltipColor.ToHex()}>Mumble</color>")

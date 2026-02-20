@@ -10,6 +10,7 @@
 using NaughtyAttributes;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,6 +28,8 @@ public class DialogueBox : MonoBehaviour
     private DialogueNPC[] dialogueStored;
     private Character currentCharacter;
 
+    float scrollSpeed;
+
 
     /// <summary>
     /// displays dialogue according to where the player is in a dialogue branch
@@ -40,10 +43,13 @@ public class DialogueBox : MonoBehaviour
 
         currentCharacter = character;
 
+        scrollSpeed = FindFirstObjectByType<GameManager>().TextScrollSpeed;
+
         yield return SetDialogueIndex(NumberInList, branch);
 
         LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
         //npcText.text = branch.dialogue[0].Dialogue; text initialized 
+
     }
 
     #region Dialogue Iteration
@@ -72,15 +78,17 @@ public class DialogueBox : MonoBehaviour
         if(dialogueScrolling)
         {
 
-            dialogueText.text = DialogueManager.CurrentDialogueBranch.dialogue[NumberInList].Dialogue;
-
-            dialogueScrolling = false;
-
-            StopAllCoroutines();
+            //i'll figure out something more graceful later but the text boxes will fuck up otherwise
+            yield return null;
 
         }
+        else
+        {
 
-        yield return SetDialogueIndex(NumberInList+1, null, dialogueStored); // mods it in this function dw
+            scrollSpeed = FindFirstObjectByType<GameManager>().TextScrollSpeed;
+            yield return SetDialogueIndex(NumberInList + 1, null, dialogueStored);
+
+        }
 
     }
 
@@ -101,7 +109,7 @@ public class DialogueBox : MonoBehaviour
 
             dialogueText.text += line[i];
 
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(scrollSpeed);
 
         }
 
@@ -181,7 +189,7 @@ public class DialogueBox : MonoBehaviour
 
                     dialogueText.text += dialogue[NumberInList].Dialogue[i];
 
-                    yield return new WaitForSeconds(FindFirstObjectByType<GameManager>().TextScrollSpeed);
+                    yield return new WaitForSeconds(scrollSpeed);
 
                 }
 
@@ -237,7 +245,7 @@ public class DialogueBox : MonoBehaviour
 
                     dialogueText.text += branch.dialogue[NumberInList].Dialogue[i];
 
-                    yield return new WaitForSeconds(FindFirstObjectByType<GameManager>().TextScrollSpeed);
+                    yield return new WaitForSeconds(scrollSpeed);
 
                 }
 

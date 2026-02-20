@@ -1,12 +1,13 @@
 using NaughtyAttributes;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class TabIconButton : Singleton<TabIconButton>   
 {
     [Required] public RectTransform rectTransform;
 
-    [Required, SerializeField] private RectTransform notification;
+    [Required, SerializeField] private CanvasGroup notification;
 
     private void Start()
     {
@@ -16,9 +17,10 @@ public class TabIconButton : Singleton<TabIconButton>
 
     public IEnumerator CollectedCardShakeAnimation()
     {
-        yield return StaticUtilities.AnimateRotation(transform, new Vector3(0, 0, 20f),  0.15f);
-        yield return StaticUtilities.AnimateRotation(transform, new Vector3(0, 0, -20f), 0.25f);
+        yield return StaticUtilities.AnimateRotation(transform, new Vector3(0, 0,  15f),  0.15f);
+        yield return StaticUtilities.AnimateRotation(transform, new Vector3(0, 0, -15f), 0.25f);
         yield return StaticUtilities.AnimateRotation(transform, Quaternion.identity,     0.15f);
+        transform.rotation = Quaternion.identity;
 
         ToggleNotification(true);
     }
@@ -32,5 +34,11 @@ public class TabIconButton : Singleton<TabIconButton>
     public void ToggleNotification(bool enabled)
     {
         notification.gameObject.SetActive(enabled);
+
+        if (enabled)
+        {
+            notification.alpha = 0;
+            StaticUtilities.FadeToVisible(notification, 0.25f, unscaledTime: true);
+        }
     }
 }

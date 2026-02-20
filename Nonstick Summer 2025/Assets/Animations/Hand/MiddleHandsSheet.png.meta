@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6bdce1535d2c6da4c8604346acb99abd
+guid: 91769da7245ead5448ca9af0dc7a7e6c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -106,30 +106,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: conversation_cursor_0
+      name: MiddleHandsSheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 60
-        width: 60
-        height: 60
+        y: 689
+        width: 689
+        height: 689
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,20 +125,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf07a6644d72eb342837a0b0090e5aef
-      internalID: 547634658
+      spriteID: bca339c27fab95f47aab8f512174c44e
+      internalID: -1594819103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: conversation_cursor_1
+      name: MiddleHandsSheet_1
       rect:
         serializedVersion: 2
-        x: 60
-        y: 60
-        width: 60
-        height: 60
+        x: 689
+        y: 689
+        width: 689
+        height: 689
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +147,86 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae04101268423b847a09290d5096e10e
-      internalID: 531073938
+      spriteID: 64bba8359e47dd24b9eb3499f81eb0dd
+      internalID: -532992977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: conversation_cursor_2
+      name: MiddleHandsSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1378
+        y: 689
+        width: 689
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af6eb725ba8ef3b4e917c69c5d47ea14
+      internalID: 308734922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiddleHandsSheet_3
+      rect:
+        serializedVersion: 2
+        x: 2067
+        y: 689
+        width: 689
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28893f9848a79dd4cbefb4e91b64d68c
+      internalID: 1086133827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiddleHandsSheet_4
+      rect:
+        serializedVersion: 2
+        x: 2756
+        y: 689
+        width: 689
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e8efdbb29ed7b443a5285d13c73acce
+      internalID: 1383558550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiddleHandsSheet_5
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 60
-        height: 60
+        width: 689
+        height: 689
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +235,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1265cbf4fc203bf4b8777f4c47925366
-      internalID: 30082761
+      spriteID: 47682a1cd9bae864097249f6eef042cd
+      internalID: -1412101153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: conversation_cursor_3
+      name: MiddleHandsSheet_6
       rect:
         serializedVersion: 2
-        x: 60
+        x: 689
         y: 0
-        width: 60
-        height: 60
+        width: 689
+        height: 689
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,8 +257,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15dcad7ad7311b94996b7d5eb7f34d7a
-      internalID: -898200738
+      spriteID: abdb17aed0e833a4bb3244a75ccbb91e
+      internalID: 80254829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiddleHandsSheet_7
+      rect:
+        serializedVersion: 2
+        x: 1378
+        y: 0
+        width: 689
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4781317632571854c8eecfb2a60c8739
+      internalID: 1422337985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiddleHandsSheet_8
+      rect:
+        serializedVersion: 2
+        x: 2067
+        y: 0
+        width: 689
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e677f613d294447b190d20d9fed178
+      internalID: -410488396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiddleHandsSheet_9
+      rect:
+        serializedVersion: 2
+        x: 2756
+        y: 0
+        width: 689
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63ca994e55ce2ac4e8f16fb263698ca5
+      internalID: 1260998363
       vertices: []
       indices: 
       edges: []
@@ -214,7 +333,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 64d4c4e80a22f3a43a8969d500d8edc0
+    spriteID: de928439a9b9d8a4585f51947d20e2bc
     internalID: 0
     vertices: []
     indices: 
@@ -224,10 +343,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      conversation_cursor_0: 547634658
-      conversation_cursor_1: 531073938
-      conversation_cursor_2: 30082761
-      conversation_cursor_3: -898200738
+      MiddleHandsSheet_0: -1594819103
+      MiddleHandsSheet_1: -532992977
+      MiddleHandsSheet_2: 308734922
+      MiddleHandsSheet_3: 1086133827
+      MiddleHandsSheet_4: 1383558550
+      MiddleHandsSheet_5: -1412101153
+      MiddleHandsSheet_6: 80254829
+      MiddleHandsSheet_7: 1422337985
+      MiddleHandsSheet_8: -410488396
+      MiddleHandsSheet_9: 1260998363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

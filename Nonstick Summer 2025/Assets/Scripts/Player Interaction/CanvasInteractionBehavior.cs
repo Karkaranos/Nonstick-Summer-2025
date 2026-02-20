@@ -8,15 +8,22 @@ using NaughtyAttributes;
 public class CanvasInteractionBehavior : MonoBehaviour
 {
     [SerializeField] [Required] private GameObject interactPrompt;
+    [SerializeField] [Required] private GameObject talkPrompt;
     public static Action ShowInteractUI;
     public static Action HideInteractUI;
+
+    public static Action ShowTalkUI;
+    public static Action HideTalkUI;
 
     private void Awake()
     {
         ShowInteractUI += EnableInteractUI;
-        HideInteractUI += DisableInteractUI;
+        HideInteractUI += DisableInteractionUI;
 
-        DisableInteractUI();
+        ShowTalkUI += EnableTalkUI;
+        HideTalkUI += DisableTalkUI;
+
+        DisableInteractionUI();
     }
 
     /// <summary>
@@ -31,14 +38,35 @@ public class CanvasInteractionBehavior : MonoBehaviour
     /// <summary>
     /// General method to hide the interactable prompt
     /// </summary>
-    private void DisableInteractUI()
+    private void DisableInteractionUI()
     {
         interactPrompt?.SetActive(false);
+    }
+
+
+    /// <summary>
+    /// General method to show the interactable prompt
+    /// </summary>
+    private void EnableTalkUI()
+    {
+        talkPrompt?.SetActive(true);
+    }
+
+    /// <summary>
+    /// <summary>
+    /// General method to hide the interactable prompt
+    /// </summary>
+    private void DisableTalkUI()
+    {
+        talkPrompt?.SetActive(false);
     }
 
     private void OnDisable()
     {
         ShowInteractUI -= EnableInteractUI;
-        HideInteractUI -= DisableInteractUI;
+        HideInteractUI -= DisableInteractionUI;
+
+        ShowTalkUI -= EnableTalkUI;
+        HideTalkUI -= DisableTalkUI;
     }
 }

@@ -19396,7 +19396,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b6a60d37d05c042bfc10ff875aeecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Magnets: {fileID: 511549371}
 --- !u!1001 &175696683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20922,9 +20921,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1035593447}
     m_Modifications:
+    - target: {fileID: 4209533969085454119, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
+      propertyPath: talkPrompt
+      value: 
+      objectReference: {fileID: 207605106}
     - target: {fileID: 4745131210623477644, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
       propertyPath: m_Name
       value: Crosshair Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532039556667896944, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8073021404243456830, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
       propertyPath: m_Pivot.x
@@ -21009,8 +21016,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5548181459420835492, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 672865532}
   m_SourcePrefab: {fileID: 100100000, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
+--- !u!1 &207605106 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7532039556667896944, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
+  m_PrefabInstance: {fileID: 207605105}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &207646359
 GameObject:
   m_ObjectHideFlags: 0
@@ -56411,7 +56426,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b6a60d37d05c042bfc10ff875aeecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Magnets: {fileID: 511549371}
 --- !u!1 &516899946
 GameObject:
   m_ObjectHideFlags: 0
@@ -62424,7 +62438,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b6a60d37d05c042bfc10ff875aeecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Magnets: {fileID: 511549371}
 --- !u!1 &643722813
 GameObject:
   m_ObjectHideFlags: 0
@@ -63836,6 +63849,33 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &672865528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5548181459420835492, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
+  m_PrefabInstance: {fileID: 207605105}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &672865532
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672865528}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1041d3580a88b9e42882b1ae7d3a16de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &678703027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67002,7 +67042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2252056202500681410, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 35.656124
       objectReference: {fileID: 0}
     - target: {fileID: 2252056202500681410, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -67042,7 +67082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3496223543107628732, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 10.885375
       objectReference: {fileID: 0}
     - target: {fileID: 3496223543107628732, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -67066,7 +67106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4929659812980187495, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 60.426876
       objectReference: {fileID: 0}
     - target: {fileID: 4929659812980187495, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -82376,7 +82416,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b6a60d37d05c042bfc10ff875aeecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Magnets: {fileID: 511549371}
 --- !u!1001 &924884885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -126173,7 +126212,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b6a60d37d05c042bfc10ff875aeecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Magnets: {fileID: 511549371}
 --- !u!1001 &1645057663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131841,7 +131879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1708879188632933898, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 35.656124
       objectReference: {fileID: 0}
     - target: {fileID: 1708879188632933898, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -131905,7 +131943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4067548123240273524, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 10.885375
       objectReference: {fileID: 0}
     - target: {fileID: 4067548123240273524, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -131937,7 +131975,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5520967587660388783, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 60.426876
       objectReference: {fileID: 0}
     - target: {fileID: 5520967587660388783, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.y

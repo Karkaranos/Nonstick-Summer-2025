@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -59,6 +60,8 @@ public class GameManager : Singleton<GameManager>
     [Header("Cards")]
     [Foldout("Combat"),SerializeField] private int _cardsDrawnPerRound=1;
     [Foldout("Combat"),SerializeField] public static int DefaultCardsInHand=4; // why is this hardcoded?
+    [Header("Dialogue Display")]
+    [Foldout("Combat"), Range(0, .03f)] public float TextScrollSpeed = .01f;
 
     [Header("Relationship Manager")]
     [Foldout("Relationship Manager")] [SerializeField] private RelationshipStats grandmaStartingValue;

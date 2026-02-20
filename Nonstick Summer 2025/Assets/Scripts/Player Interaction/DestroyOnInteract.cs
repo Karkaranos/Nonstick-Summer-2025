@@ -8,6 +8,7 @@ using UnityEngine;
 using NaughtyAttributes;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections;
 
 public class DestroyOnInteract : MonoBehaviour, IInteractableObjective
 {
@@ -47,6 +48,10 @@ public class DestroyOnInteract : MonoBehaviour, IInteractableObjective
             Destroy(gameObject);
 
         }
+    }
+    public IEnumerator DestroyAnimation()
+    {
+
     }
 
     /// <summary>

@@ -51,8 +51,11 @@ public partial class ModifierCardDisplay : MonoBehaviour
         if (_modifier != null) SetCard(_modifier); // mostly for debugging
 
         mouseInteraction = GetComponent<MouseInteractionEvents>();
-        mouseInteraction.OnMouseHoverStart.AddListener(OnMouseHoverStart);
-        mouseInteraction.OnMouseHoverEnd.AddListener(OnMouseHoverEnd);
+        if(mouseInteraction != null)
+        {
+            mouseInteraction.OnMouseHoverStart.AddListener(OnMouseHoverStart);
+            mouseInteraction.OnMouseHoverEnd.AddListener(OnMouseHoverEnd);
+        }
         rectTransform = GetComponent<RectTransform>();
 
         if (mouseInteraction != null)

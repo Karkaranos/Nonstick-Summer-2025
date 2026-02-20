@@ -86,7 +86,7 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
             }
             else if (modifierCardDisplay!=null)
             {
-                throw new NotImplementedException();
+                canvas.Initialize(modifierCardDisplay.modifierData, null, this);
             }
         }
     }
@@ -182,8 +182,8 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
             var rot = Quaternion.Lerp(startRotation, targetRot, t * 3);
             var scale = Vector3.Lerp(startScale, Vector3.zero, t);
 
-            rectTransform.position = pos;
-            rectTransform.rotation = rot;
+            //rectTransform.position = pos;
+            //rectTransform.rotation = rot;
             rectTransform.localScale = scale;
 
             yield return null;

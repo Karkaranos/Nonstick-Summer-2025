@@ -125,7 +125,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 35.656124, y: -18}
-  m_SizeDelta: {x: 0, y: 36}
+  m_SizeDelta: {x: 21.77075, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1405124551931436951
 CanvasRenderer:
@@ -441,7 +441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 137.5, y: -445.41}
+  m_AnchoredPosition: {x: 137.5, y: -411.265}
   m_SizeDelta: {x: 555, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7805898171375831620
@@ -581,10 +581,17 @@ MonoBehaviour:
   OnMouseDown:
     m_PersistentCalls:
       m_Calls: []
+  TargetSiblingIndex: 0
+  MarkedToBeDestroyed: 0
   MovementSpeed: 1500
   RefreshCardTime: 0.6
+  animateWaves: 1
+  waveHeight: 3
+  waveSpeed: 1
   targetRotation: -135
   destroyAnimationSeconds: 0.5
+  hoverTargetRotation: -2
+  hoverCardAnimationSeconds: 0.2
 --- !u!114 &5967317029181718190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1046,7 +1053,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 137.5, y: -440.41}
+  m_AnchoredPosition: {x: 137.5, y: -337.975}
   m_SizeDelta: {x: 835, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7936086663958797202
@@ -1207,7 +1214,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 10.885375, y: -18}
-  m_SizeDelta: {x: 0, y: 36}
+  m_SizeDelta: {x: 21.77075, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5710461847819660298
 CanvasRenderer:
@@ -1526,7 +1533,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 60.426876, y: -18}
-  m_SizeDelta: {x: 0, y: 36}
+  m_SizeDelta: {x: 21.77075, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9171911766008744208
 CanvasRenderer:
@@ -2367,7 +2374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5917198537950354199, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -401.26498
+      value: -264.685
       objectReference: {fileID: 0}
     - target: {fileID: 5917198537950354199, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

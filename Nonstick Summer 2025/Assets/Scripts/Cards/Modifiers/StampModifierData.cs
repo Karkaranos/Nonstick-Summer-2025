@@ -48,7 +48,13 @@ public class StampModifierData : ModifierData
     public override string GetTooltipDescription()
     {
         return (base.GetTooltipDescription() + "\n\n[StampName]\n" + StampToApply.ShortDescription)
-            .Replace("[StampName]", $"<color=#{GameManager.Instance.StampTooltipColor.ToHex()}>{StampToApply.StampName}</color>");
+            //.Replace("[StampName]", $"<color=#{GameManager.Instance.StampTooltipColor.ToHex()}>{StampToApply.StampName}</color>");
+            .Replace("[StampName]", $"[{StampToApply.StampName}]");
         
+    }
+
+    public override string GetModifierName()
+    {
+        return StampToApply.StampName;
     }
 }

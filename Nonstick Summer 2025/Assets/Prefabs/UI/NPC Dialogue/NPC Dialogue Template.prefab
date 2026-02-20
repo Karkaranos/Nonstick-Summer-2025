@@ -958,7 +958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60082dec43899054fb247c155fb2f4be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcText: {fileID: 6020025170771337588}
+  dialogueText: {fileID: 0}
   PlayerReadAllDialogue: 0
 --- !u!225 &1825778968552478202
 CanvasGroup:
@@ -1530,7 +1530,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
+  m_spriteAsset: {fileID: 11400000, guid: f25d00e50dce6a447bdf33f5564c9a2b, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
@@ -2653,17 +2653,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2728273859092451995, guid: ca1c1de0d1a3bef46b1f5c1ccf172155, type: 3}
   m_PrefabInstance: {fileID: 737728393259637293}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6020025170771337588 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6464808344556780377, guid: ca1c1de0d1a3bef46b1f5c1ccf172155, type: 3}
-  m_PrefabInstance: {fileID: 737728393259637293}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1471503726455326754
 PrefabInstance:
   m_ObjectHideFlags: 0

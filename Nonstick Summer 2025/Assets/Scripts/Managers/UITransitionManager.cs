@@ -107,8 +107,9 @@ public class UITransitionManager
         if (playerMesh != null) playerMesh.enabled = true;
 
         // move camera back
-        if(changeCam)
+        if(changeCam && oldCameraAnchorPoint != null)
         {
+            Debug.Log("camera change: " + oldCameraAnchorPoint.gameObject.name);
             playerCamTransform.SetParent(oldCameraAnchorPoint);
             playerCamTransform.localPosition = oldCameraLocalPosition;
             playerCamTransform.localRotation = oldCameraLocalRotation;

@@ -16,6 +16,11 @@ public class DuplicateCardModifier : ModifierData
     [SerializeField, Min(1)]
     private int CopiesToMake = 1;
 
+    public override string GetModifierName()
+    {
+        return this.name;
+    }
+
     protected override void ApplyModifier(CardData[] cards)
     {
         foreach (var card in cards)

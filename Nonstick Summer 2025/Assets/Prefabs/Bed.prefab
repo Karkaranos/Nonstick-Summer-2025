@@ -360,7 +360,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3813447263333077719, guid: c178e4d1451c1114caf0def2f24e9e9c, type: 3}
+  - {fileID: 2100000, guid: c4175368365412c4799f10d3b5cbe151, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -393,6 +393,7 @@ GameObject:
   - component: {fileID: 3611048302514567292}
   - component: {fileID: 2697802782361830111}
   - component: {fileID: 2220723637272701023}
+  - component: {fileID: 5049289103313618374}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -467,6 +468,22 @@ MonoBehaviour:
   sceneTransitionType: 1
   CanvasToOpenPrefab: {fileID: 8553161507268041164, guid: a0b11ab76fce26041b8530122b7cabe2, type: 3}
   cameraAnchor: {fileID: 0}
+--- !u!114 &5049289103313618374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5344852967836853961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a8e51252d03d94ca30d68a4905fc43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SappyColor: {fileID: 2100000, guid: 694f25ce6cf4f0c488e31e6dfb174d02, type: 2}
+  AssertiveColor: {fileID: 2100000, guid: 386e4d9c0a300f9448555e17c56dac97, type: 2}
+  CharmingColor: {fileID: 2100000, guid: 9797a44c8a8c50f45bcb841e4fb99167, type: 2}
+  AffectedRenderer: {fileID: 463728237012649512}
 --- !u!1 &8505221356395168742
 GameObject:
   m_ObjectHideFlags: 0

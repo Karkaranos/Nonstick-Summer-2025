@@ -48,7 +48,7 @@ public class PauseAndSettings : MonoBehaviour
 
         if(_textScrollSpeed != null)
         {
-            _textScrollSpeed.value = FindFirstObjectByType<GameManager>().TextScrollSpeed;
+            _textScrollSpeed.value = FindFirstObjectByType<GameManager>().TextScrollSpeed * -1;
             _textScrollSpeed.onValueChanged.AddListener(UpdateTextScrollSpeed);
         }
 
@@ -150,7 +150,8 @@ public class PauseAndSettings : MonoBehaviour
     public void UpdateTextScrollSpeed(float val)
     {
 
-        FindFirstObjectByType<GameManager>().TextScrollSpeed = val;
+        FindFirstObjectByType<GameManager>().TextScrollSpeed = val * -1;
+        Debug.Log(val * -1);
 
     }
 

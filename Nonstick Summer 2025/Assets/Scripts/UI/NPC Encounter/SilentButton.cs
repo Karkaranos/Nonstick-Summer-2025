@@ -22,7 +22,7 @@ public class SilentButton : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Initialize()
     {
-        energyCostDisplay.text = "+" + DialogueManager.EnergyGainedIfSilent;
+        energyCostDisplay.text = $"+<sprite name=\"Energy\">{DialogueManager.EnergyGainedIfSilent}";
 
         mouseInteractionEvents = GetComponent<MouseInteractionEvents>();
         mouseInteractionEvents.OnMouseHoverStart.AddListener(OnButtonHover);

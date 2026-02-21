@@ -25,10 +25,10 @@ public static class TextUtilities
             .Replace("[Observation]", $"<sprite name=\"Statement\"><color=#{CardStyleManager.ObservationStyle.color.ToHex()}>{CardStyleManager.StatementStyle.DisplayName}</color>")
             .Replace("[Question]", $"<sprite name=\"Question\"><color=#{CardStyleManager.QuestionStyle.color.ToHex()}>{CardStyleManager.QuestionStyle.DisplayName}</color>")
             .Replace("[Statement]", $"<sprite name=\"Statement\"><color=#{CardStyleManager.StatementStyle.color.ToHex()}>{CardStyleManager.StatementStyle.DisplayName}</color>")
-            // specific variables
-            .Replace("[DrawButtonEnergy]", $"<color=#{GameManager.Instance.NegativeEnergyColor.ToHex()}>{DialogueManager.DrawButtonEnergyCost}<sprite name=\"Energy\">energy")
-            .Replace("[DiscardEnergy]", $"<color=#{GameManager.Instance.PositiveEnergyColor.ToHex()}>+{DialogueManager.EnergyGainedPerDiscard}<sprite name=\"Energy\">energy")
-            .Replace("[SilentEnergy]", $"<color=#{GameManager.Instance.PositiveEnergyColor.ToHex()}>{DialogueManager.EnergyGainedIfSilent}<sprite name=\"Energy\">energy")
+            // specific energy variables
+            .Replace("[DrawButtonEnergy]", $"<color=#{GameManager.Instance.NegativeEnergyColor.ToHex()}>- {Mathf.Abs(DialogueManager.DrawButtonEnergyCost)}<sprite name=\"Energy\">energy")
+            .Replace("[DiscardEnergy]", $"<color=#{GameManager.Instance.PositiveEnergyColor.ToHex()}>+ {DialogueManager.EnergyGainedPerDiscard}<sprite name=\"Energy\">energy")
+            .Replace("[SilentEnergy]", $"<color=#{GameManager.Instance.PositiveEnergyColor.ToHex()}>+ {DialogueManager.EnergyGainedIfSilent}<sprite name=\"Energy\">energy</color>")
             .Replace("[PlayerEnergy]", DialogueManager.CurrentEnergy.ToString())
             // stamps
             .Replace("[Mumble]", $"<sprite name=\"Mumble\"><color=#{GameManager.Instance.StampTooltipColor.ToHex()}>Mumble</color>")

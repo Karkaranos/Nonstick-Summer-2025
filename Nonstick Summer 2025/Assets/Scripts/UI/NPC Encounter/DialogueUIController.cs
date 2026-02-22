@@ -35,7 +35,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Header("Components")]
     [Required][SerializeField] private EnergyBar energyBar;
     [Required][SerializeField] private DisplayPlayerCardDialogue playerDialogueBubble;
-    [Required][SerializeField] private TMP_Text npcName;
+    /*[Required]*/[SerializeField] private TMP_Text npcName;
     [Required][SerializeField] private DeckDisplayer deckDisplay;
     [Tooltip("Relationship slider UI element")]
     [Required][SerializeField] private RelationshipSlider relationshipSlider;
@@ -68,6 +68,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     private Scene currentScene;
     [HideInInspector] public bool inSceneFive = false;
     public bool PlayerReadAllNPCText => dialogueBox.PlayerReadAllDialogue;
+    public bool ActivelyTypewriting => dialogueBox.DialogueScrolling;
 
     public IEnumerator Initialize(DialogueBranch startBranch, Character character, bool isBoss = true, GameObject objRef = null)
     {
@@ -98,7 +99,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         deckDisplay.OnCardsSelectedChanged.AddListener(OnSelectionUpdated);
 
-        npcName.text = character.ToString(); // none of the Character have spaces in their names, right?
+        if(npcName != null) // npcName is intentionally null in the tutorial
+            npcName.text = "Your " + character.ToString(); // none of the Character have spaces in their names, right?
 
         if(dialogueTree != null)
         {

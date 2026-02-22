@@ -37,7 +37,8 @@ public class NextDialogueButton : MonoBehaviour
     {
         bool enabled =
             !DialogueManager.ReadUserInput ||
-            !DialogueManager.UserCanPlayCard;
+            !DialogueManager.UserCanPlayCard ||
+            DialogueUIController.Instance.ActivelyTypewriting;
 
         if(DialogueUIController.Instance.IfCloseCombat)
         {
@@ -47,7 +48,6 @@ public class NextDialogueButton : MonoBehaviour
 
         button.interactable = enabled;
         StaticUtilities.ToggleCanvasGroup(group, enabled);
-        
     }
 
     public void OnButtonPressed()

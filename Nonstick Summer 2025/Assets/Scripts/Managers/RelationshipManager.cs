@@ -11,7 +11,7 @@ using UnityEngine;
 * 
 *****************************************************************************/
 [Tooltip("Character bosses in the game.")]
-[HideInInspector] public enum Character { Grandma, Uncle, Cousin, Mom };
+[HideInInspector] public enum Character { Grandma, Uncle, Cousin, Mom, Tutorial };
 
 public class RelationshipManager
 {
@@ -28,10 +28,7 @@ public class RelationshipManager
     /// <param name="momStartingValue"></param>
     public RelationshipManager(RelationshipStats grandmaStartingValue, RelationshipStats uncleStartingValue, RelationshipStats cousinStartingValue, RelationshipStats momStartingValue)
     {
-        characterRelationships.Remove(Character.Grandma);
-        characterRelationships.Remove(Character.Uncle);
-        characterRelationships.Remove(Character.Cousin);
-        characterRelationships.Remove(Character.Mom);
+        characterRelationships.Clear();
         characterRelationships = new Dictionary<Character, RelationshipStats>();
         characterRelationships.Add(Character.Grandma, grandmaStartingValue);
         characterRelationships.Add(Character.Uncle, uncleStartingValue);

@@ -179,6 +179,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
     //TODO move to play button script
     public void NextTextPressed()
     {
+        dialogueBox.skipTypewriterRequested = true;
+
         if(IfCloseCombat)
         {
             // TODO open a new menu?

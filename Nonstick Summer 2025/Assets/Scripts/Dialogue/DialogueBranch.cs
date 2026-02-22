@@ -15,8 +15,9 @@ public class DialogueBranch : ScriptableObject
     [Label("NPC Dialogue")] public DialogueNPC[] dialogue;
 
     [SerializeField]
-    [BoxGroup("Dialogue Options")][HideIf("End")] public DialogueOption Charming_Expression, Assertive_Expression, Sappy_Expression, Charming_Observation, Assertive_Observation,
-        Sappy_Observation, Charming_Question, Assertive_Question, Sappy_Question;
+    [BoxGroup("Dialogue Options")][HideIf("End")] public DialogueOption Charming_Expression, Assertive_Expression, Sappy_Expression;
+    [BoxGroup("Dialogue Options")][HideInInspector] public DialogueOption Charming_Observation, Assertive_Observation, Sappy_Observation;
+    [BoxGroup("Dialogue Options")][HideIf("End")] public DialogueOption Charming_Question, Assertive_Question, Sappy_Question;
 
     [SerializeField]
     [BoxGroup("Dialogue Options")] [HideIf("End")] private DialogueOption Silent;

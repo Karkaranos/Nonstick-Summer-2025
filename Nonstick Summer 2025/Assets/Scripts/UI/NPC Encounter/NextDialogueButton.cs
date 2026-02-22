@@ -37,8 +37,7 @@ public class NextDialogueButton : MonoBehaviour
     {
         bool enabled =
             !DialogueManager.ReadUserInput ||
-            !DialogueManager.UserCanPlayCard ||
-            DialogueUIController.Instance.ActivelyTypewriting;
+            !DialogueManager.UserCanPlayCard;
 
         if(DialogueUIController.Instance.IfCloseCombat)
         {

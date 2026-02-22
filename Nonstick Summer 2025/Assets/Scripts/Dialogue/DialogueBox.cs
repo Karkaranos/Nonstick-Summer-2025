@@ -24,7 +24,7 @@ public class DialogueBox : MonoBehaviour
     [ReadOnly] public bool PlayerReadAllDialogue;
 
     [ReadOnly] public bool DialogueScrolling = false;
-    bool skipTypewriterRequested = false;
+    [ReadOnly] public bool skipTypewriterRequested = false;
 
     private DialogueNPC[] dialogueStored;
     private Character currentCharacter;
@@ -192,6 +192,7 @@ public class DialogueBox : MonoBehaviour
 
     private IEnumerator TypewriteText(string text)
     {
+        skipTypewriterRequested = false;
         if (dialogueText.text != text)
         {
             DialogueScrolling = true;
@@ -199,7 +200,8 @@ public class DialogueBox : MonoBehaviour
 
             for (int i = 0; i < text.Length && !skipTypewriterRequested; i++)
             {
-                dialogueText.text += text[i];
+                //dialogueText.text += text[i];
+                dialogueText.text = text.Substring(0, i);
 
                 yield return new WaitForSeconds(scrollSpeed);
             }

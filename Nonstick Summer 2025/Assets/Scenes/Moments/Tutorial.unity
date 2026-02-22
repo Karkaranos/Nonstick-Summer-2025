@@ -86550,7 +86550,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1643650101}
   - {fileID: 1566535047}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -126002,7 +126001,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1022573212}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 368249545651296241, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalScale.x
@@ -126042,15 +126041,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 621988117311664097, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.07
+      value: -11.508621
       objectReference: {fileID: 0}
     - target: {fileID: 621988117311664097, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.014
+      value: 1.824
       objectReference: {fileID: 0}
     - target: {fileID: 621988117311664097, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11
+      value: -8.9407425
       objectReference: {fileID: 0}
     - target: {fileID: 621988117311664097, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalRotation.w
@@ -126086,7 +126085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3216093029526474184, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: character
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3216093029526474184, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: CanvasToOpenPrefab
@@ -126117,11 +126116,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
---- !u!4 &1643650101 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 621988117311664097, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
-  m_PrefabInstance: {fileID: 1643650100}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1644326463
 GameObject:
   m_ObjectHideFlags: 0
@@ -153522,7 +153516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8412335191130524943, guid: 1b5ab685e734f574c9d1e7815a237b25, type: 3}
       propertyPath: startingCards.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8412335191130524943, guid: 1b5ab685e734f574c9d1e7815a237b25, type: 3}
       propertyPath: 'startingCards.Array.data[0]'
@@ -172051,6 +172045,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 730467015}
   - {fileID: 1713391712}
+  - {fileID: 1643650100}
   - {fileID: 1349116459}
   - {fileID: 1035593447}
   - {fileID: 1419933608}

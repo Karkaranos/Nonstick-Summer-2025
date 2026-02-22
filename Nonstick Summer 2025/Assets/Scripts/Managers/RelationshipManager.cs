@@ -34,5 +34,6 @@ public class RelationshipManager
         characterRelationships.Add(Character.Uncle, uncleStartingValue);
         characterRelationships.Add(Character.Cousin, cousinStartingValue);
         characterRelationships.Add(Character.Mom, momStartingValue);
+        characterRelationships.Add(Character.Tutorial, new RelationshipStats());
     }
 }

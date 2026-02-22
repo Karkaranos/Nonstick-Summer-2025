@@ -12,13 +12,16 @@ using UnityEngine;
 
 public static class TextUtilities
 {
-    public static string FilterText(string rawText)
+    private static string outlineFontTag = "<font=\"GochiHand-Regular SDF Outline\">";
+    public static string FilterText(string rawText, bool hardToReadText = false)
     {
         // i hope this is not extremely slow
         return rawText
             // emotions
             .Replace("[Assertive]", $"<sprite name=\"Assertive\"><color=#{CardStyleManager.RedStyle.color.ToHex()}>{CardStyleManager.RedStyle.DisplayName}</color>")
-            .Replace("[Charming]", $"<sprite name=\"Charming\"><color=#{CardStyleManager.YellowStyle.color.ToHex()}>{CardStyleManager.YellowStyle.DisplayName}</color>")
+            .Replace("[Defensive]", $"<sprite name=\"Assertive\"><color=#{CardStyleManager.RedStyle.color.ToHex()}>{CardStyleManager.RedStyle.DisplayName}</color>")
+            .Replace("[Charming]", $"<sprite name=\"Charming\"><color=#{(hardToReadText ? GameManager.Instance.HardToReadCharmingColor.ToHex() : CardStyleManager.YellowStyle.color.ToHex())}>{CardStyleManager.YellowStyle.DisplayName}</color>")
+            .Replace("[Witty]",    $"<sprite name=\"Charming\"><color=#{(hardToReadText ? GameManager.Instance.HardToReadCharmingColor.ToHex() : CardStyleManager.YellowStyle.color.ToHex())}>{CardStyleManager.YellowStyle.DisplayName}</color>")
             .Replace("[Sappy]", $"<sprite name=\"Sappy\"><color=#{CardStyleManager.BlueStyle.color.ToHex()}>{CardStyleManager.BlueStyle.DisplayName}</color>")
             // intentions
             .Replace("[Expression]", $"<sprite name=\"Statement\"><color=#{CardStyleManager.StatementStyle.color.ToHex()}>{CardStyleManager.StatementStyle.DisplayName}</color>")
@@ -26,9 +29,9 @@ public static class TextUtilities
             .Replace("[Question]", $"<sprite name=\"Question\"><color=#{CardStyleManager.QuestionStyle.color.ToHex()}>{CardStyleManager.QuestionStyle.DisplayName}</color>")
             .Replace("[Statement]", $"<sprite name=\"Statement\"><color=#{CardStyleManager.StatementStyle.color.ToHex()}>{CardStyleManager.StatementStyle.DisplayName}</color>")
             // specific energy variables
-            .Replace("[DrawButtonEnergy]", $"<color=#{GameManager.Instance.NegativeEnergyColor.ToHex()}>- {Mathf.Abs(DialogueManager.DrawButtonEnergyCost)}<sprite name=\"Energy\">energy")
-            .Replace("[DiscardEnergy]", $"<color=#{GameManager.Instance.PositiveEnergyColor.ToHex()}>+ {DialogueManager.EnergyGainedPerDiscard}<sprite name=\"Energy\">energy")
-            .Replace("[SilentEnergy]", $"<color=#{GameManager.Instance.PositiveEnergyColor.ToHex()}>+ {DialogueManager.EnergyGainedIfSilent}<sprite name=\"Energy\">energy</color>")
+            .Replace("[DrawButtonEnergy]", $"<nobr><color=#{GameManager.Instance.NegativeEnergyColor.ToHex()}>- {Mathf.Abs(DialogueManager.DrawButtonEnergyCost)}<sprite name=\"Energy\">energy</nobr>")
+            .Replace("[DiscardEnergy]", $"<nobr><color=#{GameManager.Instance.PositiveEnergyColor.ToHex()}>+ {DialogueManager.EnergyGainedPerDiscard}<sprite name=\"Energy\">energy</nobr>")
+            .Replace("[SilentEnergy]", $"<nobr><color=#{GameManager.Instance.PositiveEnergyColor.ToHex()}>+ {DialogueManager.EnergyGainedIfSilent}<sprite name=\"Energy\">energy</color></nobr>")
             .Replace("[PlayerEnergy]", DialogueManager.CurrentEnergy.ToString())
             // stamps
             .Replace("[Mumble]", $"<sprite name=\"Mumble\"><color=#{GameManager.Instance.StampTooltipColor.ToHex()}>Mumble</color>")
@@ -44,15 +47,21 @@ public static class TextUtilities
             .Replace("[Cousin]", $"<sprite name=\"Cousin Icon\"><color=#{GameManager.Instance.CharactersColor.ToHex()}>Cousin</color>")
             .Replace("[Grandma]", $"<sprite name=\"Grandma Icon\"><color=#{GameManager.Instance.CharactersColor.ToHex()}>Grandma</color>")
             .Replace("[Uncle]", $"<sprite name=\"Uncle Icon\"><color=#{GameManager.Instance.CharactersColor.ToHex()}>Uncle</color>")
+            // other keywords
+            .Replace("[Stickers]", $"<color=#{GameManager.Instance.StampTooltipColor.ToHex()}>Stickers</color>")
             // other
             .Replace("[phone]", $"<sprite name=\"Phone\"><color=#{GameManager.Instance.CharactersColor.ToHex()}>phone</color>")
             .Replace("[Social Battery]", $"<sprite name=\"Energy\"><color=#{GameManager.Instance.PositiveEnergyColor.ToHex()}>Social Battery</color>")
+            .Replace("[Relationship]", $"<sprite name=\"Heart\"><color=#{GameManager.Instance.RelationshipColor.ToHex()}>Relationship</color>")
+            .Replace("[Tab]", $"<sprite name=\"Tab\">TAB</color>")
 
             // okay i know its pretty bad to hardcode this but lowkey with such little time left its not worth it to generalize it
-            .Replace("[Energy]", $"<color=#{GameManager.Instance.PositiveEnergyColor.ToHex()}>+3 <sprite name=\"Energy\">Energy</color>")
+            .Replace("[Energy]", $"<nobr><color=#{GameManager.Instance.PositiveEnergyColor.ToHex()}>+ <sprite name=\"Energy\">3 Energy</color></nobr>")
 
             // Text "functions"
             .ReplaceTagColor("Stamp", GameManager.Instance.StampTooltipColor.ToHex())
+            .ReplaceTagColor("Tone", GameManager.Instance.StampTooltipColor.ToHex()) // i low key dont know what color tones / intentions should be
+            .ReplaceTagColor("Intent", GameManager.Instance.StampTooltipColor.ToHex())
             .ReplaceTagColor("Gray", Color.gray.ToHex())
             .ReplaceTagColor("EnergyColor", GameManager.Instance.PositiveEnergyColor.ToHex());
     }

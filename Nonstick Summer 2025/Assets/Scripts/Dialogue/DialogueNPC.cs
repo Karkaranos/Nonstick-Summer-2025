@@ -19,6 +19,7 @@ using Unity.VisualScripting;
 [System.Serializable]
 public class DialogueNPC
 {
+    [ResizableTextArea, AllowNesting]
     public string Dialogue;
 
     [ShowAssetPreview(32,32), Tooltip("Leave null to use the sprite from the last dialogue bubble")]
@@ -30,7 +31,12 @@ public class DialogueNPC
     [Foldout("Advanced")] public string AudioResponse;
     [Foldout("Advanced")] public bool HasAdvancedSignal;
     [Tooltip("Under certain values, the AdvancedSignal will cause certain events to trigger mid-dialogue")]
-    [Foldout("Advanced"), ShowIf(nameof(HasAdvancedSignal)), AllowNesting] public string AdvancedSignal;
+    [Foldout("Advanced"), ShowIf(nameof(HasAdvancedSignal)), AllowNesting] public AdvancedSignal AdvancedSignal;
+}
+
+public enum AdvancedSignal
+{
+    None, ShakeEnergyBar,
 }
 
 public enum AudioResponseType

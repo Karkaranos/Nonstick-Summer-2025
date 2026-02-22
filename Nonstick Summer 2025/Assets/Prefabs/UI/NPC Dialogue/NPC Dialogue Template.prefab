@@ -960,6 +960,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 0}
   PlayerReadAllDialogue: 0
+  DialogueScrolling: 0
+  skipTypewriterRequested: 0
 --- !u!225 &1825778968552478202
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2257,6 +2259,10 @@ PrefabInstance:
       value: 0.5176471
       objectReference: {fileID: 0}
     - target: {fileID: 6464808344556780377, guid: ca1c1de0d1a3bef46b1f5c1ccf172155, type: 3}
+      propertyPath: m_spriteAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f25d00e50dce6a447bdf33f5564c9a2b, type: 2}
+    - target: {fileID: 6464808344556780377, guid: ca1c1de0d1a3bef46b1f5c1ccf172155, type: 3}
       propertyPath: m_fontSizeBase
       value: 40
       objectReference: {fileID: 0}
@@ -2556,6 +2562,10 @@ PrefabInstance:
       propertyPath: m_fontColor.r
       value: 0.5176471
       objectReference: {fileID: 0}
+    - target: {fileID: 6464808344556780377, guid: ca1c1de0d1a3bef46b1f5c1ccf172155, type: 3}
+      propertyPath: m_spriteAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f25d00e50dce6a447bdf33f5564c9a2b, type: 2}
     - target: {fileID: 6464808344556780377, guid: ca1c1de0d1a3bef46b1f5c1ccf172155, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4281282436
@@ -4382,6 +4392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationSpeed: 3
   energyNumber: {fileID: 1747995734013153901}
+  animator: {fileID: 0}
 --- !u!114 &1747995734013153901 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8542372573409935097, guid: 95fa1ee2f95a025479053cb24c3536ed, type: 3}

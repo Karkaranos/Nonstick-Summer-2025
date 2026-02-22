@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!21 &-5137848757002552919
+--- !u!21 &-4835158093596535633
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Assertive Material
+  m_Name: Heart Icon Material
   m_Shader: {fileID: 4800000, guid: cf81c85f95fe47e1a27f6ae460cf182c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -24,7 +24,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: d2327af3ac5b834498656002112122c0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 99f768edbe7ea0e468b7ebdc27f18c85, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84a92b25f83d49b9bc132d206b370281, type: 3}
-  m_Name: _Midwest Goodbye Sprites
+  m_Name: Heart Icon
   m_EditorClassIdentifier: 
   m_Version: 1.1.0
   m_FaceInfo:
@@ -77,50 +77,30 @@ MonoBehaviour:
     m_StrikethroughOffset: 0
     m_StrikethroughThickness: 0
     m_TabWidth: 0
-  m_Material: {fileID: -5137848757002552919}
-  spriteSheet: {fileID: 2800000, guid: d2327af3ac5b834498656002112122c0, type: 3}
+  m_Material: {fileID: -4835158093596535633}
+  spriteSheet: {fileID: 2800000, guid: 99f768edbe7ea0e468b7ebdc27f18c85, type: 3}
   m_SpriteCharacterTable:
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 0
-    m_Scale: 1
-    m_Name: Assertive
+    m_Scale: 1.25
+    m_Name: Heart
   m_GlyphTable:
   - m_Index: 0
     m_Metrics:
-      m_Width: 700
-      m_Height: 700
-      m_HorizontalBearingX: -41.2
-      m_HorizontalBearingY: 500
-      m_HorizontalAdvance: 717
+      m_Width: 204
+      m_Height: 193
+      m_HorizontalBearingX: -15.7
+      m_HorizontalBearingY: 131.6
+      m_HorizontalAdvance: 215
     m_GlyphRect:
       m_X: 0
       m_Y: 0
-      m_Width: 798
-      m_Height: 771
-    m_Scale: 1.75
+      m_Width: 204
+      m_Height: 193
+    m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
-    sprite: {fileID: 21300000, guid: d2327af3ac5b834498656002112122c0, type: 3}
+    sprite: {fileID: 21300000, guid: 99f768edbe7ea0e468b7ebdc27f18c85, type: 3}
   spriteInfoList: []
-  fallbackSpriteAssets:
-  - {fileID: 11400000, guid: e94149c78ddb04a44b3f0103ee3a6f11, type: 2}
-  - {fileID: 11400000, guid: 7cc47bfba9bdb554c854e15dfab7fa2f, type: 2}
-  - {fileID: 11400000, guid: 80e4d99fdade20540b9c6046e088ba9d, type: 2}
-  - {fileID: 11400000, guid: 3a3eafd6ec5d6654d94e0d09a5f9ce80, type: 2}
-  - {fileID: 11400000, guid: 0be56246752bc184bb84d5c394cf72cc, type: 2}
-  - {fileID: 11400000, guid: 685b8ffc5e946bf43b095ea0cbb43d8a, type: 2}
-  - {fileID: 11400000, guid: df1a3eca7f5d9af4ca8ec0f46406a77f, type: 2}
-  - {fileID: 11400000, guid: 5d90d8322a95bbf47a1daa4da41b5d11, type: 2}
-  - {fileID: 11400000, guid: 6cd7bbef4dcd6754ca74515a441d1325, type: 2}
-  - {fileID: 11400000, guid: ad7737c101f9ff746b12db393089a525, type: 2}
-  - {fileID: 11400000, guid: 0858b25c470d23d498c0c0e59c1b07ba, type: 2}
-  - {fileID: 11400000, guid: b548d598f28b5f640a69b782942a5e43, type: 2}
-  - {fileID: 11400000, guid: 2786f1f1515fe4c41bb31a0ec976add8, type: 2}
-  - {fileID: 11400000, guid: d09909b93a8616644a7f5bf575500fe4, type: 2}
-  - {fileID: 11400000, guid: 736791817fdcda74bb6c5bfc4bfa74f3, type: 2}
-  - {fileID: 11400000, guid: 37badc8ed8e6cc04cb9d9bd07659d13f, type: 2}
-  - {fileID: 11400000, guid: 9e5bf5ce6a71866418d839c63e56f6da, type: 2}
-  - {fileID: 11400000, guid: f491e518bd5993c4cbd0c40ac082113c, type: 2}
-  - {fileID: 11400000, guid: a826fc1088ff5ae40aef5a087c4f1cdf, type: 2}
-  - {fileID: 11400000, guid: 640cb615b008f064a824d282890af790, type: 2}
+  fallbackSpriteAssets: []

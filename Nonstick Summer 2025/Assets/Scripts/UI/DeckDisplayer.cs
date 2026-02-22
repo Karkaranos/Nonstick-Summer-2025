@@ -275,6 +275,11 @@ public class DeckDisplayer : MonoBehaviour
         DisplayAllCards();
     }
 
+    public int GetCardsCount()
+    {
+        return displayedData.Count;
+    }
+
     /// <summary>
     /// Generates the positions cards will spawn at
     /// </summary>

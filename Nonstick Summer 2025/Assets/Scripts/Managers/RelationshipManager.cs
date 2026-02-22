@@ -35,5 +35,8 @@ public class RelationshipManager
         characterRelationships.Add(Character.Cousin, cousinStartingValue);
         characterRelationships.Add(Character.Mom, momStartingValue);
         characterRelationships.Add(Character.Tutorial, new RelationshipStats());
+
+        characterRelationships[Character.Tutorial].maxValue = 1;
+        characterRelationships[Character.Tutorial].currentValue = 1000;
     }
 }

@@ -33,7 +33,7 @@ using UnityEngine.SceneManagement;
 public class DialogueUIController : Singleton<DialogueUIController>
 {
     [Header("Components")]
-    [Required][SerializeField] private EnergyBar energyBar;
+    [Required][SerializeField] public EnergyBar energyBar;
     [Required][SerializeField] private DisplayPlayerCardDialogue playerDialogueBubble;
     /*[Required]*/[SerializeField] private TMP_Text npcName;
     [Required][SerializeField] private DeckDisplayer deckDisplay;
@@ -48,6 +48,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Required, SerializeField] private PlayCardButton playCardButton;
     [Required, SerializeField] private NextDialogueButton nextDialogueButton;
     [Required, SerializeField] private TMP_Text objectiveText;
+    [SerializeField] bool isTutorial = false;
 
     public DeckDisplayer DeckDisplay { get { return deckDisplay; } }
 
@@ -99,8 +100,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         deckDisplay.OnCardsSelectedChanged.AddListener(OnSelectionUpdated);
 
-        if(npcName != null) // npcName is intentionally null in the tutorial
-            npcName.text = "Your " + character.ToString(); // none of the Character have spaces in their names, right?
+        npcName.text = "Your " + character.ToString(); // none of the Character have spaces in their names, right?
 
         if(dialogueTree != null)
         {
@@ -111,13 +111,9 @@ public class DialogueUIController : Singleton<DialogueUIController>
         objectiveText.text = TextUtilities.FilterText( GameManager.ObjectiveReference.GetObjective());
 
         currentScene = SceneManager.GetActiveScene();
-        if (currentScene.name == "Moment_5")
-        {
 
-            inSceneFive = true;
-
-        }
-        else { inSceneFive = false; }
+        inSceneFive = (currentScene.name == "Moment_5");
+        if (isTutorial) StaticUtilities.DisableCanvasGroup(silentButton.GetComponent<CanvasGroup>());
 
         yield return ToggleUIForDialogueProgression(false);
 
@@ -310,6 +306,13 @@ public class DialogueUIController : Singleton<DialogueUIController>
         _ui_interactable = interactable;
 
         deckDisplay.UpdateGroupEnabled(interactable);
+
+        if(interactable && isTutorial && deckDisplay.GetCardsCount() == 0)
+        {
+            //silentButton.gameObject.SetActive(true);
+            //yield return StaticUtilities.FadeToVisible(silentButton.GetComponent<CanvasGroup>(), 0.65f, unscaledTime:true);
+            StaticUtilities.EnableCanvasGroup(silentButton.GetComponent<CanvasGroup>());
+        }
 
         yield return null;
 

@@ -146,45 +146,30 @@ public class DialogueBox : MonoBehaviour
 
         }
 
-        // go to next 
-        if (dialogue != null)
-        {
+        if (dialogue == null)
+            dialogue = branch.dialogue;
 
-            NumberInList = numberInList % dialogue.Length;
+        // Go through and process text:
 
-            DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(dialogue[NumberInList], currentCharacter);
+        NumberInList = numberInList % dialogue.Length;
 
-            //TODO: fmod here!!
-            PlayEmotionReaction(dialogue[NumberInList].AudioResponse);
+        DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(dialogue[NumberInList], currentCharacter);
 
-            // Wait for Typewriter Text
-            yield return TypewriteText(dialogue[NumberInList].Dialogue);
+        //TODO: fmod here!!
+        PlayEmotionReaction(dialogue[NumberInList].AudioResponse);
 
-            Debug.Log($"({NumberInList + 1}/{dialogue.Length}): {dialogue[NumberInList].Dialogue}");
+        // Wait for Typewriter Text
+        yield return TypewriteText(dialogue[NumberInList].Dialogue);
 
-        }
-        else
-        {
+        if (dialogue[NumberInList].HasAdvancedSignal)
+            ProcessAdvancedSignal(dialogue[NumberInList]);
 
-            NumberInList = numberInList % branch.dialogue.Length;
+        Debug.Log($"({NumberInList + 1}/{dialogue.Length}): {dialogue[NumberInList].Dialogue}");
 
-            DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(branch.dialogue[NumberInList], currentCharacter);
 
-            //TODO: fmod here!!
-
-            PlayEmotionReaction(branch.dialogue[NumberInList].AudioResponse);
-
-            // Wait for Typewriter Text
-            yield return TypewriteText(branch.dialogue[NumberInList].Dialogue);
-
-            Debug.Log($"({NumberInList + 1}/{branch.dialogue.Length}): {branch.dialogue[NumberInList].Dialogue}");
-
-        }
 
         if (PlayerReadAllDialogue)
-        {
             DialogueUIController.Instance.ClosingOutCombat();
-        }
 
         yield return null;
         //RefreshLayout();
@@ -192,7 +177,10 @@ public class DialogueBox : MonoBehaviour
 
     private IEnumerator TypewriteText(string text)
     {
+        text = TextUtilities.FilterText(text, hardToReadText:true);
+
         skipTypewriterRequested = false;
+
         if (dialogueText.text != text)
         {
             DialogueScrolling = true;
@@ -200,11 +188,20 @@ public class DialogueBox : MonoBehaviour
 
             for (int i = 0; i < text.Length && !skipTypewriterRequested; i++)
             {
+                // If we hit a rich text tag, skip it instantly
+                if (text[i] == '<')
+                {
+                    int tagEnd = text.IndexOf('>', i);
+                    if (tagEnd != -1)
+                        i = tagEnd; 
+                }
+
                 //dialogueText.text += text[i];
-                dialogueText.text = text.Substring(0, i);
+                dialogueText.text = text.Substring(0, i+1);
 
                 yield return new WaitForSeconds(scrollSpeed);
             }
+
             // just apply all the dialogue to be safe
             dialogueText.text = text;
 
@@ -238,6 +235,14 @@ public class DialogueBox : MonoBehaviour
 
             ReactionManager.instance.PlayReaction(0);
 
+        }
+    }
+
+    private void ProcessAdvancedSignal(DialogueNPC dialogue)
+    {
+        if(dialogue.AdvancedSignal == AdvancedSignal.ShakeEnergyBar)
+        {
+            DialogueUIController.Instance.energyBar.PlayShakeAnimation();
         }
     }
 

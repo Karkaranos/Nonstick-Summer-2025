@@ -169,7 +169,7 @@ public class DialogueBox : MonoBehaviour
 
 
         if (PlayerReadAllDialogue)
-            DialogueUIController.Instance.ClosingOutCombat();
+            DialogueUIController.Instance.OnNPCFinishDialogue();
 
         yield return null;
         //RefreshLayout();

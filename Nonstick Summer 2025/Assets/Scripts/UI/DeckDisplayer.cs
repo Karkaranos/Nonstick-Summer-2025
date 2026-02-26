@@ -190,7 +190,8 @@ public class DeckDisplayer : MonoBehaviour
 
         if(DeckManager.RemainingDeck.Count == 0)
         {
-            throw new ArgumentOutOfRangeException("No cards to draw");
+            //throw new ArgumentOutOfRangeException("No cards to draw");
+            return;
         }
 
         while(displayedData.Count < DefaultHandSize && DeckManager.RemainingDeck.Count >= 1)

@@ -49,7 +49,7 @@ public class GameManager : Singleton<GameManager>
 
     [Tooltip("The initial cards in the players hand at the very beginning of the game")]
     [Foldout("Card Values"), SerializeField] public CardData[] tutorialCards;
-    [Foldout("Card Values"), SerializeField] private CardData[] startingCards;
+    [Foldout("Card Values"), SerializeField] public CardData[] startingCards;
     [Tooltip("The initial modifiers in the players hand at the very beginning of the game")]
     [Foldout("Card Values"), SerializeField] private ModifierData[] startingModifiers;
 

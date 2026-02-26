@@ -36,7 +36,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Required][SerializeField] public EnergyBar energyBar;
     [Required][SerializeField] private DisplayPlayerCardDialogue playerDialogueBubble;
     /*[Required]*/[SerializeField] private TMP_Text npcName;
-    [Required][SerializeField] private DeckDisplayer deckDisplay;
+    [Required][SerializeField] protected DeckDisplayer deckDisplay;
     [Tooltip("Relationship slider UI element")]
     [Required][SerializeField] private RelationshipSlider relationshipSlider;
     [Required, SerializeField] private DialogueBox dialogueBox;
@@ -44,11 +44,11 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Required, SerializeField] public  DialogueNPCPortraitDisplay portraitDisplay;
     [Required, SerializeField] private DrawButton drawButton;
     [Required, SerializeField] private DiscardButton discardButton;
-    [Required, SerializeField] private SilentButton silentButton;
+    [Required, SerializeField] protected SilentButton silentButton;
     [Required, SerializeField] private PlayCardButton playCardButton;
     [Required, SerializeField] private NextDialogueButton nextDialogueButton;
     [Required, SerializeField] private TMP_Text objectiveText;
-    [SerializeField] bool isTutorial = false;
+    bool isTutorial = false;
 
     public DeckDisplayer DeckDisplay { get { return deckDisplay; } }
 
@@ -71,7 +71,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     public bool PlayerReadAllNPCText => dialogueBox.PlayerReadAllDialogue;
     public bool ActivelyTypewriting => dialogueBox.DialogueScrolling;
 
-    public IEnumerator Initialize(DialogueBranch startBranch, Character character, bool isBoss = true, GameObject objRef = null)
+    public virtual IEnumerator Initialize(DialogueBranch startBranch, Character character, bool isBoss = true, GameObject objRef = null)
     {
         DialogueManager.OnOpenCombatUI(startBranch, character);
 
@@ -113,7 +113,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
         currentScene = SceneManager.GetActiveScene();
 
         inSceneFive = (currentScene.name == "Moment_5");
-        if (isTutorial) StaticUtilities.DisableCanvasGroup(silentButton.GetComponent<CanvasGroup>());
 
         yield return ToggleUIForDialogueProgression(false);
 
@@ -173,7 +172,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     //i can move this to a different script later if necessary but for now the play card button is tied to this
     //TODO move to play button script
-    public void NextTextPressed()
+    public virtual void NextTextPressed()
     {
         dialogueBox.skipTypewriterRequested = true;
 
@@ -290,7 +289,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     }
 
-    public void ClosingOutCombat()
+    public virtual void OnNPCFinishDialogue()
     {
         if (DialogueManager.CurrentDialogueBranch.End)
         {
@@ -298,7 +297,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         }
     }
 
-    public IEnumerator ToggleUIForDialogueProgression(bool interactable)
+    public virtual IEnumerator ToggleUIForDialogueProgression(bool interactable)
     {
         if (_ui_interactable == interactable)
             yield break;
@@ -306,13 +305,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
         _ui_interactable = interactable;
 
         deckDisplay.UpdateGroupEnabled(interactable);
-
-        if(interactable && isTutorial && deckDisplay.GetCardsCount() == 0)
-        {
-            //silentButton.gameObject.SetActive(true);
-            //yield return StaticUtilities.FadeToVisible(silentButton.GetComponent<CanvasGroup>(), 0.65f, unscaledTime:true);
-            StaticUtilities.EnableCanvasGroup(silentButton.GetComponent<CanvasGroup>());
-        }
 
         yield return null;
 

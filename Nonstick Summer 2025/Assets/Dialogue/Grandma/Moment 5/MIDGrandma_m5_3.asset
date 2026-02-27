@@ -15,31 +15,51 @@ MonoBehaviour:
   dialogue:
   - Dialogue: Now, before you go, I wanted to tell you something...
     Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+    AudioResponse: Neutral
   - Dialogue: 'Watching you grow up has been one of the greatest blessings in my
       entire life. '
     Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
+    AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+    AudioResponse: Sad
   - Dialogue: "You\u2019re going to do great things out there, I just know it."
     Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+    AudioResponse: Happy
   - Dialogue: Alright, no need to make this any longer than it needs to be. Wouldn't
       want to keep you, after all.
     Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
+    AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+    AudioResponse: Neutral
   - Dialogue: Don't forget to visit your old Nanna, you hear?
     Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
+    AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+    AudioResponse: Angry
   - Dialogue: Goodbye, dear. I love you.
     Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+    AudioResponse: Happy
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
         you."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue:
     - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
         you."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: My, where has the time gone...
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     - Dialogue: Who knew that my little Pumpkin could grow so tall?
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     PlayerDialogue: You seem excited to see me.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -51,6 +71,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: "No hug, then? I suppose you\u2019re too old for that now..."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Hey.
     RelationshipCheckRequired: 0
@@ -64,6 +86,8 @@ MonoBehaviour:
     - Dialogue: "I just wanted to stop by while I had the time. It\u2019s good to
         see you!"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Hi, Grandma!
     RelationshipCheckRequired: 0
@@ -76,6 +100,8 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: Oh...is that suppose to be a joke?
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: You look awful.
     RelationshipCheckRequired: 0
@@ -89,6 +115,8 @@ MonoBehaviour:
     - Dialogue: "I just wanted to stop by while I had the time. It\u2019s good to
         see you!"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "We weren\u2019t expecting you to visit."
     RelationshipCheckRequired: 0
@@ -102,6 +130,8 @@ MonoBehaviour:
     - Dialogue: "I just wanted to stop by while I had the time. It\u2019s good to
         see you!"
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m glad you could come over."
     RelationshipCheckRequired: 0
@@ -115,6 +145,8 @@ MonoBehaviour:
     - Dialogue: "No, I only realized I hadn\u2019t visited in a while and just wanted
         to say hello. It\u2019s good to see you."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Have you been waiting here the whole time?
     RelationshipCheckRequired: 0
@@ -128,6 +160,8 @@ MonoBehaviour:
     - Dialogue: "No, I only realized I hadn\u2019t visited in a while and just wanted
         to say hello. It\u2019s good to see you."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Do you need something?
     RelationshipCheckRequired: 0
@@ -141,6 +175,8 @@ MonoBehaviour:
     - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
         you."
       Portrait: {fileID: 0}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: 
     CombinedDialogue: []
     PlayerDialogue: Is there something wrong?
     RelationshipCheckRequired: 0

@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Cousin_m2_4_pos
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Please? Please? Please?
+  - Dialogue: "C\u2019mon, please? Please?"
     Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Sad
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: If you want, you can even use the cards that my dad got for you!
     Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
     AudioResponse: Neutral
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "I wasn\u2019t?! But I was just so excited..."
+    - Dialogue: "I wasn\u2019t?! But you were gonna find out anyway!"
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "...I don\u2019t think that you were supposed to tell me that."
     RelationshipCheckRequired: 0
@@ -37,12 +43,14 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: You were?! But I was just so excited...
+    - Dialogue: You were?! But I was excited...
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: "C\u2019mon, man. I was supposed to find that out on my own!"
+    PlayerDialogue: Hey, I was supposed to find that out on my own!
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 03b73ede6000711468aa973f6e85d4ce, type: 2}
@@ -55,6 +63,8 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: I got cards?! He really DID read my wish list!
     RelationshipCheckRequired: 0
@@ -99,8 +109,10 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: What?
+    PlayerDialogue: Say what?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 03b73ede6000711468aa973f6e85d4ce, type: 2}
@@ -113,6 +125,8 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: WHAT?!
     RelationshipCheckRequired: 0
@@ -127,6 +141,8 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: ...What?
     RelationshipCheckRequired: 0

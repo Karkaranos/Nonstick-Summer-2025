@@ -26,6 +26,7 @@ public class DialogueTree : MonoBehaviour
 
     Material defaultMaterial;
     [SerializeField][Required][Tooltip("Insert the material for a highlighted node here!")] Material highlightedNodeMaterial;
+    [SerializeField][Required][Tooltip("Insert the material for the line renderers here!")] Material lineMaterial;
 
     [SerializeField][BoxGroup("Line Renderers")] LineRenderer[] lines;
 
@@ -134,6 +135,8 @@ public class DialogueTree : MonoBehaviour
             lines[0].SetPosition(0, this.transform.position);
             lines[0].SetPosition(1, newNode.transform.position);
 
+            lines[0].material = lineMaterial;
+
             nodeVisuals.Add(newNode);
 
         }
@@ -153,6 +156,9 @@ public class DialogueTree : MonoBehaviour
                 lines[y + 1].SetPosition(0, this.transform.position);
                 lines[y + 1].SetPosition(1, newNode.transform.position);
 
+                lines[y + 1].material = lineMaterial;
+                ;
+
                 nodeVisuals.Add(newNode);
             }
 
@@ -167,8 +173,10 @@ public class DialogueTree : MonoBehaviour
                 newNode.transform.SetParent(this.transform.GetComponentInParent<RectTransform>(), false);
                 newNode.transform.position = new Vector3(this.transform.position.x + xOffset, this.transform.position.y + (yOffset * y), this.transform.position.z);
 
-                lines[y+1].SetPosition(0, this.transform.position);
-                lines[y+1].SetPosition(1, newNode.transform.position);
+                lines[y + 1].SetPosition(0, this.transform.position);
+                lines[y + 1].SetPosition(1, newNode.transform.position);
+
+                lines[y + 1].material = lineMaterial;
 
                 nodeVisuals.Add(newNode);
             }

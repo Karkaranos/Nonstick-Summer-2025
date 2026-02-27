@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Grandma_m1_1
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: "There\u2019s my little sunshine, has Momma been treating you alright
-      recently?"
+  - Dialogue: "There\u2019s my little sunshine! How has your Momma been treating
+      you?"
     Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
     AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
     AudioResponse: Neutral
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: Hehehe, well... I taught your Momma how to be fun, so you will love
-        playing with me!
+    - Dialogue: "Well, I taught your Momma how to be fun, so you\u2019re gonna love
+        playing with me!"
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Happy
@@ -45,8 +45,8 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "Don\u2019t you worry, my little pumpkin. Nanna is here now to save
-        you from evil Momma!"
+    - Dialogue: "Well, I taught your Momma how to be fun, so you\u2019re gonna love
+        playing with me!"
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
@@ -70,8 +70,8 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "I\u2019m sorry to hear that, my little pumpkin. I\u2019m here now,
-        so we can play as much as you want!"
+    - Dialogue: "I\u2019m sorry to hear that, pumpkin. I\u2019m here now, so we can
+        play as much as you want!"
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Neutral
@@ -129,13 +129,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Charming_Question:
     NpcReactionText:
-    - Dialogue: You know what we say about lying, my little pumpkin... If she learned
-        anything from me, I already know you guys have been having a blast!
+    - Dialogue: "Don\u2019t you worry, little pumpkin. Nanna is here to save the
+        day!"
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Happy
     CombinedDialogue: []
-    PlayerDialogue: "Momma has been sooo mean, you wouldn\u2019t be mean to me right,
+    PlayerDialogue: "Momma has been mean. You wouldn\u2019t be mean to me, right
       Nanna?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -145,8 +145,8 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: "Ouch! That\u2019s a bit hurtful, pumpkin. Come on, let Nanna help
-        you do something fun to make up for it."
+    - Dialogue: "Now now, pumpkin, that\u2019s a bit hurtful. Come on, show Nanna
+        what you\u2019ve been up to."
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
       AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
       AudioResponse: Angry
@@ -161,8 +161,7 @@ MonoBehaviour:
   Sappy_Question:
     NpcReactionText:
     - Dialogue: "I\u2019m sorry to hear that, pumpkin. I\u2019ll make sure to have
-        a long chat with her just for you, alright? Now let\u2019s play whatever
-        you like all day!"
+        a long chat with her just for you, alright? Now, let\u2019s play!"
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
@@ -187,8 +186,7 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Silent:
     NpcReactionText:
-    - Dialogue: "It\u2019s okay sweetie, you don\u2019t have to use your words unless
-        you want.."
+    - Dialogue: "Come now, don\u2019t you remember your Nanna?"
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad

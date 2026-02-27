@@ -37,7 +37,6 @@ public class UIUtilityFunctions : MonoBehaviour
 
     public static void SetObjectiveVis(bool visibility)
     {
-
         GameManager.ObjectiveReference.SetObjectiveVisibility(visibility);
     }
 }

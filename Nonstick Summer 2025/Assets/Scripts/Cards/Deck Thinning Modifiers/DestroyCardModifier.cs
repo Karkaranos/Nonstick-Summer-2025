@@ -12,6 +12,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DestroyCardModifier", menuName = "Modifier Card/Destroy Card")]
 public class DestroyCardModifier : ModifierData
 {
+    public override string GetModifierName()
+    {
+        return "Scissors";
+    }
+
     protected override void ApplyModifier(CardData[] cards)
     {
         foreach (var card in cards)

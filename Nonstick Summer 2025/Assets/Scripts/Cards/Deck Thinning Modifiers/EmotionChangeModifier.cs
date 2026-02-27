@@ -46,4 +46,9 @@ public class EmotionChangeModifier : ModifierData
     {
         return CardStyleManager.GetEmotionSprite(emotionToSet);
     }
+
+    public override string GetModifierName()
+    {
+        return emotionToSet.ToString();
+    }
 }

@@ -13,25 +13,20 @@ MonoBehaviour:
   m_Name: Grandma_m3_3
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Do you remember that soccer game a couple years ago that grandpa and
-      I made it to?
+  - Dialogue: Do you remember that match that your grandfather and I were able to
+      make it to? The one where you made the winning shot?
     Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
     AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
     AudioResponse: Neutral
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: Right? Who could ever forget such an amazing game. I was so proud
-        of you in that moment.
-      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
+    - Dialogue: "You remember that? I told you, I wasn\u2019t sleeping, I was...oh
+        well."
+      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
-    - Dialogue: "I know you\u2019ll make us feel the exact same way tonight. I just
-        know it!"
-      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
-      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
-      AudioResponse: Happy
     CombinedDialogue: []
-    PlayerDialogue: Of course! I could never forget that game.
+    PlayerDialogue: Of course! Just try not to fall asleep in the crowd this time.
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 0, y: 30}
     BranchingDialogueHigh: {fileID: 11400000, guid: ba9b6e42745907d4c86bb46deb7362be, type: 2}
@@ -40,18 +35,14 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -15
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: Right? Who could ever forget such an amazing game. I was so proud
-        of you in that moment.
+    - Dialogue: "Oh pumpkin, don\u2019t linger on that. That was an accident, and
+        you\u2019ve improved so much."
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
-    - Dialogue: "I know you\u2019ll make us feel the exact same way tonight. I just
-        know it!"
-      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
-      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
-      AudioResponse: Happy
     CombinedDialogue: []
-    PlayerDialogue: Yep! How could I? I was incredible in that game.
+    PlayerDialogue: I remember the faces you made when I tripped over the ball last
+      week.
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 0, y: 30}
     BranchingDialogueHigh: {fileID: 11400000, guid: ba9b6e42745907d4c86bb46deb7362be, type: 2}
@@ -60,17 +51,16 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "Me too, even though I\u2019m starting to forget things a bit more
-        lately."
+    - Dialogue: "Me too...but we can\u2019t dwell too much on the past."
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
-    - Dialogue: I could never forget that for the rest of my life.
+    - Dialogue: The rest of our lives are ahead of us.
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
     CombinedDialogue: []
-    PlayerDialogue: I remember it like it was yesterday.
+    PlayerDialogue: I really miss those days.
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 0, y: 30}
     BranchingDialogueHigh: {fileID: 11400000, guid: ba9b6e42745907d4c86bb46deb7362be, type: 2}
@@ -137,17 +127,14 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
-    - Dialogue: Looking at you in your uniform all ready to kick some butt at the
-        game reminded me of it.
+    - Dialogue: "You were. I just wish your grandfather could see you now...he\u2019d
+        be so proud."
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Neutral
-    - Dialogue: "I know you\u2019ll make us proud like that again."
-      Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
-      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
-      AudioResponse: Happy
     CombinedDialogue: []
-    PlayerDialogue: I could never forget it, what makes you bring it up now?
+    PlayerDialogue: "I remember it like it was yesterday. Wasn\u2019t I amazing out
+      there?"
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 0, y: 30}
     BranchingDialogueHigh: {fileID: 11400000, guid: ba9b6e42745907d4c86bb46deb7362be, type: 2}
@@ -156,15 +143,10 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: I just thought it was really cool, and just know that you will make
-        us proud like that again.
+    - Dialogue: I just know it.
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Neutral
-    - Dialogue: All of us.
-      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
-      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
-      AudioResponse: Sad
     CombinedDialogue:
     - Dialogue: I just thought it was really cool, and just know that you will make
         us proud like that again.
@@ -179,7 +161,7 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
-    PlayerDialogue: Yeah, what about it?
+    PlayerDialogue: " Do you think today\u2019s gonna go that well?"
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 0, y: 30}
     BranchingDialogueHigh: {fileID: 11400000, guid: ba9b6e42745907d4c86bb46deb7362be, type: 2}
@@ -188,22 +170,16 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: I do, he and I both were so shocked to see our little pumpkin out
-        there running around all of those kids and kicking the ball with such force.
+    - Dialogue: I do! He and I were both so proud to see our little pumpkin out there.
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
-    - Dialogue: If only he were here to see you today.
-      Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
-      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
-      AudioResponse: Sad
-    - Dialogue: I know he would be just as shocked.
+    - Dialogue: If only he were here to see you today...he would be just as proud.
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Neutral
     CombinedDialogue: []
-    PlayerDialogue: "Yeah, do you still remember the look on Grandpa\u2019s face
-      when I sent that final ball into the back of the net?"
+    PlayerDialogue: Do you remember how loud Grandpa cheered?
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 0, y: 30}
     BranchingDialogueHigh: {fileID: 11400000, guid: ba9b6e42745907d4c86bb46deb7362be, type: 2}

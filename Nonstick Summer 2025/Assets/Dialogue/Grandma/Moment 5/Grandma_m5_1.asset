@@ -16,19 +16,19 @@ MonoBehaviour:
   - Dialogue: There you are. Did you need help packing?
     Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
     AnimatedReaction: {fileID: 0}
-    AudioResponse: 
+    AudioResponse: Neutral
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "Of course! I\u2019m be more than willing to help my Pumpkin out.
         With me and you on the case nothing will be able to stop us."
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
-      AudioResponse: Silent
+      AudioResponse: Happy
     - Dialogue: "I'm sure we can get this all unpacked before you can say, \u201CI
         love you Nanna!\u201D"
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
+      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
+      AudioResponse: Happy
     CombinedDialogue:
     - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
         you."
@@ -158,7 +158,7 @@ MonoBehaviour:
     - Dialogue: Sorry, dear.
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
       AnimatedReaction: {fileID: 0}
-      AudioResponse: 
+      AudioResponse: Silent
     CombinedDialogue: []
     PlayerDialogue: "We\u2019ve already taken care of it. Can\u2019t you see?"
     RelationshipCheckRequired: 0

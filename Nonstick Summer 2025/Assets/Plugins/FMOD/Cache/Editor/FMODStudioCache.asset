@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639074024178409306
+  lastModified: 639077960797274946
   FileSizes:
   - Name: Desktop
     Value: 1520
@@ -144,10 +144,10 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639074024178415324
+  lastModified: 639077960797282320
   FileSizes:
   - Name: Desktop
-    Value: 2092
+    Value: 2042
   Exists: 1
 --- !u!114 &-5071178627958903902
 MonoBehaviour:
@@ -275,7 +275,7 @@ MonoBehaviour:
   Name: WhichBoss
   StudioPath: 
   Min: 0
-  Max: 3
+  Max: 4
   Default: 0
   ID:
     data1: 2070745984
@@ -287,6 +287,7 @@ MonoBehaviour:
   - Mom Boss
   - Cousin Boss
   - Grandma Boss
+  - Tutorial
   Exists: 1
 --- !u!114 &-3080293570152182798
 MonoBehaviour:
@@ -343,33 +344,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 400
---- !u!114 &-2637607646935464048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Tutorial
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Tutorial
-  Guid:
-    Data1: -2001948734
-    Data2: 1162200519
-    Data3: 1053503617
-    Data4: -1471859601
-  Banks:
-  - {fileID: 34564258425666311}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 69232
 --- !u!114 &-2533828954921976497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,14 +545,13 @@ MonoBehaviour:
   - {fileID: -5071178627958903902}
   - {fileID: 499562003547829560}
   - {fileID: -4822545921931558208}
-  - {fileID: -2637607646935464048}
   EditorParameters:
   - {fileID: 5683601671587191834}
   MasterBanks:
   - {fileID: -7676539690225878646}
   StringsBanks:
   - {fileID: -5259588466323316940}
-  cacheTime: 639074024215301548
+  cacheTime: 639077987502864353
   cacheVersion: 131624
 --- !u!114 &34564258425666311
 MonoBehaviour:
@@ -595,10 +568,10 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/BGM.bank
   Name: BGM
   StudioPath: bank:/BGM
-  lastModified: 639074024178328117
+  lastModified: 639077987501365140
   FileSizes:
   - Name: Desktop
-    Value: 14972640
+    Value: 14972896
   Exists: 1
 --- !u!114 &499562003547829560
 MonoBehaviour:
@@ -642,7 +615,7 @@ MonoBehaviour:
   Path: NSSummer25FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639074024215301548
+  lastModified: 639077987502864353
   FileSizes:
   - Name: Desktop
     Value: 3665184

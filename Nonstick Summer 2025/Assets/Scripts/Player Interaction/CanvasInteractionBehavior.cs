@@ -31,6 +31,11 @@ public class CanvasInteractionBehavior : MonoBehaviour
     /// </summary>
     private void EnableInteractUI()
     {
+        if (talkPrompt.activeSelf)
+        {
+            return;
+        }
+
         interactPrompt?.SetActive(true);
     }
 

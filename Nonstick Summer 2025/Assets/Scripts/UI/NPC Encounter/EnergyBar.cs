@@ -13,6 +13,8 @@ public class EnergyBar : MonoBehaviour
     [SerializeField, Required]
     private TMP_Text energyNumber;
 
+    [SerializeField, Required] private Animator animator;
+
     public void Initalize()
     {
         slider = slider ?? GetComponent<Slider>();
@@ -20,7 +22,7 @@ public class EnergyBar : MonoBehaviour
         slider.maxValue = DialogueManager.MaxEnergy;
         SetValueNoAnimation(DialogueManager.CurrentEnergy);
 
-        energyNumber.text = DialogueManager.CurrentEnergy.ToString()+" Energy";
+        energyNumber.text = $"{DialogueManager.CurrentEnergy} <sprite>Energy";
 
     }
 
@@ -67,5 +69,10 @@ public class EnergyBar : MonoBehaviour
     public IEnumerator Refresh()
     {
         yield return SetValue(DialogueManager.CurrentEnergy);
+    }
+
+    public void PlayShakeAnimation()
+    {
+        animator.SetTrigger("Shake");
     }
 }

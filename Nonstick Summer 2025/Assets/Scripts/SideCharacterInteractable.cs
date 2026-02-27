@@ -12,11 +12,11 @@ using UnityEngine.SceneManagement;
 
 public class SideCharacterInteractable : MonoBehaviour, IInteractable
 {
-    [SerializeField, Required, Tooltip("Asks the player if they want to enter combat")] private GameObject promptCanvas;
-    [SerializeField, Tooltip("Question phrasing")] private string combatPrompt;
-    [SerializeField, Tooltip("The displayed line of dialogue before entering combat")] private string preCombatLine;
-    [SerializeField, Tooltip("The displayed line of dialogue after completing combat")] private string postCombatLine;
-    [SerializeField] private Sprite characterSprite;
+    [SerializeField, Required, Tooltip("Asks the player if they want to enter combat")] protected GameObject promptCanvas;
+    [SerializeField, Tooltip("Question phrasing")] protected string combatPrompt;
+    [SerializeField, Tooltip("The displayed line of dialogue before entering combat")] protected string preCombatLine;
+    [SerializeField, Tooltip("The displayed line of dialogue after completing combat")] protected string postCombatLine;
+    [SerializeField] protected Sprite characterSprite;
 
     [SerializeField, Tooltip("Dialogue Canvas")]
     [Required]
@@ -39,7 +39,7 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
 
     public ModifierData[] PossibleModifiers;
 
-    private bool conversationComplete = false;
+    protected bool conversationComplete = false;
 
     [SerializeField, Required] private GameObject ModifierObtainCanvas;
 
@@ -89,7 +89,7 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
         StaticUtilities.EnableCursor();
     }
 
-    public void FinishSideCombat()
+    public virtual void FinishSideCombat()
     {
         conversationComplete = true;
         int i = PossibleModifiers.Length;

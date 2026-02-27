@@ -47,7 +47,6 @@ public class NextDialogueButton : MonoBehaviour
 
         button.interactable = enabled;
         StaticUtilities.ToggleCanvasGroup(group, enabled);
-        
     }
 
     public void OnButtonPressed()

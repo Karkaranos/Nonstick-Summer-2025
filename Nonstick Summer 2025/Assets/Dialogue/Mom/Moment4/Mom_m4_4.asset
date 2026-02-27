@@ -29,11 +29,11 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
-    - Dialogue: "I don\u2019t want to be the bad guy,"
+    - Dialogue: "I don\u2019t want to be the bad guy..."
       Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Neutral
-    - Dialogue: "but you\u2019re forcing my hand!"
+    - Dialogue: "But you\u2019re forcing my hand!"
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
@@ -47,8 +47,8 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "Are you sure? Because you\u2019re not making a good case for yourself
-        by sneaking behind my back like this."
+    - Dialogue: "Are you sure you're grateful? Because you\u2019re not making a good
+        case for yourself by sneaking behind my back like this."
       Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Neutral
@@ -63,8 +63,8 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "I don\u2019t HAVE to take care of you, but a little RESPECT shouldn\u2019t
-        be too much to ask for either."
+    - Dialogue: "Are you sure? Because you\u2019re not making a good case for yourself
+        by going behind my back like this."
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
@@ -82,8 +82,7 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
-    PlayerDialogue: " A tragedy. It\u2019s almost like you\u2019re A MOTHER who is
-      supposed to CARE ABOUT HER KID."
+    PlayerDialogue: I understand.
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 0, y: 50}
     BranchingDialogueHigh: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
@@ -169,8 +168,7 @@ MonoBehaviour:
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Neutral
     CombinedDialogue: []
-    PlayerDialogue: "Can\u2019t we talk about this? There has to be something else
-      you can take besides my phone."
+    PlayerDialogue: "Do you hear how unfair you\u2019re being right now?"
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 0, y: 50}
     BranchingDialogueHigh: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}

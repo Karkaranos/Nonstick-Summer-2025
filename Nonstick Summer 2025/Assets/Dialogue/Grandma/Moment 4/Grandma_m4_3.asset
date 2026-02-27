@@ -29,19 +29,17 @@ MonoBehaviour:
     AudioResponse: Neutral
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "I\u2019m sure you will. Just you wait; life only gets better the
+    - Dialogue: "I\u2019m sure you will. Just you wait. Life only gets better the
         longer it goes."
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
-    - Dialogue: "Trust me. With how awesome my Pumpkin is right now, I can only imagine
-        how bright you\u2019ll shine when you\u2019re my age."
+    - Dialogue: Trust me.
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Happy
     CombinedDialogue: []
-    PlayerDialogue: "I\u2019d be lucky if I\u2019m as cool as you when I\u2019m older
-      Nanna."
+    PlayerDialogue: "I\u2019d be lucky if I\u2019m as cool as you when I\u2019m older."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 2378fbf8c2fae8f4497d4c3014a229f8, type: 2}
@@ -50,7 +48,7 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: Just hang in there Pumpkin, everything will work out in the end.
+    - Dialogue: Just hang in there Pumpkin. Wverything will work out in the end.
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Neutral
@@ -59,7 +57,7 @@ MonoBehaviour:
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
     CombinedDialogue: []
-    PlayerDialogue: "You\u2019re right, it has been a lot recently."
+    PlayerDialogue: Sure.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 2378fbf8c2fae8f4497d4c3014a229f8, type: 2}
@@ -68,29 +66,19 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: That crazy daughter of mine, what has she been doing to my little
-        pumpkin?
+    - Dialogue: "I know she can be a bit much sometimes, but she\u2019s only wants
+        the best for you."
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
-    - Dialogue: "Don\u2019t hate her alright? I know she can be a bit much sometimes,
-        but trust me when I tell you this,"
-      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
-      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
-      AudioResponse: Neutral
-    - Dialogue: "she\u2019s only as hard as she is on you because she wants the best
-        for you."
-      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
-      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
-      AudioResponse: Neutral
     - Dialogue: "She loves you with all of her heart, she just doesn\u2019t always
         show it."
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Neutral
     CombinedDialogue: []
-    PlayerDialogue: I just hope Mom lets up a little bit. It has been really hard
-      lately.
+    PlayerDialogue: "I just hope Mom lets up a little bit. It\u2019s been really
+      hard lately."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 2378fbf8c2fae8f4497d4c3014a229f8, type: 2}
@@ -144,13 +132,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "All those things, no matter what, I\u2019ll always love my little
+    - Dialogue: "All those things, no matter what. I\u2019ll always love my little
         pumpkin!"
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
     CombinedDialogue: []
-    PlayerDialogue: Would you still love me if I was a dog, or a snail, or what about
+    PlayerDialogue: Would you still love me if I was a dog? Or a snail? What about
       a puddle?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -160,8 +148,7 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: "Oh, right... Of course... Don\u2019t let your old Nanna keep you
-        up. "
+    - Dialogue: "Right, of course...don\u2019t let your old Nanna keep you up."
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
@@ -179,7 +166,7 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: "You\u2019ve got the wrong idea... I\u2019m fine."
+    - Dialogue: "I\u2019m fine."
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
@@ -189,8 +176,7 @@ MonoBehaviour:
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
     CombinedDialogue: []
-    PlayerDialogue: That sounds like a goodbye. Are you really sure you are alright
-      Nanna?
+    PlayerDialogue: "Are you really sure you\u2019re doing alright?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 2378fbf8c2fae8f4497d4c3014a229f8, type: 2}

@@ -221,38 +221,49 @@ public static class StaticUtilities
     /// Smooth transform's current scale to endScale;
     /// </summary>
     public static Coroutine AnimateScale(Transform transform, Vector3 endScale, float seconds,
-        bool unscaledTime = true, Coroutine currentCoroutineToCancel = null)
+        bool unscaledTime = true, Coroutine currentCoroutineToCancel = null, bool lockBottomToYPosition = false, float tExponent = 1)
     {
         if (currentCoroutineToCancel != null)
             GameManager.Instance.StopCoroutine(currentCoroutineToCancel);
 
-        return GameManager.Instance.StartCoroutine(AnimateScaleCoroutine(transform, transform.localScale, endScale, seconds, unscaledTime, currentCoroutineToCancel));
+        return GameManager.Instance.StartCoroutine(AnimateScaleCoroutine(transform, transform.localScale, endScale, seconds, unscaledTime, currentCoroutineToCancel, 
+            lockBottomToYPosition: lockBottomToYPosition, tExponent:tExponent));
     }
 
     /// <summary>
     /// Smooths the transforms scale from startScale to endScale;
     /// </summary>
     public static Coroutine AnimateScale(Transform transform, Vector3 startScale, Vector3 endScale, float seconds,
-        bool unscaledTime = true, Coroutine currentCoroutineToCancel = null)
+        bool unscaledTime = true, Coroutine currentCoroutineToCancel = null, float tExponent = 1)
     {
         if (currentCoroutineToCancel != null)
             GameManager.Instance.StopCoroutine(currentCoroutineToCancel);
 
-        return GameManager.Instance.StartCoroutine(AnimateScaleCoroutine(transform, startScale, endScale, seconds, unscaledTime, currentCoroutineToCancel));
+        return GameManager.Instance.StartCoroutine(AnimateScaleCoroutine(transform, startScale, endScale, seconds, 
+            unscaledTime, currentCoroutineToCancel, tExponent:tExponent));
     }
 
     private static IEnumerator AnimateScaleCoroutine(Transform transform, Vector3 startScale, Vector3 endScale, float seconds,
-        bool unscaledTime = true, Coroutine currentCoroutineToCancel = null)
+        bool unscaledTime = true, Coroutine currentCoroutineToCancel = null, bool lockBottomToYPosition = false, float tExponent=1)
     {
         float startTime = unscaledTime ? Time.unscaledTime : Time.time;
         float time = startTime;
+        Vector3 startPos = transform.localPosition;
+
         while (time - startTime < seconds)
         {
             time = unscaledTime ? Time.unscaledTime : Time.time;
             float t = (time - startTime) / seconds;
+            t = Mathf.Pow(t, tExponent);
 
             transform.localScale = Vector3.Lerp(startScale, endScale, t);
 
+            if (lockBottomToYPosition)
+            {
+                float endY = (endScale.y - startScale.y) / 2;
+                float y = startPos.y + Mathf.Lerp(0, endY, t);
+                transform.localPosition = transform.localPosition.WithY(y);
+            }
 
             yield return null;
         }
@@ -304,6 +315,8 @@ public static class StaticUtilities
 
             yield return null;
         }
+
+        yield return new WaitForEndOfFrame();
         // apply one more time just in case.
         transform.localRotation = endRotation;
     }
@@ -394,6 +407,43 @@ public static class StaticUtilities
         {
             action(element);
         }
+    }
+
+    #endregion
+
+    #region Vectors
+
+    /// <summary>
+    /// Return vector with x value changed
+    /// </summary>
+    /// <param name="vector"></param>
+    /// <returns></returns>
+    public static Vector3 WithX(this Vector3 vector, float x)
+    {
+        vector.x = x;
+        return vector;
+    }
+
+    /// <summary>
+    /// Return vector with y value changed
+    /// </summary>
+    /// <param name="vector"></param>
+    /// <returns></returns>
+    public static Vector3 WithY(this Vector3 vector, float y)
+    {
+        vector.y = y;
+        return vector;
+    }
+
+    /// <summary>
+    /// Return vector with z value changed
+    /// </summary>
+    /// <param name="vector"></param>
+    /// <returns></returns>
+    public static Vector3 WithZ(this Vector3 vector, float z)
+    {
+        vector.z = z;
+        return vector;
     }
 
     #endregion

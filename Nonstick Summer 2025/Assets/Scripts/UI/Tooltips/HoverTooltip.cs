@@ -131,7 +131,7 @@ public abstract class HoverTooltip : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        if (Application.isPlaying)
+        if (Application.isPlaying || true)
             return;
 
 #if UNITY_EDITOR

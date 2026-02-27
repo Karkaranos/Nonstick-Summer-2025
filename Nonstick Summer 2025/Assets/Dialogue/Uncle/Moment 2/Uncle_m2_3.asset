@@ -13,22 +13,25 @@ MonoBehaviour:
   m_Name: Uncle_m2_3
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: "You know, I\u2019ve been reading the news lately."
-    Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
-    AnimatedReaction: {fileID: 0}
-    AudioResponse: Neutral
-  - Dialogue: Did your mom tell you about those alien sightings?
+  - Dialogue: 'Say, did you mom tell you about those alien sightings? '
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
     AudioResponse: Neutral
-  - Dialogue: Apparently, a UFO was spotted flying towards town...
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
+  - Dialogue: "I\u2019ve been keeping an eye on the news. Apparently, a UFO was spotting
+      flying towards town..."
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Neutral
-  - Dialogue: ... Could be the real deal this time.
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
+  - Dialogue: Could be the real deal this time.
     Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
     AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
     AudioResponse: Angry
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "That\u2019s not that funny, you know. If they DO get abducted, who
@@ -36,9 +39,11 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: "Yeah, my friends at school wanna see if they can beam up our
-      teacher so we don\u2019t have homework."
+    PlayerDialogue: Yeah, my friends wanna try to get our teacher abducted so class
+      gets canceled.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: cd8144ceafb8c9d4f95961ab12e9d3e5, type: 2}
@@ -52,9 +57,11 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: "I can\u2019t understand how people actually fall for all that
-      stuff. Momma says it\u2019s all made up."
+    PlayerDialogue: "I can\u2019t understand how people actually fall for that stuff.
+      Momma says it\u2019s all made up."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: cd8144ceafb8c9d4f95961ab12e9d3e5, type: 2}
@@ -63,14 +70,15 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "Eight?! I get getting enough sleep, but doesn\u2019t she know how
-        important it is to stay informed?"
+    - Dialogue: "Eh, don\u2019t read too much into it. Could be another hoax, for
+        all we know.  Either way, it doesn\u2019t hurt to be too careful nowadays."
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: "I haven\u2019t really had the time to watch a lot of TV. Momma
-      says I have to go to bed by 8. "
+    PlayerDialogue: "I don\u2019t want aliens to get me..."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: cd8144ceafb8c9d4f95961ab12e9d3e5, type: 2}
@@ -84,6 +92,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Yeah, my friends and I have been preparing the fort in the back
       with food and defenses.
@@ -100,6 +110,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "I saw some parts of it, I can\u2019t understand how people actually
       believe in all that stuff."
@@ -116,6 +128,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "I haven\u2019t really had the time to watch the news, been way
       to busy with school."
@@ -132,6 +146,8 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Are you sure? You said the same thing about ghosts.
     RelationshipCheckRequired: 0
@@ -142,11 +158,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: Course I do. Even got my basement packed with enough food to last
-        a decade for when the worst of it comes. It always pays to be prepared.
+    - Dialogue: "\u2018Course I do. Even got my basement packed with enough food
+        to last a decade when the worst of it comes. Always pays to be prepared."
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Do you really believe all that stuff?
     RelationshipCheckRequired: 0
@@ -157,13 +175,15 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: "Eh, don\u2019t read too much into it; could be another hoax, for
-        all we know.  Either way, it doesn\u2019t hurt to be too careful nowadays."
+    - Dialogue: "\u2018Course I do. Even got my basement packed with enough food
+        to last a decade when the worst of it comes. Always pays to be prepared."
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: "Do you think they\u2019re gonna come and get me?"
+    PlayerDialogue: "Do you think they\u2019re gonna come and get us?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: cd8144ceafb8c9d4f95961ab12e9d3e5, type: 2}

@@ -17,10 +17,14 @@ MonoBehaviour:
     Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
     AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
     AudioResponse: Neutral
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: How have you been?
-    Portrait: {fileID: 0}
+    Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     AnimatedReaction: {fileID: 0}
-    AudioResponse: Happy
+    AudioResponse: Neutral
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "You really did, huh? You\u2019ve gotta start paying attention to
@@ -28,12 +32,16 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Neutral
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: Get your nose out of that phone before it gets stuck there.
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: Decent. I forgot that there was a gathering today...
+    PlayerDialogue: Decent. I completely forgot people were visiting today...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b5b3194cdc3415f45ad3af1bf4d19833, type: 2}
@@ -42,19 +50,24 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "I mean, you\u2019re in your room twenty-three hours of the day,
-        kiddo!"
+    - Dialogue: "I mean, you\u2019re in your room half the day!"
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: "Otherwise, you\u2019re out with your friends and whatnot..."
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: When else am I gonna talk to you?
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Not now.
     RelationshipCheckRequired: 0
@@ -65,18 +78,24 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "I mean, you\u2019re in your room twenty-three hours of the day!"
+    - Dialogue: "I mean, you\u2019re in your room half the day! "
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: "Otherwise, you\u2019re out with your friends and whatnot..."
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: When else am I gonna talk to you?
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Huh. You seem surprised to see me.
     RelationshipCheckRequired: 0
@@ -92,26 +111,36 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue:
     - Dialogue: "You really did, huh? You\u2019ve gotta start paying attention to
         the world around you, buddy."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: "Uh, listen. I\u2019ve been meaning to check in with you for awhile,
         actually..."
       Portrait: {fileID: 21300000, guid: 599283ca56aa9da4f85f3d7e2e07d0a4, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: "I\u2019m worried about you! I\u2019m worried about the sort of things
         you\u2019re hearing without us to check up on you."
       Portrait: {fileID: 21300000, guid: 599283ca56aa9da4f85f3d7e2e07d0a4, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: "It\u2019s a crazy world out there, you know?"
       Portrait: {fileID: 21300000, guid: 599283ca56aa9da4f85f3d7e2e07d0a4, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     PlayerDialogue: Decently. I forgot that there was a gathering today...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -126,6 +155,8 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "Ugh. Don\u2019t call me that, first of all."
     RelationshipCheckRequired: 0
@@ -141,6 +172,8 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Huh. You seem genuinely surprised.
     RelationshipCheckRequired: 0
@@ -151,18 +184,24 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "I mean, you\u2019re in your room twenty-three hours of the day!"
+    - Dialogue: "I mean, you\u2019re in your room half the day! "
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: "Otherwise, you\u2019re out with your friends and whatnot..."
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: When else am I gonna talk to you?
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "You didn\u2019t expect to see me in my own house?"
     RelationshipCheckRequired: 0
@@ -178,10 +217,14 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Happy
-    - Dialogue: "What\u2019s another word for \u201Ccool\u201D..?"
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
+    - Dialogue: "...What\u2019s another word for \u201Ccool\u201D..?"
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Neutral
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "Don\u2019t you have someone your own age to talk to?"
     RelationshipCheckRequired: 0
@@ -192,18 +235,24 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: "I mean, you\u2019re in your room twenty-three hours of the day!"
+    - Dialogue: "I mean, you\u2019re in your room half the day!"
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: "Otherwise, you\u2019re out with your friends and whatnot..."
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: When else am I gonna talk to you?
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "You didn\u2019t? I feel as though I see you all the time..."
     RelationshipCheckRequired: 0

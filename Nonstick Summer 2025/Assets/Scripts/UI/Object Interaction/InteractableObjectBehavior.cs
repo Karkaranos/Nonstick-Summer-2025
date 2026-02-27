@@ -71,6 +71,13 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
             }
             GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.INTERACT_WITH_OBJECT, gameObject);
 
+            if (gameObject.name.Contains("Toy Box"))
+            {
+
+                Debug.Log("Toy box alert!");
+
+            }
+
             canvas.Initialize(_statement, _question, _options, gameObject);
 
             canvas.Button1.onClick.AddListener(() => OnClickEvent1.Invoke());

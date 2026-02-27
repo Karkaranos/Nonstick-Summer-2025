@@ -27,6 +27,6 @@ public class DialogueCardTooltip : HoverTooltip
         return tooltipText
             .Replace("[Emotion]", $"[{data.Emotion.ToString()}]")
             .Replace("[Intention]", $"[{data.Intention.ToString()}]")
-            .Replace("[EnergyCost]", data.EnergyCost.AddSignToString(additonalText: " energy"));
+            .Replace("[EnergyCost]", data.EnergyCost.AddSignToString(additonalText: "<sprite name=\"Energy\"> energy"));
     }
 }

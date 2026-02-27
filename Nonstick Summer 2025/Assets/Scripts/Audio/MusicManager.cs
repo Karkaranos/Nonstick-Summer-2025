@@ -30,16 +30,27 @@ public class MusicManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name.Equals("MainMenu"))
         {
             StartTitle();
+            return;
         }
-        else
+        if (SceneManager.GetActiveScene().name.Equals("MainMenu"))
         {
             StartReflection();
+            return;
         }
+
+        StartReflection();
     }
 
     public void StartCombat(float val)
     {
         StopAll();
+
+        if (SceneManager.GetActiveScene().name.Equals("MainMenu"))
+        {
+            StartReflection();
+            return;
+        }
+
         CombatBGM.setParameterByName("WhichBoss", val);
         float isItWorkingChat;
         CombatBGM.getParameterByName("WhichBoss", out isItWorkingChat);

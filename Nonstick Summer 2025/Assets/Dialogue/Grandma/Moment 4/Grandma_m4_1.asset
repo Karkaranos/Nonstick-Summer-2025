@@ -19,8 +19,7 @@ MonoBehaviour:
     AudioResponse: Neutral
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: Good to see you Pumpkin! I can always count on you to make your old
-        Nanna feel just a little bit younger.
+    - Dialogue: "I\u2019m glad to see you too, dear."
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
@@ -38,8 +37,7 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
-    PlayerDialogue: "There\u2019s my super Nanna, glad you could come over to visit
-      us!"
+    PlayerDialogue: "There\u2019s my super Nanna! Glad you could come visit."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
@@ -48,17 +46,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "No hug, then? I suppose you\u2019re too old for that now..."
+    - Dialogue: "Well, I just wanted to stop by and see how you all were doing. I
+        hope I\u2019m not intruding."
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
-    - Dialogue: "I haven\u2019t seen it, maybe I could help you look around for it."
-      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
-      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
-      AudioResponse: Neutral
     CombinedDialogue: []
-    PlayerDialogue: "Hey Nanna, I didn\u2019t know you were here. I\u2019m looking
-      for my phone."
+    PlayerDialogue: "Hey Nanna. Didn\u2019t know you were here."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
@@ -67,13 +61,14 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "You know that trick won\u2019t work on me anymore. You are way too
-        old now to pull that one over on me my little sunshine."
+    - Dialogue: "You know that won\u2019t work on me anymore. You are way too old
+        to pull those kind of tricks, even if my memory isn\u2019t what it used to
+        be."
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Neutral
     CombinedDialogue: []
-    PlayerDialogue: Hi Grandma! Please save me from evil Momma.
+    PlayerDialogue: Grandma! Please save me from evil Momma!
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
@@ -126,17 +121,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "No, I only realized I hadn\u2019t visited in a while and just wanted
-        to stop by and see how you all were doing."
+    - Dialogue: "Well, I just wanted to stop by and see how you all were doing. I
+        hope I\u2019m not intruding."
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
-    - Dialogue: "I\u2019m glad I was able to catch you."
-      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
-      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
-      AudioResponse: Neutral
     CombinedDialogue: []
-    PlayerDialogue: Hey Nanna, good to see you again, have you been here a while?
+    PlayerDialogue: Where did you come from?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
@@ -145,17 +136,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: "No, I only realized I hadn\u2019t visited in a while and just wanted
-        to stop by and see how you all were doing."
+    - Dialogue: "No hug, then? I suppose you\u2019re too old for that now. I haven\u2019t
+        seen it, but maybe I could help you look around for it."
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
-    - Dialogue: "I\u2019m glad I was able to catch you."
-      Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
-      AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
-      AudioResponse: Neutral
     CombinedDialogue: []
-    PlayerDialogue: "What\u2019s up Nanna? Do you need something?"
+    PlayerDialogue: "I\u2019m looking for my phone. Have you seen it?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
@@ -168,13 +155,12 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 3be242fd8c69cb04ea12ee80ec7a0339, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
-    - Dialogue: "Just a little bit though. You don\u2019t have to worry about your
-        Nanna at all."
+    - Dialogue: "You don\u2019t have to worry about your Nanna, though!"
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Neutral
     CombinedDialogue: []
-    PlayerDialogue: You are looking pretty tired. Are you feeling alright?
+    PlayerDialogue: You look pretty tired. Are you feeling alright?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}

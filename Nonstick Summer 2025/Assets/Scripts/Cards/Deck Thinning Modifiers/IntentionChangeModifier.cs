@@ -52,4 +52,9 @@ public class IntentionChangeModifier : ModifierData
         return CardStyleManager.GetIntentionSprite(intentionToSet);
 
     }
+
+    public override string GetModifierName()
+    {
+        return intentionToSet.ToString();
+    }
 }

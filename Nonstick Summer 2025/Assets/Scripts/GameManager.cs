@@ -43,9 +43,13 @@ public class GameManager : Singleton<GameManager>
     [Foldout("Card Styles")] public Color PositiveEnergyColor = Color.green;
     [Foldout("Card Styles")] public Color NegativeEnergyColor = Color.red;
     [Foldout("Card Styles")] public Color NeutralEnergyColor = Color.gray;
+    [Foldout("Card Styles")] public Color CharactersColor = Color.yellow;
+    [Foldout("Card Styles")] public Color RelationshipColor = Color.red;
+    [Foldout("Card Styles")] public Color HardToReadCharmingColor = Color.yellow;
 
     [Tooltip("The initial cards in the players hand at the very beginning of the game")]
-    [Foldout("Card Values"), SerializeField] private CardData[] startingCards;
+    [Foldout("Card Values"), SerializeField] public CardData[] tutorialCards;
+    [Foldout("Card Values"), SerializeField] public CardData[] startingCards;
     [Tooltip("The initial modifiers in the players hand at the very beginning of the game")]
     [Foldout("Card Values"), SerializeField] private ModifierData[] startingModifiers;
 
@@ -60,7 +64,7 @@ public class GameManager : Singleton<GameManager>
     [Foldout("Combat"),SerializeField] private int _cardsDrawnPerRound=1;
     [Foldout("Combat"),SerializeField] public static int DefaultCardsInHand=4; // why is this hardcoded?
     [Header("Dialogue Display")]
-    [Foldout("Combat"), Range(0, .03f)] public float TextScrollSpeed = .01f;
+    [Foldout("Combat"), Range(0.001f, .01f)] public float TextScrollSpeed = .01f;
 
     [Header("Relationship Manager")]
     [Foldout("Relationship Manager")] [SerializeField] private RelationshipStats grandmaStartingValue;
@@ -115,6 +119,10 @@ public class GameManager : Singleton<GameManager>
 
             Destroy(transform.parent.gameObject);
 
+        }
+
+        if (scene.name.Contains("Tutorial")){
+            DeckManagerReference = new DeckManager(tutorialCards);
         }
 
         if (scene.name.Contains("1"))

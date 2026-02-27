@@ -66,7 +66,7 @@ public class MainMenu : MonoBehaviour
 
         FindFirstObjectByType<Check>().gameCompleted = false;
         DoFadeOut(fade);
-        //Cursor.visible = false; CALEB CALEB CALEB CALEB CALEB CALEB
+        //Cursor.visible = false; CALEB CALEB CALEB CALEB CALEB CALEB Toby!
     }
 
     public void OpenControls()

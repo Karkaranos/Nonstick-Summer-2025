@@ -10,6 +10,7 @@
 using NaughtyAttributes;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,14 +19,17 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] private TMP_Text dialogueText;
     //[SerializeField, Required] private CanvasGroup group;
 
-    [HideInInspector] private int NumberInList = 0; // TODO move this to npc dialogue bubble?
+    [HideInInspector] private int NumberInList = 0;
 
     [ReadOnly] public bool PlayerReadAllDialogue;
 
-    bool dialogueScrolling = false;
+    [ReadOnly] public bool DialogueScrolling = false;
+    [ReadOnly] public bool skipTypewriterRequested = false;
 
     private DialogueNPC[] dialogueStored;
     private Character currentCharacter;
+
+    float scrollSpeed;
 
 
     /// <summary>
@@ -40,10 +44,18 @@ public class DialogueBox : MonoBehaviour
 
         currentCharacter = character;
 
+        scrollSpeed = GameManager.Instance.TextScrollSpeed;
+
         yield return SetDialogueIndex(NumberInList, branch);
 
         LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
         //npcText.text = branch.dialogue[0].Dialogue; text initialized 
+
+    }
+
+    public void SkipTypewriter()
+    {
+        skipTypewriterRequested = true;
     }
 
     #region Dialogue Iteration
@@ -69,43 +81,42 @@ public class DialogueBox : MonoBehaviour
     public IEnumerator ProgressNPCDialogue(DialogueBranch branch=null)
     {
 
-        if(dialogueScrolling)
+        if(DialogueScrolling)
         {
 
-            dialogueText.text = DialogueManager.CurrentDialogueBranch.dialogue[NumberInList].Dialogue;
-
-            dialogueScrolling = false;
-
-            StopAllCoroutines();
+            //i'll figure out something more graceful later but the text boxes will fuck up otherwise
+            yield return null;
 
         }
+        else
+        {
+            scrollSpeed = GameManager.Instance.TextScrollSpeed;
+            yield return SetDialogueIndex(NumberInList + 1, null, dialogueStored);
 
-        yield return SetDialogueIndex(NumberInList+1, null, dialogueStored); // mods it in this function dw
+        }
 
     }
 
     public void MuffleTextPlayed(string line)
     {
-
         StartCoroutine(DisplayOneLine(line));
-
     }
 
     IEnumerator DisplayOneLine(string line)
     {
 
-        dialogueScrolling = true;
+        DialogueScrolling = true;
 
         for (int i = 0; i < line.Length; i++)
         {
 
             dialogueText.text += line[i];
 
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(scrollSpeed);
 
         }
 
-        dialogueScrolling = false;
+        DialogueScrolling = false;
 
         //RefreshLayout();
     }
@@ -135,129 +146,105 @@ public class DialogueBox : MonoBehaviour
 
         }
 
-        // go to next 
-        if (dialogue != null)
-        {
+        if (dialogue == null)
+            dialogue = branch.dialogue;
 
-            NumberInList = numberInList % dialogue.Length;
+        // Go through and process text:
 
-            DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(dialogue[NumberInList], currentCharacter);
+        NumberInList = numberInList % dialogue.Length;
 
-            //TODO: fmod here!!
-            if(dialogue[NumberInList].AudioResponse == "Happy")
-            {
+        DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(dialogue[NumberInList], currentCharacter);
 
-                ReactionManager.instance.PlayReaction(1);
+        //TODO: fmod here!!
+        PlayEmotionReaction(dialogue[NumberInList].AudioResponse);
 
-            }
-            if (dialogue[NumberInList].AudioResponse == "Sad")
-            {
+        // Wait for Typewriter Text
+        yield return TypewriteText(dialogue[NumberInList].Dialogue);
 
-                ReactionManager.instance.PlayReaction(2);
+        if (dialogue[NumberInList].HasAdvancedSignal)
+            ProcessAdvancedSignal(dialogue[NumberInList]);
 
-            }
-            if (dialogue[NumberInList].AudioResponse == "Angry")
-            {
+        Debug.Log($"({NumberInList + 1}/{dialogue.Length}): {dialogue[NumberInList].Dialogue}");
 
-                ReactionManager.instance.PlayReaction(3);
 
-            }
-            if (dialogue[NumberInList].AudioResponse == "Neutral")
-            {
-
-                ReactionManager.instance.PlayReaction(0);
-
-            }
-
-            if (dialogueText.text != dialogue[NumberInList].Dialogue)
-            {
-
-                dialogueScrolling = true;
-
-                dialogueText.text = string.Empty;
-
-                for (int i = 0; i < dialogue[NumberInList].Dialogue.Length; i++)
-                {
-
-                    dialogueText.text += dialogue[NumberInList].Dialogue[i];
-
-                    yield return new WaitForSeconds(FindFirstObjectByType<GameManager>().TextScrollSpeed);
-
-                }
-
-                dialogueScrolling = false;
-
-            }
-
-            Debug.Log($"({NumberInList + 1}/{dialogue.Length}): {dialogue[NumberInList].Dialogue}");
-
-        }
-        else
-        {
-
-            NumberInList = numberInList % branch.dialogue.Length;
-
-            DialogueUIController.Instance.portraitDisplay?.SetPortraitSprite(branch.dialogue[NumberInList], currentCharacter);
-
-            //TODO: fmod here!!
-            if (branch.dialogue[NumberInList].AudioResponse == "Happy")
-            {
-
-                ReactionManager.instance.PlayReaction(1);
-
-            }
-            if (branch.dialogue[NumberInList].AudioResponse == "Sad")
-            {
-
-                ReactionManager.instance.PlayReaction(2);
-
-            }
-            if (branch.dialogue[NumberInList].AudioResponse == "Angry")
-            {
-
-                ReactionManager.instance.PlayReaction(3);
-
-            }
-            if (branch.dialogue[NumberInList].AudioResponse == "Neutral")
-            {
-
-                ReactionManager.instance.PlayReaction(0);
-
-            }
-
-            if (dialogueText.text != branch.dialogue[NumberInList].Dialogue)
-            {
-
-                dialogueScrolling = true;
-
-                dialogueText.text = string.Empty;
-
-                for (int i = 0; i < branch.dialogue[NumberInList].Dialogue.Length; i++)
-                {
-
-                    dialogueText.text += branch.dialogue[NumberInList].Dialogue[i];
-
-                    yield return new WaitForSeconds(FindFirstObjectByType<GameManager>().TextScrollSpeed);
-
-                }
-
-                dialogueScrolling = false;
-
-            }
-
-            Debug.Log($"({NumberInList + 1}/{branch.dialogue.Length}): {branch.dialogue[NumberInList].Dialogue}");
-
-        }
 
         if (PlayerReadAllDialogue)
-        {
-            DialogueUIController.Instance.ClosingOutCombat();
-        }
+            DialogueUIController.Instance.OnNPCFinishDialogue();
 
         yield return null;
         //RefreshLayout();
     }
 
+    private IEnumerator TypewriteText(string text)
+    {
+        text = TextUtilities.FilterText(text, hardToReadText:true);
+
+        skipTypewriterRequested = false;
+
+        if (dialogueText.text != text)
+        {
+            DialogueScrolling = true;
+            dialogueText.text = string.Empty;
+
+            for (int i = 0; i < text.Length && !skipTypewriterRequested; i++)
+            {
+                // If we hit a rich text tag, skip it instantly
+                if (text[i] == '<')
+                {
+                    int tagEnd = text.IndexOf('>', i);
+                    if (tagEnd != -1)
+                        i = tagEnd; 
+                }
+
+                //dialogueText.text += text[i];
+                dialogueText.text = text.Substring(0, i+1);
+
+                yield return new WaitForSeconds(scrollSpeed);
+            }
+
+            // just apply all the dialogue to be safe
+            dialogueText.text = text;
+
+            skipTypewriterRequested = false;
+            DialogueScrolling = false;
+        }
+    }
+
+    private void PlayEmotionReaction(string AudioResponse)
+    {
+        if (AudioResponse == "Happy")
+        {
+
+            ReactionManager.instance.PlayReaction(1);
+
+        }
+        if (AudioResponse == "Sad")
+        {
+
+            ReactionManager.instance.PlayReaction(2);
+
+        }
+        if (AudioResponse == "Angry")
+        {
+
+            ReactionManager.instance.PlayReaction(3);
+
+        }
+        if (AudioResponse == "Neutral")
+        {
+
+            ReactionManager.instance.PlayReaction(0);
+
+        }
+    }
+
+    private void ProcessAdvancedSignal(DialogueNPC dialogue)
+    {
+        if(dialogue.AdvancedSignal == AdvancedSignal.ShakeEnergyBar)
+        {
+            DialogueUIController.Instance.energyBar.PlayShakeAnimation();
+        }
+    }
 
     #endregion
 }

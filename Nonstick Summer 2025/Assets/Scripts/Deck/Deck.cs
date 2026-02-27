@@ -74,6 +74,23 @@ public class Deck
             OnDeckChanged.Invoke();
     }
 
+    public void SetCards(CardData[] cards,  bool invokeOnDeckChanged = true)
+    {
+        _cards.Clear();
+        _cards = cards.ToList();
+
+        if(invokeOnDeckChanged)
+            OnDeckChanged.Invoke();
+    }
+
+    public void Clear(bool invokeOnDeckChanged = true)
+    {
+        _cards.Clear();
+
+        if (invokeOnDeckChanged)
+            OnDeckChanged.Invoke();
+    }
+
     /// <summary>
     /// Get access to a specific card
     /// </summary>

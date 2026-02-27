@@ -2337,6 +2337,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5518159296229017635, guid: de54f26762111854e969adfbd38f61bc, type: 3}
+      propertyPath: m_FillAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518159296229017635, guid: de54f26762111854e969adfbd38f61bc, type: 3}
       propertyPath: m_PreserveAspect
       value: 0
       objectReference: {fileID: 0}
@@ -2362,14 +2366,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8418575810158000652, guid: de54f26762111854e969adfbd38f61bc, type: 3}
       propertyPath: m_Value
-      value: 0.03
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 8418575810158000652, guid: de54f26762111854e969adfbd38f61bc, type: 3}
       propertyPath: m_MaxValue
-      value: 0.03
+      value: -0.001
       objectReference: {fileID: 0}
     - target: {fileID: 8418575810158000652, guid: de54f26762111854e969adfbd38f61bc, type: 3}
       propertyPath: m_MinValue
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418575810158000652, guid: de54f26762111854e969adfbd38f61bc, type: 3}
+      propertyPath: m_Direction
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8418575810158000652, guid: de54f26762111854e969adfbd38f61bc, type: 3}
@@ -2379,6 +2387,10 @@ PrefabInstance:
     - target: {fileID: 8418575810158000652, guid: de54f26762111854e969adfbd38f61bc, type: 3}
       propertyPath: m_Interactable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418575810158000652, guid: de54f26762111854e969adfbd38f61bc, type: 3}
+      propertyPath: m_WholeNumbers
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

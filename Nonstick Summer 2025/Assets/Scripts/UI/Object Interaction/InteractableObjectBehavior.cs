@@ -74,7 +74,7 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
             if (gameObject.name.Contains("Toy Box"))
             {
 
-                Debug.Log("Toy box alert!");
+                GameObject.Find("Player Door").GetComponent<Animator>().enabled = true;
 
             }
 

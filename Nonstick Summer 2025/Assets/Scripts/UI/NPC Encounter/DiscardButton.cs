@@ -24,7 +24,7 @@ public class DiscardButton : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Initialize()
     {
-        energyCostDisplay.text = "+" + DialogueManager.EnergyGainedPerDiscard;
+        energyCostDisplay.text = $"+<sprite name=\"Energy\">{DialogueManager.EnergyGainedPerDiscard}";
 
         UpdateButtonEnabled();
         button.onClick.AddListener(OnButtonPressed);

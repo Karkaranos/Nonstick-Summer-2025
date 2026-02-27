@@ -19,7 +19,7 @@ using NaughtyAttributes;
 public class DialogueOption
 {
 
-    [SerializeField]
+    [SerializeField, AllowNesting]
     [Label("NPC Reaction")] private DialogueNPC[] NpcReactionText;
 
     [HideInInspector] public DialogueNPC[] CombinedDialogue;

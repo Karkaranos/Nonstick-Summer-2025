@@ -27,11 +27,11 @@ public class DialogueManager
     public static UITransitionManager Instance => GameManager.UITransitionManagerReference;
 
     public static bool ReadUserInput;
-    public static bool UserCanPlayCard=>ReadUserInput && DialogueUIController.Instance.PlayerReadAllNPCText;
     public static UnityEvent OnPlayerFinishReadingDialogue = new UnityEvent();
     public static UnityEvent OnCardPlayedStarted = new UnityEvent();
     public static UnityEvent OnCardPlayedFinished = new UnityEvent();
     public static DialogueBranch CurrentDialogueBranch { get; private set; }
+    public static bool UserCanPlayCard => ReadUserInput && DialogueUIController.Instance.PlayerReadAllNPCText;
     public static bool PlayerInCombat => DialogueUIController.Instance != null;
 
     private static Character currentCharacter;

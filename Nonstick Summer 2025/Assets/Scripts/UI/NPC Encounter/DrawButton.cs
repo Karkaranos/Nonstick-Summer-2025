@@ -27,7 +27,7 @@ public class DrawButton : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Initialize()
     {
-        energyCostDisplay.text = "-" + DialogueManager.DrawButtonEnergyCost;
+        energyCostDisplay.text = $"-<sprite name=\"Energy\">{DialogueManager.DrawButtonEnergyCost}";
 
         button.onClick.AddListener(OnButtonPressed);
         CantDrawAnymore = false;

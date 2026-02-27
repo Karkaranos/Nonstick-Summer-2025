@@ -23,8 +23,8 @@ MonoBehaviour:
     AudioResponse: Neutral
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "That\u2019s...nice. Please don\u2019t say that to her when she gets
-        here, okay?"
+    - Dialogue: "That\u2019s...nice. Please don\u2019t let her hear you say that
+        though."
       Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Happy
@@ -38,8 +38,8 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: "Well, I\u2019m sorry to hear that, but she\u2019s coming over, and
-        that\u2019s final."
+    - Dialogue: "Well, I\u2019m sorry to hear that, but she came all this way and
+        that's final."
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
@@ -130,7 +130,7 @@ MonoBehaviour:
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
     CombinedDialogue: []
-    PlayerDialogue: Is she going to bring candy?
+    PlayerDialogue: Did she bring candy?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b276a35a45d3d5f4fab581b4a687087f, type: 2}

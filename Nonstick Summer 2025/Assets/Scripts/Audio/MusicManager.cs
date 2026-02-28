@@ -32,7 +32,7 @@ public class MusicManager : MonoBehaviour
             StartTitle();
             return;
         }
-        if (SceneManager.GetActiveScene().name.Equals("MainMenu"))
+        if (SceneManager.GetActiveScene().name.Equals("Tutorial"))
         {
             StartReflection();
             return;

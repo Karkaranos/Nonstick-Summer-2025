@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cbd37e74b1a48be42bb258f17744a35a
+guid: d57415d8734e24a408a5242f3f014673
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,13 +43,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
-  spriteBorder: {x: 173, y: 135, z: 147, w: 116}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -108,13 +108,57 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Discard Buttons_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 632
+        width: 299
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62c78cb23f2b97d46a18dc40cd2c89e4
+      internalID: 709292687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Discard Buttons_2
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 150
+        width: 299
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f33f9cc87ad5f3440b9dd3b047691749
+      internalID: -395687344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 3d520bc72597dd543b23ecd13c282adb
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -122,7 +166,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Discard Buttons_0: 709292687
+      Discard Buttons_1: 1594454082
+      Discard Buttons_2: -395687344
+      Discard Buttons_3: 160390963
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

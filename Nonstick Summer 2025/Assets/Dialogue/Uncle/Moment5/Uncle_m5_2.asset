@@ -16,37 +16,51 @@ MonoBehaviour:
   - Dialogue: Now, before you head out, I just wanted to make sure that you have
       all the essentials.
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
-    AnimatedReaction: {fileID: 0}
+    AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
     AudioResponse: 
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: "If not, don\u2019t worry, I put together an emergency kit for you."
     Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
-    AnimatedReaction: {fileID: 0}
+    AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
     AudioResponse: 
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: "Had to dip into my own reserves for this, so don\u2019t use anything
       unless you need to."
     Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
-    AnimatedReaction: {fileID: 0}
+    AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
     AudioResponse: 
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Hey, always be prepared for the worst, remember?
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
-      AudioResponse: Silent
+      AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue:
     - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
         you."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: My, where has the time gone...
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: Who knew that my little Pumpkin could grow so tall?
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     PlayerDialogue: "I didn\u2019t realize I was supposed to be preparing for a survival
       show."
     RelationshipCheckRequired: 1
@@ -60,7 +74,9 @@ MonoBehaviour:
     - Dialogue: Hey, always be prepared for the worst, remember?
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
-      AudioResponse: Silent
+      AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t need any of this."
     RelationshipCheckRequired: 1
@@ -73,8 +89,10 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: No, I insist.
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: Silent
+      AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
+      AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "You didn\u2019t have to, really."
     RelationshipCheckRequired: 1
@@ -90,6 +108,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "Funny how you think I didn\u2019t pack one already."
     RelationshipCheckRequired: 1
@@ -105,6 +125,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: This is all useless.
     RelationshipCheckRequired: 1
@@ -119,6 +141,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "You didn\u2019t have to, really."
     RelationshipCheckRequired: 1
@@ -132,7 +156,9 @@ MonoBehaviour:
     - Dialogue: "Does \u201Cemergency\u201D mean anything to you?"
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
-      AudioResponse: Silent
+      AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Not even if I get hungry? Those canned beans look really good...
     RelationshipCheckRequired: 1
@@ -146,7 +172,9 @@ MonoBehaviour:
     - Dialogue: Hey, always be prepared for the worst, remember?
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
-      AudioResponse: Silent
+      AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: What would I need a bundle of rope for?
     RelationshipCheckRequired: 1
@@ -159,12 +187,16 @@ MonoBehaviour:
     NpcReactionText:
     - Dialogue: I might need it, but you know what?
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: Silent
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: "I\u2019ve already got what I need back home."
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Are you sure you want to give me all of this?
     RelationshipCheckRequired: 1

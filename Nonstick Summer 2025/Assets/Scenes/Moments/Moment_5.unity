@@ -18713,9 +18713,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1035593447}
     m_Modifications:
+    - target: {fileID: 4602523005256576103, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7c3221f060fe4c143b5c56e97844901d, type: 2}
     - target: {fileID: 4745131210623477644, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
       propertyPath: m_Name
       value: Crosshair Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548181459420835492, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8073021404243456830, guid: 431362c73a6650845bbf45a2f87528ee, type: 3}
       propertyPath: m_Pivot.x

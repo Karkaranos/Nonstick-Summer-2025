@@ -96,6 +96,12 @@ public class Interact : MonoBehaviour
                 //sets the _interactable variable for the InteractPressed function
                 if (_targetGameObj.TryGetComponent(out IInteractable interactable))
                 {
+                    if (_targetGameObj.TryGetComponent(out OpenBossInteractable boss) || _targetGameObj.TryGetComponent(out SideCharacterInteractable sideCharacter))
+                    {
+                        _interactable = _targetGameObj.GetComponent<IInteractable>();
+                        CanvasInteractionBehavior.ShowTalkUI?.Invoke();
+                    }
+
                     _interactable = _targetGameObj.GetComponent<IInteractable>();
                     CanvasInteractionBehavior.ShowInteractUI?.Invoke();
 
@@ -105,6 +111,7 @@ public class Interact : MonoBehaviour
                 else if (_interactable != null)
                 {
                     CanvasInteractionBehavior.HideInteractUI?.Invoke();
+                    CanvasInteractionBehavior.HideTalkUI?.Invoke();
 
                     //if each object needs their own prompt use this
                     //_interactable.HideInteractUI();
@@ -118,6 +125,7 @@ public class Interact : MonoBehaviour
                 _targetGameObj = null;
 
                 CanvasInteractionBehavior.HideInteractUI?.Invoke();
+                CanvasInteractionBehavior.HideTalkUI?.Invoke();
 
                 //if each object needs their own prompt use this
                 //_interactable.HideInteractUI();

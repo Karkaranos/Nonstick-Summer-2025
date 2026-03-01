@@ -141,6 +141,7 @@ public class DreamSequence : MonoBehaviour
     [SerializeField, Required] private Image Background;
     [SerializeField, Required] private Material NeutralMaterial, YellowMaterial, RedMaterial, BlueMaterial;
     [SerializeField] private float transitionColorSeconds = 0.3f;
+    [SerializeField] private float slowerTransitionColorSeconds = 30f;
 
     private Material DreamMaterial;
     private DreamShaderDataCollection NeutralColors, YellowEmotionColors, RedEmotionColors, BlueEmotionColors;
@@ -148,37 +149,41 @@ public class DreamSequence : MonoBehaviour
 
     private Coroutine transitionShaderCoroutine;
 
-    private IEnumerator TransitionShaderProperties(DreamShaderDataCollection from, DreamShaderDataCollection to)
+    private IEnumerator TransitionShaderProperties(DreamShaderDataCollection fromMaterial, DreamShaderDataCollection to)
     {
+        fromMaterial = GetShaderProperties(DreamMaterial);
+
         float timeStarted = Time.time;
         float timeElapsed;
+        float t, t_slower;
         do
         {
             timeElapsed = Time.time - timeStarted;
-            float t = timeElapsed / transitionColorSeconds;
+            t = timeElapsed / transitionColorSeconds;
+            t_slower = timeElapsed / slowerTransitionColorSeconds;
 
             // nightmare code nightmare code nightmare code
             // all these if statements are here bc i cant imagine setting the materials is super efficient
-            if (from.Layer1.color != to.Layer1.color) DreamMaterial.SetColor("_Color_1", Color.Lerp(from.Layer1.color, to.Layer1.color, t));
-            if (from.Layer1.Speed != to.Layer1.Speed) DreamMaterial.SetFloat("_Speed_1", Mathf.Lerp(from.Layer1.Speed, to.Layer1.Speed, t));
-            if (from.Layer1.BlobSize != to.Layer1.BlobSize) DreamMaterial.SetFloat("_Blob_Size_1", Mathf.Lerp(from.Layer1.BlobSize, to.Layer1.BlobSize, t));
-            if (from.Layer1.MinMaxOpacity != to.Layer1.MinMaxOpacity) DreamMaterial.SetVector("_Min_Max_Opacity_1", Vector2.Lerp(from.Layer1.MinMaxOpacity, to.Layer1.MinMaxOpacity, t));
+            if (fromMaterial.Layer1.color != to.Layer1.color) DreamMaterial.SetColor("_Color_1", Color.Lerp(fromMaterial.Layer1.color, to.Layer1.color, t));
+            if (fromMaterial.Layer1.Speed != to.Layer1.Speed) DreamMaterial.SetFloat("_Speed_1", Mathf.Lerp(fromMaterial.Layer1.Speed, to.Layer1.Speed, t_slower));
+            if (fromMaterial.Layer1.BlobSize != to.Layer1.BlobSize) DreamMaterial.SetFloat("_Blob_Size_1", Mathf.Lerp(fromMaterial.Layer1.BlobSize, to.Layer1.BlobSize, t_slower));
+            if (fromMaterial.Layer1.MinMaxOpacity != to.Layer1.MinMaxOpacity) DreamMaterial.SetVector("_Min_Max_Opacity_1", Vector2.Lerp(fromMaterial.Layer1.MinMaxOpacity, to.Layer1.MinMaxOpacity, t));
     
-            if (from.Layer2.color != to.Layer2.color) DreamMaterial.SetColor("_Color_2", Color.Lerp(from.Layer2.color, to.Layer2.color, t));
-            if (from.Layer2.Speed != to.Layer2.Speed) DreamMaterial.SetFloat("_Speed_2", Mathf.Lerp(from.Layer2.Speed, to.Layer2.Speed, t));
-            if (from.Layer2.BlobSize != to.Layer2.BlobSize) DreamMaterial.SetFloat("_Blob_Size_2", Mathf.Lerp(from.Layer2.BlobSize, to.Layer2.BlobSize, t));
-            if (from.Layer2.MinMaxOpacity != to.Layer2.MinMaxOpacity) DreamMaterial.SetVector("_Min_Max_Opacity_2", Vector2.Lerp(from.Layer2.MinMaxOpacity, to.Layer2.MinMaxOpacity, t));
+            if (fromMaterial.Layer2.color != to.Layer2.color) DreamMaterial.SetColor("_Color_2", Color.Lerp(fromMaterial.Layer2.color, to.Layer2.color, t));
+            if (fromMaterial.Layer2.Speed != to.Layer2.Speed) DreamMaterial.SetFloat("_Speed_2", Mathf.Lerp(fromMaterial.Layer2.Speed, to.Layer2.Speed, t_slower));
+            if (fromMaterial.Layer2.BlobSize != to.Layer2.BlobSize) DreamMaterial.SetFloat("_Blob_Size_2", Mathf.Lerp(fromMaterial.Layer2.BlobSize, to.Layer2.BlobSize, t_slower));
+            if (fromMaterial.Layer2.MinMaxOpacity != to.Layer2.MinMaxOpacity) DreamMaterial.SetVector("_Min_Max_Opacity_2", Vector2.Lerp(fromMaterial.Layer2.MinMaxOpacity, to.Layer2.MinMaxOpacity, t));
 
-            if (from.Layer3.color != to.Layer3.color) DreamMaterial.SetColor("_Color_3", Color.Lerp(from.Layer3.color, to.Layer3.color, t));
-            if (from.Layer3.Speed != to.Layer3.Speed) DreamMaterial.SetFloat("_Speed_3", Mathf.Lerp(from.Layer3.Speed, to.Layer3.Speed, t));
-            if (from.Layer3.BlobSize != to.Layer3.BlobSize) DreamMaterial.SetFloat("_Blob_Size_3", Mathf.Lerp(from.Layer3.BlobSize, to.Layer3.BlobSize, t));
-            if (from.Layer3.MinMaxOpacity != to.Layer3.MinMaxOpacity) DreamMaterial.SetVector("_Min_Max_Opacity_3", Vector2.Lerp(from.Layer3.MinMaxOpacity, to.Layer3.MinMaxOpacity, t));
+            if (fromMaterial.Layer3.color != to.Layer3.color) DreamMaterial.SetColor("_Color_3", Color.Lerp(fromMaterial.Layer3.color, to.Layer3.color, t));
+            if (fromMaterial.Layer3.Speed != to.Layer3.Speed) DreamMaterial.SetFloat("_Speed_3", Mathf.Lerp(fromMaterial.Layer3.Speed, to.Layer3.Speed, t_slower));
+            if (fromMaterial.Layer3.BlobSize != to.Layer3.BlobSize) DreamMaterial.SetFloat("_Blob_Size_3", Mathf.Lerp(fromMaterial.Layer3.BlobSize, to.Layer3.BlobSize, t_slower));
+            if (fromMaterial.Layer3.MinMaxOpacity != to.Layer3.MinMaxOpacity) DreamMaterial.SetVector("_Min_Max_Opacity_3", Vector2.Lerp(fromMaterial.Layer3.MinMaxOpacity, to.Layer3.MinMaxOpacity, t));
 
-            if (from.BackgroundColor != to.BackgroundColor) DreamMaterial.SetColor("_Background_Color", Color.Lerp(from.BackgroundColor, to.BackgroundColor, t));
+            if (fromMaterial.BackgroundColor != to.BackgroundColor) DreamMaterial.SetColor("_Background_Color", Color.Lerp(fromMaterial.BackgroundColor, to.BackgroundColor, t));
 
             yield return null;
         }
-        while (timeElapsed < transitionColorSeconds);
+        while (t < 1 && t_slower < 1);
 
         selectedEmotionShaderData = to;
         transitionShaderCoroutine = null;
@@ -186,6 +191,10 @@ public class DreamSequence : MonoBehaviour
 
     private void SetShaderProperties(DreamShaderDataCollection data)
     {
+        // Copy it so it doesnt flood github
+        DreamMaterial = Instantiate(DreamMaterial);
+        Background.material = DreamMaterial;    
+
         // nightmare code nightmare code nightmare code
 
         DreamMaterial.SetColor("_Color_1", data.Layer1.color);

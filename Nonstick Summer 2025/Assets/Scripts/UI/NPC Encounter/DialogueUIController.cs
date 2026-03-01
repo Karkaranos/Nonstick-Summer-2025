@@ -33,10 +33,10 @@ using UnityEngine.SceneManagement;
 public class DialogueUIController : Singleton<DialogueUIController>
 {
     [Header("Components")]
-    [Required][SerializeField] private EnergyBar energyBar;
+    [Required][SerializeField] public EnergyBar energyBar;
     [Required][SerializeField] private DisplayPlayerCardDialogue playerDialogueBubble;
-    [Required][SerializeField] private TMP_Text npcName;
-    [Required][SerializeField] private DeckDisplayer deckDisplay;
+    /*[Required]*/[SerializeField] private TMP_Text npcName;
+    [Required][SerializeField] protected DeckDisplayer deckDisplay;
     [Tooltip("Relationship slider UI element")]
     [Required][SerializeField] private RelationshipSlider relationshipSlider;
     [Required, SerializeField] private DialogueBox dialogueBox;
@@ -44,10 +44,11 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Required, SerializeField] public  DialogueNPCPortraitDisplay portraitDisplay;
     [Required, SerializeField] private DrawButton drawButton;
     [Required, SerializeField] private DiscardButton discardButton;
-    [Required, SerializeField] private SilentButton silentButton;
+    [Required, SerializeField] protected SilentButton silentButton;
     [Required, SerializeField] private PlayCardButton playCardButton;
     [Required, SerializeField] private NextDialogueButton nextDialogueButton;
     [Required, SerializeField] private TMP_Text objectiveText;
+    bool isTutorial = false;
 
     public DeckDisplayer DeckDisplay { get { return deckDisplay; } }
 
@@ -68,8 +69,9 @@ public class DialogueUIController : Singleton<DialogueUIController>
     private Scene currentScene;
     [HideInInspector] public bool inSceneFive = false;
     public bool PlayerReadAllNPCText => dialogueBox.PlayerReadAllDialogue;
+    public bool ActivelyTypewriting => dialogueBox.DialogueScrolling;
 
-    public IEnumerator Initialize(DialogueBranch startBranch, Character character, bool isBoss = true, GameObject objRef = null)
+    public virtual IEnumerator Initialize(DialogueBranch startBranch, Character character, bool isBoss = true, GameObject objRef = null)
     {
         DialogueManager.OnOpenCombatUI(startBranch, character);
 
@@ -98,23 +100,19 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         deckDisplay.OnCardsSelectedChanged.AddListener(OnSelectionUpdated);
 
-        npcName.text = character.ToString(); // none of the Character have spaces in their names, right?
+        npcName.text = "Your " + character.ToString(); // none of the Character have spaces in their names, right?
 
         if(dialogueTree != null)
         {
             dialogueTree.Initialize(startBranch);
         }
 
-        objectiveText.text = GameManager.ObjectiveReference.GetObjective();
+        Debug.Log(TextUtilities.FilterText(GameManager.ObjectiveReference.GetObjective()));
+        objectiveText.text = TextUtilities.FilterText( GameManager.ObjectiveReference.GetObjective());
 
         currentScene = SceneManager.GetActiveScene();
-        if (currentScene.name == "Moment_5")
-        {
 
-            inSceneFive = true;
-
-        }
-        else { inSceneFive = false; }
+        inSceneFive = (currentScene.name == "Moment_5");
 
         yield return ToggleUIForDialogueProgression(false);
 
@@ -174,8 +172,10 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     //i can move this to a different script later if necessary but for now the play card button is tied to this
     //TODO move to play button script
-    public void NextTextPressed()
+    public virtual void NextTextPressed()
     {
+        dialogueBox.skipTypewriterRequested = true;
+
         if(IfCloseCombat)
         {
             // TODO open a new menu?
@@ -279,7 +279,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     public void MuffleText()
     {
         // hardcoded for now will fix so it can take a thing later
-        dialogueBox.DisplayOneLine("What was that?");
+        dialogueBox.MuffleTextPlayed("What was that?");
     }
 
     public void UpdateDialogueTreeVisual(DialogueBranch branch)
@@ -289,7 +289,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     }
 
-    public void ClosingOutCombat()
+    public virtual void OnNPCFinishDialogue()
     {
         if (DialogueManager.CurrentDialogueBranch.End)
         {
@@ -297,7 +297,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         }
     }
 
-    public IEnumerator ToggleUIForDialogueProgression(bool interactable)
+    public virtual IEnumerator ToggleUIForDialogueProgression(bool interactable)
     {
         if (_ui_interactable == interactable)
             yield break;

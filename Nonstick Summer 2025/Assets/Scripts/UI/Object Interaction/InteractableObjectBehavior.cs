@@ -1,10 +1,11 @@
 using NaughtyAttributes;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using System.Linq;
 
 public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
 {
@@ -207,11 +208,25 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
                 /*var filter = g.GetComponent<MeshFilter>();
                 if (filter != null)
                     filter.mesh = null;*/
-                mr.enabled = false;
+                //mr.enabled = false;
+                //Destroy(mr.gameObject);
+                //Destroy(gameObject);
+                StartCoroutine(DestroyAnimation());
             }
         }
 
         
+    }
+
+    public IEnumerator DestroyAnimation()
+    {
+        GetComponentsInChildren<Collider>().ForEach(x => x.enabled = false);
+
+        yield return StaticUtilities.AnimateScale(transform, transform.localScale * 1.25f, 0.3f, unscaledTime: true, lockBottomToYPosition: true, tExponent: 0.25f);
+        yield return StaticUtilities.AnimateScale(transform, Vector3.zero, 0.5f, unscaledTime: true, lockBottomToYPosition: false, tExponent: 0.9f);
+        yield return new WaitForEndOfFrame();
+
+        Destroy(this.gameObject);
     }
 }
 

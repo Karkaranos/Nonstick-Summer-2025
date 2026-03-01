@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -127,8 +128,203 @@ public static class StaticUtilities
 
     #endregion
 
+    #region UI Fade
+
+    public static Coroutine FadeToVisible(CanvasGroup group, float seconds, bool unscaledTime = true,
+        UnityAction afterFadeCallback = null, Coroutine currentCoroutineToCancel = null)
+    {
+        if (currentCoroutineToCancel != null)
+            GameManager.Instance.StopCoroutine(currentCoroutineToCancel);
+
+        return GameManager.Instance.StartCoroutine(FadeOpacityCoroutine(group, a: 1, seconds: seconds, unscaledTime: unscaledTime,
+            afterFadeCallback: afterFadeCallback));
+    }
+
+    public static Coroutine FadeToHidden(CanvasGroup group, float seconds, bool unscaledTime = true,
+        UnityAction afterFadeCallback = null, Coroutine currentCoroutineToCancel = null)
+    {
+        if (currentCoroutineToCancel != null)
+            GameManager.Instance.StopCoroutine(currentCoroutineToCancel);
+
+        return GameManager.Instance.StartCoroutine(FadeOpacityCoroutine(group, a: 0, seconds: seconds, afterFadeCallback: afterFadeCallback, unscaledTime: unscaledTime));
+    }
+
+    public static Coroutine FadeOpacity(CanvasGroup group, float a, float seconds, bool unscaledTime = true,
+        UnityAction afterFadeCallback = null, Coroutine currentCoroutineToCancel = null)
+    {
+        if (currentCoroutineToCancel != null)
+            GameManager.Instance.StopCoroutine(currentCoroutineToCancel);
+
+        return GameManager.Instance.StartCoroutine(FadeOpacityCoroutine(group, a: a, seconds: seconds, afterFadeCallback: afterFadeCallback, unscaledTime: unscaledTime));
+    }
+
+    private static IEnumerator FadeOpacityCoroutine(CanvasGroup group, float a, float seconds, UnityAction afterFadeCallback = null, bool unscaledTime = true)
+    {
+        float startOpacity = group.alpha;
+
+        float startTime = unscaledTime ? Time.unscaledTime : Time.time;
+        float time = startTime;
+        while (time - startTime < seconds)
+        {
+            time = unscaledTime ? Time.unscaledTime : Time.time;
+            float t = (time - startTime) / seconds;
+
+            group.alpha = Mathf.Lerp(startOpacity, a, t);
+
+            yield return null;
+        }
+        // apply one more time just in case.
+        group.alpha = a;
+
+        if (afterFadeCallback != null)
+            afterFadeCallback();
+    }
+
+    #endregion
+
+    #region Animations
+
+    /// <summary>
+    /// Smooth transform's current scale to endScale;
+    /// </summary>
+    public static Coroutine AnimateUIPosition(RectTransform transform, Vector3 endPosition, float seconds,
+        bool unscaledTime = true, Coroutine currentCoroutineToCancel = null)
+    {
+        if (currentCoroutineToCancel != null)
+            GameManager.Instance.StopCoroutine(currentCoroutineToCancel);
+
+        return GameManager.Instance.StartCoroutine(AnimateUIPositionCoroutine(transform, transform.position, endPosition, seconds, unscaledTime, currentCoroutineToCancel));
+    }
+
+    private static IEnumerator AnimateUIPositionCoroutine(RectTransform transform, Vector3 startPosition, Vector3 endPosition, float seconds,
+        bool unscaledTime = true, Coroutine currentCoroutineToCancel = null)
+    {
+        float startTime = unscaledTime ? Time.unscaledTime : Time.time;
+        float time = startTime;
+        while (time - startTime < seconds)
+        {
+            time = unscaledTime ? Time.unscaledTime : Time.time;
+            float t = (time - startTime) / seconds;
+
+            transform.position = Vector3.Lerp(startPosition, endPosition, t);
+            Debug.Log($"{startPosition} -> {transform.position} -> {endPosition}");
+
+            yield return null;
+        }
+        // apply one more time just in case.
+        transform.position = endPosition;
+    }
+
+
+
+    /// <summary>
+    /// Smooth transform's current scale to endScale;
+    /// </summary>
+    public static Coroutine AnimateScale(Transform transform, Vector3 endScale, float seconds,
+        bool unscaledTime = true, Coroutine currentCoroutineToCancel = null, bool lockBottomToYPosition = false, float tExponent = 1)
+    {
+        if (currentCoroutineToCancel != null)
+            GameManager.Instance.StopCoroutine(currentCoroutineToCancel);
+
+        return GameManager.Instance.StartCoroutine(AnimateScaleCoroutine(transform, transform.localScale, endScale, seconds, unscaledTime, currentCoroutineToCancel, 
+            lockBottomToYPosition: lockBottomToYPosition, tExponent:tExponent));
+    }
+
+    /// <summary>
+    /// Smooths the transforms scale from startScale to endScale;
+    /// </summary>
+    public static Coroutine AnimateScale(Transform transform, Vector3 startScale, Vector3 endScale, float seconds,
+        bool unscaledTime = true, Coroutine currentCoroutineToCancel = null, float tExponent = 1)
+    {
+        if (currentCoroutineToCancel != null)
+            GameManager.Instance.StopCoroutine(currentCoroutineToCancel);
+
+        return GameManager.Instance.StartCoroutine(AnimateScaleCoroutine(transform, startScale, endScale, seconds, 
+            unscaledTime, currentCoroutineToCancel, tExponent:tExponent));
+    }
+
+    private static IEnumerator AnimateScaleCoroutine(Transform transform, Vector3 startScale, Vector3 endScale, float seconds,
+        bool unscaledTime = true, Coroutine currentCoroutineToCancel = null, bool lockBottomToYPosition = false, float tExponent=1)
+    {
+        float startTime = unscaledTime ? Time.unscaledTime : Time.time;
+        float time = startTime;
+        Vector3 startPos = transform.localPosition;
+
+        while (time - startTime < seconds)
+        {
+            time = unscaledTime ? Time.unscaledTime : Time.time;
+            float t = (time - startTime) / seconds;
+            t = Mathf.Pow(t, tExponent);
+
+            transform.localScale = Vector3.Lerp(startScale, endScale, t);
+
+            if (lockBottomToYPosition)
+            {
+                float endY = (endScale.y - startScale.y) / 2;
+                float y = startPos.y + Mathf.Lerp(0, endY, t);
+                transform.localPosition = transform.localPosition.WithY(y);
+            }
+
+            yield return null;
+        }
+        // apply one more time just in case.
+        transform.localScale = endScale;
+    }
+
+    /// <summary>
+    /// Smooth current rotation towards endEulerAngles;
+    /// </summary>
+    public static Coroutine AnimateRotation(Transform transform, Vector3 endEulerAngles, float seconds,
+        bool unscaledTime = true, Coroutine currentCoroutineToCancel = null)
+    {
+        if (currentCoroutineToCancel != null)
+            GameManager.Instance.StopCoroutine(currentCoroutineToCancel);
+
+        return GameManager.Instance.StartCoroutine(
+            AnimateRotationCoroutine(transform, transform.rotation, Quaternion.Euler(endEulerAngles), seconds,
+                                     unscaledTime, currentCoroutineToCancel)
+        );
+    }
+
+    /// <summary>
+    /// Smooth current rotation towards endRotation;
+    /// </summary>
+    public static Coroutine AnimateRotation(Transform transform, Quaternion endRotation, float seconds,
+        bool unscaledTime = true, Coroutine currentCoroutineToCancel = null)
+    {
+        if (currentCoroutineToCancel != null)
+            GameManager.Instance.StopCoroutine(currentCoroutineToCancel);
+
+        return GameManager.Instance.StartCoroutine(
+            AnimateRotationCoroutine(transform, transform.rotation, endRotation, seconds,
+                                     unscaledTime, currentCoroutineToCancel)
+        );
+    }
+
+    private static IEnumerator AnimateRotationCoroutine(Transform transform, Quaternion startRotation, Quaternion endRotation, float seconds,
+        bool unscaledTime = true, Coroutine currentCoroutineToCancel = null)
+    {
+        float startTime = unscaledTime ? Time.unscaledTime : Time.time;
+        float time = startTime;
+        while (time - startTime < seconds)
+        {
+            time = unscaledTime ? Time.unscaledTime : Time.time;
+            float t = (time - startTime) / seconds;
+
+            transform.localRotation = Quaternion.Lerp(startRotation, endRotation, t);
+
+            yield return null;
+        }
+
+        yield return new WaitForEndOfFrame();
+        // apply one more time just in case.
+        transform.localRotation = endRotation;
+    }
+
+    #endregion
+
     #region Math
-    
+
     public static Vector3 Average(this Vector3[] vectors)
     {
         Vector3 total = Vector3.zero;
@@ -211,6 +407,43 @@ public static class StaticUtilities
         {
             action(element);
         }
+    }
+
+    #endregion
+
+    #region Vectors
+
+    /// <summary>
+    /// Return vector with x value changed
+    /// </summary>
+    /// <param name="vector"></param>
+    /// <returns></returns>
+    public static Vector3 WithX(this Vector3 vector, float x)
+    {
+        vector.x = x;
+        return vector;
+    }
+
+    /// <summary>
+    /// Return vector with y value changed
+    /// </summary>
+    /// <param name="vector"></param>
+    /// <returns></returns>
+    public static Vector3 WithY(this Vector3 vector, float y)
+    {
+        vector.y = y;
+        return vector;
+    }
+
+    /// <summary>
+    /// Return vector with z value changed
+    /// </summary>
+    /// <param name="vector"></param>
+    /// <returns></returns>
+    public static Vector3 WithZ(this Vector3 vector, float z)
+    {
+        vector.z = z;
+        return vector;
     }
 
     #endregion

@@ -47,32 +47,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Card_CharmingStyle:
     color: {r: 1, g: 0.9861843, b: 0.60188675, a: 1}
-    DisplayName: Charming
+    DisplayName: Witty
     sprite: {fileID: 21300000, guid: 95355ec6a15cc7e4d962b7e5907b4a6c, type: 3}
   Card_AssertiveStyle:
     color: {r: 1, g: 0.58679235, b: 0.58679235, a: 1}
-    DisplayName: Assertive
+    DisplayName: Defensive
     sprite: {fileID: 21300000, guid: d2327af3ac5b834498656002112122c0, type: 3}
   Card_SappyStyle:
     color: {r: 0.42830187, g: 0.55752057, b: 1, a: 1}
     DisplayName: Sappy
     sprite: {fileID: 21300000, guid: 81845385426302b4f841d461b159a60b, type: 3}
   Card_StatementStyle:
-    color: {r: 0.2941177, g: 1, b: 0.9543918, a: 1}
+    color: {r: 0.17624065, g: 0.6696671, b: 0.8415094, a: 1}
     DisplayName: Statement
-    sprite: {fileID: -1400016360, guid: 8a904d29669f41e46a8fef60237c8fac, type: 3}
+    sprite: {fileID: 21300000, guid: 8a904d29669f41e46a8fef60237c8fac, type: 3}
   Card_QuestionStyle:
-    color: {r: 0.29411766, g: 1, b: 0.95294124, a: 1}
+    color: {r: 0.18478456, g: 0.79622644, b: 0.3587607, a: 1}
     DisplayName: Question
     sprite: {fileID: -600640212, guid: 73f374ea446cd5046adee864da0d095d, type: 3}
   BlankCard: {fileID: 21300000, guid: 22bb239dfe2216e44978f913348715eb, type: 3}
   YellowCardBack: {fileID: 21300000, guid: 757b35c7951a6c4418efa851aa2bacc8, type: 3}
   RedCardBack: {fileID: 21300000, guid: 0a1ac7973a83e464eb2c92de67c93ae8, type: 3}
   BlueCardBack: {fileID: 21300000, guid: 2281de52241bde14289bf87582814c86, type: 3}
-  StampTooltipColor: {r: 1, g: 0.8, b: 0.1, a: 1}
-  PositiveEnergyColor: {r: 0, g: 1, b: 0, a: 1}
+  StampTooltipColor: {r: 0.14574654, g: 0.10196078, b: 1, a: 1}
+  PositiveEnergyColor: {r: 0, g: 0.82641506, b: 0, a: 1}
   NegativeEnergyColor: {r: 1, g: 0, b: 0, a: 1}
   NeutralEnergyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  CharactersColor: {r: 0.8037735, g: 0.75265783, b: 0.16227125, a: 1}
+  RelationshipColor: {r: 1, g: 0, b: 0, a: 1}
+  HardToReadCharmingColor: {r: 0.85660374, g: 0.54673076, b: 0, a: 1}
+  tutorialCards:
+  - {fileID: 11400000, guid: dedab987fd4ed4b49a8f9d158b79e9b8, type: 2}
+  - {fileID: 11400000, guid: 2539512fc7d96ec45a5f3f3faa31dd4f, type: 2}
+  - {fileID: 11400000, guid: b755dd2b009173b4ab94aea96c22c61f, type: 2}
   startingCards:
   - {fileID: 11400000, guid: 6ac2c164d8055c04db47a6031bf810bf, type: 2}
   - {fileID: 11400000, guid: 11ff6cbb98905de49b8c296c03e41b2d, type: 2}
@@ -80,7 +87,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cc34d9ee41337294c9453b4fef716009, type: 2}
   - {fileID: 11400000, guid: 0da342f46216d694f89b4a595d5b572c, type: 2}
   - {fileID: 11400000, guid: 1c37b8fa9e8e5f64b83b11bd681c2500, type: 2}
-  startingModifiers: []
+  startingModifiers:
+  - {fileID: 11400000, guid: 2388c5239da79564292dc953a127cbbb, type: 2}
+  - {fileID: 11400000, guid: 4236df83ca6b76d48b35473ec9993a0e, type: 2}
+  - {fileID: 11400000, guid: ee82f2ab5548cd54b9229a935295297c, type: 2}
+  - {fileID: 11400000, guid: f2ca2cad2d5f3834187f980423098bc9, type: 2}
   _defaultEnergy: 7
   _energyGainedPerRound: 0
   _energyGainedIfSilent: 4
@@ -88,6 +99,7 @@ MonoBehaviour:
   _drawButtonEnergyCost: 1
   _energyGainedPerDiscard: 3
   _cardsDrawnPerRound: 1
+  TextScrollSpeed: 0.01
   grandmaStartingValue:
     maxValue: 100
     currentValue: 25
@@ -102,7 +114,7 @@ MonoBehaviour:
     relationshipQuota: 15
   momStartingValue:
     maxValue: 100
-    currentValue: 25
+    currentValue: 10
     relationshipQuota: 15
 --- !u!114 &4965210857596705646
 MonoBehaviour:

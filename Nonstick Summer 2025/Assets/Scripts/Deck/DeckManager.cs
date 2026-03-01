@@ -8,6 +8,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UIElements;
+using System.Collections.Generic;
 
 public class DeckManager
 {
@@ -101,6 +102,17 @@ public class DeckManager
         PlayerHand.Add(c);
     }
 
+    public static void SetDeck(CardData[] cards, Deck d = null)
+    {
+        CheckDeck(ref d);
+        ClearDeck(d);
+
+        foreach(var c in cards)
+        {
+            AddCard(c, d);
+        }
+    }
+
     /// <summary>
     /// Removes a card from any deck
     /// </summary>
@@ -112,6 +124,12 @@ public class DeckManager
         d.Remove(c);
 
         if (d == PlayerFullDeck && applyToRemainingDeck) RemainingDeck.Remove(c);
+    }
+
+    public static void ClearDeck(Deck d = null)
+    {
+        CheckDeck(ref d);
+        d.Clear();
     }
 
     /// <summary>

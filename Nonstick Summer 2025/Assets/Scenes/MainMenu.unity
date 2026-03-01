@@ -856,11 +856,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 353067708}
+  - component: {fileID: 353067709}
   - component: {fileID: 353067707}
   - component: {fileID: 353067706}
-  - component: {fileID: 353067709}
   m_Layer: 0
-  m_Name: EventSystem
+  m_Name: Main Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -939,7 +939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 368fdef77e540e14bbd066674b8ae350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainGameplayScene: 1
+  MainGameplayScene: 6
   controls: {fileID: 3888735332418527511, guid: da3340d6dd1a7154f99f82c1f07fd432, type: 3}
   creditParent: {fileID: 1459062089}
   creditScroll: {fileID: 1757377176}
@@ -3068,8 +3068,8 @@ SceneRoots:
   - {fileID: 2104270040}
   - {fileID: 2084899338}
   - {fileID: 1791620229}
-  - {fileID: 1901451775}
   - {fileID: 353067708}
+  - {fileID: 1901451775}
   - {fileID: 199861437}
   - {fileID: 1651445928}
   - {fileID: 1732876577}

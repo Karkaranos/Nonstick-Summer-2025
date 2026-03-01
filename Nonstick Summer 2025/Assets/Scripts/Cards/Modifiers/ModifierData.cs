@@ -73,6 +73,8 @@ public abstract class ModifierData : ScriptableObject
         return icon;
     }
 
+    public abstract string GetModifierName();
+
     public virtual string GetTooltipDescription()
     {
         return _tooltipDescription;

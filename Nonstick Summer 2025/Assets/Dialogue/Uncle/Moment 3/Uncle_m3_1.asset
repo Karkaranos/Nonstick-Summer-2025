@@ -17,19 +17,25 @@ MonoBehaviour:
     Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
     AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
     AudioResponse: Happy
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: "Don\u2019t worry, I\u2019m going to cheer loud enough for me and your
       mom."
     Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
     AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
     AudioResponse: Sad
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: "We\u2019re just going to have to cheer your way to victory."
+    - Dialogue: "We\u2019re just going to have to cheer your way to victory, then."
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: "Don\u2019t be too loud, I have to hear my coach."
+    PlayerDialogue: "Don\u2019t be too loud. I still have to hear my coach."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 178831001abe8eb438cd4e68f2e81625, type: 2}
@@ -42,8 +48,10 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: "Cheering isn\u2019t going to help me get there on time."
+    PlayerDialogue: "Cheering isn\u2019t going to help me get there on time. "
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 178831001abe8eb438cd4e68f2e81625, type: 2}
@@ -52,15 +60,18 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: "Hey now, you know she wants to be there, but she couldn\u2019t get
-        off work in time."
+    - Dialogue: Hey now, you know she wants to be there, but we've talked about this.
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
-    - Dialogue: The rest of us will be there cheering you on though.
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
+    - Dialogue: The rest of us will be there cheering you on, though!
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Neutral
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: 'Thanks, but I still wish she could be there. '
     RelationshipCheckRequired: 0
@@ -76,6 +87,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: You better tell Grandma to turn her hearing aids down.
     RelationshipCheckRequired: 0
@@ -90,6 +103,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "Cheering isn\u2019t going to help me get there on time. "
     RelationshipCheckRequired: 0
@@ -104,6 +119,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: You, Grandma, and Cousin make a pretty good cheering section.
     RelationshipCheckRequired: 0
@@ -119,9 +136,11 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: "Mom\u2019s pretty loud... Do you really think you can cheer
-      loud enough?"
+    PlayerDialogue: "Mom\u2019s pretty loud... Do you really think you can out-cheer
+      her?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 178831001abe8eb438cd4e68f2e81625, type: 2}
@@ -134,10 +153,14 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Neutral
-    - Dialogue: Of course I know the rules!
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
+    - Dialogue: Of course I know how it works!
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Do you even know how soccer works?
     RelationshipCheckRequired: 0
@@ -153,10 +176,14 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: The rest of us will be there cheering you on though.
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Can you convince her to come?
     RelationshipCheckRequired: 0
@@ -171,6 +198,8 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Neutral
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

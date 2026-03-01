@@ -13,14 +13,18 @@ MonoBehaviour:
   m_Name: Uncle_m2_4
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: Hey, uh, before I forget... go easy on your cousin, yeah?
+  - Dialogue: Hey, before I forget... go easy on your cousin, yeah?
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
     AudioResponse: Neutral
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: He's... had a few rough weeks, so don't be too heavy-handed with him
     Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
     AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
     AudioResponse: Sad
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   Charming_Expression:
     NpcReactionText: []
     CombinedDialogue: []

@@ -17,10 +17,14 @@ MonoBehaviour:
     Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
     AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
     AudioResponse: Happy
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: Has this been the best birthday ever or what?
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Neutral
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "You don\u2019t have to worry about that, kiddo. Seeing you smile
@@ -28,9 +32,11 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Neutral
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "I can\u2019t believe you really got me that card set! It must
-      have cost a million dollars! "
+      have cost a lot."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
@@ -39,11 +45,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: I remember being like that when I was your age. Just be sure to spend
-        time with your family every once in a while.
+    - Dialogue: "I don\u2019t blame you. Just be sure to spend some time with your
+        family once you\u2019re done, you hear?"
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "I wouldn\u2019t know, I haven\u2019t opened up all my presents
       yet."
@@ -52,7 +60,7 @@ MonoBehaviour:
     BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
+    ChangeInRelationshipStatus: 5
   Sappy_Expression:
     NpcReactionText:
     - Dialogue: Me too kiddo... but once Grandpa gets better, we can all spend time
@@ -60,6 +68,8 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Yeah, I just wish Grandpa could be here... Mom said he got sick.
     RelationshipCheckRequired: 0
@@ -75,6 +85,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "Yeah! I can\u2019t believe you got me that card set! It must
       have cost a fortune! "
@@ -91,6 +103,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Well... It would be better if you had gotten me the right card
       set.
@@ -107,6 +121,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Yeah. I just wish Grandpa could be here. Mom said he is too sick.
     RelationshipCheckRequired: 0
@@ -117,14 +133,14 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "You don\u2019t have to worry about that, kiddo. Seeing you smile
-        is all that matters to me."
+    - Dialogue: What did Nanna gift me? I know you saw her wrap it.
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: Of course, these cards that you got me are awesome! Where did
-      you get them?
+    PlayerDialogue: The cards you got me are awesome! Where did you find them?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
@@ -139,6 +155,8 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: What did Nanna gift me? I know you saw her wrap it.
     RelationshipCheckRequired: 0
@@ -149,14 +167,15 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: I was just like you when I was your age, always ready to prove to
-        my friends that I was the best in whichever game we found fun at the time.
+    - Dialogue: Oh, nothing special. I never got this many presents, and DEFINITELY
+        never had a cake this big.
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: Of course! It was the best ever! What were your birthdays like,
-      Uncle?
+    PlayerDialogue: Of course! What were your birthdays like, Uncle?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: db646a170bec0244b8ff60a54ef21847, type: 2}
@@ -170,6 +189,8 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

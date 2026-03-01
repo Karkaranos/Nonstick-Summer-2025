@@ -17,40 +17,58 @@ MonoBehaviour:
     Portrait: {fileID: 21300000, guid: 9291a82ed0f216746b4c5f0064e64c27, type: 3}
     AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
     AudioResponse: Angry
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: I mean.. I used to sort of idolize you. Did you know that?
     Portrait: {fileID: 21300000, guid: 2071a3956799eac499fe06278e1f69e1, type: 3}
     AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
     AudioResponse: Neutral
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: We, uh, probably weren't as close as I thought, but...
     Portrait: {fileID: 21300000, guid: 2071a3956799eac499fe06278e1f69e1, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Neutral
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: ...
     Portrait: {fileID: 21300000, guid: 6506522cd75f2404d91e8fb4738abf28, type: 3}
     AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
     AudioResponse: Sad
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: I don't know! I missed talking to you.
     Portrait: {fileID: 21300000, guid: 9291a82ed0f216746b4c5f0064e64c27, type: 3}
     AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
     AudioResponse: Angry
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: Sorry if that's, like, lame. Or whatever.
     Portrait: {fileID: 21300000, guid: 6506522cd75f2404d91e8fb4738abf28, type: 3}
     AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
     AudioResponse: Sad
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: Good. I mean, cool. I mean, whatever! I mean-
+    - Dialogue: Good. I mean, cool. I mean, whatever! I mean...
       Portrait: {fileID: 21300000, guid: 6506522cd75f2404d91e8fb4738abf28, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: Thank you.
       Portrait: {fileID: 21300000, guid: 2071a3956799eac499fe06278e1f69e1, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Neutral
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: Really.
       Portrait: {fileID: 21300000, guid: 2071a3956799eac499fe06278e1f69e1, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Neutral
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "Heh. It wasn\u2019t. You\u2019re cool."
     RelationshipCheckRequired: 0
@@ -61,10 +79,12 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 15
   Assertive_Expression:
     NpcReactionText:
-    - Dialogue: It really was? Sorry, haha...
+    - Dialogue: I-It really was? Sorry, haha...
       Portrait: {fileID: 21300000, guid: 6506522cd75f2404d91e8fb4738abf28, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Ha. That WAS lame.
     RelationshipCheckRequired: 0
@@ -79,12 +99,16 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 2071a3956799eac499fe06278e1f69e1, type: 3}
       AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: ...Thank you. Really.
       Portrait: {fileID: 21300000, guid: bf08644dbaefc5a4ba15ddce9653347b, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: "It\u2019s not. I mean, I, uh, missed talking to you, too."
+    PlayerDialogue: "It\u2019s not. I mean... I, uh, missed talking to you, too."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
@@ -97,27 +121,39 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue:
     - Dialogue: "Um. I\u2019m not sure what they\u2019re supposed to look like..."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: Okay. Um, how about this?
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: I've brought my cards with me! From way back when!
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: Maybe we could play a round? Like we used to?
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: I'll warn you that I'm probably, like, REALLY rusty.
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     PlayerDialogue: "You\u2019re STILL nervous! Don\u2019t worry about it. Really."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -131,6 +167,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "Ugh. You\u2019ve always been desperate for approval like this..."
     RelationshipCheckRequired: 0
@@ -146,6 +184,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "Huh... I didn\u2019t think that you would care this much."
     RelationshipCheckRequired: 0
@@ -156,13 +196,15 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "Hey, of course I did! Why wouldn\u2019t I? You meant the world to
-        me, once."
+    - Dialogue: "Hey, of course I did! Why wouldn\u2019t I? You were the coolest
+        person I knew."
       Portrait: {fileID: 21300000, guid: 6506522cd75f2404d91e8fb4738abf28, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: ...You used to idolize me? Haha.
+    PlayerDialogue: ...You used to idolize me? Good one.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: 86dc334325df0fd4ea9b68cea78d8375, type: 2}
@@ -171,14 +213,18 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: "Hey! I\u2019m trying here!"
+    - Dialogue: "Hey, I\u2019m trying here!"
       Portrait: {fileID: 21300000, guid: 6506522cd75f2404d91e8fb4738abf28, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: "I\u2019m really, really trying, you jerk!"
       Portrait: {fileID: 21300000, guid: 9291a82ed0f216746b4c5f0064e64c27, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "You\u2019re aware of how pathetic this all sounds, right?"
     RelationshipCheckRequired: 0
@@ -193,10 +239,20 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 2071a3956799eac499fe06278e1f69e1, type: 3}
       AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
       AudioResponse: Neutral
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: I mean, looking back on it, I was probably annoying you, right?
       Portrait: {fileID: 21300000, guid: 6506522cd75f2404d91e8fb4738abf28, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
+    - Dialogue: Like, a lot?
+      Portrait: {fileID: 21300000, guid: 6506522cd75f2404d91e8fb4738abf28, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "You don\u2019t think that we were close?"
     RelationshipCheckRequired: 0
@@ -212,18 +268,26 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: I've brought my cards with me! From way back when!
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: Maybe we could play a round? Like we used to?
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: I'll warn you that I'm probably, like, REALLY rusty.
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}

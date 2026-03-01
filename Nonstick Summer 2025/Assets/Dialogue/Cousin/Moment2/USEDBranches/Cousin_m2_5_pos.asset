@@ -13,16 +13,27 @@ MonoBehaviour:
   m_Name: Cousin_m2_5_pos
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: "That\u2019s why I\u2019ve got some of them here already!"
+  - Dialogue: 'Look! I took some of them out already, so that way, we can play before
+      you open them! '
     Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
     AudioResponse: Neutral
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
+  - Dialogue: Pretty smart, right?
+    Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+    AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+    AudioResponse: Happy
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   Charming_Expression:
     NpcReactionText:
-    - Dialogue: Hmph! Why not?! I just wanted to show them to you...
+    - Dialogue: Why not?! I just wanted to show them to you...
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "What?! You can\u2019t do that!"
     RelationshipCheckRequired: 1
@@ -38,6 +49,8 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Hey! Those are supposed to be MINE!
     RelationshipCheckRequired: 1
@@ -52,6 +65,8 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: That was supposed to be a gift...
     RelationshipCheckRequired: 1
@@ -77,14 +92,20 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: Because I think you're the coolest! But, uh...
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: You look mad right now. Are you mad at me?
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     PlayerDialogue: Hey! You opened MY present!
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 0, y: 15}
@@ -104,10 +125,12 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -5
   Charming_Question:
     NpcReactionText:
-    - Dialogue: I borrowed them! This means that we can play, right?!
+    - Dialogue: I borrowed them! T-This means that we can play, right?!
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: When did you get those?!
     RelationshipCheckRequired: 1
@@ -123,10 +146,14 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: Besides, I... wanted to see them.
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: YOU OPENED UP MY PRESENT? YOU STOLE MY CARDS?!
     RelationshipCheckRequired: 1
@@ -137,10 +164,12 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -15
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: ...It is? What did I do?
+    - Dialogue: It is? What did I do?
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "Hey, that\u2019s kind of rude. You know that, right?"
     RelationshipCheckRequired: 1
@@ -155,27 +184,39 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue:
     - Dialogue: ...You look mad right now. Are you mad at me?
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: Because I think you're the coolest! And, uh...
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: Well, uhm...
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: ...W-we're still friends, right?
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: Like, you think I'm cool?
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     PlayerDialogue: ...
     RelationshipCheckRequired: 1
     RelationshipRange: {x: 0, y: 40}

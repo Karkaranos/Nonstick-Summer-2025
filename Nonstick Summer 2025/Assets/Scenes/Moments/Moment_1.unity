@@ -36128,10 +36128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: c9581306ddfdede478690ec44bdec1f9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 319632541}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c9581306ddfdede478690ec44bdec1f9, type: 3}
       insertIndex: -1
@@ -36285,7 +36282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &319632541
 Transform:
   m_ObjectHideFlags: 0
@@ -36294,12 +36291,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319632540}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.65, y: 1.1729493, z: -2.312}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.7071035, z: -0, w: 0.7071101}
+  m_LocalPosition: {x: -5.8275075, y: 1.9886899, z: -11.312473}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 309787742}
+  m_Father: {fileID: 1156691279}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &319632542
 BoxCollider:
@@ -36320,8 +36317,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.3408769, y: 2.3640182, z: 0.1304184}
-  m_Center: {x: 0.65566605, y: 0, z: -0.045593422}
+  m_Size: {x: 1.3408769, y: 2.3640182, z: 0.19145043}
+  m_Center: {x: 0.65566605, y: 0, z: -0.015077408}
 --- !u!23 &319632543
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81529,6 +81526,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2368330322951620365, guid: 702cb239d264c454ba27ebf46eccb99b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -77.549805
+      objectReference: {fileID: 0}
     - target: {fileID: 3771023895894247035, guid: 702cb239d264c454ba27ebf46eccb99b, type: 3}
       propertyPath: m_Name
       value: Objectives
@@ -92388,6 +92389,7 @@ Transform:
   - {fileID: 321265148}
   - {fileID: 278545079}
   - {fileID: 553742643}
+  - {fileID: 319632541}
   - {fileID: 309787742}
   - {fileID: 1462407853}
   - {fileID: 1582649229}

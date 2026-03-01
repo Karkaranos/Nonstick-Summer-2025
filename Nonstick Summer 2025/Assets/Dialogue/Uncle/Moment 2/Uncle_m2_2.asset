@@ -13,22 +13,28 @@ MonoBehaviour:
   m_Name: Uncle_m2_2
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: "You know, I\u2019ve been getting pretty good at that new shooter game
-      that came out."
+  - Dialogue: "I\u2019ve been getting pretty good at that new shooter game that came
+      out..."
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Neutral
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: Maybe we could play it sometime?
     Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Neutral
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "That won\u2019t be an issue. I\u2019ll make sure to ask her to bump
-        it up to at least two this time."
+        it up to at least 2 hours this time."
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "Really? I hope Momma let\u2019s me play longer this time."
     RelationshipCheckRequired: 0
@@ -44,9 +50,11 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: "I don\u2019t know... you might have to get better if I\u2019m
-      gonna play with you. I beat you last time."
+    PlayerDialogue: "I don\u2019t know...you might have to get better if we\u2019re
+      gonna play again. I beat you last time."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
@@ -60,10 +68,10 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
       AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: "That sounds great, but I haven\u2019t had much time to play
-      since I\u2019ve been really busy with school. Hopefully I won\u2019t hold you
-      back too much."
+    PlayerDialogue: "That sounds great, but I haven\u2019t had much time to practice..."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
@@ -77,6 +85,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "Really? Hopefully my mom let\u2019s me play for longer than
       an hour this time."
@@ -93,6 +103,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t know, you might have to step it up a little if
       I am going to play with you, I carried you last time."
@@ -109,6 +121,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "That sounds great, I\u2019ve been really busy with school work
       lately so I haven\u2019t had much time to play though. Hopefully I won\u2019t
@@ -122,14 +136,16 @@ MonoBehaviour:
   Charming_Question:
     NpcReactionText:
     - Dialogue: "Oho, looks like that energy hasn\u2019t gone anywhere. Fair warning,
-        it might not be as easy as last time... I\u2019ve been practicing just about
-        every day since the last time we played."
+        it might not be as easy as last time...I\u2019ve been practicing just about
+        every day since last time."
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "Yeah, I had a lot of fun last time. Are you sure you\u2019re
-      okay with being carried by me again?"
+      okay with losing again?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
@@ -142,9 +158,10 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: "I don\u2019t know, I might be playing it with my friends instead
-      if that is alright?"
+    PlayerDialogue: "Shouldn\u2019t you be playing with people your own age?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: b8e3d37aeac500a49895cfc1fbf6cf2e, type: 2}
@@ -153,11 +170,13 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 5
   Sappy_Question:
     NpcReactionText:
-    - Dialogue: "Come on, where's the excitement from last time? Don\u2019t worry
-        about how well you do, just have fun!"
+    - Dialogue: "Come on, where\u2019s the excitement from last time? Don\u2019t
+        worry about how well you do, just have fun!"
       Portrait: {fileID: 21300000, guid: 8783c236d932d0447aba03a16a00820d, type: 3}
       AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "I\u2019d really like to. You sure I won\u2019t be holding you
       back?"

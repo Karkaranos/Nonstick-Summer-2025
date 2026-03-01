@@ -13,24 +13,32 @@ MonoBehaviour:
   m_Name: Cousin_m2_7
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: "...I\u2019ll go do something else, I guess."
+  - Dialogue: "Well, I\u2019ll go do something else, I guess."
     Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Neutral
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: But talk to me later! Or something!
     Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
     AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
     AudioResponse: Sad
-  - Dialogue: And here are your cards! They got a little mixed up, though... sorry.
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
+  - Dialogue: Oh, here are your cards! They got a little mixed up, though...sorry.
     Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
     AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
     AudioResponse: Neutral
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Heh... sorry.
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "Oh, they\u2019re definitely still mixed up."
     RelationshipCheckRequired: 0
@@ -46,6 +54,8 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "They\u2019re so greasy..."
     RelationshipCheckRequired: 0
@@ -56,10 +66,12 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -15
   Sappy_Expression:
     NpcReactionText:
-    - Dialogue: Ehehe!
+    - Dialogue: Hehe!
       Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
       AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
       AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: See you later!
     RelationshipCheckRequired: 0
@@ -74,6 +86,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "Oh, they\u2019re definitely still mixed up."
     RelationshipCheckRequired: 0
@@ -89,6 +103,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "They\u2019re so greasy..."
     RelationshipCheckRequired: 0
@@ -103,6 +119,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: See you later!
     RelationshipCheckRequired: 0
@@ -113,12 +131,14 @@ MonoBehaviour:
     ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
-    - Dialogue: "Um. I\u2019m not sure what they\u2019re supposed to look like..."
+    - Dialogue: I promise! I swear!
       Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
       AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
       AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: Are you SURE these are all of them?
+    PlayerDialogue: "Don\u2019t open any more of my presents, okay?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: ae9bcb8d5edaa2b429fc5d497b937f5b, type: 2}
@@ -127,12 +147,14 @@ MonoBehaviour:
     ChangeInRelationshipStatus: -10
   Assertive_Question:
     NpcReactionText:
-    - Dialogue: Give me a second! Geez.
+    - Dialogue: Give me a moment! Geez.
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: ...Why are you still here?
+    PlayerDialogue: Why are you still here?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: ae9bcb8d5edaa2b429fc5d497b937f5b, type: 2}
@@ -145,8 +167,10 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 05bc7261fc317ac44b10debbe34988d4, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
-    PlayerDialogue: Will you really leave me alone this time?
+    PlayerDialogue: Are you SURE these are all of them?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
     BranchingDialogueHigh: {fileID: 11400000, guid: ae9bcb8d5edaa2b429fc5d497b937f5b, type: 2}
@@ -154,7 +178,13 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   Silent:
-    NpcReactionText: []
+    NpcReactionText:
+    - Dialogue: ...
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0

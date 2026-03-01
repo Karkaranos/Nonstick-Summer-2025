@@ -70,6 +70,10 @@ public class OpenBossInteractable : MonoBehaviour
         {
             whichBoss = 2;
         }
+         else if (character == Character.Tutorial)
+        {
+            whichBoss = 4;
+        }
         MusicManager.instance.StartCombat(whichBoss);
 
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor);

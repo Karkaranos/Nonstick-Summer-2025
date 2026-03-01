@@ -11,6 +11,7 @@ using NaughtyAttributes;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 public class CreditBehavior : MonoBehaviour
 {
     [SerializeField] private GameObject creditParent;
@@ -52,6 +53,12 @@ public class CreditBehavior : MonoBehaviour
         Debug.Log(creditsEndingFrame.position);
         while (creditsEndingFrame.position.y < Screen.height / 2)
         {
+            //i'm adding more
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                mm.CloseCredits();
+                yield break;
+            }
             // old input system lol
             float speedUp = (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space)) ? 8 : 1;
 
@@ -72,7 +79,8 @@ public class CreditBehavior : MonoBehaviour
 
         yield return new WaitForSeconds(pauseBeforeStartEnd * 2);
 
-        if(mm!=null)
+
+        if (mm != null)
         {
             mm.CloseCredits();
         }

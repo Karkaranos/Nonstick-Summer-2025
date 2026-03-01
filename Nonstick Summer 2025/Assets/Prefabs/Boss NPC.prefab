@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 621988117311664097}
   - component: {fileID: 454548493651250203}
   - component: {fileID: 3216093029526474184}
+  - component: {fileID: 5243060646151856347}
   m_Layer: 0
   m_Name: Boss NPC
   m_TagString: Untagged
@@ -207,3 +208,26 @@ MonoBehaviour:
   StartingDialogueBranch: {fileID: 11400000, guid: a30f23876f7fcfe4180258c3133ef9fa, type: 2}
   cameraAnchor: {fileID: 707064104867182951}
   character: 0
+--- !u!136 &5243060646151856347
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7010602745331249561}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.25
+  m_Height: 1.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

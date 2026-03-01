@@ -13,16 +13,26 @@ MonoBehaviour:
   m_Name: Uncle_m3_3End
   m_EditorClassIdentifier: 
   dialogue:
-  - Dialogue: "Look, I know you wish Mom could be here, but please don\u2019t take
-      it out on your grandma. We need to be there for her right now, so don\u2019t
-      be defensive with her. "
+  - Dialogue: "...Look, I know you want your mom to be here, but please don\u2019t
+      take it out on your grandma."
     Portrait: {fileID: 21300000, guid: 0ef7c68a92d7e814982c901fc0917414, type: 3}
     AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
     AudioResponse: Sad
-  - Dialogue: "She\u2019s so proud of you. Your mom too."
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
+  - Dialogue: "We need to be there for them right now, so don\u2019t be defensive
+      with her."
+    Portrait: {fileID: 21300000, guid: c92eea93dfa7ff647913a78b63731910, type: 3}
+    AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+    AudioResponse: Neutral
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
+  - Dialogue: "She\u2019s so proud of you. Your mom, too.\L"
     Portrait: {fileID: 21300000, guid: bb66605723840af4095c1cd31b791acd, type: 3}
     AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
     AudioResponse: Happy
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   Charming_Expression:
     NpcReactionText: []
     CombinedDialogue: []

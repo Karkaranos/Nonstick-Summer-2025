@@ -16,7 +16,7 @@ public class PlayCardButton : MonoBehaviour
     [SerializeField, Required] private Button button;
     [SerializeField, Required] private CanvasGroup group;
     [SerializeField, Required] private CanvasGroup parentGroup;
-    private DeckDisplayer hand => DialogueUIController.Instance.DeckDisplay;
+    private DeckDisplayer hand => DialogueUIController.Instance.deckDisplay;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Initialize()
@@ -35,10 +35,24 @@ public class PlayCardButton : MonoBehaviour
     /// </summary>
     public void UpdateButtonEnabled()
     {
-        bool enabled = DialogueUIController.Instance.selectedCardData != null;
-        button.interactable = true;
+        bool isHoldingACard = hand.FirstSelectedCard != null;
+        var card = hand.FirstSelectedCard;
+        bool canAffordCard = isHoldingACard && (Mathf.Abs(card.EnergyCost) <= DialogueManager.CurrentEnergy);
+        Debug.Log($"isHoldingACard: {isHoldingACard}\ncanAffordCard:{canAffordCard}");
+        if(isHoldingACard)
+            Debug.Log($"{Mathf.Abs(card.EnergyCost)} > {DialogueManager.CurrentEnergy} = {(Mathf.Abs(card.EnergyCost) > DialogueManager.CurrentEnergy)}");
+        button.interactable = (DialogueUIController.Instance.inSceneFive || (isHoldingACard && canAffordCard));
 
-        StaticUtilities.ToggleCanvasGroup(group, enabled, alpha:parentGroup.alpha,ignoreParentGroups:true);
+        StaticUtilities.ToggleCanvasGroup(group, 
+            enabled: isHoldingACard,
+            interactable: canAffordCard, 
+            alpha: isHoldingACard ? 1: 0, 
+            ignoreParentGroups:true);
+    }
+
+    private void Update()
+    {
+        //UpdateButtonEnabled();
     }
 
     public void OnButtonPressed()

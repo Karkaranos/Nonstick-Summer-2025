@@ -36,7 +36,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Required][SerializeField] public EnergyBar energyBar;
     [Required][SerializeField] private DisplayPlayerCardDialogue playerDialogueBubble;
     /*[Required]*/[SerializeField] private TMP_Text npcName;
-    [Required][SerializeField] protected DeckDisplayer deckDisplay;
+    [Required][SerializeField] public DeckDisplayer deckDisplay;
     [Tooltip("Relationship slider UI element")]
     [Required][SerializeField] private RelationshipSlider relationshipSlider;
     [Required, SerializeField] private DialogueBox dialogueBox;
@@ -50,8 +50,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Required, SerializeField] private TMP_Text objectiveText;
     bool isTutorial = false;
 
-    public DeckDisplayer DeckDisplay { get { return deckDisplay; } }
-
     public CardData selectedCardData=> deckDisplay.FirstSelectedCard;
     public bool IfCloseCombat { get { return 
                 DialogueManager.CurrentDialogueBranch == null
@@ -64,7 +62,6 @@ public class DialogueUIController : Singleton<DialogueUIController>
     private GameObject inWorldCharacter;
 
     [HideInInspector] public GameObject activeReaction;
-    public GameObject EnabledButton;
 
     private Scene currentScene;
     [HideInInspector] public bool inSceneFive = false;
@@ -147,26 +144,9 @@ public class DialogueUIController : Singleton<DialogueUIController>
         // REALLY dont like putting this function here, since playCardButton should be autonomous but fuck it atp
         playCardButton.UpdateButtonEnabled();
 
-        if(selectedCardData == null)
-        {
-            // nothing i think
-        }
-        else
+        if(selectedCardData != null)
         {
             playerDialogueBubble.WriteText(selectedCardData);
-
-            if (Mathf.Abs(selectedCardData.EnergyCost) > DialogueManager.CurrentEnergy && inSceneFive == false)
-            {
-
-                EnabledButton.SetActive(false);
-
-            }
-            else
-            {
-
-                EnabledButton.SetActive(true);
-
-            }
         }
     }
 

@@ -108,7 +108,7 @@ public partial class CardDisplay : MonoBehaviour
 
     private void OnMouseHoverStart() // TODO this should be moved to another script
     {
-        if (DialogueUIController.Instance != null && DialogueUIController.Instance.DeckDisplay.FirstSelectedCard == null 
+        if (DialogueUIController.Instance != null && DialogueUIController.Instance.deckDisplay.FirstSelectedCard == null 
             && DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput)
            DialogueUIController.Instance.UpdateHoveringCard(card);
         if (canPlayHoverSound)
@@ -133,7 +133,7 @@ public partial class CardDisplay : MonoBehaviour
 
     private void OnMouseHoverEnd() // TODO this should be moved to another script
     {
-        if (DialogueUIController.Instance != null && DialogueUIController.Instance.DeckDisplay.FirstSelectedCard == null
+        if (DialogueUIController.Instance != null && DialogueUIController.Instance.deckDisplay.FirstSelectedCard == null
             && DialogueManager.PlayerInCombat && DialogueManager.ReadUserInput)
             DialogueUIController.Instance.UpdateHoveringCard(null);
 

@@ -11,7 +11,7 @@
 *   
 *   TODO: 
 *       vertical mode?
-*       Combine with DeckDisplay thru inheritence? maaaaybeee????
+*       Combine with deckDisplay thru inheritence? maaaaybeee????
 *   
 ***************************************************/
 using NaughtyAttributes;

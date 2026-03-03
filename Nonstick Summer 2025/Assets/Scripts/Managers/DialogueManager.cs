@@ -177,7 +177,7 @@ public class DialogueManager
 
 
         if (playedCard != null)
-            DialogueUIController.Instance.DeckDisplay.DiscardCard(playedCard);
+            DialogueUIController.Instance.deckDisplay.DiscardCard(playedCard);
 
 
         if (continueCardProcessing)
@@ -280,7 +280,7 @@ public class DialogueManager
             return;
 
         Debug.Log("drawing now");
-        DialogueUIController.Instance.DeckDisplay.DeselectAllCards();   
+        DialogueUIController.Instance.deckDisplay.DeselectAllCards();   
 
         for (int i = 0; i < N; i++)
         {
@@ -288,15 +288,15 @@ public class DialogueManager
             {
                 //var nextCard = DeckManager.RemainingDeck.Pop();
                 //PlayerHand.Add(nextCard, false);
-                DialogueUIController.Instance.DeckDisplay.DrawOneCard();
+                DialogueUIController.Instance.deckDisplay.DrawOneCard();
             }
             else
             {
-                DialogueUIController.Instance.DeckDisplay.DisplayAllCards();
+                DialogueUIController.Instance.deckDisplay.DisplayAllCards();
                 Debug.Log("No cards left to draw!");
             }
             // Called in draw one card
-            //DialogueUIController.Instance.DeckDisplay.DisplayAllCards();
+            //DialogueUIController.Instance.deckDisplay.DisplayAllCards();
         }
     }
 }

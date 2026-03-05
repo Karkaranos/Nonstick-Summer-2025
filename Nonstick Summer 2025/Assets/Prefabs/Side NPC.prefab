@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 621988117311664097}
   - component: {fileID: 454548493651250203}
   - component: {fileID: 3722136018739801623}
+  - component: {fileID: 8368594296737174875}
   m_Layer: 0
   m_Name: Side NPC
   m_TagString: Untagged
@@ -213,3 +214,26 @@ MonoBehaviour:
   character: 0
   PossibleModifiers: []
   ModifierObtainCanvas: {fileID: 8553161507268041164, guid: 092413676022d3a49bd218b9bc1ce83b, type: 3}
+--- !u!136 &8368594296737174875
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7010602745331249561}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.25
+  m_Height: 1.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

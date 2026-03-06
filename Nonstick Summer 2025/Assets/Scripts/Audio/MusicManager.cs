@@ -27,12 +27,16 @@ public class MusicManager : MonoBehaviour
         ReflectionBGM = AudioManager.instance.CreateEventInstance(FMODEvents.instance.ReflectionBGM);
         TitleBGM = AudioManager.instance.CreateEventInstance(FMODEvents.instance.TitleBGM);
 
-        if (SceneManager.GetActiveScene().name.Equals("MainMenu"))
+        /*if (SceneManager.GetActiveScene().name.Equals("MainMenu"))
         {
             StartTitle();
             return;
+        }*/
+        if (SceneManager.GetActiveScene().name.Equals("Tutorial"))
+        {
+            StartReflection();
+            return;
         }
-
         if (SceneManager.GetActiveScene().name.Equals("Moment_5"))
         {
             StartReflection();

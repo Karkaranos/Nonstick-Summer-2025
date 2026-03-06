@@ -22,7 +22,7 @@ public class EnergyBar : MonoBehaviour
         slider.maxValue = DialogueManager.MaxEnergy;
         SetValueNoAnimation(DialogueManager.CurrentEnergy);
 
-        energyNumber.text = $"{DialogueManager.CurrentEnergy} <sprite>Energy";
+        energyNumber.text = $"{DialogueManager.CurrentEnergy} <sprite name=\"Energy\">Energy";
 
     }
 

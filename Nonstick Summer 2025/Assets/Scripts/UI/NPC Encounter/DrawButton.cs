@@ -17,7 +17,7 @@ public class DrawButton : MonoBehaviour
 {
     [SerializeField, Required] private Button button;
     [SerializeField, Required] private TMP_Text energyCostDisplay;
-    private DeckDisplayer handDisplay => DialogueUIController.Instance.DeckDisplay;
+    private DeckDisplayer handDisplay => DialogueUIController.Instance.deckDisplay;
     [ReadOnly]
     public bool CantDrawAnymore = false;
     private int drawCounter = 0;

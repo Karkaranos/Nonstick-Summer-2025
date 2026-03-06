@@ -1026,6 +1026,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4898804877109712803, guid: 7b73ac0ea0bcb7f4aac536fe9834bbb4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898804877109712803, guid: 7b73ac0ea0bcb7f4aac536fe9834bbb4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898804877109712803, guid: 7b73ac0ea0bcb7f4aac536fe9834bbb4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3520667051158493986}
+    - target: {fileID: 4898804877109712803, guid: 7b73ac0ea0bcb7f4aac536fe9834bbb4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseCurrentPopup
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898804877109712803, guid: 7b73ac0ea0bcb7f4aac536fe9834bbb4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5401624847689752126, guid: 7b73ac0ea0bcb7f4aac536fe9834bbb4, type: 3}
       propertyPath: m_Name
       value: Object Popup Button

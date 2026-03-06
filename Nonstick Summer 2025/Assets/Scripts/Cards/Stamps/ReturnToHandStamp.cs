@@ -25,12 +25,12 @@ public class ReturnToHandStamp : ModifierStamp
         {
             Debug.Log("Using Return to Hand Stamp");
             Expended = true;
-            var copyCard = DialogueUIController.Instance.DeckDisplay.AddCardToHand(affectedCard); // add this card to deck lol
+            var copyCard = DialogueUIController.Instance.deckDisplay.AddCardToHand(affectedCard); // add this card to deck lol
             var thisStamp = affectedCard.Stamps.Where(s => s.type == typeof(ReturnToHandStamp)).First();
             ((ReturnToHandStamp)thisStamp).Expended = true;
-            //DialogueUIController.Instance.DeckDisplay.AddCardToHand(affectedCard.CopyCardWithoutStampType(this.type));
+            //DialogueUIController.Instance.deckDisplay.AddCardToHand(affectedCard.CopyCardWithoutStampType(this.type));
         }
-        DialogueUIController.Instance.DeckDisplay.DisplayAllCards();
+        DialogueUIController.Instance.deckDisplay.DisplayAllCards();
     }
 
     public override void OnStampAdded(CardData affectedCard)

@@ -21,7 +21,7 @@ public class DrawExtraCardStamp : ModifierStamp
         {
             for (int i = 0; i < NumCardsToDraw; i++)
             {
-                DialogueUIController.Instance.DeckDisplay.DrawOneCard();
+                DialogueUIController.Instance.deckDisplay.DrawOneCard();
             }
         }
     }

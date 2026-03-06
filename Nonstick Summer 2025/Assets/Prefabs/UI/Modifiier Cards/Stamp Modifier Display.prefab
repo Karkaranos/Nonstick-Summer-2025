@@ -136,9 +136,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ae364e52c2f4d40b53e0b67471b0da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayShadow: 1
   IconImage: {fileID: 3423703043375703025}
   cardBackground: {fileID: 8105009320447421010}
   modifierHeader: {fileID: 4545682438259869595}
+  shadow: {fileID: 0}
   applyButtonAnchor: {fileID: 4779150148591535134}
   OnMouseDown:
     m_PersistentCalls:
@@ -151,6 +153,7 @@ MonoBehaviour:
   animateWaves: 1
   waveHeight: 5
   waveSpeed: 1
+  baseShadowOffset: {x: 6, y: -6}
   targetRotation: -135
   destroyAnimationSeconds: 0.5
   hoverTargetRotation: -2
@@ -645,25 +648,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6631526919339010300, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0
+      value: -90.725
       objectReference: {fileID: 0}
-    - target: {fileID: 8240772508428721124, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5917198537950354199, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4178412628391056152}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1531530870694611109, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7885381435540775402}
   m_SourcePrefab: {fileID: 100100000, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
 --- !u!224 &593532917641837875 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5917198537950354199, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
   m_PrefabInstance: {fileID: 6494959990254020132}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5720605640787439233 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1531530870694611109, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}
+  m_PrefabInstance: {fileID: 6494959990254020132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7885381435540775402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5720605640787439233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 0, y: 0}
+  m_UseGraphicAlpha: 1
 --- !u!225 &8379783410316509164 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 3343996588503030216, guid: eff9ef68fdf5a8c4bbfd5dfc86831348, type: 3}

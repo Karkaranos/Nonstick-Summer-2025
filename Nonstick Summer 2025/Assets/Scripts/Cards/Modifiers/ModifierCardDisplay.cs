@@ -17,9 +17,12 @@ using System.Linq;
 //[RequireComponent(typeof(MouseInteractionEvents))]
 public partial class ModifierCardDisplay : MonoBehaviour
 {
+    public bool displayShadow = true;
+
     [BoxGroup("UI Components"), SerializeField] Image IconImage;
     [BoxGroup("UI Components"), SerializeField] RectTransform cardBackground;
     [BoxGroup("UI Components"), SerializeField, Required] TMP_Text modifierHeader;
+    [BoxGroup("UI Components"), SerializeField, Required] Shadow shadow;
     [BoxGroup("UI Components"), Required] public RectTransform applyButtonAnchor;
 
     public ModifierData modifierData { get { return _modifier; } }
@@ -50,6 +53,9 @@ public partial class ModifierCardDisplay : MonoBehaviour
 
         if (_modifier != null) SetCard(_modifier); // mostly for debugging
 
+        if (shadow == null) shadow = GetComponentInChildren<Shadow>();
+        if (!displayShadow) shadow.effectColor = Color.clear;
+
         mouseInteraction = GetComponent<MouseInteractionEvents>();
         if(mouseInteraction != null)
         {
@@ -62,6 +68,26 @@ public partial class ModifierCardDisplay : MonoBehaviour
         {
             mouseInteraction.OnMouseDown.AddListener(OnMouseDownStart);
         }
+    }
+
+
+    public void SetCard(ModifierData newModifier)
+    {
+        if (newModifier == null)
+        {
+            Debug.LogError("Dont let this happen.");
+            return;
+        }
+
+        //if (_modifier != null)
+        //    ... something that happens when modifier is replaced
+
+        _modifier = newModifier;
+
+        if(shadow==null) shadow = GetComponentInChildren<Shadow>();
+        if (!displayShadow) shadow.effectColor = Color.clear;
+
+        RefreshDisplay();
     }
 
     private void OnMouseDownStart()
@@ -128,21 +154,6 @@ public partial class ModifierCardDisplay : MonoBehaviour
         canPlayHover = true;
     }
 
-    public void SetCard(ModifierData newModifier)
-    {
-        if(newModifier== null)
-        {
-            Debug.LogError("Dont let this happen.");
-            return;
-        }
-
-        //if (_modifier != null)
-        //    ... something that happens when modifier is replaced
-
-        _modifier = newModifier;
-
-        RefreshDisplay();
-    }
 
     [Button]
     public void RefreshDisplay()

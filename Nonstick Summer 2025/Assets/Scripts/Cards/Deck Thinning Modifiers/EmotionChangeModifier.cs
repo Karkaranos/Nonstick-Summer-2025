@@ -51,4 +51,9 @@ public class EmotionChangeModifier : ModifierData
     {
         return emotionToSet.ToString();
     }
+
+    public CardEmotion GetEmotion()
+    {
+        return emotionToSet;
+    }
 }

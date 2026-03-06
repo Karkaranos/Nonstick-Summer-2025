@@ -75,7 +75,7 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
     {
         if (SceneManager.GetActiveScene().name.Equals("Moment_5"))
         {
-            MusicManager.instance.StartReflection();
+            //MusicManager.instance.StartReflection();
         }
         else
         {
@@ -97,6 +97,11 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
         ModifierManager.AddCard(modifier);
         var iopc = UITransitionManager.OpenMenu(ModifierObtainCanvas, cameraAnchor, null).GetComponent<ItemObtainPopupCanvas>();
         iopc.Initialize(modifier);
+
+        if (!SceneManager.GetActiveScene().name.Equals("Moment_5"))
+        {
+            MusicManager.instance.StartHouse();
+        }
 
     }
 

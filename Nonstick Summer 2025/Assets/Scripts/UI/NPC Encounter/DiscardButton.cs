@@ -19,7 +19,7 @@ public class DiscardButton : MonoBehaviour
     [SerializeField, Required] private Button button;
     [SerializeField, Required] private TMP_Text energyCostDisplay;
 
-    private DeckDisplayer hand => DialogueUIController.Instance.DeckDisplay;
+    private DeckDisplayer hand => DialogueUIController.Instance.deckDisplay;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Initialize()

@@ -66,12 +66,12 @@ public static class StaticUtilities
 
     #region UI
 
-    public static void ToggleCanvasGroup(CanvasGroup canvasgroup, bool enabled, float? alpha = null, bool? ignoreParentGroups = null)
+    public static void ToggleCanvasGroup(CanvasGroup canvasgroup, bool enabled, bool? interactable = null, float? alpha = null, bool? ignoreParentGroups = null)
     {
         if (enabled)
-            EnableCanvasGroup(canvasgroup, alpha:alpha, ignoreParentGroups: ignoreParentGroups);
+            EnableCanvasGroup(canvasgroup, alpha:alpha, interactable: interactable ?? true, ignoreParentGroups: ignoreParentGroups);
         else
-            DisableCanvasGroup(canvasgroup, ignoreParentGroups: ignoreParentGroups);
+            DisableCanvasGroup(canvasgroup, alpha:alpha, ignoreParentGroups: ignoreParentGroups);
     }
     public static void EnableCanvasGroup(CanvasGroup canvasgroup, float? alpha = null, bool interactable = true, bool blocksRaycasts=true, bool? ignoreParentGroups = null)
     {
@@ -203,11 +203,13 @@ public static class StaticUtilities
         float time = startTime;
         while (time - startTime < seconds)
         {
+            if (transform == null) yield break;
+
             time = unscaledTime ? Time.unscaledTime : Time.time;
             float t = (time - startTime) / seconds;
 
             transform.position = Vector3.Lerp(startPosition, endPosition, t);
-            Debug.Log($"{startPosition} -> {transform.position} -> {endPosition}");
+            //Debug.Log($"{startPosition} -> {transform.position} -> {endPosition}");
 
             yield return null;
         }

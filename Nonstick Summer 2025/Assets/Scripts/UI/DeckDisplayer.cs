@@ -163,6 +163,7 @@ public class DeckDisplayer : MonoBehaviour
                 _visualDisplays.Select(display => display.cardData) // what the lambda
                 .Contains(card) == false);
         // programming equivalent of doing an awesome skateboard trick ^
+        // bro didnt even explain the code he just started mogging.
 
         foreach (var newCard in newCards)
         {
@@ -314,7 +315,7 @@ public class DeckDisplayer : MonoBehaviour
                 t = (float)i / (_visualDisplays.Count - 1);
 
             float x = Mathf.Lerp(left, right, t);
-            card.SetPositionAndOffset(position: new Vector2(x, 0), offset: interactable ? Vector2.zero : disabledCardOffset, speed: 5000);
+            card.SetPositionAndOffset(position: new Vector2(x, 0), offset: interactable ? Vector2.zero : disabledCardOffset, speedOverride: 5000, applyToShadow: false);
 
             card.transform.SetSiblingIndex(i);
             card.TargetSiblingIndex = i;
@@ -366,7 +367,7 @@ public class DeckDisplayer : MonoBehaviour
 
             displayedData.Add(cards[i]);
 
-            cardDisplay.SetPositionAndOffset(position: position[i], offset: Vector2.zero, speed: 5000);
+            cardDisplay.SetPositionAndOffset(position: position[i], offset: Vector2.zero, speedOverride: 5000);
 
             cardDisplay.SetCard(cards[i]);
             cardDisplay.OnMouseDown.AddListener(OnCardClicked);
@@ -504,7 +505,7 @@ public class DeckDisplayer : MonoBehaviour
 
         selectedCards.Add(cardDisplay);
 
-        cardDisplay.SetPositionAndOffset( offset: (Vector3)selectedCardOffset );
+        cardDisplay.SetPositionAndOffset( offset: (Vector3)selectedCardOffset, applyToShadow: true );
         cardDisplay.transform.SetAsLastSibling(); // bring to front so player can see it
 
         selectedCards = selectedCards.Where(d => d != null || !d.MarkedToBeDestroyed).ToHashSet();

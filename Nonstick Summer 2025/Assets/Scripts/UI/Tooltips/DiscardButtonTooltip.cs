@@ -17,7 +17,7 @@ public class DiscardButtonTooltip : HoverTooltip
     //[SerializeField, Required]
     //private DiscardButton discardButton;
 
-    private DeckDisplayer hand => DialogueUIController.Instance.DeckDisplay;
+    private DeckDisplayer hand => DialogueUIController.Instance.deckDisplay;
 
     [SerializeField, ResizableTextArea]
     private string canDiscardText = "Discards a selected card for [DiscardEnergy]";

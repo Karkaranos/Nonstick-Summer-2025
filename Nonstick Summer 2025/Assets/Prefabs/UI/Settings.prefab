@@ -2504,6 +2504,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1114239173, guid: 881e5c8ac917cf241b8365ebbb0ba696, type: 3}
     - target: {fileID: 5518159296229017635, guid: de54f26762111854e969adfbd38f61bc, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518159296229017635, guid: de54f26762111854e969adfbd38f61bc, type: 3}
       propertyPath: m_PreserveAspect
       value: 0
       objectReference: {fileID: 0}
@@ -2529,11 +2533,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8418575810158000652, guid: de54f26762111854e969adfbd38f61bc, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418575810158000652, guid: de54f26762111854e969adfbd38f61bc, type: 3}
+      propertyPath: m_MaxValue
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8418575810158000652, guid: de54f26762111854e969adfbd38f61bc, type: 3}
       propertyPath: m_MinValue
-      value: 0.01
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 8418575810158000652, guid: de54f26762111854e969adfbd38f61bc, type: 3}
       propertyPath: m_HandleRect

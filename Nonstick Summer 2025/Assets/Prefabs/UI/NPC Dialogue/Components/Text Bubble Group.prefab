@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 583544779448062533}
   - component: {fileID: 3644292256400444086}
   - component: {fileID: 5498390308893354133}
+  - component: {fileID: 1080291562034318641}
   m_Layer: 5
   m_Name: Text Bubble Group
   m_TagString: Untagged
@@ -118,6 +119,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1080291562034318641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4630678032451842909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 4, y: -15}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7155800084977831574
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 375, y: -77.15}
+  m_AnchoredPosition: {x: 375, y: -100}
   m_SizeDelta: {x: 750, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4489959127584367119

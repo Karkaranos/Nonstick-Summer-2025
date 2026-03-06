@@ -15,6 +15,7 @@ using System.Linq;
 public partial class CardDisplay : MonoBehaviour
 {
     [Header("Display")]
+    public bool displayShadow = true;
 
     [Foldout("UI Components"), SerializeField, Required] TMP_Text EmotionText;
     [Foldout("UI Components"), SerializeField, Required] TMP_Text IntentionText;
@@ -26,6 +27,7 @@ public partial class CardDisplay : MonoBehaviour
     [Foldout("UI Components"), SerializeField, Required] TMP_Text EnergyText;
     [Foldout("UI Components"), SerializeField] Image[] energyCostIcons;
     [Foldout("UI Components"), SerializeField] StampIconDisplay[] StampImages;
+    [Foldout("UI Components"), SerializeField] public Shadow shadow;
 
     public CardData cardData { get{ return card; } }
 
@@ -64,6 +66,19 @@ public partial class CardDisplay : MonoBehaviour
 
         // EVERYTHING breaks if you uncomment this. DO NOT touch it.
         //basePosition = cardBackground.anchoredPosition;
+    }
+    public void SetCard(CardData newCard)
+    {
+        if (shadow == null) shadow = GetComponentInChildren<Shadow>();
+        if (!displayShadow) shadow.effectColor = Color.clear;
+
+        if (card != null)
+            card.OnCardValueChanged -= (() => RefreshDisplay(true));
+
+        card = newCard;
+        card.OnCardValueChanged += (() => RefreshDisplay(true));
+
+        RefreshDisplay(false);
     }
 
     /// <summary>
@@ -154,16 +169,6 @@ public partial class CardDisplay : MonoBehaviour
         }*/
     }
 
-    public void SetCard(CardData newCard)
-    {
-        if(card != null)
-            card.OnCardValueChanged -= (() => RefreshDisplay(true));
-
-        card = newCard;
-        card.OnCardValueChanged += (() => RefreshDisplay(true));
-
-        RefreshDisplay(false);
-    }
 
     [Button]
     public void RefreshDisplay(bool animate = true)

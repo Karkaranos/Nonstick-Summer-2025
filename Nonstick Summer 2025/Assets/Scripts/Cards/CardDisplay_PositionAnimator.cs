@@ -29,6 +29,9 @@ public partial class CardDisplay : MonoBehaviour
     [SerializeField] private bool animateWaves = true;
     [ShowIf(nameof(animateWaves)), SerializeField] float waveHeight = 3;
     [ShowIf(nameof(animateWaves)), SerializeField] float waveSpeed = 1;
+    [SerializeField] private Vector2 baseShadowOffset = new Vector2(6, -6);
+
+    private bool applyShadow;
 
     private Vector2 basePosition, positionOffset=default;
     private Coroutine translatePositionCoroutine;
@@ -53,10 +56,12 @@ public partial class CardDisplay : MonoBehaviour
         cardBackground.anchoredPosition = positionOffset;
     }
 
-    public void SetPosition(Vector2 position, float? speed = null)
+    public void SetPosition(Vector2 position, float? speed = null, bool? applyToShadow=null)
     {
         // real problem that happens sometimes
         if (this == null) return;
+
+        applyShadow = applyToShadow.HasValue ? applyToShadow.Value : applyShadow;
 
         basePosition = position;
 
@@ -71,13 +76,15 @@ public partial class CardDisplay : MonoBehaviour
         translatePositionCoroutine = StartCoroutine(TranslatePosition(speed));
     }
 
-    public void SetPositionAndOffset(Vector2? position = null, Vector2? offset = null, float? speed = null)
+    public void SetPositionAndOffset(Vector2? position = null, Vector2? offset = null, float? speed = null, bool? applyToShadow = null)
     {
         // real problem that happens sometimes
         if (this == null) return;
 
         basePosition = position.HasValue ? position.Value : basePosition;
         positionOffset = offset.HasValue ? offset.Value : positionOffset;
+
+        applyShadow = applyToShadow.HasValue ? applyToShadow.Value : applyShadow;
 
         if (translatePositionCoroutine != null)
         {
@@ -93,9 +100,11 @@ public partial class CardDisplay : MonoBehaviour
     /// <summary>
     /// Animates the cards offset to 0,0,0
     /// </summary>
-    public void ResetOffset(float? speed = null)
+    public void ResetOffset(float? speed = null, bool? applyToShadow=null)
     {
         if (this == null) return;
+
+        applyShadow = applyToShadow.HasValue ? applyToShadow.Value : applyShadow;
 
         positionOffset = Vector2.zero;
         if (translatePositionCoroutine != null)
@@ -129,6 +138,12 @@ public partial class CardDisplay : MonoBehaviour
                 cardBackground.anchoredPosition = Vector2.MoveTowards(currentOffset, positionOffset + new Vector2(0, Mathf.Sin((Time.time * waveSpeed) + TargetSiblingIndex) * waveHeight), speed.Value * Time.deltaTime);
             else
                 cardBackground.anchoredPosition = Vector2.MoveTowards(currentOffset, positionOffset, speed.Value * Time.deltaTime);
+
+            if (applyShadow)
+                shadow.effectDistance = baseShadowOffset - currentOffset;
+            else
+                shadow.effectDistance = baseShadowOffset;
+
             yield return null;
         }
 

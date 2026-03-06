@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8053602155742136523}
   - component: {fileID: 6412961461129950037}
   - component: {fileID: 8521531748663907114}
+  - component: {fileID: 9038115627112956349}
   m_Layer: 5
   m_Name: NPC Sprite
   m_TagString: Untagged
@@ -90,6 +91,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &9038115627112956349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180480231144243639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &400339466297756821
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,6 +117,7 @@ GameObject:
   - component: {fileID: 4798549937699309056}
   - component: {fileID: 7937380061049036713}
   - component: {fileID: 8542989275497445868}
+  - component: {fileID: 2813943301383428532}
   m_Layer: 5
   m_Name: Bubble Tail
   m_TagString: Untagged
@@ -165,6 +182,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2813943301383428532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400339466297756821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 4, y: -15}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2168734449890634462
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,7 +696,7 @@ GameObject:
   - component: {fileID: 7725866790124163258}
   - component: {fileID: 933650706551176470}
   m_Layer: 5
-  m_Name: Combat Prompt
+  m_Name: NPC Dialogue Combat Prompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -101,12 +101,23 @@ public class ModifierDeckDisplay : MonoBehaviour
         _visualDisplays = _visualDisplays
             .OrderBy(d => d.modifierData.name)
             .OrderBy(d => d.modifierData.GetType().ToSafeString())
+            .OrderBy(d => GetSortOrder(d.modifierData))
             .ToList();
 
         // Generates spawn positions
         GenerateAndSetPositions();
 
         Debug.Log($"{_visualDisplays.Count} modifier displays, {filteredPlayerModifiers.Count()} modifiers in player inventory");
+    }
+
+    private int GetSortOrder(ModifierData modifier)
+    {
+        if(modifier is EmotionChangeModifier)
+        {
+            // 0 for happy, 1 for assertive, etc
+            return (int)((EmotionChangeModifier)modifier).GetEmotion();
+        }
+        return 5;
     }
 
     private IEnumerator ClearRemovedCards()

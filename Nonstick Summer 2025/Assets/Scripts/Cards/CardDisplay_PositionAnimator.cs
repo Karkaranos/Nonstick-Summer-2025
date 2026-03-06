@@ -17,7 +17,6 @@
 using UnityEngine;
 using NaughtyAttributes;
 using System.Collections;
-using Unity.VisualScripting;
 
 public partial class CardDisplay : MonoBehaviour
 {
@@ -32,6 +31,7 @@ public partial class CardDisplay : MonoBehaviour
     [SerializeField] private Vector2 baseShadowOffset = new Vector2(6, -6);
 
     private bool applyShadow;
+    private float? currentSpeed;
 
     private Vector2 basePosition, positionOffset=default;
     private Coroutine translatePositionCoroutine;
@@ -56,27 +56,28 @@ public partial class CardDisplay : MonoBehaviour
         cardBackground.anchoredPosition = positionOffset;
     }
 
-    public void SetPosition(Vector2 position, float? speed = null, bool? applyToShadow=null)
+    public void SetPosition(Vector2 position, float? speedOverride = null, bool? applyToShadow=null)
     {
         // real problem that happens sometimes
         if (this == null) return;
 
         applyShadow = applyToShadow.HasValue ? applyToShadow.Value : applyShadow;
+        currentSpeed = speedOverride.HasValue ? speedOverride.Value : MovementSpeed;
 
         basePosition = position;
 
         if (translatePositionCoroutine != null)
         {
-            if (speed != null)
+            if (speedOverride != null)
                 StopCoroutine(translatePositionCoroutine);
             else
                 return;
         }
 
-        translatePositionCoroutine = StartCoroutine(TranslatePosition(speed));
+        translatePositionCoroutine = StartCoroutine(TranslatePosition());
     }
 
-    public void SetPositionAndOffset(Vector2? position = null, Vector2? offset = null, float? speed = null, bool? applyToShadow = null)
+    public void SetPositionAndOffset(Vector2? position = null, Vector2? offset = null, float? speedOverride = null, bool? applyToShadow = null)
     {
         // real problem that happens sometimes
         if (this == null) return;
@@ -85,59 +86,65 @@ public partial class CardDisplay : MonoBehaviour
         positionOffset = offset.HasValue ? offset.Value : positionOffset;
 
         applyShadow = applyToShadow.HasValue ? applyToShadow.Value : applyShadow;
+        currentSpeed = speedOverride.HasValue ? speedOverride.Value : MovementSpeed;
 
         if (translatePositionCoroutine != null)
         {
-            if (speed != null)
+            if (speedOverride != null)
                 StopCoroutine(translatePositionCoroutine);
             else
                 return;
         }
 
-        translatePositionCoroutine = StartCoroutine(TranslatePosition(speed));
+        translatePositionCoroutine = StartCoroutine(TranslatePosition());
     }
 
     /// <summary>
     /// Animates the cards offset to 0,0,0
     /// </summary>
-    public void ResetOffset(float? speed = null, bool? applyToShadow=null)
+    public void ResetOffset(float? speedOverride = null, bool? applyToShadow=null)
     {
         if (this == null) return;
 
         applyShadow = applyToShadow.HasValue ? applyToShadow.Value : applyShadow;
+        currentSpeed = speedOverride.HasValue ? speedOverride.Value : MovementSpeed;
 
         positionOffset = Vector2.zero;
         if (translatePositionCoroutine != null)
         {
-            if (speed != null)
+            if (speedOverride != null)
                 StopCoroutine(translatePositionCoroutine);
             else
                 return;
         }
 
-        translatePositionCoroutine = StartCoroutine(TranslatePosition(speed));
+        translatePositionCoroutine = StartCoroutine(TranslatePosition());
     }
 
-    private IEnumerator TranslatePosition(float? speed = null)
+    private IEnumerator TranslatePosition()
     {
         rectTransform = rectTransform ?? GetComponent<RectTransform>();
-
-        speed = speed ?? MovementSpeed;
 
         // idek why i use var so much. i just see people smarter than me use it so that makes me wanna use it.
         var currentBasePosition = rectTransform.anchoredPosition;
         var currentOffset = cardBackground.anchoredPosition;
+
+        currentSpeed = currentSpeed.HasValue ? currentSpeed.Value : MovementSpeed;
 
         while (currentBasePosition != basePosition || currentOffset != positionOffset || animateWaves) // just learned using == on vectors actually does an approximate equals. so thats good thats what we want.
         {
             currentBasePosition = rectTransform.anchoredPosition;
             currentOffset = cardBackground.anchoredPosition;
 
-            rectTransform.anchoredPosition = Vector2.MoveTowards(currentBasePosition, basePosition, speed.Value * Time.deltaTime);
+            // apply position
+            rectTransform.anchoredPosition = Vector2.MoveTowards(currentBasePosition, basePosition, currentSpeed.Value * Time.deltaTime);
             if (animateWaves)
-                cardBackground.anchoredPosition = Vector2.MoveTowards(currentOffset, positionOffset + new Vector2(0, Mathf.Sin((Time.time * waveSpeed) + TargetSiblingIndex) * waveHeight), speed.Value * Time.deltaTime);
+                cardBackground.anchoredPosition = Vector2.MoveTowards(currentOffset, positionOffset + new Vector2(0, Mathf.Sin((Time.time * waveSpeed) + TargetSiblingIndex) * waveHeight), currentSpeed.Value * Time.deltaTime);
             else
-                cardBackground.anchoredPosition = Vector2.MoveTowards(currentOffset, positionOffset, speed.Value * Time.deltaTime);
+                cardBackground.anchoredPosition = Vector2.MoveTowards(currentOffset, positionOffset, currentSpeed.Value * Time.deltaTime);
+
+            if (Vector3.Distance(cardBackground.anchoredPosition, basePosition) < 0.2f)
+                applyShadow = true;
 
             if (applyShadow)
                 shadow.effectDistance = baseShadowOffset - currentOffset;

@@ -902,6 +902,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4654147222455263615, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654147222455263615, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 8472784219743625340}
+    - target: {fileID: 4654147222455263615, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: -1403778674, guid: cc233324b571aae448cb084f2bea02b3, type: 3}
+    - target: {fileID: 4654147222455263615, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}
+      propertyPath: m_SpriteState.m_DisabledSprite
+      value: 
+      objectReference: {fileID: 1881143497, guid: cc233324b571aae448cb084f2bea02b3, type: 3}
+    - target: {fileID: 4654147222455263615, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: -1403778674, guid: cc233324b571aae448cb084f2bea02b3, type: 3}
+    - target: {fileID: 4654147222455263615, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: -1403778674, guid: cc233324b571aae448cb084f2bea02b3, type: 3}
     - target: {fileID: 4722205074857418735, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}
       propertyPath: inventory
       value: 
@@ -919,21 +943,61 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1368682918411228435}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3694632924363548834, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}
+    - {fileID: 4871136586573960817, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3201477037347506354, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8472784219743625340}
   m_SourcePrefab: {fileID: 100100000, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}
 --- !u!114 &3436478278149742788 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4722205074857418735, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}
   m_PrefabInstance: {fileID: 7942228468737670955}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 4779894604343375769}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b54fa3f0d5ba6af4fa354833cdcc4f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &4779894604343375769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3201477037347506354, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}
+  m_PrefabInstance: {fileID: 7942228468737670955}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8472784219743625340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4779894604343375769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 1479732519, guid: cc233324b571aae448cb084f2bea02b3, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!224 &6706268458904868154 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3686483369030593041, guid: 2273e57a09e3cf1468240090cdb7751f, type: 3}

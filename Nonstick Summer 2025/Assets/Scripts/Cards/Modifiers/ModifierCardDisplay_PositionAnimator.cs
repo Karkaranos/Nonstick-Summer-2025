@@ -134,6 +134,9 @@ public partial class ModifierCardDisplay : MonoBehaviour
             else
                 cardBackground.anchoredPosition = Vector2.MoveTowards(currentOffset, positionOffset, speed.Value * Time.deltaTime);
 
+            if (Vector3.Distance(cardBackground.anchoredPosition, basePosition) < 0.2f)
+                applyShadow = true;
+
             if (applyShadow)
                 shadow.effectDistance = baseShadowOffset - currentOffset;
             else

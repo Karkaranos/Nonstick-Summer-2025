@@ -315,7 +315,7 @@ public class DeckDisplayer : MonoBehaviour
                 t = (float)i / (_visualDisplays.Count - 1);
 
             float x = Mathf.Lerp(left, right, t);
-            card.SetPositionAndOffset(position: new Vector2(x, 0), offset: interactable ? Vector2.zero : disabledCardOffset, speed: 5000, applyToShadow: false);
+            card.SetPositionAndOffset(position: new Vector2(x, 0), offset: interactable ? Vector2.zero : disabledCardOffset, speedOverride: 5000, applyToShadow: false);
 
             card.transform.SetSiblingIndex(i);
             card.TargetSiblingIndex = i;
@@ -367,7 +367,7 @@ public class DeckDisplayer : MonoBehaviour
 
             displayedData.Add(cards[i]);
 
-            cardDisplay.SetPositionAndOffset(position: position[i], offset: Vector2.zero, speed: 5000);
+            cardDisplay.SetPositionAndOffset(position: position[i], offset: Vector2.zero, speedOverride: 5000);
 
             cardDisplay.SetCard(cards[i]);
             cardDisplay.OnMouseDown.AddListener(OnCardClicked);

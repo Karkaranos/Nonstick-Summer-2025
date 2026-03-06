@@ -17,6 +17,8 @@ MonoBehaviour:
     Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Silent
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Wow, there you go again, shocking your Nanna. Maybe I should bring
@@ -24,11 +26,13 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "You don\u2019t have to worry about me Nanna. I'm pretty full."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
@@ -39,11 +43,13 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m full Nanna, I couldn\u2019t eat another bite"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
@@ -53,28 +59,38 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: ' You can get another slice later if you are good.'
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue:
     - Dialogue: "Now now, don\u2019t go pulling those tricks to prey on your dear
         old Nanna\u2019s kindness..."
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: ' You can get another slice later if you are good.'
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: Would you mind helping your Nanna clean up around the kitchen?
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     PlayerDialogue: Aww... I wanted another one.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
@@ -84,19 +100,27 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue:
     - Dialogue: "I suppose so... It\u2019s still nice to help your Nanna though!"
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: You better be good...
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: Otherwise, no extra cake for you!
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     PlayerDialogue: Looks like you have most of it handled, Nanna!
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
@@ -110,6 +134,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "There doesn\u2019t look like much left to help with if I wanted
       to."
@@ -126,6 +152,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "Sure, but there isn\u2019t much left to help with..."
     RelationshipCheckRequired: 0
@@ -141,23 +169,31 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue:
     - Dialogue: Oh.. just cleaning. Gotta tidy up some of the fun!
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: You better be good...
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: Otherwise, no extra cake for you!
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     PlayerDialogue: What if I eat it all first?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
@@ -167,11 +203,13 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: What, are you going to eat it all yourself?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
@@ -182,12 +220,14 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: ac419e742a52675469ffd17ad86add74, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "Can I please get another slice? It\u2019s my birthday after
       all."
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
@@ -197,15 +237,19 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue:
     - Dialogue: Would you mind helping your Nanna clean up around the kitchen?
       Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: Silent
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: d0637f363470265408c3d82f41356184, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: fd325431ebda6d448a1461cc2af63bf9, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5

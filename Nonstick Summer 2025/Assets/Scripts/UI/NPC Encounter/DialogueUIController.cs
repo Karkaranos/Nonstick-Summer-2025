@@ -291,7 +291,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     public virtual void OnNPCFinishDialogue()
     {
-        if (DialogueManager.CurrentDialogueBranch.End)
+        if (DialogueManager.CurrentDialogueBranch.End && !(SceneManager.GetActiveScene().name.Equals("Tutorial")) && !(SceneManager.GetActiveScene().name.Equals("Moment_5")))
         {
             MusicManager.instance.StartHouse(); // house md???
         }

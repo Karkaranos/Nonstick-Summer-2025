@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class SocialBatteryNotifCanvas : MonoBehaviour
 {
@@ -47,8 +48,14 @@ public class SocialBatteryNotifCanvas : MonoBehaviour
     public void CloseMenu()
     {
         UITransitionManager.CloseMenu(changeCam: false);
-        MusicManager.instance.StartHouse();
         FindFirstObjectByType<Objectives>()?.SetObjectiveVisibility(true);
+
+        if(SceneManager.GetActiveScene().name.Equals("Moment_5"))
+        {
+            return;
+        }
+
+        MusicManager.instance.StartHouse();
     }
 
     private string ColorCard(CardEmotion emotion)

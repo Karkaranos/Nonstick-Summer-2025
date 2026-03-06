@@ -43,6 +43,8 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
 
     [SerializeField, Required] private GameObject ModifierObtainCanvas;
 
+    private Animator animator;
+
     void Start()
     {
 
@@ -54,6 +56,7 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
 
         }
 
+        animator = GetComponentInChildren<Animator>();
     }
 
     /// <summary>
@@ -87,6 +90,13 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
         GameManager.ObjectiveReference.SetObjectiveVisibility(false);
         StartCoroutine(dialogueController.Initialize(StartingDialogueBranch, character, false, gameObject));
         StaticUtilities.EnableCursor();
+
+
+        //moment 3 phone animation
+        if (animator != null)
+        {
+            animator.SetBool("PhoneDone", true);
+        }
     }
 
     public virtual void FinishSideCombat()

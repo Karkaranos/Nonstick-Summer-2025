@@ -57,6 +57,7 @@ public class PlayerCamera : MonoBehaviour
         var target = Quaternion.Euler(xLook, yLook, 0);
         var smoothed = Quaternion.Slerp(camTransform.localRotation, target, Time.fixedDeltaTime * Slippiness);
         camTransform.localRotation = smoothed;
+        camTransform.localEulerAngles = camTransform.localEulerAngles.WithZ(0);
     }
 
     public void UpdateSensitivity(float val)

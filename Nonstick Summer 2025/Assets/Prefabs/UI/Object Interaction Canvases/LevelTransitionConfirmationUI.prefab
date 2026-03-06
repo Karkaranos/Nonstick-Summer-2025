@@ -644,7 +644,7 @@ PrefabInstance:
     - target: {fileID: 5160557319455675267, guid: fe22c97ba19468248a0538e96ec79cdf, type: 3}
       propertyPath: m_TargetGraphic
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6886092491869157625}
     - target: {fileID: 5160557319455675267, guid: fe22c97ba19468248a0538e96ec79cdf, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
       value: 0.6528301
@@ -690,6 +690,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe22c97ba19468248a0538e96ec79cdf, type: 3}
+--- !u!114 &6886092491869157625 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2084213306425312521, guid: fe22c97ba19468248a0538e96ec79cdf, type: 3}
+  m_PrefabInstance: {fileID: 4862986369569914352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8260860883232217209 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3591820135645455753, guid: fe22c97ba19468248a0538e96ec79cdf, type: 3}
@@ -792,6 +803,18 @@ PrefabInstance:
     - target: {fileID: 3591820135645455753, guid: fe22c97ba19468248a0538e96ec79cdf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160557319455675267, guid: fe22c97ba19468248a0538e96ec79cdf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8962704393444946355}
+    - target: {fileID: 5160557319455675267, guid: fe22c97ba19468248a0538e96ec79cdf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNoPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160557319455675267, guid: fe22c97ba19468248a0538e96ec79cdf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BedInteractionPopupCanvas, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

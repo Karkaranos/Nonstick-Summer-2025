@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using FMOD.Studio;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -52,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         {
             PLAYBACK_STATE pbs;
             WalkSFX.getPlaybackState(out pbs);
-            if (pbs.Equals(PLAYBACK_STATE.STOPPED))
+            if (pbs.Equals(PLAYBACK_STATE.STOPPED) && !SceneManager.GetActiveScene().name.Equals("Tutorial"))
             {
                 WalkSFX.start();
             }

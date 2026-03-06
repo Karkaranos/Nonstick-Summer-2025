@@ -17,7 +17,7 @@ public class ReactionManager : MonoBehaviour
         }
         instance = this;
 
-        CharacterReactions = AudioManager.instance.CreateEventInstance(FMODEvents.instance.UncleReact);
+        //CharacterReactions = AudioManager.instance.CreateEventInstance(FMODEvents.instance.UncleReact);
     }
 
     public void PlayReaction(int val)
@@ -47,6 +47,10 @@ public class ReactionManager : MonoBehaviour
         else if (thisChar == Character.Uncle)
         {
             CharacterReactions = AudioManager.instance.CreateEventInstance(FMODEvents.instance.UncleReact);
+        }
+        else if (thisChar == Character.Tutorial)
+        {
+            Debug.Log("No tutorial voice lines.");
         }
     }
 }

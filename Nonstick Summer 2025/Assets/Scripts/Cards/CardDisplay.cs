@@ -24,7 +24,6 @@ public partial class CardDisplay : MonoBehaviour
     [Foldout("UI Components"), SerializeField, Required] CanvasGroup CardBackGroup;
     [Foldout("UI Components"), SerializeField, Required] RectTransform cardBackground;
     [Foldout("UI Components"), SerializeField, Required] Image IntentionImage;
-    [Foldout("UI Components"), SerializeField, Required] TMP_Text EnergyText;
     [Foldout("UI Components"), SerializeField] Image[] energyCostIcons;
     [Foldout("UI Components"), SerializeField] StampIconDisplay[] StampImages;
     [Foldout("UI Components"), SerializeField] public Shadow shadow;
@@ -242,7 +241,7 @@ public partial class CardDisplay : MonoBehaviour
         }
         EmotionText.text = CardStyleManager.GetEmotionStyle(card).DisplayName;
         IntentionText.text = CardStyleManager.GetIntentionStyle(card).DisplayName;
-        EnergyText.text = (card.EnergyCost < 0) ? "" : $"+{card.EnergyCost.ToString()}"; // the text is still there just in case the cost somehow ends up giving the player energy
+        //EnergyText.text = (card.EnergyCost < 0) ? "" : $"+{card.EnergyCost.ToString()}"; // the text is still there just in case the cost somehow ends up giving the player energy
         //EnergyText.color = (card.EnergyCost > 0) ? Color.red : Color.green;
         IntentionImage.sprite = CardStyleManager.GetIntentionSprite(card);
         CardBackgroundImage.sprite = CardStyleManager.GetCardBack(card);

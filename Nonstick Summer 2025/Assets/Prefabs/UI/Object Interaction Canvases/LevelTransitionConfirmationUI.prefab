@@ -683,7 +683,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5160557319455675267, guid: fe22c97ba19468248a0538e96ec79cdf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160557319455675267, guid: fe22c97ba19468248a0538e96ec79cdf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8962704393444946355}
+    - target: {fileID: 5160557319455675267, guid: fe22c97ba19468248a0538e96ec79cdf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnYesPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160557319455675267, guid: fe22c97ba19468248a0538e96ec79cdf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BedInteractionPopupCanvas, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160557319455675267, guid: fe22c97ba19468248a0538e96ec79cdf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

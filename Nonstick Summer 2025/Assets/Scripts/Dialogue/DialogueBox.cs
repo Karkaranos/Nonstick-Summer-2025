@@ -146,6 +146,9 @@ public class DialogueBox : MonoBehaviour
 
         }
 
+        if (PlayerReadAllDialogue)
+            DialogueUIController.Instance.OnNPCFinishDialogue();
+
         if (dialogue == null)
             dialogue = branch.dialogue;
 
@@ -166,15 +169,11 @@ public class DialogueBox : MonoBehaviour
 
         Debug.Log($"({NumberInList + 1}/{dialogue.Length}): {dialogue[NumberInList].Dialogue}");
 
-
-
-        if (PlayerReadAllDialogue)
-            DialogueUIController.Instance.OnNPCFinishDialogue();
-
         yield return null;
         //RefreshLayout();
     }
 
+    //thank you toby
     private IEnumerator TypewriteText(string text)
     {
         text = TextUtilities.FilterText(text, hardToReadText:true);

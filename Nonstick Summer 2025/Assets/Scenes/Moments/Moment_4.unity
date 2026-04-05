@@ -148619,10 +148619,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 138231849}
     m_Modifications:
-    - target: {fileID: 3216093029526474184, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
-      propertyPath: StartingDialogueBranch
-      value: 
-      objectReference: {fileID: 11400000, guid: e1f697b59736dda4aa7322a91beb598a, type: 2}
     - target: {fileID: 368249545651296241, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.125
@@ -148775,6 +148771,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 3216093029526474184, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
+      propertyPath: StartingDialogueBranch
+      value: 
+      objectReference: {fileID: 11400000, guid: e1f697b59736dda4aa7322a91beb598a, type: 2}
     m_RemovedComponents:
     - {fileID: 3216093029526474184, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
     m_RemovedGameObjects: []
@@ -153029,7 +153029,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
       propertyPath: _conditions.Array.data[0].DisplayText
-      value: Find your [phone].
+      value: Find your [yourphone].
       objectReference: {fileID: 0}
     - target: {fileID: 7558885188636216369, guid: 95bcd8e9c8d5eb549b0d0d21529b58db, type: 3}
       propertyPath: _conditions.Array.data[1].DisplayText
@@ -175114,6 +175114,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 138231849}
     m_Modifications:
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: character
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: combatPrompt
+      value: Talk with Mom?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: preCombatLine
+      value: Everything's going just as scheduled
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: characterSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: StartingDialogueBranch
+      value: 
+      objectReference: {fileID: 11400000, guid: 87f8b6b59cf17c348b5151515ad3e407, type: 2}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: PossibleModifiers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+      propertyPath: 'PossibleModifiers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7ea86a966298e524e81d7076ef263b99, type: 2}
     - target: {fileID: 368249545651296241, guid: 50c4adb2f11155e4e8480e7c92ba4516, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -175238,34 +175266,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
-      propertyPath: character
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
-      propertyPath: combatPrompt
-      value: Talk with Mom?
-      objectReference: {fileID: 0}
-    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
-      propertyPath: preCombatLine
-      value: Everything's going just as scheduled
-      objectReference: {fileID: 0}
-    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
-      propertyPath: characterSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 57210594b1b36fc47907edd57852b79c, type: 3}
-    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
-      propertyPath: StartingDialogueBranch
-      value: 
-      objectReference: {fileID: 11400000, guid: 87f8b6b59cf17c348b5151515ad3e407, type: 2}
-    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
-      propertyPath: PossibleModifiers.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
-      propertyPath: 'PossibleModifiers.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 7ea86a966298e524e81d7076ef263b99, type: 2}
     m_RemovedComponents:
     - {fileID: 3722136018739801623, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
     m_RemovedGameObjects: []

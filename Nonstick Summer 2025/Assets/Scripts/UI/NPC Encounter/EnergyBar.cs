@@ -22,7 +22,7 @@ public class EnergyBar : MonoBehaviour
         slider.maxValue = DialogueManager.MaxEnergy;
         SetValueNoAnimation(DialogueManager.CurrentEnergy);
 
-        energyNumber.text = $"{DialogueManager.CurrentEnergy} <sprite name=\"Energy\">Energy";
+        energyNumber.text = $"<sprite name=\"Energy\"> {DialogueManager.CurrentEnergy} Energy";
 
     }
 
@@ -37,7 +37,7 @@ public class EnergyBar : MonoBehaviour
 
         float oldValue = slider.value;
 
-        energyNumber.text = value.ToString();
+        energyNumber.text = $"<sprite name=\"Energy\"> {DialogueManager.CurrentEnergy} Energy";
 
         while (!Mathf.Approximately(slider.value, value))
         {

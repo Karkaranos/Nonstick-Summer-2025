@@ -51,6 +51,7 @@ public static class TextUtilities
             .Replace("[Stickers]", $"<color=#{GameManager.Instance.StampTooltipColor.ToHex()}>Stickers</color>")
             // other
             .Replace("[phone]", $"<sprite name=\"Phone\"><color=#{GameManager.Instance.CharactersColor.ToHex()}>phone</color>")
+            .Replace("[yourphone]", $"<sprite name=\"YourPhone\"><color=#{GameManager.Instance.CharactersColor.ToHex()}>phone</color>")
             .Replace("[Social Battery]", $"<sprite name=\"Energy\"><color=#{GameManager.Instance.PositiveEnergyColor.ToHex()}>Social Battery</color>")
             .Replace("[Relationship]", $"<sprite name=\"Heart\"><color=#{GameManager.Instance.RelationshipColor.ToHex()}>Relationship</color>")
             .Replace("[Tab]", $"<sprite name=\"Tab\">TAB</color>")

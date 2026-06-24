@@ -42,6 +42,7 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
     // Update is called once per frame
     void Update()
     {
+        /*
         if (connectedToSteam)
         {
             Steamworks.SteamClient.RunCallbacks();
@@ -60,6 +61,7 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
                 connectedToSteam = false;
             }
         }
+        */
     }
 
     public void dissconnectFromSteam()

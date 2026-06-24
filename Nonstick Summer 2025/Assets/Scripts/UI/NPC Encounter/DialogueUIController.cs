@@ -180,6 +180,11 @@ public class DialogueUIController : Singleton<DialogueUIController>
                 inWorldCharacter.GetComponent<SideCharacterInteractable>().FinishSideCombat();
             }
 
+            if(DialogueManager.hasBeenSilentEveryTurn)
+            {
+                SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.SilentConversation);
+            }
+
             return;
         }
 

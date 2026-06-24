@@ -3,10 +3,11 @@
  * 
  */
 
-using UnityEngine;
-using static Unity.Collections.AllocatorManager;
 using NaughtyAttributes;
 using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using static Unity.Collections.AllocatorManager;
 
 public class SteamAchievementManager : Singleton<SteamAchievementManager>
 {
@@ -14,15 +15,10 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
     
     [SerializeField, ReadOnly] private bool connectedToSteam = false;
 
-    protected override void Awake()
+    #region Init
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        TryUnlockAllAchievements();
-        base.Awake();
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+        RefreshAllAchievements();
         DontDestroyOnLoad(this.gameObject);
         try
         {
@@ -46,7 +42,7 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
     // Update is called once per frame
     void Update()
     {
-        if(connectedToSteam)
+        if (connectedToSteam)
         {
             Steamworks.SteamClient.RunCallbacks();
         }
@@ -68,11 +64,26 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
 
     public void dissconnectFromSteam()
     {
-        if(connectedToSteam)
+        if (connectedToSteam)
         {
             Steamworks.SteamClient.Shutdown();
         }
     }
+
+    void OnEnable()
+    {
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
+    }
+
+    void OnDisable()
+    {
+
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+
+    }
+    #endregion
 
     private string GetInternalAchievementName(SteamAchievement achievement)
     {
@@ -121,7 +132,7 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
     /// <summary>
     /// Tries to unlock all achievements in case the player wasnt connected to the internet or something.
     /// </summary>
-    private void TryUnlockAllAchievements()
+    private void RefreshAllAchievements()
     {
         int achievementsInMemory = 0;
 
@@ -134,13 +145,16 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
 
             if (completionStatus == true)
             {
-                achievement.Trigger();
+                if(connectedToSteam)
+                    achievement.Trigger();
                 achievementsInMemory++;
             }
         }
 
-        Debug.Log($"<color=cyan>{achievementsInMemory}/{achievements.Length} Steam Achievements are saved");
+        Debug.Log($"<color=cyan>{achievementsInMemory}/{achievements.Length} Steam Achievements are already completed. Use the \"Clear Achievements\" button on Steam Achievement Manager gameobject if you would like to reset.");
     }
+
+    #region Debug Buttons
 
     //this is strictly for testing so we can reset our achievements in case we need to test something
     [Button]
@@ -149,10 +163,38 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
         SteamAchievement[] achievements = (SteamAchievement[])Enum.GetValues(typeof(SteamAchievement));
         foreach (var a in achievements)
         {
-            var achievement = new Steamworks.Data.Achievement(GetInternalAchievementName(a));
-            achievement.Clear();
+            string id = GetInternalAchievementName(a);
+            PlayerPrefs.SetInt(id, 0);
+
+            if (connectedToSteam)
+            {
+                var achievement = new Steamworks.Data.Achievement(id);
+                achievement.Clear();
+            }
         }
     }
 
-    
+    [Button]
+    public void PrintAchievementCompletionStatus()
+    {
+        int numCompleted = 0;
+
+        SteamAchievement[] achievements = (SteamAchievement[])Enum.GetValues(typeof(SteamAchievement));
+        foreach (var a in achievements)
+        {
+            bool completionStatus = PlayerPrefs.GetInt(GetInternalAchievementName(a)) == 1;
+
+            string completionText = completionStatus ?
+                $"<color=green>Complete</color>" :
+                $"<color=red>Incomplete</color>";
+
+            Debug.Log($"{a.ToString()}: {completionText}");
+
+            if(completionStatus == true)
+                numCompleted ++;
+        }
+        Debug.Log($"<color=cyan>{numCompleted}/{achievements.Length} Steam Achievements are already completed. Use the \"Clear Achievements\" button on Steam Achievement Manager gameobject if you would like to reset.");
+    }
+
+    #endregion
 }

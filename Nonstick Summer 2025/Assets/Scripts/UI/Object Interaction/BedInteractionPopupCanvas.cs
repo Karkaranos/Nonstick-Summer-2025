@@ -78,6 +78,5 @@ public class BedInteractionPopupCanvas : MonoBehaviour
         {
             fade.StartFadeOut(image, Bed.NextSceneIndex);
         }
-        FindFirstObjectByType<Check>().CompleteGame();
     }
 }

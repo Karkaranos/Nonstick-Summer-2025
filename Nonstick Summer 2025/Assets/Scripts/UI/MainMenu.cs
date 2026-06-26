@@ -54,7 +54,7 @@ public class MainMenu : MonoBehaviour
             Destroy(deleteMe.gameObject);
         }
 
-        if(FindFirstObjectByType<Check>().gameCompleted)
+        if(Check.gameCompleted)
         {
             OpenCredits(false);
         }
@@ -69,7 +69,7 @@ public class MainMenu : MonoBehaviour
     {
         FadeTransition fade = fadeToBlack.GetComponent<FadeTransition>();
 
-        FindFirstObjectByType<Check>().gameCompleted = false;
+        Check.gameCompleted = false;
         DoFadeOut(fade);
         //Cursor.visible = false; CALEB CALEB CALEB CALEB CALEB CALEB Toby!
     }

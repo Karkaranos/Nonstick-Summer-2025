@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Check : MonoBehaviour
 {
-    public bool gameCompleted = false;
+    public static bool gameCompleted = false;
     private void Start()
     {
         var all = FindObjectsByType<Check>(FindObjectsSortMode.None);
@@ -12,10 +12,8 @@ public class Check : MonoBehaviour
             {
                 foreach (Check c in all)
                 {
-                    if (c.gameCompleted)
-                    {
+                    if(gameCompleted)
                         FindFirstObjectByType<MainMenu>()?.OpenCredits(false);
-                    }
             }
             }
             Destroy(this.gameObject);

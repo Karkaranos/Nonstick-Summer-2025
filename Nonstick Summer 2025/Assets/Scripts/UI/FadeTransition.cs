@@ -59,6 +59,7 @@ public class FadeTransition : MonoBehaviour
         if (nextScene == 0)
         {
             Instantiate(credits);
+            FindFirstObjectByType<Check>().CompleteGame();
         }
 
         yield return null;

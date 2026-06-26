@@ -50,7 +50,6 @@ public class CreditBehavior : MonoBehaviour
 
         yield return new WaitForSeconds(pauseBeforeStartEnd);
         Vector3 pos = creditScroll.transform.position;
-        Debug.Log(creditsEndingFrame.position);
         while (creditsEndingFrame.position.y < Screen.height / 2)
         {
             //i'm adding more

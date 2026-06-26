@@ -59,7 +59,7 @@ public class TabIconButton : Singleton<TabIconButton>
         if(!animating)
         {
             float speed = 1 / oneShakeSeconds;
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, defaultRotation, speed * Time.deltaTime);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, defaultRotation, speed * Time.deltaTime * 10);
         }
     }
 }

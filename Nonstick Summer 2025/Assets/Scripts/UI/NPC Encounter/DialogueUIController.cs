@@ -128,12 +128,32 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     public void UpdateHoveringCard(CardData card)
     {
-        // card is null, it hides the text bubble
         playerDialogueBubble.WriteText(card);
 
-        /*if(card!=null)
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.CardHoverSFX);*/
+        // card is null, it hides the text bubble
+        playerDialogueBubble.Hide();
+
+        /*
+        if (changeHoverBubbleDelay != null)
+            StopCoroutine(changeHoverBubbleDelay);
+
+        changeHoverBubbleDelay = StartCoroutine(DelayUpdateHoveringCard(card));*/
     }
+
+    /*
+    private Coroutine changeHoverBubbleDelay;
+    private IEnumerator DelayUpdateHoveringCard(CardData card)
+    {
+        //if(card == null)
+        //    yield return new WaitForSeconds(0.2f);
+        yield return null;
+
+        playerDialogueBubble.WriteText(card);
+
+        // card is null, it hides the text bubble
+        if (card == null)
+            playerDialogueBubble.Hide();
+    }*/
 
     private void OnSelectionUpdated()
     {

@@ -58,6 +58,11 @@ public class MainMenu : MonoBehaviour
         {
             OpenCredits(false);
         }
+
+        if(PersistentGameplayData.Instance != null)
+        {
+            PersistentGameplayData.Instance.ResetPersistentValues();
+        }
     }
 
     public void StartGame()

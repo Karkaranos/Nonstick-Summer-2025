@@ -28,6 +28,14 @@ public class CombatPromptCanvas : MonoBehaviour
         if (questionLine != null)
             questionText.text = questionLine;
 
-        startCombatButton.onClick.AddListener(()=> sci.StartSideCombat());
+        startCombatButton.onClick.AddListener(()=> OnConfirmPressed(sci));
+    }
+
+    void OnConfirmPressed(SideCharacterInteractable sideCharacter)
+    {
+        if(sideCharacter.character == Character.Uncle)
+            PersistentGameplayData.Instance.PlayerTalkedToUncle = true;
+
+        sideCharacter.StartSideCombat();
     }
 }

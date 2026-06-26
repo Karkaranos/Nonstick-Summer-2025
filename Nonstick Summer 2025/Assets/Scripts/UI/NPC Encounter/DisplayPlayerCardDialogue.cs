@@ -29,10 +29,10 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
         Hide();
     }
 
-    public void Hide()
+    public void Hide(bool forceHide = false)
     {
         // dont hide if a card is selected
-        if (DialogueUIController.Instance != null && DialogueUIController.Instance.selectedCardData != null)
+        if (DialogueUIController.Instance != null && DialogueUIController.Instance.selectedCardData != null && !forceHide)
             return;
 
         StaticUtilities.DisableCanvasGroup(group);

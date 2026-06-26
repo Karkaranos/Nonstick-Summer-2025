@@ -57,22 +57,29 @@ public class OpenBossInteractable : MonoBehaviour
     /// </summary>
     public void OpenCanvas()
     {
-        float whichBoss = 0;
-        if (character == Character.Grandma)
+        float whichBoss;
+        switch (character)
         {
-            whichBoss = 3;
-        }
-        else if (character == Character.Mom)
-        {
-            whichBoss = 1;
-        }
-        else if (character == Character.Cousin)
-        {
-            whichBoss = 2;
-        }
-         else if (character == Character.Tutorial)
-        {
-            whichBoss = 4;
+            case Character.Uncle:
+                whichBoss = 0;
+                PersistentGameplayData.Instance.PlayerTalkedToUncle = true;
+                break;
+            case Character.Mom:
+                whichBoss = 1;
+                break;
+            case Character.Cousin:
+                whichBoss = 2;
+                break;
+            case Character.Grandma:
+                whichBoss = 3;
+                break;
+            case Character.Tutorial:
+                whichBoss = 4;
+                break;
+            default:
+                Debug.LogError("Unrecognized character");
+                whichBoss = -1;
+                break;
         }
         MusicManager.instance.StartCombat(whichBoss);
 

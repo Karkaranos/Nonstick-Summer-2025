@@ -25,4 +25,14 @@ public class Check : MonoBehaviour
             DontDestroyOnLoad(this);
         }
     }
+
+    public void CompleteGame()
+    {
+        gameCompleted = true;
+
+        if(PersistentGameplayData.Instance.PlayerTalkedToUncle == false)
+        {
+            SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.CompleteGameNoUncle);
+        }
+    }
 }

@@ -116,9 +116,10 @@ public class GameManager : Singleton<GameManager>
 
         if(scene.name.Contains("MainMenu"))
         {
-
-            Destroy(transform.parent.gameObject);
-
+            if (transform.parent != null)
+                Destroy(transform.parent.gameObject);
+            else
+                Destroy(this.gameObject);
         }
 
         if (scene.name.Contains("Tutorial")){

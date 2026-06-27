@@ -34,6 +34,9 @@ public class OpenNPCInteractable : MonoBehaviour, IInteractable
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor);
         var dialogueController = menu.GetComponentInChildren<DialogueUIController>();
         StartCoroutine(dialogueController.Initialize(StartingDialogueBranch, character));
+
+        if(character == Character.Uncle)
+            PersistentGameplayData.Instance.PlayerTalkedToUncle = true;
     }
 
     private void OnDrawGizmos()

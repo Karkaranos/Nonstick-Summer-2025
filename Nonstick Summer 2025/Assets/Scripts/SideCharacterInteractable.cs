@@ -32,7 +32,7 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
 
     [Tooltip("Current character you're interacting with.")]
     [SerializeField]
-    private Character character;
+    public Character character;
 
     private GameObject openedCanvas;
 

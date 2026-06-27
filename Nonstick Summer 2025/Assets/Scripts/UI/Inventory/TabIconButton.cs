@@ -9,18 +9,28 @@ public class TabIconButton : Singleton<TabIconButton>
 
     [Required, SerializeField] private CanvasGroup notification;
 
+    [Tooltip("Time for the animation to do one swing")]
+    [SerializeField] private float oneShakeSeconds = 0.15f;
+
+    bool animating;
+    Quaternion defaultRotation;
+
     private void Start()
     {
+        defaultRotation = transform.rotation;
         ModifierInventory.OnInventoryOpened.AddListener(OnInventoryOpened);
         ToggleNotification(false);
     }
 
     public IEnumerator CollectedCardShakeAnimation()
     {
-        yield return StaticUtilities.AnimateRotation(transform, new Vector3(0, 0,  15f),  0.15f);
-        yield return StaticUtilities.AnimateRotation(transform, new Vector3(0, 0, -15f), 0.25f);
-        yield return StaticUtilities.AnimateRotation(transform, Quaternion.identity,     0.15f);
+        animating = true;
+
+        yield return StaticUtilities.AnimateRotation(transform, new Vector3(0, 0,  15f), oneShakeSeconds);
+        yield return StaticUtilities.AnimateRotation(transform, new Vector3(0, 0, -15f), oneShakeSeconds + 0.1f);
+        yield return StaticUtilities.AnimateRotation(transform, Quaternion.identity,     oneShakeSeconds);
         transform.rotation = Quaternion.identity;
+        animating = false;
 
         ToggleNotification(true);
     }
@@ -39,6 +49,17 @@ public class TabIconButton : Singleton<TabIconButton>
         {
             notification.alpha = 0;
             StaticUtilities.FadeToVisible(notification, 0.25f, unscaledTime: true);
+        }
+    }
+
+    // running into a problem where the icon will be rotated for like, no reason?
+    // sp f it, were just using update.
+    void Update()
+    {
+        if(!animating)
+        {
+            float speed = 1 / oneShakeSeconds;
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, defaultRotation, speed * Time.deltaTime * 10);
         }
     }
 }

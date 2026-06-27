@@ -37,7 +37,15 @@ public class StampModifierData : ModifierData
     protected override void ApplyModifier(CardData[] cards)
     {
         foreach (CardData card in cards)
+        {
             card.AddStamp(StampToApply);
+
+            // hard coded number. whatever, games done anyways.
+            if (card.Stamps.Count >= 5)
+            {
+                SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxModifierCard);
+            }
+        }
     }
 
     public override Sprite GetIcon()

@@ -65,6 +65,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     private Scene currentScene;
     [HideInInspector] public bool inSceneFive = false;
+    [HideInInspector] public bool bestEndingForCharacterReached;
     public bool PlayerReadAllNPCText => dialogueBox.PlayerReadAllDialogue;
     public bool ActivelyTypewriting => dialogueBox.DialogueScrolling;
 
@@ -110,6 +111,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
         currentScene = SceneManager.GetActiveScene();
 
         inSceneFive = (currentScene.name == "Moment_5");
+
+        bestEndingForCharacterReached = false;
 
         yield return ToggleUIForDialogueProgression(false);
 
@@ -294,11 +297,40 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     }
 
-    public virtual void OnNPCFinishDialogue()
+    public virtual void OnNPCFinishDialogue(Character character)
     {
         if (DialogueManager.CurrentDialogueBranch.End && !(SceneManager.GetActiveScene().name.Equals("Tutorial")) && !(SceneManager.GetActiveScene().name.Equals("Moment_5")))
         {
             MusicManager.instance.StartHouse(); // house md???
+        }
+
+        if(bestEndingForCharacterReached)
+        {
+            switch (character)
+            {
+                case (Character.Mom):
+                    SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingMom);
+                    PersistentGameplayData.Instance.BestMomEndingUnlocked = true;
+                    break;
+
+                case (Character.Cousin):
+                    SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingCousin);
+                    PersistentGameplayData.Instance.BestCousinEndingUnlocked = true;
+                    break;
+
+                case (Character.Grandma):
+                    SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingGrandma);
+                    PersistentGameplayData.Instance.BestGrandmaEndingUnlocked = true;
+                    break;
+
+                case (Character.Uncle):
+                    PersistentGameplayData.Instance.BestUncleEndingUnlocked = true;
+                    SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingUncle);
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 

@@ -15,6 +15,12 @@ public class PersistentGameplayData : Singleton<PersistentGameplayData>
     // Please reset all variables in the ResetPersistentValues() function
     [ReadOnly] public bool PlayerTalkedToUncle;
 
+    //sorry if i did anything wrong toby
+    [ReadOnly] public bool BestMomEndingUnlocked;
+    [ReadOnly] public bool BestCousinEndingUnlocked;
+    [ReadOnly] public bool BestGrandmaEndingUnlocked;
+    [ReadOnly] public bool BestUncleEndingUnlocked;
+
     void Start()
     {
         // Detach and roll out.
@@ -27,5 +33,10 @@ public class PersistentGameplayData : Singleton<PersistentGameplayData>
     public void ResetPersistentValues()
     {
         PlayerTalkedToUncle = false ;
+
+        BestMomEndingUnlocked = false;
+        BestCousinEndingUnlocked = false;
+        BestGrandmaEndingUnlocked = false;
+        BestUncleEndingUnlocked = false;
     }
 }

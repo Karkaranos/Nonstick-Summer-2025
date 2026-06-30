@@ -59,6 +59,8 @@ public class TutorialDialogueUIController : DialogueUIController
         //DeckManager.SetDeck(GameManager.Instance.startingCards);
         //Debug.Log(DeckManager.PlayerFullDeck.Count);
 
+        SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.CompleteTutorial);
+
         Debug.Log("Tutorial ended");
 
         DoFadeOut();

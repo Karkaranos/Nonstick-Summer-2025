@@ -1,5 +1,6 @@
 using NaughtyAttributes;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 /*****************************************************************************
@@ -51,6 +52,33 @@ public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor, gameObject);
         menu.GetComponent<BedInteractionPopupCanvas>().Bed = this;
         menu.GetComponent<BedInteractionPopupCanvas>().SceneTransitionType = sceneTransitionType;
+
+        var achievement = SteamAchievement.OpenGame;
+
+        switch(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex)
+        {
+            case 1:
+                achievement = SteamAchievement.CompleteMoment1;
+                break;
+            case 2: 
+                achievement = SteamAchievement.CompleteMoment2;
+                break;
+            case 4: 
+                achievement = SteamAchievement.CompleteMoment3;
+                break;
+            case 5:
+                achievement = SteamAchievement.CompleteMoment4;
+                break;
+            case 6:
+                achievement = SteamAchievement.CompleteMoment5;
+                break;
+            default:
+                Debug.LogWarning("Scene Index error. Check steam achievements");
+                break;
+        }
+
+        menu.GetComponent<BedInteractionPopupCanvas>().Achievement = achievement;
+
     }
 
     public void ClearBlocker()

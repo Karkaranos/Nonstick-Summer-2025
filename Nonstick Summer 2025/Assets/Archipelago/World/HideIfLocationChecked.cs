@@ -6,13 +6,17 @@ public class HideIfLocationChecked : MonoBehaviour
 
     public GameObject objectTohide;
 
+    public bool OnlyCheckAtStart;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if(objectTohide == null)
             objectTohide = gameObject;
 
-        ArchipelagoManager.Instance.OnLocationsUpdated.AddListener(Refresh);
+        if(!OnlyCheckAtStart)
+            ArchipelagoManager.Instance.OnLocationsUpdated.AddListener(Refresh);
+
         Refresh();
     }
 

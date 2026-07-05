@@ -33,6 +33,8 @@ public class APInventoryService : Service
         await base.DeInitialize();
     }
 
+    #region Connection
+
     void OnArchipelagoConnected()
     {
         inventory.Clear();
@@ -105,4 +107,20 @@ public class APInventoryService : Service
         ArchipelagoManager.Instance.OnInventoryUpdated.Invoke();
     }
 
+    #endregion
+
+    public bool IsItemCollected(ArchipelagoItem item)
+    {
+        return GetItemCount(item) >= 1;
+    }
+
+    public int GetItemCount(ArchipelagoItem item)
+    {
+        if (!inventory.ContainsKey(item))
+        {
+            inventory[item] = 0;
+        }
+
+        return inventory[item];
+    }
 }

@@ -45,8 +45,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serverUrl: multiworld.gg:59641
-  gameName: Midwest Goodbye
   slotName: Player1
   password: 
   servicePrefabs:
+  - {fileID: 3635676093586643833, guid: 36d2793ab5d6288478c42141667a66f1, type: 3}
   - {fileID: 73163532576733333, guid: a63e2965f3ed7b84f84db6a057b7a637, type: 3}
+  - {fileID: 3538850787065546944, guid: 130ad93f83f3fbd4ea5814ffe6c63b5c, type: 3}
+  OnArchipelagoConnected:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInventoryUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLocationsUpdated:
+    m_PersistentCalls:
+      m_Calls: []

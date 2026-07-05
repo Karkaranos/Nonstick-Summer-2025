@@ -23,6 +23,8 @@ using UnityEngine.SceneManagement;
 
 public class CardPickupInteractable : MonoBehaviour, IInteractable
 {
+    public ArchipelagoLocation location;
+
     [SerializeField, Required]
     private GameObject collectedParticlesPrefab;
 
@@ -50,6 +52,11 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if(location == ArchipelagoLocation.None)
+        {
+            Debug.LogError($"{gameObject.name}'s location is low key None");
+        }
+
         rectTransform = GetComponent<RectTransform>();
         startPosition = rectTransform.position;
 
@@ -99,6 +106,7 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
         RemoveCollider();
         StaticUtilities.PlayAndDestroyParticle(collectedParticlesPrefab, rectTransform.WorldPosition());
         CardPickupManager.Instance.UpdatePickupCollected(this);
+        APLocationService.Instance.CheckLocation(location);
 
         if (dialogueCardDisplay != null)
         {

@@ -3,6 +3,8 @@ using UnityEngine;
 
 public enum ArchipelagoItem 
 {
+    None,
+
     Moment1, Moment2, Moment3, Moment4, Moment5,
 
     SilentButton,

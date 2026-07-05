@@ -24,12 +24,11 @@ public class APLocationService : Service
 
     protected async override Task ThisInitialize()
     {
-        await Task.CompletedTask;
-    }
+        locations_checked = APSaveDataService.Instance.GetCachedLocations();
 
-    public async override Task DeInitialize()
-    {
-        await base.DeInitialize();
+        ArchipelagoManager.Instance.OnArchipelagoConnected.AddListener(OnArchipelagoConnected);
+
+        await Task.CompletedTask;
     }
 
     public bool IsLocationChecked(ArchipelagoLocation location)
@@ -41,28 +40,6 @@ public class APLocationService : Service
     public void OnArchipelagoConnected()
     {
         CheckAllSavedLocations();
-    }
-
-    public async void CheckLocation(ArchipelagoLocation location)
-    {
-        //if (location == ArchipelagoLocation.None) return;
-
-        locations_checked.Add(location);
-        //locations_queue.Append(location);
-
-        if (ArchipelagoManager.Instance.isConnected == false)
-        {
-            Debug.LogWarning("Archipelago not connected to client");
-            return;
-        }
-
-        string locationName = ArchipelagoLocationNameMapping.GetLocationName(location);
-        var locationId = ArchipelagoManager.Instance.session.Locations.GetLocationIdFromName(ArchipelagoManager.GAME_NAME, locationName);
-        await ArchipelagoManager.Instance.session.Locations.CompleteLocationChecksAsync(new long[] { locationId } );
-
-        ArchipelagoManager.Instance.OnLocationsUpdated.Invoke();
-
-        Debug.Log($"<color=green>Location Checked: {locationName}</color>");
     }
 
     private async void CheckAllSavedLocations()
@@ -84,4 +61,27 @@ public class APLocationService : Service
 
         Debug.Log($"<color=green>Refreshed {location_ids.Count()} locations</color>");
     }
+
+    public async void CheckLocation(ArchipelagoLocation location)
+    {
+        //if (location == ArchipelagoLocation.None) return;
+
+        locations_checked.Add(location);
+        APSaveDataService.Instance.UpdateLocationCache(locations_checked);
+
+        if (ArchipelagoManager.Instance.isConnected == false)
+        {
+            Debug.LogWarning("Archipelago not connected to client");
+            return;
+        }
+
+        string locationName = ArchipelagoLocationNameMapping.GetLocationName(location);
+        var locationId = ArchipelagoManager.Instance.session.Locations.GetLocationIdFromName(ArchipelagoManager.GAME_NAME, locationName);
+        await ArchipelagoManager.Instance.session.Locations.CompleteLocationChecksAsync(new long[] { locationId });
+
+        ArchipelagoManager.Instance.OnLocationsUpdated.Invoke();
+
+        Debug.Log($"<color=green>Location Checked: {locationName}</color>");
+    }
+
 }

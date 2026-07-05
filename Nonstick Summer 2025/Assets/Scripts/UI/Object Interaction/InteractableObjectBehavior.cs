@@ -56,8 +56,23 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
 
         if (applyShaders && ((applyObjectiveShaders && !applyIfActiveObjective) || applyInteractableShaders))
         {
-            SetShader();
+            if (APLocationService.Instance.IsLocationChecked(Location))
+                ClearAllShaders();
+            else
+                SetShader();
         }
+
+        ArchipelagoManager.Instance.OnLocationsUpdated.AddListener(() =>
+        {
+            if (applyShaders && ((applyObjectiveShaders && !applyIfActiveObjective) || applyInteractableShaders))
+            {
+                if (APLocationService.Instance.IsLocationChecked(Location))
+                    ClearAllShaders();
+                else
+                    SetShader();
+
+            }
+        });
     }
 
 

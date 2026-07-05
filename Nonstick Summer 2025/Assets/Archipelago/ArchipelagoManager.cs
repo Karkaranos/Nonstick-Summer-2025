@@ -30,8 +30,10 @@ public class ArchipelagoManager : Singleton<ArchipelagoManager>
     // When a location is checked (or on initialize)
     public UnityEvent OnLocationsUpdated = new();
 
-    private void Start()
+    protected override void Awake()
     {
+        base.Awake();
+
         InitializeServices();
     }
 

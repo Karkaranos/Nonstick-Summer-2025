@@ -416,6 +416,31 @@ public static class StaticUtilities
 
     #endregion
 
+    #region Dictionaries
+
+    /// <summary>
+    /// Returns first instance of a key that found.
+    /// If duplicate values exist in the dictionary, an unpredictable key may be returned.
+    /// </summary>
+    public static T1 GetFirstKeyByValue<T1, T2>(this Dictionary<T1, T2> dictionary, T2 value)
+    {
+        return dictionary.Keys
+            .Where(k => dictionary[k].Equals(value))
+            .First();
+    }
+
+    public static void RemoveAllInstancesWithValue<T1, T2>(this Dictionary<T1, T2> dictionary, T2 value)
+    {
+        var keysToRemove = dictionary.Keys.Where(k => dictionary[k].Equals(value)).ToList();
+
+        foreach (var key in keysToRemove)
+        {
+            dictionary.Remove(key);
+        }
+    }
+
+    #endregion
+
     #region Vectors
 
     /// <summary>

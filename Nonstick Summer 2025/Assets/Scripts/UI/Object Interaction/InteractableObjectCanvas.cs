@@ -105,7 +105,6 @@ public class InteractableObjectCanvas : MonoBehaviour
     /// <param name="emotion">The chosen emotion</param>
     public void OnClickInteractableObject(PersonalityOption PO)
     {
-        print("where is this happening");
         foreach (ModifierData md in PO.ModifiersToGive)
         {
             var iopc = UITransitionManager.OpenMenu(ModifierObtainCanvas, cameraAnchor).GetComponent<ItemObtainPopupCanvas>();

@@ -9,6 +9,8 @@ using UnityEngine.UI;
 
 public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
 {
+    public ArchipelagoLocation Location;
+
     [Required]
     public GameObject CanvasToOpen;
 
@@ -93,6 +95,8 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
 
             if(applyShaders)
                 ClearAllShaders();
+
+            APLocationService.Instance.CheckLocation(Location);
         }
         else if (!hasGivenCard)
         {

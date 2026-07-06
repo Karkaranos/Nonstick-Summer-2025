@@ -6,34 +6,36 @@ using UnityEngine;
 [System.Serializable]
 public class APSaveData
 {
+    public ArchipelagoConnectionConfiguration ConnectionConfiguration;
+
     public List<ArchipelagoLocation> locationsCache;
     public List<KeyValuePair<ArchipelagoItem,int>> itemsCache;
 
-    RelationshipStatus Moment1Relationships;
-    RelationshipStatus Moment2Relationships;
-    RelationshipStatus Moment3Relationships;
-    RelationshipStatus Moment4Relationships;
-    RelationshipStatus Moment5Relationships;
+    public RelationshipStatus Moment1Relationships;
+    public RelationshipStatus Moment2Relationships;
+    public RelationshipStatus Moment3Relationships;
+    public RelationshipStatus Moment4Relationships;
+    public RelationshipStatus Moment5Relationships;
 }
 
 [System.Serializable]
 public class RelationshipStatus
 {
-    public Moment moment;
+    // if the player actually played and beat this level
+    public bool set;
+
+    public int moment;
     public int MomRelationship;
     public int GrandmaRelationship;
     public int CousinRelationship;
     public int UncleRelationship;
 }
 
-
-// move to different script?
-public enum Moment
+[System.Serializable]
+public class ArchipelagoConnectionConfiguration
 {
-    Tutorial,
-    Moment1,
-    Moment2,
-    Moment3,
-    Moment4,
-    Moment5
+    public string serverUrl = "multiworld.gg:59641";
+    public string GAME_NAME = "Midwest Goodbye";
+    public string slotName = "Player1";
+    public string password = "";
 }

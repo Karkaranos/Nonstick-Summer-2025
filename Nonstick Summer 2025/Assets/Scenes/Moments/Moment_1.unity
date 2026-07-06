@@ -86950,6 +86950,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1022573212}
+  - component: {fileID: 1022573214}
+  - component: {fileID: 1022573213}
   m_Layer: 0
   m_Name: Characters
   m_TagString: Untagged
@@ -86974,6 +86976,34 @@ Transform:
   - {fileID: 1566535047}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1022573213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022573211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46a86a6f45191e640881045ba1e6184c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: 28
+  objectTohide: {fileID: 1566535048}
+--- !u!114 &1022573214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022573211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46a86a6f45191e640881045ba1e6184c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: 27
+  objectTohide: {fileID: 1552407087}
 --- !u!1 &1024019145
 GameObject:
   m_ObjectHideFlags: 0
@@ -104440,6 +104470,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1419933608}
+  - component: {fileID: 1419933610}
+  - component: {fileID: 1419933609}
   m_Layer: 0
   m_Name: Interactables
   m_TagString: Untagged
@@ -104465,6 +104497,34 @@ Transform:
   - {fileID: 1963039752}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1419933609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419933607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46a86a6f45191e640881045ba1e6184c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: 30
+  objectTohide: {fileID: 1956174630}
+--- !u!114 &1419933610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419933607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46a86a6f45191e640881045ba1e6184c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: 29
+  objectTohide: {fileID: 1876758532}
 --- !u!1001 &1420965225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121029,6 +121089,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 621988117311664097, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
   m_PrefabInstance: {fileID: 1566535046}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1566535048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7010602745331249561, guid: e9c9b219bde954247b52f95f1d4ca21d, type: 3}
+  m_PrefabInstance: {fileID: 1566535046}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1566956316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -137422,6 +137487,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
   m_PrefabInstance: {fileID: 1876758530}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1876758532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8263027944320005954, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+  m_PrefabInstance: {fileID: 1876758530}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1876969351
 GameObject:
   m_ObjectHideFlags: 0
@@ -152544,6 +152614,11 @@ PrefabInstance:
 --- !u!4 &1956174629 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8473936720708913233, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+  m_PrefabInstance: {fileID: 1956174628}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1956174630 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8263027944320005954, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
   m_PrefabInstance: {fileID: 1956174628}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1957767970 stripped

@@ -16,6 +16,8 @@ public class ArchipelagoManager : Singleton<ArchipelagoManager>
     public string slotName = "Player1";
     public string password = "";
 
+    private string previousServerUrl;
+
     public ArchipelagoSession session { get; private set; }
     public bool isConnected { get; private set; } = false;
 
@@ -35,6 +37,15 @@ public class ArchipelagoManager : Singleton<ArchipelagoManager>
         base.Awake();
 
         InitializeServices();
+
+        DontDestroyOnLoad(this.gameObject);
+
+        var configuration = APSaveDataService.Instance.GetConnectionConfig();
+        serverUrl = configuration.serverUrl;
+        slotName = configuration.slotName;
+        password = configuration.password;
+
+        previousServerUrl = serverUrl;
     }
 
     private async void InitializeServices()
@@ -82,6 +93,17 @@ public class ArchipelagoManager : Singleton<ArchipelagoManager>
             {
                 isConnected = true;
                 Debug.Log("Successfully connected to Archipelago server!");
+
+                // only update saved configuration if connection successful
+                APSaveDataService.Instance.SetConnectionConfiguation(serverUrl, slotName, password);
+
+                if(previousServerUrl != serverUrl)
+                {
+                    Debug.LogWarning("Server connection is different, resetting cached data");
+                    APSaveDataService.Instance.ResetArchipelagoCache();
+                }
+
+                previousServerUrl = serverUrl;
 
                 OnArchipelagoConnected.Invoke();
             }

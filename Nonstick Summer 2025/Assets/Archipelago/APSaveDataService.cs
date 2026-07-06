@@ -30,6 +30,8 @@ public class APSaveDataService : Service
         await Task.CompletedTask;
     }
 
+    #region Data Retrival
+
     [Button]
     public void LoadArchipelagoCache()
     {
@@ -57,7 +59,34 @@ public class APSaveDataService : Service
         return saveData.itemsCache.ToDictionary(t => t.Key, t => t.Value);
     }
 
+    public ArchipelagoConnectionConfiguration GetConnectionConfig()
+    {
+        return saveData.ConnectionConfiguration;
+    }
+
+    public RelationshipStatus GetRelationshipStats(int moment)
+    {
+        switch (moment)
+        {
+            case 1: return saveData.Moment1Relationships;
+            case 2: return saveData.Moment2Relationships;
+            case 3: return saveData.Moment3Relationships;
+            case 4: return saveData.Moment4Relationships;
+            case 5: return saveData.Moment5Relationships;
+            default: return null;
+        }
+    }
+
+    #endregion
+
     #region Saving
+
+    public void SetConnectionConfiguation(string serverUrl, string slotName, string password)
+    {
+        saveData.ConnectionConfiguration.serverUrl = serverUrl;
+        saveData.ConnectionConfiguration.slotName = slotName;
+        saveData.ConnectionConfiguration.password = password;
+    }
 
     public void UpdateLocationCache(HashSet<ArchipelagoLocation> locationCache)
     {
@@ -69,6 +98,19 @@ public class APSaveDataService : Service
     {
         saveData.itemsCache = itemCounts.ToList();
         SaveArchipelagoCache(); //todo: queue this function so it only happens once per frame
+    }
+
+    /// <summary>
+    /// Reset all cached data except for connection config
+    /// </summary>
+    public void ResetArchipelagoCache()
+    {
+        var oldConfig = saveData.ConnectionConfiguration;
+
+        saveData = new();
+        saveData.ConnectionConfiguration = oldConfig;
+
+        SaveArchipelagoCache();
     }
 
     [Button]

@@ -75,9 +75,9 @@ public class ModifierDeckDisplay : MonoBehaviour
     /// <summary>
     /// Displays all cards in the player's deck
     /// </summary>
-    public void DisplayAllCards()
+    public void DisplayAllCards(bool fullReset = false)
     {
-        StartCoroutine(DisplayAllCardsCoroutine());
+        StartCoroutine(DisplayAllCardsCoroutine(fullReset));
     }
 
     private IEnumerator DisplayAllCardsCoroutine(bool fullReset = false)

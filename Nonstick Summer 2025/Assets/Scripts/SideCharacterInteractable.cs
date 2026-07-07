@@ -49,7 +49,7 @@ public class SideCharacterInteractable : MonoBehaviour, IInteractable
     {
 
         if(SceneManager.GetActiveScene().name.Equals("Moment_5") &&
-            RelationshipManager.characterRelationships[character].relationshipQuota > RelationshipManager.characterRelationships[character].currentValue)
+            RelationshipManager.characterRelationships[character].relationshipQuota >= RelationshipManager.characterRelationships[character].currentValue)
         {
 
             Destroy(this.gameObject);

@@ -96,7 +96,23 @@ public class APSaveDataService : Service
 
     public void UpdateItemCache(Dictionary<ArchipelagoItem, int> itemCounts)
     {
-        saveData.itemsCache = itemCounts.ToList();
+        saveData.itemsCache = itemCounts.Select(d=> new SerializedKeyValuePair(d.Key,d.Value)).ToList();
+        SaveArchipelagoCache(); //todo: queue this function so it only happens once per frame
+    }
+
+    public void SetDeckInventory(Deck deck)
+    {
+        foreach(var card in deck.Cards)
+        {
+            saveData.deckCache.cards.Add(new SerializedCard(card));
+        }
+        SaveArchipelagoCache(); //todo: queue this function so it only happens once per frame
+    }
+
+    public void SetModifierInventory(List<ModifierData> modifiers)
+    {
+        saveData.deckCache.modifiers = modifiers.Select(m=>m.ThisModifier).ToList();
+
         SaveArchipelagoCache(); //todo: queue this function so it only happens once per frame
     }
 

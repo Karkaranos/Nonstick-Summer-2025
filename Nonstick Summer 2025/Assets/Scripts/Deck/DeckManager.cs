@@ -74,6 +74,9 @@ public class DeckManager
         CheckDeck(ref d);
         d.Add(c);
 
+        if (d == PlayerFullDeck)
+            APSaveDataService.Instance.SetDeckInventory(d);
+
         if (d == PlayerFullDeck && applyToRemainingDeck) RemainingDeck.Add(c);
     }
 
@@ -93,6 +96,9 @@ public class DeckManager
         var copy = c.CopyCard();
         CheckDeck(ref d);
         d.Add(copy);
+
+        if (d == PlayerFullDeck)
+            APSaveDataService.Instance.SetDeckInventory(d);
 
         if (d == PlayerFullDeck) RemainingDeck.Add(copy);
     }
@@ -123,6 +129,9 @@ public class DeckManager
         CheckDeck(ref d);
         d.Remove(c);
 
+        if (d == PlayerFullDeck)
+            APSaveDataService.Instance.SetDeckInventory(d);
+
         if (d == PlayerFullDeck && applyToRemainingDeck) RemainingDeck.Remove(c);
     }
 
@@ -130,6 +139,9 @@ public class DeckManager
     {
         CheckDeck(ref d);
         d.Clear();
+
+        if (d == PlayerFullDeck)
+            APSaveDataService.Instance.SetDeckInventory(d);
     }
 
     /// <summary>
@@ -142,6 +154,9 @@ public class DeckManager
     {
         CheckDeck(ref d);
         d.UpdateCard(oldCard, newCard);
+
+        if (d == PlayerFullDeck)
+            APSaveDataService.Instance.SetDeckInventory(d);
 
         if (d == PlayerFullDeck && applyToRemainingDeck) RemainingDeck.UpdateCard(oldCard, newCard);
     }

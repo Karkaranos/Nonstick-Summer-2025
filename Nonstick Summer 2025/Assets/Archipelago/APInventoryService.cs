@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Archipelago.MultiClient.Net.Models;
 using Archipelago.MultiClient.Net.Helpers;
 using static UnityEditor.Timeline.Actions.MenuPriority;
+using NaughtyAttributes;
+using UnityEditor;
 
 public class APInventoryService : Service
 {
@@ -56,55 +58,43 @@ public class APInventoryService : Service
         {
             // this might break with games that arent mwg?
 
-            ArchipelagoItem ap_item = ArchipelagoItemNameMapping.GetItem(item.ItemName);
-
-            if (inventory.ContainsKey(ap_item))
-                inventory[ap_item] += 1;
-            else
-                inventory.Add(ap_item, 1);
-
-            Debug.Log($"{item.ItemName} : {ap_item.ToString()} : x{inventory[ap_item]}");
+            AddItem(item);
         }
 
-        /*while (items.Any())
-        {
-            var item = items.DequeueItem();
-
-            // this might break with games that arent mwg?
-
-            ArchipelagoItem ap_item = ArchipelagoItemNameMapping.GetItem(item.ItemName);
-
-            if (inventory.ContainsKey(ap_item))
-                inventory[ap_item] += 1;
-            else
-                inventory.Add(ap_item, 1);
-
-            Debug.Log($"{item.ItemName} : {ap_item.ToString()} : x{inventory[ap_item]}");
-        }*/
-
-        ArchipelagoManager.Instance.OnInventoryUpdated.Invoke();
-    }
-
-    public void OnItemsRecieved(IReceivedItemsHelper items)
-    {
-        Debug.Log("<color=magenta>items recieved </color>");
         while (items.Any())
         {
             var item = items.DequeueItem();
 
-            // this might break with games that arent mwg?
-
-            ArchipelagoItem ap_item = ArchipelagoItemNameMapping.GetItem(item.ItemName);
-
-            if (inventory.ContainsKey(ap_item))
-                inventory[ap_item] += 1;
-            else
-                inventory.Add(ap_item, 1);
-
-            Debug.Log($"{item.ItemName} : {ap_item.ToString()} : x{inventory[ap_item]}");
+            AddItem(item);
         }
 
+        Debug.Log(ArchipelagoManager.Instance.session.Items.AllItemsReceived.Count);
+
+        APSaveDataService.Instance.UpdateItemCache(inventory);
         ArchipelagoManager.Instance.OnInventoryUpdated.Invoke();
+    }
+
+    public void OnItemsRecieved(IReceivedItemsHelper helper)
+    {
+        Debug.Log("<color=magenta>items recieved</color>");
+
+        while (helper.Any())
+        {
+            AddItem(helper.DequeueItem());
+        }
+
+        APSaveDataService.Instance.UpdateItemCache(inventory);
+        ArchipelagoManager.Instance.OnInventoryUpdated.Invoke();
+    }
+
+    private void AddItem(ItemInfo item)
+    {
+        var apItem = ArchipelagoItemNameMapping.GetItem(item.ItemName);
+
+        inventory.TryAdd(apItem, 0);
+        inventory[apItem]++;
+
+        Debug.Log($"<color=magenta>Item:</color> {item.ItemName} : {apItem.ToString()} : x{inventory[apItem]}");
     }
 
     #endregion
@@ -122,5 +112,15 @@ public class APInventoryService : Service
         }
 
         return inventory[item];
+    }
+
+    [Button]
+    private void PrintItems()
+    {
+        foreach(var item_count in inventory)
+        {
+            if(item_count.Value != 0)
+                Debug.Log($"{item_count.Key}: x{item_count.Value}");
+        }
     }
 }

@@ -29,6 +29,12 @@ public enum ModifierType
 //[CreateAssetMenu(fileName = "ModifierData", menuName = "Scriptable Objects/ModifierData")]
 public abstract class ModifierData : ScriptableObject
 {
+    [Header("Archipelago")]
+    public DeckCache.ModifierTypes ThisModifier;
+    public ArchipelagoItem apItem;
+
+    [Header("Parameters")]
+
     [Tooltip("How many cards this modifier can apply to")][Min(1)]
     public int MaxCardsApplied = 1;
 

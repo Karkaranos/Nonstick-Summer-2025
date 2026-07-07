@@ -69,6 +69,15 @@ public partial class CardData : ScriptableObject
         set { _emotion = value; OnCardValueChanged.Invoke(); }
     }
 
+    public float GetBaseEnergyCost()
+    {
+        return _energyCost;
+    }
+    public void SetBaseEnergyCost(float value)
+    {
+        _energyCost = value;
+    }
+
     public float GetEnergyCost() 
     {
         float newCost;

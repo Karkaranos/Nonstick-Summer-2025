@@ -52,7 +52,9 @@ public class ModifierManager
             _modifierCollection.Add(GameManager.Instantiate(modifier));
         else
             _modifierCollection.Add(modifier);
-        
+
+        APSaveDataService.Instance.SetModifierInventory(_modifierCollection);
+
     }
 
     /// <summary>
@@ -69,7 +71,7 @@ public class ModifierManager
     /// <summary>
     /// Replaces a modifier
     /// </summary>
-    public static void UpdateCard(ModifierData oldCard, ModifierData newCard)
+    public static void ReplaceCard(ModifierData oldCard, ModifierData newCard)
     {
         int idx = _modifierCollection.IndexOf(oldCard);
         if (idx != -1)
@@ -78,12 +80,11 @@ public class ModifierManager
         }
     }
 
-    /// <summary>
-    /// Shuffles modifiers (not sure if this will ever be needed? haha)
-    /// </summary>
-    public static void ShuffleDeck()
+    public static void ClearDeck()
     {
-        _modifierCollection.Shuffle();
+        _modifierCollection.Clear();
+
+        //APSaveDataService.Instance.SetDeckInventory(d);
     }
 
     #endregion

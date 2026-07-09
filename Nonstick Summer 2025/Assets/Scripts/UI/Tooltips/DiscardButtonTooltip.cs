@@ -24,8 +24,16 @@ public class DiscardButtonTooltip : HoverTooltip
     [SerializeField, ResizableTextArea]
     private string noCardSelected = "Discards a selected card for [DiscardEnergy]\n[Gray((No card selected))]";
 
+    [Header("Archipelago")]
+    [SerializeField] public ArchipelagoItem archipelagoItem = ArchipelagoItem.DiscardButton;
+    [SerializeField, ResizableTextArea]
+    private string archipelagoTooltip = "Discard button is not unlocked in the multiworld!";
+    private bool apItemUnlocked => APInventoryService.Instance.IsItemCollected(archipelagoItem);
+
     protected override string GetRawText()
     {
+        if (!apItemUnlocked) return archipelagoTooltip;
+
         if (!hand.HasCardsSelected) return noCardSelected;
 
         return canDiscardText;
@@ -33,7 +41,7 @@ public class DiscardButtonTooltip : HoverTooltip
 
     protected override bool CanOpenTooltip()
     {
-        return DialogueManager.ReadUserInput && DialogueManager.UserCanPlayCard;
+        return  DialogueManager.ReadUserInput && DialogueManager.UserCanPlayCard;
     }
 
     protected override void OnPlayerClickComponent()

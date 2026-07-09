@@ -15,6 +15,10 @@ using UnityEngine.UI;
 
 public class DrawButton : MonoBehaviour
 {
+    [Header("Archipelago")]
+    [SerializeField] public ArchipelagoItem archipelagoItem;
+    private bool isAPItemUnlocked => APInventoryService.Instance.IsItemCollected(archipelagoItem);
+
     [SerializeField, Required] private Button button;
     [SerializeField, Required] private TMP_Text energyCostDisplay;
     private DeckDisplayer handDisplay => DialogueUIController.Instance.deckDisplay;
@@ -40,6 +44,8 @@ public class DrawButton : MonoBehaviour
         DeckManager.PlayerHand.OnDeckChanged.AddListener(UpdateButtonEnabled);
 
         DialogueManager.OnCardPlayedFinished.AddListener(OnPlayerPlayedCardFinish);
+
+        ArchipelagoManager.Instance.OnInventoryUpdated.AddListener(OnAPItemCollected);
     }
 
     /// <summary>
@@ -48,6 +54,7 @@ public class DrawButton : MonoBehaviour
     public void UpdateButtonEnabled()
     {
         bool enabled = 
+            APInventoryService.Instance.IsItemCollected(archipelagoItem) &&
             DeckManager.RemainingDeck.Count > 0 && 
             DialogueManager.ReadUserInput && 
             DialogueManager.UserCanPlayCard &&
@@ -75,6 +82,11 @@ public class DrawButton : MonoBehaviour
         Debug.Log("PLayer played card finished");
         CantDrawAnymore = false;
         drawCounter = 0;
+        UpdateButtonEnabled();
+    }
+
+    private void OnAPItemCollected()
+    {
         UpdateButtonEnabled();
     }
 }

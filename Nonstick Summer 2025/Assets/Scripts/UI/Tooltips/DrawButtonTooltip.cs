@@ -25,9 +25,16 @@ public class DrawButtonTooltip : HoverTooltip
     [SerializeField, ResizableTextArea]
     private string noEnergy = "Draws a card for [DrawButtonEnergy]\n[Gray(You currently have [EnergyColor([PlayerEnergy] Energy)])]";
 
+    [Header("Archipelago")]
+    [SerializeField] public ArchipelagoItem archipelagoItem;
+    [SerializeField, ResizableTextArea]
+    private string archipelagoTooltip = "Draw button is not unlocked in the multiworld!";
+
     protected override string GetRawText()
     {
-        if(DeckManager.RemainingDeck.Count <= 0) return deckHasNoCards;
+        if (!APInventoryService.Instance.IsItemCollected(archipelagoItem)) return archipelagoTooltip;
+
+        if (DeckManager.RemainingDeck.Count <= 0) return deckHasNoCards;
 
         if (drawButton.CantDrawAnymore) return alreadyDrew;
 

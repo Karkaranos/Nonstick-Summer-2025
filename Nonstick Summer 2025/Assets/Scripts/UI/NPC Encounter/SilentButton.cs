@@ -15,6 +15,10 @@ using UnityEngine.UI;
 [RequireComponent(typeof(MouseInteractionEvents))]
 public class SilentButton : MonoBehaviour
 {
+    [Header("Archipelago")]
+    [SerializeField] public ArchipelagoItem archipelagoItem = ArchipelagoItem.SilentButton;
+    private bool isAPItemUnlocked => APInventoryService.Instance.IsItemCollected(archipelagoItem);
+
     [SerializeField, Required] private Button button;
     [SerializeField, Required] private TMP_Text energyCostDisplay;
     private MouseInteractionEvents mouseInteractionEvents;
@@ -33,6 +37,8 @@ public class SilentButton : MonoBehaviour
         DialogueManager.OnCardPlayedStarted.AddListener(UpdateButtonEnabled);
         DialogueManager.OnPlayerFinishReadingDialogue.AddListener(UpdateButtonEnabled);
         DialogueManager.OnCardPlayedFinished.AddListener(UpdateButtonEnabled);
+
+        ArchipelagoManager.Instance.OnInventoryUpdated.AddListener(OnAPItemCollected);
     }
 
     /// <summary>
@@ -41,6 +47,7 @@ public class SilentButton : MonoBehaviour
     public void UpdateButtonEnabled()
     {
         bool enabled =
+            isAPItemUnlocked &&
             DialogueManager.ReadUserInput &&
             DialogueManager.UserCanPlayCard;
         button.interactable = enabled;
@@ -60,5 +67,10 @@ public class SilentButton : MonoBehaviour
     public void OnButtonHover()
     {
         DialogueUIController.Instance.UpdateHoveringCard(null);
+    }
+
+    private void OnAPItemCollected()
+    {
+        UpdateButtonEnabled();
     }
 }

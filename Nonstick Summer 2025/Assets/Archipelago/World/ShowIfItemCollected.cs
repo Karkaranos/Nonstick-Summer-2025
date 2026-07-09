@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 public class ShowIfItemCollected : MonoBehaviour
@@ -12,17 +13,18 @@ public class ShowIfItemCollected : MonoBehaviour
         //if (objectTohide == null)
         //    objectTohide = gameObject;
 
-        ArchipelagoManager.Instance.OnLocationsUpdated.AddListener(Refresh);
+        ArchipelagoManager.Instance.OnInventoryUpdated.AddListener(Refresh);
 
         Refresh();
     }
 
+    [Button]
     void Refresh()
     {
-        bool hide = APInventoryService.Instance.IsItemCollected(item);
+        bool show = APInventoryService.Instance.IsItemCollected(item);
         foreach(var obj in ObjectsToHide)
         {
-            obj.SetActive(!hide);
+            obj.SetActive(show);
         }
     }
 }

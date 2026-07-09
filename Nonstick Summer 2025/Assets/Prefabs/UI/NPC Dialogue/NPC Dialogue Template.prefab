@@ -3817,6 +3817,9 @@ PrefabInstance:
     - {fileID: 2313537583413522927, guid: a116fa6baf5133246873b7c421068423, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7008599333692520376, guid: a116fa6baf5133246873b7c421068423, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2933604599624130338}
     - targetCorrespondingSourceObject: {fileID: 8135217243247929894, guid: a116fa6baf5133246873b7c421068423, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2804965718029211730}
@@ -3832,6 +3835,31 @@ CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 5724115026555755636, guid: a116fa6baf5133246873b7c421068423, type: 3}
   m_PrefabInstance: {fileID: 5634929275135625292}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2821434269819334570 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7571947177339611110, guid: a116fa6baf5133246873b7c421068423, type: 3}
+  m_PrefabInstance: {fileID: 5634929275135625292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3418445044122697716 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7008599333692520376, guid: a116fa6baf5133246873b7c421068423, type: 3}
+  m_PrefabInstance: {fileID: 5634929275135625292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2933604599624130338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3418445044122697716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46a86a6f45191e640881045ba1e6184c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: 7
+  ObjectsToHide:
+  - {fileID: 2821434269819334570}
 --- !u!224 &3488165517176676844 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9104939639134595488, guid: a116fa6baf5133246873b7c421068423, type: 3}
@@ -3865,6 +3893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b06b10ece6099f248b2aca58cd2031d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  archipelagoItem: 7
   button: {fileID: 3741565435961152456}
   energyCostDisplay: {fileID: 7501572436947184336}
   CantDrawAnymore: 0
@@ -3890,6 +3919,8 @@ MonoBehaviour:
 
     [Gray(You currently have [EnergyColor([PlayerEnergy]
     Energy)])]'
+  archipelagoItem: 7
+  archipelagoTooltip: Draw button is not unlocked in the multiworld!
 --- !u!114 &6023656377911669714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4043,6 +4074,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -954756723, guid: d078335d8c65941479235c4bb9692b31, type: 3}
+    - target: {fileID: 7571947177339611110, guid: a116fa6baf5133246873b7c421068423, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8383855676917517593, guid: a116fa6baf5133246873b7c421068423, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -4157,6 +4192,9 @@ PrefabInstance:
     - {fileID: 2313537583413522927, guid: a116fa6baf5133246873b7c421068423, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7008599333692520376, guid: a116fa6baf5133246873b7c421068423, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3834056319129153839}
     - targetCorrespondingSourceObject: {fileID: 8135217243247929894, guid: a116fa6baf5133246873b7c421068423, type: 3}
       insertIndex: -1
       addedObject: {fileID: 838508106996118047}
@@ -4191,6 +4229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 3229010451872090231}
   energyCostDisplay: {fileID: 8591173155553096047}
+  archipelagoItem: 8
 --- !u!114 &4859285795851411413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4209,6 +4248,8 @@ MonoBehaviour:
 
     [Gray((No
     card selected))]'
+  archipelagoItem: 8
+  archipelagoTooltip: Discard button is not unlocked in the multiworld!
 --- !u!114 &8003906965532565532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4253,6 +4294,31 @@ MonoBehaviour:
 --- !u!224 &3407956201434069587 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9104939639134595488, guid: a116fa6baf5133246873b7c421068423, type: 3}
+  m_PrefabInstance: {fileID: 5841239392389993459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3482350904645297227 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7008599333692520376, guid: a116fa6baf5133246873b7c421068423, type: 3}
+  m_PrefabInstance: {fileID: 5841239392389993459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3834056319129153839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3482350904645297227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46a86a6f45191e640881045ba1e6184c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: 8
+  ObjectsToHide:
+  - {fileID: 4036550798060418069}
+--- !u!1 &4036550798060418069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7571947177339611110, guid: a116fa6baf5133246873b7c421068423, type: 3}
   m_PrefabInstance: {fileID: 5841239392389993459}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &8591173155553096047 stripped
@@ -4456,6 +4522,9 @@ PrefabInstance:
     - {fileID: 4892531406199797767, guid: a116fa6baf5133246873b7c421068423, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7008599333692520376, guid: a116fa6baf5133246873b7c421068423, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6869965786938194909}
     - targetCorrespondingSourceObject: {fileID: 8135217243247929894, guid: a116fa6baf5133246873b7c421068423, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5167900346599366816}
@@ -4466,6 +4535,31 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4464705151595116438}
   m_SourcePrefab: {fileID: 100100000, guid: a116fa6baf5133246873b7c421068423, type: 3}
+--- !u!1 &212827553629732631 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7008599333692520376, guid: a116fa6baf5133246873b7c421068423, type: 3}
+  m_PrefabInstance: {fileID: 7185377197149636783}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6869965786938194909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212827553629732631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46a86a6f45191e640881045ba1e6184c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: 6
+  ObjectsToHide:
+  - {fileID: 766565946433384265}
+--- !u!1 &766565946433384265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7571947177339611110, guid: a116fa6baf5133246873b7c421068423, type: 3}
+  m_PrefabInstance: {fileID: 7185377197149636783}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1392050469083751049 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8135217243247929894, guid: a116fa6baf5133246873b7c421068423, type: 3}
@@ -4483,6 +4577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9989699a56dfe00449c61be14b239648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  archipelagoItem: 6
   button: {fileID: 2191117625717379883}
   energyCostDisplay: {fileID: 5016495745482254899}
 --- !u!114 &2014018136599980767
@@ -4500,6 +4595,8 @@ MonoBehaviour:
   tooltipGroup: {fileID: 3226743595752953051}
   silentButton: {fileID: 5167900346599366816}
   tooltipText: 'Skip a turn for [SilentEnergy]'
+  archipelagoItem: 6
+  archipelagoTooltip: Silent button is not unlocked in the multiworld!
 --- !u!114 &4464705151595116438
 MonoBehaviour:
   m_ObjectHideFlags: 0

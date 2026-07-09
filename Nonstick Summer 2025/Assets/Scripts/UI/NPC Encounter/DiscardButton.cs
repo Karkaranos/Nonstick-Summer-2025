@@ -21,6 +21,11 @@ public class DiscardButton : MonoBehaviour
 
     private DeckDisplayer hand => DialogueUIController.Instance.deckDisplay;
 
+    [Header("Archipelago")]
+    [SerializeField] public ArchipelagoItem archipelagoItem = ArchipelagoItem.DiscardButton;
+    private bool isAPItemUnlocked => APInventoryService.Instance.IsItemCollected(archipelagoItem);
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Initialize()
     {
@@ -31,6 +36,8 @@ public class DiscardButton : MonoBehaviour
 
         hand.OnCardsSelectedChanged.AddListener(UpdateButtonEnabled);
         DialogueManager.OnCardPlayedStarted.AddListener(UpdateButtonEnabled);
+
+        ArchipelagoManager.Instance.OnInventoryUpdated.AddListener(OnAPItemCollected);
     }
 
     /// <summary>
@@ -38,7 +45,7 @@ public class DiscardButton : MonoBehaviour
     /// </summary>
     public void UpdateButtonEnabled()
     {
-        bool enabled = (hand.HasCardsSelected && DialogueManager.ReadUserInput);
+        bool enabled = isAPItemUnlocked && (hand.HasCardsSelected && DialogueManager.ReadUserInput);
         button.interactable = enabled;
     }
 
@@ -57,6 +64,11 @@ public class DiscardButton : MonoBehaviour
         }
         DialogueManager.CurrentEnergy += DialogueManager.EnergyGainedPerDiscard;
 
+        UpdateButtonEnabled();
+    }
+
+    private void OnAPItemCollected()
+    {
         UpdateButtonEnabled();
     }
 }

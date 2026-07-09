@@ -14,8 +14,17 @@ public class SilentButtonTooltip : HoverTooltip
 
     [SerializeField, ResizableTextArea]
     private string tooltipText = "Skip a turn for [SilentEnergy]";
+
+    [Header("Archipelago")]
+    [SerializeField] public ArchipelagoItem archipelagoItem = ArchipelagoItem.SilentButton;
+    [SerializeField, ResizableTextArea]
+    private string archipelagoTooltip = "Silent button is not unlocked in the multiworld!";
+    private bool apItemUnlocked => APInventoryService.Instance.IsItemCollected(archipelagoItem);
+
     protected override string GetRawText()
     {
+        if (!apItemUnlocked) return archipelagoTooltip;
+
         return tooltipText;
     }
 

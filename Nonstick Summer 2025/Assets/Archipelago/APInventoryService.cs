@@ -94,6 +94,8 @@ public class APInventoryService : Service
         inventory.TryAdd(apItem, 0);
         inventory[apItem]++;
 
+        ArchipelagoManager.Instance.OnInventoryUpdated.Invoke();
+
         Debug.Log($"<color=magenta>Item:</color> {item.ItemName} : {apItem.ToString()} : x{inventory[apItem]}");
     }
 

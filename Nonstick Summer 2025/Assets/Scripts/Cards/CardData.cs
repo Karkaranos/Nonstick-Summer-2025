@@ -189,7 +189,6 @@ public enum CardIntention
 { 
     NotSelected, // Error case
     Expression,
-    Observation,
     Question, 
 }
 

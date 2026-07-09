@@ -81,13 +81,15 @@ public class DialogueTree : MonoBehaviour
 
         DialogueOption[] optionsList = new DialogueOption[9];
 
-        optionsList[0] = branch.Charming_Expression; optionsList[1] = branch.Charming_Observation; optionsList[2] = branch.Charming_Question;
-        optionsList[3] = branch.Assertive_Expression; optionsList[4] = branch.Assertive_Observation; optionsList[5] = branch.Assertive_Question;
-        optionsList[6] = branch.Sappy_Expression; optionsList[7] = branch.Sappy_Observation; optionsList[8] = branch.Sappy_Question;
+        optionsList[0] = branch.Charming_Expression; optionsList[1] = null; optionsList[2] = branch.Charming_Question;
+        optionsList[3] = branch.Assertive_Expression; optionsList[4] = null; optionsList[5] = branch.Assertive_Question;
+        optionsList[6] = branch.Sappy_Expression; optionsList[7] = null; optionsList[8] = branch.Sappy_Question;
 
         // remove duplicates
         foreach (DialogueOption option in optionsList)
         {
+            if (option == null) continue;
+
             //there's for sure a better way to do this but i'm not even sure if we're bringing dialogue tree visualization back after recent meetings
 
             // look into sets bro it will fix u

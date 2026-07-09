@@ -49,8 +49,6 @@ public class CardStyleManager
         {
             case CardIntention.Expression:
                 return StatementStyle.sprite;
-            case CardIntention.Observation:
-                return ObservationStyle.sprite;
             case CardIntention.Question:
                 return QuestionStyle.sprite;
             default:
@@ -69,8 +67,6 @@ public class CardStyleManager
         {
             case CardIntention.Expression:
                 return StatementStyle;
-            case CardIntention.Observation:
-                return ObservationStyle;
             case CardIntention.Question:
                 return QuestionStyle;
             default:

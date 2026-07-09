@@ -17,12 +17,16 @@ MonoBehaviour:
     Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
     AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
     AudioResponse: Angry
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "Really? You\u2019re going to play that card with me?"
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: No.. just love rifling through drawers and cupboards for fun.
     RelationshipCheckRequired: 0
@@ -37,6 +41,8 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Neutral
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: I need to check something.
     RelationshipCheckRequired: 0
@@ -51,6 +57,8 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Neutral
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "It\u2019s not what it looks like."
     RelationshipCheckRequired: 0
@@ -59,54 +67,14 @@ MonoBehaviour:
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 5
-  Charming_Observation:
-    NpcReactionText:
-    - Dialogue: "Don\u2019t talk back to your mother like that!"
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-    CombinedDialogue: []
-    PlayerDialogue: Yep... wonder who took it out of my room in the first place!
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 3bc7e849c27f8ac4c9a1574f39240a57, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -15
-  Assertive_Observation:
-    NpcReactionText:
-    - Dialogue: "Don\u2019t talk back to your mother like that!"
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-    CombinedDialogue: []
-    PlayerDialogue: Doubt it even matters to you.
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 3bc7e849c27f8ac4c9a1574f39240a57, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -15
-  Sappy_Observation:
-    NpcReactionText:
-    - Dialogue: "Really? You\u2019re going to play that card with me?"
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-    CombinedDialogue: []
-    PlayerDialogue: I had something I needed to check it for...
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 3bc7e849c27f8ac4c9a1574f39240a57, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
   Charming_Question:
     NpcReactionText:
     - Dialogue: "Really? You\u2019re going to play that card with me?"
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Phone, what phone?
     RelationshipCheckRequired: 0
@@ -121,6 +89,8 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Oh, so now you care about what I'm doing?
     RelationshipCheckRequired: 0
@@ -135,6 +105,8 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Why would you care?
     RelationshipCheckRequired: 0
@@ -149,6 +121,8 @@ MonoBehaviour:
       Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
       AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
       AudioResponse: Angry
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
@@ -158,3 +132,4 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
   End: 0
+  BranchLocation: 0

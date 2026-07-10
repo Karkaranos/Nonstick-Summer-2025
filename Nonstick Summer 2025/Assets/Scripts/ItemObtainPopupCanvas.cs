@@ -81,6 +81,9 @@ public class ItemObtainPopupCanvas : MonoBehaviour
         modifierPickup.SetActive(true);
 
         modifierDisplay.SetCard(modifier);
+
+        //ArchipelagoManager.Instance.session.Hints.
+
         // Emotion / Intention changers
         if (modifier is EmotionChangeModifier || modifier is IntentionChangeModifier)
         {

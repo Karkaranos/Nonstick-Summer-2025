@@ -135,56 +135,6 @@ MonoBehaviour:
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
-  Charming_Observation:
-    NpcReactionText:
-    - Dialogue: "Oh, really? That\u2019s, um... That\u2019s a little crazy. But hey,
-        we can still try later, right? Right..."
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-      HasAdvancedSignal: 0
-      AdvancedSignal: 0
-    CombinedDialogue: []
-    PlayerDialogue: "Oh, man. I\u2019d kinda forgotten about these things..."
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 8374d955cfa518c49b157a30bbbb88dc, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -5
-  Assertive_Observation:
-    NpcReactionText:
-    - Dialogue: "Right. Right... Can\u2019t believe I bothered..."
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-      HasAdvancedSignal: 0
-      AdvancedSignal: 0
-    CombinedDialogue: []
-    PlayerDialogue: "You\u2019re trying way, WAY too hard."
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: dac4ae234837d7b4d86d19d9b2e91671, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -15
-  Sappy_Observation:
-    NpcReactionText:
-    - Dialogue: You really think so? Haha! How time flies...
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-      HasAdvancedSignal: 0
-      AdvancedSignal: 0
-    CombinedDialogue: []
-    PlayerDialogue: Heh. You probably remember how the game works better than I do
-      nowadays.
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 8374d955cfa518c49b157a30bbbb88dc, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
     - Dialogue: Of course I do! They meant a lot to me, you know?
@@ -313,3 +263,4 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   End: 0
+  ArchipelagoLocation: 0

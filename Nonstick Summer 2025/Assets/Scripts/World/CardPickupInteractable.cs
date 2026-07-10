@@ -108,6 +108,7 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
         CardPickupManager.Instance.UpdatePickupCollected(this);
         APLocationService.Instance.CheckLocation(location);
 
+        /*
         if (dialogueCardDisplay != null)
         {
             print("Call 1 from " + gameObject.name);
@@ -120,6 +121,7 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
             ModifierManager.AddCard(modifierCardDisplay.modifierData);
             Debug.Log($"Added modifier card: {modifierCardDisplay.modifierData.name} to deck");
         }
+        */
 
         StartCoroutine(CollectAnimation());
     }

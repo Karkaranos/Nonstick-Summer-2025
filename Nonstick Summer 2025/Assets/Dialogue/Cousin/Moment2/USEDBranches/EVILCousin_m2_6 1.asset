@@ -56,7 +56,7 @@ MonoBehaviour:
       presents next time.
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: c519f5b5356552940b1ed087d414e209, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
@@ -74,7 +74,7 @@ MonoBehaviour:
       I do. Copycat!"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: c519f5b5356552940b1ed087d414e209, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -15
@@ -86,67 +86,39 @@ MonoBehaviour:
       AudioResponse: Happy
       HasAdvancedSignal: 0
       AdvancedSignal: 0
-    CombinedDialogue: []
+    CombinedDialogue:
+    - Dialogue: "Haha, I AM cool! But, uh... oh, right. I\u2019m sorry."
+      Portrait: {fileID: 21300000, guid: d1da91c30447c3f4993c88d7851b5b9f, type: 3}
+      AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
+      AudioResponse: Happy
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
+    - Dialogue: "Well, I\u2019ll go do something else, I guess."
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 0}
+      AudioResponse: Neutral
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
+    - Dialogue: But talk to me later! Or something!
+      Portrait: {fileID: 21300000, guid: 3bf1a18b00c42fa46a3891a38cbfb232, type: 3}
+      AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
+      AudioResponse: Sad
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
+    - Dialogue: Oh, here are your cards! They got a little mixed up, though...sorry.
+      Portrait: {fileID: 21300000, guid: 31cc8c56635d5ba42b7943fdba18efcd, type: 3}
+      AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
+      AudioResponse: Neutral
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     PlayerDialogue: "I\u2019m not mad, but you did hurt my feelings. I still think
       you\u2019re cool, though!"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: c519f5b5356552940b1ed087d414e209, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
-  Charming_Observation:
-    NpcReactionText:
-    - Dialogue: ...I am? Oh...
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: Silent
-      HasAdvancedSignal: 0
-      AdvancedSignal: 0
-    CombinedDialogue: []
-    PlayerDialogue: "I like you! You\u2019re just kinda annoying, sometimes."
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
-  Assertive_Observation:
-    NpcReactionText:
-    - Dialogue: "I am NOT! I am not! I\u2019ve been a fan for longer than you have!
-        I mean it!"
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: Silent
-      HasAdvancedSignal: 0
-      AdvancedSignal: 0
-    CombinedDialogue: []
-    PlayerDialogue: "I know you\u2019re a poser. You only like these cards because
-      I do. Copycat!"
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -15
-  Sappy_Observation:
-    NpcReactionText:
-    - Dialogue: "I am NOT! I am not! I\u2019ve been a fan for longer than you have!
-        I mean it!"
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: Silent
-      HasAdvancedSignal: 0
-      AdvancedSignal: 0
-    CombinedDialogue: []
-    PlayerDialogue: "You\u2019re cool... I know you\u2019re lying about liking these
-      cards, though."
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
   Charming_Question:
     NpcReactionText:
     - Dialogue: "It\u2019s not that I think that, but I also don\u2019t NOT think
@@ -160,7 +132,7 @@ MonoBehaviour:
     PlayerDialogue: "Do you think I don\u2019t like you?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: c519f5b5356552940b1ed087d414e209, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
@@ -176,7 +148,7 @@ MonoBehaviour:
     PlayerDialogue: How would YOU feel if I stole your stuff and ruined your birthday?
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: c519f5b5356552940b1ed087d414e209, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
@@ -192,7 +164,7 @@ MonoBehaviour:
     PlayerDialogue: "You think I\u2019m the coolest?"
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: c519f5b5356552940b1ed087d414e209, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
@@ -208,8 +180,9 @@ MonoBehaviour:
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
     RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: 3ba94a470affee44393fd0e66f864382, type: 2}
+    BranchingDialogueHigh: {fileID: 11400000, guid: c519f5b5356552940b1ed087d414e209, type: 2}
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   End: 0
+  ArchipelagoLocation: 0

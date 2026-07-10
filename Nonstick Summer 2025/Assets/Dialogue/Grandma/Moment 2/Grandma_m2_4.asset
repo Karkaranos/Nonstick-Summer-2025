@@ -17,14 +17,20 @@ MonoBehaviour:
     Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
     AnimatedReaction: {fileID: 3507591934488137797, guid: 922dd2319f94b6b4f914e49feebe6d43, type: 3}
     AudioResponse: Neutral
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: It's always so nice to see the two of you playing...
     Portrait: {fileID: 21300000, guid: 3c5a932a5b004e74c9feef6bca52801e, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Neutral
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: I don't think I've ever heard him laugh as much as he does with you.
     Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Happy
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   Charming_Expression:
     NpcReactionText: []
     CombinedDialogue: []
@@ -55,37 +61,6 @@ MonoBehaviour:
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
-  Charming_Observation:
-    NpcReactionText: []
-    CombinedDialogue: []
-    PlayerDialogue: I got 7 gifts!! And one of them is giant!!
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 0}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
-  Assertive_Observation:
-    NpcReactionText: []
-    CombinedDialogue: []
-    PlayerDialogue: "It was fine. It\u2019s just a birthday.  Like any other old
-      day."
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 0}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -15
-  Sappy_Observation:
-    NpcReactionText: []
-    CombinedDialogue: []
-    PlayerDialogue: "It\u2019s been so nice, even if Grandpa couldn\u2019t come."
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 0}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
   Charming_Question:
     NpcReactionText: []
     CombinedDialogue: []
@@ -128,3 +103,4 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
   End: 1
+  ArchipelagoLocation: 14

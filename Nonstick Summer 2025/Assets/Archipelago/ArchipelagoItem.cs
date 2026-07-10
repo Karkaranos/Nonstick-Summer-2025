@@ -34,11 +34,40 @@ public enum ArchipelagoItem
     Scissors,
     DuplicateCard,
 
+    // Moment 1
+
     Moment1_Mom,
     Moment1_Grandma,
     
     Moment1_FramedFamilyPhoto,
-    Moment1_FridgeMagnets
+    Moment1_FridgeMagnets,
+
+    // Moment 2
+
+    Moment2_Mom,
+    Moment2_Grandma,
+    Moment2_Cousin,
+    Moment2_Uncle,
+
+    Moment2_Cake,
+    Moment2_Present,
+
+    // Moment 3
+    Moment3_Mom,
+    Moment3_Grandma,
+    Moment3_Cousin,
+    Moment3_Uncle,
+
+    Moment3_WaterBottle,
+    Moment3_Backpack,
+
+    // Moment 4
+    Moment4_Mom,
+    Moment4_Grandma,
+    Moment4_Cousin,
+    Moment4_Uncle,
+
+    Moment4_Phone,
 }
 
 public static class ArchipelagoItemNameMapping
@@ -85,9 +114,39 @@ public static class ArchipelagoItemNameMapping
         // Moment 1
         nameToItemMap.Add("Moment 1: Mom", ArchipelagoItem.Moment1_Mom);
         nameToItemMap.Add("Moment 1: Grandma", ArchipelagoItem.Moment1_Grandma);
+
         // TODO: toy chest
         nameToItemMap.Add("Moment 1: Framed Family Photo", ArchipelagoItem.Moment1_FramedFamilyPhoto);
         nameToItemMap.Add("Moment 1: Fridge Magnets", ArchipelagoItem.Moment1_FridgeMagnets);
+        // TODO: the bed?
+
+        // Moment 2
+        nameToItemMap.Add("Moment 2: Mom", ArchipelagoItem.Moment2_Mom);
+        nameToItemMap.Add("Moment 2: Grandma", ArchipelagoItem.Moment2_Grandma);
+        nameToItemMap.Add("Moment 2: Cousin", ArchipelagoItem.Moment2_Cousin);
+        nameToItemMap.Add("Moment 2: Uncle", ArchipelagoItem.Moment2_Uncle);
+
+        nameToItemMap.Add("Moment 2: Cake", ArchipelagoItem.Moment2_Cake);
+        nameToItemMap.Add("Moment 2: Present", ArchipelagoItem.Moment2_Present);
+        //TODO: the bed?
+
+        // Moment 3
+        nameToItemMap.Add("Moment 3: Phone", ArchipelagoItem.Moment3_Mom);
+        nameToItemMap.Add("Moment 3: Grandma", ArchipelagoItem.Moment3_Grandma);
+        nameToItemMap.Add("Moment 3: Cousin", ArchipelagoItem.Moment3_Cousin);
+        nameToItemMap.Add("Moment 3: Uncle", ArchipelagoItem.Moment3_Uncle);
+
+        nameToItemMap.Add("Moment 3: Water Bottle", ArchipelagoItem.Moment3_WaterBottle);
+        nameToItemMap.Add("Moment 3: Backpack", ArchipelagoItem.Moment3_Backpack);
+
+        // Moment 4
+        nameToItemMap.Add("Moment 4: Mom", ArchipelagoItem.Moment4_Mom);
+        nameToItemMap.Add("Moment 4: Grandma", ArchipelagoItem.Moment4_Grandma);
+        nameToItemMap.Add("Moment 4: Cousin", ArchipelagoItem.Moment4_Cousin);
+        nameToItemMap.Add("Moment 4: Uncle", ArchipelagoItem.Moment4_Uncle);
+
+        nameToItemMap.Add("Moment 4: Phone", ArchipelagoItem.Moment4_Phone);
+        //TODO: the bed?
 
         return nameToItemMap;
     }

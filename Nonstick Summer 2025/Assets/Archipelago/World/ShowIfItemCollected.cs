@@ -7,6 +7,9 @@ public class ShowIfItemCollected : MonoBehaviour
 
     public GameObject[] ObjectsToHide;
 
+    [Foldout("Advanced")]
+    public ArchipelagoLocation HideIfLocationChecked = ArchipelagoLocation.None;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,6 +25,14 @@ public class ShowIfItemCollected : MonoBehaviour
     void Refresh()
     {
         bool show = APInventoryService.Instance.IsItemCollected(item);
+
+        if(HideIfLocationChecked != ArchipelagoLocation.None)
+        {
+            bool locationChecked = APLocationService.Instance.IsLocationChecked(HideIfLocationChecked);
+            if (locationChecked)
+                show = false;
+        }
+
         foreach(var obj in ObjectsToHide)
         {
             obj.SetActive(show);

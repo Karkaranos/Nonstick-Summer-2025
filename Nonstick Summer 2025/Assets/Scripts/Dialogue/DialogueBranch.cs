@@ -26,7 +26,7 @@ public class DialogueBranch : ScriptableObject
 
     public bool End;
 
-    [ShowIf("End")] public ArchipelagoLocation BranchLocation;
+    [ShowIf("End")] public ArchipelagoLocation ArchipelagoLocation;
 
     private static DialogueOption blank;
 

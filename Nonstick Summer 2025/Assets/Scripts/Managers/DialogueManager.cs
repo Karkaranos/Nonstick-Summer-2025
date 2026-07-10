@@ -88,18 +88,17 @@ public class DialogueManager
             AudioManager.instance.PlayOneShot(FMODEvents.instance.PosRelationSFX);
         }
 
-        if(relationshipScore > RelationshipManager.characterRelationships[currentCharacter].maxValue)
+        // not for archipelago! tee hee
+        /*if(relationshipScore > RelationshipManager.characterRelationships[currentCharacter].maxValue)
         {
             relationshipScore = RelationshipManager.characterRelationships[currentCharacter].maxValue;
-        }
+        }*/
         RelationshipManager.characterRelationships[currentCharacter].currentValue = relationshipScore;
 
-        if(relationshipScore < 0)
+        /*if(relationshipScore < 0)
         {
-
             relationshipScore = 0;
-
-        }
+        }*/
 
         if(DialogueUIController.Instance != null)
         {

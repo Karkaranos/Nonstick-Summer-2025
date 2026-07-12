@@ -68,6 +68,16 @@ public enum ArchipelagoItem
     Moment4_Uncle,
 
     Moment4_Phone,
+
+    // Moment 5
+    Moment5_Phone,
+
+    // Filler
+    Random_Card,
+    Random_Modifier,
+
+    // Victory
+    Victory_Event,
 }
 
 public static class ArchipelagoItemNameMapping
@@ -147,6 +157,14 @@ public static class ArchipelagoItemNameMapping
 
         nameToItemMap.Add("Moment 4: Phone", ArchipelagoItem.Moment4_Phone);
         //TODO: the bed?
+
+        // Moment 5:
+        nameToItemMap.Add("Moment 5: Phone", ArchipelagoItem.Moment5_Phone);
+
+        nameToItemMap.Add("Random Card", ArchipelagoItem.Random_Card);
+        nameToItemMap.Add("Random Modifier", ArchipelagoItem.Random_Modifier);
+
+        nameToItemMap.Add("Victory Event", ArchipelagoItem.Victory_Event);
 
         return nameToItemMap;
     }

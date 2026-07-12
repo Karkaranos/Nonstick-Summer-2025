@@ -101,12 +101,12 @@ public class DialogueBranch : ScriptableObject
 
     private Tuple<float, List<string>> _RecurseBestPointGainGreedy(float currentPointGain, List<string> path, int optionIndex)
     {
-        if (End)
-            return new Tuple<float, List<string>>(currentPointGain, path);
-
         List<string> path_copy = new List<string>(path);
-        if(optionIndex != -1)
-        path_copy.Add(optionIndex.ToString());
+        if (optionIndex != -1)
+            path_copy.Add(optionIndex.ToString());
+
+        if (End)
+            return new Tuple<float, List<string>>(currentPointGain, path_copy);
 
         List<DialogueOption> options = new() { Charming_Expression, Assertive_Expression, Sappy_Expression, Charming_Question, Assertive_Question, Sappy_Question, Silent };
         List<DialogueOption> sortedOptions = options.OrderBy(o => o.ChangeInRelationshipStatus).Reverse().ToList();
@@ -115,7 +115,7 @@ public class DialogueBranch : ScriptableObject
         float bestPoints = Mathf.NegativeInfinity;
         List<string> best_path = new List<string>(path);
 
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 3; i++)
         {
             var option = sortedOptions[i];
             int option_index = options.IndexOf(option);

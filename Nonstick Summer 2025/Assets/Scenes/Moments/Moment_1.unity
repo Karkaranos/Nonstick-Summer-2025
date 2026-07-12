@@ -67240,7 +67240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2252056202500681410, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 35.656124
       objectReference: {fileID: 0}
     - target: {fileID: 2252056202500681410, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -67280,7 +67280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3496223543107628732, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 10.885375
       objectReference: {fileID: 0}
     - target: {fileID: 3496223543107628732, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -67304,7 +67304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4929659812980187495, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 60.426876
       objectReference: {fileID: 0}
     - target: {fileID: 4929659812980187495, guid: 40231d8e8e075324e9550c88e2179524, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -86986,6 +86986,7 @@ MonoBehaviour:
   item: 28
   ObjectsToHide:
   - {fileID: 1566535048}
+  HideIfLocationChecked: 0
 --- !u!114 &1022573214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87001,6 +87002,7 @@ MonoBehaviour:
   item: 27
   ObjectsToHide:
   - {fileID: 1552407087}
+  HideIfLocationChecked: 0
 --- !u!1 &1024019145
 GameObject:
   m_ObjectHideFlags: 0
@@ -104508,6 +104510,7 @@ MonoBehaviour:
   item: 30
   ObjectsToHide:
   - {fileID: 1956174630}
+  HideIfLocationChecked: 0
 --- !u!114 &1419933610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104524,6 +104527,7 @@ MonoBehaviour:
   ObjectsToHide:
   - {fileID: 1876758532}
   - {fileID: 710483993}
+  HideIfLocationChecked: 0
 --- !u!1001 &1420965225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132321,7 +132325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1708879188632933898, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 35.656124
       objectReference: {fileID: 0}
     - target: {fileID: 1708879188632933898, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -132385,7 +132389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4067548123240273524, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 10.885375
       objectReference: {fileID: 0}
     - target: {fileID: 4067548123240273524, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -132417,7 +132421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5520967587660388783, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 60.426876
       objectReference: {fileID: 0}
     - target: {fileID: 5520967587660388783, guid: 40145010bd980da4f802576a05b59857, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -137153,6 +137157,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1419933608}
     m_Modifications:
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: Location
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: _question
       value: What do you think of it?
@@ -152357,6 +152365,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1419933608}
     m_Modifications:
+    - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
+      propertyPath: Location
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 193449290552569855, guid: 173a237bc920d7d4b93a7463a3648209, type: 3}
       propertyPath: _question
       value: What should they spell?

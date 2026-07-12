@@ -35,7 +35,8 @@ public class ShowIfItemCollected : MonoBehaviour
 
         foreach(var obj in ObjectsToHide)
         {
-            obj.SetActive(show);
+            if(obj != null)
+                obj.SetActive(show);
         }
     }
 }

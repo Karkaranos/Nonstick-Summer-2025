@@ -33,6 +33,12 @@ public class APLocationService : Service
 
     public bool IsLocationChecked(ArchipelagoLocation location)
     {
+        if(location == ArchipelagoLocation.None)
+        {
+            Debug.LogWarning("Searching for none location");
+            return true;
+        }
+
         // @TODO:
         return locations_checked.Contains(location);    
     }

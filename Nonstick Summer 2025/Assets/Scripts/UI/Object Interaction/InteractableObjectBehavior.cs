@@ -207,9 +207,18 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
 
     public void ClearAllShaders()
     {
+        if(affectedMeshes == null)
+            return;
+
         foreach (GameObject g in affectedMeshes)
         {
+            if(g == null) continue;
+
             Renderer mr = g.GetComponent<Renderer>();
+
+            if (mr == null)
+                continue;
+
             mr.SetMaterials(originalMaterials[g].ToList());
 
             /*List<Material> baseMat = new List<Material>();

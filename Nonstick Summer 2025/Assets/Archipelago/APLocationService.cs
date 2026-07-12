@@ -70,7 +70,11 @@ public class APLocationService : Service
 
     public async void CheckLocation(ArchipelagoLocation location)
     {
-        //if (location == ArchipelagoLocation.None) return;
+        if (location == ArchipelagoLocation.None)
+        {
+            Debug.LogError("Attempting to check \"none\" location");
+            return;
+        }
 
         locations_checked.Add(location);
         APSaveDataService.Instance.UpdateLocationCache(locations_checked);

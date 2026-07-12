@@ -37,9 +37,9 @@ public class UITransitionManager
         return true;
     }
 
-    public static GameObject OpenMenu(GameObject canvasPrefab, Transform cameraAnchor = null, GameObject objectRef = null)
+    public static GameObject OpenMenu(GameObject canvasPrefab, Transform cameraAnchor = null, GameObject objectRef = null, ArchipelagoLocation APLocation = ArchipelagoLocation.None)
     {
-        if(PlayerInMenu)
+        if (PlayerInMenu)
         {
             Debug.LogWarning("Player is already in a menu. Force closing current menu.");
             if(canvasPrefab.name.Contains("Setting") && CurrentCanvasReference.name.Contains("Pause"))

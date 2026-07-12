@@ -33,9 +33,16 @@ public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
     [SerializeField]
     private Transform cameraAnchor;
 
+    [Header("Archipelago")]
+    public ArchipelagoLocation APLocation;
 
     private void Start()
     {
+        if(APLocation == ArchipelagoLocation.None)
+        {
+            Debug.LogError($"{gameObject.name}s ap location is None");
+        }
+
         if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.Contains('5'))
         {
             PlayerCanLeave = true;
@@ -49,6 +56,7 @@ public class OpenConfirmationInteractable : MonoBehaviour, IInteractable
     public void Interact(GameObject player)
     {
         var menu = UITransitionManager.OpenMenu(CanvasToOpenPrefab, cameraAnchor, gameObject);
+        menu.GetComponent<BedInteractionPopupCanvas>().APLocation = this.APLocation;
         menu.GetComponent<BedInteractionPopupCanvas>().Bed = this;
         menu.GetComponent<BedInteractionPopupCanvas>().SceneTransitionType = sceneTransitionType;
     }

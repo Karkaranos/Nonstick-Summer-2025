@@ -18,43 +18,61 @@ MonoBehaviour:
     Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Neutral
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: Just...
     Portrait: {fileID: 21300000, guid: 032b2ac25e695414a96b9f1f4f473521, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Silent
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: "Remember to call home every once and a while once you\u2019re out
       there."
     Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
     AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
     AudioResponse: Neutral
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: ...Okay?
     Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Silent
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: I love you, kid.
     Portrait: {fileID: 21300000, guid: 032b2ac25e695414a96b9f1f4f473521, type: 3}
     AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
     AudioResponse: Sad
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "See? That\u2019s the spirit!"
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue:
     - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
         you."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: My, where has the time gone...
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: Who knew that my little Pumpkin could grow so tall?
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     PlayerDialogue: "I definitely wouldn\u2019t call it \u201Cexcited\u201D. More
       like \u201Cexistentially apprehensive\u201D."
     RelationshipCheckRequired: 1
@@ -70,6 +88,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m so glad to finally be on my own. It\u2019s about time
       I got to get away from all of you."
@@ -86,6 +106,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "To be honest, I\u2019m a little nervous. "
     RelationshipCheckRequired: 1
@@ -94,62 +116,6 @@ MonoBehaviour:
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 10
-  Charming_Observation:
-    NpcReactionText:
-    - Dialogue: "See? That\u2019s the spirit!"
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-    CombinedDialogue: []
-    PlayerDialogue: "Yeah! I can\u2019t wait for all the vacuuming and laundry and
-      dirty dishes..."
-    RelationshipCheckRequired: 1
-    RelationshipRange: {x: 35, y: 75}
-    BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
-  Assertive_Observation:
-    NpcReactionText:
-    - Dialogue: "I\u2019m sure she\u2019s worried for you. Believe me, it can be
-        a lot on a parent when their kid moves out."
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-    - Dialogue: "You never know how empty a house can feel until you\u2019re the
-        only one living in it."
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-    CombinedDialogue: []
-    PlayerDialogue: "We weren\u2019t expecting you to visit."
-    RelationshipCheckRequired: 1
-    RelationshipRange: {x: 35, y: 75}
-    BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
-  Sappy_Observation:
-    NpcReactionText:
-    - Dialogue: "That\u2019s called growing up. Our childhoods might make us who
-        we are now..."
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-    - Dialogue: "But that doesn\u2019t mean we\u2019re ever done growing. Remember
-        that."
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-    CombinedDialogue: []
-    PlayerDialogue: "I don\u2019t feel like I\u2019m ready. It\u2019s like I was
-      only a kid four days ago."
-    RelationshipCheckRequired: 1
-    RelationshipRange: {x: 35, y: 75}
-    BranchingDialogueHigh: {fileID: 11400000, guid: dd65eb34f68b6064fb04796cddf996c4, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
   Charming_Question:
     NpcReactionText:
     - Dialogue: "Trust me, better to have what you don\u2019t need than need what
@@ -157,6 +123,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Do you think I really need this many boxes?
     RelationshipCheckRequired: 1
@@ -172,6 +140,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Does this look exciting to you?
     RelationshipCheckRequired: 1
@@ -187,10 +157,14 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: Those were the times...
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Did you move out when you were my age?
     RelationshipCheckRequired: 1
@@ -210,3 +184,4 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 11400000, guid: 2094e15fc3fa10f4898e7d61cb0d12d7, type: 2}
     ChangeInRelationshipStatus: -5
   End: 1
+  ArchipelagoLocation: 44

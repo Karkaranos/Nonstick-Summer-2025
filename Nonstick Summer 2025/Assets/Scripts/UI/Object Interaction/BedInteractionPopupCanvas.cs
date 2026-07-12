@@ -24,6 +24,9 @@ public class BedInteractionPopupCanvas : MonoBehaviour
     [SerializeField] private GameObject fadeToBlack;
     public EndType SceneTransitionType;
 
+    [HideInInspector]
+    public ArchipelagoLocation APLocation;
+
     public enum EndType
     {
         DOOR, BED
@@ -46,6 +49,13 @@ public class BedInteractionPopupCanvas : MonoBehaviour
 
     public void OnYesPressed()
     {
+        if (APLocation == ArchipelagoLocation.None)
+        {
+            Debug.LogError($"{gameObject.name}s ap location is None");
+        }
+
+        APLocationService.Instance.CheckLocation(APLocation);
+
         if (Bed.PlayerCanLeave)
         {
             Bed.InteractSuccessful = true;

@@ -58,16 +58,6 @@ public class ArchipelagoManager : Singleton<ArchipelagoManager>
         }
     }
 
-    void Update()
-    {
-        if (!isConnected) return;
-
-        // Process items on Unity's main thread loop
-        /*while (incomingItemsQueue.TryDequeue(out NetworkItem item))
-        {
-            ProcessReceivedItem(item);
-        }*/
-    }
 
     [Button]
     public void ConnectToArchipelago()

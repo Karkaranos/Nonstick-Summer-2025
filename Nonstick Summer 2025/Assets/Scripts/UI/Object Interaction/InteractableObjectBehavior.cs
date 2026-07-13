@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using static UnityEditor.FilePathAttribute;
 
 public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
 {
@@ -54,6 +55,13 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
     {
         obi = FindFirstObjectByType<OpenBossInteractable>(FindObjectsInactive.Include);
 
+        if(Location == ArchipelagoLocation.None)
+        {
+            Debug.Log("None location set");
+            return;
+        }
+
+
         if (applyShaders && ((applyObjectiveShaders && !applyIfActiveObjective) || applyInteractableShaders))
         {
             if (APLocationService.Instance.IsLocationChecked(Location))
@@ -64,6 +72,8 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
 
         ArchipelagoManager.Instance.OnLocationsUpdated.AddListener(() =>
         {
+
+
             if (applyShaders && ((applyObjectiveShaders && !applyIfActiveObjective) || applyInteractableShaders))
             {
                 if (APLocationService.Instance.IsLocationChecked(Location))
@@ -72,9 +82,30 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
                     SetShader();
 
             }
-        });
-    }
 
+            if (APLocationService.Instance.IsLocationChecked(Location))
+            {
+                canBeInteractedWith = false;
+                hasGivenCard = true;
+
+                if (isObjective)
+                {
+                    GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.INTERACT_WITH_OBJECT, gameObject);
+                }
+            }
+        });
+
+        if (APLocationService.Instance.IsLocationChecked(Location))
+        {
+            canBeInteractedWith = false;
+            hasGivenCard = true;
+
+            if (isObjective)
+            {
+                GameManager.ObjectiveReference.MetCondition(ObjectiveConditions.INTERACT_WITH_OBJECT, gameObject);
+            }
+        }
+    }
 
 
     public void Interact(GameObject player)
@@ -218,6 +249,9 @@ public class InteractableObjectBehavior : MonoBehaviour, IInteractableObjective
 
             if (mr == null)
                 continue;
+
+            if (originalMaterials == null) continue;
+            if (originalMaterials[g] == null) continue;
 
             mr.SetMaterials(originalMaterials[g].ToList());
 

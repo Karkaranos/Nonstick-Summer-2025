@@ -14,9 +14,9 @@ using UnityEngine;
 public class RelationshipStats
 {
     [Tooltip("Max value the relationship and slider can go.")]
-    public float maxValue = 100;
+    public float maxValue = 300;
     [Tooltip("Current relationship value")]
-    public float currentValue = 25;
+    public float currentValue = 0;
     [Tooltip("Amount required for a good ending, will likely have more quotas later.")]
     public float relationshipQuota = 75;
 }

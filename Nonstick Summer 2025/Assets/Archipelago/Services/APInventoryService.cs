@@ -52,6 +52,7 @@ public class APInventoryService : Service
         Debug.Log($"<color=magenta>{ArchipelagoManager.Instance.session.Items.AllItemsReceived.Count} Archipelago items:");
 
         var items = ArchipelagoManager.Instance.session.Items;
+        inventory.Clear();
 
         // Process any pre-collected items already waiting in the seed pool
         foreach (ItemInfo item in items.AllItemsReceived)
@@ -114,6 +115,19 @@ public class APInventoryService : Service
         }
 
         return inventory[item];
+    }
+
+
+    void Update()
+    {
+        if (!ArchipelagoManager.Instance.isConnected) return;
+
+        // Process items on Unity's main thread loop
+        while (ArchipelagoManager.Instance.session.Items.Any())
+        {
+            var item = ArchipelagoManager.Instance.session.Items.DequeueItem();
+            AddItem(item);
+        }
     }
 
     [Button]

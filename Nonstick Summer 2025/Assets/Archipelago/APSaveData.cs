@@ -49,10 +49,45 @@ public class RelationshipStatus
     public bool set;
 
     public int moment;
-    public int MomRelationship;
-    public int GrandmaRelationship;
-    public int CousinRelationship;
-    public int UncleRelationship;
+    public RelationshipStats MomRelationship;
+    public RelationshipStats GrandmaRelationship;
+    public RelationshipStats CousinRelationship;
+    public RelationshipStats UncleRelationship;
+
+    public RelationshipStatus(int moment)
+    {
+        this.moment = moment;
+        this.set = false;
+
+        MomRelationship = new();
+        MomRelationship.currentValue = 0;
+        MomRelationship.maxValue = 300;
+        MomRelationship.relationshipQuota = 75;
+
+        GrandmaRelationship = new();
+        GrandmaRelationship.currentValue = 0;
+        GrandmaRelationship.maxValue = 300;
+        GrandmaRelationship.relationshipQuota = 75;
+
+        CousinRelationship = new();
+        CousinRelationship.currentValue = 0;
+        CousinRelationship.maxValue = 300;
+        CousinRelationship.relationshipQuota = 75;
+
+        UncleRelationship = new();
+        UncleRelationship.currentValue = 0;
+        UncleRelationship.maxValue = 300;
+        UncleRelationship.relationshipQuota = 75;
+    }
+
+    public void Reset()
+    {
+        set = false;
+        MomRelationship.currentValue = 0;
+        GrandmaRelationship.currentValue = 0;
+        CousinRelationship.currentValue = 0;
+        UncleRelationship.currentValue = 0;
+    }
 }
 
 [System.Serializable]

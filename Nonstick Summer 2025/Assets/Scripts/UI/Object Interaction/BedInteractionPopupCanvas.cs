@@ -49,6 +49,8 @@ public class BedInteractionPopupCanvas : MonoBehaviour
 
     public void OnYesPressed()
     {
+        APRelationshipService.Instance.SaveRelationshipStatusThisScene();
+
         if (APLocation == ArchipelagoLocation.None)
         {
             Debug.LogError($"{gameObject.name}s ap location is None");

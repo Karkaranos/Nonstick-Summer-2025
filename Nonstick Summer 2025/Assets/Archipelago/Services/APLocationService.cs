@@ -43,6 +43,28 @@ public class APLocationService : Service
         return locations_checked.Contains(location);    
     }
 
+    public bool IsAnyLocationChecked(ArchipelagoLocation[] locations)
+    {
+        foreach (ArchipelagoLocation location in locations)
+        {
+            bool met = IsLocationChecked(location);
+            if (met)
+                return true;
+        }
+        return false;
+    }
+
+    public bool AreLocationsChecked(ArchipelagoLocation[] locations)
+    {
+        foreach (ArchipelagoLocation location in locations)
+        {
+            bool met = IsLocationChecked(location);
+            if (!met)
+                return false;
+        }
+        return true;
+    }
+
     public void OnArchipelagoConnected()
     {
         CheckAllSavedLocations();

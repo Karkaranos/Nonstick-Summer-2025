@@ -13,7 +13,9 @@ using TMPro;
 
 public class Objectives : MonoBehaviour
 {
-    [SerializeField, Tooltip("Put objectives in the order they should be completed in. When an objective is complete, it will mark all objectives with a lower index than it complete.")] private ObjectiveData[] _conditions;
+    [SerializeField, Tooltip("Put objectives in the order they should be completed in. When an objective is complete, it will mark all objectives with a lower index than it complete.")] 
+    private ObjectiveData[] _conditions;
+
     [SerializeField, Required] private GameObject _objectiveCanvas;
     [SerializeField, Required] private TMP_Text _displayText;
     //[SerializeField, Required] private GameObject _objectiveIndicator;
@@ -37,6 +39,19 @@ public class Objectives : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        Debug.LogWarning("Condition Met");
+        if (_displayText != null)
+            _displayText.text = TextUtilities.FilterText(_conditions[currentObjective].DisplayText);
+
+        if (_conditions[currentObjective].ConditionBeenMet && currentObjective < _conditions.Length-1)
+        {
+            currentObjective++;
+        }
+    }
+
+
     /// <summary>
     /// Called whenever a condition may have been met
     /// </summary>
@@ -49,8 +64,8 @@ public class Objectives : MonoBehaviour
             {
                 // If the condition is interacting with a specific object and that object was not just interacted with, return
                 // Otherwise the condition has been met; update the display
-                if ((condition == ObjectiveConditions.INTERACT_WITH_OBJECT ||
-                    condition == ObjectiveConditions.TALK_TO_SIDE_CHARACTER) && System.Array.IndexOf(_conditions[i].RequiredObjects, obj) < 0)
+                if ((condition == ObjectiveConditions.INTERACT_WITH_OBJECT || condition == ObjectiveConditions.TALK_TO_SIDE_CHARACTER) 
+                    && System.Array.IndexOf(_conditions[i].RequiredObjects, obj) < 0)
                 {
                     continue;
                 }
@@ -62,7 +77,7 @@ public class Objectives : MonoBehaviour
                 }
                 for(int j=0; j<i; j++)
                 {
-                    _conditions[j].ConditionBeenMet = true;
+                    _conditions[j].MetCondition = true;
                     foreach(GameObject g in _conditions[j].RequiredObjects)
                     {
                         if(g!=null) g.GetComponent<IInteractableObjective>()?.ClearBlocker();
@@ -92,7 +107,7 @@ public class Objectives : MonoBehaviour
                     }
                 }*/
                 Debug.LogWarning("Condition Met");
-                _conditions[i].ConditionBeenMet = true;
+                _conditions[i].MetCondition = true;
                 if (_displayText != null)
                     _displayText.text = TextUtilities.FilterText( _conditions[i].DisplayText );
 
@@ -148,6 +163,9 @@ public class ObjectiveData
     [Tooltip ("A description of the Objective")] public string DisplayText;
     [Tooltip("What makes the above Objective Display")] public ObjectiveConditions TriggerCondition;
 
+    public ArchipelagoItem ItemToSkipObjective = ArchipelagoItem.None;
+    public ArchipelagoLocation[] LocationsToSkipObjective = new ArchipelagoLocation[0];
+
     [Tooltip("All objects that must be interacted with for this Objective to trigger the Display text. Order does not matter.")] [ShowIf(nameof(showOrHide))] [AllowNesting] 
         public GameObject[] RequiredObjects = new GameObject[0];    // Okay so for whatever reason this won't hide? Even though the format and everything is correct
 
@@ -157,8 +175,12 @@ public class ObjectiveData
     bool showOrHide => TriggerCondition == ObjectiveConditions.INTERACT_WITH_OBJECT
     || TriggerCondition == ObjectiveConditions.TALK_TO_SIDE_CHARACTER;
 
-
-    [HideInInspector] public bool ConditionBeenMet = false;
+    public bool MetCondition = false;
+    [HideInInspector] public bool ConditionBeenMet => MetCondition || 
+        (
+            (LocationsToSkipObjective.Length == 0 || APLocationService.Instance.IsAnyLocationChecked(LocationsToSkipObjective) &&
+            ItemToSkipObjective == ArchipelagoItem.None || APInventoryService.Instance.IsItemCollected(ItemToSkipObjective))
+        );
     //[Tooltip("Prevents the specified objectives from triggering")] public bool HideNextObjectiveIfClear;
     //[EnableIf("HideNextObjectiveIfClear"), Tooltip("What the objective to hide is triggered by"), AllowNesting] // i dont want this to appear unless the bool is true but it hates me for whatever reason
                                                                                                 // no amount of 'allow nesting' worked :(

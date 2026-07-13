@@ -40,8 +40,8 @@ public enum ArchipelagoLocation
     Moment3_Mom,
     Moment3_Grandma_Route_1,
     Moment3_Grandma_Route_2,
-    Moment3_Grandma,
     Moment3_Uncle,
+    Moment3_Cousin,
 
     Moment3_Interact_Water_Bottle,
     Moment3_Interact_Backpack,
@@ -59,7 +59,7 @@ public enum ArchipelagoLocation
     Moment4_Cousin_Route_2,
     Moment4_Uncle,
 
-    Moment2_Interact_Phone,
+    Moment4_Interact_Phone,
 
     CardPickup_Laundry,
     CardPickup_DiningRoomCabinet,
@@ -130,32 +130,54 @@ public static class ArchipelagoLocationNameMapping
 
 
         // Moment 3
-        locationToNameMap.Add(ArchipelagoLocation.Moment2_Complete, "Moment 3: Talk to Grandma - Route 1");
-        locationToNameMap.Add(ArchipelagoLocation.Moment2_Complete, "Moment 3: Talk to Grandma - Route 2");
-        locationToNameMap.Add(ArchipelagoLocation.Moment2_Complete, "Moment 3: Talk to Cousin");
-        locationToNameMap.Add(ArchipelagoLocation.Moment2_Complete, "Moment 3: Call Mom");
-        locationToNameMap.Add(ArchipelagoLocation.Moment2_Complete, "Moment 3: Talk to Uncle");
+        locationToNameMap.Add(ArchipelagoLocation.Moment3_Grandma_Route_1, "Moment 3: Talk to Grandma - Route 1");
+        locationToNameMap.Add(ArchipelagoLocation.Moment3_Grandma_Route_2, "Moment 3: Talk to Grandma - Route 2");
+        locationToNameMap.Add(ArchipelagoLocation.Moment3_Cousin, "Moment 3: Talk to Cousin");
+        locationToNameMap.Add(ArchipelagoLocation.Moment3_Mom, "Moment 3: Call Mom");
+        locationToNameMap.Add(ArchipelagoLocation.Moment3_Uncle, "Moment 3: Talk to Uncle");
 
-        locationToNameMap.Add(ArchipelagoLocation.Moment2_Complete, "Moment 3: Water Bottle Interaction");
-        locationToNameMap.Add(ArchipelagoLocation.Moment2_Complete, "Moment 3: Backpack Interaction");
+        locationToNameMap.Add(ArchipelagoLocation.Moment3_Interact_Water_Bottle, "Moment 3: Water Bottle Interaction");
+        locationToNameMap.Add(ArchipelagoLocation.Moment3_Interact_Backpack, "Moment 3: Backpack Interaction");
 
-        locationToNameMap.Add(ArchipelagoLocation.Moment2_Complete, "Card Pickup: Kitchen Trash");
-        locationToNameMap.Add(ArchipelagoLocation.Moment2_Complete, "Card Pickup: Under Lamp");
+        locationToNameMap.Add(ArchipelagoLocation.CardPickup_KitchenTrash, "Card Pickup: Kitchen Trash");
+        locationToNameMap.Add(ArchipelagoLocation.CardPickup_UnderLamp, "Card Pickup: Under Lamp");
 
-        locationToNameMap.Add(ArchipelagoLocation.Moment2_Complete, "Complete Moment 3");
+        locationToNameMap.Add(ArchipelagoLocation.Moment3_Complete, "Complete Moment 3");
 
         // Moment 4
-        locationToNameMap.Add(ArchipelagoLocation.Moment2_Complete, "Moment 4: Talk to Mom - Route 1");
-        locationToNameMap.Add(ArchipelagoLocation.Moment2_Complete, "Moment 4: Talk to Mom - Route 2");
-        locationToNameMap.Add(ArchipelagoLocation.Moment2_Complete, "Moment 4: Talk to Cousin - Route 1");
-        locationToNameMap.Add(ArchipelagoLocation.Moment2_Complete, "Moment 4: Talk to Cousin - Route 2");
-        locationToNameMap.Add(ArchipelagoLocation.Moment2_Complete, "Moment 4: Talk to Grandma");
-        locationToNameMap.Add(ArchipelagoLocation.Moment2_Complete, "Moment 4: Talk to Uncle");
+        locationToNameMap.Add(ArchipelagoLocation.Moment4_Mom_Route_1, "Moment 4: Talk to Mom - Route 1");
+        locationToNameMap.Add(ArchipelagoLocation.Moment4_Mom_Route_2, "Moment 4: Talk to Mom - Route 2");
+        locationToNameMap.Add(ArchipelagoLocation.Moment4_Cousin_Route_1, "Moment 4: Talk to Cousin - Route 1");
+        locationToNameMap.Add(ArchipelagoLocation.Moment4_Cousin_Route_2, "Moment 4: Talk to Cousin - Route 2");
+        locationToNameMap.Add(ArchipelagoLocation.Moment4_Grandma, "Moment 4: Talk to Grandma");
+        locationToNameMap.Add(ArchipelagoLocation.Moment4_Uncle, "Moment 4: Talk to Uncle");
 
-        locationToNameMap.Add(ArchipelagoLocation.Moment2_Complete, "Card Pickup: Laundry");
-        locationToNameMap.Add(ArchipelagoLocation.Moment2_Complete, "Card Pickup: Dining Room Cabinet");
+        locationToNameMap.Add(ArchipelagoLocation.CardPickup_Laundry, "Card Pickup: Laundry");
+        locationToNameMap.Add(ArchipelagoLocation.CardPickup_DiningRoomCabinet, "Card Pickup: Dining Room Cabinet");
 
-        locationToNameMap.Add(ArchipelagoLocation.Moment2_Complete, "Complete Moment 4");
+        locationToNameMap.Add(ArchipelagoLocation.Moment4_Complete, "Complete Moment 4");
+
+        // Moment 5
+        locationToNameMap.Add(ArchipelagoLocation.Moment5_Mom_Route_1, "Moment 5: Talk to Mom - Route 1");
+        locationToNameMap.Add(ArchipelagoLocation.Moment5_Mom_Route_2, "Moment 5: Talk to Mom - Route 2");
+        locationToNameMap.Add(ArchipelagoLocation.Moment5_Mom_Route_3, "Moment 5: Talk to Mom - Route 3");
+        locationToNameMap.Add(ArchipelagoLocation.Moment5_Grandma_Route_1, "Moment 5: Talk to Grandma - Route 1");
+        locationToNameMap.Add(ArchipelagoLocation.Moment5_Grandma_Route_2, "Moment 5: Talk to Grandma - Route 2");
+        locationToNameMap.Add(ArchipelagoLocation.Moment5_Grandma_Route_3, "Moment 5: Talk to Grandma - Route 3");
+        locationToNameMap.Add(ArchipelagoLocation.Moment5_Cousin_Route_1, "Moment 5: Talk to Cousin - Route 1");
+        locationToNameMap.Add(ArchipelagoLocation.Moment5_Cousin_Route_2, "Moment 5: Talk to Cousin - Route 2");
+        locationToNameMap.Add(ArchipelagoLocation.Moment5_Cousin_Route_3, "Moment 5: Talk to Cousin - Route 3");
+        locationToNameMap.Add(ArchipelagoLocation.Moment5_Uncle_Route_1, "Moment 5: Talk to Uncle - Route 1");
+        locationToNameMap.Add(ArchipelagoLocation.Moment5_Uncle_Route_2, "Moment 5: Talk to Uncle - Route 2");
+        locationToNameMap.Add(ArchipelagoLocation.Moment5_Uncle_Route_3, "Moment 5: Talk to Uncle - Route 3");
+
+        locationToNameMap.Add(ArchipelagoLocation.CardPickup_TopBookcase, "Card Pickup: Top of Bookcase");
+        locationToNameMap.Add(ArchipelagoLocation.CardPickup_InSink, "Card Pickup: Sink");
+
+        locationToNameMap.Add(ArchipelagoLocation.Moment5_Complete, "Complete Moment 5");
+
+        // end condition
+        locationToNameMap.Add(ArchipelagoLocation.Victory_Location, "Victory Location");
 
         return locationToNameMap;
     }

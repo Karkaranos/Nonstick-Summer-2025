@@ -111,9 +111,12 @@ public class GameManager : Singleton<GameManager>
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-
         DialogueManager.CurrentEnergy = _defaultEnergy;
 
+        if(APRelationshipService.Instance != null)
+            APRelationshipService.Instance.LoadRelationshipStatusThisScene();
+
+        /*
         if(scene.name.Contains("MainMenu"))
         {
             if (transform.parent != null)
@@ -135,7 +138,7 @@ public class GameManager : Singleton<GameManager>
             RelationshipManagerReference = new RelationshipManager(grandmaStartingValue, uncleStartingValue, cousinStartingValue, momStartingValue);
 
             ModifierManagerReference = new ModifierManager(startingModifiers);
-        }
+        }*/
 
         ObjectiveReference = FindFirstObjectByType<Objectives>();
 
@@ -147,7 +150,11 @@ public class GameManager : Singleton<GameManager>
         if(playerCameraRef != null)
             return playerCameraRef;
 
-        playerCameraRef = FindFirstObjectByType<PlayerCamera>().playerCamera;
+        var playerCamObject = FindFirstObjectByType<PlayerCamera>();
+        if (playerCamObject == null)
+            return null;
+
+        playerCameraRef = playerCamObject.playerCamera;
         return playerCameraRef;
     }
 

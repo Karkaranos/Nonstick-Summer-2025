@@ -22,6 +22,9 @@ public class DreamSequenceInitializer : MonoBehaviour
     {
         DoFadeIn();
         var dream = UITransitionManager.OpenMenu(CanvasToOpen);
+        if (dream == null)
+            return;
+
         dream.GetComponent<DreamSequence>().Initialize();
     }
 

@@ -39,4 +39,14 @@ public class RelationshipManager
         characterRelationships[Character.Tutorial].maxValue = 1;
         characterRelationships[Character.Tutorial].currentValue = 1000;
     }
+
+    public static void SetCharacterRelationships(RelationshipStatus relationships)
+    {
+        characterRelationships = new Dictionary<Character, RelationshipStats>();
+
+        characterRelationships.Add(Character.Mom, relationships.MomRelationship);
+        characterRelationships.Add(Character.Grandma, relationships.GrandmaRelationship);
+        characterRelationships.Add(Character.Cousin, relationships.CousinRelationship);
+        characterRelationships.Add(Character.Uncle, relationships.UncleRelationship);
+    }
 }

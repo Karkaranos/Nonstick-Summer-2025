@@ -56,6 +56,7 @@ public class APSaveDataService : Service
 
     public Dictionary<ArchipelagoItem, int> GetCachedItems()
     {
+        return new Dictionary<ArchipelagoItem, int>();
         return saveData.itemsCache.ToDictionary(t => t.Key, t => t.Value);
     }
 
@@ -68,13 +69,27 @@ public class APSaveDataService : Service
     {
         switch (moment)
         {
+            case 0: return new RelationshipStatus(-1);
             case 1: return saveData.Moment1Relationships;
-            case 2: return saveData.Moment2Relationships;
-            case 3: return saveData.Moment3Relationships;
-            case 4: return saveData.Moment4Relationships;
-            case 5: return saveData.Moment5Relationships;
+        }
+
+        RelationshipStatus result;
+
+        switch (moment)
+        {
+            case 2: result = saveData.Moment2Relationships; break;
+            case 3: result = saveData.Moment3Relationships; break;
+            case 4: result = saveData.Moment4Relationships; break;
+            case 5: result = saveData.Moment5Relationships; break;
             default: return null;
         }
+
+        if (result.set)
+            return result;
+
+        // find previously set status
+        return GetRelationshipStats(moment - 1);
+
     }
 
     #endregion
@@ -116,6 +131,41 @@ public class APSaveDataService : Service
         SaveArchipelagoCache(); //todo: queue this function so it only happens once per frame
     }
 
+    public void SetRelationshipStatus(RelationshipStatus relationshipStatus, int moment)
+    {
+        relationshipStatus.set = true;
+        switch (moment)
+        {
+            case 1: 
+                saveData.Moment1Relationships = relationshipStatus;
+                saveData.Moment2Relationships.Reset();
+                saveData.Moment3Relationships.Reset();
+                saveData.Moment4Relationships.Reset();
+                saveData.Moment5Relationships.Reset();
+                return;
+            case 2:
+                saveData.Moment2Relationships = relationshipStatus;
+                saveData.Moment3Relationships.Reset();
+                saveData.Moment4Relationships.Reset();
+                saveData.Moment5Relationships.Reset();
+                return;
+            case 3:
+                saveData.Moment3Relationships = relationshipStatus;
+                saveData.Moment4Relationships.Reset();
+                saveData.Moment5Relationships.Reset(); 
+                return;
+            case 4:
+                saveData.Moment4Relationships = relationshipStatus;
+                saveData.Moment5Relationships.Reset();
+                return;
+            case 5:
+                saveData.Moment5Relationships = relationshipStatus;
+                return;
+        }
+
+        SaveArchipelagoCache();
+    }
+
     /// <summary>
     /// Reset all cached data except for connection config
     /// </summary>
@@ -125,6 +175,12 @@ public class APSaveDataService : Service
 
         saveData = new();
         saveData.ConnectionConfiguration = oldConfig;
+
+        saveData.Moment1Relationships = new RelationshipStatus(1);
+        saveData.Moment2Relationships = new RelationshipStatus(2);
+        saveData.Moment3Relationships = new RelationshipStatus(3);
+        saveData.Moment4Relationships = new RelationshipStatus(4);
+        saveData.Moment5Relationships = new RelationshipStatus(5);
 
         SaveArchipelagoCache();
     }

@@ -126,7 +126,7 @@ public class APSaveDataService : Service
 
     public void SetModifierInventory(List<ModifierData> modifiers)
     {
-        saveData.deckCache.modifiers = modifiers.Select(m=>m.ThisModifier).ToList();
+        saveData.deckCache.modifiers = modifiers?.Select(m=>m.ThisModifier)?.ToList();
 
         SaveArchipelagoCache(); //todo: queue this function so it only happens once per frame
     }
@@ -181,6 +181,8 @@ public class APSaveDataService : Service
         saveData.Moment3Relationships = new RelationshipStatus(3);
         saveData.Moment4Relationships = new RelationshipStatus(4);
         saveData.Moment5Relationships = new RelationshipStatus(5);
+
+        saveData.locationsCache = new();
 
         SaveArchipelagoCache();
     }

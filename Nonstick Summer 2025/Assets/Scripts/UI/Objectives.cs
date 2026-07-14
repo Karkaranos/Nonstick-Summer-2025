@@ -41,7 +41,6 @@ public class Objectives : MonoBehaviour
 
     private void Update()
     {
-        Debug.LogWarning("Condition Met");
         if (_displayText != null)
             _displayText.text = TextUtilities.FilterText(_conditions[currentObjective].DisplayText);
 

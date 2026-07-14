@@ -6,6 +6,7 @@ using Archipelago.MultiClient.Net.Helpers;
 using static UnityEditor.Timeline.Actions.MenuPriority;
 using NaughtyAttributes;
 using UnityEditor;
+using System.Collections.Concurrent;
 
 public class APInventoryService : Service
 {
@@ -22,6 +23,8 @@ public class APInventoryService : Service
 
     // Item : count of item
     private Dictionary <ArchipelagoItem, int> inventory = new();
+
+    private readonly ConcurrentQueue<ItemInfo> pending = new();
 
     protected async override Task ThisInitialize()
     {
@@ -41,9 +44,14 @@ public class APInventoryService : Service
     {
         inventory.Clear();
 
+        foreach (var item in ArchipelagoManager.Instance.session.Items.AllItemsReceived)
+        {
+            AddItem(item);
+        }
+
         ArchipelagoManager.Instance.session.Items.ItemReceived += OnItemsRecieved;
 
-        RefreshAllItems();
+        //RefreshAllItems();
         //OnItemsRecieved(ArchipelagoManager.Instance.session.Items);
     }
 
@@ -81,7 +89,7 @@ public class APInventoryService : Service
 
         while (helper.Any())
         {
-            AddItem(helper.DequeueItem());
+            pending.Enqueue(helper.DequeueItem());
         }
 
         APSaveDataService.Instance.UpdateItemCache(inventory);
@@ -98,6 +106,22 @@ public class APInventoryService : Service
         ArchipelagoManager.Instance.OnInventoryUpdated.Invoke();
 
         Debug.Log($"<color=magenta>Item:</color> {item.ItemName} : {apItem.ToString()} : x{inventory[apItem]}");
+    }
+
+    private void Update()
+    {
+        bool processedAny = false;
+        while (pending.TryDequeue(out var item))
+        {
+            processedAny = true;
+            AddItem(item);
+        }
+
+        if (processedAny)
+        {
+            APSaveDataService.Instance.UpdateItemCache(inventory);
+            ArchipelagoManager.Instance.OnInventoryUpdated.Invoke();
+        }
     }
 
     #endregion
@@ -117,18 +141,6 @@ public class APInventoryService : Service
         return inventory[item];
     }
 
-
-    void Update()
-    {
-        if (!ArchipelagoManager.Instance.isConnected) return;
-
-        // Process items on Unity's main thread loop
-        while (ArchipelagoManager.Instance.session.Items.Any())
-        {
-            var item = ArchipelagoManager.Instance.session.Items.DequeueItem();
-            AddItem(item);
-        }
-    }
 
     [Button]
     private void PrintItems()

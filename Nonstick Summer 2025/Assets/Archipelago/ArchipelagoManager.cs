@@ -7,6 +7,8 @@ using Archipelago.MultiClient.Net.Helpers;
 using Archipelago.MultiClient.Net.Models;
 using NaughtyAttributes;
 using UnityEngine.Events;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 public class ArchipelagoManager : Singleton<ArchipelagoManager>
 {
@@ -60,7 +62,7 @@ public class ArchipelagoManager : Singleton<ArchipelagoManager>
 
 
     [Button]
-    public void ConnectToArchipelago()
+    public async void ConnectToArchipelago()
     {
         try
         {
@@ -91,9 +93,12 @@ public class ArchipelagoManager : Singleton<ArchipelagoManager>
                 {
                     Debug.LogWarning("Server connection is different, resetting cached data");
                     APSaveDataService.Instance.ResetArchipelagoCache();
+                    APSaveDataService.Instance.UpdateLocationCache(new HashSet<ArchipelagoLocation>());
                 }
 
                 previousServerUrl = serverUrl;
+
+                await Task.Delay(1000);
 
                 OnArchipelagoConnected.Invoke();
             }

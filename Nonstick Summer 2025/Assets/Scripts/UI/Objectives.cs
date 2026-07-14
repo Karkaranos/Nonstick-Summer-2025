@@ -177,7 +177,7 @@ public class ObjectiveData
     public bool MetCondition = false;
     [HideInInspector] public bool ConditionBeenMet => MetCondition || 
         (
-            (LocationsToSkipObjective.Length == 0 || APLocationService.Instance.IsAnyLocationChecked(LocationsToSkipObjective) &&
+            (LocationsToSkipObjective.Length != 0 && APLocationService.Instance.IsAnyLocationChecked(LocationsToSkipObjective) &&
             ItemToSkipObjective == ArchipelagoItem.None || APInventoryService.Instance.IsItemCollected(ItemToSkipObjective))
         );
     //[Tooltip("Prevents the specified objectives from triggering")] public bool HideNextObjectiveIfClear;

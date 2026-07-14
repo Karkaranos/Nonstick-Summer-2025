@@ -59,8 +59,6 @@ public class DiscardButton : MonoBehaviour
         foreach(var card in DeckDisplayer.selectedCards.ToArray()) //ToArray so we can safely remove items from the original collection
         {
             hand.DiscardCard(card.cardData);
-
-            
         }
         DialogueManager.CurrentEnergy += DialogueManager.EnergyGainedPerDiscard;
 

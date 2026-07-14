@@ -22,7 +22,6 @@ public class HideIfLocationChecked : MonoBehaviour
 
     void Refresh()
     {
-        Debug.Log($"Updating location check");
         bool hide = APLocationService.Instance.IsLocationChecked(location);
         objectTohide.SetActive(!hide);
     }

@@ -220,6 +220,11 @@ public class DialogueManager
         {
             Debug.Log("Player has enough RP for good branch");
             CurrentDialogueBranch = dialogueOption.BranchingDialogueHigh; 
+
+            if(DialogueUIController.Instance.inSceneFive)
+            {
+                DialogueUIController.Instance.bestEndingForCharacterReached = true;
+            }
         }
         else if(dialogueOption.RelationshipCheckRequired = true && RelationshipManager.characterRelationships[currentCharacter].currentValue <= dialogueOption.RelationshipRange.y && RelationshipManager.characterRelationships[currentCharacter].currentValue >= dialogueOption.RelationshipRange.x)
         {

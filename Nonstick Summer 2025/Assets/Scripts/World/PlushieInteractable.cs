@@ -20,5 +20,15 @@ public class PlushieInteractable : MonoBehaviour, IInteractable
 
             particleSystem.Play(false);
         }
+
+        if (PlayerPrefs.GetInt("Plushie") < 5)
+        {
+            PlayerPrefs.SetInt("Plushie", PlayerPrefs.GetInt("Plushie") + 1);
+            SteamAchievementManager.Instance.UpdateProgress(SteamAchievement.InteractStuffedAnimal, PlayerPrefs.GetInt("Plushie"), 5);
+        }
+        else
+        {
+            return;
+        }
     }
 }

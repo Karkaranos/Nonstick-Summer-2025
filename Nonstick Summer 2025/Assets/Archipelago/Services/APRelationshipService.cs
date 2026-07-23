@@ -50,7 +50,8 @@ public class APRelationshipService : Service
         if (moment_index < 0 || moment_index > 5)
             return;
 
-        var relationshipStats = APSaveDataService.Instance.GetRelationshipStats(moment_index);
+        Debug.Log($"Relationship stats, moment: {moment_index}");
+        var relationshipStats = APSaveDataService.Instance.GetRelationshipStatsForMomentBeginning(moment_index);
         RelationshipManager.SetCharacterRelationships(relationshipStats);
 
         Debug.Log($"<color=magenta>Loaded Relationships from moment {relationshipStats.moment}</color>");
@@ -58,6 +59,8 @@ public class APRelationshipService : Service
         Debug.Log($"<color=magenta>Grandma</color>: {relationshipStats.GrandmaRelationship.currentValue}");
         Debug.Log($"<color=magenta>Cousin</color>: {relationshipStats.CousinRelationship.currentValue}");
         Debug.Log($"<color=magenta>Uncle</color>: {relationshipStats.UncleRelationship.currentValue}");
+
+        ArchipelagoManager.Instance.OnRelationshipsUpdated.Invoke(); 
     }
 
     public void SaveRelationshipStatusThisScene()

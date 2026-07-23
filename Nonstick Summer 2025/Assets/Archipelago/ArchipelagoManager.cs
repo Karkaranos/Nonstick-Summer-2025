@@ -34,6 +34,8 @@ public class ArchipelagoManager : Singleton<ArchipelagoManager>
     // When a location is checked (or on initialize)
     public UnityEvent OnLocationsUpdated = new();
 
+    public UnityEvent OnRelationshipsUpdated = new();
+
     protected override void Awake()
     {
         base.Awake();

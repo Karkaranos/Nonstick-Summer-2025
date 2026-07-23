@@ -38,18 +38,29 @@ public class APDeckService : Service
         DeckManager.ClearDeck();
 
         //TODO: options
-        int randomCardsToAdd = 3;
-        Random.InitState(ArchipelagoManager.Instance.session.RoomState.Seed.GetHashCode());
+        int randomCardsToAdd = APInventoryService.Instance.GetItemCount(ArchipelagoItem.Random_Card);
         for (int i = 0; i < randomCardsToAdd; i++)
         {
             // shhhh no one tell them how this works
-            int index = Random.Range(0, CardItems.Length);
+            Random.InitState(ArchipelagoManager.Instance.session.RoomState.Seed.GetHashCode()+i);
+            int index = Random.Range(0, cardTemplates.Length);
             var card_to_get = cardTemplates[index];
 
             DeckManager.AddCard(card_to_get.CopyCard());
         }
 
-        foreach(var cardType in CardItems)
+        int randomModifiersToAdd = APInventoryService.Instance.GetItemCount(ArchipelagoItem.Random_Modifier);
+        Random.InitState(ArchipelagoManager.Instance.session.RoomState.Seed.GetHashCode());
+        for (int i = 0; i < randomCardsToAdd; i++)
+        {
+            // shhhh no one tell them how this works
+            int index = Random.Range(0, modifierTemplates.Length);
+            var card_to_get = modifierTemplates[index];
+
+            ModifierManager.AddCard(modifierTemplates[index]);
+        }
+
+        foreach (var cardType in CardItems)
         {
             int count = APInventoryService.Instance.GetItemCount(cardType);
             for(int i=0; i<count; i++)

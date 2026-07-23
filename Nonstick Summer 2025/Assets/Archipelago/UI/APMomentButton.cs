@@ -54,23 +54,42 @@ public class APMomentButton : MonoBehaviour
     private void BuildRelationshipDisplay(bool momentUnlocked)
     {
         string output = "";
-        var relationshipStatus = APSaveDataService.Instance.GetRelationshipStats(momentID);
+        var relationshipStatus = APSaveDataService.Instance.GetRelationshipStatsAtMomentEnd(momentID);
 
         bool mom_unlocked = APInventoryService.Instance.IsItemCollected(mom_item);
         string color_hex = mom_unlocked ? DEFAULT_CHARACTER_COLOR : LOCKED_CHARACTER_COLOR;
         // todo: this can be a lil more robust. i think im leaving it like this for now
         if (mom_unlocked)
-            output += $"<sprite name=\"Heart\"><color={DEFAULT_CHARACTER_COLOR}>Mom: {relationshipStatus.MomRelationship.ToString()}";
+            output += $"<sprite name=\"Heart\"><color={DEFAULT_CHARACTER_COLOR}>Mom: {relationshipStatus.MomRelationship.currentValue.ToString()}";
         else
             output += $"<sprite name=\"Empty Heart\"><color={LOCKED_CHARACTER_COLOR}>Mom: ---";
 
         bool grandma_unlocked = APInventoryService.Instance.IsItemCollected(grandma_item);
         color_hex = grandma_unlocked ? DEFAULT_CHARACTER_COLOR : LOCKED_CHARACTER_COLOR;
         // todo: this can be a lil more robust. i think im leaving it like this for now
-        if (mom_unlocked)
-            output += $"\n<sprite name=\"Heart\"><color={DEFAULT_CHARACTER_COLOR}>Grandma: {relationshipStatus.GrandmaRelationship.ToString()}";
+        if (grandma_unlocked)
+            output += $"\n<sprite name=\"Heart\"><color={DEFAULT_CHARACTER_COLOR}>Grandma: {relationshipStatus.GrandmaRelationship.currentValue.ToString()}";
         else
             output += $"\n<sprite name=\"Empty Heart\"><color={LOCKED_CHARACTER_COLOR}>Grandma: ---";
+
+        if(momentID != 1)
+        {
+            bool cousin_unlocked = APInventoryService.Instance.IsItemCollected(cousin_item);
+            color_hex = cousin_unlocked ? DEFAULT_CHARACTER_COLOR : LOCKED_CHARACTER_COLOR;
+            // todo: this can be a lil more robust. i think im leaving it like this for now
+            if (cousin_unlocked)
+                output += $"\n<sprite name=\"Heart\"><color={DEFAULT_CHARACTER_COLOR}>Cousin: {relationshipStatus.CousinRelationship.currentValue.ToString()}";
+            else
+                output += $"\n<sprite name=\"Empty Heart\"><color={LOCKED_CHARACTER_COLOR}>Cousin: ---";
+
+            bool uncle_unlocked = APInventoryService.Instance.IsItemCollected(uncle_item);
+            color_hex = uncle_unlocked ? DEFAULT_CHARACTER_COLOR : LOCKED_CHARACTER_COLOR;
+            // todo: this can be a lil more robust. i think im leaving it like this for now
+            if (uncle_unlocked)
+                output += $"\n<sprite name=\"Heart\"><color={DEFAULT_CHARACTER_COLOR}>Uncle: {relationshipStatus.UncleRelationship.currentValue.ToString()}";
+            else
+                output += $"\n<sprite name=\"Empty Heart\"><color={LOCKED_CHARACTER_COLOR}>Uncle: ---";
+        }
 
         relationshipText.text = output;
     }

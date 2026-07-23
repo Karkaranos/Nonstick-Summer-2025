@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +20,8 @@ public class RelationshipSlider : MonoBehaviour
     [Tooltip("Slider that displays the character's current relationship value.")]
     private Slider slider;
     [SerializeField] float animationSpeed = 3;
+
+    [SerializeField] TMP_Text AP_RelationshipDisplay;
 
     /// <summary>
     /// Initializes slider values and visuals
@@ -43,7 +46,8 @@ public class RelationshipSlider : MonoBehaviour
         slider = slider ?? GetComponent<Slider>();
         if (value > slider.maxValue)
         {
-            value = slider.maxValue;
+            //value = slider.maxValue;
+            slider.maxValue = value; // nuh uh
         }
         //if (slider.value == value)
         if (Mathf.Approximately(slider.value, value))
@@ -52,12 +56,15 @@ public class RelationshipSlider : MonoBehaviour
         float oldValue = slider.value;
         while (!Mathf.Approximately(slider.value, value))
         {
-            slider.value = Mathf.MoveTowards(slider.value, value, Time.deltaTime * animationSpeed);
+            float newValue = Mathf.MoveTowards(slider.value, value, Time.deltaTime * animationSpeed);
+            slider.value = newValue;
+            AP_RelationshipDisplay.text = (Mathf.Round(newValue*10)/10f).ToString();
 
             yield return new WaitForEndOfFrame();
         }
 
         slider.value = value;
+        AP_RelationshipDisplay.text = value.ToString();
     }
 
     public void SetValueNoAnimation(float value)
@@ -72,6 +79,7 @@ public class RelationshipSlider : MonoBehaviour
             value = slider.maxValue;
         }
         slider.value = value;
+        AP_RelationshipDisplay.text = value.ToString();
     }
 
     /// <summary>

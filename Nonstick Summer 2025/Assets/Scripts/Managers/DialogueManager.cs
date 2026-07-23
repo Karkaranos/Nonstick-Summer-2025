@@ -205,14 +205,14 @@ public class DialogueManager
         // progress dialogue:
         var dialogueOption = CurrentDialogueBranch.GetDialogueOption(playedCard);
 
-        float relationshipChange = dialogueOption.ChangeInRelationshipStatus;
+        float relationshipChange = GetRelationshipChange(playedCard);
         //float relationshipChange = playedCardSinceOpeningCombat.GetRelationshipChange(dialogueOption);
         //yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange);
         GameManager.Instance.StartCoroutine(SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange));
 
         // redundant if statement?
-        if((CurrentRelationshipScore + relationshipChange) < 0)
-            RelationshipManager.characterRelationships[currentCharacter].currentValue = 0;
+        //if((CurrentRelationshipScore + relationshipChange) < 0)
+        //    RelationshipManager.characterRelationships[currentCharacter].currentValue = 0;
 
         // progress dialogue:
         if (dialogueOption.RelationshipCheckRequired == false || RelationshipManager.characterRelationships[currentCharacter].currentValue > dialogueOption.RelationshipRange.y)
@@ -253,6 +253,14 @@ public class DialogueManager
             //MoodManager.UpdateMood(playedCard.Emotion);
 
         OnCardPlayedFinished.Invoke();
+    }
+
+    public static float GetRelationshipChange(CardData card)
+    {
+        if(card != null)
+            return card.GetRelationshipChange(CurrentDialogueBranch.GetDialogueOption(card));
+
+        return -15f;
     }
 
     public static void GainEnergyAfterTurn()

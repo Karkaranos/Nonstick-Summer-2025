@@ -57,7 +57,7 @@ public class DialogueOption
     [Required] public DialogueBranch BranchingDialogueLow;
 
     [Tooltip("How much this dialogue option changes the character's relationship value.")]
-    public float ChangeInRelationshipStatus;
+    [SerializeField] public float ChangeInRelationshipStatus;
 
     public void SetNextBranchReaction(DialogueBranch branch)
     {

@@ -17,6 +17,8 @@ MonoBehaviour:
     Portrait: {fileID: 21300000, guid: 3571cedc5744cb747aef6a7c6bc67ac6, type: 3}
     AnimatedReaction: {fileID: 3538256414719010168, guid: 6b8dd245a4e1d8c48b2809616a868486, type: 3}
     AudioResponse: Happy
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   Charming_Expression:
     NpcReactionText:
     - Dialogue: Right? Who could ever forget such an amazing game. I was so proud
@@ -24,11 +26,15 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: "I know you\u2019ll make us feel the exact same way tonight. I just
         know it!"
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Of course! I could never forget that game.
     RelationshipCheckRequired: 0
@@ -44,11 +50,15 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: "I know you\u2019ll make us feel the exact same way tonight. I just
         know it!"
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Yep! How could I? I was incredible in that game.
     RelationshipCheckRequired: 0
@@ -64,10 +74,14 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: I could never forget that for the rest of my life.
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: I remember it like it was yesterday.
     RelationshipCheckRequired: 0
@@ -76,65 +90,6 @@ MonoBehaviour:
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 15
-  Charming_Observation:
-    NpcReactionText:
-    - Dialogue: We were completely taken aback.
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-    - Dialogue: To think that my little pumpkin could do something as awesome as
-        that!
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-    CombinedDialogue: []
-    PlayerDialogue: I remember I scored the game winning goal. The looks on your
-      faces afterwards were just incredible.
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 0}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 15
-  Assertive_Observation:
-    NpcReactionText:
-    - Dialogue: I just thought it was really cool, and just know that you will make
-        us proud like that again.
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-    - Dialogue: All of us.
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-    CombinedDialogue: []
-    PlayerDialogue: "I don\u2019t have time to talk about that right now Grandma."
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 0}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -15
-  Sappy_Observation:
-    NpcReactionText:
-    - Dialogue: We were completely taken aback.
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-    - Dialogue: To think that my little pumpkin could do something as awesome as
-        that!
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-    CombinedDialogue: []
-    PlayerDialogue: I still remember the faces you guys made right after I scored
-      that game winning goal.
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 0}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
   Charming_Question:
     NpcReactionText:
     - Dialogue: Looking at you in your uniform all ready to kick some butt at the
@@ -142,10 +97,14 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: "I know you\u2019ll make us proud like that again."
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: I could never forget it, what makes you bring it up now?
     RelationshipCheckRequired: 0
@@ -161,10 +120,14 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: All of us.
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Yeah, what about it?
     RelationshipCheckRequired: 0
@@ -180,14 +143,20 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: If only he were here to see you today.
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: I know he would be just as shocked.
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "Yeah, do you still remember the look on Grandpa\u2019s face
       when I sent that final ball into the back of the net?"
@@ -203,6 +172,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
@@ -212,3 +183,4 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   End: 1
+  ArchipelagoLocation: 24

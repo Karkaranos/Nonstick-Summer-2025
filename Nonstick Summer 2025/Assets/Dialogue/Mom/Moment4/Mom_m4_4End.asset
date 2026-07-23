@@ -17,10 +17,14 @@ MonoBehaviour:
     Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Neutral
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   - Dialogue: NOW!
     Portrait: {fileID: 21300000, guid: 24794c9372059fe4c811fbd57b999120, type: 3}
     AnimatedReaction: {fileID: 1232626074937243997, guid: 4bb1702b19683694abd039f4703039a9, type: 3}
     AudioResponse: Angry
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "Is that really what you think of me? Do you think I\u2019m doing
@@ -28,14 +32,20 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: " I don\u2019t want to be the bad guy,"
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: "but you\u2019re forcing my hand!"
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: At least my PHONE listens to me!
     RelationshipCheckRequired: 0
@@ -51,6 +61,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m not trying to sound ungrateful. I AM grateful but you\u2019re
       being UNFAIR right now!"
@@ -67,6 +79,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: " A tragedy. It\u2019s almost like you\u2019re A MOTHER who is
       supposed to CARE ABOUT HER KID."
@@ -76,57 +90,14 @@ MonoBehaviour:
     BranchingDialogueNeutral: {fileID: 0}
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -5
-  Charming_Observation:
-    NpcReactionText:
-    - Dialogue: "Is that really what you think of me? Do you think I\u2019m doing
-        this because I \"hate\" you?"
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-    CombinedDialogue: []
-    PlayerDialogue: "At least my PHONE doesn\u2019t hate me!"
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 10
-  Assertive_Observation:
-    NpcReactionText:
-    - Dialogue: "Is it MY fault that you didn\u2019t study?! Is it MY fault that
-        you\u2019ve been clothed and fed with a roof over your head?"
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-    CombinedDialogue: []
-    PlayerDialogue: "No one asked you to do that! And it\u2019s not even my fault!"
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: -10
-  Sappy_Observation:
-    NpcReactionText:
-    - Dialogue: "Are you sure? Because you\u2019re not making a good case for  yourself
-        by sneaking behind my back like this."
-      Portrait: {fileID: 0}
-      AnimatedReaction: {fileID: 0}
-      AudioResponse: 
-    CombinedDialogue: []
-    PlayerDialogue: "I\u2019m not trying to sound ungrateful. I AM grateful."
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 11400000, guid: eb155b1ce45f98b498db67f5ca5d0578, type: 2}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 5
   Charming_Question:
     NpcReactionText:
     - Dialogue: ..!
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "If you work more, does that mean I\u2019ll have to see you less?"
     RelationshipCheckRequired: 0
@@ -142,6 +113,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: "Can\u2019t we talk about this? There has to be something else
       you can take besides my phone."
@@ -157,19 +130,27 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: "Is it MY fault that you\u2019ve been clothed and fed with a roof
         over your head?"
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: No,
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     - Dialogue: The only FAULT I made is GIVING you that damn phone to begin with!
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: Do you understand that you working so much leaves you with no
       time to pay attention to me?
@@ -185,6 +166,8 @@ MonoBehaviour:
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
+      HasAdvancedSignal: 0
+      AdvancedSignal: 0
     CombinedDialogue: []
     PlayerDialogue: ...
     RelationshipCheckRequired: 0
@@ -194,3 +177,4 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: -10
   End: 1
+  ArchipelagoLocation: 33

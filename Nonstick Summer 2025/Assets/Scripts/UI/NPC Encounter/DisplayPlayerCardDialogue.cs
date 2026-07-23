@@ -17,7 +17,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-// didnt know what to name this script so i just put 3 keywords together
+// didnt know what to name this script so i just put 4 keywords together
 public class DisplayPlayerCardDialogue : MonoBehaviour
 {
     [SerializeField, Required] private TMP_Text text;
@@ -55,6 +55,9 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
 
         StaticUtilities.EnableCanvasGroup(group, interactable:false);
         var cardtext = DialogueManager.CurrentDialogueBranch.GetDialogueOption(card).PlayerDialogue;
+
+        cardtext += $"\nRP: {DialogueManager.GetRelationshipChange(card)}";
+
         text.text = cardtext;
 
         RefreshLayout();

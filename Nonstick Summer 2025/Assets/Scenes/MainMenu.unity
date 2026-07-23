@@ -792,6 +792,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Archipelago Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 4669830102781898895, guid: 447d615f11508a94e9ba0f8ebae852c8, type: 3}
+      propertyPath: servicePrefabs.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669830102781898895, guid: 447d615f11508a94e9ba0f8ebae852c8, type: 3}
+      propertyPath: 'servicePrefabs.Array.data[4]'
+      value: 
+      objectReference: {fileID: 4379541018302994148, guid: 5ced46e30b16aa04eb09ae8e126b49d6, type: 3}
     - target: {fileID: 4905585739373550835, guid: 447d615f11508a94e9ba0f8ebae852c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.75489
@@ -3226,12 +3234,28 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6453438862276341690, guid: 60e60d907c9f8d54f95edb5b5ebd2940, type: 3}
+      propertyPath: mom_item
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 6453438862276341690, guid: 60e60d907c9f8d54f95edb5b5ebd2940, type: 3}
       propertyPath: momentID
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6453438862276341690, guid: 60e60d907c9f8d54f95edb5b5ebd2940, type: 3}
+      propertyPath: uncle_item
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6453438862276341690, guid: 60e60d907c9f8d54f95edb5b5ebd2940, type: 3}
+      propertyPath: cousin_item
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 6453438862276341690, guid: 60e60d907c9f8d54f95edb5b5ebd2940, type: 3}
       propertyPath: sceneToLoad
       value: Moment_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6453438862276341690, guid: 60e60d907c9f8d54f95edb5b5ebd2940, type: 3}
+      propertyPath: grandma_item
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 7147085500185350830, guid: 60e60d907c9f8d54f95edb5b5ebd2940, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3410,16 +3434,48 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8912293005211855695, guid: 60e60d907c9f8d54f95edb5b5ebd2940, type: 3}
+      propertyPath: mom_item
+      value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912293005211855695, guid: 60e60d907c9f8d54f95edb5b5ebd2940, type: 3}
       propertyPath: momentID
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912293005211855695, guid: 60e60d907c9f8d54f95edb5b5ebd2940, type: 3}
+      propertyPath: uncle_item
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912293005211855695, guid: 60e60d907c9f8d54f95edb5b5ebd2940, type: 3}
+      propertyPath: cousin_item
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 8912293005211855695, guid: 60e60d907c9f8d54f95edb5b5ebd2940, type: 3}
       propertyPath: sceneToLoad
       value: Moment_4
       objectReference: {fileID: 0}
+    - target: {fileID: 8912293005211855695, guid: 60e60d907c9f8d54f95edb5b5ebd2940, type: 3}
+      propertyPath: grandma_item
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187152479537332552, guid: 60e60d907c9f8d54f95edb5b5ebd2940, type: 3}
+      propertyPath: mom_item
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187152479537332552, guid: 60e60d907c9f8d54f95edb5b5ebd2940, type: 3}
+      propertyPath: uncle_item
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187152479537332552, guid: 60e60d907c9f8d54f95edb5b5ebd2940, type: 3}
+      propertyPath: cousin_item
+      value: 33
+      objectReference: {fileID: 0}
     - target: {fileID: 9187152479537332552, guid: 60e60d907c9f8d54f95edb5b5ebd2940, type: 3}
       propertyPath: sceneToLoad
       value: Moment_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187152479537332552, guid: 60e60d907c9f8d54f95edb5b5ebd2940, type: 3}
+      propertyPath: grandma_item
+      value: 32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -65,7 +65,14 @@ public class APSaveDataService : Service
         return saveData.ConnectionConfiguration;
     }
 
-    public RelationshipStatus GetRelationshipStats(int moment)
+    public RelationshipStatus GetRelationshipStatsForMomentBeginning(int moment)
+    {
+        // lol
+        return GetRelationshipStatsAtMomentEnd(moment - 1);
+
+    }
+
+    public RelationshipStatus GetRelationshipStatsAtMomentEnd(int moment)
     {
         switch (moment)
         {
@@ -88,7 +95,7 @@ public class APSaveDataService : Service
             return result;
 
         // find previously set status
-        return GetRelationshipStats(moment - 1);
+        return GetRelationshipStatsAtMomentEnd(moment - 1);
 
     }
 

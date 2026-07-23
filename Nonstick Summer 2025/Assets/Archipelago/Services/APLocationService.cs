@@ -72,6 +72,10 @@ public class APLocationService : Service
 
     private async void CheckAllSavedLocations()
     {
+        // TODO: get rid of this im just being precautious rn
+
+        locations_checked = APSaveDataService.Instance.GetCachedLocations();
+
         long[] location_ids = new long[locations_checked.Count];
 
         int i = 0;

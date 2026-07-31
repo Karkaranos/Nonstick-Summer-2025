@@ -149,6 +149,7 @@ public static class ArchipelagoItemNameMapping
         nameToItemMap.Add("Moment 3: Water Bottle", ArchipelagoItem.Moment3_WaterBottle);
         nameToItemMap.Add("Moment 4: Water Bottle", ArchipelagoItem.Moment3_WaterBottle); // sorry guys i made a typo
         nameToItemMap.Add("Moment 3: Backpack", ArchipelagoItem.Moment3_Backpack);
+        nameToItemMap.Add("Moment 4: Backpack", ArchipelagoItem.Moment3_Backpack); // wow guys i really fucked this one huh
 
         // Moment 4
         nameToItemMap.Add("Moment 4: Mom", ArchipelagoItem.Moment4_Mom);

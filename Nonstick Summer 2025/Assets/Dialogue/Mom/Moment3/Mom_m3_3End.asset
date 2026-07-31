@@ -17,6 +17,8 @@ MonoBehaviour:
     Portrait: {fileID: 0}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Silent
+    HasAdvancedSignal: 0
+    AdvancedSignal: 0
   Charming_Expression:
     NpcReactionText: []
     CombinedDialogue: []
@@ -38,36 +40,6 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 0
   Sappy_Expression:
-    NpcReactionText: []
-    CombinedDialogue: []
-    PlayerDialogue: 
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 0}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 0
-  Charming_Observation:
-    NpcReactionText: []
-    CombinedDialogue: []
-    PlayerDialogue: 
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 0}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 0
-  Assertive_Observation:
-    NpcReactionText: []
-    CombinedDialogue: []
-    PlayerDialogue: 
-    RelationshipCheckRequired: 0
-    RelationshipRange: {x: 0, y: 0}
-    BranchingDialogueHigh: {fileID: 0}
-    BranchingDialogueNeutral: {fileID: 0}
-    BranchingDialogueLow: {fileID: 0}
-    ChangeInRelationshipStatus: 0
-  Sappy_Observation:
     NpcReactionText: []
     CombinedDialogue: []
     PlayerDialogue: 
@@ -118,3 +90,4 @@ MonoBehaviour:
     BranchingDialogueLow: {fileID: 0}
     ChangeInRelationshipStatus: 0
   End: 1
+  ArchipelagoLocation: 22

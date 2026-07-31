@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using static UnityEditor.FilePathAttribute;
+using NaughtyAttributes;
 
 public class APLocationService : Service
 {
@@ -94,7 +95,7 @@ public class APLocationService : Service
         Debug.Log($"<color=green>Refreshed {location_ids.Count()} locations</color>");
     }
 
-    public async void CheckLocation(ArchipelagoLocation location)
+    public async void CheckLocation(ArchipelagoLocation location, bool updatePercolatingLocations=true)
     {
         if (location == ArchipelagoLocation.None)
         {
@@ -118,6 +119,50 @@ public class APLocationService : Service
         ArchipelagoManager.Instance.OnLocationsUpdated.Invoke();
 
         Debug.Log($"<color=green>Location Checked: {locationName}</color>");
+
+        if(updatePercolatingLocations)
+            UpdatePercolatingLocations();
     }
 
+    [Button]
+    private void UpdatePercolatingLocations()
+    {
+        Debug.Log(IsLocationChecked(ArchipelagoLocation.Moment5_Mom_Route_1));
+        Debug.Log(IsLocationChecked(ArchipelagoLocation.Moment5_Grandma_Route_1));
+            Debug.Log(IsLocationChecked(ArchipelagoLocation.Moment5_Cousin_Route_1));
+        Debug.Log(IsLocationChecked(ArchipelagoLocation.Moment5_Uncle_Route_1));
+        Debug.Log(IsLocationChecked(ArchipelagoLocation.Moment5_Complete));
+
+        if (    IsLocationChecked(ArchipelagoLocation.Moment5_Mom_Route_1) 
+            && IsLocationChecked(ArchipelagoLocation.Moment5_Grandma_Route_1) 
+            && IsLocationChecked(ArchipelagoLocation.Moment5_Cousin_Route_1) 
+            && IsLocationChecked(ArchipelagoLocation.Moment5_Uncle_Route_1)
+            && IsLocationChecked(ArchipelagoLocation.Moment5_Complete))
+        {
+            Debug.Log("PLAYER WINS ARCHIPELAGO FOREVER!");
+            CheckLocation(ArchipelagoLocation.Victory_Location, false);
+        } 
+
+        // actually i dont care
+        if (IsLocationChecked(ArchipelagoLocation.Moment5_Mom_Route_1))
+        {
+            CheckLocation(ArchipelagoLocation.Moment5_Mom_Route_2, false);
+            CheckLocation(ArchipelagoLocation.Moment5_Mom_Route_3, false);
+        }
+        if (IsLocationChecked(ArchipelagoLocation.Moment5_Mom_Route_2))
+        {
+            CheckLocation(ArchipelagoLocation.Moment5_Mom_Route_3, false);
+        }
+
+        if (IsLocationChecked(ArchipelagoLocation.Moment5_Grandma_Route_1))
+        {
+            CheckLocation(ArchipelagoLocation.Moment5_Grandma_Route_2, false);
+            CheckLocation(ArchipelagoLocation.Moment5_Grandma_Route_3, false);
+        }
+        if (IsLocationChecked(ArchipelagoLocation.Moment5_Grandma_Route_2))
+        {
+            CheckLocation(ArchipelagoLocation.Moment5_Grandma_Route_3, false);
+        }
+
+    }
 }

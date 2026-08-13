@@ -23,6 +23,7 @@ public class BedInteractionPopupCanvas : MonoBehaviour
     [Tooltip("Fade to black prefab")]
     [SerializeField] private GameObject fadeToBlack;
     public EndType SceneTransitionType;
+    public SteamAchievement Achievement;
 
     public enum EndType
     {
@@ -48,6 +49,8 @@ public class BedInteractionPopupCanvas : MonoBehaviour
     {
         if (Bed.PlayerCanLeave)
         {
+            SteamAchievementManager.Instance.UnlockAchievement(Achievement);
+
             Bed.InteractSuccessful = true;
 
             DoFadeOut();
@@ -78,6 +81,5 @@ public class BedInteractionPopupCanvas : MonoBehaviour
         {
             fade.StartFadeOut(image, Bed.NextSceneIndex);
         }
-        FindFirstObjectByType<Check>().gameCompleted = true;
     }
 }

@@ -65,6 +65,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     private Scene currentScene;
     [HideInInspector] public bool inSceneFive = false;
+    [HideInInspector] public bool bestEndingForCharacterReached;
     public bool PlayerReadAllNPCText => dialogueBox.PlayerReadAllDialogue;
     public bool ActivelyTypewriting => dialogueBox.DialogueScrolling;
 
@@ -111,6 +112,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         inSceneFive = (currentScene.name == "Moment_5");
 
+        bestEndingForCharacterReached = false;
+
         yield return ToggleUIForDialogueProgression(false);
 
         //yield return OpenCombatUI_Coroutine();
@@ -128,12 +131,32 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     public void UpdateHoveringCard(CardData card)
     {
-        // card is null, it hides the text bubble
         playerDialogueBubble.WriteText(card);
 
-        /*if(card!=null)
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.CardHoverSFX);*/
+        // card is null, it hides the text bubble
+        playerDialogueBubble.Hide();
+
+        /*
+        if (changeHoverBubbleDelay != null)
+            StopCoroutine(changeHoverBubbleDelay);
+
+        changeHoverBubbleDelay = StartCoroutine(DelayUpdateHoveringCard(card));*/
     }
+
+    /*
+    private Coroutine changeHoverBubbleDelay;
+    private IEnumerator DelayUpdateHoveringCard(CardData card)
+    {
+        //if(card == null)
+        //    yield return new WaitForSeconds(0.2f);
+        yield return null;
+
+        playerDialogueBubble.WriteText(card);
+
+        // card is null, it hides the text bubble
+        if (card == null)
+            playerDialogueBubble.Hide();
+    }*/
 
     private void OnSelectionUpdated()
     {
@@ -178,6 +201,11 @@ public class DialogueUIController : Singleton<DialogueUIController>
                     GameManager.ObjectiveReference = FindFirstObjectByType<Objectives>(FindObjectsInactive.Include);
                 GameManager.ObjectiveReference.SetObjectiveVisibility(true);
                 inWorldCharacter.GetComponent<SideCharacterInteractable>().FinishSideCombat();
+            }
+
+            if(DialogueManager.hasBeenSilentEveryTurn)
+            {
+                SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.SilentConversation);
             }
 
             return;
@@ -269,11 +297,40 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
     }
 
-    public virtual void OnNPCFinishDialogue()
+    public virtual void OnNPCFinishDialogue(Character character)
     {
         if (DialogueManager.CurrentDialogueBranch.End && !(SceneManager.GetActiveScene().name.Equals("Tutorial")) && !(SceneManager.GetActiveScene().name.Equals("Moment_5")))
         {
             MusicManager.instance.StartHouse(); // house md???
+        }
+
+        if(bestEndingForCharacterReached)
+        {
+            switch (character)
+            {
+                case (Character.Mom):
+                    SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingMom);
+                    PersistentGameplayData.Instance.BestMomEndingUnlocked = true;
+                    break;
+
+                case (Character.Cousin):
+                    SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingCousin);
+                    PersistentGameplayData.Instance.BestCousinEndingUnlocked = true;
+                    break;
+
+                case (Character.Grandma):
+                    SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingGrandma);
+                    PersistentGameplayData.Instance.BestGrandmaEndingUnlocked = true;
+                    break;
+
+                case (Character.Uncle):
+                    PersistentGameplayData.Instance.BestUncleEndingUnlocked = true;
+                    SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingUncle);
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 

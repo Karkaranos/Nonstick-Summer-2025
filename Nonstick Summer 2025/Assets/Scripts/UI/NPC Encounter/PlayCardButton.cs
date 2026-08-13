@@ -39,8 +39,10 @@ public class PlayCardButton : MonoBehaviour
         var card = hand.FirstSelectedCard;
         bool canAffordCard = isHoldingACard && (Mathf.Abs(card.EnergyCost) <= DialogueManager.CurrentEnergy);
         Debug.Log($"isHoldingACard: {isHoldingACard}\ncanAffordCard:{canAffordCard}");
-        if(isHoldingACard)
-            Debug.Log($"{Mathf.Abs(card.EnergyCost)} > {DialogueManager.CurrentEnergy} = {(Mathf.Abs(card.EnergyCost) > DialogueManager.CurrentEnergy)}");
+
+        //if(isHoldingACard)
+        //    Debug.Log($"{Mathf.Abs(card.EnergyCost)} > {DialogueManager.CurrentEnergy} = {(Mathf.Abs(card.EnergyCost) > DialogueManager.CurrentEnergy)}");
+
         button.interactable = (DialogueUIController.Instance.inSceneFive || (isHoldingACard && canAffordCard));
 
         StaticUtilities.ToggleCanvasGroup(group, 

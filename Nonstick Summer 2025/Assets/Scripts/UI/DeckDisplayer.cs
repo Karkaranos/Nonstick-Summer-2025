@@ -503,10 +503,13 @@ public class DeckDisplayer : MonoBehaviour
             return;
         }
 
-        selectedCards.Add(cardDisplay);
+        if(cardDisplay != null)
+        {
+            selectedCards.Add(cardDisplay);
 
-        cardDisplay.SetPositionAndOffset( offset: (Vector3)selectedCardOffset, applyToShadow: true );
-        cardDisplay.transform.SetAsLastSibling(); // bring to front so player can see it
+            cardDisplay.SetPositionAndOffset(offset: (Vector3)selectedCardOffset, applyToShadow: true);
+            cardDisplay.transform.SetAsLastSibling(); // bring to front so player can see it
+        }
 
         selectedCards = selectedCards.Where(d => d != null || !d.MarkedToBeDestroyed).ToHashSet();
 

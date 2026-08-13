@@ -48,8 +48,13 @@ public class SilentButton : MonoBehaviour
 
     public void OnButtonPressed()
     {
+        DialogueUIController.Instance.deckDisplay.SelectCard(null);
+
         StartCoroutine(DialogueManager.ProcessPlayCard(null));
         UpdateButtonEnabled();
+
+        //DialogueUIController.Instance.playerDialogueBubble.Hide(forceHide: true);
+        //DialogueUIController.Instance.playCardButton.UpdateButtonEnabled();
     }
 
     public void OnButtonHover()

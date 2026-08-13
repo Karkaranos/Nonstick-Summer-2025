@@ -254,6 +254,9 @@ public static class StaticUtilities
 
         while (time - startTime < seconds)
         {
+            if (transform == null)
+                yield break;
+
             time = unscaledTime ? Time.unscaledTime : Time.time;
             float t = (time - startTime) / seconds;
             t = Mathf.Pow(t, tExponent);

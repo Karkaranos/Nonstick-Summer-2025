@@ -206,7 +206,7 @@ public class DialogueManager
         // progress dialogue:
         var dialogueOption = CurrentDialogueBranch.GetDialogueOption(playedCard);
 
-        float relationshipChange = dialogueOption.ChangeInRelationshipStatus;
+        float relationshipChange = playedCard == null ? dialogueOption.ChangeInRelationshipStatus : playedCard.GetRelationshipChange(dialogueOption);
         //float relationshipChange = playedCardSinceOpeningCombat.GetRelationshipChange(dialogueOption);
         //yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange);
         GameManager.Instance.StartCoroutine(SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange));

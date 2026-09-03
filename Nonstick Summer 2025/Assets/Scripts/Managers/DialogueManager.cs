@@ -62,13 +62,16 @@ public class DialogueManager
 
     public static IEnumerator SetCurrentEnergy(float energy)
     {
-        energy = Mathf.Clamp(energy, 0, MaxEnergy);
-        if (_currentEnergy == energy) yield break;
+        if(!DialogueUIController.Instance.inSceneFive)
+        {
+            energy = Mathf.Clamp(energy, 0, MaxEnergy);
+            if (_currentEnergy == energy) yield break;
 
-        Debug.Log($"set energy to {_currentEnergy}");
-        _currentEnergy = energy;
-        if (DialogueUIController.Instance != null)
-            yield return DialogueUIController.Instance.UpdateEnergy(_currentEnergy); // wait for animation to finish
+            Debug.Log($"set energy to {_currentEnergy}");
+            _currentEnergy = energy;
+            if (DialogueUIController.Instance != null)
+                yield return DialogueUIController.Instance.UpdateEnergy(_currentEnergy); // wait for animation to finish
+        }
     }
 
     public static IEnumerator SetCurrentRelationshipStatus(float relationshipScore)

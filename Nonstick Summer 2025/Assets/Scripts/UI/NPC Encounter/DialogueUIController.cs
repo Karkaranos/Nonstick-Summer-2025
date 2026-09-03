@@ -110,7 +110,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         currentScene = SceneManager.GetActiveScene();
 
-        inSceneFive = (currentScene.name == "Moment_5");
+        inSceneFive = (currentScene.name.Contains("5"));
 
         bestEndingForCharacterReached = false;
 

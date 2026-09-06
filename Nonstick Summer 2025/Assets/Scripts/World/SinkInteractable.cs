@@ -7,6 +7,7 @@
 * 
 *****************************************************************************/
 using UnityEngine;
+using System.Collections;
 
 public class SinkInteractable : MonoBehaviour, IInteractable
 {
@@ -15,8 +16,17 @@ public class SinkInteractable : MonoBehaviour, IInteractable
     private GameObject waterObj = null;
     private bool waterOn = false;
 
+    private Coroutine resetInteract;
+
     public void Interact(GameObject player)
     {
+        if (resetInteract != null)
+        {
+            return;
+        }
+
+        resetInteract = StartCoroutine(InteractDelay());
+
         if (!waterOn && waterObj == null)
         {
             waterOn = true;
@@ -31,5 +41,11 @@ public class SinkInteractable : MonoBehaviour, IInteractable
             //not needed but as a safeguard
             waterObj = null;
         }
+    }
+
+    private IEnumerator InteractDelay()
+    {
+        yield return new WaitForSeconds(.1f);
+        resetInteract = null;
     }
 }

@@ -10,6 +10,7 @@
 using NaughtyAttributes;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 
 public class FanInteractable : MonoBehaviour, IInteractable
 {
@@ -21,16 +22,31 @@ public class FanInteractable : MonoBehaviour, IInteractable
     private Coroutine fanAnimation;
     private float fanSpeedScalar = 0;
     private float targetFanSpeedScalar => fanActive ? 1 : 0;
+
+    private Coroutine resetInteract;
     public void Interact(GameObject player)
     {
-        // Turn on fan
-        if(!fanActive && fanAnimation == null)
+        if(resetInteract != null)
         {
-            fanAnimation = StartCoroutine(FanAnimation());
+            return;
         }
 
+        resetInteract = StartCoroutine(InteractDelay());
+
+        Debug.Log("Fan interact");
+        // Turn on fan
+        if (!fanActive && fanAnimation == null)
+        {
+            fanActive = true;
+            fanAnimation = StartCoroutine(FanAnimation());
+        }
+        else
+        {
+            fanActive = false;
+        }
+
+
         // this updates targetFanSpeedScalar, which stops the coroutine, eventually
-        fanActive = !fanActive;
     }
 
     private IEnumerator FanAnimation()
@@ -48,5 +64,11 @@ public class FanInteractable : MonoBehaviour, IInteractable
         while (!Mathf.Approximately(fanSpeedScalar, 0) || fanActive);
         Debug.Log("fan ended");
         fanAnimation = null;
+    }
+
+    private IEnumerator InteractDelay()
+    {
+        yield return new WaitForSeconds(.1f);
+        resetInteract = null;
     }
 }

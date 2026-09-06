@@ -46,6 +46,12 @@ public class Interact : MonoBehaviour
         StartDetectingInteractions();
     }
 
+    private void OnDestroy()
+    {
+        InputEvents.InteractStarted.RemoveListener(InteractPressed);
+        InputEvents.InteractCanceled.RemoveListener(InteractReleased);
+    }
+
     /// <summary>
     /// Called when Interact input is started. Calls Interact() on the detected
     /// interactable game object

@@ -221,7 +221,7 @@ public class CardPickupInteractable : MonoBehaviour, IInteractable
     private void OnDestroy()
     {
         // This is to catch cards that may exist in one scene, but not in another
-        if(CardPickupManager.Instance != null && !CardPickupManager.Instance.PickupCollectedStatus.ContainsKey(Hash) && !didStart)
+        if(CardPickupManager.Instance != null && !CardPickupManager.PickupCollectedStatus.ContainsKey(Hash) && !didStart)
         {
             Debug.LogError("Undocumented card is being destroyed! (Did you forget to update the card pickup partent prefab?)");
         }

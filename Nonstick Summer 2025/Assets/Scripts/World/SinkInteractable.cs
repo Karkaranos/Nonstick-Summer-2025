@@ -19,6 +19,8 @@ public class SinkInteractable : MonoBehaviour, IInteractable
     private Coroutine resetInteract = null;
     private Coroutine slowing = null;
 
+    ParticleSystem[] childSystems = new ParticleSystem[2];
+
 
     public void Interact(GameObject player)
     {
@@ -33,6 +35,7 @@ public class SinkInteractable : MonoBehaviour, IInteractable
         {
             waterOn = true;
             waterObj = Instantiate(waterSystem, spawnPoint);
+            childSystems = waterObj.GetComponentsInChildren<ParticleSystem>();
             waterObj.transform.localPosition = Vector3.zero;
         }
         else
@@ -42,11 +45,19 @@ public class SinkInteractable : MonoBehaviour, IInteractable
                 StopCoroutine(slowing);
                 slowing = null;
                 waterObj.GetComponent<ParticleSystem>().loop = true;
+                foreach(ParticleSystem p in childSystems)
+                {
+                    p.loop = true;
+                }
                 return;
 
             }
 
             waterObj.GetComponent<ParticleSystem>().loop = false;
+            foreach (ParticleSystem p in childSystems)
+            {
+                p.loop = false;
+            }
 
             slowing = StartCoroutine(StopWater());
         }
@@ -54,7 +65,7 @@ public class SinkInteractable : MonoBehaviour, IInteractable
 
     private IEnumerator StopWater()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
 
         waterOn = false;
         Destroy(waterObj);

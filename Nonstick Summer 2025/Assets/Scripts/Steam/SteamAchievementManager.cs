@@ -11,7 +11,7 @@ using static Unity.Collections.AllocatorManager;
 
 public class SteamAchievementManager : Singleton<SteamAchievementManager>
 {
-    private const uint STEAM_APP_ID = 1234567; //TODO: Replace with actual steam ID when we get it!!
+    private const uint STEAM_APP_ID = 4917250; //TODO: Replace with actual steam ID when we get it!!
     
     [SerializeField, ReadOnly] private bool connectedToSteam = false;
 

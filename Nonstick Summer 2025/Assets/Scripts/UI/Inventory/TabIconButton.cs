@@ -13,6 +13,7 @@ public class TabIconButton : Singleton<TabIconButton>
     [SerializeField] private float oneShakeSeconds = 0.15f;
 
     bool animating;
+    bool notificationOpen;
     Quaternion defaultRotation;
 
     private void Start()
@@ -45,11 +46,13 @@ public class TabIconButton : Singleton<TabIconButton>
     {
         notification.gameObject.SetActive(enabled);
 
-        if (enabled)
+        if (enabled && !notificationOpen)
         {
             notification.alpha = 0;
             StaticUtilities.FadeToVisible(notification, 0.25f, unscaledTime: true);
         }
+
+        notificationOpen = enabled;
     }
 
     // running into a problem where the icon will be rotated for like, no reason?

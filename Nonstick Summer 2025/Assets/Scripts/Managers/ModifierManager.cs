@@ -12,7 +12,6 @@
 *****************************************************************************/
 
 using UnityEngine;
-using UnityEngine;
 using System.Collections;
 using UnityEngine.UIElements;
 using System.Collections.Generic;

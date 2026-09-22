@@ -20,6 +20,11 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
     {
         RefreshAllAchievements();
         DontDestroyOnLoad(this.gameObject);
+
+        // already connected!!
+        if (connectedToSteam)
+            return;
+
         try
         {
             Steamworks.SteamClient.Init(STEAM_APP_ID);
@@ -124,6 +129,8 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
         if (connectedToSteam)
         {
             completed = Steamworks.SteamUserStats.IndicateAchievementProgress(id, currentProgression, maxProgression);
+            Steamworks.SteamUserStats.StoreStats();
+
             if (completed)
             {
                 bool successfulTrigger = achievementData.Trigger();
@@ -153,15 +160,19 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
         SteamAchievement[] achievements = (SteamAchievement[])Enum.GetValues(typeof(SteamAchievement));
         foreach (var a in achievements)
         {
-            var achievement = new Steamworks.Data.Achievement(GetInternalAchievementName(a));
+            string id = GetInternalAchievementName(a);
+            var achievement = new Steamworks.Data.Achievement(id);
 
-            bool completionStatus = PlayerPrefs.GetInt(GetInternalAchievementName(a)) == 1;
+            bool completionStatus = PlayerPrefs.GetInt(id) == 1;
 
             if (completionStatus == true && !achievement.State)
             {
                 achievement.Trigger();
-                achievementsInMemory++;
+                Steamworks.SteamUserStats.StoreStats();
             }
+
+            if (completionStatus == true)
+                achievementsInMemory++;
         }
 
         Steamworks.SteamUserStats.StoreStats();

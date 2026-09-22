@@ -62,6 +62,12 @@ public class DialogueManager
 
     public static IEnumerator SetCurrentEnergy(float energy)
     {
+        if (DialogueUIController.Instance == null)
+        {
+            Debug.LogWarning("No instance of DialogueUIController. Cant set energy");
+            yield break;
+        }
+
         if(!DialogueUIController.Instance.inSceneFive)
         {
             energy = Mathf.Clamp(energy, 0, MaxEnergy);

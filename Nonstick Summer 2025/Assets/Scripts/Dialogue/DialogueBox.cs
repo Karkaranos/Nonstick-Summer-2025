@@ -2,6 +2,7 @@
 * File Name :         DialogueBox.cs
 * Author :            Jay, Toby
 * Creation Date :     June 9, 2025
+* Last Updated  :     Sep 22, 2026
 *
 * Brief Description :  Displays the NPC's dialogue
 * 
@@ -12,6 +13,7 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class DialogueBox : MonoBehaviour
@@ -240,9 +242,42 @@ public class DialogueBox : MonoBehaviour
 
     private void ProcessAdvancedSignal(DialogueNPC dialogue)
     {
+        if (!dialogue.HasAdvancedSignal)
+            return;
+
         if(dialogue.AdvancedSignal == AdvancedSignal.ShakeEnergyBar)
         {
             DialogueUIController.Instance.energyBar.PlayShakeAnimation();
+        }
+        if(dialogue.AdvancedSignal == AdvancedSignal.UnlockAchievement)
+        {
+            SteamAchievementManager.Instance.UnlockAchievement(dialogue.SteamAchievement);
+
+            switch (dialogue.AdvancedSignal_ThisCharacter)
+            {
+                case (Character.Mom):
+                    //SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingMom);
+                    PersistentGameplayData.Instance.BestMomEndingUnlocked = true;
+                    break;
+
+                case (Character.Cousin):
+                    //SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingCousin);
+                    PersistentGameplayData.Instance.BestCousinEndingUnlocked = true;
+                    break;
+
+                case (Character.Grandma):
+                    //SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingGrandma);
+                    PersistentGameplayData.Instance.BestGrandmaEndingUnlocked = true;
+                    break;
+
+                case (Character.Uncle):
+                    PersistentGameplayData.Instance.BestUncleEndingUnlocked = true;
+                    //SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingUncle);
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 

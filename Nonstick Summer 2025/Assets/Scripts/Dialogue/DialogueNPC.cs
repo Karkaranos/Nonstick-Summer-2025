@@ -32,11 +32,17 @@ public class DialogueNPC
     [Foldout("Advanced")] public bool HasAdvancedSignal;
     [Tooltip("Under certain values, the AdvancedSignal will cause certain events to trigger mid-dialogue")]
     [Foldout("Advanced"), ShowIf(nameof(HasAdvancedSignal)), AllowNesting] public AdvancedSignal AdvancedSignal;
+    [Foldout("Advanced"), ShowIf(nameof(_showAchievement)), AllowNesting] public SteamAchievement SteamAchievement;
+    [Foldout("Advanced"), ShowIf(nameof(_showAchievement)), AllowNesting] public Character AdvancedSignal_ThisCharacter;
+
+
+
+    private bool _showAchievement => HasAdvancedSignal && this.AdvancedSignal == AdvancedSignal.UnlockAchievement;
 }
 
 public enum AdvancedSignal
 {
-    None, ShakeEnergyBar,
+    None, ShakeEnergyBar, UnlockAchievement
 }
 
 public enum AudioResponseType

@@ -228,17 +228,12 @@ public class DialogueManager
         if (dialogueOption.RelationshipCheckRequired == false || RelationshipManager.characterRelationships[currentCharacter].currentValue > dialogueOption.RelationshipRange.y)
         {
             Debug.Log("Player has enough RP for good branch");
-            CurrentDialogueBranch = dialogueOption.BranchingDialogueHigh; 
-
-            if(DialogueUIController.Instance.inSceneFive)
-            {
-                DialogueUIController.Instance.bestEndingForCharacterReached = true;
-            }
+            CurrentDialogueBranch = dialogueOption.BranchingDialogueHigh;
         }
         else if(dialogueOption.RelationshipCheckRequired = true && RelationshipManager.characterRelationships[currentCharacter].currentValue <= dialogueOption.RelationshipRange.y && RelationshipManager.characterRelationships[currentCharacter].currentValue >= dialogueOption.RelationshipRange.x)
         {
             Debug.Log("Player has met RP requirement");
-            CurrentDialogueBranch = dialogueOption.BranchingDialogueNeutral; 
+            CurrentDialogueBranch = dialogueOption.BranchingDialogueNeutral;
         }
         else if(dialogueOption.RelationshipCheckRequired = true && RelationshipManager.characterRelationships[currentCharacter].currentValue < dialogueOption.RelationshipRange.x)
         {

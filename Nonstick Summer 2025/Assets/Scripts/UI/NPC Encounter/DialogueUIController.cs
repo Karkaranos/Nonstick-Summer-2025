@@ -306,31 +306,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         if(bestEndingForCharacterReached)
         {
-            switch (character)
-            {
-                case (Character.Mom):
-                    SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingMom);
-                    PersistentGameplayData.Instance.BestMomEndingUnlocked = true;
-                    break;
-
-                case (Character.Cousin):
-                    SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingCousin);
-                    PersistentGameplayData.Instance.BestCousinEndingUnlocked = true;
-                    break;
-
-                case (Character.Grandma):
-                    SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingGrandma);
-                    PersistentGameplayData.Instance.BestGrandmaEndingUnlocked = true;
-                    break;
-
-                case (Character.Uncle):
-                    PersistentGameplayData.Instance.BestUncleEndingUnlocked = true;
-                    SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingUncle);
-                    break;
-
-                default:
-                    break;
-            }
+            
         }
     }
 

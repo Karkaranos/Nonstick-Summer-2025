@@ -42,7 +42,6 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
     // Update is called once per frame
     void Update()
     {
-        /*
         if (connectedToSteam)
         {
             Steamworks.SteamClient.RunCallbacks();
@@ -61,7 +60,6 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
                 connectedToSteam = false;
             }
         }
-        */
     }
 
     public void dissconnectFromSteam()
@@ -81,15 +79,13 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
 
     void OnDisable()
     {
-
         SceneManager.sceneLoaded -= OnSceneLoaded;
-
     }
     #endregion
 
     private string GetInternalAchievementName(SteamAchievement achievement)
     {
-        return $"Achievement_{achievement.ToString()}";
+        return $"{achievement.ToString()}";
     }
 
     public void UnlockAchievement(SteamAchievement achievement)

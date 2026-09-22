@@ -2,7 +2,6 @@ using UnityEngine;
 
 public enum SteamAchievement
 {
-    //TODO: None of these are implemented
     OpenGame,
     WatchCredits,
 

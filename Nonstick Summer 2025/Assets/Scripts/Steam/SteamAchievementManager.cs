@@ -102,11 +102,13 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
             var achivement = new Steamworks.Data.Achievement(id);
             achivement.Trigger();
         }
+        RefreshAllAchievements();
     }
 
     public void UpdateProgress(SteamAchievement achievement, int currentProgression, int maxProgression)
     {
         string id = GetInternalAchievementName(achievement);
+        var achievementData = new Steamworks.Data.Achievement(id);
 
         // Update value in case the player is not connected to the internet or something
         if (currentProgression >= maxProgression)
@@ -118,12 +120,15 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
         if (connectedToSteam)
         {
             completed = Steamworks.SteamUserStats.IndicateAchievementProgress(id, currentProgression, maxProgression);
+            achievementData.Trigger();
         }
 
         if (completed)
             Debug.Log($"Steam Achievement completed: <color=green>{achievement.ToString()}</color>: {currentProgression}/{maxProgression}");
         else
             Debug.Log($"Steam Achievement progress: <color=blue>{achievement.ToString()}</color>: {currentProgression}/{maxProgression}");
+
+        RefreshAllAchievements();
     }
 
 

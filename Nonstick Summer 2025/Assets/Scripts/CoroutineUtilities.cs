@@ -10,6 +10,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -111,6 +112,17 @@ public static class CoroutineUtilities
         return CoroutineRunner.StartCoroutine(
                 CombineToSequence(currentCoroutine, CreateCoroutineSequence(coroutineSequence))
             );
+    }
+
+    public static Coroutine DelayRealtime(float seconds)
+    {
+        return CoroutineRunner.StartCoroutine(DelayCoroutineRealtime(seconds));
+    }
+
+    public static Coroutine DelayRealtime(this Coroutine currentCoroutine, float seconds)
+    {
+        return currentCoroutine
+            .Then(DelayCoroutineRealtime(seconds));
     }
 
     #region Private IEnumerators
@@ -218,6 +230,11 @@ public static class CoroutineUtilities
                 yield return topCoroutine;
             coroutinesPlaying.Pop();
         }
+    }
+
+    private static IEnumerator DelayCoroutineRealtime(float seconds)
+    {
+        yield return new WaitForSecondsRealtime(seconds);   
     }
 
     #endregion

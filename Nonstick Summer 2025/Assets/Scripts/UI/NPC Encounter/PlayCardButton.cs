@@ -16,6 +16,7 @@ public class PlayCardButton : MonoBehaviour
     [SerializeField, Required] private Button button;
     [SerializeField, Required] private CanvasGroup group;
     [SerializeField, Required] private CanvasGroup parentGroup;
+    [SerializeField, Required] private CanvasGroup playerTextGroup;
     private DeckDisplayer hand => DialogueUIController.Instance.deckDisplay;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -45,16 +46,20 @@ public class PlayCardButton : MonoBehaviour
 
         button.interactable = (DialogueUIController.Instance.inSceneFive || (isHoldingACard && canAffordCard));
 
+        float alpha = isHoldingACard ? 1 : 0;
         StaticUtilities.ToggleCanvasGroup(group, 
             enabled: isHoldingACard,
             interactable: canAffordCard, 
-            alpha: isHoldingACard ? 1: 0, 
+            alpha: group.alpha, //isHoldingACard ? 1: 0, 
             ignoreParentGroups:true);
     }
 
     private void Update()
     {
         //UpdateButtonEnabled();
+
+        // please dont hate me (game is about to release and this is the cleanest solution i have to a problem i pulled out of my ass)
+        group.alpha = playerTextGroup.alpha;
     }
 
     public void OnButtonPressed()

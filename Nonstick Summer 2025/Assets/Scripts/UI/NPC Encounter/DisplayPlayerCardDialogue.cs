@@ -23,28 +23,36 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
     [SerializeField, Required] private TMP_Text text;
     [SerializeField, Required] private CanvasGroup group;
 
+    private Coroutine fadingCoroutine;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Hide();
+        Hide(fadeHide:false);
     }
 
-    public void Hide(bool forceHide = false)
+    public void Hide(bool forceHide = false, bool fadeHide = true)
     {
         // dont hide if a card is selected
         if (DialogueUIController.Instance != null && DialogueUIController.Instance.selectedCardData != null && !forceHide)
             return;
 
-        //StaticUtilities.DisableCanvasGroup(group);
-        StaticUtilities.FadeOpacity(group, 0, 0.25f);
+        //;
+        if(fadingCoroutine != null) StopCoroutine(fadingCoroutine);
+        if (fadeHide)
+            fadingCoroutine = 
+                CoroutineUtilities.DelayRealtime(0.25f)
+                .Then(() => { fadingCoroutine = StaticUtilities.FadeOpacityBySpeed(group, start_a: group.alpha, 0, 4); });
+        else
+            StaticUtilities.DisableCanvasGroup(group);
     }
 
-    public void WriteText(CardData card)
+    public void WriteText(CardData card, bool fadeShow = true)
     {
         group.transform.SetAsLastSibling(); // bring to front
         if (card == null)
         {
-            Hide();
+            Hide(fadeHide:true);
             return;
         }
 
@@ -54,7 +62,14 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
             return;
         }
 
-        StaticUtilities.EnableCanvasGroup(group, interactable:false);
+        //StaticUtilities.EnableCanvasGroup(group, interactable:false);
+
+        if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
+        if (fadeShow)
+            fadingCoroutine = StaticUtilities.FadeOpacityBySpeed(group, start_a: group.alpha, 1, 4);
+        else
+            StaticUtilities.EnableCanvasGroup(group);
+
         var cardtext = DialogueManager.CurrentDialogueBranch.GetDialogueOption(card).PlayerDialogue;
         text.text = cardtext;
 

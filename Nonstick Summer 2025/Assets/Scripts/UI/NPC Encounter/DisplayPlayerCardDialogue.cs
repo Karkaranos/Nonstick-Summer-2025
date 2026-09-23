@@ -22,6 +22,8 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
 {
     [SerializeField, Required] private TMP_Text text;
     [SerializeField, Required] private CanvasGroup group;
+    [SerializeField] private float fadeSpeed = 6;
+    [ReadOnly] public bool IsShowing;
 
     private Coroutine fadingCoroutine;
 
@@ -37,12 +39,25 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
         if (DialogueUIController.Instance != null && DialogueUIController.Instance.selectedCardData != null && !forceHide)
             return;
 
+        IsShowing = false;
+
         //;
-        if(fadingCoroutine != null) StopCoroutine(fadingCoroutine);
+        if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
         if (fadeHide)
-            fadingCoroutine = StaticUtilities.FadeOpacityBySpeed(group, start_a: group.alpha, 0, 4, delay:0.15f); 
+            fadingCoroutine = StaticUtilities.FadeOpacityBySpeed(group, start_a: group.alpha, 0, fadeSpeed, delay:0.1f); 
         else
             StaticUtilities.DisableCanvasGroup(group);
+    }
+
+    public void Show(bool fadeShow = true)
+    {
+        IsShowing = true;
+
+        if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
+        if (fadeShow)
+            fadingCoroutine = StaticUtilities.FadeOpacityBySpeed(group, start_a: group.alpha, 1, fadeSpeed);
+        else
+            StaticUtilities.EnableCanvasGroup(group);
     }
 
     public void WriteText(CardData card, bool fadeShow = true)
@@ -62,11 +77,7 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
 
         //StaticUtilities.EnableCanvasGroup(group, interactable:false);
 
-        if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
-        if (fadeShow)
-            fadingCoroutine = StaticUtilities.FadeOpacityBySpeed(group, start_a: group.alpha, 1, 4);
-        else
-            StaticUtilities.EnableCanvasGroup(group);
+        Show(fadeShow);
 
         var cardtext = DialogueManager.CurrentDialogueBranch.GetDialogueOption(card).PlayerDialogue;
         text.text = cardtext;

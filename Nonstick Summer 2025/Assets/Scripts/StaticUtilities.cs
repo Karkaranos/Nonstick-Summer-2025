@@ -389,7 +389,10 @@ public static class StaticUtilities
     public static IEnumerator FadeOpacityCoroutine(CanvasGroup group, float start_a, float target_a, float seconds, UnityAction afterFadeCallback = null, 
         bool unscaledTime = true, float delay = 0)
     {
-        yield return new WaitForSeconds(delay);
+        if(unscaledTime)
+            yield return new WaitForSecondsRealtime(delay);
+        else
+            yield return new WaitForSeconds(delay);
 
         float startTime = unscaledTime ? Time.unscaledTime : Time.time;
         float time = startTime;
@@ -815,6 +818,12 @@ public static class StaticUtilities
     public static string ToHex(this Color color)
     {
         return ColorUtility.ToHtmlStringRGB(color);
+    }
+
+    public static Color WithAlpha(this Color color, float a)
+    {
+        color.a = a;
+        return color;
     }
 
     #endregion

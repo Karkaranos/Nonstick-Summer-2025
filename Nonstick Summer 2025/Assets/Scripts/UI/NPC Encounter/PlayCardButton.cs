@@ -17,7 +17,8 @@ public class PlayCardButton : MonoBehaviour
     [SerializeField, Required] private CanvasGroup group;
     [SerializeField, Required] private CanvasGroup parentGroup;
     [SerializeField, Required] private CanvasGroup playerTextGroup;
-    [SerializeField, Required] private CanvasGroup disabledButtonOverlay;
+    [SerializeField, Required] private Image disabledButtonOverlay;
+    [SerializeField, Required] private DisplayPlayerCardDialogue playerTextDisplay;
     private DeckDisplayer hand => DialogueUIController.Instance.deckDisplay;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -61,7 +62,9 @@ public class PlayCardButton : MonoBehaviour
 
         // please dont hate me (game is about to release and this is the easiest solution i have to a problem i pulled out of my ass)
         group.alpha = playerTextGroup.alpha;
-        disabledButtonOverlay.alpha = 1 - (playerTextGroup.alpha * 2);
+        float target_a = playerTextDisplay.IsShowing ? 0 : 1;
+        float a = Mathf.MoveTowards(disabledButtonOverlay.color.a, target_a, Time.fixedDeltaTime * 4);        
+        disabledButtonOverlay.color = disabledButtonOverlay.color.WithAlpha(a);
     }
 
     public void OnButtonPressed()

@@ -136,8 +136,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         playerDialogueBubble.WriteText(card);
 
         // card is null, it hides the text bubble
-        if(card == null)
-            playerDialogueBubble.Hide(fadeHide:true);
+        playerDialogueBubble.Hide();
 
         /*
         if (changeHoverBubbleDelay != null)

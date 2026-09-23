@@ -40,9 +40,7 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
         //;
         if(fadingCoroutine != null) StopCoroutine(fadingCoroutine);
         if (fadeHide)
-            fadingCoroutine = 
-                CoroutineUtilities.DelayRealtime(0.25f)
-                .Then(() => { fadingCoroutine = StaticUtilities.FadeOpacityBySpeed(group, start_a: group.alpha, 0, 4); });
+            fadingCoroutine = StaticUtilities.FadeOpacityBySpeed(group, start_a: group.alpha, 0, 4, delay:0.15f); 
         else
             StaticUtilities.DisableCanvasGroup(group);
     }

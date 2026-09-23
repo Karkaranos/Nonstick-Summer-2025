@@ -374,8 +374,8 @@ public static class StaticUtilities
         return FadeOpacityBySpeed(group, group.alpha, end_a, alpha_perSecond, unscaledTime, afterFadeCallback, currentCoroutineToCancel);
     }
 
-    public static Coroutine FadeOpacityBySpeed(CanvasGroup group, float start_a, float end_a, float alpha_perSecond, 
-       bool unscaledTime = true, UnityAction afterFadeCallback = null, Coroutine currentCoroutineToCancel = null)
+    public static Coroutine FadeOpacityBySpeed(CanvasGroup group, float start_a, float end_a, float alpha_perSecond,
+       bool unscaledTime = true, UnityAction afterFadeCallback = null, Coroutine currentCoroutineToCancel = null, float delay = 0)
     {
         if (currentCoroutineToCancel != null)
             CoroutineRunner.StopCoroutine(currentCoroutineToCancel);
@@ -383,12 +383,14 @@ public static class StaticUtilities
         float diff = Mathf.Abs(end_a - start_a);
         float seconds = diff / alpha_perSecond;
 
-        return CoroutineRunner.StartCoroutine(FadeOpacityCoroutine(group, start_a: start_a, target_a: end_a, seconds: seconds, afterFadeCallback: afterFadeCallback, unscaledTime: unscaledTime));
+        return CoroutineRunner.StartCoroutine(FadeOpacityCoroutine(group, start_a: start_a, target_a: end_a, seconds: seconds, afterFadeCallback: afterFadeCallback, unscaledTime: unscaledTime, delay:delay));
     }
 
     public static IEnumerator FadeOpacityCoroutine(CanvasGroup group, float start_a, float target_a, float seconds, UnityAction afterFadeCallback = null, 
-        bool unscaledTime = true)
+        bool unscaledTime = true, float delay = 0)
     {
+        yield return new WaitForSeconds(delay);
+
         float startTime = unscaledTime ? Time.unscaledTime : Time.time;
         float time = startTime;
         while (time - startTime < seconds)

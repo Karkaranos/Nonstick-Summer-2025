@@ -42,12 +42,14 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Required, SerializeField] private DialogueBox dialogueBox;
     [SerializeField] private DialogueTree dialogueTree;
     [Required, SerializeField] public  DialogueNPCPortraitDisplay portraitDisplay;
+    [Required, SerializeField] private TMP_Text objectiveText;
+
+    [Header("Buttons")]
     [Required, SerializeField] private DrawButton drawButton;
     [Required, SerializeField] private DiscardButton discardButton;
     [Required, SerializeField] protected SilentButton silentButton;
     [Required, SerializeField] private PlayCardButton playCardButton;
     [Required, SerializeField] private NextDialogueButton nextDialogueButton;
-    [Required, SerializeField] private TMP_Text objectiveText;
     bool isTutorial = false;
 
     public CardData selectedCardData=> deckDisplay.FirstSelectedCard;

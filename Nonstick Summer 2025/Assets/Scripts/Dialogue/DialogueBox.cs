@@ -17,6 +17,7 @@ using UnityEngine.UI;
 public class DialogueBox : MonoBehaviour
 {
     [SerializeField] private TMP_Text dialogueText;
+    [SerializeField,Required] private CanvasGroup group;
     //[SerializeField, Required] private CanvasGroup group;
 
     [HideInInspector] private int NumberInList = 0;
@@ -39,6 +40,7 @@ public class DialogueBox : MonoBehaviour
     public IEnumerator Initialize(DialogueBranch branch, Character character)
     {
         dialogueText = dialogueText != null ? dialogueText : GetComponentInChildren<TMP_Text>();
+        group.alpha = 1;
 
         NumberInList = 0;
 

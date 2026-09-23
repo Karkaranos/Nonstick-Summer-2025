@@ -212,7 +212,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506720097335392761}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -276,6 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NPCImage: {fileID: 8443185929578437420}
+  group: {fileID: 4102997966240427484}
   bobSpeed: 1
   bobHeight: 5
   momAnchor: {x: 615, y: 935}
@@ -292,7 +293,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696373283276659522}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -959,6 +960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 0}
+  group: {fileID: 1825778968552478202}
   PlayerReadAllDialogue: 0
   DialogueScrolling: 0
   skipTypewriterRequested: 0
@@ -970,7 +972,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3965209591881209209}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -1882,15 +1884,16 @@ MonoBehaviour:
   dialogueBox: {fileID: 5063277960126387384}
   dialogueTree: {fileID: 4716189550414593379}
   portraitDisplay: {fileID: 8866230592575021245}
+  objectiveText: {fileID: 5956484247085784071}
   drawButton: {fileID: 2804965718029211730}
   discardButton: {fileID: 838508106996118047}
   silentButton: {fileID: 5167900346599366816}
   playCardButton: {fileID: 7459721985015266503}
   nextDialogueButton: {fileID: 7441948075397530089}
-  objectiveText: {fileID: 5956484247085784071}
   gainEnergy: 0
   activeReaction: {fileID: 0}
   inSceneFive: 0
+  bestEndingForCharacterReached: 0
 --- !u!114 &3520667051158493986
 MonoBehaviour:
   m_ObjectHideFlags: 0

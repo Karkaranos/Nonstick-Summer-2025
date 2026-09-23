@@ -35,7 +35,8 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
         if (DialogueUIController.Instance != null && DialogueUIController.Instance.selectedCardData != null && !forceHide)
             return;
 
-        StaticUtilities.DisableCanvasGroup(group);
+        //StaticUtilities.DisableCanvasGroup(group);
+        StaticUtilities.FadeOpacity(group, 0, 0.25f);
     }
 
     public void WriteText(CardData card)

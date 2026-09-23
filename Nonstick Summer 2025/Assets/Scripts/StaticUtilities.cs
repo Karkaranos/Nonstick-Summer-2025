@@ -132,8 +132,17 @@ public static class StaticUtilities
 
     #region Animations
 
+    public static Coroutine AnimateUIPosition(RectTransform transform, Vector3 endPosition, float seconds,
+        bool unscaledTime = true, Coroutine currentCoroutineToCancel = null)
+    {
+        if (currentCoroutineToCancel != null)
+            GameManager.Instance.StopCoroutine(currentCoroutineToCancel);
+
+        return GameManager.Instance.StartCoroutine(AnimateUIPositionCoroutine(transform, transform.position, endPosition, seconds, unscaledTime, currentCoroutineToCancel));
+    }
+
     private static IEnumerator AnimateUIPositionCoroutine(RectTransform transform, Vector3 startPosition, Vector3 endPosition, float seconds,
-       bool unscaledTime = true, Coroutine currentCoroutineToCancel = null)
+        bool unscaledTime = true, Coroutine currentCoroutineToCancel = null)
     {
         float startTime = unscaledTime ? Time.unscaledTime : Time.time;
         float time = startTime;
@@ -152,8 +161,6 @@ public static class StaticUtilities
         // apply one more time just in case.
         transform.position = endPosition;
     }
-
-
 
     /// <summary>
     /// Smooth transform's current scale to endScale;
@@ -285,25 +292,25 @@ public static class StaticUtilities
 
     #region UI
 
-    public static void ToggleCanvasGroup(CanvasGroup canvasgroup, bool enabled, float? alpha = null, bool? ignoreParentGroups = null)
+    public static void ToggleCanvasGroup(CanvasGroup canvasgroup, bool enabled, bool? interactable = null, float? alpha = null, bool? ignoreParentGroups = null)
     {
         if (enabled)
-            EnableCanvasGroup(canvasgroup, alpha: alpha, ignoreParentGroups: ignoreParentGroups);
+            EnableCanvasGroup(canvasgroup, alpha: alpha, ignoreParentGroups: ignoreParentGroups, interactable: interactable);
         else
-            DisableCanvasGroup(canvasgroup, ignoreParentGroups: ignoreParentGroups);
+            DisableCanvasGroup(canvasgroup, ignoreParentGroups: ignoreParentGroups, interactable:interactable);
     }
-    public static void EnableCanvasGroup(CanvasGroup canvasgroup, float? alpha = null, bool interactable = true, bool blocksRaycasts = true, bool? ignoreParentGroups = null)
+    public static void EnableCanvasGroup(CanvasGroup canvasgroup, float? alpha = null, bool? interactable = true, bool blocksRaycasts = true, bool? ignoreParentGroups = null)
     {
         canvasgroup.alpha = alpha ?? 1;
-        canvasgroup.interactable = interactable;
+        canvasgroup.interactable = interactable ?? true;
         canvasgroup.blocksRaycasts = blocksRaycasts;
         canvasgroup.ignoreParentGroups = ignoreParentGroups ?? canvasgroup.ignoreParentGroups;
     }
 
-    public static void DisableCanvasGroup(CanvasGroup canvasgroup, float? alpha = null, bool? ignoreParentGroups = null)
+    public static void DisableCanvasGroup(CanvasGroup canvasgroup, float? alpha = null, bool? ignoreParentGroups = null, bool? interactable=false)
     {
         canvasgroup.alpha = alpha ?? 0;
-        canvasgroup.interactable = false;
+        canvasgroup.interactable = interactable ?? false;
         canvasgroup.blocksRaycasts = false;
         canvasgroup.ignoreParentGroups = ignoreParentGroups ?? canvasgroup.ignoreParentGroups;
     }
@@ -361,7 +368,13 @@ public static class StaticUtilities
             afterFadeCallback: afterFadeCallback, unscaledTime: unscaledTime));
     }
 
-    public static Coroutine FadeOpacityBySpeed(CanvasGroup group, float start_a, float end_a, float alpha_perSecond,
+    public static Coroutine FadeOpacityBySpeed(CanvasGroup group, float end_a, float alpha_perSecond,
+       bool unscaledTime = true, UnityAction afterFadeCallback = null, Coroutine currentCoroutineToCancel = null)
+    {
+        return FadeOpacityBySpeed(group, group.alpha, end_a, alpha_perSecond, unscaledTime, afterFadeCallback, currentCoroutineToCancel);
+    }
+
+    public static Coroutine FadeOpacityBySpeed(CanvasGroup group, float start_a, float end_a, float alpha_perSecond, 
        bool unscaledTime = true, UnityAction afterFadeCallback = null, Coroutine currentCoroutineToCancel = null)
     {
         if (currentCoroutineToCancel != null)
@@ -373,7 +386,7 @@ public static class StaticUtilities
         return CoroutineRunner.StartCoroutine(FadeOpacityCoroutine(group, start_a: start_a, target_a: end_a, seconds: seconds, afterFadeCallback: afterFadeCallback, unscaledTime: unscaledTime));
     }
 
-    private static IEnumerator FadeOpacityCoroutine(CanvasGroup group, float start_a, float target_a, float seconds, UnityAction afterFadeCallback = null, 
+    public static IEnumerator FadeOpacityCoroutine(CanvasGroup group, float start_a, float target_a, float seconds, UnityAction afterFadeCallback = null, 
         bool unscaledTime = true)
     {
         float startTime = unscaledTime ? Time.unscaledTime : Time.time;

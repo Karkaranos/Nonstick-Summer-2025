@@ -52,13 +52,12 @@ public class PlayCardButton : MonoBehaviour
         //if(isHoldingACard)
         //    Debug.Log($"{Mathf.Abs(card.EnergyCost)} > {DialogueManager.CurrentEnergy} = {(Mathf.Abs(card.EnergyCost) > DialogueManager.CurrentEnergy)}");
 
-        button.interactable = (DialogueUIController.Instance.inSceneFive || (isHoldingACard && canAffordCard));
+        button.interactable = (isHoldingACard && (canAffordCard || DialogueUIController.Instance.inSceneFive));
 
-        float alpha = isHoldingACard ? 1 : 0;
         StaticUtilities.ToggleCanvasGroup(group, 
             enabled: isHoldingACard,
             interactable: canAffordCard, 
-            alpha: group.alpha, //isHoldingACard ? 1: 0, 
+            alpha: 1, //isHoldingACard ? 1: 0, 
             ignoreParentGroups:true);
     }
 
@@ -84,8 +83,8 @@ public class PlayCardButton : MonoBehaviour
         }
 
         float target_a = button.interactable ? 0 : 1;
-        float a = Mathf.MoveTowards(disabledButtonOverlay.color.a, target_a, Time.unscaledDeltaTime * 4);        
-        disabledButtonOverlay.color = disabledButtonOverlay.color.WithAlpha(a * group.alpha);
+        float a = Mathf.MoveTowards(disabledButtonOverlay.color.a, target_a * group.alpha, Time.unscaledDeltaTime * 4);        
+        disabledButtonOverlay.color = disabledButtonOverlay.color.WithAlpha(a);
     }
 
     public void OnButtonPressed()

@@ -51,7 +51,7 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
             StaticUtilities.DisableCanvasGroup(group);
         */
         if (!fadeHide)
-            StaticUtilities.DisableCanvasGroup(group);
+            StaticUtilities.DisableCanvasGroup(group, alpha:group.alpha);
     }
 
     public void Show(bool fadeShow = true)
@@ -66,7 +66,7 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
             StaticUtilities.EnableCanvasGroup(group);
         */
         if(!fadeShow)
-            StaticUtilities.EnableCanvasGroup(group);
+            StaticUtilities.EnableCanvasGroup(group, alpha:group.alpha);
     }
 
     private void Update()
@@ -137,7 +137,7 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
             yield break;
         }
 
-        StaticUtilities.EnableCanvasGroup(group, interactable: false);
+        StaticUtilities.EnableCanvasGroup(group, interactable: false, alpha:group.alpha);
         text.text = DialogueManager.CurrentDialogueBranch.GetDialogueOption(card).PlayerDialogue;
         Debug.LogWarning("Implement typewriter later");
         yield return null;

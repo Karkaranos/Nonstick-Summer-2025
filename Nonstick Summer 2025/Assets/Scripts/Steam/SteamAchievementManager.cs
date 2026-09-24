@@ -11,7 +11,7 @@ using static Unity.Collections.AllocatorManager;
 
 public class SteamAchievementManager : Singleton<SteamAchievementManager>
 {
-    private const uint STEAM_APP_ID = 1234567; //TODO: Replace with actual steam ID when we get it!!
+    private const uint STEAM_APP_ID = 4917250; 
     
     [SerializeField, ReadOnly] private bool connectedToSteam = false;
 
@@ -20,6 +20,11 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
     {
         RefreshAllAchievements();
         DontDestroyOnLoad(this.gameObject);
+
+        // already connected!!
+        if (connectedToSteam)
+            return;
+
         try
         {
             Steamworks.SteamClient.Init(STEAM_APP_ID);
@@ -42,7 +47,6 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
     // Update is called once per frame
     void Update()
     {
-        /*
         if (connectedToSteam)
         {
             Steamworks.SteamClient.RunCallbacks();
@@ -61,7 +65,6 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
                 connectedToSteam = false;
             }
         }
-        */
     }
 
     public void dissconnectFromSteam()
@@ -81,15 +84,13 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
 
     void OnDisable()
     {
-
         SceneManager.sceneLoaded -= OnSceneLoaded;
-
     }
     #endregion
 
     private string GetInternalAchievementName(SteamAchievement achievement)
     {
-        return $"Achievement_{achievement.ToString()}";
+        return $"{achievement.ToString()}";
     }
 
     public void UnlockAchievement(SteamAchievement achievement)
@@ -101,16 +102,22 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
         // Update value in case the player is not connected to the internet or something
         PlayerPrefs.SetInt(id, 1);
 
-        if (connectedToSteam)
-        {
-            var achivement = new Steamworks.Data.Achievement(id);
-            achivement.Trigger();
-        }
+        if (!connectedToSteam)
+            return;
+
+        var achivement = new Steamworks.Data.Achievement(id);
+
+        bool successfulTrigger = achivement.Trigger();
+        Debug.Log($"Steam Trigger({id}) returned: {successfulTrigger}");
+
+        bool stored = Steamworks.SteamUserStats.StoreStats();
+        Debug.Log($"Steam StoreStats() returned: {stored}");
     }
 
     public void UpdateProgress(SteamAchievement achievement, int currentProgression, int maxProgression)
     {
         string id = GetInternalAchievementName(achievement);
+        var achievementData = new Steamworks.Data.Achievement(id);
 
         // Update value in case the player is not connected to the internet or something
         if (currentProgression >= maxProgression)
@@ -122,6 +129,16 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
         if (connectedToSteam)
         {
             completed = Steamworks.SteamUserStats.IndicateAchievementProgress(id, currentProgression, maxProgression);
+            Steamworks.SteamUserStats.StoreStats();
+
+            if (completed)
+            {
+                bool successfulTrigger = achievementData.Trigger();
+                Debug.Log($"Steam Trigger({id}) returned: {successfulTrigger}");
+
+                bool stored = Steamworks.SteamUserStats.StoreStats();
+                Debug.Log($"Steam StoreStats() returned: {stored}");
+            }
         }
 
         if (completed)
@@ -136,23 +153,30 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
     /// </summary>
     private void RefreshAllAchievements()
     {
+        if (!connectedToSteam) return;
+
         int achievementsInMemory = 0;
 
         SteamAchievement[] achievements = (SteamAchievement[])Enum.GetValues(typeof(SteamAchievement));
         foreach (var a in achievements)
         {
-            var achievement = new Steamworks.Data.Achievement(GetInternalAchievementName(a));
+            string id = GetInternalAchievementName(a);
+            var achievement = new Steamworks.Data.Achievement(id);
 
-            bool completionStatus = PlayerPrefs.GetInt(GetInternalAchievementName(a)) == 1;
+            bool completionStatus = PlayerPrefs.GetInt(id) == 1;
+
+            if (completionStatus == true && !achievement.State)
+            {
+                achievement.Trigger();
+                Steamworks.SteamUserStats.StoreStats();
+            }
 
             if (completionStatus == true)
-            {
-                if(connectedToSteam)
-                    achievement.Trigger();
                 achievementsInMemory++;
-            }
         }
-        
+
+        Steamworks.SteamUserStats.StoreStats();
+
         //only progress over time achievement
         PlayerPrefs.SetInt("Plushie", 0);
 

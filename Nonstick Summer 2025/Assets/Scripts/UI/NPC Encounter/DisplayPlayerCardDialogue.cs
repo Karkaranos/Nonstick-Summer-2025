@@ -25,6 +25,7 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
     [SerializeField] private float fadeSpeed = 6;
     [ReadOnly] public bool IsShowing;
 
+    private float delay;
     private Coroutine fadingCoroutine;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -40,24 +41,44 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
             return;
 
         IsShowing = false;
+        delay = 0.15f;
 
-        //;
+        /*
         if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
         if (fadeHide)
             fadingCoroutine = StaticUtilities.FadeOpacityBySpeed(group, start_a: group.alpha, 0, fadeSpeed, delay:0.1f); 
         else
+            StaticUtilities.DisableCanvasGroup(group);
+        */
+        if (!fadeHide)
             StaticUtilities.DisableCanvasGroup(group);
     }
 
     public void Show(bool fadeShow = true)
     {
         IsShowing = true;
-
+        
+        /*
         if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
         if (fadeShow)
             fadingCoroutine = StaticUtilities.FadeOpacityBySpeed(group, start_a: group.alpha, 1, fadeSpeed);
         else
             StaticUtilities.EnableCanvasGroup(group);
+        */
+        if(!fadeShow)
+            StaticUtilities.EnableCanvasGroup(group);
+    }
+
+    private void Update()
+    {
+        if (delay > 0)
+        {
+            delay -= Time.unscaledDeltaTime;
+            return;
+        }
+
+        float alpha = IsShowing ? 1 : 0;
+        group.alpha = Mathf.MoveTowards(group.alpha, alpha, Time.deltaTime * fadeSpeed);
     }
 
     public void WriteText(CardData card, bool fadeShow = true)

@@ -125,6 +125,10 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
             PlayerPrefs.SetInt(id, 1);
         }
 
+        // if already completed
+        if (achievementData.State)
+            return;
+
         bool completed = false;
         if (connectedToSteam)
         {

@@ -71,20 +71,16 @@ public class PlayCardButton : MonoBehaviour
         {
             delay -= Time.unscaledDeltaTime;
             return;
-        }    
+        }
 
         //UpdateButtonEnabled();
 
         // please dont hate me (game is about to release and this is the easiest solution i have to a problem i pulled out of my ass)
-        //parentGroup.alpha = playerTextGroup.alpha;
-
-        float parentAlpha = parentGroup.alpha;
-        group.alpha = parentAlpha; // Mathf.MoveTowards(group.alpha, parentAlpha, Time.unscaledDeltaTime * 10);
 
         // swap out disabled sprites because the canvas groups mess up the way the two button gameobjects stack (its so annoying)
 
         // swap into disabled sprite
-        if (parentGroup.alpha < 1)
+        if (parentGroup.alpha < 1 || (group.alpha >= 1 && !DialogueManager.UserCanPlayCard))
         {
             var spriteState = button.spriteState;
             spriteState.disabledSprite = disabledSprite;
@@ -97,8 +93,13 @@ public class PlayCardButton : MonoBehaviour
             spriteState.disabledSprite = defaultSprite;
             button.spriteState = spriteState;
         }
-        
 
+        // main button alpha
+        float parentAlpha = parentGroup.alpha;
+        float interactableAlpha = DialogueManager.UserCanPlayCard ? 1 : 0;
+        group.alpha = parentAlpha * Mathf.MoveTowards(group.alpha, interactableAlpha, Time.unscaledDeltaTime * 4);
+
+        // diabled overlay variant alpha
         float target_a = button.interactable ? 0 : 1;
         float a = Mathf.MoveTowards(disabledButtonOverlay.color.a, target_a * group.alpha, Time.unscaledDeltaTime * 4);        
         disabledButtonOverlay.color = disabledButtonOverlay.color.WithAlpha(a);

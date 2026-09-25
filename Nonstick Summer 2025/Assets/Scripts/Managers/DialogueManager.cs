@@ -62,6 +62,12 @@ public class DialogueManager
 
     public static IEnumerator SetCurrentEnergy(float energy)
     {
+        if (DialogueUIController.Instance == null)
+        {
+            Debug.LogWarning("No instance of DialogueUIController. Cant set energy");
+            yield break;
+        }
+
         if(!DialogueUIController.Instance.inSceneFive)
         {
             energy = Mathf.Clamp(energy, 0, MaxEnergy);
@@ -199,10 +205,10 @@ public class DialogueManager
         if (CurrentEnergy <= 0 && playedCard != null)
             Debug.LogWarning("Card played with 0 energy");
 
-        Debug.Log("before set");
+        //Debug.Log("before set");
         GameManager.Instance.StartCoroutine(SetCurrentEnergy(_currentEnergy + 
             (playedCard == null ? EnergyGainedIfSilent: playedCard.GetEnergyCost()))); // this could have been an if statement but noooooo i just had to be special
-        Debug.Log("after set");
+        //Debug.Log("after set");
 
         DialogueUIController.Instance.gainEnergy = true;
 
@@ -222,17 +228,12 @@ public class DialogueManager
         if (dialogueOption.RelationshipCheckRequired == false || RelationshipManager.characterRelationships[currentCharacter].currentValue > dialogueOption.RelationshipRange.y)
         {
             Debug.Log("Player has enough RP for good branch");
-            CurrentDialogueBranch = dialogueOption.BranchingDialogueHigh; 
-
-            if(DialogueUIController.Instance.inSceneFive)
-            {
-                DialogueUIController.Instance.bestEndingForCharacterReached = true;
-            }
+            CurrentDialogueBranch = dialogueOption.BranchingDialogueHigh;
         }
         else if(dialogueOption.RelationshipCheckRequired = true && RelationshipManager.characterRelationships[currentCharacter].currentValue <= dialogueOption.RelationshipRange.y && RelationshipManager.characterRelationships[currentCharacter].currentValue >= dialogueOption.RelationshipRange.x)
         {
             Debug.Log("Player has met RP requirement");
-            CurrentDialogueBranch = dialogueOption.BranchingDialogueNeutral; 
+            CurrentDialogueBranch = dialogueOption.BranchingDialogueNeutral;
         }
         else if(dialogueOption.RelationshipCheckRequired = true && RelationshipManager.characterRelationships[currentCharacter].currentValue < dialogueOption.RelationshipRange.x)
         {

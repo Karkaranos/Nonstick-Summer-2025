@@ -19,6 +19,7 @@ using UnityEngine.UI;
 public class DialogueNPCPortraitDisplay : MonoBehaviour
 {
     [SerializeField, Required] private Image NPCImage;
+    [SerializeField, Required] private CanvasGroup group;
 
     [SerializeField] float bobSpeed = 15;
     [SerializeField] float bobHeight = 5;
@@ -51,6 +52,7 @@ public class DialogueNPCPortraitDisplay : MonoBehaviour
         {
             NPCImage.sprite = dialogue.Portrait;
         }
+        group.alpha = 1;
 
         //instantiates animation
         //making a new function to prevent clutter

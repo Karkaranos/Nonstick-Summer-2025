@@ -34,7 +34,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 {
     [Header("Components")]
     [Required][SerializeField] public EnergyBar energyBar;
-    [Required][SerializeField] private DisplayPlayerCardDialogue playerDialogueBubble;
+    [Required][SerializeField] public DisplayPlayerCardDialogue playerDialogueBubble;
     /*[Required]*/[SerializeField] private TMP_Text npcName;
     [Required][SerializeField] public DeckDisplayer deckDisplay;
     [Tooltip("Relationship slider UI element")]
@@ -42,12 +42,14 @@ public class DialogueUIController : Singleton<DialogueUIController>
     [Required, SerializeField] private DialogueBox dialogueBox;
     [SerializeField] private DialogueTree dialogueTree;
     [Required, SerializeField] public  DialogueNPCPortraitDisplay portraitDisplay;
+    [Required, SerializeField] private TMP_Text objectiveText;
+
+    [Header("Buttons")]
     [Required, SerializeField] private DrawButton drawButton;
     [Required, SerializeField] private DiscardButton discardButton;
     [Required, SerializeField] protected SilentButton silentButton;
     [Required, SerializeField] private PlayCardButton playCardButton;
     [Required, SerializeField] private NextDialogueButton nextDialogueButton;
-    [Required, SerializeField] private TMP_Text objectiveText;
     bool isTutorial = false;
 
     public CardData selectedCardData=> deckDisplay.FirstSelectedCard;
@@ -134,7 +136,8 @@ public class DialogueUIController : Singleton<DialogueUIController>
         playerDialogueBubble.WriteText(card);
 
         // card is null, it hides the text bubble
-        playerDialogueBubble.Hide();
+        if(card == null)
+            playerDialogueBubble.Hide(fadeHide:true);
 
         /*
         if (changeHoverBubbleDelay != null)
@@ -229,7 +232,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         // should this be playing EVERY time the button is pressed?
         AudioManager.instance.PlayOneShot(FMODEvents.instance.CardPlaySFX);
 
-        Debug.Log("Play button pressed");
+        //Debug.Log("Play button pressed");
 
         StartCoroutine(ToggleUIForDialogueProgression(false));
 
@@ -306,31 +309,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 
         if(bestEndingForCharacterReached)
         {
-            switch (character)
-            {
-                case (Character.Mom):
-                    SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingMom);
-                    PersistentGameplayData.Instance.BestMomEndingUnlocked = true;
-                    break;
-
-                case (Character.Cousin):
-                    SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingCousin);
-                    PersistentGameplayData.Instance.BestCousinEndingUnlocked = true;
-                    break;
-
-                case (Character.Grandma):
-                    SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingGrandma);
-                    PersistentGameplayData.Instance.BestGrandmaEndingUnlocked = true;
-                    break;
-
-                case (Character.Uncle):
-                    PersistentGameplayData.Instance.BestUncleEndingUnlocked = true;
-                    SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingUncle);
-                    break;
-
-                default:
-                    break;
-            }
+            
         }
     }
 

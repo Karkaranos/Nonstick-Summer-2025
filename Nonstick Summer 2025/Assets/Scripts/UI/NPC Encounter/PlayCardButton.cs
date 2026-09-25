@@ -2,6 +2,7 @@
 * File Name :         PlayCardButton.cs
 * Author :            Toby
 * Creation Date :     8/5/2025 (day before code freeze)
+* Last Modified :     9/23/2026 (day before steam release)
 *
 * Brief Description : Plays the selected card
 * 
@@ -14,9 +15,19 @@ using UnityEngine.UI;
 public class PlayCardButton : MonoBehaviour
 {
     [SerializeField, Required] private Button button;
+    [SerializeField, Required] private Image buttonImage;
     [SerializeField, Required] private CanvasGroup group;
     [SerializeField, Required] private CanvasGroup parentGroup;
+    [SerializeField, Required] private CanvasGroup playerTextGroup;
+    [SerializeField, Required] private Image disabledButtonOverlay;
+
+    [Header("Specific Sprites")]
+    [SerializeField, Required] private Sprite disabledSprite;
+    [SerializeField, Required] private Sprite defaultSprite;
+
     private DeckDisplayer hand => DialogueUIController.Instance.deckDisplay;
+
+    private float delay;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Initialize()
@@ -38,23 +49,60 @@ public class PlayCardButton : MonoBehaviour
         bool isHoldingACard = hand.FirstSelectedCard != null;
         var card = hand.FirstSelectedCard;
         bool canAffordCard = isHoldingACard && (Mathf.Abs(card.EnergyCost) <= DialogueManager.CurrentEnergy);
-        Debug.Log($"isHoldingACard: {isHoldingACard}\ncanAffordCard:{canAffordCard}");
+        //Debug.Log($"isHoldingACard: {isHoldingACard}\ncanAffordCard:{canAffordCard}");
 
         //if(isHoldingACard)
         //    Debug.Log($"{Mathf.Abs(card.EnergyCost)} > {DialogueManager.CurrentEnergy} = {(Mathf.Abs(card.EnergyCost) > DialogueManager.CurrentEnergy)}");
 
-        button.interactable = (DialogueUIController.Instance.inSceneFive || (isHoldingACard && canAffordCard));
+        //delay = 0.15f;
+
+        button.interactable = (isHoldingACard && (canAffordCard || DialogueUIController.Instance.inSceneFive));
 
         StaticUtilities.ToggleCanvasGroup(group, 
             enabled: isHoldingACard,
             interactable: canAffordCard, 
-            alpha: isHoldingACard ? 1: 0, 
+            alpha: group.alpha, //isHoldingACard ? 1: 0, 
             ignoreParentGroups:true);
     }
 
     private void Update()
     {
+        if(delay > 0)
+        {
+            delay -= Time.unscaledDeltaTime;
+            return;
+        }
+
         //UpdateButtonEnabled();
+
+        // please dont hate me (game is about to release and this is the easiest solution i have to a problem i pulled out of my ass)
+
+        // swap out disabled sprites because the canvas groups mess up the way the two button gameobjects stack (its so annoying)
+
+        // swap into disabled sprite
+        if (parentGroup.alpha < 1 || (group.alpha >= 1 && !DialogueManager.UserCanPlayCard))
+        {
+            var spriteState = button.spriteState;
+            spriteState.disabledSprite = disabledSprite;
+            button.spriteState = spriteState;
+        }
+        // swap into default sprite
+        if (parentGroup.alpha >= 1 && button.interactable)
+        {
+            var spriteState = button.spriteState;
+            spriteState.disabledSprite = defaultSprite;
+            button.spriteState = spriteState;
+        }
+
+        // main button alpha
+        float parentAlpha = parentGroup.alpha;
+        float interactableAlpha = DialogueManager.UserCanPlayCard ? 1 : 0;
+        group.alpha = parentAlpha * Mathf.MoveTowards(group.alpha, interactableAlpha, Time.unscaledDeltaTime * 4);
+
+        // diabled overlay variant alpha
+        float target_a = button.interactable ? 0 : 1;
+        float a = Mathf.MoveTowards(disabledButtonOverlay.color.a, target_a * group.alpha, Time.unscaledDeltaTime * 4);        
+        disabledButtonOverlay.color = disabledButtonOverlay.color.WithAlpha(a);
     }
 
     public void OnButtonPressed()

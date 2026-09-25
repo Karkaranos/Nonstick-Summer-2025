@@ -27,6 +27,8 @@ public class PlayCardButton : MonoBehaviour
 
     private DeckDisplayer hand => DialogueUIController.Instance.deckDisplay;
 
+    private float delay;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Initialize()
     {
@@ -47,40 +49,55 @@ public class PlayCardButton : MonoBehaviour
         bool isHoldingACard = hand.FirstSelectedCard != null;
         var card = hand.FirstSelectedCard;
         bool canAffordCard = isHoldingACard && (Mathf.Abs(card.EnergyCost) <= DialogueManager.CurrentEnergy);
-        Debug.Log($"isHoldingACard: {isHoldingACard}\ncanAffordCard:{canAffordCard}");
+        //Debug.Log($"isHoldingACard: {isHoldingACard}\ncanAffordCard:{canAffordCard}");
 
         //if(isHoldingACard)
         //    Debug.Log($"{Mathf.Abs(card.EnergyCost)} > {DialogueManager.CurrentEnergy} = {(Mathf.Abs(card.EnergyCost) > DialogueManager.CurrentEnergy)}");
+
+        //delay = 0.15f;
 
         button.interactable = (isHoldingACard && (canAffordCard || DialogueUIController.Instance.inSceneFive));
 
         StaticUtilities.ToggleCanvasGroup(group, 
             enabled: isHoldingACard,
             interactable: canAffordCard, 
-            alpha: 1, //isHoldingACard ? 1: 0, 
+            alpha: group.alpha, //isHoldingACard ? 1: 0, 
             ignoreParentGroups:true);
     }
 
     private void Update()
     {
+        if(delay > 0)
+        {
+            delay -= Time.unscaledDeltaTime;
+            return;
+        }    
+
         //UpdateButtonEnabled();
 
         // please dont hate me (game is about to release and this is the easiest solution i have to a problem i pulled out of my ass)
         //parentGroup.alpha = playerTextGroup.alpha;
-        group.alpha = parentGroup.alpha;
 
+        float parentAlpha = parentGroup.alpha;
+        group.alpha = parentAlpha; // Mathf.MoveTowards(group.alpha, parentAlpha, Time.unscaledDeltaTime * 10);
 
+        // swap out disabled sprites because the canvas groups mess up the way the two button gameobjects stack (its so annoying)
+
+        // swap into disabled sprite
+        if (parentGroup.alpha < 1)
+        {
+            var spriteState = button.spriteState;
+            spriteState.disabledSprite = disabledSprite;
+            button.spriteState = spriteState;
+        }
+        // swap into default sprite
         if (parentGroup.alpha >= 1 && button.interactable)
         {
             var spriteState = button.spriteState;
             spriteState.disabledSprite = defaultSprite;
             button.spriteState = spriteState;
         }
-        if (parentGroup.alpha < 1){
-            var spriteState = button.spriteState;
-            spriteState.disabledSprite = disabledSprite;
-            button.spriteState = spriteState;
-        }
+        
 
         float target_a = button.interactable ? 0 : 1;
         float a = Mathf.MoveTowards(disabledButtonOverlay.color.a, target_a * group.alpha, Time.unscaledDeltaTime * 4);        

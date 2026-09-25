@@ -297,7 +297,7 @@ public static class StaticUtilities
         if (enabled)
             EnableCanvasGroup(canvasgroup, alpha: alpha, ignoreParentGroups: ignoreParentGroups, interactable: interactable);
         else
-            DisableCanvasGroup(canvasgroup, ignoreParentGroups: ignoreParentGroups, interactable:interactable);
+            DisableCanvasGroup(canvasgroup, alpha: alpha, ignoreParentGroups: ignoreParentGroups, interactable:interactable);
     }
     public static void EnableCanvasGroup(CanvasGroup canvasgroup, float? alpha = null, bool? interactable = true, bool blocksRaycasts = true, bool? ignoreParentGroups = null)
     {

@@ -205,10 +205,10 @@ public class DialogueManager
         if (CurrentEnergy <= 0 && playedCard != null)
             Debug.LogWarning("Card played with 0 energy");
 
-        Debug.Log("before set");
+        //Debug.Log("before set");
         GameManager.Instance.StartCoroutine(SetCurrentEnergy(_currentEnergy + 
             (playedCard == null ? EnergyGainedIfSilent: playedCard.GetEnergyCost()))); // this could have been an if statement but noooooo i just had to be special
-        Debug.Log("after set");
+        //Debug.Log("after set");
 
         DialogueUIController.Instance.gainEnergy = true;
 

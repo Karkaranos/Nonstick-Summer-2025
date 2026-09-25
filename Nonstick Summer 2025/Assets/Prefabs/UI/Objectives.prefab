@@ -365,6 +365,7 @@ GameObject:
   - component: {fileID: 3327186252374372439}
   - component: {fileID: 9024003138421713550}
   - component: {fileID: 4242624201501583817}
+  - component: {fileID: 3708973307067705996}
   m_Layer: 5
   m_Name: Tab Inventory Icon
   m_TagString: Untagged
@@ -443,6 +444,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rectTransform: {fileID: 2368330322951620365}
   notification: {fileID: 6233944433554634765}
+  tabShakeAnimation: {fileID: 3708973307067705996}
+  oneShakeSeconds: 0.15
+--- !u!95 &3708973307067705996
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7022989685608178127}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 88eafb471685ff943b6c8228a313bce1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7086553792137372644
 GameObject:
   m_ObjectHideFlags: 0

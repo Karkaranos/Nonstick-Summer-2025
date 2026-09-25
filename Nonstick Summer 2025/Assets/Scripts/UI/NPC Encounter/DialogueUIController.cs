@@ -34,7 +34,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
 {
     [Header("Components")]
     [Required][SerializeField] public EnergyBar energyBar;
-    [Required][SerializeField] private DisplayPlayerCardDialogue playerDialogueBubble;
+    [Required][SerializeField] public DisplayPlayerCardDialogue playerDialogueBubble;
     /*[Required]*/[SerializeField] private TMP_Text npcName;
     [Required][SerializeField] public DeckDisplayer deckDisplay;
     [Tooltip("Relationship slider UI element")]
@@ -232,7 +232,7 @@ public class DialogueUIController : Singleton<DialogueUIController>
         // should this be playing EVERY time the button is pressed?
         AudioManager.instance.PlayOneShot(FMODEvents.instance.CardPlaySFX);
 
-        Debug.Log("Play button pressed");
+        //Debug.Log("Play button pressed");
 
         StartCoroutine(ToggleUIForDialogueProgression(false));
 

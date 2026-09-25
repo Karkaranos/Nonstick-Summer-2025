@@ -23,5 +23,7 @@ public enum SteamAchievement
     MaxEndingEveryone,
 
     CompleteGameNoUncle,
-    SilentConversation
+    SilentConversation,
+
+    EveryoneMoment5
 }

@@ -274,8 +274,6 @@ public class DeckDisplayer : MonoBehaviour
 
         displayedData.Remove(card);
 
-        DialogueUIController.Instance.playerDialogueBubble.Hide();
-
         DisplayAllCards();
     }
 

@@ -55,6 +55,7 @@ public class DiscardButton : MonoBehaviour
             hand.DiscardCard(card.cardData);
         }
         DialogueManager.CurrentEnergy += DialogueManager.EnergyGainedPerDiscard;
+        DialogueUIController.Instance.playerDialogueBubble.Hide();
 
         UpdateButtonEnabled();
     }

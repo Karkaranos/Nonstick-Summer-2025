@@ -20,6 +20,8 @@ MonoBehaviour:
     AudioResponse: Neutral
     HasAdvancedSignal: 0
     AdvancedSignal: 0
+    SteamAchievement: 0
+    AdvancedSignal_ThisCharacter: 0
   - Dialogue: "After all, you can\u2019t come home and tell me about all your adventures
       if you never leave."
     Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
@@ -27,42 +29,56 @@ MonoBehaviour:
     AudioResponse: Happy
     HasAdvancedSignal: 0
     AdvancedSignal: 0
+    SteamAchievement: 0
+    AdvancedSignal_ThisCharacter: 0
   - Dialogue: "I\u2019m always a phone call or a drive away."
     Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Silent
     HasAdvancedSignal: 0
     AdvancedSignal: 0
+    SteamAchievement: 0
+    AdvancedSignal_ThisCharacter: 0
   - Dialogue: ...
     Portrait: {fileID: 21300000, guid: 032b2ac25e695414a96b9f1f4f473521, type: 3}
     AnimatedReaction: {fileID: 3230480644210021281, guid: 21a34e576288bf148b0d7294986f3034, type: 3}
     AudioResponse: Silent
     HasAdvancedSignal: 0
     AdvancedSignal: 0
+    SteamAchievement: 0
+    AdvancedSignal_ThisCharacter: 0
   - Dialogue: "I\u2019m..."
     Portrait: {fileID: 21300000, guid: 69bff71eeb1dc104a8e5e86b81320fe1, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Neutral
     HasAdvancedSignal: 0
     AdvancedSignal: 0
+    SteamAchievement: 0
+    AdvancedSignal_ThisCharacter: 0
   - Dialogue: ... SO proud of you!
     Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
     AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
     AudioResponse: Happy
     HasAdvancedSignal: 0
     AdvancedSignal: 0
+    SteamAchievement: 0
+    AdvancedSignal_ThisCharacter: 0
   - Dialogue: "You\u2019re going to do great out there! "
     Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
     AnimatedReaction: {fileID: 0}
     AudioResponse: Silent
     HasAdvancedSignal: 0
     AdvancedSignal: 0
+    SteamAchievement: 0
+    AdvancedSignal_ThisCharacter: 0
   - Dialogue: I love you, kid.
     Portrait: {fileID: 21300000, guid: 50bb4058fcfd0a848aee129378173f17, type: 3}
     AnimatedReaction: {fileID: 1732592836512686072, guid: ef44ce4f2cc40dd43933e177fba7a7ef, type: 3}
     AudioResponse: Happy
     HasAdvancedSignal: 1
     AdvancedSignal: 2
+    SteamAchievement: 11
+    AdvancedSignal_ThisCharacter: 3
   Charming_Expression:
     NpcReactionText:
     - Dialogue: "See? That\u2019s the spirit!"
@@ -71,6 +87,8 @@ MonoBehaviour:
       AudioResponse: 
       HasAdvancedSignal: 0
       AdvancedSignal: 0
+      SteamAchievement: 0
+      AdvancedSignal_ThisCharacter: 0
     CombinedDialogue:
     - Dialogue: "Oh, there\u2019s no need to worry. It has nothing to do you with
         you."
@@ -79,18 +97,24 @@ MonoBehaviour:
       AudioResponse: 
       HasAdvancedSignal: 0
       AdvancedSignal: 0
+      SteamAchievement: 0
+      AdvancedSignal_ThisCharacter: 0
     - Dialogue: My, where has the time gone...
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
       HasAdvancedSignal: 0
       AdvancedSignal: 0
+      SteamAchievement: 0
+      AdvancedSignal_ThisCharacter: 0
     - Dialogue: Who knew that my little Pumpkin could grow so tall?
       Portrait: {fileID: 21300000, guid: 5192d2ae68c371d4c88ca9a5e91ea005, type: 3}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
       HasAdvancedSignal: 0
       AdvancedSignal: 0
+      SteamAchievement: 0
+      AdvancedSignal_ThisCharacter: 0
     PlayerDialogue: "I definitely wouldn\u2019t call it \u201Cexcited\u201D. More
       like \u201Cexistentially apprehensive\u201D."
     RelationshipCheckRequired: 1
@@ -108,6 +132,8 @@ MonoBehaviour:
       AudioResponse: 
       HasAdvancedSignal: 0
       AdvancedSignal: 0
+      SteamAchievement: 0
+      AdvancedSignal_ThisCharacter: 0
     CombinedDialogue: []
     PlayerDialogue: "I\u2019m so glad to finally be on my own. It\u2019s about time
       I got to get away from all of you."
@@ -126,6 +152,8 @@ MonoBehaviour:
       AudioResponse: 
       HasAdvancedSignal: 0
       AdvancedSignal: 0
+      SteamAchievement: 0
+      AdvancedSignal_ThisCharacter: 0
     CombinedDialogue: []
     PlayerDialogue: "To be honest, I\u2019m a little nervous. "
     RelationshipCheckRequired: 1
@@ -142,6 +170,8 @@ MonoBehaviour:
       AudioResponse: 
       HasAdvancedSignal: 0
       AdvancedSignal: 0
+      SteamAchievement: 0
+      AdvancedSignal_ThisCharacter: 0
     CombinedDialogue: []
     PlayerDialogue: "Yeah! I can\u2019t wait for all the vacuuming and laundry and
       dirty dishes..."
@@ -160,6 +190,8 @@ MonoBehaviour:
       AudioResponse: 
       HasAdvancedSignal: 0
       AdvancedSignal: 0
+      SteamAchievement: 0
+      AdvancedSignal_ThisCharacter: 0
     - Dialogue: "You never know how empty a house can feel until you\u2019re the
         only one living in it."
       Portrait: {fileID: 0}
@@ -167,6 +199,8 @@ MonoBehaviour:
       AudioResponse: 
       HasAdvancedSignal: 0
       AdvancedSignal: 0
+      SteamAchievement: 0
+      AdvancedSignal_ThisCharacter: 0
     CombinedDialogue: []
     PlayerDialogue: "We weren\u2019t expecting you to visit."
     RelationshipCheckRequired: 1
@@ -184,6 +218,8 @@ MonoBehaviour:
       AudioResponse: 
       HasAdvancedSignal: 0
       AdvancedSignal: 0
+      SteamAchievement: 0
+      AdvancedSignal_ThisCharacter: 0
     - Dialogue: "But that doesn\u2019t mean we\u2019re ever done growing. Remember
         that."
       Portrait: {fileID: 0}
@@ -191,6 +227,8 @@ MonoBehaviour:
       AudioResponse: 
       HasAdvancedSignal: 0
       AdvancedSignal: 0
+      SteamAchievement: 0
+      AdvancedSignal_ThisCharacter: 0
     CombinedDialogue: []
     PlayerDialogue: "I don\u2019t feel like I\u2019m ready. It\u2019s like I was
       only a kid four days ago."
@@ -209,6 +247,8 @@ MonoBehaviour:
       AudioResponse: 
       HasAdvancedSignal: 0
       AdvancedSignal: 0
+      SteamAchievement: 0
+      AdvancedSignal_ThisCharacter: 0
     CombinedDialogue: []
     PlayerDialogue: Do you think I really need this many boxes?
     RelationshipCheckRequired: 1
@@ -226,6 +266,8 @@ MonoBehaviour:
       AudioResponse: 
       HasAdvancedSignal: 0
       AdvancedSignal: 0
+      SteamAchievement: 0
+      AdvancedSignal_ThisCharacter: 0
     CombinedDialogue: []
     PlayerDialogue: Does this look exciting to you?
     RelationshipCheckRequired: 1
@@ -243,12 +285,16 @@ MonoBehaviour:
       AudioResponse: 
       HasAdvancedSignal: 0
       AdvancedSignal: 0
+      SteamAchievement: 0
+      AdvancedSignal_ThisCharacter: 0
     - Dialogue: Those were the times...
       Portrait: {fileID: 0}
       AnimatedReaction: {fileID: 0}
       AudioResponse: 
       HasAdvancedSignal: 0
       AdvancedSignal: 0
+      SteamAchievement: 0
+      AdvancedSignal_ThisCharacter: 0
     CombinedDialogue: []
     PlayerDialogue: Did you move out when you were my age?
     RelationshipCheckRequired: 1

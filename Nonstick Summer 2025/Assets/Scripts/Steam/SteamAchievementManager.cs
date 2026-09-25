@@ -187,6 +187,19 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
         Debug.Log($"<color=cyan>{achievementsInMemory}/{achievements.Length} Steam Achievements are already completed. Use the \"Clear Achievements\" button on Steam Achievement Manager gameobject if you would like to reset.");
     }
 
+    #region Specific Achievements
+    public void TryGetMaxEndingEveryoneAchievement()
+    {
+        if (PersistentGameplayData.Instance.BestMomEndingUnlocked &&
+            PersistentGameplayData.Instance.BestCousinEndingUnlocked &&
+            PersistentGameplayData.Instance.BestGrandmaEndingUnlocked &&
+            PersistentGameplayData.Instance.BestUncleEndingUnlocked)
+        {
+            UnlockAchievement(SteamAchievement.MaxEndingEveryone);
+        }
+    }
+    #endregion
+
     #region Debug Buttons
 
     //this is strictly for testing so we can reset our achievements in case we need to test something

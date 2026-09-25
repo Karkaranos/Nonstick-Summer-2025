@@ -280,6 +280,8 @@ public class DialogueBox : MonoBehaviour
                 default:
                     break;
             }
+
+            SteamAchievementManager.Instance.TryGetMaxEndingEveryoneAchievement();
         }
     }
 

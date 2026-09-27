@@ -62,13 +62,16 @@ public class DialogueManager
 
     public static IEnumerator SetCurrentEnergy(float energy)
     {
-        energy = Mathf.Clamp(energy, 0, MaxEnergy);
-        if (_currentEnergy == energy) yield break;
+        if(!DialogueUIController.Instance.inSceneFive)
+        {
+            energy = Mathf.Clamp(energy, 0, MaxEnergy);
+            if (_currentEnergy == energy) yield break;
 
-        Debug.Log($"set energy to {_currentEnergy}");
-        _currentEnergy = energy;
-        if (DialogueUIController.Instance != null)
-            yield return DialogueUIController.Instance.UpdateEnergy(_currentEnergy); // wait for animation to finish
+            Debug.Log($"set energy to {_currentEnergy}");
+            _currentEnergy = energy;
+            if (DialogueUIController.Instance != null)
+                yield return DialogueUIController.Instance.UpdateEnergy(_currentEnergy); // wait for animation to finish
+        }
     }
 
     public static IEnumerator SetCurrentRelationshipStatus(float relationshipScore)
@@ -205,7 +208,7 @@ public class DialogueManager
         // progress dialogue:
         var dialogueOption = CurrentDialogueBranch.GetDialogueOption(playedCard);
 
-        float relationshipChange = GetRelationshipChange(playedCard);
+        float relationshipChange = playedCard == null ? dialogueOption.ChangeInRelationshipStatus : playedCard.GetRelationshipChange(dialogueOption);
         //float relationshipChange = playedCardSinceOpeningCombat.GetRelationshipChange(dialogueOption);
         //yield return SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange);
         GameManager.Instance.StartCoroutine(SetCurrentRelationshipStatus(CurrentRelationshipScore + relationshipChange));
@@ -219,6 +222,11 @@ public class DialogueManager
         {
             Debug.Log("Player has enough RP for good branch");
             CurrentDialogueBranch = dialogueOption.BranchingDialogueHigh; 
+
+            if(DialogueUIController.Instance.inSceneFive)
+            {
+                DialogueUIController.Instance.bestEndingForCharacterReached = true;
+            }
         }
         else if(dialogueOption.RelationshipCheckRequired = true && RelationshipManager.characterRelationships[currentCharacter].currentValue <= dialogueOption.RelationshipRange.y && RelationshipManager.characterRelationships[currentCharacter].currentValue >= dialogueOption.RelationshipRange.x)
         {

@@ -147,7 +147,8 @@ public class DialogueBox : MonoBehaviour
         }
 
         if (PlayerReadAllDialogue)
-            DialogueUIController.Instance.OnNPCFinishDialogue();
+            DialogueUIController.Instance.OnNPCFinishDialogue(currentCharacter);
+
 
         if (dialogue == null)
             dialogue = branch.dialogue;

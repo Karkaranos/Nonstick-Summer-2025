@@ -16,7 +16,7 @@ public class FridgeMagnets : MonoBehaviour
         if (letterOrder == "MOM")
         {
             //it's already this way!
-            Debug.Log("MOM");
+            //Debug.Log("MOM");
         }
 
         else if (letterOrder == "OWW")
@@ -29,7 +29,7 @@ public class FridgeMagnets : MonoBehaviour
             letterM2.position = thirdLetterPosition.position;
             letterM2.Rotate(0, 0, 180);
 
-            Debug.Log("OWW");
+            //Debug.Log("OWW");
         }
 
         else if (letterOrder == "WOW")
@@ -42,8 +42,10 @@ public class FridgeMagnets : MonoBehaviour
             letterM2.position = thirdLetterPosition.position;
             letterM2.Rotate(0, 0, 180);
 
-            Debug.Log("WOW");
+            //Debug.Log("WOW");
         }
+
+        SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.InteractFridgeMagnets);
     }
 
 

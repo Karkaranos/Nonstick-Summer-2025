@@ -23,17 +23,23 @@ public class BedInteractionPopupCanvas : MonoBehaviour
     [Tooltip("Fade to black prefab")]
     [SerializeField] private GameObject fadeToBlack;
     public EndType SceneTransitionType;
+    public SteamAchievement Achievement;
 
     [HideInInspector]
     public ArchipelagoLocation APLocation;
 
     public enum EndType
     {
-        DOOR, BED
+        DOOR, BED, FINALDOOR
     };
     public void Start()
     {
-        if (SceneTransitionType == EndType.BED)
+        if (SceneTransitionType == EndType.FINALDOOR)
+        {
+            statement.text = "It's your front door.";
+            message.text = (Bed.PlayerCanLeave ? "Would you like to leave?\n(This will end the game.)" : "Caleb was here");
+        }
+        else if (SceneTransitionType == EndType.BED)
         {
             statement.text = "It's your bed.";
             message.text = (Bed.PlayerCanLeave ? "Would you like to sleep?\n(This will end the moment.)" : "You cannot sleep yet");
@@ -60,6 +66,8 @@ public class BedInteractionPopupCanvas : MonoBehaviour
 
         if (Bed.PlayerCanLeave)
         {
+            SteamAchievementManager.Instance.UnlockAchievement(Achievement);
+
             Bed.InteractSuccessful = true;
 
             DoFadeOut();

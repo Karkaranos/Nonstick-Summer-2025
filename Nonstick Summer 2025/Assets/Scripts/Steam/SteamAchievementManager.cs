@@ -152,6 +152,9 @@ public class SteamAchievementManager : Singleton<SteamAchievementManager>
                 achievementsInMemory++;
             }
         }
+        
+        //only progress over time achievement
+        PlayerPrefs.SetInt("Plushie", 0);
 
         Debug.Log($"<color=cyan>{achievementsInMemory}/{achievements.Length} Steam Achievements are already completed. Use the \"Clear Achievements\" button on Steam Achievement Manager gameobject if you would like to reset.");
     }

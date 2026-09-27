@@ -32,5 +32,13 @@ public class Check : MonoBehaviour
         {
             SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.CompleteGameNoUncle);
         }
+
+        if(PersistentGameplayData.Instance.BestMomEndingUnlocked &&
+        PersistentGameplayData.Instance.BestCousinEndingUnlocked &&
+        PersistentGameplayData.Instance.BestGrandmaEndingUnlocked &&
+        PersistentGameplayData.Instance.BestUncleEndingUnlocked)
+        {
+            SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingEveryone);
+        }
     }
 }

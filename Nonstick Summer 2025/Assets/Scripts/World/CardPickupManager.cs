@@ -2,6 +2,7 @@
 * File Name :         CardPickupManager.cs
 * Author :            Toby
 * Creation Date :     July 11, 2025
+* Last Updated  :     Sep  8 , 2026
 *
 * Brief Description : Manages card pickups between scenes, and when saving/loading.
 * 
@@ -20,7 +21,7 @@ using UnityEngine;
 public class CardPickupManager : Singleton<CardPickupManager>
 {
     //        <Card Hash Code, Is Collected>
-    public Dictionary<int, bool> PickupCollectedStatus = new Dictionary<int, bool>();
+    public static Dictionary<int, bool> PickupCollectedStatus = new Dictionary<int, bool>();
 
     private RectTransform? rectTransform;
 
@@ -36,7 +37,7 @@ public class CardPickupManager : Singleton<CardPickupManager>
         }
         else
         {
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
         }
     }
 
@@ -96,14 +97,6 @@ public class CardPickupManager : Singleton<CardPickupManager>
         // dont fucking touch it
         rectTransform.position = Vector3.zero;
         rectTransform.rotation = Quaternion.identity;
-    }
-
-    public void OnDrawGizmos()
-    {
-        // if unsaved prefab changes AND the designer is not selecting this object
-        gameObject.name = DefaultGameObjectName +
-            (PrefabUtility.HasPrefabInstanceAnyOverrides(gameObject, false) && !StaticUtilities.Editor_SelectingTransform(transform)
-                ? " (UNAPPLIED CHANGES TO PREFAB)" : "");
     }
 #endif
 }

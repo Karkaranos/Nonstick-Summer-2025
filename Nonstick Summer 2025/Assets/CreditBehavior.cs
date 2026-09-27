@@ -88,6 +88,8 @@ public class CreditBehavior : MonoBehaviour
             CloseCredits();
         }
 
+        SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.WatchCredits);
+
     }
 
     public void CloseCredits()

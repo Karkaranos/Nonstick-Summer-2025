@@ -195,8 +195,6 @@ public class ModifierDeckDisplay : MonoBehaviour
         float left = cardArea.rect.center.x - (desiredWidth/2);
         float right = cardArea.rect.center.x + (desiredWidth/2);
 
-        Debug.Log($"left {left}, right {right}");
-
         //TODO sort cards somehow
 
         for(int i=0; i<_visualDisplays.Count; i++)

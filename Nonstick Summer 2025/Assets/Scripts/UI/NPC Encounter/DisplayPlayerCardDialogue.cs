@@ -22,28 +22,71 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
 {
     [SerializeField, Required] private TMP_Text text;
     [SerializeField, Required] private CanvasGroup group;
+    [SerializeField] private float fadeSpeed = 6;
+    [ReadOnly] public bool IsShowing;
+
+    private float delay;
+    private Coroutine fadingCoroutine;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Hide();
+        Hide(fadeHide:false);
     }
 
-    public void Hide(bool forceHide = false)
+    public void Hide(bool forceHide = false, bool fadeHide = true)
     {
         // dont hide if a card is selected
         if (DialogueUIController.Instance != null && DialogueUIController.Instance.selectedCardData != null && !forceHide)
             return;
 
-        StaticUtilities.DisableCanvasGroup(group);
+        IsShowing = false;
+        delay = 0.15f;
+
+        /*
+        if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
+        if (fadeHide)
+            fadingCoroutine = StaticUtilities.FadeOpacityBySpeed(group, start_a: group.alpha, 0, fadeSpeed, delay:0.1f); 
+        else
+            StaticUtilities.DisableCanvasGroup(group);
+        */
+        if (!fadeHide)
+            StaticUtilities.DisableCanvasGroup(group, alpha:group.alpha);
     }
 
-    public void WriteText(CardData card)
+    public void Show(bool fadeShow = true)
+    {
+        IsShowing = true;
+        
+        /*
+        if (fadingCoroutine != null) StopCoroutine(fadingCoroutine);
+        if (fadeShow)
+            fadingCoroutine = StaticUtilities.FadeOpacityBySpeed(group, start_a: group.alpha, 1, fadeSpeed);
+        else
+            StaticUtilities.EnableCanvasGroup(group);
+        */
+        if(!fadeShow)
+            StaticUtilities.EnableCanvasGroup(group, alpha:group.alpha);
+    }
+
+    private void Update()
+    {
+        if (delay > 0)
+        {
+            delay -= Time.unscaledDeltaTime;
+            return;
+        }
+
+        float alpha = IsShowing ? 1 : 0;
+        group.alpha = Mathf.MoveTowards(group.alpha, alpha, Time.deltaTime * fadeSpeed);
+    }
+
+    public void WriteText(CardData card, bool fadeShow = true)
     {
         group.transform.SetAsLastSibling(); // bring to front
         if (card == null)
         {
-            Hide();
+            Hide(fadeHide:true);
             return;
         }
 
@@ -53,7 +96,10 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
             return;
         }
 
-        StaticUtilities.EnableCanvasGroup(group, interactable:false);
+        //StaticUtilities.EnableCanvasGroup(group, interactable:false);
+
+        Show(fadeShow);
+
         var cardtext = DialogueManager.CurrentDialogueBranch.GetDialogueOption(card).PlayerDialogue;
         text.text = cardtext;
 
@@ -91,7 +137,7 @@ public class DisplayPlayerCardDialogue : MonoBehaviour
             yield break;
         }
 
-        StaticUtilities.EnableCanvasGroup(group, interactable: false);
+        StaticUtilities.EnableCanvasGroup(group, interactable: false, alpha:group.alpha);
         text.text = DialogueManager.CurrentDialogueBranch.GetDialogueOption(card).PlayerDialogue;
         Debug.LogWarning("Implement typewriter later");
         yield return null;

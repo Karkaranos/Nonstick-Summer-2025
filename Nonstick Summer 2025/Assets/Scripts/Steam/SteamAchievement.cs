@@ -2,7 +2,6 @@ using UnityEngine;
 
 public enum SteamAchievement
 {
-    //TODO: None of these are implemented
     OpenGame,
     WatchCredits,
 
@@ -24,5 +23,7 @@ public enum SteamAchievement
     MaxEndingEveryone,
 
     CompleteGameNoUncle,
-    SilentConversation
+    SilentConversation,
+
+    EveryoneMoment5
 }

@@ -21,6 +21,7 @@ public class DrawButton : MonoBehaviour
 
     [SerializeField, Required] private Button button;
     [SerializeField, Required] private TMP_Text energyCostDisplay;
+    [SerializeField, Required] private CanvasGroup disabledButtonOverlay;
     private DeckDisplayer handDisplay => DialogueUIController.Instance.deckDisplay;
     [ReadOnly]
     public bool CantDrawAnymore = false;
@@ -88,5 +89,11 @@ public class DrawButton : MonoBehaviour
     private void OnAPItemCollected()
     {
         UpdateButtonEnabled();
+    }
+    private void Update()
+    {
+        // sorry guys
+        float alpha = button.interactable ? 0 : 1;
+        disabledButtonOverlay.alpha = Mathf.MoveTowards(disabledButtonOverlay.alpha, alpha, Time.unscaledDeltaTime * 4);
     }
 }

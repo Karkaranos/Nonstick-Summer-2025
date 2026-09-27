@@ -8,11 +8,13 @@ public class TabIconButton : Singleton<TabIconButton>
     [Required] public RectTransform rectTransform;
 
     [Required, SerializeField] private CanvasGroup notification;
+    [Required, SerializeField] private Animator tabShakeAnimation;
 
     [Tooltip("Time for the animation to do one swing")]
     [SerializeField] private float oneShakeSeconds = 0.15f;
 
     bool animating;
+    bool notificationOpen;
     Quaternion defaultRotation;
 
     private void Start()
@@ -26,10 +28,16 @@ public class TabIconButton : Singleton<TabIconButton>
     {
         animating = true;
 
+        tabShakeAnimation.SetTrigger("New Card");
+
+        yield return null;
+
+        /*
         yield return StaticUtilities.AnimateRotation(transform, new Vector3(0, 0,  15f), oneShakeSeconds);
         yield return StaticUtilities.AnimateRotation(transform, new Vector3(0, 0, -15f), oneShakeSeconds + 0.1f);
         yield return StaticUtilities.AnimateRotation(transform, Quaternion.identity,     oneShakeSeconds);
         transform.rotation = Quaternion.identity;
+        */
         animating = false;
 
         ToggleNotification(true);
@@ -45,11 +53,13 @@ public class TabIconButton : Singleton<TabIconButton>
     {
         notification.gameObject.SetActive(enabled);
 
-        if (enabled)
+        if (enabled && !notificationOpen)
         {
             notification.alpha = 0;
             StaticUtilities.FadeToVisible(notification, 0.25f, unscaledTime: true);
         }
+
+        notificationOpen = enabled;
     }
 
     // running into a problem where the icon will be rotated for like, no reason?

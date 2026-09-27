@@ -18,6 +18,7 @@ public class DiscardButton : MonoBehaviour
 {
     [SerializeField, Required] private Button button;
     [SerializeField, Required] private TMP_Text energyCostDisplay;
+    [SerializeField, Required] private CanvasGroup disabledButtonOverlay;
 
     private DeckDisplayer hand => DialogueUIController.Instance.deckDisplay;
 
@@ -61,6 +62,7 @@ public class DiscardButton : MonoBehaviour
             hand.DiscardCard(card.cardData);
         }
         DialogueManager.CurrentEnergy += DialogueManager.EnergyGainedPerDiscard;
+        DialogueUIController.Instance.playerDialogueBubble.Hide();
 
         UpdateButtonEnabled();
     }
@@ -68,5 +70,12 @@ public class DiscardButton : MonoBehaviour
     private void OnAPItemCollected()
     {
         UpdateButtonEnabled();
+    }
+    
+    private void Update()
+    {
+        // sorry guys
+        float alpha = button.interactable ? 0 : 1;
+        disabledButtonOverlay.alpha = Mathf.MoveTowards(disabledButtonOverlay.alpha, alpha, Time.unscaledDeltaTime * 4);
     }
 }

@@ -872,5 +872,15 @@ public static class StaticUtilities
         return false;
 #endif
     }
+
+    public static string GetDictionaryDisplay<T,T2>(Dictionary<T,T2> dict)
+    {
+        string result = "";
+        foreach (T key in dict.Keys)
+        {
+            result += $"{key.ToString()}: {dict[key].ToString()}\n";
+        }
+        return result;
+    }
     #endregion
 }

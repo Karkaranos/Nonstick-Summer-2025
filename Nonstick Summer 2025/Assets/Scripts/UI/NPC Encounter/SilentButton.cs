@@ -17,6 +17,8 @@ public class SilentButton : MonoBehaviour
 {
     [SerializeField, Required] private Button button;
     [SerializeField, Required] private TMP_Text energyCostDisplay;
+    [SerializeField, Required] private CanvasGroup disabledButtonOverlay;
+
     private MouseInteractionEvents mouseInteractionEvents;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -60,5 +62,12 @@ public class SilentButton : MonoBehaviour
     public void OnButtonHover()
     {
         DialogueUIController.Instance.UpdateHoveringCard(null);
+    }
+
+    private void Update()
+    {
+        // sorry guys
+        float alpha = button.interactable ? 0 : 1;
+        disabledButtonOverlay.alpha = Mathf.MoveTowards(disabledButtonOverlay.alpha, alpha, Time.unscaledDeltaTime * 4);
     }
 }

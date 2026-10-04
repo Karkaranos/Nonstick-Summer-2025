@@ -41,4 +41,6 @@ public class Check : MonoBehaviour
             SteamAchievementManager.Instance.UnlockAchievement(SteamAchievement.MaxEndingEveryone);
         }
     }
+
+    
 }

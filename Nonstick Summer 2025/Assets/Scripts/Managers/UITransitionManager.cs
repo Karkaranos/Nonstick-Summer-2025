@@ -77,7 +77,7 @@ public class UITransitionManager
         }
 
 
-        StaticUtilities.EnableCursor();
+        StaticUtilities.ShowCursor();
 
         if(objectRef != null)
         {
@@ -96,7 +96,7 @@ public class UITransitionManager
     {
         if (disableMouse)
         {
-            StaticUtilities.DisableCursor();
+            StaticUtilities.HideCursor();
         }
 
         PlayerInMenu = false;
